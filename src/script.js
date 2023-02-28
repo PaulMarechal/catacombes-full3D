@@ -24,20 +24,29 @@ let meshes = []
 
 //console.log(NameRooms.roomInfos[0][0])
 
+const geometryTo = new THREE.TorusGeometry( 2, 0.26, 22, 86, 4.5 );
+const materialTo = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+const torus = new THREE.Mesh( geometryTo, materialTo );
+
+torus.scale.multiplyScalar(0.05);
+torus.position.set(0, 1, -1.9);
+torus.rotation.set(0, 0, -1.07);
+
+
 
 const loadingManager = new THREE.LoadingManager(
         
     // Loaded
     () => {
         console.log("loaded")
+		scene.remove(torus)
         scene.children[scene.children.length - 1 ].rotation.y += 0.01;
 
     }, 
 
     // Progress
     (itemUrl, itemsLoaded, itemsTotal) => {
-        
-        // console.log("progress")
+		// console.log("progress")
         const progressRatio = itemsLoaded / itemsTotal
         console.log(`${Math.round(progressRatio*100)} %`)
     }
@@ -156,6 +165,8 @@ function init(nameRoom) {
 		new THREE.MeshBasicMaterial( { side: THREE.BackSide } )
 	);
 
+	scene.add(torus)
+
 	scene.add( room );
 	objsToTest.push( roomMesh );
 
@@ -213,7 +224,7 @@ function init(nameRoom) {
         (gltf) => {
             const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
             gltf.scale = 0.2
-            gltf.scene.name = nameRoom
+            gltf.scene.name = "roomName"
             console.log(gltf);
             gltf.scene.scale.set(0.1, 0.1, 0.1)
             gltf.scene.position.set(-0.2, 1, -2)
@@ -397,7 +408,7 @@ function makePanel() {
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
                     gltf.scale = 0.2
-                    gltf.scene.name = roomName
+                    gltf.scene.name = "roomName"
                     console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(0, 1, -2)
@@ -467,10 +478,15 @@ function loop() {
 	ThreeMeshUI.update();
 
 	controls.update();
-    console.log(scene.children.length)
-    if( scene.children.length > 8 ) {
-        scene.children[scene.children.length - 1 ].rotation.y += 0.01;
+    // console.log(scene.children[8])
+
+    if( scene.children[8] && scene.children[scene.children.length - 1 ].name === "roomName" ){ 
+        scene.children[scene.children.length - 1 ].rotation.y -= 0.01;
     }
+
+	if ( torus ){
+		torus.rotation.z -= 0.03;
+	}
     
 	renderer.render( scene, camera );
     
