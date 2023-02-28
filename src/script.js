@@ -15,10 +15,15 @@ import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 import SnakeImage from "three-mesh-ui/examples/assets/spiny_bush_viper.jpg";
 
 import * as TextPanel from "./textPanel.js";
+import * as NameRooms from "./roomInfo.js";
 
 let scene, camera, renderer, controls, vrControl;
-let meshContainer, meshes, currentMesh;
+let meshContainer, currentMesh;
 const objsToTest = [];
+let meshes = []
+
+//console.log(NameRooms.roomInfos[0][0])
+
 
 const loadingManager = new THREE.LoadingManager(
         
@@ -55,15 +60,15 @@ const nameRoom = [
     'Boutik', 
     'Bocal',
 ]
-
 var roomNumber = 0
 
+
 function room3dRoad(roomNumber){
-    return `https://catacombes.xyz/${nameRoom[roomNumber]}/${nameRoom[roomNumber]}.glb`
+    return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.glb`
 }
 
 function seeRoomIn3d(roomNumber){
-    return `${nameRoom[roomNumber]}`
+    return `${NameRooms.roomInfos[roomNumber][0]}`
 }
 console.log(room3dRoad(0));
 
@@ -220,19 +225,20 @@ function init(nameRoom) {
 
 	//
 
-	// sphere.visible = box.visible = cone.visible = false;
+	for(let i = 0; i < NameRooms.roomInfos.length; i++){
+		meshContainer.add(NameRooms.roomInfos[i][0])
+		meshes.push(NameRooms.roomInfos[i][0])
+	}
 
-	meshContainer.add( sphere, box, cone );
-
-	meshes = [ sphere, box, cone ];
 	currentMesh = 0;
 
 	showMesh( currentMesh );
     
-    console.log(currentMesh);
-    console.log("/////////");
-    console.log(meshes);
-    console.log("/////////");
+    // console.log(currentMesh);
+    // console.log("/////////");
+    // console.log(meshes);
+    // console.log("/////////");
+
 	//////////
 	// Panel
 	//////////
@@ -241,7 +247,7 @@ function init(nameRoom) {
 
 	makePanel();
 
-    TextPanel.TextPanel(scene)
+    TextPanel.TextPanel(scene, roomNumber)
 
 	//
 
@@ -270,7 +276,7 @@ function showMesh( id ) {
 // UI contruction
 ///////////////////
 
-function makePanel(phili) {
+function makePanel() {
 
 	// Container block, in which we put the two buttons.
 	// We don't define width and height, it will be set automatically from the children's dimensions
@@ -378,17 +384,11 @@ function makePanel(phili) {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
-
-			// currentMesh = ( currentMesh + 1 ) % 3;
-
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
-            // console.log(scene.children.length);
 			showMesh( currentMesh );
 
             roomNumber += 1; 
-
             const roomName = room3dRoad(roomNumber)
-
 
             console.log(roomName);
 

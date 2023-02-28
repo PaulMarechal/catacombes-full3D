@@ -8,8 +8,10 @@ import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 // import SnakeImage from "three-mesh-ui/examples/assets/spiny_bush_viper.jpg";
 import * as dat from 'lil-gui'
+import * as NameRooms from "./roomInfo.js";
 
-export function TextPanel(scene) {
+export function TextPanel(scene, roomNumber) {
+
     //Debug
     const gui = new dat.GUI({
         width: 400
@@ -40,7 +42,7 @@ export function TextPanel(scene) {
   
     title.add(
       new ThreeMeshUI.Text({
-        content: "spiny bush viper",
+        content: `${NameRooms.roomInfos[roomNumber][0]}`,
       })
     );
   
@@ -96,16 +98,18 @@ export function TextPanel(scene) {
       backgroundOpacity: 0,
     }).add(
       new ThreeMeshUI.Text({
-        content: "Known for its extremely keeled dorsal scales that give it a ",
+        // Location
+        content: `${NameRooms.roomInfos[roomNumber][2]}`,
       }),
   
+      // Green text
+      // new ThreeMeshUI.Text({
+      //   content: "bristly",
+      //   fontColor: new THREE.Color(0x92e66c),
+      // }),
+      // Depth
       new ThreeMeshUI.Text({
-        content: "bristly",
-        fontColor: new THREE.Color(0x92e66c),
-      }),
-  
-      new ThreeMeshUI.Text({
-        content: " appearance.",
+        content: ` ( ${NameRooms.roomInfos[roomNumber][3]} )`,
       })
     );
   
@@ -121,7 +125,7 @@ export function TextPanel(scene) {
     }).add(
       new ThreeMeshUI.Text({
         content:
-          "The males of this species grow to maximum total length of 73 cm (29 in): body 58 cm (23 in), tail 15 cm (5.9 in). Females grow to a maximum total length of 58 cm (23 in). The males are surprisingly long and slender compared to the females.\nThe head has a short snout, more so in males than in females.\nThe eyes are large and surrounded by 9–16 circumorbital scales. The orbits (eyes) are separated by 7–9 scales.",
+          `${NameRooms.roomInfos[roomNumber][1]}`,
       })
     );
   
