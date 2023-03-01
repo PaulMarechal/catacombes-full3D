@@ -40,6 +40,7 @@ const loadingManager = new THREE.LoadingManager(
     () => {
         console.log("loaded")
 		scene.remove(torus)
+		// TextPanel.TextPanel(scene, roomNumber)
         scene.children[scene.children.length - 1 ].rotation.y += 0.01;
 
     }, 
@@ -63,12 +64,6 @@ dracoLoader.setDecoderPath('draco/')
 const gltfLoader = new GLTFLoader(loadingManager)
 gltfLoader.setDRACOLoader(dracoLoader)
 
-const nameRoom = [
-    'Philibert', 
-    'Ossa', 
-    'Boutik', 
-    'Bocal',
-]
 var roomNumber = 0
 
 
@@ -79,7 +74,7 @@ function room3dRoad(roomNumber){
 function seeRoomIn3d(roomNumber){
     return `${NameRooms.roomInfos[roomNumber][0]}`
 }
-console.log(room3dRoad(0));
+// console.log(room3dRoad(0));
 
 // const room3dRoad = `https://catacombes.xyz/${nameRoom[0]}/${nameRoom[0]}.glb`
 
@@ -213,12 +208,6 @@ function init(nameRoom) {
 
 	//
 
-	const sphere = room3dRoad(0)
-
-	const box = room3dRoad(1)
-
-	const cone = room3dRoad(2)
-
     gltfLoader.load(
         nameRoom, 
         (gltf) => {
@@ -227,9 +216,10 @@ function init(nameRoom) {
             gltf.scene.name = "roomName"
             console.log(gltf);
             gltf.scene.scale.set(0.1, 0.1, 0.1)
-            gltf.scene.position.set(-0.2, 1, -2)
+            gltf.scene.position.set(-0.5, 1, -2)
             gltf.scene.rotation.y = 0.6
             scene.add(gltf.scene)
+			TextPanel.TextPanel(scene, roomNumber)
             console.log("Go! Go! Go!");
         }
     )
@@ -257,8 +247,6 @@ function init(nameRoom) {
     console.log(scene);
 
 	makePanel();
-
-    TextPanel.TextPanel(scene, roomNumber)
 
 	//
 
@@ -396,6 +384,29 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
+			scene.add(torus);
+			console.log("scene children");
+			console.log(scene)
+			for(let i = 0; i < scene.children.length; i++){
+				if(scene.children[i].name === "roomName"){
+					scene.remove(scene.children[i]);
+				} else if(scene.children[i].name === "boxContainer"){
+					// console.log(scene.children[i]);
+					scene.remove(scene.children[i])
+				}
+			}
+			//console.log(scene.children[9].name === "boxContainer");
+			//console.log(scene)
+			//if( scene.children[scene.children.length - 1 ].name === "boxContainer" ){ 
+				// scene.children[scene.children.length - 2].remove()
+			//	console.log("Yoooo la miff")
+			//	scene.remove(scene.children[scene.children.length - 1 ].name === "boxContainer")
+			//}
+			
+
+			//TextPanel.TextPanel(scene, roomNumber)
+
+
 			showMesh( currentMesh );
 
             roomNumber += 1; 
@@ -407,13 +418,15 @@ function makePanel() {
                 roomName, 
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
+					// TextPanel.TextPanel(scene, roomNumber)
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
                     console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
-                    gltf.scene.position.set(0, 1, -2)
+                    gltf.scene.position.set(-0.5, 1, -2)
                     gltf.scene.rotation.y = 0.6
                     scene.add(gltf.scene)
+					TextPanel.TextPanel(scene, roomNumber)
                     console.log(`Go! Go! Go! ${roomNumber}`);
                 }
             )
@@ -442,7 +455,7 @@ function makePanel() {
 		onSet: () => {
 
 			currentMesh -= 1;
-			if ( currentMesh < 0 ) currentMesh = 2;
+			if ( currentMesh < 0 ) currentMesh = NameRooms.roomInfos.length;
 			showMesh( currentMesh );
 
 		}
@@ -480,9 +493,21 @@ function loop() {
 	controls.update();
     // console.log(scene.children[8])
 
-    if( scene.children[8] && scene.children[scene.children.length - 1 ].name === "roomName" ){ 
-        scene.children[scene.children.length - 1 ].rotation.y -= 0.01;
-    }
+    // if( scene.children[8] && scene.children[scene.children.length - 1 ].name === "roomName" ){ 
+	// 	if(torus){
+	// 		torus.remove()
+	// 	}
+    //     scene.children[scene.children.length - 1 ].rotation.y -= 0.01;
+    // }
+
+	for(let i = 0; i < scene.children.length; i++){
+		if(scene.children[i].name === "roomName"){
+			if(torus){
+				torus.remove()
+			}
+			scene.children[i].rotation.y -= 0.01;
+		}
+	}
 
 	if ( torus ){
 		torus.rotation.z -= 0.03;
