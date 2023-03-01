@@ -131,6 +131,7 @@ function init(nameRoom) {
 	scene.background = new THREE.Color( 0x505050 );
 
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 100 );
+	camera.position.set( 0, 1.6, 0 );
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
@@ -143,12 +144,10 @@ function init(nameRoom) {
 	// Orbit controls for no-vr
 
 	controls = new OrbitControls( camera, renderer.domElement );
-	camera.position.set( 0, 1.6, 0 );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.minDistance = 1; 
 	controls.maxDistance = 2;
-	var start = 45  //current angle
-	// console.log(Math.)
+
     controls.maxAzimuthAngle = Math.PI / 4;
     controls.minAzimuthAngle = - Math.PI / 4; 
 	controls.maxPolarAngle = 1.5;
