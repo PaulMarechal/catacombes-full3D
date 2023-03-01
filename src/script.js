@@ -22,15 +22,34 @@ let meshContainer, currentMesh;
 const objsToTest = [];
 let meshes = []
 
-//console.log(NameRooms.roomInfos[0][0])
 
+// Loader 3D 
+// Red
 const geometryTo = new THREE.TorusGeometry( 2, 0.26, 22, 86, 4.5 );
-const materialTo = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+const materialTo = new THREE.MeshBasicMaterial( { color: "#F71735" } );
 const torus = new THREE.Mesh( geometryTo, materialTo );
 
 torus.scale.multiplyScalar(0.05);
 torus.position.set(0, 1, -1.9);
 torus.rotation.set(0, 0, -1.07);
+
+// Blue
+const geometryTo2 = new THREE.TorusGeometry( 1.9, 0.26, 22, 86, 4.5 );
+const materialTo2 = new THREE.MeshBasicMaterial( { color: "#41EAD4" } );
+const torus2 = new THREE.Mesh( geometryTo2, materialTo2);
+
+torus2.scale.multiplyScalar(0.04);
+torus2.position.set(0, 1, -1.9);
+torus2.rotation.set(0.1, 0, -1.07);
+
+// White
+const geometryTo3 = new THREE.TorusGeometry( 1.8, 0.26, 22, 86, 4.5 );
+const materialTo3 = new THREE.MeshBasicMaterial( { color: "#FDFFFC" } );
+const torus3 = new THREE.Mesh( geometryTo3, materialTo3 );
+
+torus3.scale.multiplyScalar(0.06);
+torus3.position.set(0, 1, -1.92);
+torus3.rotation.set(0.15, 0, -1.07);
 
 
 
@@ -40,6 +59,8 @@ const loadingManager = new THREE.LoadingManager(
     () => {
         console.log("loaded")
 		scene.remove(torus)
+		scene.remove(torus2)
+		scene.remove(torus3)
 		// TextPanel.TextPanel(scene, roomNumber)
         scene.children[scene.children.length - 1 ].rotation.y += 0.01;
 
@@ -130,7 +151,7 @@ function init(nameRoom) {
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x505050 );
 
-	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 100 );
+	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
 	camera.position.set( 0, 1.6, 0 );
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -148,10 +169,10 @@ function init(nameRoom) {
 	controls.minDistance = 1; 
 	controls.maxDistance = 2;
 
-    controls.maxAzimuthAngle = Math.PI / 4;
-    controls.minAzimuthAngle = - Math.PI / 4; 
+    controls.maxAzimuthAngle = Math.PI / 6;
+    controls.minAzimuthAngle = - Math.PI / 6; 
 	controls.maxPolarAngle = 1.5;
-	controls.minPolarAngle = Math.PI / 4;
+	controls.minPolarAngle = Math.PI / 5;
 
 	/////////
 	// Room
@@ -168,6 +189,8 @@ function init(nameRoom) {
 	);
 
 	scene.add(torus)
+	scene.add(torus2)
+	scene.add(torus3)
 
 	scene.add( room );
 	objsToTest.push( roomMesh );
@@ -392,6 +415,8 @@ function makePanel() {
 		onSet: () => {
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 			scene.add(torus);
+			scene.add(torus2);
+			scene.add(torus3);
 			console.log("scene children");
 			console.log(scene)
 			for(let i = 0; i < scene.children.length; i++){
@@ -492,20 +517,10 @@ function onWindowResize() {
 
 function loop() {
 
-	// Don't forget, ThreeMeshUI must be updated manually.
-	// This has been introduced in version 3.0.0 in order
-	// to improve performance
+	// Update manually ThreeeMeshUI.update() -> better performance
 	ThreeMeshUI.update();
 
 	controls.update();
-    // console.log(scene.children[8])
-
-    // if( scene.children[8] && scene.children[scene.children.length - 1 ].name === "roomName" ){ 
-	// 	if(torus){
-	// 		torus.remove()
-	// 	}
-    //     scene.children[scene.children.length - 1 ].rotation.y -= 0.01;
-    // }
 
 	for(let i = 0; i < scene.children.length; i++){
 		if(scene.children[i].name === "roomName"){
@@ -517,7 +532,9 @@ function loop() {
 	}
 
 	if ( torus ){
-		torus.rotation.z -= 0.03;
+		torus.rotation.z -= 0.031;
+		torus2.rotation.z -= 0.034;
+		torus3.rotation.z -= 0.033;
 	}
     
 	renderer.render( scene, camera );
@@ -527,12 +544,9 @@ function loop() {
 }
 
 // Called in the loop, get intersection with either the mouse or the VR controllers,
-// then update the buttons states according to result
-
 function updateButtons() {
 
 	// Find closest intersecting object
-
 	let intersect;
 
 	if ( renderer.xr.isPresenting ) {
@@ -553,7 +567,6 @@ function updateButtons() {
 	}
 
 	// Update targeted button state (if any)
-
 	if ( intersect && intersect.object.isUI ) {
 
 		if ( selectState ) {
@@ -571,7 +584,6 @@ function updateButtons() {
 	}
 
 	// Update non-targeted buttons state
-
 	objsToTest.forEach( ( obj ) => {
 
 		if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
