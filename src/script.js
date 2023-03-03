@@ -474,8 +474,12 @@ function makePanel() {
         state: 'selected',
         attributes: selectedAttributes,
         onSet: () => {
-            console.log(seeRoomIn3d(roomNumber));
-            document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}`;
+            // console.log(seeRoomIn3d(roomNumber));
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}`;
+			} else {
+				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`;
+			}
         }
     });
     show3D.setupState( hoveredStateAttributes );
