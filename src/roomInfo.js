@@ -1,6 +1,7 @@
 /**
  * RoomInfos 
- * - Name room
+ * - Name file
+ * - Room Name
  * - Description room ( history )
  * - Location in Paris 
  * - Depth 

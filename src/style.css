@@ -132,4 +132,67 @@ body input:checked ~ nav > ul > li {
 
 .displayRooms{
     margin-top: 3em;
+    overflow: scroll; 
+    height: 54em; 
+    text-align: center; 
 }
+
+.parentDivRoomInfo{
+    display: inline-grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.5fr repeat(2, 1fr) repeat(2, 0.7fr);
+    width: 40%; 
+    height: 40%;
+    margin: 1em 2em;
+    border: 1px solid rgb(207, 207, 207); 
+    /* border-radius: 5px;  */
+    padding: 5px 10px; 
+    /* background-color: #F2EECB60; */
+    /* background-color: rgb(237, 222, 190, 0.5); */
+    /* background-color: #fdfdfd; */
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 205, 208, 239, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.titleRoom { grid-area: 1 / 1 / 2 / 7; padding-left: 10px; padding-top: 3px; text-align: left;}
+.textRoom { 
+    grid-area: 2 / 1 / 5 / 4; 
+    border: 1px solid #000;
+    text-align: justify; 
+    padding: 0px 5px; 
+}
+.imgRoom { grid-area: 2 / 4 / 5 / 7; }
+.adressRoom{ 
+    grid-area: 5 / 1 / 6 / 4; 
+    text-align: left; 
+    white-space: pre-line; 
+    padding-top: 5px; 
+    padding-left: 2px;
+}
+
+.buttonVR { grid-area: 5 / 4 / 6 / 5; }
+.button3D { grid-area: 5 / 5 / 6 / 6; }
+.buttonAR { grid-area: 5 / 6 / 6 / 7; }
+
+.buttonRedirect3D{
+    margin: auto; 
+    padding: 10px; 
+    border-radius: 10px;
+    text-decoration: none;
+    border: #000 1px solid; 
+    color: #000;
+}
+
+.imgRoom{
+    background-size: contain;
+    width: 94%; 
+    height: 100%; 
+    margin-left: 5%; 
+    border-radius: 5px;
+}
+
+
