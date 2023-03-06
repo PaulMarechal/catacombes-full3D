@@ -10,6 +10,31 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     elemCreated.setAttribute("href", link);
     elemCreated.textContent = textButton;
     newDiv.appendChild(elemCreated);
+
+    // const classElem = document.querySelector(`.`);
+    console.log(navigator.xr.isSessionSupported('immersive-vr'));
+    const elemToTest = document.getElementById(idElem);
+
+    if(idElem === "buttonAR"){
+        // console.log(idElem)
+        // console.log(elemCreated);
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+            elemCreated.style.backgroundColor = "#FFF"
+        } else {
+            elemCreated.style.background = "#00000050"
+            elemCreated.setAttribute("href", "#")
+            elemCreated.style.cursor = "not-allowed"
+
+        }
+    } else if(idElem === "buttonVR"){
+        if (navigator.xr.isSessionSupported() === "false") {
+            elemCreated.style.backgroundColor = "#FFF"
+        } else {
+            elemCreated.style.backgroundColor = "#00000050" 
+            elemCreated.setAttribute("href", "#")
+            elemCreated.style.cursor = "not-allowed"
+        }
+    }
 }
 
 function addElement() {
@@ -19,7 +44,7 @@ function addElement() {
     // Title
     var title = document.createElement("h2");
     title.classList.add('titleRoom');
-    title.textContent = `Name : ${NameRooms.roomInfos[roomNumber][0]}`
+    title.textContent = `${NameRooms.roomInfos[roomNumber][0]}`
     newDiv.appendChild(title);
     
     // Body
@@ -46,9 +71,6 @@ function addElement() {
     addButtonDiv("a", "button3D", `${NameRooms.roomInfos[roomNumber][5]}`, "3D", newDiv)
     addButtonDiv("a", "buttonAR", `${NameRooms.roomInfos[roomNumber][5]}`, "AR", newDiv)
 
-    var newContent = document.createTextNode('Hi there and greetings!');
-
-
     var currentDiv = document.querySelector('.displayRooms');
     currentDiv.appendChild(newDiv);
 }
@@ -57,3 +79,15 @@ for (let i = 0; i < NameRooms.roomInfos.length; i++) {
     addElement(roomNumber)
     roomNumber++
 }
+
+
+function testElemWebXR(classDiv){
+    const classElem = document.querySelector(classDiv);
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+        classElem.style.backgroundColor = ""
+    } else {
+        classElem.style.background = "#00000050"
+    }
+}
+
+

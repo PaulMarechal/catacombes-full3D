@@ -151,14 +151,22 @@ body input:checked ~ nav > ul > li {
     /* background-color: rgb(237, 222, 190, 0.5); */
     /* background-color: #fdfdfd; */
     background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 205, 208, 239, 0.37 );
-backdrop-filter: blur( 3px );
--webkit-backdrop-filter: blur( 3px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 205, 208, 239, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.titleRoom { grid-area: 1 / 1 / 2 / 7; padding-left: 10px; padding-top: 3px; text-align: left;}
+.titleRoom { 
+    grid-area: 1 / 1 / 2 / 7; 
+    padding-left: 10px; 
+    padding-top: 3px; 
+    text-align: left;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
 .textRoom { 
     grid-area: 2 / 1 / 5 / 4; 
     border: 1px solid #000;
@@ -174,9 +182,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding-left: 2px;
 }
 
-.buttonVR { grid-area: 5 / 4 / 6 / 5; }
+.buttonVR { grid-area: 5 / 4 / 6 / 5; margin-right: 0em!important}
 .button3D { grid-area: 5 / 5 / 6 / 6; }
-.buttonAR { grid-area: 5 / 6 / 6 / 7; }
+.buttonAR { grid-area: 5 / 6 / 6 / 7; margin-left: 0em!important}
 
 .buttonRedirect3D{
     margin: auto; 
