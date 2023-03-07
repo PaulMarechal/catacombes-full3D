@@ -16,23 +16,24 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     const elemToTest = document.getElementById(idElem);
 
     if(idElem === "buttonAR"){
-        // console.log(idElem)
-        // console.log(elemCreated);
+        elemCreated.setAttribute("title", "Augmented Reality for phones");
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
             elemCreated.style.backgroundColor = "#FFF"
         } else {
             elemCreated.style.background = "#00000050"
             elemCreated.setAttribute("href", "#")
             elemCreated.style.cursor = "not-allowed"
-
+            elemCreated.style.opacity = "0.2"
         }
     } else if(idElem === "buttonVR"){
+        elemCreated.setAttribute("title", "Virtual Reality for VR headset");
         if (navigator.xr.isSessionSupported() === "false") {
             elemCreated.style.backgroundColor = "#FFF"
         } else {
             elemCreated.style.backgroundColor = "#00000050" 
             elemCreated.setAttribute("href", "#")
             elemCreated.style.cursor = "not-allowed"
+            elemCreated.style.opacity = "0.2"
         }
     }
 }
