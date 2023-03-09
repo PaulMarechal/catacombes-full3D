@@ -490,9 +490,45 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
 
-			currentMesh -= 1;
-			if ( currentMesh < 0 ) currentMesh = NameRooms.roomInfos.length;
+			// currentMesh -= 1;
+			// if ( currentMesh < 0 ) currentMesh = NameRooms.roomInfos.length;
+			// showMesh( currentMesh );
+			scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
+			scene.add(torus);
+			scene.add(torus2);
+			scene.add(torus3);
+			console.log("scene children");
+			console.log(scene)
+			for(let i = 0; i < scene.children.length; i++){
+				if(scene.children[i].name === "roomName"){
+					scene.remove(scene.children[i]);
+				} else if(scene.children[i].name === "boxContainer"){
+					// console.log(scene.children[i]);
+					scene.remove(scene.children[i])
+				}
+			}
+
 			showMesh( currentMesh );
+
+            roomNumber -= 1; 
+            const roomName = room3dRoad(roomNumber)
+			
+			gltfLoader.load(
+                roomName, 
+                (gltf) => {
+                    const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
+					// TextPanel.TextPanel(scene, roomNumber)
+                    gltf.scale = 0.2
+                    gltf.scene.name = "roomName"
+                    console.log(gltf);
+                    gltf.scene.scale.set(0.1, 0.1, 0.1)
+                    gltf.scene.position.set(-0.5, 1, -2)
+                    gltf.scene.rotation.y = 0.6
+                    scene.add(gltf.scene)
+					TextPanel.TextPanel(scene, roomNumber)
+                    console.log(`Go! Go! Go! ${roomNumber}`);
+                }
+            )
 
 		}
 	} );
