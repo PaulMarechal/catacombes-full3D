@@ -12,7 +12,6 @@ import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
 
 import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
-import SnakeImage from "three-mesh-ui/examples/assets/spiny_bush_viper.jpg";
 
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
