@@ -165,8 +165,7 @@ body input:checked ~ nav > ul > li {
 
 .textRoom { 
     grid-area: 2 / 1 / 5 / 4; 
-    border: 1px solid #000;
-    text-align: justify; 
+    text-align: -webkit-left; 
     padding: 0px 5px; 
 }
 .imgRoom { grid-area: 2 / 4 / 5 / 7; }
