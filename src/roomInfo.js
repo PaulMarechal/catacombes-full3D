@@ -163,7 +163,7 @@ export const roomInfos = [
     [
         "Cube", 
         "Cube", 
-        "This room is wrapped around a well with a coping built at the same time. Very large blocks of stone extracted from the quarry remained there; their shape gave the name to the room. The "fountain" is accessed by a staircase leading to a sump surmounted by a ladder. This one allowed to measure the fluctuations of the water level of the water table.", 
+        "This room is wrapped around a well with a coping built at the same time. Very large blocks of stone extracted from the quarry remained there, their shape gave the name to the room. The 'fountain' is accessed by a staircase leading to a sump surmounted by a ladder. This one allowed to measure the fluctuations of the water level of the water table.",
         "20 Avenue de l'Observatoire \n   75006 Paris", 
         " 20m", 
         "https://paulmarechal.xyz/Cube/3D", 
