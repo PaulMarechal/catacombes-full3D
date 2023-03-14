@@ -263,11 +263,6 @@ function init(nameRoom) {
 	currentMesh = 0;
 
 	showMesh( currentMesh );
-    
-    // console.log(currentMesh);
-    // console.log("/////////");
-    // console.log(meshes);
-    // console.log("/////////");
 
 	//////////
 	// Panel

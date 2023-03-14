@@ -11,9 +11,11 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     elemCreated.textContent = textButton;
     newDiv.appendChild(elemCreated);
 
-    // const classElem = document.querySelector(`.`);
-    console.log(navigator.xr.isSessionSupported('immersive-vr'));
     const elemToTest = document.getElementById(idElem);
+
+    function isWebXRSupported() {
+        return 'xr' in navigator && 'isSessionSupported' in navigator.xr;
+    }
 
     if(idElem === "buttonAR"){
         elemCreated.setAttribute("title", "Augmented Reality for phones");
@@ -27,15 +29,15 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
         }
     } else if(idElem === "buttonVR"){
         elemCreated.setAttribute("title", "Virtual Reality for VR headset");
-        if (navigator.xr.isSessionSupported() === "false") {
-            elemCreated.style.backgroundColor = "#FFF"
-        } else {
+        if (isWebXRSupported() && navigator.xr.isSessionSupported()) {
             elemCreated.style.backgroundColor = "#00000050" 
             elemCreated.setAttribute("href", "#")
             elemCreated.style.cursor = "not-allowed"
             elemCreated.style.opacity = "0.2"
+        } else {
+            elemCreated.style.backgroundColor = "#FFF"
         }
-    }
+    } 
 }
 
 function addElement() {
