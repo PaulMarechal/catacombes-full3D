@@ -3,6 +3,7 @@ import * as NameRooms from "../roomInfo.js";
 var roomNumber = 0;
 
 function addButtonDiv(elem, idElem, link, textButton, newDiv){
+    console.log(textButton)
     var elemCreated = document.createElement(elem); 
     elemCreated.setAttribute("id", idElem);
     elemCreated.classList.add(idElem); 
@@ -20,22 +21,24 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     if(idElem === "buttonAR"){
         elemCreated.setAttribute("title", "Augmented Reality for phones");
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-            elemCreated.style.backgroundColor = "#FFF"
+            // elemCreated.style.backgroundColor = "#FFF"
+            elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
         } else {
             elemCreated.style.background = "#00000050"
-            elemCreated.setAttribute("href", "#")
+            elemCreated.setAttribute("href", "#");
             elemCreated.style.cursor = "not-allowed"
             elemCreated.style.opacity = "0.2"
         }
     } else if(idElem === "buttonVR"){
         elemCreated.setAttribute("title", "Virtual Reality for VR headset");
         if (isWebXRSupported() && navigator.xr.isSessionSupported()) {
+            elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`)
+            // elemCreated.style.backgroundColor = "#FFF" 
+        } else {
             elemCreated.style.backgroundColor = "#00000050" 
-            elemCreated.setAttribute("href", "#")
+            elemCreated.setAttribute("href", "#");
             elemCreated.style.cursor = "not-allowed"
             elemCreated.style.opacity = "0.2"
-        } else {
-            elemCreated.style.backgroundColor = "#FFF"
         }
     } 
 }

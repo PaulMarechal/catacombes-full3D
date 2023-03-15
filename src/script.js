@@ -162,7 +162,6 @@ function init(nameRoom) {
 	document.body.appendChild( renderer.domElement );
 
 	// Orbit controls for no-vr
-
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.minDistance = 1; 
@@ -176,7 +175,6 @@ function init(nameRoom) {
 	/////////
 	// Room
 	/////////
-
 	const room = new THREE.LineSegments(
 		new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
 		new THREE.LineBasicMaterial( { color: 0x808080 } )
@@ -234,8 +232,6 @@ function init(nameRoom) {
 	meshContainer = new THREE.Group();
 	meshContainer.position.set( 0, 1, -1.9 );
 	scene.add( meshContainer );
-
-	//
 
     gltfLoader.load(
         nameRoom, 
@@ -470,7 +466,7 @@ function makePanel() {
         onSet: () => {
             // console.log(seeRoomIn3d(roomNumber));
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}`;
+				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`;
 			} else {
 				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`;
 			}
