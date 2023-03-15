@@ -31,15 +31,55 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
         }
     } else if(idElem === "buttonVR"){
         elemCreated.setAttribute("title", "Virtual Reality for VR headset");
-        if (isWebXRSupported() && navigator.xr.isSessionSupported()) {
-            elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`)
-            // elemCreated.style.backgroundColor = "#FFF" 
+        if ('xr' in navigator) {
+
+            // If VR is supported
+            navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+        
+            if (supported) {
+                // VR is supported
+                elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
+            } else {
+                // VR isn't supported 
+                elemCreated.setAttribute('href', '#');
+                elemCreated.style.backgroundColor = "#00000050" 
+                elemCreated.style.cursor = "not-allowed"
+                elemCreated.style.opacity = "0.2"
+
+                elemCreated.addEventListener('click', (event) => {
+                    event.preventDefault();
+                });
+            }
+            });
         } else {
+            // Navigator dont work with WebXR
+            elemCreated.setAttribute('href', '#');
             elemCreated.style.backgroundColor = "#00000050" 
-            elemCreated.setAttribute("href", "#");
             elemCreated.style.cursor = "not-allowed"
             elemCreated.style.opacity = "0.2"
+
+            elemCreated.addEventListener('click', (event) => {
+                event.preventDefault();
+            });
         }
+
+
+
+
+
+
+
+
+        
+        // if (isWebXRSupported() && navigator.xr.isSessionSupported('immersive-vr')) {
+        //     elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`)
+        //     // elemCreated.style.backgroundColor = "#FFF" 
+        // } else {
+        //     elemCreated.style.backgroundColor = "#00000050" 
+        //     elemCreated.setAttribute("href", "#");
+        //     elemCreated.style.cursor = "not-allowed"
+        //     elemCreated.style.opacity = "0.2"
+        // }
     } 
 }
 
