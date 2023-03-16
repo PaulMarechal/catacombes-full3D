@@ -62,15 +62,6 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
                 event.preventDefault();
             });
         }
-
-
-
-
-
-
-
-
-        
         // if (isWebXRSupported() && navigator.xr.isSessionSupported('immersive-vr')) {
         //     elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`)
         //     // elemCreated.style.backgroundColor = "#FFF" 
@@ -113,9 +104,9 @@ function addElement() {
     location.textContent = `Location : \n ${NameRooms.roomInfos[roomNumber][3]}`
     newDiv.appendChild(location);
 
-    addButtonDiv("a", "buttonVR", `${NameRooms.roomInfos[roomNumber][5]}`, "VR", newDiv)
-    addButtonDiv("a", "button3D", `${NameRooms.roomInfos[roomNumber][5]}`, "3D", newDiv)
-    addButtonDiv("a", "buttonAR", `${NameRooms.roomInfos[roomNumber][5]}`, "AR", newDiv)
+    addButtonDiv("a", "buttonVR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "VR", newDiv)
+    addButtonDiv("a", "button3D", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "3D", newDiv)
+    addButtonDiv("a", "buttonAR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`, "AR", newDiv)
 
     var currentDiv = document.querySelector('.displayRooms');
     currentDiv.appendChild(newDiv);
