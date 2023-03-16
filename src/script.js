@@ -668,5 +668,18 @@ function removeVRButton(){
 				}, 9000);
 			}			
 		});
+	} else {
+		// If webXR is not supported  
+		let webxrButton = document.getElementById("WEBXRButton")
+		if(webxrButton){
+			setTimeout(() => {
+				webxrButton.animate(
+					  {opacity: 0},
+					  {duration: 3500, fill: 'forwards'}
+				).onfinish = () => {
+					webxrButton.style.display = "none";
+				}
+		  	}, 9000);
+		}	
 	}
 }
