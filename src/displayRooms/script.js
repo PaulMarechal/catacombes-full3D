@@ -90,7 +90,7 @@ function addElement() {
     img.setAttribute("alt", "test")
     img.setAttribute("id", "imgRoom")
     img.classList.add('imgRoom')
-    newDiv.appendChild(img);
+    newDiv.appendChild(img)
 
     // Room info
     var text = document.createElement("p");

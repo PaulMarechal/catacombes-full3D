@@ -543,6 +543,7 @@ function onWindowResize() {
 }
 
 //
+removeVRButton()
 
 
 function loop() {
@@ -642,11 +643,30 @@ function raycast() {
 			intersection[ 0 ].object = obj;
 
 			return intersection[ 0 ];
-
 		}
 
 		return closestIntersection;
 
 	}, null );
 
+}
+
+function removeVRButton(){
+	const vrButton = document.getElementById("VRButton")
+
+	if ('xr' in navigator) {
+		// If VR is supported
+		navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+			if (!supported) {
+				setTimeout(() => {
+				  	vrButton.animate(
+						{opacity: 0},
+						{duration: 3500, fill: 'forwards'}
+				  	).onfinish = () => {
+						vrButton.style.display = "none";
+				  	}
+				}, 9000);
+			}			
+		});
+	}
 }
