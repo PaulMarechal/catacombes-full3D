@@ -675,7 +675,7 @@ function removeVRButton(){
 			setTimeout(() => {
 				webxrButton.animate(
 					  {opacity: 0},
-					  {duration: 3500, fill: 'forwards'}
+					  {duration: 1500, fill: 'forwards'}
 				).onfinish = () => {
 					webxrButton.style.display = "none";
 				}
