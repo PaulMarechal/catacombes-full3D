@@ -9,6 +9,7 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     elemCreated.classList.add(idElem); 
     elemCreated.classList.add("buttonRedirect3D");
     elemCreated.setAttribute("href", link);
+    elemCreated.setAttribute("target", "_blank");
     elemCreated.textContent = textButton;
     newDiv.appendChild(elemCreated);
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
+    <meta name="keywords" content="Catacombes, Paris, Ktas, katas, catas, catacombes illegales, catacombes interdites, catacombes paris, carrieres, grs, GRS, explo, three.js, developper, web, plans catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
+    <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle. Fais apparaître les salles chez toi grâce à la technologie WebXR. Accède à un patrimoine méconnu de Paris datant même d'avant la révolution française">
+    <meta itemprop="name" content="Découverte des Catacombes Interdites sous Paris">
+    <meta itemprop="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle. Fais apparaître les salles chez toi grâce à la technologie WebXR. Accède à un patrimoine méconnu de Paris datant même d'avant la révolution française">
+    <meta property="og:url" content="https://catacombes.xyz">
+    <meta property="og:title" content="Découverte des Catacombes interdites en 3D | VR | AR ">
+    <meta property="og:description" content="Découvrir les catacombes interdites sous Paris en realité augmenté et virtuelle">
+    <meta property="og:image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+    <meta itemprop="image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+    <meta name="apple-mobile-web-app-title" content="Catacombes interdites">
+    <meta name="application-name" content="Visitez les catacombes interdites en 3D | VR | AR">
+    <meta name="author" content="Paul Marechal">
+    <link rel="alternate" hreflang="fr" href="https://catacombes.xyz">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://paulmarechal.xyz/test/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://paulmarechal.xyz/test/assets/images/catacombes-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://paulmarechal.xyz/test/assets/images/catacombes-16x16.png">
+    <link rel="manifest" href="https://catacombes.xyz/site.webmanifest">
+    <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body style="background: rgb(231, 231, 231)">
+    <h1>Catacombes <span>  UNOFFICIAL</span></h1>
+
+    <input id="burger" type="checkbox" />
+
+    <label for="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav>    
+        <ul>
+            <li><a class="linkBurger" href="../index.html">Home</a></li>
+            <li><a class="linkBurger" href="#">Rooms</a></li>
+            <li><a class="linkBurger" href="#">Map</a></li>
+        </ul>  
+    </nav>
+
+    <div class="parentTextExplications">
+
+        <!-- Images background div -->
+        <div class="image1 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre" alt="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre"></div>
+        <div class="image2 marginPageimages" title="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.." alt="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.."></div>
+        <div class="image4 marginPageimages" style="z-index: 9; background-color: #FFF" title="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse." alt="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse."></div>
+        <div class="image5 marginPageimages" title="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778." alt="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778."></div>
+        <div class="image6 marginPageimages" title="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris." alt="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris."></div>
+        <div class="image7 marginPageimages" title="Double escalier minéralogique de Monsieur Lhuillier rue Notre Dame des Champs. Ils servaient à présenter les différentes roches présentes dans les carrières et ont été utilisés à la création de nombreux bâtiments à Paris." alt="Double escalier minéralogique de Monsieur Lhuillier rue Notre Dame des Champs. Ils servaient à présenter les différentes roches présentes dans les carrières et ont été utilisés à la création de nombreux bâtiments à Paris."></div>
+        <div class="image10 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâto en 1778." alt="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâto en 1778."></div>
+        <div class="image11 marginPageimages" title="Couloir libre de tout 'graph' comme il pouvait être à l'époque ou les carrières étaient encore utilisées pour extraire de la roche." alt="Couloir libre de tout 'graph' comme il pouvait être à l'époque ou les carrières étaient encore utilisées pour extraire de la roche."></div>
+        <div class="image12 marginPageimages" title="Salle de l'Apéro, ancienne salle de préparation de la chaux ( Héricart de Thury ). Bassin d'extinction à gauche et basssin réservoir à droite" alt="Salle de l'Apéro, ancienne salle de préparation de la chaux ( Héricart de Thury ). Bassin d'extinction à gauche et basssin réservoir à droite"></div>
+        <div class="image13 marginPageimages" title="Couloir libre de tout 'graph' comme il pouvait être à l'époque ou les carrières était encore utilisées pour extraire de la roche." alt="Couloir libre de tout 'graph' comme il pouvait être à l'époque ou les carrières étaient encore utilisées pour extraire de la roche."></div>
+        <div class="image14 marginPageimages" title="Salle Cube, qui tient son nom des différents cubes présents dans la salle faisant office de chaise. La salle se situe sous l'Avenue de l'Observatoire dans les catacombes de Paris." alt="Salle Cube, qui tient son nom des différents cubes présents dans la salle faisant office de chaise. La salle se situe sous l'Avenue de l'Observatoire dans les catacombes de Paris."></div>
+        <div class="image15 marginPageimages" title="Fontaine des chartreux ou on peut trouver une fontaine naturelle et un puit permettant de voir le niveau de la nappe phréatique. Une plaque rend hommage à Parsek depuis 2021. Fontaine réalisé par l'inspecteur Héricart de Thury au début du XIXe siècle, sous l'ancien domaine des Chartreux." alt="Fontaine des chartreux ou on peut trouver une fontaine naturelle et un puit permettant de voir le niveau de la nappe phréatique. Une plaque rend hommage à Parsek depuis 2021. Fontaine réalisé par l'inspecteur Héricart de Thury au début du XIXe siècle, sous l'ancien domaine des Chartreux."></div>
+        <div class="image16 marginPageimages" title="Tombe de Philiber Aspairt, homme connu pour être décédé dans les catacombes de Paris le 3 novembre 1793 et dont un tombeau a été construit à l'endroit où il a été retrouvé. Il se serait perdu en cherchant le trésor des moines chartreux.. La Chartreuse" alt="Tombe de Philiber Aspairt, homme connu pour être décédé dans les catacombes de Paris le 3 novembre 1793 et dont un tombeau a été construit à l'endroit où il a été retrouvé. Il se serait perdu en cherchant le trésor des moines chartreux.. La Chartreuse"></div>
+        <div class="image17 marginPageimages" title="Passe-muraille en référence à la nouvelle de Marcel Aymé. Représente un homme a moitié bloqué dans le mur. Présent dans le secteur de KCP dans les catacombes."></div>
+        <div class="image18 marginPageimages" title="Salle 'Sarko' pour sarcophage en référence à la table. On peut aussi y trouver un puit pour voir le niveau de la nappe phréatique."></div>
+        <div class="image20 marginPageimages" title="Arche dite 'Arche Perdu' dans le labyrinthe des souterrains du Val de Grâce dans les catacombes de Paris. "></div>
+        <div class="image21 marginPageimages" title="Salle du Château rue A. Daudet dans les catacombes de Paris."></div>
+        <div class="image22 marginPageimages" title="Plaque commémorative de consolidation des carrières sous le réservoir des eaux de la vanne le 6 mars 1869 dans les carrières de Paris."></div>
+        <div class="image24 marginPageimages" title="Salle 'Solcarlus' dans les carrières du 13e arrondissement à Paris."></div>
+        <div class="image25 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Salle 'Solcarlus' dans les carrières du 13e arrondissement à Paris."></div>
+        <div class="image26 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Salle 'Solcarlus' dans les carrières du 13e arrondissement à Paris."></div>
+
+        <div id="bigThanks">
+            <h3>Un grand merci à Gaspard Duval pour ses images</h3>
+            </br>
+            <div id="iconLinkDuval">
+                <!-- Facebook icon -->
+                <a href="#" id="facebookDuvalIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                    </svg>
+                </a>
+            
+                <!-- Instagram icon -->
+                <a href="#" id="instagramDuvalIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+                        <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                        <path d="M16.5 7.5l0 .01"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>
