@@ -90,7 +90,7 @@ function addElement() {
     img.setAttribute("alt", "test")
     img.setAttribute("id", "imgRoom")
     img.classList.add('imgRoom')
-    newDiv.appendChild(img)
+    newDiv.appendChild(img);
 
     // Room info
     var text = document.createElement("p");
@@ -101,7 +101,7 @@ function addElement() {
     // Location
     var location = document.createElement("p");
     location.classList.add('adressRoom');
-    location.textContent = `Location : \n ${NameRooms.roomInfos[roomNumber][3]}`
+    location.textContent = `Location : \n ${NameRooms.roomInfos[roomNumber][3]}\n\n Depth: ${NameRooms.roomInfos[roomNumber][4]}`
     newDiv.appendChild(location);
 
     addButtonDiv("a", "buttonVR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "VR", newDiv)

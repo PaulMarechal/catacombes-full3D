@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Bebas+Neue&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+}
+
+h1, h2, a{
+    font-family: 'Bebas Neue', cursive;
+}
+
+p{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
 
 html,
@@ -17,12 +27,11 @@ canvas {
 
 body h1 {
     position: fixed;
-    top: 15px;
+    top: 8px;
     left: 50px;
     z-index: 6;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 900;
-    font-family: sans-serif;
     text-transform: uppercase;
 }
 
@@ -30,7 +39,7 @@ body h1 > span {
     text-transform: none;
     opacity: 0.5;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1.7rem;
 }
   
 body input + label {
@@ -111,9 +120,19 @@ body input ~ nav > ul > li > a {
     text-transform: uppercase;
     color: #020304;
     font-weight: 700;
-    font-family: sans-serif;
     display: block;
-    padding: 30px;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+body input ~ nav > ul > li > a:hover{
+    color: #fff!important;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    letter-spacing: 0.15rem;
+    border-right: 0.5px solid #fff;
+    transition: -webkit-text-stroke-color 0.8s ease-out, -webkit-text-stroke-width 0.8s ease-out;
+
 }
 
 body input:checked ~ nav {
@@ -132,7 +151,7 @@ body input:checked ~ nav > ul > li {
     margin-top: 0em;
     padding-top: 3rem;
     overflow: scroll; 
-    height: 54em; 
+    height: 42rem; 
     text-align: center; 
 }
 
@@ -141,31 +160,36 @@ body input:checked ~ nav > ul > li {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 0.5fr repeat(2, 1fr) repeat(2, 0.7fr);
     width: 40%; 
-    height: 40%;
+    /* height: 43%; */
+    height: 23rem;
     margin: 1em 2em;
-    border: 1px solid rgb(207, 207, 207); 
     padding: 5px 10px; 
     background: rgba( 255, 255, 255, 0.5 );
+    border-radius: 10px;
+    border: 0.3px solid #d2caca;
+}
+
+.parentDivRoomInfo:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.37 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .titleRoom { 
     grid-area: 1 / 1 / 2 / 7; 
-    padding-left: 10px; 
-    padding-top: 3px; 
+    padding-left: 5px; 
+    padding-top: 8px; 
     text-align: left;
-    font-family: sans-serif;
     text-transform: uppercase;
+    font-size: 2rem;
 }
 
 .textRoom { 
     grid-area: 2 / 1 / 5 / 4; 
     text-align: -webkit-left; 
     padding: 0px 5px; 
+    font-size: 1.3rem;
 }
 .imgRoom { grid-area: 2 / 4 / 5 / 7; }
 .adressRoom{ 
@@ -173,7 +197,7 @@ body input:checked ~ nav > ul > li {
     text-align: left; 
     white-space: pre-line; 
     padding-top: 5px; 
-    padding-left: 2px;
+    padding-left: 6px;
 }
 
 .buttonVR { grid-area: 5 / 4 / 6 / 5; margin-right: 0em!important}
@@ -185,8 +209,17 @@ body input:checked ~ nav > ul > li {
     padding: 10px; 
     border-radius: 10px;
     text-decoration: none;
-    border: #000 1px solid; 
+    border: #978e8e 1px solid; 
     color: #000;
+    font-size: 1.3rem; 
+    padding: 8px 12px;
+}
+
+.buttonRedirect3D:hover{
+    box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .imgRoom{
@@ -203,4 +236,59 @@ ul{
     padding-left: 10px;
 }
 
+/* Mode paysage */
+@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    .parentDivRoomInfo{
+        width: 70%; 
+    }
+}
 
+/* Mode portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .parentDivRoomInfo{
+        display: inline-grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        width: 80%;
+        height: 48%;
+    }
+
+    .titleRoom{
+        grid-area: 1 / 1 / 2 / 6;
+    }
+
+    .textRoom{
+        grid-area: 2 / 1 / 6 / 6;
+        height: inherit;
+    }
+
+    .imgRoom{
+        grid-area: 6 / 3 / 9 / 6;
+        width: 70%;
+        height: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .adressRoom{
+        grid-area: 6 / 1 / 9 / 3;
+    }
+
+    .depthRoom{
+        grid-area: 9 / 1 / 10 / 3;
+    }
+
+    .buttonVR{
+        grid-area: 9 / 3 / 10 / 4;
+    }
+
+    .button3D{
+        grid-area: 9 / 4 / 10 / 5;
+    }
+
+    .buttonAR{
+        grid-area: 9 / 5 / 10 / 6;
+    }
+}
+  
+  
