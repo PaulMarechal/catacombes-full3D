@@ -368,11 +368,6 @@ ul{
     background-image: url("https://catacombes.xyz/assets/images/salleSolcarlus_catacombes.jpg");
 }
 
-.image26 { 
-    grid-area: 2 / 1 / 3 / 2;
-    background-image: url("https://catacombes.xyz/assets/images/salleSolcarlus_catacombes.jpg");
-}
-
 .marginPageimages{
     background-size: cover; 
     background-position: center; 
@@ -414,12 +409,86 @@ ul{
     border-radius: 5px;
 }
 
+.iconeBurgerMenu{
+    display: inline-flex;
+    text-align: center;
+    margin-left: 1em;
+    position: fixed;
+    bottom: 1em;
+}
+
+.iconeBurgerMenu a{
+    padding: 0 1rem;
+}
+  
+#iconeLinkedin:hover svg {
+    border-radius: 5px;
+}
+  
+#iconeLinkedin:hover svg path:first-child {
+    transition: 0.3s;
+    fill: #0077B5;
+    stroke-width: 2px;
+}
+
+#iconeLinkedin:hover svg path{
+    transition: 0.3s;
+    stroke: #fff;
+}
+
+#iconeSite:hover svg path {
+    transition: 0.3s;
+    fill: #ffb703;
+}
+
+#iconeSite:hover svg{
+    border-radius: 5px;
+}
+
+#iconeGit:hover svg path{
+    transition: 0.3s;
+    stroke: #fff;
+    fill: #023047;
+}
+
+#iconeGit:hover svg{
+    border-radius: 5px;
+}
+
+#iconeMail:hover svg path:nth-child(2) {
+    transition: 0.3s;
+    fill: #06d6a0;
+}
+
+#iconeMail:hover svg path{
+    transition: 0.3s;
+    stroke: #FFF;
+    fill: #06d6a0;
+}
+
+#iconeMail:hover svg{
+    border-radius: 5px;
+}
+
+.textStroke{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #020304;
+    color: #fff;
+}
 
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
     .parentDivRoomInfo{
         width: 70%; 
+    }
+
+    .parentTextExplications{
+        height: 15em;
+    }
+
+    .bigThanks{
+        position: relative;
     }
 }
 
@@ -469,6 +538,28 @@ ul{
     .buttonAR{
         grid-area: 9 / 5 / 10 / 6;
     }
+
+    .marginPageimages{
+        height: 5em;
+    }
+
+    #bigThanks{
+        width: 15em;
+        position: relative;
+        left: -6em;
+        margin: 1em;
+
+    }
+
+    .parentTextExplications{
+        height: 80em;
+        grid-template-rows: repeat(5, 6em);
+    }
+
+    .image11, .image14, .image12{
+        height: 11em;
+    }
+
 }
   
   

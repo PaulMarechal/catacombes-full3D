@@ -446,7 +446,7 @@ function makePanel() {
                     console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(-0.5, 1, -2)
-                    gltf.scene.rotation.y = 0.6
+                    gltf.scene.rotation.y = 0.3
                     scene.add(gltf.scene)
 					TextPanel.TextPanel(scene, roomNumber)
                     console.log(`Go! Go! Go! ${roomNumber}`);
@@ -675,7 +675,7 @@ function removeVRButton(){
 			setTimeout(() => {
 				webxrButton.animate(
 					  {opacity: 0},
-					  {duration: 1500, fill: 'forwards'}
+					  {duration: 1000, fill: 'forwards'}
 				).onfinish = () => {
 					webxrButton.style.display = "none";
 				}
