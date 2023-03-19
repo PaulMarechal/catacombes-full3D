@@ -484,12 +484,20 @@ ul{
     }
 
     .parentTextExplications{
-        height: 15em;
+        height: 14em;
     }
 
-    .bigThanks{
+    #bigThanks{
+        width: 26em;
         position: relative;
+        left: -8em;
+        margin: 1em;
     }
+
+    body input ~ nav > ul > li > a{
+        padding: 0.6rem 2.4rem;
+    }
+
 }
 
 /* Mode portrait */
@@ -548,7 +556,6 @@ ul{
         position: relative;
         left: -6em;
         margin: 1em;
-
     }
 
     .parentTextExplications{
@@ -560,6 +567,13 @@ ul{
         height: 11em;
     }
 
+    body input:checked ~ nav{
+        width: 25rem;
+    }
+
+    .iconeBurgerMenu{
+        left: 4.3em!important;
+    }
 }
   
   
