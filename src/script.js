@@ -151,7 +151,11 @@ function init(nameRoom) {
 	scene.background = new THREE.Color( 0x505050 );
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
-	camera.position.set( 0, 1.6, 0 );
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		camera.position.set(0, 1.9, 0);
+	} else {
+		camera.position.set( 0, 1.6, 0 );
+	}
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
