@@ -477,18 +477,60 @@ ul{
 
 .parentMap {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
     background-image: url("https://catacombes.xyz/assets/images/paris.png");
-    width: 69%; 
-    background-size: contain;
+    width: 75%; 
+    background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
     border: #000000 solid 11px;
     margin-top: 3em;
-    /* cursor: none!important; */
-    /* height: 37.8em; */
 }
+
+.petitMontrouge{
+    grid-area: 9 / 5 / 12 / 7;
+    background-color: rgb(115, 255, 0, 0.33);
+}
+
+.montparnasse{
+    grid-area: 7 / 5 / 9 / 7;
+    background-color: rgb(39, 83, 243, 0.33);
+}
+
+.notreDameDesChamps{
+    grid-area: 6 / 5 / 7 / 6;
+    background-color: rgb(231, 16, 16, 0.33);
+
+}
+
+.valDeGrace{
+    grid-area: 6 / 6 /  7 / 7;
+    background-color: rgb(223, 216, 13, 0.33);
+}
+
+.textCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.textCenter:hover{
+    box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.5 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
+}
+
+.districtName{
+    color: #484848;
+    opacity: 1!important;
+    text-align: center;
+    margin: 0;
+    /* -webkit-text-stroke: 0.5px #000; */
+}
+
 
 
 /* Mode paysage */

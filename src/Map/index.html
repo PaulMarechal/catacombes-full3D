@@ -28,6 +28,7 @@
     <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <script type="module" src="./script.js"></script>
 </head>
 <body style="background: rgb(231, 231, 231)">
     <h1>Catacombes <span>  UNOFFICIAL</span></h1>
@@ -95,14 +96,20 @@
     </nav>
 
     <div class="parentMap" id="parentDiv">
-
+        <div class="petitMontrouge textCenter">
+            <h2 class="districtName">Petit Montrouge</h2>
+        </div>
+        <div class="montparnasse textCenter">
+            <h2 class="districtName">Montparnasse</h2>
+        </div>
+        <div class="notreDameDesChamps textCenter">
+            <h2 class="districtName">Notre Dame des champs</h2>
+        </div>
+        <div class="valDeGrace textCenter">
+            <h2 class="districtName">Val de Grâce</h2>
+        </div>
     </div>
         
     </div>
-    <script>
-        let mapDiv = document.getElementById("parentDiv");
-        const heightMap = `${window.innerHeight - 110}px`
-        mapDiv.style.height = heightMap
-    </script>
 </body>
 </html>
