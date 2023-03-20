@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <script type="module" src="./script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
     <meta name="keywords" content="Catacombes, Paris, Ktas, katas, catas, catacombes illegales, catacombes interdites, catacombes paris, carrieres, grs, GRS, explo, three.js, developper, web, plans catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
@@ -44,8 +43,8 @@
     <nav>    
         <ul>
             <li><a class="linkBurger" href="../index.html">Home</a></li>
+            <li><a class="linkBurger" href="../displayRooms/">Rooms</a></li>
             <li><a class="linkBurger" href="../Images/">Images</a></li>
-            <li><a class="linkBurger" href="#">Map</a></li>
             <li class="iconeBurgerMenu">
                 <!-- Git -->
                 <a href="#" id="iconeGit">
@@ -95,12 +94,15 @@
         </ul>  
     </nav>
 
-    <div class="displayRooms"></div>
+    <div class="parentMap" id="parentDiv">
+
+    </div>
         
+    </div>
     <script>
-        let displayRooms = document.querySelector(".displayRooms");
-        const heightRooms = `${window.innerHeight - 80}px`
-        displayRooms.style.height = heightRooms
+        let mapDiv = document.getElementById("parentDiv");
+        const heightMap = `${window.innerHeight - 110}px`
+        mapDiv.style.height = heightMap
     </script>
 </body>
 </html>

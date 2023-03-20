@@ -44,7 +44,7 @@
         <ul>
             <li><a class="linkBurger" href="../index.html">Home</a></li>
             <li><a class="linkBurger" href="../displayRooms/">Rooms</a></li>
-            <li><a class="linkBurger" href="#">Map</a></li>
+            <li><a class="linkBurger" href="../Map/">Map</a></li>
             <li class="iconeBurgerMenu">
                 <!-- Git -->
                 <a href="#" id="iconeGit">
@@ -99,8 +99,6 @@
         <!-- Images background div -->
         <div class="image1 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre" alt="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre"></div>
         <div class="image2 marginPageimages" title="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.." alt="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.."></div>
-        <!-- <div class="image3" title="Proche de la 'salle' des Radios et de 'l'escalier du Jardin' dans les souterrains du Val de Grâce dans les catacombes de Paris." alt="Proche de la 'salle' des Radios et de 'l'escalier du Jardin' dans les souterrains du Val de Grâce dans les catacombes de Paris."></div>
-        <div class="image4" style="background-color: #FFF" title="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse." alt="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse."></div> -->
         <div class="image4 marginPageimages" style="background-color: #FFF" title="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse." alt="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse."></div>
         <div class="image5 marginPageimages" title="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778." alt="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778."></div>
         <div class="image6 marginPageimages" title="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris." alt="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris."></div>
@@ -144,5 +142,10 @@
             </div>
         </div>
     </div>
+    <script>
+        let imageDiv = document.querySelector(".parentTextExplications");
+        const heightMap = `${window.innerHeight - 90}px`
+        imageDiv.style.height = heightMap
+    </script>
 </body>
 </html>

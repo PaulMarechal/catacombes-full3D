@@ -153,7 +153,7 @@ body input:checked ~ nav > ul > li {
     margin-top: 0em;
     padding-top: 3rem;
     overflow: scroll; 
-    height: 42rem; 
+    /* height: 42rem;  */
     text-align: center; 
 }
 
@@ -226,10 +226,10 @@ body input:checked ~ nav > ul > li {
 
 .imgRoom{
     background-size: contain;
-    width: 94%; 
+    width: 84%; 
     height: 100%; 
-    margin-left: 5%; 
     border-radius: 5px;
+    margin: auto;
 }
 
 ul{
@@ -245,7 +245,6 @@ ul{
     grid-template-rows: repeat(5, 17.9em);
     margin: 3rem 1rem; 
     overflow-y: scroll; 
-    height: 40rem;
 }
 
 .image1 {
@@ -471,9 +470,24 @@ ul{
 }
 
 .textStroke{
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #020304;
     color: #fff;
+}
+
+.parentMap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-image: url("https://catacombes.xyz/assets/images/paris.png");
+    width: 69%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    border: #000000 solid 11px;
+    margin-top: 3em;
+    /* cursor: none!important; */
+    /* height: 37.8em; */
 }
 
 
