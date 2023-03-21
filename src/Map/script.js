@@ -13,12 +13,31 @@ mapDiv.style.gridTemplateColumns = gridTemplateColumns
 mapDiv.style.height = heightMap
 
 // Click on distrit
+// const petitMontrougeClick = document.querySelector(".petitMontrouge");
+// petitMontrougeClick.addEventListener("click", event => {
+//     mapDiv.style.transition = "opacity 1s ease-out"
+//     mapDiv.style.opacity = 0
+
+//     montrougeDiv.style.display = "block"
+//     montrougeDiv.style.transition = "opacity 1s ease-out"
+//     montrougeDiv.style.opacity = 1
+// })
 const petitMontrougeClick = document.querySelector(".petitMontrouge");
+// const mapDiv = document.querySelector(".mapDiv");
+const montrougeDiv = document.querySelector(".montrougeDiv");
+
 petitMontrougeClick.addEventListener("click", event => {
-    mapDiv.style.transition = "opacity 1s ease-out"
-    mapDiv.style.opacity = 0
-    console.log()
-})
+    mapDiv.style.opacity = 0;
+    setTimeout(() => {
+        mapDiv.style.display = "none";
+        montrougeDiv.style.display = "grid";
+        setTimeout(() => {
+            montrougeDiv.style.transition = "opacity 1s ease-out"
+            montrougeDiv.style.opacity = 1;
+        }, 50);
+    }, 200);
+});
+
 
 
 // Petit montrouge
