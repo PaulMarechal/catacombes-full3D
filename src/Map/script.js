@@ -1,3 +1,5 @@
+import * as NameRooms from "../roomInfo.js";
+
 // Height grid ( in pixels)
 let mapDiv = document.querySelector(".parentMap");
 const heightMap = `${window.innerHeight - 110}px`
@@ -23,36 +25,63 @@ mapDiv.style.height = heightMap
 //     montrougeDiv.style.opacity = 1
 // })
 const petitMontrougeClick = document.querySelector(".petitMontrouge");
-// const mapDiv = document.querySelector(".mapDiv");
+const montparnasseClick = document.querySelector(".montparnasse");
+const notreDameDesChampsClick = document.querySelector(".notreDameDesChamps");
+const valDeGraceClick = document.querySelector(".valDeGrace");
+
 const montrougeDiv = document.querySelector(".montrougeDiv");
 
-petitMontrougeClick.addEventListener("click", event => {
-    mapDiv.style.opacity = 0;
-    setTimeout(() => {
-        mapDiv.style.display = "none";
-        montrougeDiv.style.display = "grid";
+function clickOnDivDistrict(areaDistrict, areaName){
+    areaDistrict.addEventListener("click", event => {
+        mapDiv.style.opacity = 0;
         setTimeout(() => {
-            montrougeDiv.style.transition = "opacity 1s ease-out"
-            montrougeDiv.style.opacity = 1;
-        }, 50);
-    }, 200);
-});
+            mapDiv.style.transition = "opacity 1s ease-out";
+            mapDiv.style.display = "none";
+            montrougeDiv.style.display = "grid";
+    
+            setTimeout(() => {
+                montrougeDiv.style.transition = "opacity 1s ease-out"
+                montrougeDiv.style.opacity = 1;
+                console.log(areaDistrict)
+                displayRooms(areaName)
+            }, 50);
+        }, 200);
+    });    
+}
+
+clickOnDivDistrict(petitMontrougeClick, "Petit Montrouge")
+clickOnDivDistrict(montparnasseClick, "Montparnasse")
+clickOnDivDistrict(notreDameDesChampsClick, "Notre Dame des Champs")
+clickOnDivDistrict(valDeGraceClick, "Val de Grace")
+
+// petitMontrougeClick.addEventListener("click", event => {
+//     mapDiv.style.opacity = 0;
+//     setTimeout(() => {
+//         mapDiv.style.transition = "opacity 1s ease-out";
+//         mapDiv.style.display = "none";
+//         montrougeDiv.style.display = "grid";
+
+//         setTimeout(() => {
+//             montrougeDiv.style.transition = "opacity 1s ease-out"
+//             montrougeDiv.style.opacity = 1;
+//             displayRooms("Petit Montrouge")
+//         }, 50);
+//     }, 200);
+// });
 
 
 
 // Petit montrouge
 const petitMontrouge = document.querySelector(".montrougeDiv")
 
-const templateRowsSmallMap = ((window.innerHeight + 180) / 9)
-const gridTemplateRowsSmallMap = `${templateRowsSmallMap / 2}px ${templateRowsSmallMap / 2}px repeat(5, ${templateRowsSmallMap}px) ${templateRowsSmallMap / 2}px ${templateRowsSmallMap / 2}px`
+const templateRowsSmallMap = ((window.innerHeight + 200) / 12)
+const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 8}px) repeat(8, ${templateRowsSmallMap}px) repeat(2, ${templateRowsSmallMap / 4}px)`
 
 const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
-const gridTemplateColumnsSmallMap = `repeat(7, ${templateColumnsSmallMap}px)`
+const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${templateColumnsSmallMap}px) ${templateRowsSmallMap / 2}px`
 
 petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
-console.log(gridTemplateRowsSmallMap)
 petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
-console.log(gridTemplateColumnsSmallMap)
 
 /**
  * Crete presentation div for small map
@@ -64,7 +93,7 @@ console.log(gridTemplateColumnsSmallMap)
  *  alt image
  * }
  */
-function createParentDivPrez(titleRoom, locationRoom, depthRoom, srcImage, altImage) {
+function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const parentDivPrez = document.createElement("div");
     parentDivPrez.classList.add("parentDivPrezSecond");
     parentDivPrez.style.display = "grid"
@@ -72,33 +101,38 @@ function createParentDivPrez(titleRoom, locationRoom, depthRoom, srcImage, altIm
     const titleRoomSmallDiv = document.createElement("div");
     titleRoomSmallDiv.classList.add("titleRoomSmallDiv");
     const title = document.createElement("h2");
-    title.innerText = titleRoom;
+    title.innerText = `${NameRooms.roomInfos[roomNumber][1]}`;
     titleRoomSmallDiv.appendChild(title);
   
     const locationRoomSmallDiv = document.createElement("div");
     locationRoomSmallDiv.classList.add("locationRoomSmallDiv");
     const location = document.createElement("p");
-    location.innerText = locationRoom;
+    location.innerText = `${NameRooms.roomInfos[roomNumber][3]}`;
     locationRoomSmallDiv.appendChild(location);
     const depth = document.createElement("p");
-    depth.innerText = depthRoom;
-    locationRoomSmallDiv.appendChild(depth);
+    depth.classList.add("depthSmallRoom");
+    depth.innerText = `Depth : \n ${NameRooms.roomInfos[roomNumber][4]}`;
   
     const imageRoomSmallDiv = document.createElement("div");
     imageRoomSmallDiv.classList.add("imageRoomSmallDiv");
-    imageRoomSmallDiv.style.width = "53%";
+    imageRoomSmallDiv.style.width = "79%";
     imageRoomSmallDiv.style.marginTop = "4px";
     imageRoomSmallDiv.style.margin = "auto";
 
     const image = document.createElement("img");
-    image.setAttribute("src", srcImage);
-    image.setAttribute("alt", altImage);
-    image.style.width = "100%";
+    image.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.png`);
+    image.setAttribute("alt", `Image of the ${NameRooms.roomInfos[roomNumber][0]} room placed in the forbidden catacombs of Paris`);
+    image.style.width = "98%";
+    image.style.borderRadius = "8px"
     imageRoomSmallDiv.appendChild(image);
   
     parentDivPrez.appendChild(titleRoomSmallDiv);
     parentDivPrez.appendChild(locationRoomSmallDiv);
     parentDivPrez.appendChild(imageRoomSmallDiv);
+    parentDivPrez.appendChild(depth);
+
+    parentDivPrez.style.gridArea = gridAreaRoom[numberToDisplayGrid]
+    console.log(gridAreaRoom[numberToDisplayGrid])
   
     return parentDivPrez;
 }
@@ -106,10 +140,43 @@ function createParentDivPrez(titleRoom, locationRoom, depthRoom, srcImage, altIm
 
 // createParentDivPrez("Belier", "Location: testtesttest", "Depth: testM", "https://catacombes.xyz/Belier/Belier.png", "Image of the Belier room of the catacombes of paris")
 
-function addChild(idDiv, child){
-    const mainDiv = document.getElementById(idDiv)
+function addChild(child){
+    const mainDiv = document.getElementById("petitMontrouge")
+    console.log(child)
     mainDiv.appendChild(child)
 }
   
-addChild("belierDiv", createParentDivPrez("Belier", "Location: testtesttest", "Depth: testM", "https://catacombes.xyz/Belier/Belier.png", "Image of the Belier room of the catacombes of paris"))
+const gridAreaRoom = [
+    "3 / 2 / 4 / 4",
+    "4 / 2 / 5 / 4", 
+    "5 / 2 / 6 / 4", 
+    "6 / 2 / 7 / 4", 
+    "7 / 2 / 8 / 4", 
+    "8 / 2 / 9 / 4", 
+    "9 / 2 / 10 / 4", 
+    "10 / 2 / 11 / 4", 
+    "3 / 7 / 4 / 9", 
+    "4 / 7 / 5 / 9", 
+    "5 / 7 / 6 / 9", 
+    "6 / 7 / 7 / 9", 
+    "7 / 7 / 8 / 9", 
+    "8 / 7 / 9 / 9", 
+    "9 / 7 / 10 / 9", 
+    "10 / 7 / 11 / 9",   
+]
+
+function displayRooms(districtName) {
+    console.log(districtName)
+    var roomNumber = 0
+    var displayGrid = 0;
+    for (let i = 0; i < NameRooms.roomInfos.length; i++) {
+        if(NameRooms.roomInfos[roomNumber][6] === districtName){
+            addChild(createParentDivPrez(roomNumber, displayGrid))
+            displayGrid++
+
+        }
+        roomNumber++
+    }
+}
+
 

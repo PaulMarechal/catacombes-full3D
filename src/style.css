@@ -492,18 +492,18 @@ ul{
 }
 
 .montparnasse{
-    grid-area: 7 / 5 / 9 / 7;
+    grid-area: 8 / 5 / 9 / 7;
     background-color: rgb(39, 83, 243, 0.33);
 }
 
 .notreDameDesChamps{
-    grid-area: 6 / 5 / 7 / 6;
+    grid-area: 7 / 5 / 8 / 6;
     background-color: rgb(231, 16, 16, 0.33);
 
 }
 
 .valDeGrace{
-    grid-area: 6 / 6 /  7 / 7;
+    grid-area: 7 / 6 / 8 / 7;
     background-color: rgb(223, 216, 13, 0.33);
 }
 
@@ -532,6 +532,11 @@ ul{
     /* -webkit-text-stroke: 0.5px #000; */
 }
 
+.montrougeDiv{
+    grid-column-gap: 4px;
+    grid-row-gap: 5px;
+}
+
 /* Small map */
 .montrougeDiv{
     display: grid;
@@ -542,7 +547,7 @@ ul{
 }
 
 .imageMapMontrouge{
-    grid-area: 3 / 3 / 8 / 6;
+    grid-area: 3 / 4 / 11 / 7;
     background-image: url("https://catacombes.xyz/assets/images/petitMontrouge.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -552,28 +557,18 @@ ul{
 
 .parentDivPrezSecond{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 0.8fr) 0.7fr;
     grid-template-rows: repeat(3, 1fr);
-    display: grid;
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 10px;
+    padding: 2px 0px 2px 10px;
+    background: rgba( 255, 255, 255, 0.5 );
+    border-radius: 10px;
+    border: 0.3px solid #d2caca;
 }
 
 .parentDivPrezMain{
     grid-area: 3 / 1 / 4 / 3;
 }
 
-
-
-#belierDiv{
-    grid-area: 3 / 1 / 4 / 3;
-}
-
-#concressionDiv{
-    grid-area: 4 / 1 / 5 / 3;
-}
 .titleRoomSmallDiv{
     grid-area: 1 / 1 / 2 / 4;
 }
@@ -583,7 +578,11 @@ ul{
 }
 
 .imageRoomSmallDiv{
-    grid-area: 1 / 4 / 4 / 6;
+    grid-area: 1 / 4 / 4 / 5;
+}
+
+.depthSmallRoom{
+    grid-area: 2 / 3 / 4 / 4;
 }
 
 

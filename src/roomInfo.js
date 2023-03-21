@@ -9,16 +9,6 @@
 */
 export const roomInfos = [
 
-    // Bocal
-    [
-        "Bocal", 
-        "Bocal", 
-        "Room of rest arranged in height close to an old staircase of exit street notre dame des champs",
-        "77 Rue de Notre-Dame des Champs \n   75006 Paris",
-        " 20m", 
-        "https://catacombes.xyz/Bocal/3D", 
-    ],
-
     // Anubis
     [
         "Anubis", 
@@ -27,6 +17,7 @@ export const roomInfos = [
         "29 Rue d'Alesia \n   75014 Paris", 
         " 30m",
         "https://catacombes.xyz/Anubis/3D",
+        "Petit Montrouge"
     ],
 
     // Soleil
@@ -37,6 +28,7 @@ export const roomInfos = [
         "114 Rue de la Tombe Issoire \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Soleil/3D", 
+        "Petit Montrouge"
     ],
 
     // Chateau
@@ -47,6 +39,8 @@ export const roomInfos = [
         "3 Rue Alphonse Daudet \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Chateau/3D", 
+        "Petit Montrouge"
+
     ],
 
     //Sarko
@@ -57,6 +51,8 @@ export const roomInfos = [
         "9 Rue du Lunain \n   75014 Paris", 
         " 21m", 
         "https://catacombes.xyz/Sarko/3D", 
+        "Petit Montrouge"
+
     ],
 
     // Byzance
@@ -67,6 +63,8 @@ export const roomInfos = [
         "24 Rue Sarrette \n   75014 Paris", 
         " 21m", 
         "https://catacombes.xyz/Byzance/3D", 
+        "Petit Montrouge"
+
     ],
 
     // Kraken
@@ -77,6 +75,7 @@ export const roomInfos = [
         "71 ter Rue de la Tombe Issoire \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Kraken/3D", 
+        "Petit Montrouge",
     ],
 
     // Boutik
@@ -87,6 +86,7 @@ export const roomInfos = [
         "30 Avenue Rene Coty \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Boutik/3D", 
+        "Petit Montrouge"
     ],
 
     // Ossa
@@ -97,6 +97,7 @@ export const roomInfos = [
         "Allee Samuel Beckett \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Ossa/3D", 
+        "Petit Montrouge"
     ], 
 
     // Cabanis
@@ -107,6 +108,7 @@ export const roomInfos = [
         "11 Rue Cabanis \n   75014 Paris", 
         " 10m", 
         "https://catacombes.xyz/Cabanis/3D",
+        "Petit Montrouge"
     ], 
 
     // Dragon
@@ -117,6 +119,7 @@ export const roomInfos = [
         "3 Boulevard Saint-Jacques\n   75014 Paris", 
         " 8m", 
         "https://catacombes.xyz/Dragon/3D", 
+        "Petit Montrouge"
     ],
 
     // Cabi-Bis
@@ -127,127 +130,9 @@ export const roomInfos = [
         "1 Rue de la Tombe Issoire\n   75014 Paris", 
         " 15m", 
         "https://catacombes.xyz/CabiBis/3D", 
+        "Petit Montrouge"
     ], 
 
-    // Cabinet mineralogique 
-    [
-        "Cabinet", 
-        "Cabinet mineralogique ( 1811 )",
-        "Cabinet Gambier-Major. Underground variant of the cabinets of curiosities in fashion in the 19th century. Built under the mandate of Ericart de Thury. There is a straight staircase used to expose pieces of rocks representing the geological layers of the Lutecian.", 
-        "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
-        " 15m", 
-        "https://catacombes.xyz/Cabinet/3D", 
-    ], 
-
-    // Manoir
-    [
-        "Manoir", 
-        "Manoir",
-        "Small rest room with fluorescent frescoes.", 
-        "6 Rue Jean Dolent \n   75014 Paris", 
-        " 16m", 
-        "https://catacombes.xyz/Manoir/3D", 
-    ], 
-
-    // Atlas
-    [
-        "Atlas", 
-        "Atlas", 
-        "Small room in the lower part of the building. Here you can see sculptures and rosettes, sculpted in 1993 and partially sold in 1996.", 
-        "25 Rue Jean Dolent \n   75014 Paris", 
-        " 20m", 
-        "https://catacombes.xyz/Atlas/3D", 
-    ], 
-
-    // Cube
-    [
-        "Cube", 
-        "Cube", 
-        "This room is wrapped around a well with a coping built at the same time. Very large blocks of stone extracted from the quarry remained there, their shape gave the name to the room. The 'fountain' is accessed by a staircase leading to a sump surmounted by a ladder. This one allowed to measure the fluctuations of the water level of the water table.",
-        "20 Avenue de l'Observatoire \n   75006 Paris", 
-        " 20m", 
-        "https://catacombes.xyz/Cube/3D", 
-    ], 
-
-    // Faco
-    [
-        "Faco", 
-        "Faco",
-        "Former air shelter dating from the second world war was intended for civilians. Higher ceiling than the Montparnasse shelter, it is not very frequented.", 
-        "117 Rue de Notre-Dame des Champs \n   75006 Paris", 
-        " 21m", 
-        "https://catacombes.xyz/Faco/3D", 
-    ], 
-
-    // Philibert
-    [
-        "Philibert", 
-        "Tombe de Philibert Aspairt",
-        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
-        "1 Place Louis Marin \n   75005 Paris", 
-        " 20m",
-        "https://catacombes.xyz/Philibert/3D", 
-    ], 
-
-    // Fontaine des chartreux 
-    [
-        "Fontaine", 
-        "Fontaine des Chartreux", 
-        "Fountain of the Carthusian monks where you can find a natural fountain and a well allowing to see the level of the water table. A plaque pays tribute to Parsek since 2021. Fountain made by the inspector Hericart de Thury at the beginning of the XIXth century, under the old domain of the Carthusian monks.", 
-        "13 Rue Michelet \n   75006 Paris",
-        " 21m", 
-        "https://catacombes.xyz/Fontaine/3D",
-    ],
-
-    // Anschluss
-    [
-        "Anschluss", 
-        "Anschluss ( ex: Dibim )", 
-        "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
-        "18 Rue Michelet \n   75006 Paris",
-        " 15m", 
-        "https://catacombes.xyz/Anschluss/3D", 
-    ],
-
-    // Chapelle 
-    [
-        "Chapelle", 
-        "Chapelle", 
-        "Small chapel with benches, candlesticks and altar. Close to the Anschluss Hall", 
-        "6 Rue Michelet \n   75006 Paris",
-        " 15m", 
-        "https://catacombes.xyz/Chapelle/3D", 
-    ],
-
-    // Bar des rats 
-    [
-        "Rats", 
-        "Bar des rats", 
-        "This room was connected to the surface by a spiral staircase whose height is indicated as 17.525 meters (measured in feet and then converted into meters). There is a graduated ladder accessible by a straight staircase as well as many frescoes",
-        "69 Rue de Notre-Dame des Champs \n   75006 Paris",
-        " 20m", 
-        "https://catacombes.xyz/Rats/3D", 
-    ],
-
-    // Cochon
-    [
-        "Cochon", 
-        "Cochon - Salle des Fetes", 
-        "Rarely used room of the GRS, near the crossroads of the dead. It has a stone table and benches as well as bars and a stage.", 
-        "45–47 Rue Froidevaux \n   75014 Paris",
-        " 20m", 
-        "https://catacombes.xyz/Cochon/3D", 
-    ],
-
-    // Bureau 
-    [
-        "Bureau", 
-        "Bureau du centre", 
-        "Former rest room of the cariers. Presents stacked bones and frescoes.", 
-        "Cimetiere du Montparnasse \n   Avenue Thierry \n   75014 Paris",
-        " 20m", 
-        "https://catacombes.xyz/Bureau/3D", 
-    ],
 
     // Plage
     [
@@ -257,6 +142,7 @@ export const roomInfos = [
         "1 Rue du Douanier Rousseau \n   75014 Paris", 
         " 22m",
         "https://catacombes.xyz/Plage/3D",
+        "Petit Montrouge"
     ], 
 
     // Belier 
@@ -267,6 +153,7 @@ export const roomInfos = [
         "18 Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
         "https://catacombes.xyz/Belier/3D",
+        "Petit Montrouge"
     ],
 
     // Concression
@@ -277,6 +164,7 @@ export const roomInfos = [
         "Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
         "https://catacombes.xyz/Concression/3D",
+        "Petit Montrouge"
     ],
 
     // Cellier
@@ -287,6 +175,151 @@ export const roomInfos = [
         "22 Rue du Pere Corentin \n   75014 Paris", 
         " 23m", 
         "https://catacombes.xyz/Cellier/3D", 
+        "Petit Montrouge"
+    ],
+
+    // Cabinet mineralogique 
+    [
+        "Cabinet", 
+        "Cabinet mineralogique ( 1811 )",
+        "Cabinet Gambier-Major. Underground variant of the cabinets of curiosities in fashion in the 19th century. Built under the mandate of Ericart de Thury. There is a straight staircase used to expose pieces of rocks representing the geological layers of the Lutecian.", 
+        "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
+        " 15m", 
+        "https://catacombes.xyz/Cabinet/3D", 
+        "Montparnasse"
+    ], 
+
+    // Bocal
+    [
+        "Bocal", 
+        "Bocal", 
+        "Room of rest arranged in height close to an old staircase of exit street notre dame des champs",
+        "77 Rue de Notre-Dame des Champs \n   75006 Paris",
+        " 20m", 
+        "https://catacombes.xyz/Bocal/3D", 
+        "Montparnasse"
+    ],
+    
+
+    // Manoir
+    [
+        "Manoir", 
+        "Manoir",
+        "Small rest room with fluorescent frescoes.", 
+        "6 Rue Jean Dolent \n   75014 Paris", 
+        " 16m", 
+        "https://catacombes.xyz/Manoir/3D", 
+        "Montparnasse"
+    ], 
+
+    // Atlas
+    [
+        "Atlas", 
+        "Atlas", 
+        "Small room in the lower part of the building. Here you can see sculptures and rosettes, sculpted in 1993 and partially sold in 1996.", 
+        "25 Rue Jean Dolent \n   75014 Paris", 
+        " 20m", 
+        "https://catacombes.xyz/Atlas/3D", 
+        "Montparnasse"
+    ], 
+
+    // Cube
+    [
+        "Cube", 
+        "Cube", 
+        "This room is wrapped around a well with a coping built at the same time. Very large blocks of stone extracted from the quarry remained there, their shape gave the name to the room. The 'fountain' is accessed by a staircase leading to a sump surmounted by a ladder. This one allowed to measure the fluctuations of the water level of the water table.",
+        "20 Avenue de l'Observatoire \n   75006 Paris", 
+        " 20m", 
+        "https://catacombes.xyz/Cube/3D", 
+        "Montparnasse"
+    ], 
+
+    // Cochon
+    [
+        "Cochon", 
+        "Cochon - Salle des Fetes", 
+        "Rarely used room of the GRS, near the crossroads of the dead. It has a stone table and benches as well as bars and a stage.", 
+        "45–47 Rue Froidevaux \n   75014 Paris",
+        " 20m", 
+        "https://catacombes.xyz/Cochon/3D", 
+        "Montparnasse"
+    ],
+
+    // Bureau 
+    [
+        "Bureau", 
+        "Bureau du centre", 
+        "Former rest room of the cariers. Presents stacked bones and frescoes.", 
+        "Cimetiere du Montparnasse \n   Avenue Thierry \n   75014 Paris",
+        " 20m", 
+        "https://catacombes.xyz/Bureau/3D", 
+        "Montparnasse"
+    ],
+
+    // Faco
+    [
+        "Faco", 
+        "Faco",
+        "Former air shelter dating from the second world war was intended for civilians. Higher ceiling than the Montparnasse shelter, it is not very frequented.", 
+        "117 Rue de Notre-Dame des Champs \n   75006 Paris", 
+        " 21m", 
+        "https://catacombes.xyz/Faco/3D", 
+        "Notre Dame des Champs"
+    ], 
+
+    // Bar des rats 
+    [
+        "Rats", 
+        "Bar des rats", 
+        "This room was connected to the surface by a spiral staircase whose height is indicated as 17.525 meters (measured in feet and then converted into meters). There is a graduated ladder accessible by a straight staircase as well as many frescoes",
+        "69 Rue de Notre-Dame des Champs \n   75006 Paris",
+        " 20m", 
+        "https://catacombes.xyz/Rats/3D", 
+        "Notre Dame des Champs"
+    ],
+
+    // Philibert
+    [
+        "Philibert", 
+        "Tombe de Philibert Aspairt",
+        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
+        "1 Place Louis Marin \n   75005 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Philibert/3D", 
+        "Val de Grace"
+    ], 
+
+    // Fontaine des chartreux 
+    [
+        "Fontaine", 
+        "Fontaine des Chartreux", 
+        "Fountain of the Carthusian monks where you can find a natural fountain and a well allowing to see the level of the water table. A plaque pays tribute to Parsek since 2021. Fountain made by the inspector Hericart de Thury at the beginning of the XIXth century, under the old domain of the Carthusian monks.", 
+        "13 Rue Michelet \n   75006 Paris",
+        " 21m", 
+        "https://catacombes.xyz/Fontaine/3D",
+        "Val de Grace"
+    ],
+
+    // Anschluss
+    [
+        "Anschluss", 
+        "Anschluss ( ex: Dibim )", 
+        "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
+        "18 Rue Michelet \n   75006 Paris",
+        " 15m", 
+        "https://catacombes.xyz/Anschluss/3D", 
+        "Val de Grace"
+    ],
+
+    // Chapelle 
+    [
+        "Chapelle", 
+        "Chapelle", 
+        "Small chapel with benches, candlesticks and altar. Close to the Anschluss Hall", 
+        "6 Rue Michelet \n   75006 Paris",
+        " 15m", 
+        "https://catacombes.xyz/Chapelle/3D",
+        "Val de Grace"
     ],
 ]
 
