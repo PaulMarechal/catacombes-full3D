@@ -18,7 +18,8 @@ export const roomInfos = [
         " 30m",
         "https://catacombes.xyz/Anubis/3D",
         "Petit Montrouge", 
-        "6 / 6 / 7 / 7"
+        "6 / 6 / 7 / 7", 
+        "4 / 1 / 5 / 2"
     ],
 
     // Soleil
@@ -43,8 +44,8 @@ export const roomInfos = [
         " 20m", 
         "https://catacombes.xyz/Chateau/3D", 
         "Petit Montrouge",
-        "6 / 5 / 7 / 6", 
-        "7 / 4 / 8 / 5"
+        "7 / 5 / 8 / 6", 
+        "3 / 3 / 4 / 4"
     ],
 
     //Sarko
@@ -56,8 +57,8 @@ export const roomInfos = [
         " 21m", 
         "https://catacombes.xyz/Sarko/3D", 
         "Petit Montrouge", 
-        "6 / 5 / 7 / 6", 
-        "1 / 5 / 2 / 6"
+        "7 / 5 / 8 / 6", 
+        "1 / 4 / 2 / 5"
 
     ],
 
@@ -70,8 +71,8 @@ export const roomInfos = [
         " 21m", 
         "https://catacombes.xyz/Byzance/3D", 
         "Petit Montrouge", 
-        "6 / 5 / 7 / 6", 
-        "2 / 5 / 3 / 6"
+        "7 / 5 / 8 / 6", 
+        "2 / 4 / 3 / 5"
 
     ],
 
@@ -84,7 +85,9 @@ export const roomInfos = [
         " 22m", 
         "https://catacombes.xyz/Kraken/3D", 
         "Petit Montrouge",
-        "6 / 6 / 7 / 7"
+        "6 / 5 / 7 / 6", 
+        "2 / 8 / 3 / 9"
+
     ],
 
     // Boutik
@@ -96,7 +99,8 @@ export const roomInfos = [
         " 22m", 
         "https://catacombes.xyz/Boutik/3D", 
         "Petit Montrouge", 
-        "6 / 6 / 7 / 7"
+        "6 / 6 / 7 / 7", 
+        "2 / 1 / 3 / 2"
     ],
 
     // Ossa
@@ -108,7 +112,8 @@ export const roomInfos = [
         " 22m", 
         "https://catacombes.xyz/Ossa/3D", 
         "Petit Montrouge", 
-        "6 / 6 / 7 / 7"
+        "6 / 6 / 7 / 7", 
+        "2 / 2 / 3 / 3"
     ], 
 
     // Cabanis
@@ -120,7 +125,8 @@ export const roomInfos = [
         " 10m", 
         "https://catacombes.xyz/Cabanis/3D",
         "Petit Montrouge", 
-        "4 / 6 / 5 / 7"
+        "5 / 6 / 6 / 7", 
+        "3 / 4 / 4 / 5"
     ], 
 
     // Dragon
@@ -132,7 +138,8 @@ export const roomInfos = [
         " 8m", 
         "https://catacombes.xyz/Dragon/3D", 
         "Petit Montrouge", 
-        "4 / 6 / 5 / 7"
+        "4 / 6 / 5 / 7", 
+        "4 / 8 / 5 / 9"
     ],
 
     // Cabi-Bis
@@ -144,7 +151,8 @@ export const roomInfos = [
         " 15m", 
         "https://catacombes.xyz/CabiBis/3D", 
         "Petit Montrouge", 
-        "4 / 6 / 5 / 7"
+        "4 / 6 / 5 / 7", 
+        "2 / 3 / 3 / 4"
     ], 
 
 
@@ -170,7 +178,8 @@ export const roomInfos = [
         " 25m",
         "https://catacombes.xyz/Belier/3D",
         "Petit Montrouge", 
-        "9 / 4 / 10 / 5"
+        "9 / 4 / 10 / 5", 
+        "4 / 4 / 5 / 5"
     ],
 
     // Concression
@@ -182,7 +191,8 @@ export const roomInfos = [
         " 25m",
         "https://catacombes.xyz/Concression/3D",
         "Petit Montrouge", 
-        "9 / 4 / 10 / 5"
+        "9 / 4 / 10 / 5", 
+        "3 / 5 / 4 / 6"
     ],
 
     // Cellier
@@ -207,20 +217,10 @@ export const roomInfos = [
         " 15m", 
         "https://catacombes.xyz/Cabinet/3D", 
         "Montparnasse", 
-        "3 / 6 / 4 / 7"
-    ], 
+        "9 / 5 / 10 / 6", 
+        "1 / 8 / 2 / 9"
 
-    // Bocal
-    [
-        "Bocal", 
-        "Bocal", 
-        "Room of rest arranged in height close to an old staircase of exit street notre dame des champs",
-        "77 Rue de Notre-Dame des Champs \n   75006 Paris",
-        " 20m", 
-        "https://catacombes.xyz/Bocal/3D", 
-        "Montparnasse"
-    ],
-    
+    ], 
 
     // Manoir
     [
@@ -231,7 +231,9 @@ export const roomInfos = [
         " 16m", 
         "https://catacombes.xyz/Manoir/3D", 
         "Montparnasse", 
-        "3 / 6 / 4 / 7"
+        "8 / 6 / 9 / 7", 
+        "4 / 2 / 5 / 3"
+
     ], 
 
     // Atlas
@@ -243,7 +245,8 @@ export const roomInfos = [
         " 20m", 
         "https://catacombes.xyz/Atlas/3D", 
         "Montparnasse", 
-        "3 / 6 / 4 / 7"
+        "9 / 6 / 10 / 7", 
+        "1 / 2 / 2 / 3"
     ], 
 
     // Cube
@@ -254,7 +257,9 @@ export const roomInfos = [
         "20 Avenue de l'Observatoire \n   75006 Paris", 
         " 20m", 
         "https://catacombes.xyz/Cube/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "4 / 5 / 5 / 6", 
+        "3 / 7 / 4 / 8"
     ], 
 
     // Cochon
@@ -265,7 +270,9 @@ export const roomInfos = [
         "45–47 Rue Froidevaux \n   75014 Paris",
         " 20m", 
         "https://catacombes.xyz/Cochon/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "7 / 4 / 8 / 5", 
+        "2 / 3 / 3 / 4"
     ],
 
     // Bureau 
@@ -276,7 +283,9 @@ export const roomInfos = [
         "Cimetiere du Montparnasse \n   Avenue Thierry \n   75014 Paris",
         " 20m", 
         "https://catacombes.xyz/Bureau/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "5 / 4 / 6 / 5", 
+        "3 / 7 / 4 / 8"
     ],
 
     // Faco
@@ -287,7 +296,9 @@ export const roomInfos = [
         "117 Rue de Notre-Dame des Champs \n   75006 Paris", 
         " 21m", 
         "https://catacombes.xyz/Faco/3D", 
-        "Notre Dame des Champs"
+        "Notre Dame des Champs", 
+        "9 / 5 / 10 / 6", 
+        "2 / 6 / 3 / 7"
     ], 
 
     // Bar des rats 
@@ -298,19 +309,23 @@ export const roomInfos = [
         "69 Rue de Notre-Dame des Champs \n   75006 Paris",
         " 20m", 
         "https://catacombes.xyz/Rats/3D", 
-        "Notre Dame des Champs"
+        "Notre Dame des Champs", 
+        "7 / 5 / 8 / 6", 
+        "3 / 3 / 4 / 4"
     ],
 
-    // Philibert
+    // Bocal
     [
-        "Philibert", 
-        "Tombe de Philibert Aspairt",
-        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
-        "1 Place Louis Marin \n   75005 Paris", 
-        " 20m",
-        "https://catacombes.xyz/Philibert/3D", 
-        "Val de Grace"
-    ], 
+        "Bocal", 
+        "Bocal", 
+        "Room of rest arranged in height close to an old staircase of exit street notre dame des champs",
+        "77 Rue de Notre-Dame des Champs \n   75006 Paris",
+        " 20m", 
+        "https://catacombes.xyz/Bocal/3D", 
+        "Notre Dame des Champs", 
+        "8 / 5 / 9 / 6",
+        "2 / 4 / 3 / 5"
+    ],
 
     // Fontaine des chartreux 
     [
@@ -320,18 +335,9 @@ export const roomInfos = [
         "13 Rue Michelet \n   75006 Paris",
         " 21m", 
         "https://catacombes.xyz/Fontaine/3D",
-        "Val de Grace"
-    ],
-
-    // Anschluss
-    [
-        "Anschluss", 
-        "Anschluss ( ex: Dibim )", 
-        "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
-        "18 Rue Michelet \n   75006 Paris",
-        " 15m", 
-        "https://catacombes.xyz/Anschluss/3D", 
-        "Val de Grace"
+        "Notre Dame des Champs", 
+        "8 / 5 / 9 / 6", 
+        "2 / 8 / 3 / 9"
     ],
 
     // Chapelle 
@@ -342,8 +348,36 @@ export const roomInfos = [
         "6 Rue Michelet \n   75006 Paris",
         " 15m", 
         "https://catacombes.xyz/Chapelle/3D",
-        "Val de Grace"
+        "Notre Dame des Champs",
+        "8 / 6 / 9 / 7", 
+        "2 / 1 / 3 / 2"
     ],
+
+    // Anschluss
+    [
+        "Anschluss", 
+        "Anschluss ( ex: Dibim )", 
+        "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
+        "18 Rue Michelet \n   75006 Paris",
+        " 15m", 
+        "https://catacombes.xyz/Anschluss/3D", 
+        "Notre Dame des Champs",
+        "8 / 5 / 9 / 6", 
+        "2 / 7 / 3 / 8"
+    ],
+
+    // Philibert
+    [
+        "Philibert", 
+        "Tombe de Philibert Aspairt",
+        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
+        "1 Place Louis Marin \n   75005 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Philibert/3D", 
+        "Val de Grace", 
+        "7 / 5 / 8 / 6", 
+        "1 / 3 / 2 / 4"
+    ], 
 ]
 
 

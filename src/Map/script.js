@@ -42,7 +42,16 @@ function clickOnDivDistrict(areaDistrict, areaName){
             setTimeout(() => {
                 montrougeDiv.style.transition = "opacity 1s ease-out"
                 montrougeDiv.style.opacity = 1;
-                console.log(areaDistrict)
+
+                const imagePreci = document.querySelector(".imageMapMontrouge")
+                if(areaName === "Montparnasse"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/montparnasseMap.png')"
+                } else if (areaName === "Notre Dame des Champs"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/notreDameDesChampsMap.png')"
+                } else if(areaName === "Val de Grace"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/valDeGraceMap.png')"
+                }
+
                 displayRooms(areaName)
             }, 50);
         }, 200);
@@ -78,10 +87,11 @@ const templateRowsSmallMap = ((window.innerHeight + 190) / 12)
 const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 6}px) repeat(8, ${(templateRowsSmallMap*0.97)}px) repeat(2, ${templateRowsSmallMap / 4}px)`
 
 const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
-const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap / 2}px`
+const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap/2}px`
 
 petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
 petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
+
 
 /**
  * Crete presentation div for small map
@@ -116,9 +126,6 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
   
     const imageRoomSmallDiv = document.createElement("div");
     imageRoomSmallDiv.classList.add("imageRoomSmallDiv");
-    imageRoomSmallDiv.style.width = "79%";
-    imageRoomSmallDiv.style.marginTop = "4px";
-    imageRoomSmallDiv.style.margin = "auto";
 
     const image = document.createElement("img");
     image.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.png`);
@@ -223,7 +230,7 @@ const gridAreaRoom = [
 ]
 
 function displayRooms(districtName) {
-    console.log(districtName)
+    // console.log(districtName)
     var roomNumber = 0
     var displayGrid = 0;
     for (let i = 0; i < NameRooms.roomInfos.length; i++) {

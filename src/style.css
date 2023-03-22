@@ -178,6 +178,10 @@ body input:checked ~ nav > ul > li {
     transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
+.parentDivPrezSecond:hover{
+    cursor : pointer;
+}
+
 .titleRoom { 
     grid-area: 1 / 1 / 2 / 7; 
     padding-left: 5px; 
@@ -193,7 +197,7 @@ body input:checked ~ nav > ul > li {
     padding: 0px 5px; 
     font-size: 1.3rem;
 }
-.imgRoom { grid-area: 2 / 4 / 5 / 7; }
+
 .adressRoom{ 
     grid-area: 5 / 1 / 6 / 4; 
     text-align: left; 
@@ -225,8 +229,9 @@ body input:checked ~ nav > ul > li {
 }
 
 .imgRoom{
+    grid-area: 2 / 4 / 5 / 7;
     background-size: contain;
-    width: 84%; 
+    width: 59%; 
     height: 100%; 
     border-radius: 5px;
     margin: auto;
@@ -578,6 +583,10 @@ ul{
 
 .imageRoomSmallDiv{
     grid-area: 1 / 4 / 4 / 5;
+    width: 72%;
+    margin: auto;
+    padding-top: 3px;
+    margin-right: 5px;
 }
 
 .depthSmallRoom{
@@ -592,6 +601,7 @@ ul{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(4, 0.85fr);
+    height: 100%;
 }
 
 .retourButton{
