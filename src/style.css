@@ -171,7 +171,7 @@ body input:checked ~ nav > ul > li {
     border: 0.3px solid #d2caca;
 }
 
-.parentDivRoomInfo:hover{
+.parentDivRoomInfo:hover, .parentDivPrezSecond:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.5 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
@@ -532,17 +532,16 @@ ul{
     /* -webkit-text-stroke: 0.5px #000; */
 }
 
-.montrougeDiv{
-    grid-column-gap: 4px;
-    grid-row-gap: 5px;
-}
-
 /* Small map */
 .montrougeDiv{
     display: grid;
     margin-top: 2em;
     display: none;
     opacity: 0;
+    grid-column-gap: 4px;
+    grid-row-gap: 5px;
+    width: 95%;
+    margin: 2em auto 0 auto;
     /* transition: opacity 1s ease-out; */
 }
 
@@ -583,6 +582,30 @@ ul{
 
 .depthSmallRoom{
     grid-area: 2 / 3 / 4 / 4;
+}
+
+.pointRoom{
+    z-index: 99;
+}
+
+.gridAreaPrecise{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 0.85fr);
+}
+
+.retourButton{
+    background: #ffffff;
+    border-radius: 5px;
+    position: absolute; 
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    margin-top: 5px; 
+    margin-left: 5px;
+    color: #000; 
+    text-decoration: none;
+    grid-area: 1 / 1 / 3 / 2; 
+    left: 5px;
 }
 
 

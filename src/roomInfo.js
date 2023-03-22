@@ -17,7 +17,8 @@ export const roomInfos = [
         "29 Rue d'Alesia \n   75014 Paris", 
         " 30m",
         "https://catacombes.xyz/Anubis/3D",
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "6 / 6 / 7 / 7"
     ],
 
     // Soleil
@@ -28,7 +29,9 @@ export const roomInfos = [
         "114 Rue de la Tombe Issoire \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Soleil/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "7 / 5 / 8 / 6", 
+        "3 / 7 / 4 / 8"
     ],
 
     // Chateau
@@ -39,8 +42,9 @@ export const roomInfos = [
         "3 Rue Alphonse Daudet \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Chateau/3D", 
-        "Petit Montrouge"
-
+        "Petit Montrouge",
+        "6 / 5 / 7 / 6", 
+        "7 / 4 / 8 / 5"
     ],
 
     //Sarko
@@ -51,7 +55,9 @@ export const roomInfos = [
         "9 Rue du Lunain \n   75014 Paris", 
         " 21m", 
         "https://catacombes.xyz/Sarko/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "6 / 5 / 7 / 6", 
+        "1 / 5 / 2 / 6"
 
     ],
 
@@ -63,7 +69,9 @@ export const roomInfos = [
         "24 Rue Sarrette \n   75014 Paris", 
         " 21m", 
         "https://catacombes.xyz/Byzance/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "6 / 5 / 7 / 6", 
+        "2 / 5 / 3 / 6"
 
     ],
 
@@ -76,6 +84,7 @@ export const roomInfos = [
         " 22m", 
         "https://catacombes.xyz/Kraken/3D", 
         "Petit Montrouge",
+        "6 / 6 / 7 / 7"
     ],
 
     // Boutik
@@ -86,7 +95,8 @@ export const roomInfos = [
         "30 Avenue Rene Coty \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Boutik/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "6 / 6 / 7 / 7"
     ],
 
     // Ossa
@@ -97,7 +107,8 @@ export const roomInfos = [
         "Allee Samuel Beckett \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Ossa/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "6 / 6 / 7 / 7"
     ], 
 
     // Cabanis
@@ -108,7 +119,8 @@ export const roomInfos = [
         "11 Rue Cabanis \n   75014 Paris", 
         " 10m", 
         "https://catacombes.xyz/Cabanis/3D",
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "4 / 6 / 5 / 7"
     ], 
 
     // Dragon
@@ -119,7 +131,8 @@ export const roomInfos = [
         "3 Boulevard Saint-Jacques\n   75014 Paris", 
         " 8m", 
         "https://catacombes.xyz/Dragon/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "4 / 6 / 5 / 7"
     ],
 
     // Cabi-Bis
@@ -130,7 +143,8 @@ export const roomInfos = [
         "1 Rue de la Tombe Issoire\n   75014 Paris", 
         " 15m", 
         "https://catacombes.xyz/CabiBis/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "4 / 6 / 5 / 7"
     ], 
 
 
@@ -142,7 +156,9 @@ export const roomInfos = [
         "1 Rue du Douanier Rousseau \n   75014 Paris", 
         " 22m",
         "https://catacombes.xyz/Plage/3D",
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "7 / 5 / 8 / 6", 
+        "3 / 6 / 4 / 7"
     ], 
 
     // Belier 
@@ -153,7 +169,8 @@ export const roomInfos = [
         "18 Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
         "https://catacombes.xyz/Belier/3D",
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "9 / 4 / 10 / 5"
     ],
 
     // Concression
@@ -164,7 +181,8 @@ export const roomInfos = [
         "Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
         "https://catacombes.xyz/Concression/3D",
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "9 / 4 / 10 / 5"
     ],
 
     // Cellier
@@ -175,7 +193,9 @@ export const roomInfos = [
         "22 Rue du Pere Corentin \n   75014 Paris", 
         " 23m", 
         "https://catacombes.xyz/Cellier/3D", 
-        "Petit Montrouge"
+        "Petit Montrouge", 
+        "7 / 5 / 8 / 6", 
+        "2 / 6 / 3 / 7"
     ],
 
     // Cabinet mineralogique 
@@ -186,7 +206,8 @@ export const roomInfos = [
         "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
         " 15m", 
         "https://catacombes.xyz/Cabinet/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "3 / 6 / 4 / 7"
     ], 
 
     // Bocal
@@ -209,7 +230,8 @@ export const roomInfos = [
         "6 Rue Jean Dolent \n   75014 Paris", 
         " 16m", 
         "https://catacombes.xyz/Manoir/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "3 / 6 / 4 / 7"
     ], 
 
     // Atlas
@@ -220,7 +242,8 @@ export const roomInfos = [
         "25 Rue Jean Dolent \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Atlas/3D", 
-        "Montparnasse"
+        "Montparnasse", 
+        "3 / 6 / 4 / 7"
     ], 
 
     // Cube

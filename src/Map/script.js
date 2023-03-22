@@ -74,11 +74,11 @@ clickOnDivDistrict(valDeGraceClick, "Val de Grace")
 // Petit montrouge
 const petitMontrouge = document.querySelector(".montrougeDiv")
 
-const templateRowsSmallMap = ((window.innerHeight + 200) / 12)
-const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 8}px) repeat(8, ${templateRowsSmallMap}px) repeat(2, ${templateRowsSmallMap / 4}px)`
+const templateRowsSmallMap = ((window.innerHeight + 190) / 12)
+const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 6}px) repeat(8, ${(templateRowsSmallMap*0.97)}px) repeat(2, ${templateRowsSmallMap / 4}px)`
 
 const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
-const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${templateColumnsSmallMap}px) ${templateRowsSmallMap / 2}px`
+const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap / 2}px`
 
 petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
 petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
@@ -96,6 +96,7 @@ petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
 function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const parentDivPrez = document.createElement("div");
     parentDivPrez.classList.add("parentDivPrezSecond");
+    parentDivPrez.classList.add(`${NameRooms.roomInfos[roomNumber][0]}`);
     parentDivPrez.style.display = "grid"
   
     const titleRoomSmallDiv = document.createElement("div");
@@ -133,9 +134,65 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
 
     parentDivPrez.style.gridArea = gridAreaRoom[numberToDisplayGrid]
     console.log(gridAreaRoom[numberToDisplayGrid])
-  
+
+    document.querySelector(".retourButton").style.display = "grid"
+
+    const firstDiv = document.createElement("div")
+    firstDiv.classList.add("firstDiv")
+    firstDiv.style.gridArea = `${NameRooms.roomInfos[roomNumber][7]}`
+
+    const preciseDiv = document.createElement("div")
+    preciseDiv.classList.add("gridAreaPrecise")
+
+    const preciseDivSecond = document.createElement("div")
+    preciseDivSecond.classList.add("gridAreaPreciseSecond")
+    preciseDivSecond.style.gridArea = `${NameRooms.roomInfos[roomNumber][8]}`
+    console.log(`${NameRooms.roomInfos[roomNumber][0]} - ${NameRooms.roomInfos[roomNumber][7]} - ${NameRooms.roomInfos[roomNumber][8]}`)
+    
+    const smallPoint = document.createElement("p")
+    smallPoint.classList.add("pointRoom")
+    smallPoint.setAttribute("id", `${NameRooms.roomInfos[roomNumber][0]}`)
+    smallPoint.innerText = "✴"
+
+    firstDiv.appendChild(preciseDiv)
+    preciseDiv.appendChild(preciseDivSecond)
+    preciseDivSecond.appendChild(smallPoint)
+
+    document.getElementById("petitMontrouge").appendChild(firstDiv)
+
+
+    if (parentDivPrez) {
+        parentDivPrez.addEventListener('mouseover', function() {
+            var classe = this.classList;
+        
+            console.log(classe[1]);
+            console.log(classe);
+        
+            const point = document.getElementById(`${classe[1]}`)
+            point.innerHTML = "☉"
+        });
+    
+        parentDivPrez.addEventListener('mouseout', function() {
+            var classe = this.classList;
+            console.log(classe)
+        
+            const point = document.getElementById(`${classe[1]}`)
+            point.innerHTML = "✴"
+        });
+
+        parentDivPrez.addEventListener('click', function(event) {
+            var classe = this.classList;
+            console.log(classe)
+        
+            const point = document.getElementById(`${classe[1]}`)
+            window.location.href = `https://catacombes.xyz/${classe[1]}/3D`
+        });
+    }
+
     return parentDivPrez;
 }
+
+
 
 
 // createParentDivPrez("Belier", "Location: testtesttest", "Depth: testM", "https://catacombes.xyz/Belier/Belier.png", "Image of the Belier room of the catacombes of paris")
@@ -173,7 +230,6 @@ function displayRooms(districtName) {
         if(NameRooms.roomInfos[roomNumber][6] === districtName){
             addChild(createParentDivPrez(roomNumber, displayGrid))
             displayGrid++
-
         }
         roomNumber++
     }
