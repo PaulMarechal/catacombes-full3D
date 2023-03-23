@@ -126,7 +126,7 @@ export const roomInfos = [
         "https://catacombes.xyz/Cabanis/3D",
         "Petit Montrouge", 
         "5 / 6 / 6 / 7", 
-        "3 / 4 / 4 / 5"
+        "3 / 5 / 4 / 6"
     ], 
 
     // Dragon

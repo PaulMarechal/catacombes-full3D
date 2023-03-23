@@ -188,7 +188,7 @@ body input:checked ~ nav > ul > li {
     padding-top: 8px; 
     text-align: left;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.9rem;
 }
 
 .textRoom { 
@@ -533,7 +533,7 @@ ul{
     opacity: 1!important;
     text-align: center;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     /* -webkit-text-stroke: 0.5px #000; */
 }
 
@@ -641,6 +641,28 @@ ul{
         padding: 0.6rem 2.4rem;
     }
 
+    .districtName{
+        font-size: 0.5rem;
+    }
+
+    .montrougeDiv{
+        margin-top: 0.5em;
+        grid-column-gap: 10px;
+        grid-row-gap: 8px;
+    }
+
+    .titleRoomSmallDiv{
+        font-size: 0.7rem;
+    }
+
+    .parentDivPrezSecond{
+        height: 1.6rem;
+    }
+
+    .imageRoomSmallDiv{
+        width: 50%;
+    }
+
 }
 
 /* Mode portrait */
@@ -650,7 +672,7 @@ ul{
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(9, 1fr);
         width: 80%;
-        height: 48%;
+        height: 70%;
     }
 
     .titleRoom{
@@ -717,6 +739,12 @@ ul{
     .iconeBurgerMenu{
         left: 4.3em!important;
     }
+
+    .districtName{
+        font-size: 0.7rem;
+    }
+
+
 }
   
   

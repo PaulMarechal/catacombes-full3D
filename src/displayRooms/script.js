@@ -63,15 +63,6 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
                 event.preventDefault();
             });
         }
-        // if (isWebXRSupported() && navigator.xr.isSessionSupported('immersive-vr')) {
-        //     elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`)
-        //     // elemCreated.style.backgroundColor = "#FFF" 
-        // } else {
-        //     elemCreated.style.backgroundColor = "#00000050" 
-        //     elemCreated.setAttribute("href", "#");
-        //     elemCreated.style.cursor = "not-allowed"
-        //     elemCreated.style.opacity = "0.2"
-        // }
     } 
 }
 

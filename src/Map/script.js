@@ -1,5 +1,35 @@
 import * as NameRooms from "../roomInfo.js";
 
+function displayMobileOrMap() {
+    const petitMontrouge = document.getElementById("petitMontrouge")
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        // L'appareil est en mode portrait
+        document.querySelector(".displayMobile").style.display = "block";
+        document.querySelector(".parentMap").style.display = "none";
+
+        if(petitMontrouge){
+            petitMontrouge.style.display = "none"
+        }
+    } else {
+        // L'appareil est en mode paysage
+        document.querySelector(".displayMobile").style.display = "none";
+        document.getElementById("parentDiv").style.display = "grid"
+        document.querySelector(".parentMap").style.display = "grid";
+        if(petitMontrouge){
+                petitMontrouge.style.display = "grid"
+        }
+    }
+}
+  
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    displayMobileOrMap();
+  
+    window.addEventListener("resize", function() {
+      setTimeout(displayMobileOrMap, 100);
+    });
+}
+  
+
 // Height grid ( in pixels)
 let mapDiv = document.querySelector(".parentMap");
 const heightMap = `${window.innerHeight - 110}px`
@@ -14,16 +44,6 @@ mapDiv.style.gridTemplateRows = gridTemplateRows
 mapDiv.style.gridTemplateColumns = gridTemplateColumns
 mapDiv.style.height = heightMap
 
-// Click on distrit
-// const petitMontrougeClick = document.querySelector(".petitMontrouge");
-// petitMontrougeClick.addEventListener("click", event => {
-//     mapDiv.style.transition = "opacity 1s ease-out"
-//     mapDiv.style.opacity = 0
-
-//     montrougeDiv.style.display = "block"
-//     montrougeDiv.style.transition = "opacity 1s ease-out"
-//     montrougeDiv.style.opacity = 1
-// })
 const petitMontrougeClick = document.querySelector(".petitMontrouge");
 const montparnasseClick = document.querySelector(".montparnasse");
 const notreDameDesChampsClick = document.querySelector(".notreDameDesChamps");
@@ -55,42 +75,38 @@ function clickOnDivDistrict(areaDistrict, areaName){
                 displayRooms(areaName)
             }, 50);
         }, 200);
-    });    
-}
+    });   
+} 
+// }
+
 
 clickOnDivDistrict(petitMontrougeClick, "Petit Montrouge")
 clickOnDivDistrict(montparnasseClick, "Montparnasse")
 clickOnDivDistrict(notreDameDesChampsClick, "Notre Dame des Champs")
 clickOnDivDistrict(valDeGraceClick, "Val de Grace")
 
-// petitMontrougeClick.addEventListener("click", event => {
-//     mapDiv.style.opacity = 0;
-//     setTimeout(() => {
-//         mapDiv.style.transition = "opacity 1s ease-out";
-//         mapDiv.style.display = "none";
-//         montrougeDiv.style.display = "grid";
-
-//         setTimeout(() => {
-//             montrougeDiv.style.transition = "opacity 1s ease-out"
-//             montrougeDiv.style.opacity = 1;
-//             displayRooms("Petit Montrouge")
-//         }, 50);
-//     }, 200);
-// });
-
-
-
 // Petit montrouge
 const petitMontrouge = document.querySelector(".montrougeDiv")
 
-const templateRowsSmallMap = ((window.innerHeight + 190) / 12)
-const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 6}px) repeat(8, ${(templateRowsSmallMap*0.97)}px) repeat(2, ${templateRowsSmallMap / 4}px)`
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+    const templateRowsSmallMap = ((window.innerHeight) / 12)
+    const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 6}px) repeat(8, ${(templateRowsSmallMap*0.95)}px) repeat(2, ${templateRowsSmallMap / 4}px)`
 
-const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
-const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap/2}px`
+    const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
+    const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap/2}px`
 
-petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
-petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
+    petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
+    petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
+} else {
+    const templateRowsSmallMap = ((window.innerHeight + 190) / 12)
+    const gridTemplateRowsSmallMap = `repeat(2, ${templateRowsSmallMap / 6}px) repeat(8, ${(templateRowsSmallMap*0.97)}px) repeat(2, ${templateRowsSmallMap / 4}px)`
+
+    const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
+    const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap/2}px`
+
+    petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap
+    petitMontrouge.style.gridTemplateColumns = gridTemplateColumnsSmallMap
+}
 
 
 /**
@@ -123,6 +139,10 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const depth = document.createElement("p");
     depth.classList.add("depthSmallRoom");
     depth.innerText = `Depth : \n ${NameRooms.roomInfos[roomNumber][4]}`;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+        locationRoomSmallDiv.style.display = "none"
+        depth.style.display = "none"
+    }
   
     const imageRoomSmallDiv = document.createElement("div");
     imageRoomSmallDiv.classList.add("imageRoomSmallDiv");
@@ -154,7 +174,6 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const preciseDivSecond = document.createElement("div")
     preciseDivSecond.classList.add("gridAreaPreciseSecond")
     preciseDivSecond.style.gridArea = `${NameRooms.roomInfos[roomNumber][8]}`
-    console.log(`${NameRooms.roomInfos[roomNumber][0]} - ${NameRooms.roomInfos[roomNumber][7]} - ${NameRooms.roomInfos[roomNumber][8]}`)
     
     const smallPoint = document.createElement("p")
     smallPoint.classList.add("pointRoom")
@@ -173,7 +192,6 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
             var classe = this.classList;
         
             console.log(classe[1]);
-            console.log(classe);
         
             const point = document.getElementById(`${classe[1]}`)
             point.innerHTML = "☉"
@@ -181,7 +199,6 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     
         parentDivPrez.addEventListener('mouseout', function() {
             var classe = this.classList;
-            console.log(classe)
         
             const point = document.getElementById(`${classe[1]}`)
             point.innerHTML = "✴"
@@ -189,12 +206,15 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
 
         parentDivPrez.addEventListener('click', function(event) {
             var classe = this.classList;
-            console.log(classe)
         
             const point = document.getElementById(`${classe[1]}`)
-            window.location.href = `https://catacombes.xyz/${classe[1]}/3D`
+            window.open(`https://catacombes.xyz/${classe[1]}/3D`, '_blank')
         });
     }
+
+    window.addEventListener("resize", function() {
+        setTimeout(displayMobileOrMap, 100);
+      });
 
     return parentDivPrez;
 }
