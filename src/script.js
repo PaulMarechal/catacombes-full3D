@@ -470,9 +470,9 @@ function makePanel() {
         onSet: () => {
             // console.log(seeRoomIn3d(roomNumber));
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`;
+				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank');
 			} else {
-				document.location.href=`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`;
+				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
 			}
         }
     });

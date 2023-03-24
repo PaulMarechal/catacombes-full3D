@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="./script.js"></script>
+    <script type="module" src="../customCursor.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
     <meta name="keywords" content="Catacombes, Paris, Ktas, katas, catas, catacombes illegales, catacombes interdites, catacombes paris, carrieres, grs, GRS, explo, three.js, developper, web, plans catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
@@ -29,6 +30,8 @@
     <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
 </head>
 <body style="background: rgb(231, 231, 231)">
     <h1>Catacombes <span>  UNOFFICIAL</span></h1>
@@ -96,7 +99,7 @@
     </nav>
 
     <div class="displayRooms"></div>
-        
+    
     <script>
         let displayRooms = document.querySelector(".displayRooms");
         const heightRooms = `${window.innerHeight - 80}px`

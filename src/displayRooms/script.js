@@ -29,6 +29,7 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
             elemCreated.setAttribute("href", "#");
             elemCreated.style.cursor = "not-allowed"
             elemCreated.style.opacity = "0.2"
+            elemCreated.classList.add("webXRDontWork")
         }
     } else if(idElem === "buttonVR"){
         elemCreated.setAttribute("title", "Virtual Reality for VR headset");
@@ -46,6 +47,8 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
                 elemCreated.style.backgroundColor = "#00000050" 
                 elemCreated.style.cursor = "not-allowed"
                 elemCreated.style.opacity = "0.2"
+                elemCreated.classList.add("webXRDontWork")
+
 
                 elemCreated.addEventListener('click', (event) => {
                     event.preventDefault();
@@ -56,8 +59,10 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
             // Navigator dont work with WebXR
             elemCreated.setAttribute('href', '#');
             elemCreated.style.backgroundColor = "#00000050" 
-            elemCreated.style.cursor = "not-allowed"
+            elemCreated.style.cursor = "not-allowed!important"
             elemCreated.style.opacity = "0.2"
+            elemCreated.classList.add("webXRDontWork")
+
 
             elemCreated.addEventListener('click', (event) => {
                 event.preventDefault();

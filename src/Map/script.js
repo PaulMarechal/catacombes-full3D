@@ -16,7 +16,7 @@ function displayMobileOrMap() {
         document.getElementById("parentDiv").style.display = "grid"
         document.querySelector(".parentMap").style.display = "grid";
         if(petitMontrouge){
-                petitMontrouge.style.display = "grid"
+            petitMontrouge.style.display = "grid"
         }
     }
 }
@@ -28,7 +28,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
       setTimeout(displayMobileOrMap, 100);
     });
 }
-  
+
 
 // Height grid ( in pixels)
 let mapDiv = document.querySelector(".parentMap");
@@ -52,6 +52,7 @@ const valDeGraceClick = document.querySelector(".valDeGrace");
 const montrougeDiv = document.querySelector(".montrougeDiv");
 
 function clickOnDivDistrict(areaDistrict, areaName){
+
     areaDistrict.addEventListener("click", event => {
         mapDiv.style.opacity = 0;
         setTimeout(() => {
@@ -160,7 +161,6 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     parentDivPrez.appendChild(depth);
 
     parentDivPrez.style.gridArea = gridAreaRoom[numberToDisplayGrid]
-    console.log(gridAreaRoom[numberToDisplayGrid])
 
     document.querySelector(".retourButton").style.display = "grid"
 
@@ -188,18 +188,23 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
 
 
     if (parentDivPrez) {
+        const mouse = document.querySelector(".custom-cursor")
+
         parentDivPrez.addEventListener('mouseover', function() {
             var classe = this.classList;
-        
-            console.log(classe[1]);
+
+            mouse.classList.add("custom-cursor--link")
         
             const point = document.getElementById(`${classe[1]}`)
             point.innerHTML = "☉"
+
         });
     
         parentDivPrez.addEventListener('mouseout', function() {
             var classe = this.classList;
-        
+
+            mouse.classList.remove("custom-cursor--link")
+
             const point = document.getElementById(`${classe[1]}`)
             point.innerHTML = "✴"
         });
@@ -214,7 +219,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
 
     window.addEventListener("resize", function() {
         setTimeout(displayMobileOrMap, 100);
-      });
+    });
 
     return parentDivPrez;
 }
@@ -226,10 +231,9 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
 
 function addChild(child){
     const mainDiv = document.getElementById("petitMontrouge")
-    console.log(child)
     mainDiv.appendChild(child)
 }
-  
+
 const gridAreaRoom = [
     "3 / 2 / 4 / 4",
     "4 / 2 / 5 / 4", 
@@ -250,7 +254,6 @@ const gridAreaRoom = [
 ]
 
 function displayRooms(districtName) {
-    // console.log(districtName)
     var roomNumber = 0
     var displayGrid = 0;
     for (let i = 0; i < NameRooms.roomInfos.length; i++) {
