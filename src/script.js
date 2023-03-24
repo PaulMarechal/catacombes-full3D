@@ -23,32 +23,37 @@ let meshes = []
 
 
 // Loader 3D 
+const TORUS_SEGMENTS = 22;
+const TORUS_SIDES = 86;
+const TORUS_RADIUS = 0.26;
+const TORUS_ROTATION = -1.07;
+const TORUS_ARC = 4.5;
 // Red
-const geometryTo = new THREE.TorusGeometry( 2, 0.26, 22, 86, 4.5 );
+const geometryTo = new THREE.TorusGeometry( 2, TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
 const materialTo = new THREE.MeshBasicMaterial( { color: "#F71735" } );
 const torus = new THREE.Mesh( geometryTo, materialTo );
 
 torus.scale.multiplyScalar(0.05);
 torus.position.set(0, 1, -1.9);
-torus.rotation.set(0, 0, -1.07);
+torus.rotation.set(0, 0, TORUS_ROTATION);
 
 // Blue
-const geometryTo2 = new THREE.TorusGeometry( 1.9, 0.26, 22, 86, 4.5 );
+const geometryTo2 = new THREE.TorusGeometry( 1.9,TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
 const materialTo2 = new THREE.MeshBasicMaterial( { color: "#41EAD4" } );
 const torus2 = new THREE.Mesh( geometryTo2, materialTo2);
 
 torus2.scale.multiplyScalar(0.04);
 torus2.position.set(0, 1, -1.9);
-torus2.rotation.set(0.1, 0, -1.07);
+torus2.rotation.set(0.1, 0, TORUS_ROTATION);
 
 // White
-const geometryTo3 = new THREE.TorusGeometry( 1.8, 0.26, 22, 86, 4.5 );
+const geometryTo3 = new THREE.TorusGeometry( 1.8, TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
 const materialTo3 = new THREE.MeshBasicMaterial( { color: "#FDFFFC" } );
 const torus3 = new THREE.Mesh( geometryTo3, materialTo3 );
 
 torus3.scale.multiplyScalar(0.06);
 torus3.position.set(0, 1, -1.92);
-torus3.rotation.set(0.15, 0, -1.07);
+torus3.rotation.set(0.15, 0, TORUS_ROTATION);
 
 
 
@@ -103,9 +108,8 @@ function seeRoomIn3d(roomNumber){
 window.addEventListener( 'load', init(room3dRoad(0)) );
 window.addEventListener( 'resize', onWindowResize );
 
-// compute mouse position in normalized device coordinates
+// compute mouse position i( normalized device coordinates / raytracing)
 // (-1 to +1) for both directions.
-// Used to raycasting against the interactive elements
 
 const raycaster = new THREE.Raycaster();
 
@@ -152,7 +156,8 @@ function init(nameRoom) {
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		camera.position.set(0, 1.9, 0);
+		camera.position.set(0, 1.6, 0);
+		scene.position.set(0, -0.2, 0)
 	} else {
 		camera.position.set( 0, 1.6, 0 );
 	}
@@ -168,6 +173,7 @@ function init(nameRoom) {
 	// Orbit controls for no-vr
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
+	controls.enableDamping = true
 	controls.minDistance = 1; 
 	controls.maxDistance = 2;
 
@@ -387,7 +393,7 @@ function makePanel() {
 	);
 
     show3D.add(
-        new ThreeMeshUI.Text( { content: 'show 3D' } )
+        new ThreeMeshUI.Text( { content: 'Enter 3D' } )
     );
 
 	buttonPrevious.add(
@@ -424,9 +430,8 @@ function makePanel() {
 			//console.log(scene.children[9].name === "boxContainer");
 			//console.log(scene)
 			//if( scene.children[scene.children.length - 1 ].name === "boxContainer" ){ 
-				// scene.children[scene.children.length - 2].remove()
-			//	console.log("Yoooo la miff")
-			//	scene.remove(scene.children[scene.children.length - 1 ].name === "boxContainer")
+			// 		scene.children[scene.children.length - 2].remove()
+			//		scene.remove(scene.children[scene.children.length - 1 ].name === "boxContainer")
 			//}
 			
 
@@ -459,8 +464,8 @@ function makePanel() {
             console.log(scene)
 		}
 	} );
-	buttonNext.setupState( hoveredStateAttributes );
-	buttonNext.setupState( idleStateAttributes );
+	buttonNext.setupState( hoveredStateAttributes);
+	buttonNext.setupState( idleStateAttributes);
 
 	//
 
@@ -468,9 +473,9 @@ function makePanel() {
         state: 'selected',
         attributes: selectedAttributes,
         onSet: () => {
-            // console.log(seeRoomIn3d(roomNumber));
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank');
+				// window.location(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank')
+				window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
 			} else {
 				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
 			}

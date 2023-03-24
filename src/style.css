@@ -513,23 +513,23 @@ ul{
 }
 
 .petitMontrouge{
-    grid-area: 9 / 5 / 12 / 7;
+    grid-area: 9 / 6 / 12 / 8;
     background-color: rgb(115, 255, 0, 0.33);
 }
 
 .montparnasse{
-    grid-area: 8 / 5 / 9 / 7;
+    grid-area: 8 / 6 / 9 / 8;
     background-color: rgb(39, 83, 243, 0.33);
 }
 
 .notreDameDesChamps{
-    grid-area: 7 / 5 / 8 / 6;
+    grid-area: 7 / 6 / 8 / 7;
     background-color: rgb(231, 16, 16, 0.33);
 
 }
 
 .valDeGrace{
-    grid-area: 7 / 6 / 8 / 7;
+    grid-area: 7 / 7 / 8 / 8;
     background-color: rgb(223, 216, 13, 0.33);
 }
 
@@ -705,6 +705,16 @@ ul{
         width: 50%;
     }
 
+    #WEBXRButton{
+        top: 2.5%!important;
+        bottom: none; 
+        height: 10px;
+		background: #97979770!important;
+        color: rgb(75, 75, 75)!important;
+        border: 1px solid rgb(75, 75, 75)!important;
+        padding: 8px 6px 14px 6px!important;
+    }
+
 }
 
 /* Mode portrait */
@@ -785,8 +795,6 @@ ul{
     .districtName{
         font-size: 0.7rem;
     }
-
-
 }
   
   

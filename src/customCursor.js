@@ -2,6 +2,7 @@ export function customCursor(){
     document.addEventListener("DOMContentLoaded", function(event) {
         var div = document.createElement("div");
         div.classList.add("custom-cursor")
+        div.setAttribute("id", "cursor")
         document.querySelector("body").appendChild(div)
 
         var cursor = document.querySelector(".custom-cursor");

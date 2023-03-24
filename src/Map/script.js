@@ -38,7 +38,7 @@ const templateRow = ((window.innerHeight - 110) / 12)
 const gridTemplateRows = `repeat(12, ${templateRow}px)`
 
 const templateColumns = (window.innerWidth / 12)
-const gridTemplateColumns = `repeat(12, ${templateColumns}px)`
+const gridTemplateColumns = `repeat(12, ${templateColumns - 30}px)`
 
 mapDiv.style.gridTemplateRows = gridTemplateRows
 mapDiv.style.gridTemplateColumns = gridTemplateColumns
