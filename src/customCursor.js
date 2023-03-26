@@ -1,11 +1,15 @@
 export function customCursor(){
     document.addEventListener("DOMContentLoaded", function(event) {
-        var div = document.createElement("div");
-        div.classList.add("custom-cursor")
-        div.setAttribute("id", "cursor")
-        document.querySelector("body").appendChild(div)
+        if(document.querySelector(".custom-cursor")){
+            var cursor = document.querySelector(".custom-cursor");
+        } else  {
+            var div = document.createElement("div");
+            div.classList.add("custom-cursor")
+            div.setAttribute("id", "cursor")
+            document.querySelector("body").appendChild(div)
+            var cursor = document.querySelector(".custom-cursor");
+        }
 
-        var cursor = document.querySelector(".custom-cursor");
         var links = document.querySelectorAll("a");
         var labelElem = document.querySelectorAll("label");
         var body = document.getElementById("body");

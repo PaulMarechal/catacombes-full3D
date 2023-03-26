@@ -382,7 +382,7 @@ ul{
 }
 
 #bigThanks{
-    width: 25em; 
+    width: 26em; 
     text-align: center;
     grid-area: 6 / 3 / 7 / 4;
 }
@@ -554,7 +554,7 @@ ul{
     opacity: 1!important;
     text-align: center;
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     /* -webkit-text-stroke: 0.5px #000; */
 }
 

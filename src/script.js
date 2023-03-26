@@ -66,7 +66,7 @@ const loadingManager = new THREE.LoadingManager(
 		scene.remove(torus2)
 		scene.remove(torus3)
 		// TextPanel.TextPanel(scene, roomNumber)
-        scene.children[scene.children.length - 1 ].rotation.y += 0.01;
+        scene.children[scene.children.length - 1 ].rotation.y -= 0.005;
 
     }, 
 
@@ -74,7 +74,7 @@ const loadingManager = new THREE.LoadingManager(
     (itemUrl, itemsLoaded, itemsTotal) => {
 		// console.log("progress")
         const progressRatio = itemsLoaded / itemsTotal
-        console.log(`${Math.round(progressRatio*100)} %`)
+        // console.log(`${Math.round(progressRatio*100)} %`)
     }
 )
 
@@ -249,13 +249,11 @@ function init(nameRoom) {
             const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
             gltf.scale = 0.2
             gltf.scene.name = "roomName"
-            console.log(gltf);
             gltf.scene.scale.set(0.1, 0.1, 0.1)
             gltf.scene.position.set(-0.5, 1, -2)
-            gltf.scene.rotation.y = 0.6
+            gltf.scene.rotation.y = 0.005
             scene.add(gltf.scene)
 			TextPanel.TextPanel(scene, roomNumber)
-            console.log("Go! Go! Go!");
         }
     )
 
@@ -360,13 +358,24 @@ function makePanel() {
 	// Options for component.setupState().
 	// It must contain a 'state' parameter, which you will refer to with component.setState( 'name-of-the-state' ).
 
+	// const hoveredStateAttributes = {
+	// 	state: 'hovered',
+	// 	attributes: {
+	// 		offset: 0.035,
+	// 		backgroundColor: new THREE.Color( 0x999999 ),
+	// 		backgroundOpacity: 1,
+	// 		fontColor: new THREE.Color( 0xffffff )
+	// 	},
+	// };
+
+
 	const hoveredStateAttributes = {
 		state: 'hovered',
 		attributes: {
 			offset: 0.035,
-			backgroundColor: new THREE.Color( 0x999999 ),
+			backgroundColor: new THREE.Color(0x999999),
 			backgroundOpacity: 1,
-			fontColor: new THREE.Color( 0xffffff )
+			fontColor: new THREE.Color(0xffffff),
 		},
 	};
 
@@ -379,6 +388,15 @@ function makePanel() {
 			fontColor: new THREE.Color( 0xffffff )
 		},
 	};
+
+	const idleStateCursorAttributes = document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+
+
+	// function removeHoveredClass(){
+	// 	if (document.querySelector(".custom-cursor").classList.contains("custom-cursor--link")) {
+	// 		document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
+	// 	}
+	// }
 
 	// Buttons creation, with the options objects passed in parameters.
 
@@ -455,15 +473,15 @@ function makePanel() {
                     console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(-0.5, 1, -2)
-                    gltf.scene.rotation.y = 0.3
+                    gltf.scene.rotation.y = 0.005
                     scene.add(gltf.scene)
 					TextPanel.TextPanel(scene, roomNumber)
-                    console.log(`Go! Go! Go! ${roomNumber}`);
                 }
             )
             console.log(scene)
 		}
 	} );
+
 	buttonNext.setupState( hoveredStateAttributes);
 	buttonNext.setupState( idleStateAttributes);
 
@@ -475,7 +493,11 @@ function makePanel() {
         onSet: () => {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 				// window.location(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank')
-				window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
+				if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
+					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`
+				} else {
+					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
+				  }
 			} else {
 				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
 			}
@@ -496,13 +518,10 @@ function makePanel() {
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
-			console.log("scene children");
-			console.log(scene)
 			for(let i = 0; i < scene.children.length; i++){
 				if(scene.children[i].name === "roomName"){
 					scene.remove(scene.children[i]);
 				} else if(scene.children[i].name === "boxContainer"){
-					// console.log(scene.children[i]);
 					scene.remove(scene.children[i])
 				}
 			}
@@ -519,13 +538,11 @@ function makePanel() {
 					// TextPanel.TextPanel(scene, roomNumber)
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
-                    console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(-0.5, 1, -2)
-                    gltf.scene.rotation.y = 0.6
+                    gltf.scene.rotation.y = 0.005
                     scene.add(gltf.scene)
 					TextPanel.TextPanel(scene, roomNumber)
-                    console.log(`Go! Go! Go! ${roomNumber}`);
                 }
             )
 
@@ -533,8 +550,6 @@ function makePanel() {
 	} );
 	buttonPrevious.setupState( hoveredStateAttributes );
 	buttonPrevious.setupState( idleStateAttributes );
-
-	//
 
 	container.add( buttonNext, show3D, buttonPrevious );
 	objsToTest.push( buttonNext, show3D, buttonPrevious );
@@ -567,7 +582,7 @@ function loop() {
 			if(torus){
 				torus.remove()
 			}
-			scene.children[i].rotation.y -= 0.01;
+			scene.children[i].rotation.y -= 0.005;
 		}
 	}
 
