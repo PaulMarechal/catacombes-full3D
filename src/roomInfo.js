@@ -9,19 +9,6 @@
 */
 export const roomInfos = [
 
-    // Anubis
-    [
-        "Anubis", 
-        "Anubis ( ex Chaumiere ) ",
-        "It owes its name to the hieroglyphic frescoes. Room brought by Bishop, Cockroach, Capsule and Kenny of the K-tabourets group.", 
-        "29 Rue d'Alesia \n   75014 Paris", 
-        " 30m",
-        "https://catacombes.xyz/Anubis/3D",
-        "Petit Montrouge", 
-        "6 / 6 / 7 / 7", 
-        "4 / 1 / 5 / 2"
-    ],
-
     // Soleil
     [
         "Soleil", 
@@ -33,6 +20,19 @@ export const roomInfos = [
         "Petit Montrouge", 
         "7 / 5 / 8 / 6", 
         "3 / 7 / 4 / 8"
+    ],
+
+    // Anubis
+    [
+        "Anubis", 
+        "Anubis ( ex Chaumiere ) ",
+        "It owes its name to the hieroglyphic frescoes. Room brought by Bishop, Cockroach, Capsule and Kenny of the K-tabourets group.", 
+        "29 Rue d'Alesia \n   75014 Paris", 
+        " 30m",
+        "https://catacombes.xyz/Anubis/3D",
+        "Petit Montrouge", 
+        "6 / 6 / 7 / 7", 
+        "4 / 1 / 5 / 2"
     ],
 
     // Chateau
@@ -182,11 +182,11 @@ export const roomInfos = [
         "4 / 4 / 5 / 5"
     ],
 
-    // Concression
+    // Concretion
     [
-        "Concression", 
-        "Concression",
-        "Concussion formed with runoff water from the quarry head.", 
+        "Concretion", 
+        "Concretion",
+        "Concution formed with runoff water from the quarry head.", 
         "Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
         "https://catacombes.xyz/Concression/3D",

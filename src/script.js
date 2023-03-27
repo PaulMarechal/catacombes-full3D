@@ -157,9 +157,9 @@ function init(nameRoom) {
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		camera.position.set(0, 1.6, 0);
-		scene.position.set(0, -0.2, 0)
+		scene.position.set(0, -0.2, 0);
 	} else {
-		camera.position.set( 0, 1.6, 0 );
+		camera.position.set( 0, 1.3, -0.3 );
 	}
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );

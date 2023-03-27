@@ -150,6 +150,12 @@
         let imageDiv = document.querySelector(".parentTextExplications");
         const heightImg = `${window.innerHeight - 90}px`
         imageDiv.style.height = heightImg
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.addEventListener("resize", function() {
+                window.location.reload();
+            });
+        }
     </script>
 </body>
 </html>

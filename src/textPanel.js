@@ -132,8 +132,8 @@ export function TextPanel(scene, roomNumber) {
     );
 
     // No need 
-    console.log("`${NameRooms.roomInfos[roomNumber][2]}`")
-    console.log(NameRooms.roomInfos[roomNumber][2])
+    // console.log("`${NameRooms.roomInfos[roomNumber][2]}`")
+    // console.log(NameRooms.roomInfos[roomNumber][2])
   
     rightSubBlock.add(subSubBlock2, subSubBlock1);
   

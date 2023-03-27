@@ -78,7 +78,7 @@ function addElement() {
     // Title
     var title = document.createElement("h2");
     title.classList.add('titleRoom');
-    title.textContent = `${NameRooms.roomInfos[roomNumber][0]}`
+    title.textContent = `${NameRooms.roomInfos[roomNumber][1]}`
     newDiv.appendChild(title);
     
     // Body
@@ -122,6 +122,12 @@ function testElemWebXR(classDiv){
     } else {
         classElem.style.background = "#00000050"
     }
+}
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    window.addEventListener("resize", function() {
+        window.location.reload();
+    });
 }
 
 
