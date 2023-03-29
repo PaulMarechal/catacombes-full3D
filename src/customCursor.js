@@ -22,7 +22,7 @@ export function customCursor(){
 
             for (var j = 0; j < list.length; j++) {
                 var selfLink = list[j];
-                console.log(selfLink)
+                // console.log(selfLink)
                 if (!selfLink.classList.contains("webXRDontWork")){
                     selfLink.addEventListener("mouseover", function() {
                         cursor.classList.add("custom-cursor--link");

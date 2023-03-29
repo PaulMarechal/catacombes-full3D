@@ -61,7 +61,7 @@ const loadingManager = new THREE.LoadingManager(
         
     // Loaded
     () => {
-        console.log("loaded")
+        // console.log("loaded")
 		scene.remove(torus)
 		scene.remove(torus2)
 		scene.remove(torus3)
@@ -258,11 +258,13 @@ function init(nameRoom) {
     )
 
 	//
-
-	for(let i = 0; i < NameRooms.roomInfos.length; i++){
-		meshContainer.add(NameRooms.roomInfos[i][0])
-		meshes.push(NameRooms.roomInfos[i][0])
-	}
+	setTimeout(() => {
+		for(let i = 0; i < NameRooms.roomInfos.length; i++){
+			meshContainer.add(NameRooms.roomInfos[i][0])
+			meshes.push(NameRooms.roomInfos[i][0])
+		}
+	}, 2000)
+	
 
 	currentMesh = 0;
 
@@ -272,7 +274,7 @@ function init(nameRoom) {
 	// Panel
 	//////////
 
-    console.log(scene);
+    // console.log(scene);
 
 	makePanel();
 
@@ -292,8 +294,8 @@ function showMesh( id ) {
         // mesh.visible = false;
         // init(`https://catacombes.xyz/${nameRoom[id]}/${nameRoom[id]}.glb`)
         
-        console.log(i);
-        console.log(mesh);
+        // console.log(i);
+        // console.log(mesh);
 
 	} );
 
@@ -435,8 +437,8 @@ function makePanel() {
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
-			console.log("scene children");
-			console.log(scene)
+			// console.log("scene children");
+			// console.log(scene)
 			for(let i = 0; i < scene.children.length; i++){
 				if(scene.children[i].name === "roomName"){
 					scene.remove(scene.children[i]);
@@ -461,7 +463,7 @@ function makePanel() {
             roomNumber += 1; 
             const roomName = room3dRoad(roomNumber)
 
-            console.log(roomName);
+            // console.log(roomName);
 
             gltfLoader.load(
                 roomName, 
@@ -470,7 +472,7 @@ function makePanel() {
 					// TextPanel.TextPanel(scene, roomNumber)
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
-                    console.log(gltf);
+                    // console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(-0.5, 1, -2)
                     gltf.scene.rotation.y = 0.005
@@ -478,7 +480,7 @@ function makePanel() {
 					TextPanel.TextPanel(scene, roomNumber)
                 }
             )
-            console.log(scene)
+            // console.log(scene)
 		}
 	} );
 
