@@ -715,6 +715,7 @@ ul{
     #WEBXRButton{
         top: 2.5%!important;
         bottom: none; 
+        left: 76%!important;
         height: 10px;
 		background: #97979770!important;
         color: rgb(75, 75, 75)!important;
@@ -801,6 +802,9 @@ ul{
 
     .districtName{
         font-size: 0.7rem;
+    }
+    #VRButton{
+        display: none;
     }
 }
   

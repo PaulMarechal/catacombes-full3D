@@ -258,13 +258,10 @@ function init(nameRoom) {
     )
 
 	//
-	setTimeout(() => {
-		for(let i = 0; i < NameRooms.roomInfos.length; i++){
-			meshContainer.add(NameRooms.roomInfos[i][0])
-			meshes.push(NameRooms.roomInfos[i][0])
-		}
-	}, 2000)
-	
+	for(let i = 0; i < NameRooms.roomInfos.length; i++){
+		meshContainer.add(NameRooms.roomInfos[i][0])
+		meshes.push(NameRooms.roomInfos[i][0])
+	}
 
 	currentMesh = 0;
 
