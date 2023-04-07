@@ -693,11 +693,11 @@ ul{
     background-repeat: no-repeat;
 }
 
-.icon-tabler{
+.icon-tabler-chevron-left, .icon-tabler-chevron-right{
     position: fixed;
     z-index: 99;
     top: 41%;
-    mix-blend-mode: difference;
+    mix-blend-mode: hard-light;
 }
 
 .icon-tabler-chevron-left{
@@ -706,6 +706,14 @@ ul{
 
 .icon-tabler-chevron-right{
     right: 8%;
+}
+
+.icon-tabler-square-rounded-x{
+    position: absolute;
+    top: 10.5%;
+    right: 15.5%;
+    z-index: 99999;
+    mix-blend-mode: hard-light;
 }
 
 /* Mode paysage */

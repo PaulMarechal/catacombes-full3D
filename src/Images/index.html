@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,7 +103,7 @@
         <div class="image1 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre" alt="Grille 'fermée' situé rue Pinel dans le XIIIe arrondissement de Paris, à environ 20 métres sous terre"></div>
         <div class="image2 marginPageimages" title="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.." alt="'Salle' Crypte qui se situe dans un niveau inférieur des catacombes. On y trouve des murs sculptés avec des formes de rosaces, des têtes, des bas reliefs etc.."></div>
         <div class="image3 marginPageimages" style="background-color: #FFF" title="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse." alt="Escalier menant à un étage inférieur dans le secteur du cimetière du Montparnasse."></div>
-        <div class="image5 marginPageimages" title="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778." alt="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâti en 1778."></div>
+        <div class="image4 marginPageimages" title="Escalier menant à un étage inférieur des catacombes interdites dans le secteur du cimetière du Montparnasse."></div>
         <div class="image6 marginPageimages" title="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris." alt="Portes blindées du bunker Allemand sous le lycée Montaigne à Paris."></div>
         <div class="image7 marginPageimages" title="Double escalier minéralogique de Monsieur Lhuillier rue Notre Dame des Champs. Ils servaient à présenter les différentes roches présentes dans les carrières et ont été utilisés à la création de nombreux bâtiments à Paris." alt="Double escalier minéralogique de Monsieur Lhuillier rue Notre Dame des Champs. Ils servaient à présenter les différentes roches présentes dans les carrières et ont été utilisés à la création de nombreux bâtiments à Paris."></div>
         <div class="image10 marginPageimages" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" title="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâto en 1778." alt="Vestige des anciennes fondations de l'aqueduc d'Arcueil. Plaque indiquant le numéro de l'ouvrage, suivi de l'initiale de l'inspecteur des carrières  et de la date de réalisation. On peut donc lire 57e ouvrage de Guillaumot bâto en 1778."></div>
@@ -157,6 +157,13 @@
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path stroke="#FFF" d="M9 6l6 6l-6 6"></path>
             </svg>
+
+            <!-- Close button -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M10 10l4 4m0 -4l-4 4"></path>
+                <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" fill="#ffffff60"></path>
+            </svg>
         </div>
     </div>
 
@@ -165,7 +172,16 @@
     </div>
 
     <script>
+        const divs = document.querySelectorAll('.marginPageimages');
+        const arrow = document.querySelector('.arrow');
+        const body = document.querySelector('body');
+        const arrowLeft = document.querySelector('.icon-tabler-chevron-left');
+        const arrowRight = document.querySelector('.icon-tabler-chevron-right');
+        const imageOnClick = document.querySelector('.imageOnClick')
+        const closeButton = document.querySelector(".icon-tabler-square-rounded-x")
         let imageDiv = document.querySelector(".parentTextExplications");
+
+
         const heightImg = `${window.innerHeight - 90}px`
         imageDiv.style.height = heightImg
 
@@ -176,12 +192,6 @@
         }
         
         function displayImageOnClick(){
-            const divs = document.querySelectorAll('.marginPageimages');
-            const arrow = document.querySelector('.arrow');
-            const body = document.querySelector('body');
-            const arrowLeft = document.querySelector('.icon-tabler-chevron-left');
-            const arrowRight = document.querySelector('.icon-tabler-chevron-right');
-            const imageOnClick = document.querySelector('.imageOnClick')
 
             divs.forEach(div => {
                 div.addEventListener('click', () => {
@@ -192,21 +202,34 @@
                     body.style.background = "rgb(106 106 106)"
                     imageOnClick.classList.add(`image${imageNumber}`)
                     imageOnClick.style.display = "block"
+                    closeButton.style.display = "block"
+                    arrowLeft.style.display = "block"
+                    arrowRight.style.display = "block"
                     var click = imageNumber
 
                     // Click on left arrow
                     arrowLeft.addEventListener('click', () => {
                         click -= 1 
                         var imageNumber = parseInt(div.classList[0].slice(5))
-                        
+                                              
                         var imageNumberDiv = imageNumber + click
-
+                      
                         if(imageNumberDiv <= 1){
                             click = 23
                         }
-
+                      
                         imageOnClick.classList.remove(imageOnClick.classList[1]) 
                         imageOnClick.classList.add(`image${imageNumberDiv}`)
+
+                        imageOnClick.style.transition = "transform 0.5s";
+                        closeButton.style.transition = "transform 0.5s";
+
+                        imageOnClick.style.transform = "translateX(-2%)";
+                        closeButton.style.transform = "translateX(-49%)";
+                        setTimeout(() => {
+                            imageOnClick.style.transform = "translateX(0)";
+                            closeButton.style.transform = "translateX(0)";
+                        }, 500);
                     });
 
                     // Click on right arrow
@@ -214,33 +237,39 @@
                         click += 1 
                         var imageNumber = parseInt(div.classList[0].slice(5))
                         var imageNumberDiv = imageNumber + click
-
+                      
                         if(imageNumberDiv >= 24){
                             click = 1
                         }
-
+                      
                         imageOnClick.classList.remove(imageOnClick.classList[1]) 
                         imageOnClick.classList.add(`image${imageNumberDiv}`)
-                    });   
-                    
-                    setTimeout(function() {
-                        if (imageOnClick.style.display == 'block') {
-                          body.addEventListener('click', function(event) {
-                            if ((event.target != arrowRight) || (event.target != arrowLeft)) {
-                              imageOnClick.style.display = "none";
-                            }
-                          }); 
-                        }
-                      }, 1000);
                       
+                        imageOnClick.style.transition = "transform 0.5s";
+                        closeButton.style.transition = "transform 0.5s";
 
+                        imageOnClick.style.transform = "translateX(2%)";
+                        closeButton.style.transform = "translateX(49%)";
+
+                        setTimeout(() => {
+                            imageOnClick.style.transform = "translateX(0)";
+                            closeButton.style.transform = "translateX(0)";
+                        }, 500);
+                    });
+
+                    closeButton.addEventListener("click", function(event){
+                        imageOnClick.style.display = "none";
+                        arrow.style.diplay = "none"; 
+                        body.style.background = "rgb(231 231 231)"; 
+                        closeButton.style.display = "none"
+                        arrowLeft.style.display = "none"
+                        arrowRight.style.display = "none"
+                    })
                 });
             });
         }
 
         displayImageOnClick()
-        
-        
         
     </script>
 </body>

@@ -271,11 +271,7 @@ function init(nameRoom) {
 	// Panel
 	//////////
 
-    // console.log(scene);
-
 	makePanel();
-
-	//
 
 	renderer.setAnimationLoop( loop );
 
@@ -434,42 +430,26 @@ function makePanel() {
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
-			// console.log("scene children");
-			// console.log(scene)
+
 			for(let i = 0; i < scene.children.length; i++){
 				if(scene.children[i].name === "roomName"){
 					scene.remove(scene.children[i]);
 				} else if(scene.children[i].name === "boxContainer"){
-					// console.log(scene.children[i]);
 					scene.remove(scene.children[i])
 				}
 			}
-			//console.log(scene.children[9].name === "boxContainer");
-			//console.log(scene)
-			//if( scene.children[scene.children.length - 1 ].name === "boxContainer" ){ 
-			// 		scene.children[scene.children.length - 2].remove()
-			//		scene.remove(scene.children[scene.children.length - 1 ].name === "boxContainer")
-			//}
-			
-
-			//TextPanel.TextPanel(scene, roomNumber)
-
 
 			showMesh( currentMesh );
 
             roomNumber += 1; 
             const roomName = room3dRoad(roomNumber)
 
-            // console.log(roomName);
-
             gltfLoader.load(
                 roomName, 
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
-					// TextPanel.TextPanel(scene, roomNumber)
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
-                    // console.log(gltf);
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
                     gltf.scene.position.set(-0.5, 1, -2)
                     gltf.scene.rotation.y = 0.005
@@ -477,14 +457,11 @@ function makePanel() {
 					TextPanel.TextPanel(scene, roomNumber)
                 }
             )
-            // console.log(scene)
 		}
-	} );
+	});
 
 	buttonNext.setupState( hoveredStateAttributes);
 	buttonNext.setupState( idleStateAttributes);
-
-	//
 
     show3D.setupState({
         state: 'selected',
@@ -509,10 +486,6 @@ function makePanel() {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
-
-			// currentMesh -= 1;
-			// if ( currentMesh < 0 ) currentMesh = NameRooms.roomInfos.length;
-			// showMesh( currentMesh );
 			scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 			scene.add(torus);
 			scene.add(torus2);
@@ -534,7 +507,6 @@ function makePanel() {
                 roomName, 
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
-					// TextPanel.TextPanel(scene, roomNumber)
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
@@ -544,9 +516,8 @@ function makePanel() {
 					TextPanel.TextPanel(scene, roomNumber)
                 }
             )
-
 		}
-	} );
+	});
 	buttonPrevious.setupState( hoveredStateAttributes );
 	buttonPrevious.setupState( idleStateAttributes );
 
@@ -556,16 +527,12 @@ function makePanel() {
 }
 
 // Handle resizing the viewport
-
 function onWindowResize() {
-
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize( window.innerWidth, window.innerHeight );
-
 }
 
-//
 removeVRButton()
 
 
@@ -651,8 +618,6 @@ function updateButtons() {
 
 }
 
-//
-
 function raycast() {
 
 	return objsToTest.reduce( ( closestIntersection, obj ) => {
@@ -662,9 +627,7 @@ function raycast() {
 		if ( !intersection[ 0 ] ) return closestIntersection;
 
 		if ( !closestIntersection || intersection[ 0 ].distance < closestIntersection.distance ) {
-
 			intersection[ 0 ].object = obj;
-
 			return intersection[ 0 ];
 		}
 
@@ -697,8 +660,8 @@ function removeVRButton(){
 		if(webxrButton){
 			setTimeout(() => {
 				webxrButton.animate(
-					  {opacity: 0},
-					  {duration: 1000, fill: 'forwards'}
+					{opacity: 0},
+					{duration: 1000, fill: 'forwards'}
 				).onfinish = () => {
 					webxrButton.style.display = "none";
 				}

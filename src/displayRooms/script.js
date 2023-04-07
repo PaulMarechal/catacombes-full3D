@@ -3,7 +3,6 @@ import * as NameRooms from "../roomInfo.js";
 var roomNumber = 0;
 
 function addButtonDiv(elem, idElem, link, textButton, newDiv){
-    console.log(textButton)
     var elemCreated = document.createElement(elem); 
     elemCreated.setAttribute("id", idElem);
     elemCreated.classList.add(idElem); 

@@ -12,10 +12,13 @@ export function customCursor(){
 
         var links = document.querySelectorAll("a");
         var labelElem = document.querySelectorAll("label");
+        var arrowLeft = document.getElementsByClassName("icon-tabler-chevron-left"); 
+        var arrowRight = document.getElementsByClassName("icon-tabler-chevron-right");
+        var closeButton = document.getElementsByClassName("icon-tabler-square-rounded-x");
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem ]
+        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];
