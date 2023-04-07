@@ -683,14 +683,15 @@ ul{
     z-index: 999;
     -webkit-box-shadow: 0px 0px 48px 11px rgba(13,13,13,0.86); 
     box-shadow: 0px 0px 48px 11px rgba(13,13,13,0.86);
-    width: 70%;
-    height: 80%;
-    top: 10%; 
+    width: 71%;
+    height: 93%;
+    top: 3%; 
     left: 15%; 
     object-fit: contain;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0;
 }
 
 .icon-tabler-chevron-left, .icon-tabler-chevron-right{
@@ -710,10 +711,15 @@ ul{
 
 .icon-tabler-square-rounded-x{
     position: absolute;
-    top: 10.5%;
-    right: 15.5%;
+    top: 3.5%;
+    right: 14.4%;
     z-index: 99999;
     mix-blend-mode: hard-light;
+}
+
+.arrow{
+    display: none; 
+    opacity: 0;
 }
 
 /* Mode paysage */
@@ -768,6 +774,25 @@ ul{
         color: rgb(75, 75, 75)!important;
         border: 1px solid rgb(75, 75, 75)!important;
         padding: 8px 6px 14px 6px!important;
+    }
+
+    .icon-tabler-chevron-left{
+        left: 3%;
+        z-index: 9999;
+    }
+    
+    .icon-tabler-chevron-right{
+        right: 3%;
+        z-index: 9999;
+    }
+
+    .icon-tabler-square-rounded-x{
+        top: 11.5%;
+        right: 14.4%;
+    }
+
+    .icon-tabler-chevron-left, .icon-tabler-chevron-right{
+        top: 30%;
     }
 
 }
@@ -852,6 +877,16 @@ ul{
     }
     #VRButton{
         display: none;
+    }
+
+    .icon-tabler-chevron-left{
+        left: -5%;
+        z-index: 9999;
+    }
+    
+    .icon-tabler-chevron-right{
+        right: -5%;
+        z-index: 9999;
     }
 }
   

@@ -145,7 +145,7 @@
             </div>
         </div>
 
-        <div style="display: none" class="arrow">
+        <div class="arrow">
             <!-- Arrow left -->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -167,9 +167,7 @@
         </div>
     </div>
 
-    <div class="imageOnClick">
-
-    </div>
+    <div class="imageOnClick"></div>
 
     <script>
         const divs = document.querySelectorAll('.marginPageimages');
@@ -180,7 +178,6 @@
         const imageOnClick = document.querySelector('.imageOnClick')
         const closeButton = document.querySelector(".icon-tabler-square-rounded-x")
         let imageDiv = document.querySelector(".parentTextExplications");
-
 
         const heightImg = `${window.innerHeight - 90}px`
         imageDiv.style.height = heightImg
@@ -196,16 +193,25 @@
             divs.forEach(div => {
                 div.addEventListener('click', () => {
 
-                    const imageNumber = parseInt(div.classList[0].slice(5))
-
-                    arrow.style.display = "block"
-                    body.style.background = "rgb(106 106 106)"
-                    imageOnClick.classList.add(`image${imageNumber}`)
-                    imageOnClick.style.display = "block"
-                    closeButton.style.display = "block"
-                    arrowLeft.style.display = "block"
-                    arrowRight.style.display = "block"
+                    const imageNumber = parseInt(div.classList[0].slice(5));
                     var click = imageNumber
+                    imageOnClick.style.transition = "opacity 0.3s ease-out";
+                    arrow.style.transition = "opacity 0.3s ease-out";
+                    imageOnClick.style.opacity = "0";
+                    arrow.style.opacity = "0";
+
+                    arrow.style.display = "block";
+                    body.style.background = "rgb(106, 106, 106)";
+                    imageOnClick.classList.add(`image${imageNumber}`);
+                    imageOnClick.style.display = "block";
+                    closeButton.style.display = "block";
+                    arrowLeft.style.display = "block";
+                    arrowRight.style.display = "block";
+
+                    setTimeout(function(){
+                        imageOnClick.style.opacity = "1";
+                        arrow.style.opacity = "1"; 
+                    }, 100);
 
                     // Click on left arrow
                     arrowLeft.addEventListener('click', () => {
@@ -239,7 +245,8 @@
                         var imageNumberDiv = imageNumber + click
                       
                         if(imageNumberDiv >= 24){
-                            click = 1
+                            click = 0
+                            imageNumberDiv = 1
                         }
                       
                         imageOnClick.classList.remove(imageOnClick.classList[1]) 
@@ -258,12 +265,21 @@
                     });
 
                     closeButton.addEventListener("click", function(event){
-                        imageOnClick.style.display = "none";
-                        arrow.style.diplay = "none"; 
                         body.style.background = "rgb(231 231 231)"; 
-                        closeButton.style.display = "none"
-                        arrowLeft.style.display = "none"
-                        arrowRight.style.display = "none"
+                        
+                        imageOnClick.style.transition = "opacity .5s ease-out";
+                        arrow.style.transition = "opacity .5s ease-out";
+                        imageOnClick.style.opacity = "0";
+                        arrow.style.opacity = "0"; 
+                        
+                        setTimeout(function(){
+                            imageOnClick.style.display = "none";
+                            arrow.style.diplay = "none"; 
+                            closeButton.style.display = "none"
+                            arrowLeft.style.display = "none"
+                            arrowRight.style.display = "none"
+                            imageOnClick.className = "imageOnClick";
+                        }, 500)
                     })
                 });
             });
