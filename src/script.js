@@ -441,7 +441,12 @@ function makePanel() {
 
 			showMesh( currentMesh );
 
-            roomNumber += 1; 
+			roomNumber += 1; 
+
+			if(roomNumber >= NameRooms.roomInfos.length){
+				roomNumber = 0;
+			}
+
             const roomName = room3dRoad(roomNumber)
 
             gltfLoader.load(
@@ -500,8 +505,12 @@ function makePanel() {
 
 			showMesh( currentMesh );
 
+			if(roomNumber < 1){
+				roomNumber = NameRooms.roomInfos.length;
+			}
             roomNumber -= 1; 
-            const roomName = room3dRoad(roomNumber)
+
+			const roomName = room3dRoad(roomNumber)
 			
 			gltfLoader.load(
                 roomName, 

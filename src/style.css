@@ -596,6 +596,10 @@ ul{
     background: rgba( 255, 255, 255, 0.5 );
     border-radius: 10px;
     border: 0.3px solid #d2caca;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .parentDivPrezMain{
@@ -645,6 +649,10 @@ ul{
     text-decoration: none;
     grid-area: 1 / 1 / 3 / 2; 
     left: 5px;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 /* Custom cursor */
@@ -686,12 +694,16 @@ ul{
     width: 71%;
     height: 93%;
     top: 3%; 
-    left: 15%; 
+    left: 14.5%; 
     object-fit: contain;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
 }
 
 .icon-tabler-chevron-left, .icon-tabler-chevron-right{
@@ -712,7 +724,7 @@ ul{
 .icon-tabler-square-rounded-x{
     position: absolute;
     top: 3.5%;
-    right: 14.4%;
+    right: 14.9%;
     z-index: 99999;
     mix-blend-mode: hard-light;
 }

@@ -90,12 +90,13 @@ export function TextPanel(scene, roomNumber) {
     rightSubBlock.position.set(0.83, 0.15, 0)
   
     const subSubBlock1 = new ThreeMeshUI.Block({
-      height: 0.5,
+      height: 0.18,
       width: 0.5,
       margin: 0.01,
       padding: 0.02,
       fontSize: 0.025,
       justifyContent: "center",
+      alignItems: "end",
       backgroundOpacity: 0,
     }).add(
       new ThreeMeshUI.Text({
@@ -116,7 +117,7 @@ export function TextPanel(scene, roomNumber) {
     );
   
     const subSubBlock2 = new ThreeMeshUI.Block({
-      height: 0.35,
+      height: 0.7,
       width: 0.5,
       margin: 0.025,
       padding: 0.02,
