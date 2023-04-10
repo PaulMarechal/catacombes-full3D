@@ -265,8 +265,7 @@ function displayRooms(districtName) {
     }
 }
 
-
-
+console.log("Developed by 🍔 by Paul Maréchal")
 
 
 

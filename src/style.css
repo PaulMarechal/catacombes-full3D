@@ -799,14 +799,13 @@ ul{
     }
 
     .icon-tabler-square-rounded-x{
-        top: 11.5%;
-        right: 14.4%;
+        top: 2.8%;
+        right: 14.5%;
     }
 
     .icon-tabler-chevron-left, .icon-tabler-chevron-right{
         top: 30%;
     }
-
 }
 
 /* Mode portrait */
