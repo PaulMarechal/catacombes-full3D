@@ -679,4 +679,4 @@ function removeVRButton(){
 	}
 }
 
-console.log("Developed by 🍔 by Paul Maréchal")
+console.log("Developed with 🍔 by Paul Maréchal")

@@ -6,6 +6,9 @@
  * - Location in Paris 
  * - Depth 
  * - Redirection link ( to 3D model)
+ * - Location in Paris
+ * - Location in grid ( paris)
+ * - Location in the grid-area ( more precise )
 */
 export const roomInfos = [
 
