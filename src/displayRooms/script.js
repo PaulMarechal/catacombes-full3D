@@ -21,7 +21,6 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     if(idElem === "buttonAR"){
         elemCreated.setAttribute("title", "Augmented Reality for phones");
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-            // elemCreated.style.backgroundColor = "#FFF"
             elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
         } else {
             elemCreated.style.background = "#00000050"
