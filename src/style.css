@@ -246,6 +246,27 @@ ul{
     padding-left: 10px;
 }
 
+.display_all_rooms_main_div{
+    display: inline-flex; 
+}
+
+.display_all_rooms_small{
+    position: fixed; 
+    right: 5px; 
+    top: 5rem; 
+    width: 10rem;
+    background: #ffffff50; 
+    z-index: 1; 
+    height: 75%; 
+    border-radius: 10px; 
+    max-height: 75%; 
+    overflow-y: scroll
+}
+
+.small_image_room_homepage{
+    width: 35%;
+}
+
 /* Images */
 .parentTextExplications {
     display: grid;
@@ -806,6 +827,10 @@ ul{
     .icon-tabler-chevron-left, .icon-tabler-chevron-right{
         top: 30%;
     }
+
+    .display_all_rooms_small{
+        display: none; 
+    }
 }
 
 /* Mode portrait */
@@ -898,6 +923,10 @@ ul{
     .icon-tabler-chevron-right{
         right: -5%;
         z-index: 9999;
+    }
+
+    .display_all_rooms_small{
+        display: none; 
     }
 }
   

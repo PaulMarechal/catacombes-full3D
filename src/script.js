@@ -101,6 +101,8 @@ function seeRoomIn3d(roomNumber){
 }
 // console.log(room3dRoad(0));
 
+
+
 // const room3dRoad = `https://catacombes.xyz/${nameRoom[0]}/${nameRoom[0]}.glb`
 
 
@@ -257,15 +259,39 @@ function init(nameRoom) {
         }
     )
 
+	function display_all_rooms(nameRoom, imageRoom){
+		const display_all_rooms_small = document.querySelector(".display_all_rooms_small")
+		const main_div = document.createElement("div"); 
+		main_div.classList.add("display_all_rooms_main_div"); 
+		const name_room = document.createElement("h3");
+		const image_room = document.createElement("img");
+
+		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.png`);
+		image_room.setAttribute("alt", imageRoom);
+		image_room.classList.add('small_image_room_homepage');
+
+		name_room.classList.add('small_name_room_homepage');
+		name_room.innerHTML = nameRoom
+
+		main_div.appendChild(image_room);
+		main_div.appendChild(name_room);
+		display_all_rooms_small.appendChild(main_div);
+
+	}
+
 	//
 	for(let i = 0; i < NameRooms.roomInfos.length; i++){
 		meshContainer.add(NameRooms.roomInfos[i][0])
 		meshes.push(NameRooms.roomInfos[i][0])
+		display_all_rooms(NameRooms.roomInfos[i][0], NameRooms.roomInfos[i][0])
+		// console.log(NameRooms.roomInfos[i][0]) = nameRoom
+
 	}
 
 	currentMesh = 0;
 
 	showMesh( currentMesh );
+
 
 	//////////
 	// Panel
