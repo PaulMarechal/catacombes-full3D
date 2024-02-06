@@ -96,6 +96,10 @@ function room3dRoad(roomNumber){
     return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.glb`
 }
 
+function display_room_click(room_name){
+    return `https://catacombes.xyz/${room_name}/${room_name}.glb`
+}
+
 function seeRoomIn3d(roomNumber){
     return `${NameRooms.roomInfos[roomNumber][0]}`
 }
@@ -276,7 +280,6 @@ function init(nameRoom) {
 		main_div.appendChild(image_room);
 		main_div.appendChild(name_room);
 		display_all_rooms_small.appendChild(main_div);
-
 	}
 
 	//
@@ -284,8 +287,7 @@ function init(nameRoom) {
 		meshContainer.add(NameRooms.roomInfos[i][0])
 		meshes.push(NameRooms.roomInfos[i][0])
 		display_all_rooms(NameRooms.roomInfos[i][0], NameRooms.roomInfos[i][0])
-		// console.log(NameRooms.roomInfos[i][0]) = nameRoom
-
+		//console.log(NameRooms.roomInfos[i][0]) = nameRoom	
 	}
 
 	currentMesh = 0;
@@ -560,6 +562,53 @@ function makePanel() {
 	objsToTest.push( buttonNext, show3D, buttonPrevious );
 
 }
+
+function click_on_others_rooms() {
+    const display_all_rooms_main_div = document.querySelectorAll(".display_all_rooms_main_div");
+    display_all_rooms_main_div.forEach((display) => {
+        display.addEventListener("click", (event) => {
+            const image = event.currentTarget.querySelector(".small_image_room_homepage");
+            if (image) {
+                const altValue = image.getAttribute("alt");
+
+                console.log(altValue);
+
+				scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
+				console.log(scene)
+				scene.add(torus);
+				scene.add(torus2);
+				scene.add(torus3);
+
+				for(let i = 0; i < scene.children.length; i++){
+					if(scene.children[i].name === "roomName"){
+						scene.remove(scene.children[i]);
+					} else if(scene.children[i].name === "boxContainer"){
+						scene.remove(scene.children[i])
+					}
+				}
+
+				const roomName = display_room_click(altValue)
+
+				gltfLoader.load(
+					roomName, 
+					(gltf) => {
+						const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
+						gltf.scale = 0.2
+						gltf.scene.name = "roomName"
+						gltf.scene.scale.set(0.1, 0.1, 0.1)
+						gltf.scene.position.set(-0.5, 1, -2)
+						gltf.scene.rotation.y = 0.005
+						scene.add(gltf.scene)
+						TextPanel.TextPanel(scene, roomNumber)
+					}
+				)
+            }
+        });
+    });
+}
+
+
+click_on_others_rooms()
 
 // Handle resizing the viewport
 function onWindowResize() {
