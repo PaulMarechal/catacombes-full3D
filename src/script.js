@@ -96,10 +96,6 @@ function room3dRoad(roomNumber){
     return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.glb`
 }
 
-function display_room_click(room_name){
-    return `https://catacombes.xyz/${room_name}/${room_name}.glb`
-}
-
 function seeRoomIn3d(roomNumber){
     return `${NameRooms.roomInfos[roomNumber][0]}`
 }
@@ -508,6 +504,8 @@ function makePanel() {
 					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
 				  }
 			} else {
+
+				console.log(scene.children)
 				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
 			}
         }
@@ -563,15 +561,25 @@ function makePanel() {
 
 }
 
+function find_room_number(liste, nomRecherche) {
+    for (let i = 0; i < liste.length; i++) {
+        const salle = liste[i];
+        if (salle[0] === nomRecherche) {
+            return i;
+        }
+    }
+    return -1; 
+}
+
 function click_on_others_rooms() {
     const display_all_rooms_main_div = document.querySelectorAll(".display_all_rooms_main_div");
     display_all_rooms_main_div.forEach((display) => {
         display.addEventListener("click", (event) => {
             const image = event.currentTarget.querySelector(".small_image_room_homepage");
             if (image) {
-                const altValue = image.getAttribute("alt");
+                const alt_value = image.getAttribute("alt");
 
-                console.log(altValue);
+				const room_number = find_room_number(NameRooms.roomInfos, alt_value);
 
 				scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 				console.log(scene)
@@ -587,7 +595,7 @@ function click_on_others_rooms() {
 					}
 				}
 
-				const roomName = display_room_click(altValue)
+				const roomName = room3dRoad(room_number)
 
 				gltfLoader.load(
 					roomName, 
@@ -599,14 +607,13 @@ function click_on_others_rooms() {
 						gltf.scene.position.set(-0.5, 1, -2)
 						gltf.scene.rotation.y = 0.005
 						scene.add(gltf.scene)
-						TextPanel.TextPanel(scene, roomNumber)
+						TextPanel.TextPanel(scene, room_number)
 					}
 				)
             }
         });
     });
 }
-
 
 click_on_others_rooms()
 
