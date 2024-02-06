@@ -466,6 +466,7 @@ function makePanel() {
 			showMesh( currentMesh );
 
 			roomNumber += 1; 
+			console.log(roomNumber)
 
 			if(roomNumber >= NameRooms.roomInfos.length){
 				roomNumber = 0;
@@ -580,6 +581,8 @@ function click_on_others_rooms() {
                 const alt_value = image.getAttribute("alt");
 
 				const room_number = find_room_number(NameRooms.roomInfos, alt_value);
+				
+				roomNumber = room_number;
 
 				scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 				console.log(scene)
