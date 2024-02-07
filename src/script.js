@@ -620,6 +620,35 @@ function click_on_others_rooms() {
 
 click_on_others_rooms()
 
+function display_all_room_div(){
+	const display_all_rooms_small = document.querySelector(".display_all_rooms_small"); 
+	const display_all_rooms_button = document.querySelector(".display_all_rooms_button");
+	
+	let timeoutId;
+
+	display_all_rooms_button.addEventListener("click", () => {
+		display_all_rooms_small.style.right = "10px"; 
+		display_all_rooms_small.style.opacity = "1"
+
+		display_all_rooms_button.style.right = "-40px"
+		display_all_rooms_button.style.opacity = "0"
+
+		display_all_rooms_small.addEventListener("mouseleave", () => {
+			timeoutId = setTimeout(() => {
+				display_all_rooms_small.style.right = "-180px";
+				display_all_rooms_small.style.opacity = "0";
+	
+				display_all_rooms_button.style.right = "0px";
+				display_all_rooms_button.style.opacity = "1";
+			}, 4000);
+		});
+	})
+
+
+}
+
+display_all_room_div() 
+
 // Handle resizing the viewport
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
