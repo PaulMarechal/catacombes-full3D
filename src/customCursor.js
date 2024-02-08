@@ -15,10 +15,11 @@ export function customCursor(){
         var arrowLeft = document.getElementsByClassName("icon-tabler-chevron-left"); 
         var arrowRight = document.getElementsByClassName("icon-tabler-chevron-right");
         var closeButton = document.getElementsByClassName("icon-tabler-square-rounded-x");
+        const div_display_card_main = document.getElementsByClassName("div_display_card_main")
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton ]
+        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];

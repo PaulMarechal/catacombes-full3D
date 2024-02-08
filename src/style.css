@@ -812,7 +812,7 @@ ul{
 .explication_text_card_second{
     background: #fff;
     width: 55%;
-    height: 65%;
+    height: 73%;
     margin: auto;
     margin-top: 5%;
     border-radius: 25px;
@@ -838,7 +838,61 @@ ul{
 
 .text_explication_card{
     text-align: start;
-    font-size: 2vw;
+    font-size: 1.8vw;
+    padding-bottom: 0.7rem;
+    padding-bottom: 2.5rem; 
+}
+
+.background_filter{
+    grid-area: 1 / 1 / 4 / 6;
+    z-index: -1;
+}
+
+.see_card_bigger_image{
+    width: 70%;
+}
+
+.button_verso_track{
+
+}
+
+.see_card_bigger_image_verso{
+    opacity: 0;
+    position: absolute;
+}
+
+.show_image_verso_main_div{
+    display:none;
+    opacity: 0;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.show_all_tracts_image_div{
+    grid-area: 1 / 3 / 4 / 6;
+    display:none; 
+    opacity: 0;
+}
+
+.tract_card_V1{
+    width: 5.5rem;
+}
+
+.text_card_v1{
+    /* position: absolute; */
+    /* mix-blend-mode: difference;  */
+    color: #000;
+    width: fit-content; 
+    font-size: xx-large; 
+}
+
+.div_display_card_main{
+    background-color: whitesmoke;
+    padding: 5px 10px; 
+    border-radius: 14px; 
+    width: 16%;
+    height: 6rem;
+    cursor: pointer;
 }
 
 /* Mode paysage */
