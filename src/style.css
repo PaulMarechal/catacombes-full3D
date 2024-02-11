@@ -802,45 +802,41 @@ ul{
 
 /* Cards page */
 .explication_cards_text_div{
-    grid-area: 1 / 1 / 4 / 4;
+    grid-area: 1 / 1 / 4 / 5;
+    margin: auto;
+    margin-top: 10%;
 }
 
 .explication_cards_video_div{
-    grid-area: 1 / 3 / 4 / 6;
+    grid-area: 1 / 6 / 4 / 11;
+    margin: auto;
+    margin-top: 6%;
 }
 
 .explication_text_card_second{
     background: #fff;
-    width: 55%;
-    height: 73%;
-    margin: auto;
-    margin-top: 5%;
+    width: 85%;
+    height: 80%;
     border-radius: 25px;
     padding: 20px 30px;
     margin-left: 13%;
 }
 
 .explication_card_video_second{
-    /* background: #fff; */
-    width: 55%;
-    height: 65%;
-    margin: auto;
-    margin-top: 5%;
-    margin-left: 25%;
     border-radius: 25px;
+    text-align: center;
 }
 
 .explication_video{
-    width: 67%;
+    width: 20rem;
     border-radius: 25px;
-    margin-left: 12%;
 }
 
 .text_explication_card{
     text-align: start;
     font-size: 1.8vw;
     padding-bottom: 0.7rem;
-    padding-bottom: 2.5rem; 
+    padding-bottom: 1.5rem; 
 }
 
 .background_filter{
@@ -849,11 +845,7 @@ ul{
 }
 
 .see_card_bigger_image{
-    width: 70%;
-}
-
-.button_verso_track{
-
+    width: 100%;
 }
 
 .see_card_bigger_image_verso{
@@ -865,7 +857,6 @@ ul{
     display:none;
     opacity: 0;
     text-align: center;
-    margin-top: 5%;
 }
 
 .show_all_tracts_image_div{
@@ -879,8 +870,6 @@ ul{
 }
 
 .text_card_v1{
-    /* position: absolute; */
-    /* mix-blend-mode: difference;  */
     color: #000;
     width: fit-content; 
     font-size: xx-large; 
@@ -893,7 +882,90 @@ ul{
     width: 16%;
     height: 6rem;
     cursor: pointer;
+    transition: box-shadow 1s ease-out;
 }
+
+.div_display_card_main:hover{
+    box-shadow: 0 3px 14px #b4b4b4;
+}
+
+.parent_text_explications_cards {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(3, 17.9em);
+    margin: 3rem 1rem; 
+    overflow-y: scroll; 
+}
+
+.card {
+    height: 557px;
+    width: 400px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+
+.card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.many_cards_display{
+    height: 35rem;
+    width: 35rem;
+    background-image: url(https://catacombes.xyz/assets/images/many_tracts_background.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0; 
+    display: none;
+    transition: opacity 1s ease-out;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg) ;
+}
+  
+.card-front {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://catacombes.xyz/assets/images/recto_tracts_v1.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000000;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 0.5s;
+}
+  
+.card-back {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://catacombes.xyz/assets/images/verso_tracts_v1.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000000;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+}
+
+.close_card_viewer{
+    position: absolute;
+    z-index: 3; 
+    top: 14.8%; 
+    left: 37.5%;
+}
+
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {

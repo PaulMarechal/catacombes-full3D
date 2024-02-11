@@ -2,30 +2,46 @@ const div_display_card_main = document.querySelector(".div_display_card_main")
 const text_explication_card = document.querySelector(".text_explication_card")
 const display_all_tracts_div = document.querySelector(".display_all_tracts_div")
 const show_image_verso_main_div = document.querySelector(".show_image_verso_main_div")
-
-const button_verso_track = document.querySelector(".button_verso_track")
-
-const see_card_bigger_image = document.querySelector(".see_card_bigger_image")
+const close_card_viewer = document.querySelector(".close_card_viewer")
+const explication_video = document.querySelector(".explication_video")
+const many_cards_display = document.querySelector(".many_cards_display")
 
 div_display_card_main.addEventListener("click", () => {
 
-    text_explication_card.style.opacity = 0
-    display_all_tracts_div.style.opacity = 0 
+    text_explication_card.style.display = "none"; 
+    display_all_tracts_div.style.display = "none";
+    explication_video.style.display = "none";
 
-    show_image_verso_main_div.style.opacity = 1 
-    show_image_verso_main_div.style.display = "block"
+    text_explication_card.style.opacity = 0;
+    display_all_tracts_div.style.opacity = 0;
+    explication_video.style.opacity = 0;
 
     setTimeout(() => {
-        text_explication_card.style.display = "none"; 
-        display_all_tracts_div.style.display = "none";
+        show_image_verso_main_div.style.opacity = 1;
+        show_image_verso_main_div.style.display = "block";
+
+        many_cards_display.style.opacity = 1;
+        many_cards_display.style.display = "block"
     }, 500);
 
 });
 
-button_verso_track.addEventListener("click", () => {
-    console.log(see_card_bigger_image.classList)
-    if(see_card_bigger_image.classList.contains("recto")){
-        see_card_bigger_image.setAttribute("src", "https://catacombes.xyz/assets/images/verso_tracts_v1.png")
-        button_verso_track.innerHTML = "Voir verso"
-    }
-})
+
+close_card_viewer.addEventListener("click", () => {
+    show_image_verso_main_div.style.opacity = 0;
+    show_image_verso_main_div.style.display = "none";
+
+    many_cards_display.style.opacity = 0;
+    many_cards_display.style.display = "none";
+
+    setTimeout(() => {
+        text_explication_card.style.opacity = 1;
+        display_all_tracts_div.style.opacity = 1;
+        explication_video.style.opacity = 1;
+    
+        text_explication_card.style.display = "block"; 
+        display_all_tracts_div.style.display = "block";
+        explication_video.style.display = "block";
+    }, 500);
+}); 
+
