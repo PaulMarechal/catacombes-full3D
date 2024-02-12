@@ -818,30 +818,35 @@ ul{
     grid-area: 1 / 1 / 4 / 5;
     margin: auto;
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .explication_cards_video_div{
     grid-area: 1 / 6 / 4 / 11;
+    position: relative;
     margin: auto;
-    margin-top: 6%;
 }
 
 .explication_text_card_second{
     background: #fff;
     width: 85%;
-    height: 80%;
+    height: 95%;
     border-radius: 25px;
     padding: 20px 30px;
     margin-left: 13%;
 }
 
 .explication_card_video_second{
+    /* position: absolute; */
     border-radius: 25px;
-    text-align: center;
+    /* text-align: center;
+    top: 0; 
+    right: 0; 
+    transform: translate(-70%, 11.5%); */
 }
 
 .explication_video{
-    width: 20rem;
+    width: 19rem;
     border-radius: 25px;
 }
 
@@ -870,6 +875,7 @@ ul{
     display:none;
     opacity: 0;
     text-align: center;
+    position: relative;
 }
 
 .show_all_tracts_image_div{
@@ -905,8 +911,8 @@ ul{
 .parent_text_explications_cards {
     display: grid;
     grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(3, 17.9em);
-    margin: 3rem 1rem; 
+    grid-template-rows: repeat(3, 1fr);
+    margin: 3rem 1rem 1rem 1rem; 
     overflow-y: scroll; 
 }
 
@@ -927,8 +933,8 @@ ul{
 }
 
 .many_cards_display{
-    height: 35rem;
-    width: 35rem;
+    height: 40rem;
+    width: 40rem;
     background-image: url(https://catacombes.xyz/assets/images/many_tracts_background.png);
     background-position: 50% 50%;
     background-size: cover;
@@ -975,8 +981,9 @@ ul{
 .close_card_viewer{
     position: absolute;
     z-index: 3; 
-    top: 14.8%; 
-    left: 37.5%;
+    top: 0; 
+    right: 0; 
+    transform: translate(120%, -81%);
 }
 
 
