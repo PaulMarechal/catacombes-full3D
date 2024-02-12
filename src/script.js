@@ -269,13 +269,15 @@ function init(nameRoom) {
 		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.png`);
 		image_room.setAttribute("alt", imageRoom);
 		image_room.classList.add('small_image_room_homepage');
+		image_room.classList.add(`${imageRoom}_small`)
 
 		name_room.classList.add('small_name_room_homepage');
-		name_room.innerHTML = nameRoom
+		name_room.innerHTML = nameRoom;
 
 		main_div.appendChild(image_room);
 		main_div.appendChild(name_room);
 		display_all_rooms_small.appendChild(main_div);
+
 	}
 
 	//
@@ -283,7 +285,6 @@ function init(nameRoom) {
 		meshContainer.add(NameRooms.roomInfos[i][0])
 		meshes.push(NameRooms.roomInfos[i][0])
 		display_all_rooms(NameRooms.roomInfos[i][0], NameRooms.roomInfos[i][0])
-		//console.log(NameRooms.roomInfos[i][0]) = nameRoom	
 	}
 
 	currentMesh = 0;
@@ -456,6 +457,7 @@ function makePanel() {
 			scene.add(torus3);
 
 			for(let i = 0; i < scene.children.length; i++){
+
 				if(scene.children[i].name === "roomName"){
 					scene.remove(scene.children[i]);
 				} else if(scene.children[i].name === "boxContainer"){
@@ -466,7 +468,7 @@ function makePanel() {
 			showMesh( currentMesh );
 
 			roomNumber += 1; 
-			console.log(roomNumber)
+			// console.log(roomNumber)
 
 			if(roomNumber >= NameRooms.roomInfos.length){
 				roomNumber = 0;
@@ -574,11 +576,25 @@ function find_room_number(liste, nomRecherche) {
 
 function click_on_others_rooms() {
     const display_all_rooms_main_div = document.querySelectorAll(".display_all_rooms_main_div");
+	display_all_rooms_main_div[0].classList.add("selected_room_on_list")
+
     display_all_rooms_main_div.forEach((display) => {
+
         display.addEventListener("click", (event) => {
+
+			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+
             const image = event.currentTarget.querySelector(".small_image_room_homepage");
+
             if (image) {
                 const alt_value = image.getAttribute("alt");
+
+				console.log(alt_value)
+
+				const class_name_elem = `.${alt_value}_small`
+
+
+				document.querySelector(class_name_elem).parentNode.classList.add("selected_room_on_list")
 
 				const room_number = find_room_number(NameRooms.roomInfos, alt_value);
 				

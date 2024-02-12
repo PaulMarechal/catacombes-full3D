@@ -256,6 +256,11 @@ ul{
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
     cursor: pointer;
     transition: 0.5s box-shadow ease-out, 1s background ease-out;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .display_all_rooms_main_div:hover{
@@ -770,6 +775,10 @@ ul{
     -webkit-user-select: none; 
     -ms-user-select: none;
     user-select: none; 
+}
+
+.selected_room_on_list{
+    background: rgb(255 255 255 / 80%);
 }
 
 .icon-tabler-chevron-left, .icon-tabler-chevron-right{
