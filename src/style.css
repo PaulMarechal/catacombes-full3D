@@ -14,6 +14,10 @@ p{
     font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
 
+.main_title_home{
+    color: #020304!important; 
+}
+
 html,
 body {
     overflow: hidden;
