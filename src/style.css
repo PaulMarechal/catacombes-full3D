@@ -296,6 +296,26 @@ ul{
     display: none;
 }
 
+.small_cards_displayed_round{
+    width: 25%;
+    transform-origin: center 150%;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+}
+
+.small_cards_rotation{
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.card_0{
+    z-index: 1;
+}
+
 .display_all_rooms_button{
     position: fixed;
     right: 0px;
@@ -898,7 +918,7 @@ ul{
     background-color: whitesmoke;
     padding: 5px 10px; 
     border-radius: 14px; 
-    width: 16%;
+    width: max-content;
     height: 6rem;
     cursor: pointer;
     transition: box-shadow 1s ease-out;
@@ -913,7 +933,7 @@ ul{
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(3, 1fr);
     margin: 3rem 1rem 1rem 1rem; 
-    overflow-y: scroll; 
+    overflow-y: revert; 
 }
 
 .card {
@@ -935,17 +955,12 @@ ul{
 .many_cards_display{
     height: 40rem;
     width: 40rem;
-    background-image: url(https://catacombes.xyz/assets/images/many_tracts_background.png);
     background-position: 50% 50%;
     background-size: cover;
     opacity: 0; 
     display: none;
     transition: opacity 1s ease-out;
-    -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg) ;
+    margin-right: -20rem;
 }
   
 .card-front {

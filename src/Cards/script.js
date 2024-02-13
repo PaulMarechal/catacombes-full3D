@@ -6,6 +6,7 @@ const close_card_viewer = document.querySelector(".close_card_viewer")
 const explication_video = document.querySelector(".explication_video")
 const many_cards_display = document.querySelector(".many_cards_display")
 
+
 div_display_card_main.addEventListener("click", () => {
 
     text_explication_card.style.display = "none"; 
@@ -20,9 +21,21 @@ div_display_card_main.addEventListener("click", () => {
         show_image_verso_main_div.style.opacity = 1;
         show_image_verso_main_div.style.display = "block";
 
+        
         many_cards_display.style.opacity = 1;
         many_cards_display.style.display = "block"
-    }, 500);
+        
+        setTimeout(() => {
+            const cards = document.querySelectorAll(".small_cards_displayed_round");
+            cards.forEach((card, index) => {
+                const rotationAngle = index * 20;
+        
+                setTimeout(() => {
+                    card.style.transform = `rotate(${rotationAngle}deg)`;
+                }, (index - 1) * 200); 
+            });
+        }, 650);
+    }, 1000);
 
 });
 
