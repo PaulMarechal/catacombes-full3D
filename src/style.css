@@ -854,6 +854,7 @@ ul{
     border-radius: 25px;
     padding: 20px 30px;
     margin-left: 13%;
+    transition: width 1s ease-out, height 1s ease-out;
 }
 
 .explication_card_video_second{
@@ -875,6 +876,13 @@ ul{
     font-size: 1.8vw;
     padding-bottom: 0.7rem;
     padding-bottom: 1.5rem; 
+    transition: opacity 1s ease-out;
+}
+
+.display_all_tracts_div, .text_explication_card, 
+.explication_video, .many_cards_display, .show_image_verso_main_div
+{
+    transition: opacity 1s ease-out;
 }
 
 .background_filter{
@@ -934,6 +942,7 @@ ul{
     grid-template-rows: repeat(3, 1fr);
     margin: 3rem 1rem 1rem 1rem; 
     overflow-y: revert; 
+    cursor: none; 
 }
 
 .card {

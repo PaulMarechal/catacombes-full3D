@@ -10,16 +10,17 @@ export function customCursor(){
             var cursor = document.querySelector(".custom-cursor");
         }
 
-        var links = document.querySelectorAll("a");
-        var labelElem = document.querySelectorAll("label");
-        var arrowLeft = document.getElementsByClassName("icon-tabler-chevron-left"); 
-        var arrowRight = document.getElementsByClassName("icon-tabler-chevron-right");
-        var closeButton = document.getElementsByClassName("icon-tabler-square-rounded-x");
+        const links = document.querySelectorAll("a");
+        const labelElem = document.querySelectorAll("label");
+        const arrowLeft = document.getElementsByClassName("icon-tabler-chevron-left"); 
+        const arrowRight = document.getElementsByClassName("icon-tabler-chevron-right");
+        const closeButton = document.getElementsByClassName("icon-tabler-square-rounded-x");
         const div_display_card_main = document.getElementsByClassName("div_display_card_main")
+        const close_card_viewer = document.getElementsByClassName("close_card_viewer");
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main ]
+        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];
