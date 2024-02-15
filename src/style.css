@@ -1010,6 +1010,10 @@ ul{
     transform: translate(120%, -81%);
 }
 
+.connect_computer{
+    display: none;
+}
+
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1029,7 +1033,11 @@ ul{
     }
 
     body input ~ nav > ul > li > a{
-        padding: 0.6rem 2.4rem;
+        padding: 0.3rem 2.4rem;
+    }
+
+    body input ~ nav > ul{
+        top: 17%;
     }
 
     .districtName{
@@ -1086,6 +1094,23 @@ ul{
 
     .display_all_rooms_small, .display_all_rooms_button{
         display: none; 
+    }
+
+    .explication_text_card_second{
+        display: none;
+    }
+
+    .explication_cards_video_div{
+        display: none;
+    }
+
+    .connect_computer{
+        display: block;
+        font-size: 5vw!important;
+        width: 40rem;
+        margin: auto;
+        margin-top: -5%;
+        margin-left: 20%;
     }
 }
 
@@ -1184,6 +1209,80 @@ ul{
     .display_all_rooms_small, .display_all_rooms_button{
         display: none; 
     }
+
+    /* Cards page */
+
+    .card_page{
+        overflow: scroll !important;
+    }
+
+    .parent_text_explications_cards{
+        grid-template-rows: repeat(8, 1fr);
+        height: max-content;
+        overflow-y: scroll!important;
+    }
+
+    .explication_cards_text_div{
+        grid-area: 1 / 1 / 4 / 11;
+        margin: unset;
+        padding: 10px;
+    }
+
+    .explication_text_card_second{
+        width: 100%;
+        padding: 20px 0; 
+        height: 87%;
+        margin-left: unset;
+    }
+
+    .text_explication_card{
+        font-size: 6vw; 
+        /* padding-bottom: -4rem; */
+    }
+
+    .div_display_card_main{
+        height: fit-content;
+        display: inline-flex;
+        margin-left: 1rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .display_all_tracts_div{
+        margin-top: -0.5rem;
+    }
+
+    .tract_card_V1{
+        width: 3rem;
+    }
+
+    .tract_card_V1{
+        padding-right: 0.5rem;
+    }
+
+    .explication_cards_video_div{
+        grid-area: 3 / 1 / 8 / 11; 
+    }
+
+    .card-front{
+        height: 80%; 
+        width: 80%;
+        margin-top: 2rem;
+        margin-left: 10px;
+    }
+
+    .close_card_viewer{
+        right: 30px;
+    }
+
+    .explication_cards_video_div{
+        display: none;
+    }
+
+    .connect_computer{
+        display: none;
+    }
+
 }
   
   
