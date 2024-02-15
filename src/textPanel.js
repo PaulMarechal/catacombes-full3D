@@ -112,7 +112,7 @@ export function TextPanel(scene, roomNumber) {
 
       // Depth
       new ThreeMeshUI.Text({
-        content: `\n Depth : approximately ${NameRooms.roomInfos[roomNumber][4]} `,
+        content: `\n Profondeur : environ ${NameRooms.roomInfos[roomNumber][4]} `,
       })
     );
   
@@ -121,16 +121,25 @@ export function TextPanel(scene, roomNumber) {
       width: 0.5,
       margin: 0.025,
       padding: 0.02,
-      fontSize: 0.04,
+      fontSize: 0.037,
       alignItems: "start",
-      textAlign: 'justify',
+      textAlign: 'justify-left',
       backgroundOpacity: 0,
+      bestFit: 'shrink',
     }).add(
       new ThreeMeshUI.Text({
         content:
-          `${NameRooms.roomInfos[roomNumber][2]}`,
+          remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][2]}`),
       })
     );
+
+    function remplacerCaracteresSpeciaux(chaine) {
+      const caracteresSpeciaux = {'é': 'e', 'à': 'a', 'è': 'e', 'ù': 'u', 'â': 'a', 'ê': 'e', 'ï': 'i', 'ô': 'o', 'ç': 'c'};
+      
+      return chaine.replace(/[éàèùâêïôç]/g, function(match) {
+        return caracteresSpeciaux[match];
+      });
+    }
 
     // No need 
     // console.log("`${NameRooms.roomInfos[roomNumber][2]}`")

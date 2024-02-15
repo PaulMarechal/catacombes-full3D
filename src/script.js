@@ -335,8 +335,9 @@ function makePanel() {
 		fontFamily: FontJSON,
 		fontTexture: FontImage,
 		fontSize: 0.07,
-		padding: 0.02,
-		borderRadius: 0.11
+		padding: 0.01,
+		borderRadius: 0.1, 
+		width: 1.39,
 	} );
 
 	container.position.set( 0, 0.6, -1.2 );
@@ -353,17 +354,17 @@ function makePanel() {
 		height: 0.15,
 		justifyContent: 'center',
 		offset: 0.05,
-		margin: 0.02,
-		borderRadius: [0.075, 0, 0, 0.075]
+		margin: 0.005,
+		borderRadius: [0.075, 0.015, 0.015, 0.075]
 	};
 
     const buttonOptionMiddle = {
-        width: 0.4,
+        width: 0.5,
 		height: 0.15,
 		justifyContent: 'center',
 		offset: 0.05,
-		margin: 0.02,
-		borderRadius: 0
+		margin: 0.005,
+		borderRadius: 0.015
     }
 
     const buttonOptionsRight = {
@@ -371,8 +372,8 @@ function makePanel() {
 		height: 0.15,
 		justifyContent: 'center',
 		offset: 0.05,
-		margin: 0.02,
-		borderRadius: [0, 0.075, 0.075, 0]
+		margin: 0.005,
+		borderRadius: [0.015, 0.075, 0.075, 0.015]
     }
 
 	// Options for component.setupState().
@@ -427,15 +428,15 @@ function makePanel() {
 	// Add text to buttons
 
 	buttonNext.add(
-		new ThreeMeshUI.Text( { content: 'next' } )
+		new ThreeMeshUI.Text( { content: 'suivant' } )
 	);
 
     show3D.add(
-        new ThreeMeshUI.Text( { content: 'Enter 3D' } )
+        new ThreeMeshUI.Text( { content: 'Visiter en 3D' } )
     );
 
 	buttonPrevious.add(
-		new ThreeMeshUI.Text( { content: 'previous' } )
+		new ThreeMeshUI.Text( { content: 'precedent' } )
 	);
 
 	// Create states for the buttons.
