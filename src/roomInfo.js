@@ -31,7 +31,7 @@ export const roomInfos = [
     [
         "Anubis", 
         "Anubis ( ex Chaumiere ) ",
-        "Elle doit son nom aux fresques hiéroglyphiques. Salle apportée par Bishop, Cockroach, Capsule et Kenny du groupe K-tabourets",
+        "Elle doit son nom aux fresques hiéroglyphiques. Salle apportée par Bishop, Cockroach, Capsule et Kenny du groupe K-tabourets.",
         "29 Rue d'Alesia \n   75014 Paris", 
         " 30m",
         "https://catacombes.xyz/Anubis/3D",
@@ -407,6 +407,9 @@ export const roomInfos = [
         "1 / 3 / 2 / 4",
         "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
     ], 
+
+    // Fond du crew
+    // Solcarlus
 ]
 
 

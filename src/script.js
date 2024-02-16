@@ -15,6 +15,7 @@ import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
+import * as Language from "./language.js";
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;

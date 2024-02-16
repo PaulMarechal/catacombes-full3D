@@ -1014,6 +1014,12 @@ ul{
     display: none;
 }
 
+#language_site{
+    position: fixed; 
+    top: 1rem; 
+    right: 1rem; 
+    z-index: 4;
+}
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {

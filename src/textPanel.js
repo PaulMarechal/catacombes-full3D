@@ -80,8 +80,7 @@ export function TextPanel(scene, roomNumber) {
     // );
   
     // leftSubBlock.add(caption);
-  
-    //
+
   
     const rightSubBlock = new ThreeMeshUI.Block({
       margin: 0.025,
@@ -115,23 +114,88 @@ export function TextPanel(scene, roomNumber) {
         content: `\n Profondeur : environ ${NameRooms.roomInfos[roomNumber][4]} `,
       })
     );
+
+
+
+    let subSubBlock2; 
+
+    const language_site = document.querySelector("#language_site");
+    // console.log(language_site.innerText)
+    if(language_site.innerText === "FR"){
+      subSubBlock2 = createSubSubBlock(2);
+    } else if ( language_site.innerText === "EN"){
+      subSubBlock2 = createSubSubBlock(9);
+    }
+
+    language_site.addEventListener("click", function() {
+      if (language_site.innerText === "FR") {
+        language_site.innerHTML = "EN";
+        updateContentAndLanguage(9);
+      } else if (language_site.innerText === "EN") {
+        language_site.innerHTML = "FR";
+        updateContentAndLanguage(2);
+      }
+    });
+
+
+    function createSubSubBlock(language_number) {
+      return new ThreeMeshUI.Block({
+        name: 'subSubBlock2',
+        height: 0.7,
+        width: 0.5,
+        margin: 0.025,
+        padding: 0.02,
+        fontSize: 0.037,
+        alignItems: "start",
+        textAlign: 'justify-left',
+        backgroundOpacity: 0,
+        bestFit: 'shrink',
+      }).add(
+        new ThreeMeshUI.Text({
+          content: remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][language_number]}`),
+        })
+      );
+    }
+
+    function updateContentAndLanguage(newLanguage) {
+
+      console.log(subSubBlock2)
+      subSubBlock2.parent.remove(subSubBlock2);
+
+      subSubBlock2 = createSubSubBlock(newLanguage);
+      
+      
+      rightSubBlock.add(subSubBlock2)
+
+        subSubBlock2.children[0].content = remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][newLanguage]}`);
+
+
+      // console.log(newLanguage)
+      // newLanguage = null
+      // console.log(newLanguage);
+      // console.log("*************")
+
+    }
+
+    
   
-    const subSubBlock2 = new ThreeMeshUI.Block({
-      height: 0.7,
-      width: 0.5,
-      margin: 0.025,
-      padding: 0.02,
-      fontSize: 0.037,
-      alignItems: "start",
-      textAlign: 'justify-left',
-      backgroundOpacity: 0,
-      bestFit: 'shrink',
-    }).add(
-      new ThreeMeshUI.Text({
-        content:
-          remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][2]}`),
-      })
-    );
+    // const subSubBlock2 = new ThreeMeshUI.Block({
+    //   height: 0.7,
+    //   width: 0.5,
+    //   margin: 0.025,
+    //   padding: 0.02,
+    //   fontSize: 0.037,
+    //   alignItems: "start",
+    //   textAlign: 'justify-left',
+    //   backgroundOpacity: 0,
+    //   bestFit: 'shrink',
+    // }).add(
+    //   new ThreeMeshUI.Text({
+    //     content: remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][2]}`),
+
+    //   })
+    // );
+
 
     function remplacerCaracteresSpeciaux(chaine) {
       const caracteresSpeciaux = {'é': 'e', 'à': 'a', 'è': 'e', 'ù': 'u', 'â': 'a', 'ê': 'e', 'ï': 'i', 'ô': 'o', 'ç': 'c'};
