@@ -41,20 +41,6 @@ export const roomInfos = [
         "It owes its name to the hieroglyphic frescoes. Room brought by Bishop, Cockroach, Capsule and Kenny of the K-tabourets group.", 
     ],
 
-    // Chateau
-    [
-        "Chateau", 
-        "Salle du Chateau",
-        "Petite salle (presque impossible de se tenir debout), salle aménagée durant l'été 2000. Vous trouverez dans cette salle quatre gargouilles taillées dans la roche, des bancs circulaires en pierre autour d'une table en pierre. Ainsi qu'un château sculpté au fond de la salle",
-        "3 Rue Alphonse Daudet \n   75014 Paris", 
-        " 20m", 
-        "https://catacombes.xyz/Chateau/3D", 
-        "Petit Montrouge",
-        "7 / 5 / 8 / 6", 
-        "3 / 3 / 4 / 4", 
-        "Small room (almost impossible to stand up), room fitted out during summer 2000. You will find in this room four gargoyles cut in the rock, circular stone benches around a stone table. As well as a carved castle in the back of the room."
-    ],
-
     //Sarko
     [
         "Sarko", 
@@ -83,6 +69,20 @@ export const roomInfos = [
         "Small room with bench and table in stone", 
     ],
 
+    // Boutik
+    [
+        "Boutik", 
+        "Boutik",
+        "Plusieurs noms pour cette pièce ( Boutique / Psychose / Bite ). Une grande peinture murale réalisée par Psy en hommage à Foxy, mort dans les catacombes, a malheureusement été dégradée au fil des années",        
+        "30 Avenue Rene Coty \n   75014 Paris", 
+        " 22m", 
+        "https://catacombes.xyz/Boutik/3D", 
+        "Petit Montrouge", 
+        "6 / 6 / 7 / 7", 
+        "2 / 1 / 3 / 2", 
+        "Several names for this room ( Boutique / Psychose / Bite ). A big mural made by Psy in homage to Foxy who died in the catacombs has unfortunately been degraded over the years.", 
+    ],
+
     // Kraken
     [
         "Kraken", 
@@ -98,20 +98,6 @@ export const roomInfos = [
 
     ],
 
-    // Boutik
-    [
-        "Boutik", 
-        "Boutik",
-        "Plusieurs noms pour cette pièce ( Boutique / Psychose / Bite ). Une grande peinture murale réalisée par Psy en hommage à Foxy, mort dans les catacombes, a malheureusement été dégradée au fil des années",        
-        "30 Avenue Rene Coty \n   75014 Paris", 
-        " 22m", 
-        "https://catacombes.xyz/Boutik/3D", 
-        "Petit Montrouge", 
-        "6 / 6 / 7 / 7", 
-        "2 / 1 / 3 / 2", 
-        "Several names for this room ( Boutique / Psychose / Bite ). A big mural made by Psy in homage to Foxy who died in the catacombs has unfortunately been degraded over the years.", 
-
-    ],
 
     // Ossa
     [
@@ -168,6 +154,19 @@ export const roomInfos = [
         "Quarrymen's rest room. Long filled in and inaccessible, this room was cleared from 1996 to 2003.", 
     ], 
 
+    // Chateau
+    [
+        "Chateau", 
+        "Salle du Chateau",
+        "Petite salle (presque impossible de se tenir debout), salle aménagée durant l'été 2000. Vous trouverez dans cette salle quatre gargouilles taillées dans la roche, des bancs circulaires en pierre autour d'une table en pierre. Ainsi qu'un château sculpté au fond de la salle",
+        "3 Rue Alphonse Daudet \n   75014 Paris", 
+        " 20m", 
+        "https://catacombes.xyz/Chateau/3D", 
+        "Petit Montrouge",
+        "7 / 5 / 8 / 6", 
+        "3 / 3 / 4 / 4", 
+        "Small room (almost impossible to stand up), room fitted out during summer 2000. You will find in this room four gargoyles cut in the rock, circular stone benches around a stone table. As well as a carved castle in the back of the room."
+    ],
 
     // Plage
     [

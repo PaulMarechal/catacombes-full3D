@@ -455,7 +455,6 @@ function makePanel() {
 			scene.add(torus3);
 
 			for(let i = 0; i < scene.children.length; i++){
-
 				if(scene.children[i].name === "roomName"){
 					scene.remove(scene.children[i]);
 				} else if(scene.children[i].name === "boxContainer"){
@@ -464,7 +463,6 @@ function makePanel() {
 			}
 
 			showMesh( currentMesh );
-
 			roomNumber += 1; 
 
 			if(roomNumber >= NameRooms.roomInfos.length){
