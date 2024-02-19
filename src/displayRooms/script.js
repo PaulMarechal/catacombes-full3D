@@ -119,7 +119,6 @@ for (let i = 0; i < NameRooms.roomInfos.length; i++) {
 language_site.addEventListener("click", function() {
     const textRoom = document.querySelectorAll(".textRoom")
     for(let i = 0; i < textRoom.length; i++) {
-        console.log(" I = " + i)
         if(language_site.innerText === "FR"){
             textRoom[i].textContent = `${NameRooms.roomInfos[i][9]}`
         } else {

@@ -121,23 +121,16 @@ export function TextPanel(scene, roomNumber) {
 
 
     let subSubBlock2; 
-
     const language_site = document.querySelector("#language_site");
-    if(language_site.innerText === "FR"){
-      subSubBlock2 = createSubSubBlock(2);
-    } else if ( language_site.innerText === "EN"){
-      subSubBlock2 = createSubSubBlock(9);
-    }
 
     language_site.addEventListener("click", function() {
-      if (language_site.innerText === "FR") {
-        language_site.innerHTML = "EN";
-        updateContentAndLanguage(9);
-      } else if (language_site.innerText === "EN") {
-        language_site.innerHTML = "FR";
-        updateContentAndLanguage(2);
-      }
+      (language_site.innerText === "FR") ? (updateContentAndLanguage(9)) : (updateContentAndLanguage(2));
+      language_site.innerText = (language_site.innerText === "FR") ? "EN" : "FR";
+
     });
+
+    // console.log("Number of click event listeners:", language_site.listeners('click').length);
+
 
 
     function createSubSubBlock(language_number) {
@@ -161,13 +154,14 @@ export function TextPanel(scene, roomNumber) {
     }
 
     function updateContentAndLanguage(newLanguage) {
-
       rightSubBlock.remove(subSubBlock2);
-
+      scene.remove(scene.children[8].children[1])
+      scene.remove(scene.children[8].children[0])
       subSubBlock2 = createSubSubBlock(newLanguage);
-      rightSubBlock.add(subSubBlock2)
 
-      // console.log(rightSubBlock.children[1])
+
+      rightSubBlock.add(subSubBlock2)
+      newLanguage = null
     }
 
     
@@ -201,7 +195,7 @@ export function TextPanel(scene, roomNumber) {
     // No need 
     // console.log("`${NameRooms.roomInfos[roomNumber][2]}`")
     // console.log(NameRooms.roomInfos[roomNumber][2])
-
+    subSubBlock2 = createSubSubBlock(2);
   
     rightSubBlock.add(subSubBlock2, subSubBlock1);
   
