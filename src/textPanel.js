@@ -36,6 +36,7 @@ export function TextPanel(scene, roomNumber) {
       height: 0.2,
       width: 1.5,
       margin: 0.025,
+      borderRadius: 0.05,
       justifyContent: "center",
       fontSize: 0.09,
     });
@@ -84,6 +85,7 @@ export function TextPanel(scene, roomNumber) {
   
     const rightSubBlock = new ThreeMeshUI.Block({
       margin: 0.025,
+      borderRadius: 0.025,
     });
 
     rightSubBlock.position.set(0.83, 0.15, 0)
@@ -94,6 +96,7 @@ export function TextPanel(scene, roomNumber) {
       margin: 0.01,
       padding: 0.02,
       fontSize: 0.025,
+      borderRadius: 0.5,
       justifyContent: "center",
       alignItems: "end",
       backgroundOpacity: 0,
@@ -120,7 +123,6 @@ export function TextPanel(scene, roomNumber) {
     let subSubBlock2; 
 
     const language_site = document.querySelector("#language_site");
-    // console.log(language_site.innerText)
     if(language_site.innerText === "FR"){
       subSubBlock2 = createSubSubBlock(2);
     } else if ( language_site.innerText === "EN"){
@@ -149,6 +151,7 @@ export function TextPanel(scene, roomNumber) {
         alignItems: "start",
         textAlign: 'justify-left',
         backgroundOpacity: 0,
+        borderRadius: 0.5,
         bestFit: 'shrink',
       }).add(
         new ThreeMeshUI.Text({
@@ -159,22 +162,12 @@ export function TextPanel(scene, roomNumber) {
 
     function updateContentAndLanguage(newLanguage) {
 
-      console.log(subSubBlock2)
-      subSubBlock2.parent.remove(subSubBlock2);
+      rightSubBlock.remove(subSubBlock2);
 
       subSubBlock2 = createSubSubBlock(newLanguage);
-      
-      
       rightSubBlock.add(subSubBlock2)
 
-        subSubBlock2.children[0].content = remplacerCaracteresSpeciaux(`${NameRooms.roomInfos[roomNumber][newLanguage]}`);
-
-
-      // console.log(newLanguage)
-      // newLanguage = null
-      // console.log(newLanguage);
-      // console.log("*************")
-
+      console.log(rightSubBlock.children[1])
     }
 
     
@@ -208,6 +201,7 @@ export function TextPanel(scene, roomNumber) {
     // No need 
     // console.log("`${NameRooms.roomInfos[roomNumber][2]}`")
     // console.log(NameRooms.roomInfos[roomNumber][2])
+
   
     rightSubBlock.add(subSubBlock2, subSubBlock1);
   

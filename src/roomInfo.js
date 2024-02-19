@@ -408,8 +408,50 @@ export const roomInfos = [
         "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
     ], 
 
-    // Fond du crew
+    // Galerie des Promos
+    [
+        "Promos", 
+        "Galerie des Promos",
+        "Cette galerie ornée de fresque d'étudiant de l'Ecole des Mines est un des us et coutumes de leur bâpteme de promotion. Chaque année (depuis 1992) des fresqueurs sont volontaires dans les promo et prépare un bout de mur en l'honneur de leur classe. Elle est en général terminée avant la St Barbe (4 décembre).",
+        "Rue de la Tombe Issoire \n   75014 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Promos/3D", 
+        "Petit Montrouge", 
+        "4 / 6 / 5 / 7", 
+        "3 / 2 / 4 / 3",
+        "This gallery, adorned with frescoes by Ecole des Mines students, is one of the habits and customs of their graduating classes. Every year (since 1992), fresco artists volunteer to prepare a piece of wall in honor of their class. It's usually finished before St Barbe's Day (December 4)", 
+    ], 
+
+    // XIIIe arrondissement 
+    // Fond du Crew
+    [
+        "FdC", 
+        "Fond du Crew",
+        "",
+        "Rue Jeanne d'Arc \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/FdC/3D", 
+        "", 
+        "", 
+        "",
+        "", 
+    ], 
+
     // Solcarlus
+    [
+        "Solcarlus", 
+        "Solcarlus",
+        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l’occasion de revoir l’acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
+        "Rue Jeanne d'Arc \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Solcarlus/3D", 
+        "", 
+        "", 
+        "",
+        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, is an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand", 
+    ], 
+
+
 ]
 
 
