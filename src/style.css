@@ -772,7 +772,8 @@ ul{
 }
 
 #VRButton{
-    left: calc(87.5%)!important;
+    left: calc(86.5%)!important;
+    right: 0.6rem!important;
     background: #97979770!important;
     color: rgb(75, 75, 75)!important;
     border: 1px solid rgb(75, 75, 75)!important;
@@ -1017,9 +1018,9 @@ ul{
 #language_site{
     position: fixed; 
     top: 0.6rem; 
-    right: 1rem; 
+    right: 0.4rem; 
     z-index: 4;
-    background: #e0e0e0; 
+    background: #f1f1f1; 
     border-radius: 10px;
     padding: 7px; 
     font-size: 0.85rem; 
@@ -1030,7 +1031,7 @@ ul{
 
 #language_site:hover{
     box-shadow: 0 0 10px #e8e8e8;
-    background: #000; 
+    background: #101010; 
     color: #FFF;
 }
 

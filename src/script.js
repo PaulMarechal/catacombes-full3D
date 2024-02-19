@@ -337,7 +337,7 @@ function makePanel() {
 		fontTexture: FontImage,
 		fontSize: 0.07,
 		padding: 0.01,
-		borderRadius: 0.1, 
+		borderRadius: 0.09, 
 		width: 1.39,
 	} );
 

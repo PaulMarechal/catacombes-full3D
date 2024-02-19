@@ -167,7 +167,7 @@ export function TextPanel(scene, roomNumber) {
       subSubBlock2 = createSubSubBlock(newLanguage);
       rightSubBlock.add(subSubBlock2)
 
-      console.log(rightSubBlock.children[1])
+      // console.log(rightSubBlock.children[1])
     }
 
     

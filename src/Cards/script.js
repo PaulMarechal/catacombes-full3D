@@ -65,3 +65,7 @@ close_card_viewer.addEventListener("click", () => {
     }, 1000);
 }); 
 
+console.log("Make with 🍔 by Paul Maréchal")
+console.log("Cards designed by Paloma in Toulouse, coded in Paris by V")
+console.log("https://lamaopa.github.io/portfoliopalomasanchez/")
+
