@@ -70,8 +70,10 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     } 
 }
 
-function addElement() {
+function addElement(roomNumber, language) {
     var newDiv = document.createElement("div");
+    const language_site = document.querySelector("#language_site");
+
     newDiv.classList.add('parentDivRoomInfo');
 
     // Title
@@ -91,7 +93,8 @@ function addElement() {
     // Room info
     var text = document.createElement("p");
     text.classList.add('textRoom');
-    text.textContent = `${NameRooms.roomInfos[roomNumber][2]}`
+    text.textContent = `${NameRooms.roomInfos[roomNumber][language]}`
+
     newDiv.appendChild(text);
 
     // Location
@@ -109,9 +112,26 @@ function addElement() {
 }
 
 for (let i = 0; i < NameRooms.roomInfos.length; i++) {
-    addElement(roomNumber)
+    addElement(i, 2)
     roomNumber++
 }
+
+language_site.addEventListener("click", function() {
+    const textRoom = document.querySelectorAll(".textRoom")
+    for(let i = 0; i < textRoom.length; i++) {
+        console.log(" I = " + i)
+        if(language_site.innerText === "FR"){
+            textRoom[i].textContent = `${NameRooms.roomInfos[i][9]}`
+        } else {
+            textRoom[i].textContent = `${NameRooms.roomInfos[i][2]}`
+        }
+    }
+    language_site.innerText = (language_site.innerText === "FR") ? "EN" : "FR";
+}); 
+
+
+
+
 
 
 function testElemWebXR(classDiv){

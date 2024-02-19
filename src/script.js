@@ -312,10 +312,6 @@ function showMesh( id ) {
 		// mesh.visible = i === id ? true : false;
         // mesh.visible = false;
         // init(`https://catacombes.xyz/${nameRoom[id]}/${nameRoom[id]}.glb`)
-        
-        // console.log(i);
-        // console.log(mesh);
-
 	} );
 
 }
@@ -470,7 +466,6 @@ function makePanel() {
 			showMesh( currentMesh );
 
 			roomNumber += 1; 
-			// console.log(roomNumber)
 
 			if(roomNumber >= NameRooms.roomInfos.length){
 				roomNumber = 0;
@@ -509,8 +504,7 @@ function makePanel() {
 					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
 				  }
 			} else {
-
-				console.log(scene.children)
+				// console.log(scene.children)
 				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
 			}
         }
@@ -591,8 +585,7 @@ function click_on_others_rooms() {
             if (image) {
                 const alt_value = image.getAttribute("alt");
 
-				console.log(alt_value)
-
+				// (alt_value)
 				const class_name_elem = `.${alt_value}_small`
 
 
@@ -603,7 +596,6 @@ function click_on_others_rooms() {
 				roomNumber = room_number;
 
 				scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
-				console.log(scene)
 				scene.add(torus);
 				scene.add(torus2);
 				scene.add(torus3);
