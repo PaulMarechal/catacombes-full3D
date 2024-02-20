@@ -199,11 +199,11 @@ export const roomInfos = [
     // Concretion
     [
         "Concretion", 
-        "Concretion",
+        "Concrétion",
         "Concution formée avec les eaux de ruissellement de la tête de carrière",
         "Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
-        "https://catacombes.xyz/Concression/3D",
+        "https://catacombes.xyz/Concretion/3D",
         "Petit Montrouge", 
         "9 / 4 / 10 / 5", 
         "3 / 5 / 4 / 6",
@@ -440,7 +440,7 @@ export const roomInfos = [
     [
         "Solcarlus", 
         "Solcarlus",
-        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l’occasion de revoir l’acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
+        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l'occasion de revoir l'acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
         "Rue Jeanne d'Arc \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Solcarlus/3D", 

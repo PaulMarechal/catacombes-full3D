@@ -971,6 +971,7 @@ ul{
     display: none;
     transition: opacity 1s ease-out;
     margin-right: -20rem;
+    margin-top: -2rem;
 }
   
 .card-front {

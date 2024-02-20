@@ -267,7 +267,7 @@ function init(nameRoom) {
 		const name_room = document.createElement("h3");
 		const image_room = document.createElement("img");
 
-		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.png`);
+		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.webp`);
 		image_room.setAttribute("alt", imageRoom);
 		image_room.classList.add('small_image_room_homepage');
 		image_room.classList.add(`${imageRoom}_small`)

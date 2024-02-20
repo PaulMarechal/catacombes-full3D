@@ -84,7 +84,7 @@ function addElement(roomNumber, language) {
     
     // Body
     var img = document.createElement("img");
-    img.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.png`);
+    img.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.webp`);
     img.setAttribute("alt", `${NameRooms.roomInfos[roomNumber][1]}`)
     img.setAttribute("id", "imgRoom")
     img.classList.add('imgRoom')

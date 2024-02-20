@@ -149,7 +149,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     imageRoomSmallDiv.classList.add("imageRoomSmallDiv");
 
     const image = document.createElement("img");
-    image.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.png`);
+    image.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.webp`);
     image.setAttribute("alt", `Image of the ${NameRooms.roomInfos[roomNumber][0]} room placed in the forbidden catacombs of Paris`);
     image.style.width = "98%";
     image.style.borderRadius = "8px"
