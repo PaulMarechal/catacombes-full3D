@@ -17,10 +17,13 @@ export function customCursor(){
         const closeButton = document.getElementsByClassName("icon-tabler-square-rounded-x");
         const div_display_card_main = document.getElementsByClassName("div_display_card_main")
         const close_card_viewer = document.getElementsByClassName("close_card_viewer");
+        const display_infos_button = document.getElementsByClassName("display_infos_button");
+        const display_all_rooms_button = document.getElementsByClassName("display_all_rooms_button");
+
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer ]
+        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer, display_infos_button, display_all_rooms_button ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];

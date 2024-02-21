@@ -316,16 +316,16 @@ ul{
     z-index: 1;
 }
 
-.display_all_rooms_button{
+.display_all_rooms_button, .display_infos_button{
     position: fixed;
     right: 0px;
-    top: 35%;
+    top: 325px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     z-index: 1;
     background: #FFF;
     padding: 20px 5px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 5px 0 0 10px;
     text-transform: uppercase;
     display: inline-flex;
     opacity: 1;
@@ -513,6 +513,14 @@ ul{
 }
 
 #instagramDuvalIcon:hover svg{
+    /* background: linear-gradient(to bottom, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%); */
+    background: linear-gradient(to bottom, #01258f 0%, #0561e9 25%, #29d689 50%, #69d040 75%, #b0a42a 100%);
+    stroke: #000;
+    stroke-width: 2px;
+    border-radius: 5px;
+}
+
+#instagramVIcon:hover svg{
     /* background: linear-gradient(to bottom, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%); */
     background: linear-gradient(to bottom, #01258f 0%, #0561e9 25%, #29d689 50%, #69d040 75%, #b0a42a 100%);
     stroke: #000;
@@ -829,6 +837,13 @@ ul{
     mix-blend-mode: hard-light;
 }
 
+.close_icon_infos{
+    top: -22px; 
+    right: -20px;
+    mix-blend-mode: unset;
+    cursor: pointer;
+}
+
 .arrow{
     display: none; 
     opacity: 0;
@@ -1036,6 +1051,46 @@ ul{
     color: #FFF;
 }
 
+.div_infos_catacombes{
+    background: #fff;
+    position: fixed;
+    z-index: 999;
+    margin: 10%;
+    width: 80%;
+    height: 60%;
+    font-size: 25px;
+    border-radius: 10px;
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.5s ease-out, margin-top 1s ease-out;
+}
+
+.display_infos_button{
+    top: 250px;
+    border-radius: 10px 0 0 5px;
+}
+
+.text_infos_catacombes{
+    margin-top: 20px;
+    padding: 0px 30px 20px 30px;
+    max-height: -webkit-fill-available; 
+    overflow-y: scroll;
+}
+
+.text_infos_catacombes::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background-color: #ffffff00; 
+}
+
+.text_en, .text_fr{
+    display: none;
+}
+
+.text_infos_catacombes::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+    border-radius: 10px;
+}
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
@@ -1133,6 +1188,10 @@ ul{
         margin: auto;
         margin-top: -5%;
         margin-left: 20%;
+    }
+
+    .display_infos_button{
+        display: none;
     }
 }
 
@@ -1302,6 +1361,10 @@ ul{
     }
 
     .connect_computer{
+        display: none;
+    }
+
+    .display_infos_button{
         display: none;
     }
 

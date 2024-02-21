@@ -631,12 +631,19 @@ click_on_others_rooms()
 function display_all_room_div(){
 	const display_all_rooms_small = document.querySelector(".display_all_rooms_small"); 
 	const display_all_rooms_button = document.querySelector(".display_all_rooms_button");
-	
+	const display_infos_button = document.querySelector(".display_infos_button");
+	const div_infos_catacombes = document.querySelector(".div_infos_catacombes");
+	const close_icon_infos = document.querySelector(".close_icon_infos");
+	const language_site = document.querySelector("#language_site");
+
 	let timeoutId;
 
 	display_all_rooms_button.addEventListener("click", () => {
 		display_all_rooms_small.style.right = "10px"; 
 		display_all_rooms_small.style.opacity = "1"
+
+		display_infos_button.style.right = "-40px"; 
+		display_infos_button.style.opacity = "0"
 
 		display_all_rooms_button.style.right = "-40px"
 		display_all_rooms_button.style.opacity = "0"
@@ -645,12 +652,41 @@ function display_all_room_div(){
 			timeoutId = setTimeout(() => {
 				display_all_rooms_small.style.right = "-180px";
 				display_all_rooms_small.style.opacity = "0";
+
+				display_infos_button.style.right = "0px"; 
+				display_infos_button.style.opacity = "1"
 	
 				display_all_rooms_button.style.right = "0px";
 				display_all_rooms_button.style.opacity = "1";
 			}, 4000);
 		});
 	})
+
+	display_infos_button.addEventListener("click", () => {
+		div_infos_catacombes.style.display = "block";
+
+		setTimeout(() => {
+			div_infos_catacombes.style.opacity = "1";
+			if(language_site.innerText === "FR"){
+				document.querySelector(".text_fr").style.display = "block"
+			} else if(language_site.innerText === "EN") {
+				document.querySelector(".text_en").style.display = "block"
+			}
+		}, 150);
+
+	});
+
+	close_icon_infos.addEventListener("click", () => {
+		div_infos_catacombes.style.opacity = "0";
+		setTimeout(() => {
+			div_infos_catacombes.style.display = "none";
+			if(language_site.innerText === "FR"){
+				document.querySelector(".text_fr").style.display = "none"
+			} else if(language_site.innerText === "EN") {
+				document.querySelector(".text_en").style.display = "none"
+			}
+		}, 200);
+	});
 
 
 }
