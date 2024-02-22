@@ -8,11 +8,20 @@
 
 h1, h2, h3, a{
     font-family: 'Bebas Neue', cursive;
+    font-weight: 300!important; 
 }
 
-p{
+p, figcaption{
     font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
+
+figcaption{
+    font-weight: 200;
+    font-size: 18px;
+    padding-top: 5px;
+    margin-bottom: -14px;
+}
+
 
 .main_title_home{
     color: #020304!important; 
@@ -780,7 +789,7 @@ ul{
 }
 
 #VRButton{
-    left: calc(86.5%)!important;
+    left: calc(50% - 80px)!important;
     right: 0.6rem!important;
     background: #97979770!important;
     color: rgb(75, 75, 75)!important;
@@ -1070,11 +1079,32 @@ ul{
     border-radius: 10px 0 0 5px;
 }
 
+.display_links_page{
+    position: fixed;
+    right: 5px;
+    top: 600px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    z-index: 1;
+    background: #FFF;
+    padding: 20px 5px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    display: inline-flex;
+    opacity: 1;
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+    transition: 0.8s right ease-out, 0.7s opacity ease-out;
+}
+
 .text_infos_catacombes{
     margin-top: 20px;
     padding: 0px 30px 20px 30px;
     max-height: -webkit-fill-available; 
     overflow-y: scroll;
+    user-select: none;
 }
 
 .text_infos_catacombes::-webkit-scrollbar {

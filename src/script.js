@@ -263,12 +263,15 @@ function init(nameRoom) {
 	function display_all_rooms(nameRoom, imageRoom){
 		const display_all_rooms_small = document.querySelector(".display_all_rooms_small")
 		const main_div = document.createElement("div"); 
+		main_div.setAttribute("title", `${nameRoom} - Catacombes interdites`);
+		main_div.setAttribute("id", `${nameRoom}`);
 		main_div.classList.add("display_all_rooms_main_div"); 
 		const name_room = document.createElement("h3");
 		const image_room = document.createElement("img");
 
 		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.webp`);
-		image_room.setAttribute("alt", imageRoom);
+		image_room.setAttribute("alt", `${imageRoom}`);
+		image_room.setAttribute("title", `${imageRoom} - Catacombes interdites`);
 		image_room.classList.add('small_image_room_homepage');
 		image_room.classList.add(`${imageRoom}_small`)
 
@@ -450,6 +453,8 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
+			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
@@ -465,10 +470,11 @@ function makePanel() {
 			showMesh( currentMesh );
 			roomNumber += 1; 
 
+			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
+
 			if(roomNumber >= NameRooms.roomInfos.length){
 				roomNumber = 0;
 			}
-
             const roomName = room3dRoad(roomNumber)
 
             gltfLoader.load(
@@ -515,6 +521,8 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
 			scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
+			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
@@ -531,7 +539,10 @@ function makePanel() {
 			if(roomNumber < 1){
 				roomNumber = NameRooms.roomInfos.length;
 			}
+			
             roomNumber -= 1; 
+			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
+
 
 			const roomName = room3dRoad(roomNumber)
 			
@@ -587,6 +598,7 @@ function click_on_others_rooms() {
 				const class_name_elem = `.${alt_value}_small`
 
 
+				console.log(class_name_elem)
 				document.querySelector(class_name_elem).parentNode.classList.add("selected_room_on_list")
 
 				const room_number = find_room_number(NameRooms.roomInfos, alt_value);

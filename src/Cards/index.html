@@ -2,6 +2,23 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTC7BHQP50"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JTC7BHQP50');
+    </script>
+    <!-- End Google Tag (gtag.js) -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WDSHGJL');</script>
+    <!-- End Google Tag Manager -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
@@ -9,11 +26,11 @@
     <meta name="googlebot" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
-    <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
+    <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle, anschluss, cochon, salle des fetes, bureau du centre, fontaine des chartreux, faco, bar des rats, bocal, cabi-bis, la plage, soleil, cinema, tracts catacombes, track catas">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
-    <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle. Fais apparaître les salles chez toi grâce à la technologie WebXR. Accède à un patrimoine méconnu de Paris datant même d'avant la révolution française">
+    <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
     <meta itemprop="name" content="Découverte des Catacombes Interdites sous Paris">
-    <meta itemprop="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle. Fais apparaître les salles chez toi grâce à la technologie WebXR. Accède à un patrimoine méconnu de Paris datant même d'avant la révolution française">
+    <meta itemprop="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
     <meta property="og:url" content="https://catacombes.xyz">
     <meta property="og:title" content="Découverte des Catacombes interdites en 3D | VR | AR ">
     <meta property="og:description" content="Découvrir les catacombes interdites sous Paris en realité augmenté et virtuelle">
@@ -35,13 +52,13 @@
     <script type="module" src="../customCursor.js"></script>
 </head>
 <body class="card_page" style="background: rgb(231, 231, 231)">
-    <label for="burger">
+    <label for="burger" title="Catacombes Interdites">
         <h1>Catacombes <span>  UNOFFICIAL</span></h1>
     </label>
 
     <input id="burger" type="checkbox" />
 
-    <label for="burger">
+    <label for="burger" title="menu du site">
         <span></span>
         <span></span>
         <span></span>
@@ -49,15 +66,15 @@
 
     <nav>    
         <ul>
-            <li><a class="linkBurger" href="../index.html">Home</a></li>
-            <li><a class="linkBurger" href="../displayRooms/">Rooms</a></li>
-            <li><a class="linkBurger" href="../Map/">Map</a></li>
-            <li><a class="linkBurger" href="../Cards/">Cards</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/" title="Retourner sur la page d'accueil de Catacombes Unofficial">Home</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Rooms</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/Map/" title="Affiche les salles des catacombes sur une carte">Map</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cards</a></li>
             <li class="iconeBurgerMenu">
                 <!-- Git -->
                 <!--
                 <a href="https://github.com/PaulMarechal" target="_blank" id="iconeGit">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
                     </svg>
@@ -65,8 +82,8 @@
                 -->
 
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/v_ktas/?hl=fr" target="_blank" id="instagramDuvalIcon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <a href="https://www.instagram.com/v_ktas/?hl=fr" target="_blank" id="instagramDuvalIcon" title="Aller sur l'Insta de -V-">
+                    <svg class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
                         <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
@@ -75,8 +92,8 @@
                 </a>
 
                 <!-- Site -->
-                <a href="https://paulmarechal.xyz" target="_blank" id="iconeSite">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world-www" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <a href="https://paulmarechal.xyz" target="_blank" id="iconeSite" title="Aller sur mon site perso">
+                    <svg class="icon icon-tabler icon-tabler-world-www" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"></path>
                         <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4"></path>
@@ -91,8 +108,8 @@
                 </a>
 
                 <!-- Mail -->
-                <a href="mailto:contactme@paulmarechal.xyz" id="iconeMail">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <a href="mailto:contactme@paulmarechal.xyz" id="iconeMail" title="Pour me contacter par mail">
+                    <svg class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path class="linkedInApp" d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
                         <path class="linkedInApp" d="M3 7l9 6l9 -6"></path>
@@ -100,8 +117,8 @@
                 </a>
 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/paul-marechal/" target="_blank" id="iconeLinkedin">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="border-radius: 5px">
+                <a href="https://www.linkedin.com/in/paul-marechal/" target="_blank" id="iconeLinkedin" title="Pour me contacter par LinkedIn">
+                    <svg class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="border-radius: 5px">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path class="linkedInApp" d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                         <path d="M8 11l0 5"></path>
@@ -118,20 +135,20 @@
 
         <div class="explication_cards_text_div">
             <div class="explication_text_card_second">
-                <p class="text_explication_card textRoom">
+                <p class="text_explication_card textRoom" title="Explication pour faire apparaitre la salle des catacombes interdites en AR">
                     Scannez le QR code pour plonger dans une expérience 
                     immersive sur notre site. Une fois le premier scan 
                     effectué, une salle des catacombes prend vie en 
                     réalité augmentée au-dessus de la carte, dévoilant 
                     ses mystères. Explorez ce monde fascinant à travers 
-                    notre vidéo de présentation. </br></br>
+                    notre vidéo de présentation. <br/><br/>
                     Vivez l'aventure en trouvant les autres cartes 
                     cachés dans les catacombes de Paris et ainsi dévoiler de 
-                    nouveaux environnements en AR. </br></br>
+                    nouveaux environnements en AR. <br/><br/>
                     Transformez votre réalité avec nos cartes innovantes 
                     et laissez-vous emporter dans des expériences inédites !
                 </p>
-                <div class="display_all_tracts_div">
+                <div class="display_all_tracts_div" title="Version de la carte AR">
                     <div class="div_display_card_main">
                         <img
                         class="tract_card_V1"
@@ -144,42 +161,45 @@
 
                 <div class="show_image_verso_main_div">
                     <div class="close_card_viewer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-x" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff000080" fill="#ffa3a3" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M10 10l4 4m0 -4l-4 4" /></svg>
+                        <svg class="icon icon-tabler icon-tabler-circle-x" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff000080" fill="#ffa3a3" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M10 10l4 4m0 -4l-4 4" /></svg>
                     </div>
-                    <div class="card">
-                        <div class="card-front"></div>
-                        <div class="card-back"></div>
-                    </div>
-
+                    
+                    <figure>
+                        <div class="card">
+                            <div class="card-front" title="Recto de la carte AR des catacombes interdites"></div>
+                            <div class="card-back" title="Verso de la carte AR des catacombes interdites"></div>
+                        </div>
+                        <figcaption>Card designed by ©Paloma Sanchez</figcaption>
+                    </figure>
                 </div>
 
             </div>
         </div>
         <div class="explication_cards_video_div">
-            <div class="explication_card_video_second">
-                <video class="explication_video" loop muted autoplay>
+            <div class="explication_card_video_second" >
+                <video class="explication_video" loop muted autoplay title="Video montrant comment afficher la salle en AR avec un telephone">
                     <source src="https://catacombes.xyz/assets/video/how_to_scan_the_card.mp4" type="video/webm" />
                 </video>
                 <div class="many_cards_display">
-                    <div style="position: relative">
-                        <img class="small_cards_displayed_round card_0" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_1" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi.png" alt="" />
-                        <img class="small_cards_displayed_round card_2" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_3" src="https://catacombes.xyz/assets/images/many_cards_displayed/Bocal.png" alt="" />
-                        <img class="small_cards_displayed_round card_4" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_5" src="https://catacombes.xyz/assets/images/many_cards_displayed/Byzance.png" alt="" />
-                        <img class="small_cards_displayed_round card_6" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_7" src="https://catacombes.xyz/assets/images/many_cards_displayed/Kraken.png" alt="" />
-                        <img class="small_cards_displayed_round card_8" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_9" src="https://catacombes.xyz/assets/images/many_cards_displayed/Fifi.png" alt="" />
-                        <img class="small_cards_displayed_round card_10" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_11" src="https://catacombes.xyz/assets/images/many_cards_displayed/Solcarlus.png" alt="" />
-                        <img class="small_cards_displayed_round card_12" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_13" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi-bis.png" alt="" />
-                        <img class="small_cards_displayed_round card_14" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_15" src="https://catacombes.xyz/assets/images/many_cards_displayed/Bureau.png" alt="" />
-                        <img class="small_cards_displayed_round card_16" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="" />
-                        <img class="small_cards_displayed_round card_17" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi.png" alt="" />
+                    <div style="position: relative" title="Quelques cartes qui permettent de faire apparaitre les salles des catacombes en AR">
+                        <img class="small_cards_displayed_round card_0" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_1" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi.png" alt="QR code permettant de faire apparaitre la salle Cabi en AR ainsi que des informations"/>
+                        <img class="small_cards_displayed_round card_2" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_3" src="https://catacombes.xyz/assets/images/many_cards_displayed/Bocal.png" alt="QR code permettant de faire apparaitre la salle Bocal en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_4" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_5" src="https://catacombes.xyz/assets/images/many_cards_displayed/Byzance.png" alt="QR code permettant de faire apparaitre la salle Byzance en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_6" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_7" src="https://catacombes.xyz/assets/images/many_cards_displayed/Kraken.png" alt="QR code permettant de faire apparaitre la salle Kraken en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_8" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_9" src="https://catacombes.xyz/assets/images/many_cards_displayed/Fifi.png" alt="QR code permettant de faire apparaitre la salle Fifi en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_10" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_11" src="https://catacombes.xyz/assets/images/many_cards_displayed/Solcarlus.png" alt="QR code permettant de faire apparaitre la salle Solcarlus en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_12" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_13" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi-bis.png" alt="QR code permettant de faire apparaitre la salle Cabi-bis en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_14" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_15" src="https://catacombes.xyz/assets/images/many_cards_displayed/Bureau.png" alt="QR code permettant de faire apparaitre la salle Bureau en AR ainsi que des informations" />
+                        <img class="small_cards_displayed_round card_16" src="https://catacombes.xyz/assets/images/many_cards_displayed/verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
+                        <img class="small_cards_displayed_round card_17" src="https://catacombes.xyz/assets/images/many_cards_displayed/Cabi.png" alt="QR code permettant de faire apparaitre la salle Cabi en AR ainsi que des informations" />
                     </div>
                 </div> 
             </div>
