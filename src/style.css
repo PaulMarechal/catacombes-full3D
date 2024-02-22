@@ -1081,14 +1081,14 @@ ul{
 
 .display_links_page{
     position: fixed;
-    right: 5px;
-    top: 600px;
+    right: 0px;
+    top: 75%;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     z-index: 1;
     background: #FFF;
-    padding: 20px 5px;
-    border-radius: 20px;
+    padding: 10px 4.5px;
+    border-radius: 10px 0 0 10px;
     text-transform: uppercase;
     display: inline-flex;
     opacity: 1;
@@ -1097,7 +1097,46 @@ ul{
     -ms-user-select: none; 
     user-select: none; 
     transition: 0.8s right ease-out, 0.7s opacity ease-out;
-    display: none;
+    width: fit-content;
+}
+
+.div_facebook_share_links, .div_twitter_share_links, 
+.div_sms_ios_share_link, .div_whatsapp_share_link{
+    padding: 6px 0;
+    color: #000000!important;
+}
+
+.link_twitter:visited, .link_facebook:visited, 
+.link_twitter:link, .link_facebook:link
+.div_sms_ios_share_link:link, .div_sms_ios_share_link:link{
+    color: #000;
+}
+
+.icon-tabler-brand-facebook:hover{
+    fill: #000;
+    stroke: #000;
+    stroke-width: 0.2px;
+    background: #b09c69; 
+    border-radius: 5px;
+}
+
+.icon-tabler-brand-x:hover{
+    border-radius: 5px;
+    stroke: #fff; 
+    background: #000;
+}
+
+.icon-tabler-message-circle-2:hover{
+    border-radius: 5px; 
+    background: #a30d8d; 
+    stroke: #000; 
+    stroke-width: 0.2px;
+    fill: #000;
+}
+
+.icon-tabler-brand-whatsapp:hover{
+    border-radius: 5px; 
+    background: #f350e8;
 }
 
 .text_infos_catacombes{
@@ -1223,6 +1262,13 @@ ul{
 
     .display_infos_button{
         display: none;
+    }
+
+    .display_links_page{
+        top: 30%; 
+        text-align: center;
+        border-radius: 5px 0px 0 5px;
+        padding: 10px 4.5px ;
     }
 }
 
@@ -1399,6 +1445,19 @@ ul{
         display: none;
     }
 
+    .display_links_page{
+        top: 95%; 
+        right: 30%;
+        display: block;
+        text-align: center;
+        border-radius: 5px 5px 0 0px;
+        padding: 4.5px 10px ;
+    }
+
+    .div_facebook_share_links, .div_twitter_share_links, 
+    .div_sms_ios_share_link, .div_whatsapp_share_link{
+        padding: 0px 6px;
+    }
 }
   
   
