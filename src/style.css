@@ -1097,6 +1097,7 @@ ul{
     -ms-user-select: none; 
     user-select: none; 
     transition: 0.8s right ease-out, 0.7s opacity ease-out;
+    display: none;
 }
 
 .text_infos_catacombes{
