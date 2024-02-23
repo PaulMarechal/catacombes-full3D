@@ -89,6 +89,10 @@ body input + label span:last-child {
     top: 16px;
 }
 
+.nav_menu_display{
+    display: none;
+}
+
 body label:hover {
     cursor: pointer;
 }
@@ -538,7 +542,7 @@ ul{
 }
 
 .iconeBurgerMenu{
-    display: inline-flex;
+    display: none;
     text-align: center;
     margin-left: 1em;
     position: fixed;
@@ -551,6 +555,10 @@ ul{
   
 #iconeLinkedin:hover svg {
     border-radius: 5px!important;
+}
+
+.icon-tabler-brand-linkedin:hover{
+    border-radius: 5px;
 }
   
 #iconeLinkedin:hover svg path:first-child {
@@ -961,13 +969,75 @@ ul{
     box-shadow: 0 3px 14px #b4b4b4;
 }
 
-.parent_text_explications_cards {
+.parent_text_explications_cards, .parent_lost_page {
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(3, 1fr);
     margin: 3rem 1rem 1rem 1rem; 
     overflow-y: revert; 
     cursor: none; 
+}
+
+.parent_lost_page{
+    /* background-image: url("https://catacombes.xyz/assets/images/plan_catacombes_ancien.webp"); */
+    /* background-size: contain; */
+    grid-template-rows: repeat(13, 1fr); 
+    border-radius: 20px;
+}
+
+.background_image_lost{
+    background-image: url("https://catacombes.xyz/assets/images/plan_catacombes_interdites_grs.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    filter: brightness(0.6);
+    grid-area: 1 / 1 / 14 / 11;
+
+}
+
+
+.div_title_lost_page{
+    grid-area: 6 / 4 / 10 / 8;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
+.button_return_site{
+    transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out, border 0.5s ease-out; 
+    border-radius: 20px;
+    padding: 0 20px;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid #676767; 
+}
+
+.button_return_site:hover{
+    background: #ffffff;
+    /* backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px ); */
+    box-shadow: 0 0px 32px 0 rgba( 31, 38, 135, 0.5 );
+    border: 1px solid #fff; 
+
+}
+
+.text_lost{
+    font-size: 3vw;
+}
+
+.button_return_site{
+    font-size: 2vw;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .card {
@@ -1109,15 +1179,15 @@ ul{
 .link_twitter:visited, .link_facebook:visited, 
 .link_twitter:link, .link_facebook:link
 .div_sms_ios_share_link:link, .div_sms_ios_share_link:link{
-    color: #000;
+    color: #FFF;
 }
 
 .icon-tabler-brand-facebook:hover{
-    fill: #000;
-    stroke: #000;
-    stroke-width: 0.2px;
-    background: #b09c69; 
     border-radius: 5px;
+    stroke: #000;
+    fill: #000;
+    background: #b09c69; 
+    stroke-width: 0.2px;
 }
 
 .icon-tabler-brand-x:hover{
@@ -1141,8 +1211,9 @@ ul{
 
 .text_infos_catacombes{
     margin-top: 20px;
-    padding: 0px 30px 20px 30px;
+    padding: 0px 30px 0px 30px;
     max-height: -webkit-fill-available; 
+    font-size: 26px;
     overflow-y: scroll;
     user-select: none;
 }
@@ -1459,5 +1530,26 @@ ul{
         padding: 0px 6px;
     }
 }
-  
+
+@media screen and (max-width: 600px)
+{
+    .display_all_rooms_small{
+        display: none; 
+    }
+
+    .display_infos_button{
+        display: none;
+    }
+}
+
+@media screen and (orientation: portrait){
+    .display_links_page{
+        top: 95%; 
+        right: 30%;
+        display: block;
+        text-align: center;
+        border-radius: 5px 5px 0 0px;
+        padding: 4.5px 10px ;
+    }
+}
   

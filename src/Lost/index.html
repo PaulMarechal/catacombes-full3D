@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <!-- Google tag (gtag.js) -->
@@ -22,10 +22,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <script type="module" src="./script.js"></script>
     <meta name="googlebot" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
-    <meta name="keywords" content="Catacombes plan, Paris catacombes plan, Ktas plan, katas carte, catas map, catacombes illegales plan, catacombes interdites carte, catacombes paris, carrieres paris plan, grs paris plan, GRS, explo, three.js, developper, web, plans catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
+    <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle, anschluss, cochon, salle des fetes, bureau du centre, fontaine des chartreux, faco, bar des rats, bocal, cabi-bis, la plage, soleil, cinema, tracts catacombes, track catas">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
     <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
     <meta itemprop="name" content="Découverte des Catacombes Interdites sous Paris">
@@ -48,15 +49,15 @@
     <meta name="theme-color" content="#ffffff">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script type="module" src="./script.js"></script>
     <script type="module" src="../customCursor.js"></script>
 </head>
-<body style="background: rgb(231, 231, 231)">
+<body class="card_page" style="background: rgb(231, 231, 231)">
+    
     <h1 for="burger" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
 
     <input id="burger" type="checkbox" />
 
-    <label for="burger">
+    <label for="burger" title="menu du site">
         <span></span>
         <span></span>
         <span></span>
@@ -64,10 +65,10 @@
 
     <nav>    
         <ul>
-            <li><a class="linkBurger" href="http://catacombes.xyz/">Home</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/displayRooms/">Rooms</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/Images/">Images</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/Cards/">Cards</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/" title="Retourner sur la page d'accueil de Catacombes Unofficial">Home</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Rooms</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/Map/" title="Affiche les salles des catacombes sur une carte">Map</a></li>
+            <li><a class="linkBurger" href="http://catacombes.xyz/Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cards</a></li>
             <li class="iconeBurgerMenu">
                 <!-- Git -->
                 <!--
@@ -80,7 +81,7 @@
                 -->
 
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/v_ktas/?hl=fr" target="_blank" id="instagramDuvalIcon">
+                <a href="https://www.instagram.com/v_ktas/?hl=fr" target="_blank" id="instagramDuvalIcon" title="Aller sur l'Insta de -V-">
                     <svg class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
@@ -90,7 +91,7 @@
                 </a>
 
                 <!-- Site -->
-                <a href="https://paulmarechal.xyz" target="_blank" id="iconeSite">
+                <a href="https://paulmarechal.xyz" target="_blank" id="iconeSite" title="Aller sur mon site perso">
                     <svg class="icon icon-tabler icon-tabler-world-www" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"></path>
@@ -106,19 +107,19 @@
                 </a>
 
                 <!-- Mail -->
-                <a href="mailto:contactme@paulmarechal.xyz" id="iconeMail">
+                <a href="mailto:contactme@paulmarechal.xyz" id="iconeMail" title="Pour me contacter par mail">
                     <svg class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
-                        <path d="M3 7l9 6l9 -6"></path>
+                        <path class="linkedInApp" d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                        <path class="linkedInApp" d="M3 7l9 6l9 -6"></path>
                     </svg>
                 </a>
 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/paul-marechal/" target="_blank" id="iconeLinkedin">
-                    <svg class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <a href="https://www.linkedin.com/in/paul-marechal/" target="_blank" id="iconeLinkedin" title="Pour me contacter par LinkedIn">
+                    <svg class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="border-radius: 5px">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                        <path class="linkedInApp" d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                         <path d="M8 11l0 5"></path>
                         <path d="M8 8l0 .01"></path>
                         <path d="M12 16l0 -5"></path>
@@ -129,35 +130,12 @@
         </ul>  
     </nav>
 
-    <div class="parentMap" id="parentDiv">
-
-        <div class="petitMontrouge textCenter">
-            <h2 class="districtName">Petit Montrouge</h2>
-        </div>
-        <div class="montparnasse textCenter">
-            <h2 class="districtName">Montparnasse</h2>
-        </div>
-        <div class="notreDameDesChamps textCenter">
-            <h2 class="districtName">Notre Dame des champs</h2>
-        </div>
-        <div class="valDeGrace textCenter">
-            <h2 class="districtName">Val de Grâce</h2>
+    <div class="parent_lost_page">
+        <div class="background_image_lost"></div>
+        <div class="div_title_lost_page">
+            <h2 class="text_lost">Vous semblez perdu dans les catacombes ...</h2>
+            <p class="button_return_site">Retourner en lieu sûr</p>
         </div>
     </div>
-
-    <div class="montrougeDiv" id="petitMontrouge">
-        <a href="../Map/" class="retourButton">
-            <p style="margin: 0; padding: 4px 5px 4px 0px;">
-                <i class="ti ti-chevron-left"></i>
-                retour
-            </p>
-        </a>
-        <div class="imageMapMontrouge"></div>
-    </div>
-
-    <div class="displayMobile" style="display: none; font-size: 1.5rem; padding: 10px 20px; margin-top: 11rem">
-        <h2>Please turn your screen to landscape mode or connect from a computer to enjoy the experience 🙌</h2>
-    </div>
-
 </body>
 </html>

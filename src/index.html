@@ -49,6 +49,17 @@
     <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="siteweb">
+    <meta property="siteweb:publisher" content="https://catacombes.xyz">
+    <meta property="siteweb:author" content="https://paulmarechal.xyz">
+    <meta property="siteweb:section" content="Paris">
+    <meta property="og:site_name" content="Visite les Catacombes Interdites en AR | VR | 3D">
+    <meta name="twitter:title" content="Visite les Catacombes Interdites en AR | VR | 3D">
+    <meta name="twitter:description" content="Découvre les Catacombes interdites en 3D | VR | AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
+    <meta name="twitter:card" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+    <meta name="twitter:image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
     <script type="module" src="./customCursor.js"></script>
@@ -62,9 +73,8 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div class="custom-cursor" id="cursor"></div>
-    <label for="burger" title="Catacombes Interdites">
-        <h1>Catacombes <span>  UNOFFICIAL</span></h1>
-    </label>
+
+    <h1 for="burger" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
     <label id="language_site" title="Changer la langue du site Catacombes Interdites en Anglais">FR</label>
 
 
@@ -77,11 +87,11 @@
     </label>
 
     <nav>    
-        <ul>
-            <li><a class="linkBurger" href="http://catacombes.xyz/Images/" title="Aller vers la page Photos des catacombes">Images</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/Map/" title="Affiche les salles des catacombes sur une carte">Map</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Rooms</a></li>
-            <li><a class="linkBurger" href="http://catacombes.xyz/Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cards</a></li>
+        <ul class="nav_menu_display">
+            <li><a class="linkBurger" href="../Images/" title="Aller vers la page Photos des catacombes">Images</a></li>
+            <li><a class="linkBurger" href="../Map/" title="Affiche les salles des catacombes sur une carte">Map</a></li>
+            <li><a class="linkBurger" href="../displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Rooms</a></li>
+            <li><a class="linkBurger" href="../Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cards</a></li>
             <li class="iconeBurgerMenu">
                 <!-- Git -->
                 <!--
@@ -158,28 +168,21 @@
             <path class="invert_color_close_icon" d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" fill="#feaeae"></path>
             <path d="M10 10l4 4m0 -4l-4 4"></path>
         </svg>
-        <p class="text_infos_catacombes text_fr" title="Affiche les informations sur les catacombes de Paris en Français">
-            Les carrières de Paris, une toile labyrinthique de tunnels souterrains, trouvent leurs racines dans l'Antiquité, lorsque les Romains ont commencé à extraire la pierre calcaire pour édifier la ville. Au fil des siècles, cette activité s'est intensifiée, donnant naissance à un réseau complexe de carrières s'étendant sous la surface de Paris. Ces galeries, initialement créées pour répondre aux besoins en matériaux de construction, ont évolué au fil du temps pour devenir un élément clé de l'histoire souterraine de la capitale.
-            <br/><br/>
-            Au XVIIIe siècle, Paris faisait face à un problème croissant lié à la surpopulation des cimetières urbains. Les conditions insalubres et les risques sanitaires ont conduit à la décision audacieuse de déplacer les ossements humains dans les carrières abandonnées. Ainsi, sous la supervision de l'inspecteur général des carrières, Charles-Axel Guillaumot, la transformation des carrières en catacombes a débuté.
-            <br/><br/>
-            Ce projet colossal impliquait le transfert méticuleux de millions de restes humains, créant ainsi les célèbres alignements macabres que l'on peut voir aujourd'hui dans les parties légales des catacombes. Cependant, une grande partie de ce réseau souterrain reste interdite au public, cachant des salles méconnues et préservant une aura de mystère.
-            <br/><br/>
-            L'avènement du WebXR a introduit une toute nouvelle dimension dans l'exploration des catacombes. Cette technologie immersive permet aux utilisateurs de faire apparaître en 3D, en réalité augmentée ou virtuelle, les salles cachées chez eux. Le WebXR transcende les limitations physiques, offrant une expérience éducative et captivante qui donne vie à l'histoire et à la culture des catacombes de Paris.
-            <br/><br/>
-            Ainsi, l'histoire des carrières, la création des catacombes et l'intégration du WebXR convergent pour offrir une expérience enrichissante. Cette alliance entre le passé souterrain de Paris, l'ingéniosité architecturale du XVIIIe siècle et la technologie moderne garantit la préservation et la transmission de ce patrimoine unique à travers les générations, invitant chacun à explorer les profondeurs mystérieuses de l'histoire parisienne.
-        </p>
-        <p class="text_infos_catacombes text_en" title="Affiche les informations sur les catacombes de Paris en Anglais">
-            The quarries of Paris, a labyrinthine web of underground tunnels, have their roots in antiquity, when the Romans began quarrying limestone to build the city. Over the centuries, this activity intensified, giving rise to a complex network of quarries stretching beneath the surface of Paris. These galleries, initially created to meet the need for building materials, evolved over time to become a key element in the capital's underground history.
-            <br/><br/>
-            In the 18th century, Paris was faced with the growing problem of overcrowding in its urban cemeteries. Unsanitary conditions and health risks led to the bold decision to move human bones to abandoned quarries. So, under the supervision of the Inspector General of Quarries, Charles-Axel Guillaumot, the transformation of the quarries into catacombs began.
-            <br/><br/>
-            This colossal project involved the meticulous transfer of millions of human remains, creating the famous macabre alignments that can be seen today in the legal parts of the catacombs. However, much of this underground network remains off-limits to the public, hiding little-known rooms and preserving an aura of mystery.
-            <br/><br/>
-            The advent of WebXR has introduced a whole new dimension to catacomb exploration. This immersive technology allows users to bring the hidden rooms home in 3D, augmented reality or virtual reality. WebXR transcends physical limitations, offering a captivating, educational experience that brings to life the history and culture of Paris's catacombs.
-            <br/><br/>
-            In this way, the history of the quarries, the creation of the catacombs and the integration of WebXR converge to offer an enriching experience. This alliance between Paris's underground past, 18th-century architectural ingenuity and modern technology guarantees the preservation and transmission of this unique heritage across generations, inviting everyone to explore the mysterious depths of Parisian history.
-        </p>
+        <div class="text_fr" title="Affiche les informations sur les catacombes de Paris en Français">
+            <p class="text_infos_catacombes">Les carrières de Paris, une toile labyrinthique de tunnels souterrains, trouvent leurs racines dans l'Antiquité, lorsque les Romains ont commencé à extraire la pierre calcaire pour édifier la ville. Au fil des siècles, cette activité s'est intensifiée, donnant naissance à un réseau complexe de carrières s'étendant sous la surface de Paris. Ces galeries, initialement créées pour répondre aux besoins en matériaux de construction, ont évolué au fil du temps pour devenir un élément clé de l'histoire souterraine de la capitale.</p>
+            <p class="text_infos_catacombes">Au XVIIIe siècle, Paris faisait face à un problème croissant lié à la surpopulation des cimetières urbains. Les conditions insalubres et les risques sanitaires ont conduit à la décision audacieuse de déplacer les ossements humains dans les carrières abandonnées. Ainsi, sous la supervision de l'inspecteur général des carrières, Charles-Axel Guillaumot, la transformation des carrières en catacombes a débuté.</p>
+            <p class="text_infos_catacombes">Ce projet colossal impliquait le transfert méticuleux de millions de restes humains, créant ainsi les célèbres alignements macabres que l'on peut voir aujourd'hui dans les parties légales des catacombes. Cependant, une grande partie de ce réseau souterrain reste interdite au public, cachant des salles méconnues et préservant une aura de mystère.</p>
+            <p class="text_infos_catacombes">L'avènement du WebXR a introduit une toute nouvelle dimension dans l'exploration des catacombes. Cette technologie immersive permet aux utilisateurs de faire apparaître en 3D, en réalité augmentée ou virtuelle, les salles cachées chez eux. Le WebXR transcende les limitations physiques, offrant une expérience éducative et captivante qui donne vie à l'histoire et à la culture des catacombes de Paris.</p>
+            <p class="text_infos_catacombes">Ainsi, l'histoire des carrières, la création des catacombes et l'intégration du WebXR convergent pour offrir une expérience enrichissante. Cette alliance entre le passé souterrain de Paris, l'ingéniosité architecturale du XVIIIe siècle et la technologie moderne garantit la préservation et la transmission de ce patrimoine unique à travers les générations, invitant chacun à explorer les profondeurs mystérieuses de l'histoire parisienne.</p>
+        </div>
+        <div class="text_en" title="Affiche les informations sur les catacombes de Paris en Anglais">
+            <p class="text_infos_catacombes">The quarries of Paris, a labyrinthine web of underground tunnels, have their roots in antiquity, when the Romans began quarrying limestone to build the city. Over the centuries, this activity intensified, giving rise to a complex network of quarries stretching beneath the surface of Paris. These galleries, initially created to meet the need for building materials, evolved over time to become a key element in the capital's underground history.</p>
+            <p class="text_infos_catacombes">In the 18th century, Paris was faced with the growing problem of overcrowding in its urban cemeteries. Unsanitary conditions and health risks led to the bold decision to move human bones to abandoned quarries. So, under the supervision of the Inspector General of Quarries, Charles-Axel Guillaumot, the transformation of the quarries into catacombs began.</p>
+            <p class="text_infos_catacombes">This colossal project involved the meticulous transfer of millions of human remains, creating the famous macabre alignments that can be seen today in the legal parts of the catacombs. However, much of this underground network remains off-limits to the public, hiding little-known rooms and preserving an aura of mystery.</p>
+            <p class="text_infos_catacombes">The advent of WebXR has introduced a whole new dimension to catacomb exploration. This immersive technology allows users to bring the hidden rooms home in 3D, augmented reality or virtual reality. WebXR transcends physical limitations, offering a captivating, educational experience that brings to life the history and culture of Paris's catacombs.</p>
+            <p class="text_infos_catacombes">In this way, the history of the quarries, the creation of the catacombs and the integration of WebXR converge to offer an enriching experience. This alliance between Paris's underground past, 18th-century architectural ingenuity and modern technology guarantees the preservation and transmission of this unique heritage across generations, inviting everyone to explore the mysterious depths of Parisian history.</p>
+
+        </div>
     </div>
 
     <div class="display_links_page">
@@ -193,7 +196,7 @@
 
         <div class="div_twitter_share_links">
             <!-- Bouton de partage Twitter / X -->
-            <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share">
+            <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share">
                 <svg class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
             </a>
         </div>

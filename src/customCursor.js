@@ -1,3 +1,8 @@
+const burger_checkbox = document.querySelector("#burger")
+const nav_menu_display = document.querySelector(".nav_menu_display");
+const iconeBurgerMenu = document.querySelector(".iconeBurgerMenu")
+const nav = document.querySelector("nav");
+
 export function customCursor(){
     document.addEventListener("DOMContentLoaded", function(event) {
         if(document.querySelector(".custom-cursor")){
@@ -19,11 +24,12 @@ export function customCursor(){
         const close_card_viewer = document.getElementsByClassName("close_card_viewer");
         const display_infos_button = document.getElementsByClassName("display_infos_button");
         const display_all_rooms_button = document.getElementsByClassName("display_all_rooms_button");
+        const button_return_site = document.getElementsByClassName("button_return_site");
 
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer, display_infos_button, display_all_rooms_button ]
+        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer, display_infos_button, display_all_rooms_button, button_return_site ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];
@@ -47,10 +53,11 @@ export function customCursor(){
             var mouseY = e.clientY;
       
             if (!initCursor) {
-                // cursor.style.opacity = 1;
                 TweenLite.to(cursor, 0.2, {
-                opacity: 1
+                    opacity: 1, 
+                    display: "block",
                 });
+
                 initCursor = true;
             }
       
@@ -62,12 +69,35 @@ export function customCursor(){
       
         window.onmouseout = function(e) {
             TweenLite.to(cursor, 0.3, {
-                opacity: 0
+                opacity: 0, 
+                display: "none"
             });
             initCursor = false;
+            nav_menu_display.style.display = "block";
+
         };
     });
 }
 
-customCursor()
+window.addEventListener("click", () => {
+    setTimeout(() => {
+        if( nav.offsetHeight > 50){
+            nav_menu_display.style.display = "block";
+            iconeBurgerMenu.style.display = "inline-flex";
+        } 
+    }, 200);
 
+    setTimeout(() => {  
+        if( nav.offsetHeight < 51){
+            nav_menu_display.style.display = "none";
+            iconeBurgerMenu.style.display = "none";
+        } 
+    }, 1250);
+});
+
+
+
+
+
+
+customCursor()
