@@ -539,7 +539,7 @@ function makePanel() {
 			if(roomNumber < 1){
 				roomNumber = NameRooms.roomInfos.length;
 			}
-			
+
             roomNumber -= 1; 
 			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
 
@@ -647,6 +647,10 @@ function display_all_room_div(){
 	const div_infos_catacombes = document.querySelector(".div_infos_catacombes");
 	const close_icon_infos = document.querySelector(".close_icon_infos");
 	const language_site = document.querySelector("#language_site");
+	const div_share_link = document.querySelector(".div_share_link");
+	const display_links_page = document.querySelector(".display_links_page");
+	const text_fr = document.querySelector(".text_fr");
+	const text_en = document.querySelector(".text_en");
 
 	let timeoutId;
 
@@ -682,10 +686,10 @@ function display_all_room_div(){
 			if(language_site.innerText === "FR"){
 				document.querySelector(".text_fr").style.display = "block"
 			} else if(language_site.innerText === "EN") {
+				alert("yo")
 				document.querySelector(".text_en").style.display = "block"
 			}
 		}, 150);
-
 	});
 
 	close_icon_infos.addEventListener("click", () => {
@@ -700,7 +704,33 @@ function display_all_room_div(){
 		}, 200);
 	});
 
+	div_share_link.addEventListener("click", () => {
+		display_links_page.style.right = "0px"
+		div_share_link.style.right = "-50px"
 
+		display_links_page.addEventListener("mouseleave", () => {
+			setTimeout(() => {
+				display_links_page.style.right = "-50px"
+				div_share_link.style.right = "0px"
+			}, 2500);
+		});
+	});
+
+	window.addEventListener("click", () => {
+		if(language_site.innerText === "FR"){
+			if(text_en.style.display === "block"){
+
+				text_en.style.display = "none"
+			}
+			text_fr.style.display = "block"
+			
+		} else if(language_site.innerText === "EN") {
+			if(text_fr.style.display === "block"){
+				text_fr.style.display = "none"
+			}
+			text_en.style.display = "block"
+		}
+	});
 }
 
 display_all_room_div() 
