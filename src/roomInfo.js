@@ -421,6 +421,34 @@ export const roomInfos = [
         "This gallery, adorned with frescoes by Ecole des Mines students, is one of the habits and customs of their graduating classes. Every year (since 1992), fresco artists volunteer to prepare a piece of wall in honor of their class. It's usually finished before St Barbe's Day (December 4)", 
     ], 
 
+    // Brocolis
+    [
+        "Brocolis", 
+        "Marché aux Brocolis",
+        "Petit couloir avec de belles fresques en mosaiques",
+        " - ?? - ",
+        " 20m", 
+        "https://catacombes.xyz/Brocolis/3D", 
+        "", 
+        "", 
+        "",
+        "Small corridor with beautiful mosaic frescoes", 
+    ], 
+
+    // Lune
+    [
+        "Lune", 
+        "Lune étoilée",
+        "Petite salle avec une lune étoilée ainsi que de très nombreux instruments de musique.",
+        "Avenue Rene Coty \n   75014 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Lune/3D", 
+        "", 
+        "", 
+        "",
+        "Small room with a starry moon and lots of musical instruments.", 
+    ], 
+
     // XIIIe arrondissement 
     // Fond du Crew
     [

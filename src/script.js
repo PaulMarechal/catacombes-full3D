@@ -656,13 +656,16 @@ function display_all_room_div(){
 
 	display_all_rooms_button.addEventListener("click", () => {
 		display_all_rooms_small.style.right = "10px"; 
-		display_all_rooms_small.style.opacity = "1"
+		display_all_rooms_small.style.opacity = "1";
 
 		display_infos_button.style.right = "-40px"; 
-		display_infos_button.style.opacity = "0"
+		display_infos_button.style.opacity = "0";
 
-		display_all_rooms_button.style.right = "-40px"
-		display_all_rooms_button.style.opacity = "0"
+		display_all_rooms_button.style.right = "-40px";
+		display_all_rooms_button.style.opacity = "0";
+
+		div_share_link.style.right = "-40px";
+		div_share_link.style.opacity = "0";
 
 		display_all_rooms_small.addEventListener("mouseleave", () => {
 			timeoutId = setTimeout(() => {
@@ -674,6 +677,9 @@ function display_all_room_div(){
 	
 				display_all_rooms_button.style.right = "0px";
 				display_all_rooms_button.style.opacity = "1";
+
+				div_share_link.style.right = "0px";
+				div_share_link.style.opacity = "1";
 			}, 4000);
 		});
 	})
@@ -723,7 +729,7 @@ function display_all_room_div(){
 				text_en.style.display = "none"
 			}
 			text_fr.style.display = "block"
-			
+
 		} else if(language_site.innerText === "EN") {
 			if(text_fr.style.display === "block"){
 				text_fr.style.display = "none"
