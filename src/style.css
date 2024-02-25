@@ -993,7 +993,6 @@ ul{
     border-radius: 20px;
     filter: brightness(0.6);
     grid-area: 1 / 1 / 14 / 11;
-
 }
 
 
@@ -1009,7 +1008,16 @@ ul{
     padding: 20px;
 }
 
+.link_paloma_sanchez{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
 
+.link_paloma_sanchez:visited{
+    color: #000;
+}
 
 .button_return_site{
     transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out, border 0.5s ease-out; 
@@ -1364,6 +1372,10 @@ ul{
         border-radius: 5px 0px 0 5px;
         padding: 10px 4.5px ;
     }
+
+    .div_share_link{
+        display: none;
+    }
 }
 
 /* Mode portrait */
@@ -1552,6 +1564,10 @@ ul{
     .div_sms_ios_share_link, .div_whatsapp_share_link{
         padding: 0px 6px;
     }
+
+    .div_share_link{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px)
@@ -1561,6 +1577,10 @@ ul{
     }
 
     .display_infos_button{
+        display: none;
+    }
+
+    .div_share_link{
         display: none;
     }
 }
@@ -1573,6 +1593,10 @@ ul{
         text-align: center;
         border-radius: 5px 5px 0 0px;
         padding: 4.5px 10px ;
+    }
+
+    .div_share_link{
+        display: none;
     }
 }
   
