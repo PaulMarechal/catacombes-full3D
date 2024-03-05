@@ -661,6 +661,12 @@ ul{
     background-color: rgb(223, 216, 13, 0.33);
 }
 
+.salpetriere{
+    grid-area: 8 / 8 / 10 / 9;
+    background-color: rgb(39, 235, 243, 0.33);
+
+}
+
 .textCenter{
     display: flex;
     justify-content: center;
@@ -668,13 +674,13 @@ ul{
     text-align: center;
     border-radius: 10px;
     margin: 2px;
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .textCenter:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.5 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .districtName{

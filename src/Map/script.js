@@ -48,6 +48,7 @@ const petitMontrougeClick = document.querySelector(".petitMontrouge");
 const montparnasseClick = document.querySelector(".montparnasse");
 const notreDameDesChampsClick = document.querySelector(".notreDameDesChamps");
 const valDeGraceClick = document.querySelector(".valDeGrace");
+const salpetriere = document.querySelector(".salpetriere");
 
 const montrougeDiv = document.querySelector(".montrougeDiv");
 
@@ -71,6 +72,8 @@ function clickOnDivDistrict(areaDistrict, areaName){
                     imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/notreDameDesChampsMap.png')"
                 } else if(areaName === "Val de Grace"){
                     imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/valDeGraceMap.png')"
+                } else if(areaName === "Salpetriere"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/salpetriere.png')"
                 }
 
                 displayRooms(areaName)

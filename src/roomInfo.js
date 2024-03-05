@@ -199,7 +199,7 @@ export const roomInfos = [
     // Concretion
     [
         "Concretion", 
-        "Concrétion",
+        "Concretion",
         "Concution formée avec les eaux de ruissellement de la tête de carrière",
         "Avenue de la Porte de Montrouge \n   75014 Paris", 
         " 25m",
@@ -455,10 +455,10 @@ export const roomInfos = [
         "FdC", 
         "Fond du Crew",
         "",
-        "Rue Jeanne d'Arc \n   75013 Paris", 
+        "Rue Jeanne d'Arc \n   75013 Paris", // 169 rue Jeanne d'Arc
         " 20m",
         "https://catacombes.xyz/FdC/3D", 
-        "", 
+        "Salpetriere", 
         "", 
         "",
         "", 
@@ -472,7 +472,7 @@ export const roomInfos = [
         "Rue Jeanne d'Arc \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Solcarlus/3D", 
-        "", 
+        "Salpetriere", 
         "", 
         "",
         "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, is an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand", 
