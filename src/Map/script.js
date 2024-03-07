@@ -29,26 +29,37 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     });
 }
 
+function refreshPage() {
+    location.reload();
+}
+
+window.addEventListener('resize', refreshPage);
 
 // Height grid ( in pixels)
 let mapDiv = document.querySelector(".parentMap");
+/*
+// Old template
 const heightMap = `${window.innerHeight - 110}px`
-
 const templateRow = ((window.innerHeight - 110) / 12)
 const gridTemplateRows = `repeat(12, ${templateRow}px)`
-
 const templateColumns = (window.innerWidth / 12)
 const gridTemplateColumns = `repeat(12, ${templateColumns - 30}px)`
+*/
+const body = document.querySelector("body");
+body.style.height = `${window.innerHeight}px`;
+
+const gridTemplateRows = `repeat(30, 21.94px)`;
+const gridTemplateColumns = `repeat(30, 36px)`;
 
 mapDiv.style.gridTemplateRows = gridTemplateRows
 mapDiv.style.gridTemplateColumns = gridTemplateColumns
-mapDiv.style.height = heightMap
 
 const petitMontrougeClick = document.querySelector(".petitMontrouge");
 const montparnasseClick = document.querySelector(".montparnasse");
 const notreDameDesChampsClick = document.querySelector(".notreDameDesChamps");
 const valDeGraceClick = document.querySelector(".valDeGrace");
 const salpetriere = document.querySelector(".salpetriere");
+const gare = document.querySelector(".gare");
 
 const montrougeDiv = document.querySelector(".montrougeDiv");
 
@@ -73,7 +84,11 @@ function clickOnDivDistrict(areaDistrict, areaName){
                 } else if(areaName === "Val de Grace"){
                     imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/valDeGraceMap.png')"
                 } else if(areaName === "Salpetriere"){
-                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/salpetriere.png')"
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/salpetriereMap.png')"
+                } else if(areaName === "Gare"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/gareMap.png')"
+                } else if(areaName === "Petit Montrouge"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/petitMontrouge.png')"
                 }
 
                 displayRooms(areaName)
@@ -88,6 +103,8 @@ clickOnDivDistrict(petitMontrougeClick, "Petit Montrouge")
 clickOnDivDistrict(montparnasseClick, "Montparnasse")
 clickOnDivDistrict(notreDameDesChampsClick, "Notre Dame des Champs")
 clickOnDivDistrict(valDeGraceClick, "Val de Grace")
+clickOnDivDistrict(salpetriere, "Salpetriere")
+clickOnDivDistrict(gare, "Gare")
 
 // Petit montrouge
 const petitMontrouge = document.querySelector(".montrougeDiv")
@@ -154,7 +171,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const image = document.createElement("img");
     image.setAttribute("src", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.webp`);
     image.setAttribute("alt", `Image of the ${NameRooms.roomInfos[roomNumber][0]} room placed in the forbidden catacombs of Paris`);
-    image.style.width = "98%";
+    image.style.width = "90%";
     image.style.borderRadius = "8px"
     imageRoomSmallDiv.appendChild(image);
   

@@ -51,12 +51,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script type="module" src="./script.js"></script>
     <script type="module" src="../customCursor.js"></script>
 </head>
-<body style="background: rgb(231, 231, 231)">
+<body style="background: rgb(231, 231, 231); display: grid; grid-template-rows: 50px;">
     <h1 for="burger" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
 
-    <input id="burger" type="checkbox" />
+    <input id="burger" type="checkbox" style="visibility: hidden; height: 50px;"/>
 
-    <label for="burger">
+    <label id="burger_span" for="burger">
         <span></span>
         <span></span>
         <span></span>
@@ -145,6 +145,9 @@
         </div>
         <div class="salpetriere textCenter">
             <h2 class="districtName">Salpetriere</h2>
+        </div>
+        <div class="gare textCenter">
+            <h2 class="districtName">Gare</h2>
         </div>
     </div>
 

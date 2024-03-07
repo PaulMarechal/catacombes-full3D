@@ -27,6 +27,10 @@ figcaption{
     color: #020304!important; 
 }
 
+#burger_span{
+    user-select: none;
+}
+
 html,
 body {
     overflow: hidden;
@@ -189,13 +193,13 @@ body input:checked ~ nav > ul > li {
     background: rgba( 255, 255, 255, 0.5 );
     border-radius: 10px;
     border: 0.3px solid #d2caca;
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .parentDivRoomInfo:hover, .parentDivPrezSecond:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.5 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .parentDivPrezSecond:hover{
@@ -543,6 +547,7 @@ ul{
 
 .iconeBurgerMenu{
     display: none;
+    visibility: hidden;
     text-align: center;
     margin-left: 1em;
     position: fixed;
@@ -632,39 +637,43 @@ ul{
 .parentMap {
     display: grid;
     background-image: url("https://catacombes.xyz/assets/images/paris.png");
-    width: 75%; 
-    background-size: cover;
+    width: fit-content;
+    background-size: contain;
     background-repeat: no-repeat;
     margin: auto;
     border: #000000 solid 11px;
-    margin-top: 3em;
+    place-self: center;
 }
 
 .petitMontrouge{
-    grid-area: 9 / 6 / 12 / 8;
+    grid-area: 21 / 14 / 28 / 17;
     background-color: rgb(115, 255, 0, 0.33);
 }
 
 .montparnasse{
-    grid-area: 8 / 6 / 9 / 8;
+    grid-area: 17 / 14 / 21 / 18;
     background-color: rgb(39, 83, 243, 0.33);
 }
 
 .notreDameDesChamps{
-    grid-area: 7 / 6 / 8 / 7;
+    grid-area: 12 / 14 / 17 / 17;
     background-color: rgb(231, 16, 16, 0.33);
 
 }
 
 .valDeGrace{
-    grid-area: 7 / 7 / 8 / 8;
+    grid-area: 14 / 17 / 17 / 19;
     background-color: rgb(223, 216, 13, 0.33);
 }
 
 .salpetriere{
-    grid-area: 8 / 8 / 10 / 9;
+    grid-area: 18 / 21 / 21 / 26;
     background-color: rgb(39, 235, 243, 0.33);
+}
 
+.gare{
+    grid-area: 21 / 22 / 28 / 27;
+    background-color: rgb(207 39 243 / 33%);
 }
 
 .textCenter{
@@ -726,6 +735,7 @@ ul{
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .parentDivPrezMain{

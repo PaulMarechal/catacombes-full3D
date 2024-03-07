@@ -478,6 +478,34 @@ export const roomInfos = [
         "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, is an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand", 
     ], 
 
+    // Zebulon
+    [
+        "Zebulon", 
+        "Zebulon",
+        "",
+        "131 bis Rue Nationale \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Zebulon/3D", 
+        "Gare", 
+        "", 
+        "",
+        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, is an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand", 
+    ], 
+
+    // Guerinet
+    [
+        "Guerinet", 
+        "Guerinet",
+        "",
+        "Avenue des Gobelins \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Guerinet/3D", 
+        "Salpetriere", 
+        "", 
+        "",
+        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, is an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand", 
+    ], 
+
 
 ]
 
