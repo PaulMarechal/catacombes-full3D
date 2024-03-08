@@ -455,7 +455,7 @@ export const roomInfos = [
         "FdC", 
         "Fond du Crew",
         "",
-        "Rue Jeanne d'Arc \n   75013 Paris", // 169 rue Jeanne d'Arc
+        "Rue Jeanne d'Arc \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/FdC/3D", 
         "Salpetriere", 
@@ -468,45 +468,43 @@ export const roomInfos = [
     [
         "Solcarlus", 
         "Solcarlus",
-        "",
+        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l'occasion de revoir l'acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
         "Rue Jeanne d'Arc \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Solcarlus/3D", 
         "Salpetriere", 
         "4 / 5 / 5 / 6", 
         "2 / 5 / 3 / 6",
-        "", 
+        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, provides an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand.", 
     ], 
 
     // Zebulon
     [
         "Zebulon", 
         "Zebulon",
-        "",
+        "Elle est située sous la rue Nationale, aussi appelée salle Zébulon.",
         "131 bis Rue Nationale \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Zebulon/3D", 
         "Gare", 
         "5 / 5 / 6 / 6", 
         "1 / 4 / 2 / 5",
-        "", 
+        "It is located under Rue Nationale, also known as the Zébulon room.", 
     ], 
 
     // Guerinet
     [
         "Guerinet", 
         "Guerinet",
-        "",
+        "Le cabinet de M. Guérinet sous le faubourg Saint-Marcel a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
         "Avenue des Gobelins \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Guerinet/3D", 
         "Salpetriere", 
         "8 / 4 / 9 / 5", 
         "4 / 7 / 5 / 8",
-        "", 
+        "M. Guérinet's cabinet under the Faubourg Saint-Marcel was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
     ], 
-
-
 ]
 
 

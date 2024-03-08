@@ -125,7 +125,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     // const templateColumnsSmallMap = ((window.innerWidth -110) / 7)
     // const gridTemplateColumnsSmallMap = `${templateRowsSmallMap / 2}px repeat(7, ${(templateColumnsSmallMap*0.97)}px) ${templateRowsSmallMap/2}px`
 
-    const gridTemplateRowsSmallMap = "repeat(2, 4px) repeat(8, 77px) repeat(2, 20px)"
+    const gridTemplateRowsSmallMap = "repeat(2, 15px) repeat(8, 77px) repeat(2, 10px)"
     const gridTemplateColumnsSmallMap = "40px repeat(7, 200px) 40px"
 
     petitMontrouge.style.gridTemplateRows = gridTemplateRowsSmallMap

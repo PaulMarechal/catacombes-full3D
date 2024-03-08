@@ -243,13 +243,14 @@ body input:checked ~ nav > ul > li {
     color: #000;
     font-size: 1.3rem; 
     padding: 8px 12px;
+    backdrop-filter: blur( 0px );
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .buttonRedirect3D:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.37 );
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
 }
 
 .imgRoom{
@@ -780,7 +781,7 @@ ul{
     position: absolute; 
     font-family: 'Bebas Neue', cursive;
     text-transform: uppercase;
-    margin-top: -40px; 
+    margin-top: 6px; 
     margin-left: 5px;
     color: #000; 
     text-decoration: none;
