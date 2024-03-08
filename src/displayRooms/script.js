@@ -148,6 +148,13 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     });
 }
 
+function refresh_CSS() {
+    var link = document.getElementById('style-link');
+    link.href = "styles.css?" + new Date().getTime();
+}
+
+refresh_CSS();
+
 console.log("Developed by 🍔 by Paul Maréchal")
 
 

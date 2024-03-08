@@ -473,7 +473,7 @@ function makePanel() {
 			if(roomNumber >= NameRooms.roomInfos.length){
 				roomNumber = 0;
 			}
-			
+
 			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
             const roomName = room3dRoad(roomNumber)
 
@@ -884,5 +884,12 @@ function removeVRButton(){
 		}	
 	}
 }
+
+function refresh_CSS() {
+    var link = document.getElementById('style-link');
+    link.href = "styles.css?" + new Date().getTime();
+}
+
+refresh_CSS();
 
 console.log("Developed with 🍔 by Paul Maréchal")

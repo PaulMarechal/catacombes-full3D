@@ -290,6 +290,13 @@ function displayRooms(districtName) {
     }
 }
 
+function refresh_CSS() {
+    var link = document.getElementById('style-link');
+    link.href = "styles.css?" + new Date().getTime();
+}
+
+refresh_CSS();
+
 console.log("Developed with 🍔 by Paul Maréchal")
 
 
