@@ -174,23 +174,25 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     image.style.width = "90%";
     image.style.borderRadius = "8px"
     imageRoomSmallDiv.appendChild(image);
-  
+    
     parentDivPrez.appendChild(titleRoomSmallDiv);
     parentDivPrez.appendChild(locationRoomSmallDiv);
     parentDivPrez.appendChild(imageRoomSmallDiv);
     parentDivPrez.appendChild(depth);
-
+    
     parentDivPrez.style.gridArea = gridAreaRoom[numberToDisplayGrid]
+    parentDivPrez.setAttribute("title", "Clic pour voir la salle en 3D")
 
+    
     document.querySelector(".retourButton").style.display = "grid"
-
+    
     const firstDiv = document.createElement("div")
     firstDiv.classList.add("firstDiv")
     firstDiv.style.gridArea = `${NameRooms.roomInfos[roomNumber][7]}`
-
+    
     const preciseDiv = document.createElement("div")
     preciseDiv.classList.add("gridAreaPrecise")
-
+    
     const preciseDivSecond = document.createElement("div")
     preciseDivSecond.classList.add("gridAreaPreciseSecond")
     preciseDivSecond.style.gridArea = `${NameRooms.roomInfos[roomNumber][8]}`
@@ -198,7 +200,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     const smallPoint = document.createElement("p")
     smallPoint.classList.add("pointRoom")
     smallPoint.setAttribute("id", `${NameRooms.roomInfos[roomNumber][0]}`)
-    smallPoint.innerText = "✴"
+    smallPoint.innerText = "📍"
 
     firstDiv.appendChild(preciseDiv)
     preciseDiv.appendChild(preciseDivSecond)
@@ -216,7 +218,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
             mouse.classList.add("custom-cursor--link")
         
             const point = document.getElementById(`${classe[1]}`)
-            point.innerHTML = "☉"
+            point.innerHTML = "🔴"
 
         });
     
@@ -226,7 +228,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
             mouse.classList.remove("custom-cursor--link")
 
             const point = document.getElementById(`${classe[1]}`)
-            point.innerHTML = "✴"
+            point.innerHTML = "📌"
         });
 
         parentDivPrez.addEventListener('click', function(event) {
