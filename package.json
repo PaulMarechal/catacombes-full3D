@@ -1,5 +1,5 @@
 {
-  "name": "threejs-journey-exercise",
+  "name": "catacombes-interdites",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +8,13 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "vite": ">=4.5.2"
+    "vite": "^4.4.0"
   },
   "dependencies": {
     "dat.gui": "^0.7.9",
     "gsap": "^3.11.5",
     "lil-gui": "^0.17.0",
-    "three": "^0.148.0",
+    "three": "^0.153.0",
     "three-mesh-ui": "^6.5.4"
   }
 }

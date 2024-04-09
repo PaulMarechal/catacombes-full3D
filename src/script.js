@@ -11,6 +11,11 @@ import ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
 import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
 
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
+
 import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 
