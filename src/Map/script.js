@@ -202,8 +202,10 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
     
     const smallPoint = document.createElement("p")
     smallPoint.classList.add("pointRoom")
-    smallPoint.setAttribute("id", `${NameRooms.roomInfos[roomNumber][0]}`)
-    smallPoint.innerText = "📍"
+    if(NameRooms.roomInfos[roomNumber][7]){
+        smallPoint.setAttribute("id", `${NameRooms.roomInfos[roomNumber][0]}`)
+        smallPoint.innerText = "📍"
+    }
 
     firstDiv.appendChild(preciseDiv)
     preciseDiv.appendChild(preciseDivSecond)

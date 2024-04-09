@@ -5,6 +5,7 @@ import { BoxLineGeometry } from 'three/examples/jsm/geometries/BoxLineGeometry.j
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'; 
 
 import ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
@@ -16,6 +17,13 @@ import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
 import * as Language from "./language.js";
+
+import GUI from 'lil-gui';
+
+/**
+ * Debug
+ */
+const gui = new GUI()
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;
@@ -188,22 +196,110 @@ function init(nameRoom) {
 	/////////
 	// Room
 	/////////
-	const room = new THREE.LineSegments(
-		new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
-		new THREE.LineBasicMaterial( { color: 0x808080 } )
+	// const room = new THREE.LineSegments(
+	// 	new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
+	// 	new THREE.LineBasicMaterial( { color: 0x808080, transparent: true } )
+	// );
+
+	// const roomMesh = new THREE.Mesh(
+	// 	new THREE.BoxGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
+	// 	new THREE.MeshBasicMaterial( { color: 0x808080, transparent: true } )
+	// );
+
+
+
+
+
+
+
+
+	
+
+	/* test new background scene */
+	gltfLoader.load(
+		// resource URL
+		'https://catacombes.xyz/assets/background_homepage/neon_stage.glb',
+		// called when the resource is loaded
+		function ( gltf ) {
+	
+			gltf.scene.scale.set(1, 1, 1)
+			gltf.scene.position.set(-.7, -.5, -2)
+			scene.add( gltf.scene );
+
+	
+			gltf.animations; // Array<THREE.AnimationClip>
+			gltf.scene; // THREE.Group
+			gltf.scenes; // Array<THREE.Group>
+			gltf.cameras; // Array<THREE.Camera>
+			gltf.asset; // Object
+	
+		},
+		// called while loading is progressing
+		function ( xhr ) {
+	
+			// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+	
+		},
+		// called when loading has errors
+		function ( error ) {
+	
+			console.log( 'An error happened' );
+	
+		}
 	);
 
-	const roomMesh = new THREE.Mesh(
-		new THREE.BoxGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
-		new THREE.MeshBasicMaterial( { side: THREE.BackSide } )
-	);
+
+	const geometry_t = new THREE.TorusGeometry( 1.7, 0.1, 16, 100 ); 
+	const material_t = new THREE.MeshBasicMaterial( { color: 0xffff00, transparent: true } ); 
+	const torus_l = new THREE.Mesh( geometry_t, material_t ); 
+	torus_l.position.set(0, 1.84, -7.75);
+	scene.add( torus_l );
+
+
+	const light_test = new THREE.PointLight(0x8027b0, 0.2); // Couleur blanche, intensité 1
+	torus_l.add(light_test); // Attachement de la lumière à l'objet cube
+	light_test.position.set(0, 2.38, -7.75); // Position de la lumière par rapport à l'objet
+
+	var conf = { color : '#ffae23' };    
+	gui.addColor(conf, 'color').onChange( function(colorValue) {
+		torus_l.material.color.set(colorValue);
+	});
+	const cameraFolder = gui.addFolder('Torus light')
+	cameraFolder.add(torus_l.position, 'x', -10, 10)
+	cameraFolder.add(torus_l.position, 'y', -10, 10)
+	cameraFolder.add(torus_l.position, 'z', -10, 10)
+
+
+	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 10, 1, 1)
+	rectAreaLight.position.y = 1.4
+	scene.add(rectAreaLight)
+
+
+	const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
+	rectAreaLight.add( rectLightHelper );
+
+	const rectAreaLight_l = gui.addFolder('React light')
+	rectAreaLight_l.add(rectAreaLight.position, 'x', -10, 10)
+	rectAreaLight_l.add(rectAreaLight.position, 'y', -10, 10)
+	rectAreaLight_l.add(rectAreaLight.position, 'z', -10, 10)
+	rectAreaLight_l.add(rectAreaLight.rotation, 'x', -10, 10)
+	rectAreaLight_l.add(rectAreaLight.rotation, 'y', -10, 10)
+	rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
+
+
+
+
+	
+
+
+	/* fin test new scene */
 
 	scene.add(torus)
 	scene.add(torus2)
 	scene.add(torus3)
 
-	scene.add( room );
-	objsToTest.push( roomMesh );
+	// scene.add( room );
+	// objsToTest.push( roomMesh );
 
 	//////////
 	// Light
@@ -217,7 +313,8 @@ function init(nameRoom) {
 
 	const hemLight = new THREE.HemisphereLight( 0x808080, 0x606060 );
 
-	scene.add( light, hemLight );
+	// scene.add( light, hemLight );
+
 
 	////////////////
 	// Controllers
@@ -597,8 +694,7 @@ function click_on_others_rooms() {
 				// (alt_value)
 				const class_name_elem = `.${alt_value}_small`
 
-
-				console.log(class_name_elem)
+				// console.log(class_name_elem)
 				document.querySelector(class_name_elem).parentNode.classList.add("selected_room_on_list")
 
 				const room_number = find_room_number(NameRooms.roomInfos, alt_value);

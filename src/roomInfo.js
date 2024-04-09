@@ -424,9 +424,9 @@ export const roomInfos = [
     // Brocolis
     [
         "Brocolis", 
-        "Marche aux Brocolis",
+        "Galerie des Pornos",
         "Petit couloir avec de belles fresques en mosaiques",
-        " - ?? - ",
+        " -- ? -- ",
         " 20m", 
         "https://catacombes.xyz/Brocolis/3D", 
         "", 
@@ -450,17 +450,17 @@ export const roomInfos = [
     ], 
 
     // XIIIe arrondissement 
-    // Fond du Crew
+    // Bracitorium
     [
-        "FdC", 
-        "Fond du Crew",
+        "Bracitorium", 
+        "Bracitorium",
         "",
-        "Rue Jeanne d'Arc \n   75013 Paris", 
+        "-- ? --", 
         " 20m",
         "https://catacombes.xyz/FdC/3D", 
         "Salpetriere", 
-        "4 / 5 / 5 / 6", 
-        "4 / 6 / 5 / 6",
+        "", 
+        "",
         "", 
     ], 
 
@@ -496,14 +496,14 @@ export const roomInfos = [
     [
         "Guerinet", 
         "Guerinet",
-        "Le cabinet de M. Guérinet sous le faubourg Saint-Marcel a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
-        "Avenue des Gobelins \n   75013 Paris", 
+        "Le cabinet de M. Guérinet a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
+        " -- ? -- ", 
         " 20m",
         "https://catacombes.xyz/Guerinet/3D", 
         "Salpetriere", 
-        "8 / 4 / 9 / 5", 
-        "4 / 7 / 5 / 8",
-        "M. Guérinet's cabinet under the Faubourg Saint-Marcel was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
+        "", 
+        "",
+        "M. Guérinet's cabinet was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
     ], 
 ]
 
