@@ -291,13 +291,43 @@ function init(nameRoom) {
 	rectAreaLight_l.add(rectAreaLight.rotation, 'y', -10, 10)
 	rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
 
-
-
+	
 
 	
 
 
 	/* fin test new scene */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	scene.add(torus)
 	scene.add(torus2)
@@ -388,7 +418,7 @@ function init(nameRoom) {
 
 	//
 	for(let i = 0; i < NameRooms.roomInfos.length; i++){
-		meshContainer.add(NameRooms.roomInfos[i][0])
+		// meshContainer.add(NameRooms.roomInfos[i][0])
 		meshes.push(NameRooms.roomInfos[i][0])
 		display_all_rooms(NameRooms.roomInfos[i][0], NameRooms.roomInfos[i][0])
 	}
