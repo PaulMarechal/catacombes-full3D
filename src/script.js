@@ -190,13 +190,13 @@ function init(nameRoom) {
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.enableDamping = true
-	controls.minDistance = 1; 
-	controls.maxDistance = 2;
+	// controls.minDistance = 1; 
+	// controls.maxDistance = 2;
 
-    controls.maxAzimuthAngle = Math.PI / 6;
-    controls.minAzimuthAngle = - Math.PI / 6; 
-	controls.maxPolarAngle = 1.5;
-	controls.minPolarAngle = Math.PI / 5;
+    // controls.maxAzimuthAngle = Math.PI / 6;
+    // controls.minAzimuthAngle = - Math.PI / 6; 
+	// controls.maxPolarAngle = 1.5;
+	// controls.minPolarAngle = Math.PI / 5;
 
 	/////////
 	// Room
@@ -211,68 +211,65 @@ function init(nameRoom) {
 	// 	new THREE.MeshBasicMaterial( { color: 0x808080, transparent: true } )
 	// );
 
-
-
-
-
-
-
-
 	
 
 	/* test new background scene */
 	gltfLoader.load(
 		// resource URL
-		'https://catacombes.xyz/assets/background_homepage/neon_stage.glb',
+		'https://catacombes.xyz/assets/background_homepage/new_neon.glb',
 		// called when the resource is loaded
 		function ( gltf ) {
 	
 			gltf.scene.scale.set(1, 1, 1)
 			gltf.scene.position.set(-.7, -.5, -2)
 			scene.add( gltf.scene );
-
-	
-			gltf.animations; // Array<THREE.AnimationClip>
-			gltf.scene; // THREE.Group
-			gltf.scenes; // Array<THREE.Group>
-			gltf.cameras; // Array<THREE.Camera>
-			gltf.asset; // Object
 	
 		},
-		// called while loading is progressing
 		function ( xhr ) {
-	
 			// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	
 		},
-		// called when loading has errors
+
 		function ( error ) {
-	
 			console.log( 'An error happened' );
-	
 		}
 	);
 
-
+	const textureLoader = new THREE.TextureLoader();
 	const geometry_t = new THREE.TorusGeometry( 1.7, 0.1, 16, 100 ); 
-	const material_t = new THREE.MeshBasicMaterial( { color: 0xffff00, transparent: true } ); 
+	const material_t = new THREE.MeshStandardMaterial( { 
+		color: 0xffffff,
+		emissive: 0xffffff,
+		emissiveIntensity: 2,
+		emissiveMap: textureLoader.load("https://catacombes.xyz/assets/images/gradient/gradient.jpg"),
+    	toneMapped: false,
+		transparent: true 
+	} ); 
+	
 	const torus_l = new THREE.Mesh( geometry_t, material_t ); 
-	torus_l.position.set(0, 1.84, -7.75);
+	torus_l.position.set(0, 1.84, -10.75);
 	scene.add( torus_l );
 
+	const point_light_purple = new THREE.PointLight(0x8027b0, 0.02); 
+	torus_l.add(point_light_purple);
+	point_light_purple.position.set(0, 2.38, -7.75); 
 
-	const light_test = new THREE.PointLight(0x8027b0, 0.2); // Couleur blanche, intensité 1
-	torus_l.add(light_test); // Attachement de la lumière à l'objet cube
-	light_test.position.set(0, 2.38, -7.75); // Position de la lumière par rapport à l'objet
+	const sphereSize = 1;
+	const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
+	scene.add( pointLightHelper );
 
 	var conf = { color : '#ffae23' };    
 	gui.addColor(conf, 'color').onChange( function(colorValue) {
 		torus_l.material.color.set(colorValue);
 	});
 	const cameraFolder = gui.addFolder('Torus light')
-	cameraFolder.add(torus_l.position, 'x', -10, 10)
-	cameraFolder.add(torus_l.position, 'y', -10, 10)
-	cameraFolder.add(torus_l.position, 'z', -10, 10)
+	cameraFolder.add(torus_l.position, 'x', -30, 30)
+	cameraFolder.add(torus_l.position, 'y', -30, 30)
+	cameraFolder.add(torus_l.position, 'z', -30, 30)
+
+	const pointLight_folder = gui.addFolder('Point light')
+	pointLight_folder.add(point_light_purple.position, 'x', -30, 30)
+	pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
+	pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
 
 
 	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 10, 1, 1)
@@ -881,6 +878,20 @@ function onWindowResize() {
 
 removeVRButton()
 
+/* Effet neon */
+const composer = new EffectComposer(renderer);
+const renderScene = new RenderPass(scene, camera);
+const bloomPass = new UnrealBloomPass(
+    new THREE.Vector2(window.innerWidth, window.innerHeight),
+    0.2, 
+    0.0,
+    1.0
+);
+const outputPass = new OutputPass();
+composer.addPass(renderScene);
+composer.addPass(bloomPass);
+composer.addPass(outputPass);
+
 
 function loop() {
 
@@ -905,8 +916,10 @@ function loop() {
 	}
     
 	renderer.render( scene, camera );
-    
+	
 	updateButtons();
+	
+	composer.render();
     
 }
 
