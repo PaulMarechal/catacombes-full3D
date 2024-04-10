@@ -190,13 +190,13 @@ function init(nameRoom) {
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.enableDamping = true
-	// controls.minDistance = 1; 
-	// controls.maxDistance = 2;
+	controls.minDistance = 1; 
+	controls.maxDistance = 2;
 
-    // controls.maxAzimuthAngle = Math.PI / 6;
-    // controls.minAzimuthAngle = - Math.PI / 6; 
-	// controls.maxPolarAngle = 1.5;
-	// controls.minPolarAngle = Math.PI / 5;
+    controls.maxAzimuthAngle = Math.PI / 6;
+    controls.minAzimuthAngle = - Math.PI / 6; 
+	controls.maxPolarAngle = 1.5;
+	controls.minPolarAngle = Math.PI / 5;
 
 	/////////
 	// Room
@@ -239,7 +239,7 @@ function init(nameRoom) {
 	const geometry_p = new THREE.PlaneGeometry( 10, 18 );
 	const material_p = new THREE.MeshBasicMaterial( {color: '#030303', side: THREE.DoubleSide} );
 	const plane = new THREE.Mesh( geometry_p, material_p );
-	plane.position.set(0, -.6, -11)
+	plane.position.set(0, -.6, -8.5)
 	plane.rotation.x = 1.6
 	scene.add( plane );
 
