@@ -219,7 +219,6 @@ function init(nameRoom) {
 		'https://catacombes.xyz/assets/background_homepage/new_neon.glb',
 		// called when the resource is loaded
 		function ( gltf ) {
-	
 			gltf.scene.scale.set(1, 1, 1)
 			gltf.scene.position.set(-.7, -.5, -2)
 			scene.add( gltf.scene );
@@ -234,12 +233,13 @@ function init(nameRoom) {
 		}
 	);
 
-	/* Plane for model */
-	const geometry_p = new THREE.PlaneGeometry( 10, 17 );
+	//////////////////
+	// Plane for model
+	//////////////////
+	const geometry_p = new THREE.PlaneGeometry( 10, 18 );
 	const material_p = new THREE.MeshBasicMaterial( {color: '#030303', side: THREE.DoubleSide} );
 	const plane = new THREE.Mesh( geometry_p, material_p );
-	plane.position.y = -0.6
-	plane.position.z = -10
+	plane.position.set(0, -.6, -11)
 	plane.rotation.x = 1.6
 	scene.add( plane );
 
@@ -252,11 +252,12 @@ function init(nameRoom) {
 	planeFolder.add(plane.rotation, 'z', -30, 30)
 	const colorController_plane = planeFolder.addColor(material_p, 'color');
 	colorController_plane.onChange(() => {
-		renderer.render(scene, camera); // Mettre à jour le rendu
+		renderer.render(scene, camera); 
 	});
 
-
-
+	//////////////
+	// Torus light
+	//////////////
 	const textureLoader = new THREE.TextureLoader();
 	const geometry_t = new THREE.TorusGeometry( 1.5, 0.05, 16, 100 ); 
 	const material_t = new THREE.MeshStandardMaterial( { 
@@ -268,38 +269,37 @@ function init(nameRoom) {
 		transparent: true 
 	} ); 
 
-	
 	const torus_l = new THREE.Mesh( geometry_t, material_t ); 
 	torus_l.position.set(0, 1.84, -10.75);
 	scene.add( torus_l );
 
-	const point_light_purple = new THREE.PointLight(0x8027b0, 0.1); 
+	//////////////
+	// Point light
+	//////////////
+	const point_light_purple = new THREE.PointLight(0x3f2d52, 0.5); 
 	torus_l.add(point_light_purple);
 	point_light_purple.position.set(0, 0, 0.5); 
 
-	var params_pointLight = {
-		modelcolor: 0x8027b0,  //purple
-	};
-
-
-
-	const sphereSize = 1;
-	const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
-	scene.add( pointLightHelper );
+	// Point Light Helper
+	// const sphereSize = 1;
+	// const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
+	// scene.add( pointLightHelper );
 
 	const cameraFolder = gui.addFolder('Torus light')
 	cameraFolder.add(torus_l.position, 'x', -30, 30)
 	cameraFolder.add(torus_l.position, 'y', -30, 30)
 	cameraFolder.add(torus_l.position, 'z', -30, 30)
+	cameraFolder.add(torus_l.rotation, 'x', -30, 30)
+	cameraFolder.add(torus_l.rotation, 'y', -30, 30)
+	cameraFolder.add(torus_l.rotation, 'z', -30, 30)
 
 	const colorController = cameraFolder.addColor(material_t, 'color');
 	colorController.onChange(() => {
-	renderer.render(scene, camera); // Mettre à jour le rendu
+	renderer.render(scene, camera); 
 	});
 
 	cameraFolder.addColor(material_t, 'emissive');
 	cameraFolder.add(material_t, 'emissiveIntensity', 0, 10);
-
 	
 
 	const pointLight_folder = gui.addFolder('Point light')
@@ -307,31 +307,31 @@ function init(nameRoom) {
 	pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
 	pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
 
-	pointLight_folder.addColor(point_light_purple, 'color') // Accès par propriété
+	pointLight_folder.addColor(point_light_purple, 'color') 
 	.name('color')
 	.listen()
 	.onChange(function() {
-	  renderer.render(scene, camera); // Forcer la mise à jour du rendu
+	  renderer.render(scene, camera); 
 	});
 
-	pointLight_folder.add(point_light_purple, 'intensity') // Accès par propriété
+	pointLight_folder.add(point_light_purple, 'intensity') 
 	.name('intensity')
 	.listen()
 	.onChange(function() {
-	  renderer.render(scene, camera); // Forcer la mise à jour du rendu
+	  renderer.render(scene, camera); 
 	});
 	
 
-
-
-
-	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 3, 1, 1)
+	/////////////////
+	// RectAreaLight ( behind user )
+	/////////////////
+	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 5, 1, 1)
 	rectAreaLight.position.y = 1.4
 	scene.add(rectAreaLight)
 
-
-	const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
-	rectAreaLight.add( rectLightHelper );
+	// ReactArea Light Helper
+	// const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
+	// rectAreaLight.add( rectLightHelper );
 
 	const rectAreaLight_l = gui.addFolder('React light')
 	rectAreaLight_l.add(rectAreaLight.position, 'x', -10, 10)
@@ -342,48 +342,19 @@ function init(nameRoom) {
 	rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
 
 	
-
-	
-	/* Fog */
-	scene.fog = new THREE.Fog( 0x313131, 8.64, 15.24 );
+	///////
+	// Fog
+	///////
+	scene.fog = new THREE.Fog( 0x313131, 8.6, 16.7 );
 	// scene.fog = new THREE.FogExp2( 0xcccccc, 0.005 );
 
 	const fogFolder = gui.addFolder('Brouillard');
-	fogFolder.add(scene.fog, 'far', -30, 30)
 	fogFolder.add(scene.fog, 'near', -30, 30)
-	/* fin test new scene */
+	fogFolder.add(scene.fog, 'far', -30, 30)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	////////////////
+	// Loading torus
+	////////////////
 	scene.add(torus)
 	scene.add(torus2)
 	scene.add(torus3)
