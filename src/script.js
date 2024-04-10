@@ -234,8 +234,31 @@ function init(nameRoom) {
 		}
 	);
 
+	/* Plane for model */
+	const geometry_p = new THREE.PlaneGeometry( 10, 17 );
+	const material_p = new THREE.MeshBasicMaterial( {color: '#030303', side: THREE.DoubleSide} );
+	const plane = new THREE.Mesh( geometry_p, material_p );
+	plane.position.y = -0.6
+	plane.position.z = -10
+	plane.rotation.x = 1.6
+	scene.add( plane );
+
+	const planeFolder = gui.addFolder('Plane')
+	planeFolder.add(plane.position, 'x', -30, 30)
+	planeFolder.add(plane.position, 'y', -30, 30)
+	planeFolder.add(plane.position, 'z', -30, 30)
+	planeFolder.add(plane.rotation, 'x', -30, 30)
+	planeFolder.add(plane.rotation, 'y', -30, 30)
+	planeFolder.add(plane.rotation, 'z', -30, 30)
+	const colorController_plane = planeFolder.addColor(material_p, 'color');
+	colorController_plane.onChange(() => {
+		renderer.render(scene, camera); // Mettre à jour le rendu
+	});
+
+
+
 	const textureLoader = new THREE.TextureLoader();
-	const geometry_t = new THREE.TorusGeometry( 1.7, 0.1, 16, 100 ); 
+	const geometry_t = new THREE.TorusGeometry( 1.5, 0.05, 16, 100 ); 
 	const material_t = new THREE.MeshStandardMaterial( { 
 		color: 0xffffff,
 		emissive: 0xffffff,
@@ -244,35 +267,65 @@ function init(nameRoom) {
     	toneMapped: false,
 		transparent: true 
 	} ); 
+
 	
 	const torus_l = new THREE.Mesh( geometry_t, material_t ); 
 	torus_l.position.set(0, 1.84, -10.75);
 	scene.add( torus_l );
 
-	const point_light_purple = new THREE.PointLight(0x8027b0, 0.02); 
+	const point_light_purple = new THREE.PointLight(0x8027b0, 0.1); 
 	torus_l.add(point_light_purple);
-	point_light_purple.position.set(0, 2.38, -7.75); 
+	point_light_purple.position.set(0, 0, 0.5); 
+
+	var params_pointLight = {
+		modelcolor: 0x8027b0,  //purple
+	};
+
+
 
 	const sphereSize = 1;
 	const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
 	scene.add( pointLightHelper );
 
-	var conf = { color : '#ffae23' };    
-	gui.addColor(conf, 'color').onChange( function(colorValue) {
-		torus_l.material.color.set(colorValue);
-	});
 	const cameraFolder = gui.addFolder('Torus light')
 	cameraFolder.add(torus_l.position, 'x', -30, 30)
 	cameraFolder.add(torus_l.position, 'y', -30, 30)
 	cameraFolder.add(torus_l.position, 'z', -30, 30)
+
+	const colorController = cameraFolder.addColor(material_t, 'color');
+	colorController.onChange(() => {
+	renderer.render(scene, camera); // Mettre à jour le rendu
+	});
+
+	cameraFolder.addColor(material_t, 'emissive');
+	cameraFolder.add(material_t, 'emissiveIntensity', 0, 10);
+
+	
 
 	const pointLight_folder = gui.addFolder('Point light')
 	pointLight_folder.add(point_light_purple.position, 'x', -30, 30)
 	pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
 	pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
 
+	pointLight_folder.addColor(point_light_purple, 'color') // Accès par propriété
+	.name('color')
+	.listen()
+	.onChange(function() {
+	  renderer.render(scene, camera); // Forcer la mise à jour du rendu
+	});
 
-	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 10, 1, 1)
+	pointLight_folder.add(point_light_purple, 'intensity') // Accès par propriété
+	.name('intensity')
+	.listen()
+	.onChange(function() {
+	  renderer.render(scene, camera); // Forcer la mise à jour du rendu
+	});
+	
+
+
+
+
+	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 3, 1, 1)
 	rectAreaLight.position.y = 1.4
 	scene.add(rectAreaLight)
 
@@ -291,8 +344,13 @@ function init(nameRoom) {
 	
 
 	
+	/* Fog */
+	scene.fog = new THREE.Fog( 0x313131, 8.64, 15.24 );
+	// scene.fog = new THREE.FogExp2( 0xcccccc, 0.005 );
 
-
+	const fogFolder = gui.addFolder('Brouillard');
+	fogFolder.add(scene.fog, 'far', -30, 30)
+	fogFolder.add(scene.fog, 'near', -30, 30)
 	/* fin test new scene */
 
 
@@ -883,7 +941,7 @@ const composer = new EffectComposer(renderer);
 const renderScene = new RenderPass(scene, camera);
 const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
-    0.2, 
+    0.35, 
     0.0,
     1.0
 );
