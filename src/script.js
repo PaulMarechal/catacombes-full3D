@@ -246,24 +246,33 @@ function init(nameRoom) {
 
 	const loadingBarElement = document.querySelector('.loading-bar')
 	const loadingManagerMain = new THREE.LoadingManager(
-		// Loaded
-		() =>
-		{
-			console.log('loaded')
-			gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0 })
-		},
-		
-		// Progress
-		() =>
-		{
-			console.log(loadingManagerMain), 
-			(itemUrl, itemsLoaded, itemsTotal) =>
-			{
-				console.log(itemUrl)
-				console.log(itemsLoaded)
-				console.log(itemsTotal)
-			}
-		}
+    // Loaded
+    () =>
+    {
+        // Wait a little
+        window.setTimeout(() =>
+        {
+            // Animate overlay
+            gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
+
+            // Update loadingBarElement
+            loadingBarElement.classList.add('ended')
+            loadingBarElement.style.transform = ''
+			
+			setTimeout(() => {
+				scene.remove(overlay)
+			}, 400);
+        }, 500)
+
+    },
+
+    // Progress
+    (itemUrl, itemsLoaded, itemsTotal) =>
+    {
+        // Calculate the progress and update the loadingBarElement
+        const progressRatio = itemsLoaded / itemsTotal
+        loadingBarElement.style.transform = `scaleX(${progressRatio})`
+    }
 	)
 
 	const gltfLoaderMain = new GLTFLoader(loadingManagerMain)
