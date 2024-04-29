@@ -220,7 +220,6 @@ function init(nameRoom) {
 	 */
 	const overlayGeometryMain = new THREE.PlaneGeometry(2, 2, 1, 1)
 	const overlayMaterialMain = new THREE.ShaderMaterial({
-		// wireframe: true,
 		transparent: true,
 		uniforms:
 		{
@@ -246,33 +245,30 @@ function init(nameRoom) {
 
 	const loadingBarElement = document.querySelector('.loading-bar')
 	const loadingManagerMain = new THREE.LoadingManager(
-    // Loaded
-    () =>
-    {
-        // Wait a little
-        window.setTimeout(() =>
-        {
-            // Animate overlay
-            gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
+		// Loaded
+		() => {
+			// Wait a little
+			window.setTimeout(() =>
+			{
+				// Animate overlay
+				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
 
-            // Update loadingBarElement
-            loadingBarElement.classList.add('ended')
-            loadingBarElement.style.transform = ''
-			
-			setTimeout(() => {
-				scene.remove(overlay)
-			}, 400);
-        }, 500)
+				// Update loadingBarElement
+				loadingBarElement.classList.add('ended')
+				loadingBarElement.style.transform = ''
 
-    },
+				setTimeout(() => {
+					scene.remove(overlay)
+				}, 400);
+			}, 500)
 
-    // Progress
-    (itemUrl, itemsLoaded, itemsTotal) =>
-    {
-        // Calculate the progress and update the loadingBarElement
-        const progressRatio = itemsLoaded / itemsTotal
-        loadingBarElement.style.transform = `scaleX(${progressRatio})`
-    }
+		},
+
+		// Progress
+		(itemUrl, itemsLoaded, itemsTotal) => {
+			const progressRatio = itemsLoaded / itemsTotal
+			loadingBarElement.style.transform = `scaleX(${progressRatio})`
+		}
 	)
 
 	const gltfLoaderMain = new GLTFLoader(loadingManagerMain)
@@ -292,7 +288,6 @@ function init(nameRoom) {
 		},
 		function ( xhr ) {
 			// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-			
 		},
 
 		function ( error ) {
