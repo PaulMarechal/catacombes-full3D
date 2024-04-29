@@ -11,6 +11,7 @@ import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
 
 import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
+import GUI from 'lil-gui';
 
 /**
  * Base

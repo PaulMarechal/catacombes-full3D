@@ -6,6 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'; 
+import { gsap } from 'gsap'
 
 import ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
@@ -211,10 +212,66 @@ function init(nameRoom) {
 	// 	new THREE.MeshBasicMaterial( { color: 0x808080, transparent: true } )
 	// );
 
-	
+	/////////////////////////
+	// Loading ( main scene )
+	/////////////////////////
+	/**
+	 * Overlay
+	 */
+	const overlayGeometryMain = new THREE.PlaneGeometry(2, 2, 1, 1)
+	const overlayMaterialMain = new THREE.ShaderMaterial({
+		// wireframe: true,
+		transparent: true,
+		uniforms:
+		{
+			uAlpha: { value: 1 }
+		},
+		vertexShader: `
+			void main()
+			{
+				gl_Position = vec4(position, 1.0);
+			}
+		`,
+		fragmentShader: `
+			uniform float uAlpha;
+
+			void main()
+			{
+				gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
+			}
+		`
+	})	
+	const overlay = new THREE.Mesh(overlayGeometryMain, overlayMaterialMain)
+	scene.add(overlay)
+
+	const loadingBarElement = document.querySelector('.loading-bar')
+	const loadingManagerMain = new THREE.LoadingManager(
+		// Loaded
+		() =>
+		{
+			console.log('loaded')
+			gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0 })
+		},
+		
+		// Progress
+		() =>
+		{
+			console.log(loadingManagerMain), 
+			(itemUrl, itemsLoaded, itemsTotal) =>
+			{
+				console.log(itemUrl)
+				console.log(itemsLoaded)
+				console.log(itemsTotal)
+			}
+		}
+	)
+
+	const gltfLoaderMain = new GLTFLoader(loadingManagerMain)
+	gltfLoaderMain.setDRACOLoader(dracoLoader)
+
 
 	/* test new background scene */
-	gltfLoader.load(
+	gltfLoaderMain.load(
 		// resource URL
 		'https://catacombes.xyz/assets/background_homepage/new_neon.glb',
 		// called when the resource is loaded
@@ -226,6 +283,7 @@ function init(nameRoom) {
 		},
 		function ( xhr ) {
 			// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+			
 		},
 
 		function ( error ) {
@@ -276,7 +334,7 @@ function init(nameRoom) {
 	//////////////
 	// Point light
 	//////////////
-	const point_light_purple = new THREE.PointLight(0x3f2d52, 0.5); 
+	const point_light_purple = new THREE.PointLight(0x110c17, 0.5); 
 	torus_l.add(point_light_purple);
 	point_light_purple.position.set(0, 0, 0.5); 
 

@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "dat.gui": "^0.7.9",
-    "gsap": "^3.11.5",
+    "gsap": "^3.12.5",
     "lil-gui": "^0.17.0",
-    "three": "^0.153.0",
+    "three": "^0.164.1",
     "three-mesh-ui": "^6.5.4"
   }
 }
