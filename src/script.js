@@ -244,16 +244,15 @@ function init(nameRoom) {
 	scene.add(overlay)
 
 	const loadingBarElement = document.querySelector('.loading-bar')
+	const loading_bar_percent = document.querySelector('#loading_bar_percent')
+	const icon_tabler_skull = document.querySelector('.icon-tabler-skull')
+
 	const loadingManagerMain = new THREE.LoadingManager(
 		// Loaded
 		() => {
-			// Wait a little
-			window.setTimeout(() =>
-			{
-				// Animate overlay
+			window.setTimeout(() => {
 				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
 
-				// Update loadingBarElement
 				loadingBarElement.classList.add('ended')
 				loadingBarElement.style.transform = ''
 
@@ -266,8 +265,23 @@ function init(nameRoom) {
 
 		// Progress
 		(itemUrl, itemsLoaded, itemsTotal) => {
-			const progressRatio = itemsLoaded / itemsTotal
-			loadingBarElement.style.transform = `scaleX(${progressRatio})`
+			const progressRatio = itemsLoaded / itemsTotal;
+			const remainingRatio = 1 - progressRatio;
+		
+			loadingBarElement.style.transform = `scaleX(${progressRatio})`;
+		
+			const targetPercentage = Math.floor(progressRatio * 100);
+			let currentPercentage = 0;
+		
+			const animationInterval = setInterval(() => {
+			if (currentPercentage < targetPercentage) {
+				currentPercentage = currentPercentage + 2;
+			} else {
+				clearInterval(animationInterval); 
+			}
+		
+			loading_bar_percent.innerHTML = `${currentPercentage} %`;
+			}, 25); 
 		}
 	)
 

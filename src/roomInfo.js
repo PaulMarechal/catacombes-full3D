@@ -12,6 +12,93 @@
 */
 export const roomInfos = [
 
+    // XIIIe arrondissement 
+    // Guerinet
+    [
+        "Guerinet", 
+        "Guerinet",
+        "Le cabinet de M. Guérinet a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
+        " -- ? -- ", 
+        " 20m",
+        "https://catacombes.xyz/Guerinet/3D", 
+        "Salpetriere", 
+        "", 
+        "",
+        "M. Guérinet's cabinet was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
+    ], 
+
+    // Solcarlus
+    [
+        "Solcarlus", 
+        "Solcarlus",
+        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l'occasion de revoir l'acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
+        "Rue Jeanne d'Arc \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Solcarlus/3D", 
+        "Salpetriere", 
+        "4 / 5 / 5 / 6", 
+        "2 / 5 / 3 / 6",
+        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, provides an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand.", 
+    ], 
+
+    // Bracitorium
+    [
+        "Bracitorium", 
+        "Bracitorium",
+        "",
+        "-- ? --", 
+        " 20m",
+        "https://catacombes.xyz/FdC/3D", 
+        "Salpetriere", 
+        "", 
+        "",
+        "", 
+    ], 
+
+    // Zebulon
+    [
+        "Zebulon", 
+        "Zebulon",
+        "Elle est située sous la rue Nationale, aussi appelée salle Zébulon.",
+        "131 bis Rue Nationale \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Zebulon/3D", 
+        "Gare", 
+        "5 / 5 / 6 / 6", 
+        "1 / 4 / 2 / 5",
+        "It is located under Rue Nationale, also known as the Zébulon room.", 
+    ], 
+
+    // XIV arrondissement
+    // Kraken
+    [
+        "Kraken", 
+        "Kraken",
+        "Salle refaite en 2018 avec l'aide de Nexus. Salle centrale et grande table bien entretenue avec banc en pierre tout autour de la salle. Nommée d'après une fresque de Kraken",
+        "71 ter Rue de la Tombe Issoire \n   75014 Paris", 
+        " 22m", 
+        "https://catacombes.xyz/Kraken/3D", 
+        "Petit Montrouge",
+        "6 / 5 / 7 / 6", 
+        "2 / 8 / 3 / 9", 
+        "Room redone in 2018 with the help of Nexus. Central room and well maintained large table with stone bench all around the room. Named after a Kraken fresco."
+
+    ],
+
+    // Cabinet mineralogique 
+    [
+        "Cabinet", 
+        "Cabinet mineralogique ( 1811 )",
+        "Cabinet Gambier-Major. Variante souterraine des cabinets de curiosités en vogue au XIXe siècle. Construit sous le mandat d'Ericart de Thury. Un escalier droit permet d'exposer des morceaux de roches représentant les couches géologiques du Lutécien",
+        "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
+        " 15m", 
+        "https://catacombes.xyz/Cabinet/3D", 
+        "Montparnasse", 
+        "9 / 5 / 10 / 6", 
+        "1 / 8 / 2 / 9",
+        "Cabinet Gambier-Major. Underground variant of the cabinets of curiosities in fashion in the 19th century. Built under the mandate of Ericart de Thury. There is a straight staircase used to expose pieces of rocks representing the geological layers of the Lutecian.", 
+    ], 
+
     // Soleil
     [
         "Soleil", 
@@ -83,22 +170,6 @@ export const roomInfos = [
         "Several names for this room ( Boutique / Psychose / Bite ). A big mural made by Psy in homage to Foxy who died in the catacombs has unfortunately been degraded over the years.", 
     ],
 
-    // Kraken
-    [
-        "Kraken", 
-        "Kraken",
-        "Salle refaite en 2018 avec l'aide de Nexus. Salle centrale et grande table bien entretenue avec banc en pierre tout autour de la salle. Nommée d'après une fresque de Kraken",
-        "71 ter Rue de la Tombe Issoire \n   75014 Paris", 
-        " 22m", 
-        "https://catacombes.xyz/Kraken/3D", 
-        "Petit Montrouge",
-        "6 / 5 / 7 / 6", 
-        "2 / 8 / 3 / 9", 
-        "Room redone in 2018 with the help of Nexus. Central room and well maintained large table with stone bench all around the room. Named after a Kraken fresco."
-
-    ],
-
-
     // Ossa
     [
         "Ossa", 
@@ -110,6 +181,34 @@ export const roomInfos = [
         "6 / 6 / 7 / 7", 
         "2 / 2 / 3 / 3", 
         "In 1982 these plaques were in a gallery that was to be injected to isolate the official ossuary of the GRS. Cataphiles transported them from Saint Anne's, which was hidden in the GRS. A few years later they offered to return them but the town hall refused.", 
+    ], 
+
+    // Philibert
+    [
+        "Philibert", 
+        "Tombe de Philibert Aspairt",
+        "Tombeau de Philiber Aspairt, homme connu pour être mort dans les catacombes de Paris le 3 novembre 1793 et dont le tombeau a été construit à l'endroit où il a été retrouvé. On dit qu'il s'est perdu en cherchant le trésor des Chartreux. La Chartreuse",
+        "1 Place Louis Marin \n   75005 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Philibert/3D", 
+        "Val de Grace", 
+        "7 / 5 / 8 / 6", 
+        "1 / 3 / 2 / 4",
+        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
+    ], 
+
+    // Brocolis
+    [
+        "Brocolis", 
+        "Galerie des Pornos",
+        "Petit couloir avec de belles fresques en mosaiques",
+        " -- ? -- ",
+        " 20m", 
+        "https://catacombes.xyz/Brocolis/3D", 
+        "", 
+        "", 
+        "",
+        "Small corridor with beautiful mosaic frescoes", 
     ], 
 
     // Cabanis
@@ -223,21 +322,6 @@ export const roomInfos = [
         "2 / 6 / 3 / 7",
         "Room used as a saddlery in the 19th century. It also served as a cellar and brewery for the Gallia beer brand. First separated from the network, the connection with the GRS was made at the end of the 1980s.", 
     ],
-
-    // Cabinet mineralogique 
-    [
-        "Cabinet", 
-        "Cabinet mineralogique ( 1811 )",
-        "Cabinet Gambier-Major. Variante souterraine des cabinets de curiosités en vogue au XIXe siècle. Construit sous le mandat d'Ericart de Thury. Un escalier droit permet d'exposer des morceaux de roches représentant les couches géologiques du Lutécien",
-        "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
-        " 15m", 
-        "https://catacombes.xyz/Cabinet/3D", 
-        "Montparnasse", 
-        "9 / 5 / 10 / 6", 
-        "1 / 8 / 2 / 9",
-        "Cabinet Gambier-Major. Underground variant of the cabinets of curiosities in fashion in the 19th century. Built under the mandate of Ericart de Thury. There is a straight staircase used to expose pieces of rocks representing the geological layers of the Lutecian.", 
-
-    ], 
 
     // Manoir
     [
@@ -393,20 +477,6 @@ export const roomInfos = [
         "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
     ],
 
-    // Philibert
-    [
-        "Philibert", 
-        "Tombe de Philibert Aspairt",
-        "Tombeau de Philiber Aspairt, homme connu pour être mort dans les catacombes de Paris le 3 novembre 1793 et dont le tombeau a été construit à l'endroit où il a été retrouvé. On dit qu'il s'est perdu en cherchant le trésor des Chartreux. La Chartreuse",
-        "1 Place Louis Marin \n   75005 Paris", 
-        " 20m",
-        "https://catacombes.xyz/Philibert/3D", 
-        "Val de Grace", 
-        "7 / 5 / 8 / 6", 
-        "1 / 3 / 2 / 4",
-        "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
-    ], 
-
     // Galerie des Promos
     [
         "Promos", 
@@ -421,20 +491,6 @@ export const roomInfos = [
         "This gallery, adorned with frescoes by Ecole des Mines students, is one of the habits and customs of their graduating classes. Every year (since 1992), fresco artists volunteer to prepare a piece of wall in honor of their class. It's usually finished before St Barbe's Day (December 4)", 
     ], 
 
-    // Brocolis
-    [
-        "Brocolis", 
-        "Galerie des Pornos",
-        "Petit couloir avec de belles fresques en mosaiques",
-        " -- ? -- ",
-        " 20m", 
-        "https://catacombes.xyz/Brocolis/3D", 
-        "", 
-        "", 
-        "",
-        "Small corridor with beautiful mosaic frescoes", 
-    ], 
-
     // Lune
     [
         "Lune", 
@@ -447,63 +503,6 @@ export const roomInfos = [
         "", 
         "",
         "Small room with a starry moon and lots of musical instruments.", 
-    ], 
-
-    // XIIIe arrondissement 
-    // Bracitorium
-    [
-        "Bracitorium", 
-        "Bracitorium",
-        "",
-        "-- ? --", 
-        " 20m",
-        "https://catacombes.xyz/FdC/3D", 
-        "Salpetriere", 
-        "", 
-        "",
-        "", 
-    ], 
-
-    // Solcarlus
-    [
-        "Solcarlus", 
-        "Solcarlus",
-        "Parmi les nombreuses 'madeleines' publicitaires, ce spot de 1983, réalisé par Dino Risi, est l'occasion de revoir l'acteur et humoriste Jean-Marie Proslier, disparu en 1997 : il incarnait alors le personnage récurrent et malicieux de Solcarlus, au service de César pour la marque Terra.",
-        "Rue Jeanne d'Arc \n   75013 Paris", 
-        " 20m",
-        "https://catacombes.xyz/Solcarlus/3D", 
-        "Salpetriere", 
-        "4 / 5 / 5 / 6", 
-        "2 / 5 / 3 / 6",
-        "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, provides an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for César on behalf of the Terra brand.", 
-    ], 
-
-    // Zebulon
-    [
-        "Zebulon", 
-        "Zebulon",
-        "Elle est située sous la rue Nationale, aussi appelée salle Zébulon.",
-        "131 bis Rue Nationale \n   75013 Paris", 
-        " 20m",
-        "https://catacombes.xyz/Zebulon/3D", 
-        "Gare", 
-        "5 / 5 / 6 / 6", 
-        "1 / 4 / 2 / 5",
-        "It is located under Rue Nationale, also known as the Zébulon room.", 
-    ], 
-
-    // Guerinet
-    [
-        "Guerinet", 
-        "Guerinet",
-        "Le cabinet de M. Guérinet a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
-        " -- ? -- ", 
-        " 20m",
-        "https://catacombes.xyz/Guerinet/3D", 
-        "Salpetriere", 
-        "", 
-        "",
-        "M. Guérinet's cabinet was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
     ], 
 ]
 
