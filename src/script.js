@@ -29,7 +29,7 @@ import GUI from 'lil-gui';
 /**
  * Debug
  */
-const gui = new GUI()
+// const gui = new GUI()
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;
@@ -251,7 +251,7 @@ function init(nameRoom) {
 		// Loaded
 		() => {
 			window.setTimeout(() => {
-				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
+				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 2 })
 
 				loadingBarElement.classList.add('ended')
 				loadingBarElement.style.transform = ''
@@ -259,7 +259,7 @@ function init(nameRoom) {
 				setTimeout(() => {
 					scene.remove(overlay)
 				}, 400);
-			}, 500)
+			}, 600)
 
 		},
 
@@ -281,7 +281,7 @@ function init(nameRoom) {
 			}
 		
 			loading_bar_percent.innerHTML = `${currentPercentage} %`;
-			}, 25); 
+			}, 10); 
 		}
 	)
 
@@ -319,17 +319,17 @@ function init(nameRoom) {
 	plane.rotation.x = 1.6
 	scene.add( plane );
 
-	const planeFolder = gui.addFolder('Plane')
-	planeFolder.add(plane.position, 'x', -30, 30)
-	planeFolder.add(plane.position, 'y', -30, 30)
-	planeFolder.add(plane.position, 'z', -30, 30)
-	planeFolder.add(plane.rotation, 'x', -30, 30)
-	planeFolder.add(plane.rotation, 'y', -30, 30)
-	planeFolder.add(plane.rotation, 'z', -30, 30)
-	const colorController_plane = planeFolder.addColor(material_p, 'color');
-	colorController_plane.onChange(() => {
-		renderer.render(scene, camera); 
-	});
+	// const planeFolder = gui.addFolder('Plane')
+	// planeFolder.add(plane.position, 'x', -30, 30)
+	// planeFolder.add(plane.position, 'y', -30, 30)
+	// planeFolder.add(plane.position, 'z', -30, 30)
+	// planeFolder.add(plane.rotation, 'x', -30, 30)
+	// planeFolder.add(plane.rotation, 'y', -30, 30)
+	// planeFolder.add(plane.rotation, 'z', -30, 30)
+	// const colorController_plane = planeFolder.addColor(material_p, 'color');
+	// colorController_plane.onChange(() => {
+	// 	renderer.render(scene, camera); 
+	// });
 
 	//////////////
 	// Torus light
@@ -361,41 +361,41 @@ function init(nameRoom) {
 	// const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
 	// scene.add( pointLightHelper );
 
-	const cameraFolder = gui.addFolder('Torus light')
-	cameraFolder.add(torus_l.position, 'x', -30, 30)
-	cameraFolder.add(torus_l.position, 'y', -30, 30)
-	cameraFolder.add(torus_l.position, 'z', -30, 30)
-	cameraFolder.add(torus_l.rotation, 'x', -30, 30)
-	cameraFolder.add(torus_l.rotation, 'y', -30, 30)
-	cameraFolder.add(torus_l.rotation, 'z', -30, 30)
+	// const cameraFolder = gui.addFolder('Torus light')
+	// cameraFolder.add(torus_l.position, 'x', -30, 30)
+	// cameraFolder.add(torus_l.position, 'y', -30, 30)
+	// cameraFolder.add(torus_l.position, 'z', -30, 30)
+	// cameraFolder.add(torus_l.rotation, 'x', -30, 30)
+	// cameraFolder.add(torus_l.rotation, 'y', -30, 30)
+	// cameraFolder.add(torus_l.rotation, 'z', -30, 30)
 
-	const colorController = cameraFolder.addColor(material_t, 'color');
-	colorController.onChange(() => {
-	renderer.render(scene, camera); 
-	});
+	// const colorController = cameraFolder.addColor(material_t, 'color');
+	// colorController.onChange(() => {
+	// renderer.render(scene, camera); 
+	// });
 
-	cameraFolder.addColor(material_t, 'emissive');
-	cameraFolder.add(material_t, 'emissiveIntensity', 0, 10);
+	// cameraFolder.addColor(material_t, 'emissive');
+	// cameraFolder.add(material_t, 'emissiveIntensity', 0, 10);
 	
 
-	const pointLight_folder = gui.addFolder('Point light')
-	pointLight_folder.add(point_light_purple.position, 'x', -30, 30)
-	pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
-	pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
+	// const pointLight_folder = gui.addFolder('Point light')
+	// pointLight_folder.add(point_light_purple.position, 'x', -30, 30)
+	// pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
+	// pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
 
-	pointLight_folder.addColor(point_light_purple, 'color') 
-	.name('color')
-	.listen()
-	.onChange(function() {
-	  renderer.render(scene, camera); 
-	});
+	// pointLight_folder.addColor(point_light_purple, 'color') 
+	// .name('color')
+	// .listen()
+	// .onChange(function() {
+	//   renderer.render(scene, camera); 
+	// });
 
-	pointLight_folder.add(point_light_purple, 'intensity') 
-	.name('intensity')
-	.listen()
-	.onChange(function() {
-	  renderer.render(scene, camera); 
-	});
+	// pointLight_folder.add(point_light_purple, 'intensity') 
+	// .name('intensity')
+	// .listen()
+	// .onChange(function() {
+	//   renderer.render(scene, camera); 
+	// });
 	
 
 	/////////////////
@@ -409,13 +409,13 @@ function init(nameRoom) {
 	// const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
 	// rectAreaLight.add( rectLightHelper );
 
-	const rectAreaLight_l = gui.addFolder('React light')
-	rectAreaLight_l.add(rectAreaLight.position, 'x', -10, 10)
-	rectAreaLight_l.add(rectAreaLight.position, 'y', -10, 10)
-	rectAreaLight_l.add(rectAreaLight.position, 'z', -10, 10)
-	rectAreaLight_l.add(rectAreaLight.rotation, 'x', -10, 10)
-	rectAreaLight_l.add(rectAreaLight.rotation, 'y', -10, 10)
-	rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
+	// const rectAreaLight_l = gui.addFolder('React light')
+	// rectAreaLight_l.add(rectAreaLight.position, 'x', -10, 10)
+	// rectAreaLight_l.add(rectAreaLight.position, 'y', -10, 10)
+	// rectAreaLight_l.add(rectAreaLight.position, 'z', -10, 10)
+	// rectAreaLight_l.add(rectAreaLight.rotation, 'x', -10, 10)
+	// rectAreaLight_l.add(rectAreaLight.rotation, 'y', -10, 10)
+	// rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
 
 	
 	///////
@@ -424,9 +424,9 @@ function init(nameRoom) {
 	scene.fog = new THREE.Fog( 0x313131, 8.6, 16.7 );
 	// scene.fog = new THREE.FogExp2( 0xcccccc, 0.005 );
 
-	const fogFolder = gui.addFolder('Brouillard');
-	fogFolder.add(scene.fog, 'near', -30, 30)
-	fogFolder.add(scene.fog, 'far', -30, 30)
+	// const fogFolder = gui.addFolder('Brouillard');
+	// fogFolder.add(scene.fog, 'near', -30, 30)
+	// fogFolder.add(scene.fog, 'far', -30, 30)
 
 	////////////////
 	// Loading torus
@@ -457,7 +457,10 @@ function init(nameRoom) {
 	// Controllers
 	////////////////
 
-	vrControl = VRControl( renderer, camera, scene );
+	document.addEventListener('DOMContentLoaded', function() {
+		let vrControl = VRControl( renderer, camera, scene );
+
+	console.log(vrControl)
 
 	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
 
@@ -471,6 +474,8 @@ function init(nameRoom) {
 		selectState = false;
 
 	} );
+	});
+	
 
 	////////////////////
 	// Primitive Meshes
@@ -1121,6 +1126,7 @@ function removeVRButton(){
 	} else {
 		// If webXR is not supported  
 		let webxrButton = document.getElementById("WEBXRButton")
+
 		if(webxrButton){
 			setTimeout(() => {
 				webxrButton.animate(
