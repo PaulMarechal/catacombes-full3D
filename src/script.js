@@ -23,6 +23,7 @@ import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
 import * as Language from "./language.js";
+import * as XRHand from "./XR_hand.js";
 
 import GUI from 'lil-gui';
 
@@ -33,6 +34,7 @@ import GUI from 'lil-gui';
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;
+
 const objsToTest = [];
 let meshes = []
 
@@ -202,15 +204,18 @@ function init(nameRoom) {
 	/////////
 	// Room
 	/////////
-	// const room = new THREE.LineSegments(
-	// 	new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
-	// 	new THREE.LineBasicMaterial( { color: 0x808080, transparent: true } )
-	// );
+	const room = new THREE.LineSegments(
+		new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
+		new THREE.LineBasicMaterial( { color: 0x808080, transparent: true } )
+	);
 
-	// const roomMesh = new THREE.Mesh(
-	// 	new THREE.BoxGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
-	// 	new THREE.MeshBasicMaterial( { color: 0x808080, transparent: true } )
-	// );
+	const roomMesh = new THREE.Mesh(
+		new THREE.BoxGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
+		new THREE.MeshBasicMaterial( { color: 0xffffff, transparent: true } )
+	);
+
+	// scene.add( room );
+	objsToTest.push( roomMesh );
 
 	/////////////////////////
 	// Loading ( main scene )
@@ -442,39 +447,15 @@ function init(nameRoom) {
 	// Light
 	//////////
 
-	const light = ShadowedLight( {
-		z: 10,
-		width: 6,
-		bias: -0.0001
-	} );
+	// const light = ShadowedLight( {
+	// 	z: 10,
+	// 	width: 6,
+	// 	bias: -0.0001
+	// } );
 
-	const hemLight = new THREE.HemisphereLight( 0x808080, 0x606060 );
+	// const hemLight = new THREE.HemisphereLight( 0x808080, 0x606060 );
 
 	// scene.add( light, hemLight );
-
-
-	////////////////
-	// Controllers
-	////////////////
-
-	document.addEventListener('DOMContentLoaded', function() {
-		let vrControl = VRControl( renderer, camera, scene );
-
-	console.log(vrControl)
-
-	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
-
-	vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
-
-		selectState = true;
-
-	} );
-	vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
-
-		selectState = false;
-
-	} );
-	});
 	
 
 	////////////////////
@@ -533,6 +514,24 @@ function init(nameRoom) {
 	currentMesh = 0;
 
 	showMesh( currentMesh );
+
+	////////////////
+	// Controllers
+	////////////////
+	vrControl = VRControl( renderer, camera, scene );
+
+	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
+
+	vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
+
+		selectState = true;
+
+	} );
+	vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
+
+		selectState = false;
+
+	} );
 
 
 	//////////
