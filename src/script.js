@@ -177,9 +177,6 @@ function init(nameRoom) {
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		camera.position.set(0, 1.6, 0);
 		scene.position.set(0, -0.2, 0);
-
-	} else if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
-		scene.position.set(0, -0.3, -5)
 	} else {
 		camera.position.set( 0, 1, -0.3 );
 		scene.position.set(0, -0.3, -1.6)
@@ -354,7 +351,7 @@ function init(nameRoom) {
 	const material_t = new THREE.MeshStandardMaterial( { 
 		color: 0xffffff,
 		emissive: 0xffffff,
-		emissiveIntensity: 2,
+		emissiveIntensity: 3,
 		emissiveMap: textureLoader.load("https://catacombes.xyz/assets/images/gradient/gradient.jpg"),
     	toneMapped: false,
 		transparent: true 
