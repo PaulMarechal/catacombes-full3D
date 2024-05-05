@@ -60,6 +60,7 @@ const notreDameDesChampsClick = document.querySelector(".notreDameDesChamps");
 const valDeGraceClick = document.querySelector(".valDeGrace");
 const salpetriere = document.querySelector(".salpetriere");
 const gare = document.querySelector(".gare");
+const maisonBlanche = document.querySelector(".maisonBlanche");
 
 const montrougeDiv = document.querySelector(".montrougeDiv");
 
@@ -89,6 +90,8 @@ function clickOnDivDistrict(areaDistrict, areaName){
                     imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/gareMap.png')"
                 } else if(areaName === "Petit Montrouge"){
                     imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/petitMontrouge.png')"
+                } else if(areaName === "Maison Blanche"){
+                    imagePreci.style.backgroundImage = "url('https://catacombes.xyz/assets/images/maisonBlancheMap.png')"
                 }
 
                 displayRooms(areaName)
@@ -105,6 +108,7 @@ clickOnDivDistrict(notreDameDesChampsClick, "Notre Dame des Champs")
 clickOnDivDistrict(valDeGraceClick, "Val de Grace")
 clickOnDivDistrict(salpetriere, "Salpetriere")
 clickOnDivDistrict(gare, "Gare")
+clickOnDivDistrict(maisonBlanche, "Maison Blanche")
 
 // Petit montrouge
 const petitMontrouge = document.querySelector(".montrougeDiv")

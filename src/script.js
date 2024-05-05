@@ -30,7 +30,7 @@ import GUI from 'lil-gui';
 /**
  * Debug
  */
-// const gui = new GUI()
+const gui = new GUI()
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;
@@ -173,13 +173,23 @@ function init(nameRoom) {
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x505050 );
 
-	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
+	camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		camera.position.set(0, 1.6, 0);
 		scene.position.set(0, -0.2, 0);
+
+	} else if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
+		scene.position.set(0, -0.3, -5)
 	} else {
-		camera.position.set( 0, 1.3, -0.3 );
+		camera.position.set( 0, 1, -0.3 );
+		scene.position.set(0, -0.3, -1.6)
 	}
+
+	const planeFolder = gui.addFolder('Camera')
+	planeFolder.add(camera.position, 'x', -30, 30)
+	planeFolder.add(camera.position, 'y', -30, 30)
+	planeFolder.add(camera.position, 'z', -30, 30)
+
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );

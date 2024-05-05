@@ -69,6 +69,20 @@ export const roomInfos = [
         "It is located under Rue Nationale, also known as the Zébulon room.", 
     ], 
 
+    // Toudouze
+    [
+        "Toudouze", 
+        "Toudouze",
+        "Ancien cabinet minéralogique de M. Toudouze. Partiellement détruit lors de la consolidation du sous-sol lors de la construction de la ligne 6 du métro.",
+        "- ? -", 
+        " 20m",
+        "https://catacombes.xyz/Toudouze/3D", 
+        "Maison Blanche", 
+        "", 
+        "",
+        "Former mineralogical cabinet of Mr Toudouze. Partly destroyed during the consolidation of the underground during the construction of line 6 of the metro.", 
+    ], 
+
     // XIV arrondissement
     // Kraken
     [
