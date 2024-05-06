@@ -331,18 +331,6 @@ function init(nameRoom) {
 	plane.rotation.x = 1.6
 	scene.add( plane );
 
-	// const planeFolder = gui.addFolder('Plane')
-	// planeFolder.add(plane.position, 'x', -30, 30)
-	// planeFolder.add(plane.position, 'y', -30, 30)
-	// planeFolder.add(plane.position, 'z', -30, 30)
-	// planeFolder.add(plane.rotation, 'x', -30, 30)
-	// planeFolder.add(plane.rotation, 'y', -30, 30)
-	// planeFolder.add(plane.rotation, 'z', -30, 30)
-	// const colorController_plane = planeFolder.addColor(material_p, 'color');
-	// colorController_plane.onChange(() => {
-	// 	renderer.render(scene, camera); 
-	// });
-
 	//////////////
 	// Torus light
 	//////////////
