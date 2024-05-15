@@ -12,9 +12,9 @@ import * as NameRooms from "./roomInfo.js";
 
 export function TextPanel(scene, roomNumber) {
 
-    // //Debug
+    //Debug
     // const gui = new dat.GUI({
-    //     width: 400
+    //     width: 300
     // })
 
     const container = new ThreeMeshUI.Block({
@@ -24,18 +24,25 @@ export function TextPanel(scene, roomNumber) {
       fontTexture: FontImage,
       fontColor: new THREE.Color(0xffffff),
       backgroundOpacity: 0,
+      width: 3,
     });
   
-    container.position.set(0, 1.3, -1.8);
-    container.rotation.x = -0.5;
+    container.position.set(-2.4, 1.6, -1.26);
+    container.rotation.y = -1.86;
     scene.add(container);
-  
-    //
+
+    // const containerFolder = gui.addFolder('Container')
+    // containerFolder.add(container.position, 'x', -30, 30)
+    // containerFolder.add(container.position, 'y', -30, 30)
+    // containerFolder.add(container.position, 'z', -30, 30)
+    // containerFolder.add(container.rotation, 'x', -30, 30)
+    // containerFolder.add(container.rotation, 'y', -30, 30)
+    // containerFolder.add(container.rotation, 'z', -30, 30)
   
     const title = new ThreeMeshUI.Block({
       height: 0.2,
-      width: 1.5,
-      margin: 0.025,
+      width: 1.2,
+      margin: 0.02,
       borderRadius: 0.05,
       justifyContent: "center",
       fontSize: 0.09,
@@ -47,14 +54,9 @@ export function TextPanel(scene, roomNumber) {
         content: `${NameRooms.roomInfos[roomNumber][1]}`,
       })
     );
-  
+    
     container.add(title);
-
-    // gui.add(title.position, 'x').min(-20).max(20).step(0.01).name('Titre x')
-    // gui.add(title.position, 'y').min(-20).max(20).step(0.01).name('Titre y')
-    // gui.add(title.position, 'z').min(-20).max(20).step(0.01).name('Titre z')
-  
-    //
+    
   
     const leftSubBlock = new ThreeMeshUI.Block({
         height: 0.95,
@@ -66,29 +68,10 @@ export function TextPanel(scene, roomNumber) {
         backgroundOpacity: 0,
     });
   
-    // const caption = new ThreeMeshUI.Block({
-    //   height: 0.07,
-    //   width: 0.37,
-    //   textAlign: "center",
-    //   justifyContent: "center",
-    // });
-  
-    // caption.add(
-    //   new ThreeMeshUI.Text({
-    //     content: "Mind your fingers",
-    //     fontSize: 0.04,
-    //   })
-    // );
-  
-    // leftSubBlock.add(caption);
-
-  
     const rightSubBlock = new ThreeMeshUI.Block({
-      margin: 0.025,
+      margin: -0.025,
       borderRadius: 0.025,
     });
-
-    rightSubBlock.position.set(0.83, 0.15, 0)
   
     const subSubBlock1 = new ThreeMeshUI.Block({
       height: 0.18,
@@ -105,20 +88,12 @@ export function TextPanel(scene, roomNumber) {
         // Location
         content: `${NameRooms.roomInfos[roomNumber][3]}`,
       }),
-  
-      // Green text
-      // new ThreeMeshUI.Text({
-      //   content: "bristly",
-      //   fontColor: new THREE.Color(0x92e66c),
-      // }),
 
       // Depth
       new ThreeMeshUI.Text({
         content: `\n Profondeur : environ ${NameRooms.roomInfos[roomNumber][4]} `,
       })
     );
-
-
 
     let subSubBlock2; 
 
@@ -142,8 +117,6 @@ export function TextPanel(scene, roomNumber) {
   }
   
   language_site.addEventListener("click", clickHandler);
-  
-
 
     function createSubSubBlock(language_number) {
       return new ThreeMeshUI.Block({
@@ -208,9 +181,12 @@ export function TextPanel(scene, roomNumber) {
 
   
     rightSubBlock.add(subSubBlock2, subSubBlock1);
-  
-    //
-  
+
+    document.addEventListener("DOMContentLoaded", () => {
+      title.position.set(-0.3, 0.57, 0.3)
+      rightSubBlock.position.set(1, 0, 0.5)
+    });
+
     const contentContainer = new ThreeMeshUI.Block({
       contentDirection: "row",
       padding: 0.02,

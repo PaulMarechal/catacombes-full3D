@@ -51,8 +51,9 @@ const materialTo = new THREE.MeshBasicMaterial( { color: "#F71735" } );
 const torus = new THREE.Mesh( geometryTo, materialTo );
 
 torus.scale.multiplyScalar(0.05);
-torus.position.set(0, 1, -1.9);
-torus.rotation.set(0, 0, TORUS_ROTATION);
+torus.position.set(-1.8, 1.3, -1.2);
+
+torus.rotation.set(0, -1.8, TORUS_ROTATION);
 
 // Blue
 const geometryTo2 = new THREE.TorusGeometry( 1.9,TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
@@ -60,19 +61,17 @@ const materialTo2 = new THREE.MeshBasicMaterial( { color: "#41EAD4" } );
 const torus2 = new THREE.Mesh( geometryTo2, materialTo2);
 
 torus2.scale.multiplyScalar(0.04);
-torus2.position.set(0, 1, -1.9);
-torus2.rotation.set(0.1, 0, TORUS_ROTATION);
+torus2.position.set(-1.8, 1.3, -1.2);
+torus2.rotation.set(0.1, -1.8, TORUS_ROTATION);
 
 // White
-const geometryTo3 = new THREE.TorusGeometry( 1.8, TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
+const geometryTo3 = new THREE.TorusGeometry( 2.1, TORUS_RADIUS, TORUS_SIDES, TORUS_SEGMENTS, TORUS_ARC );
 const materialTo3 = new THREE.MeshBasicMaterial( { color: "#FDFFFC" } );
 const torus3 = new THREE.Mesh( geometryTo3, materialTo3 );
 
 torus3.scale.multiplyScalar(0.06);
-torus3.position.set(0, 1, -1.92);
-torus3.rotation.set(0.15, 0, TORUS_ROTATION);
-
-
+torus3.position.set(-1.8, 1.3, -1.2);
+torus3.rotation.set(0.15, -1.8, TORUS_ROTATION);
 
 const loadingManager = new THREE.LoadingManager(
         
@@ -178,14 +177,11 @@ function init(nameRoom) {
 		camera.position.set(0, 1.6, 0);
 		scene.position.set(0, -0.2, 0);
 	} else {
-		camera.position.set( 0, 1, -0.3 );
+		// camera.position.set( 0, 1, -0.3 );
+		camera.position.set( -6, 1.4, -4.2 );
+		camera.rotation.set( -2.78, -1.01, -2.83 );
 		scene.position.set(0, -0.3, -1.6)
 	}
-
-	const planeFolder = gui.addFolder('Camera')
-	planeFolder.add(camera.position, 'x', -30, 30)
-	planeFolder.add(camera.position, 'y', -30, 30)
-	planeFolder.add(camera.position, 'z', -30, 30)
 
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -200,13 +196,13 @@ function init(nameRoom) {
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.enableDamping = true
-	controls.minDistance = 1; 
-	controls.maxDistance = 2;
+	// controls.minDistance = 1; 
+	// controls.maxDistance = 2;
 
-    controls.maxAzimuthAngle = Math.PI / 6;
-    controls.minAzimuthAngle = - Math.PI / 6; 
-	controls.maxPolarAngle = 1.5;
-	controls.minPolarAngle = Math.PI / 5;
+    // controls.maxAzimuthAngle = Math.PI / 6;
+    // controls.minAzimuthAngle = - Math.PI / 6; 
+	// controls.maxPolarAngle = 1.5;
+	// controls.minPolarAngle = Math.PI / 5;
 
 	/////////
 	// Room
@@ -304,11 +300,14 @@ function init(nameRoom) {
 	/* test new background scene */
 	gltfLoaderMain.load(
 		// resource URL
-		'https://catacombes.xyz/assets/background_homepage/new_neon.glb',
+		'https://catacombes.xyz/assets/background_homepage/modern_vr_art_gallery_pyramid_2.glb',
 		// called when the resource is loaded
 		function ( gltf ) {
 			gltf.scene.scale.set(1, 1, 1)
-			gltf.scene.position.set(-.7, -.5, -2)
+			gltf.scene.position.set(-2, 0, -1.3)
+			
+			gltf.scene.rotation.set(0, -0.31, 0)
+
 			scene.add( gltf.scene );
 	
 		},
@@ -335,7 +334,7 @@ function init(nameRoom) {
 	// Torus light
 	//////////////
 	const textureLoader = new THREE.TextureLoader();
-	const geometry_t = new THREE.TorusGeometry( 1.5, 0.05, 16, 100 ); 
+	const geometry_t = new THREE.TorusGeometry( 1, 0.03, 8, 100 ); 
 	const material_t = new THREE.MeshStandardMaterial( { 
 		color: 0xffffff,
 		emissive: 0xffffff,
@@ -346,7 +345,8 @@ function init(nameRoom) {
 	} ); 
 
 	const torus_l = new THREE.Mesh( geometry_t, material_t ); 
-	torus_l.position.set(0, 1.84, -10.75);
+	torus_l.position.set(3, 1.1, 0.27);
+	torus_l.rotation.y = 1.27
 	scene.add( torus_l );
 
 	//////////////
@@ -360,14 +360,6 @@ function init(nameRoom) {
 	// const sphereSize = 1;
 	// const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
 	// scene.add( pointLightHelper );
-
-	// const cameraFolder = gui.addFolder('Torus light')
-	// cameraFolder.add(torus_l.position, 'x', -30, 30)
-	// cameraFolder.add(torus_l.position, 'y', -30, 30)
-	// cameraFolder.add(torus_l.position, 'z', -30, 30)
-	// cameraFolder.add(torus_l.rotation, 'x', -30, 30)
-	// cameraFolder.add(torus_l.rotation, 'y', -30, 30)
-	// cameraFolder.add(torus_l.rotation, 'z', -30, 30)
 
 	// const colorController = cameraFolder.addColor(material_t, 'color');
 	// colorController.onChange(() => {
@@ -402,27 +394,26 @@ function init(nameRoom) {
 	// RectAreaLight ( behind user )
 	/////////////////
 	const rectAreaLight = new THREE.RectAreaLight(0xffffff, 5, 1, 1)
-	rectAreaLight.position.y = 1.4
+	rectAreaLight.rotation.y = -1.85
+	rectAreaLight.position.set(-3.5, 1.4, -1.7)
 	scene.add(rectAreaLight)
+
 
 	// ReactArea Light Helper
 	// const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
 	// rectAreaLight.add( rectLightHelper );
-
-	// const rectAreaLight_l = gui.addFolder('React light')
-	// rectAreaLight_l.add(rectAreaLight.position, 'x', -10, 10)
-	// rectAreaLight_l.add(rectAreaLight.position, 'y', -10, 10)
-	// rectAreaLight_l.add(rectAreaLight.position, 'z', -10, 10)
-	// rectAreaLight_l.add(rectAreaLight.rotation, 'x', -10, 10)
-	// rectAreaLight_l.add(rectAreaLight.rotation, 'y', -10, 10)
-	// rectAreaLight_l.add(rectAreaLight.rotation, 'z', -10, 10)
-
 	
 	///////
 	// Fog
 	///////
-	scene.fog = new THREE.Fog( 0x313131, 8.6, 16.7 );
-	// scene.fog = new THREE.FogExp2( 0xcccccc, 0.005 );
+	// scene.fog = new THREE.Fog( 0x313131, 4.98, 14.88 );
+	scene.fog = new THREE.FogExp2( 0x232323, 0.08 );
+
+	// gui
+    // .addColor(scene.fog, 'color')
+    // .onChange(() => {
+    //     scene.fog.color.set(scene.fog.color);
+    // });
 
 	// const fogFolder = gui.addFolder('Brouillard');
 	// fogFolder.add(scene.fog, 'near', -30, 30)
@@ -468,10 +459,10 @@ function init(nameRoom) {
             gltf.scale = 0.2
             gltf.scene.name = "roomName"
             gltf.scene.scale.set(0.1, 0.1, 0.1)
-            gltf.scene.position.set(-0.5, 1, -2)
+            gltf.scene.position.set(-1.99, 1.05, -1.29)
             gltf.scene.rotation.y = 0.005
             scene.add(gltf.scene)
-			TextPanel.TextPanel(scene, roomNumber)
+			TextPanel.TextPanel(scene, roomNumber) 
         }
     )
 
@@ -570,11 +561,11 @@ function makePanel() {
 		fontSize: 0.07,
 		padding: 0.01,
 		borderRadius: 0.09, 
-		width: 1.39,
+		width: 1.37,
 	} );
 
-	container.position.set( 0, 0.6, -1.2 );
-	container.rotation.x = -0.55;
+	container.position.set( -3, 0.79, -1.6 );
+	container.rotation.y = -1.87;
 	scene.add( container );
 
 	// BUTTONS
@@ -717,8 +708,8 @@ function makePanel() {
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
-                    gltf.scene.position.set(-0.5, 1, -2)
-                    gltf.scene.rotation.y = 0.005
+					gltf.scene.position.set(-1.99, 1.05, -1.29)
+					gltf.scene.rotation.y = 0.005
                     scene.add(gltf.scene)
 					TextPanel.TextPanel(scene, roomNumber)
                 }
@@ -786,8 +777,8 @@ function makePanel() {
                     gltf.scale = 0.2
                     gltf.scene.name = "roomName"
                     gltf.scene.scale.set(0.1, 0.1, 0.1)
-                    gltf.scene.position.set(-0.5, 1, -2)
-                    gltf.scene.rotation.y = 0.005
+					gltf.scene.position.set(-1.99, 1.05, -1.29)
+					gltf.scene.rotation.y = 0.005
                     scene.add(gltf.scene)
 					TextPanel.TextPanel(scene, roomNumber)
                 }
@@ -799,6 +790,14 @@ function makePanel() {
 
 	container.add( buttonNext, show3D, buttonPrevious );
 	objsToTest.push( buttonNext, show3D, buttonPrevious );
+
+	// const titleFolder = gui.addFolder('Container')
+    // titleFolder.add(container.position, 'x', -30, 30)
+    // titleFolder.add(container.position, 'y', -30, 30)
+    // titleFolder.add(container.position, 'z', -30, 30)
+    // titleFolder.add(container.rotation, 'x', -30, 30)
+    // titleFolder.add(container.rotation, 'y', -30, 30)
+    // titleFolder.add(container.rotation, 'z', -30, 30)
 
 }
 
@@ -996,6 +995,26 @@ composer.addPass(renderScene);
 composer.addPass(bloomPass);
 composer.addPass(outputPass);
 
+function updateFog(time) {
+    // Exemple de variation de couleur basée sur le temps pour un dégradé de blanc à noir
+    let gradient = Math.sin(time * 0.05); // Ralentissement de la variation de couleur
+    let colorValue = Math.abs(gradient); // Valeur absolue pour obtenir une variation entre 0 et 1
+    let color = new THREE.Color(colorValue, colorValue, colorValue); // Utilisation de la même valeur pour RGB pour obtenir une couleur grise
+
+    // Définir une densité minimale
+    let minDensity = 0.01;
+
+    // Exemple de variation de densité basée sur le temps (peut être remplacé par une fonction plus complexe)
+    let density = 0.05 + Math.sin(time * 0.025) * 0.02; // Ralentissement de la variation de densité
+
+    // Assurer une densité minimale
+    density = Math.max(density, minDensity);
+
+    // Mettre à jour la couleur et la densité du brouillard
+    scene.fog.color.copy(color);
+    scene.fog.density = density;
+}
+
 
 function loop() {
 
@@ -1003,6 +1022,10 @@ function loop() {
 	ThreeMeshUI.update();
 
 	controls.update();
+
+	let time = performance.now() * 0.001;
+	
+	updateFog(time);
 
 	for(let i = 0; i < scene.children.length; i++){
 		if(scene.children[i].name === "roomName"){
@@ -1014,9 +1037,9 @@ function loop() {
 	}
 
 	if ( torus ){
-		torus.rotation.z -= 0.031;
-		torus2.rotation.z -= 0.034;
-		torus3.rotation.z -= 0.033;
+		torus.rotation.z -= 0.030;
+		torus2.rotation.z -= 0.033;
+		torus3.rotation.z -= 0.036;
 	}
     
 	renderer.render( scene, camera );
