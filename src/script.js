@@ -196,13 +196,13 @@ function init(nameRoom) {
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
 	controls.enableDamping = true
-	// controls.minDistance = 1; 
-	// controls.maxDistance = 2;
+	controls.minDistance = 1; 
+	controls.maxDistance = 9;
 
     // controls.maxAzimuthAngle = Math.PI / 6;
     // controls.minAzimuthAngle = - Math.PI / 6; 
-	// controls.maxPolarAngle = 1.5;
-	// controls.minPolarAngle = Math.PI / 5;
+	controls.maxPolarAngle = 1.5;
+	controls.minPolarAngle = Math.PI / 5;
 
 	/////////
 	// Room
@@ -1005,7 +1005,7 @@ function updateFog(time) {
     let minDensity = 0.01;
 
     // Exemple de variation de densité basée sur le temps (peut être remplacé par une fonction plus complexe)
-    let density = 0.05 + Math.sin(time * 0.025) * 0.02; // Ralentissement de la variation de densité
+    let density = 0.04 + Math.sin(time * 0.025) * 0.02; // Ralentissement de la variation de densité
 
     // Assurer une densité minimale
     density = Math.max(density, minDensity);
