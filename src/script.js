@@ -30,7 +30,7 @@ import GUI from 'lil-gui';
 /**
  * Debug
  */
-const gui = new GUI()
+// const gui = new GUI()
 
 let scene, camera, renderer, controls, vrControl;
 let meshContainer, currentMesh;
@@ -319,16 +319,6 @@ function init(nameRoom) {
 			console.log( 'An error happened' );
 		}
 	);
-
-	//////////////////
-	// Plane for model
-	//////////////////
-	const geometry_p = new THREE.PlaneGeometry( 10, 18 );
-	const material_p = new THREE.MeshBasicMaterial( {color: '#030303', side: THREE.DoubleSide} );
-	const plane = new THREE.Mesh( geometry_p, material_p );
-	plane.position.set(0, -.6, -8.5)
-	plane.rotation.x = 1.6
-	scene.add( plane );
 
 	//////////////
 	// Torus light
