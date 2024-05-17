@@ -41,7 +41,7 @@ export function TextPanel(scene, roomNumber) {
   
     const title = new ThreeMeshUI.Block({
       height: 0.2,
-      width: 1.2,
+      width: 1.5,
       margin: 0.02,
       borderRadius: 0.05,
       justifyContent: "center",

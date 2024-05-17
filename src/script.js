@@ -8,6 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'; 
 import { gsap } from 'gsap'
 
+import TWEEN from '@tweenjs/tween.js'
 import ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
 import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
@@ -174,14 +175,54 @@ function init(nameRoom) {
 
 	camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		camera.position.set(0, 1.6, 0);
-		scene.position.set(0, -0.2, 0);
+		// camera.position.set(0, 1.6, 0);
+		camera.position.set( -0.9, 11, 0 );
+		scene.position.set(0, -0.3, -1.6)
+
+		if (window.matchMedia("(orientation: portrait)").matches) {
+			// L'appareil est en mode portrait
+			document.querySelector(".displayMobile").style.display = "block";
+			document.querySelector(".displayMobile").style.position = "absolute";
+			document.querySelector(".displayMobile").style.zIndex = "10";
+			document.querySelector(".displayMobile").style.background = "#ffffff";
+			document.querySelector(".displayMobile").style.borderRadius = "15px";
+		} else {
+			// L'appareil est en mode paysage
+			document.querySelector(".displayMobile").style.display = "none";
+		}
+
+		window.addEventListener("orientationchange", function() {
+			const orientation = window.orientation;
+			if (orientation === 0 || orientation === 180) {
+				// L'appareil est en mode portrait
+				document.querySelector(".displayMobile").style.display = "block";
+				document.querySelector(".displayMobile").style.position = "absolute";
+				document.querySelector(".displayMobile").style.zIndex = "10";
+				document.querySelector(".displayMobile").style.background = "#ffffff";
+				document.querySelector(".displayMobile").style.borderRadius = "15px";
+			} else if (orientation === 90 || orientation === -90) {
+				// L'appareil est en mode paysage
+				document.querySelector(".displayMobile").style.display = "none";
+
+			}
+		});
+
 	} else {
 		// camera.position.set( 0, 1, -0.3 );
-		camera.position.set( -6, 1.4, -4.2 );
+		camera.position.set( -4.9, 11, -3.9 );
 		camera.rotation.set( -2.78, -1.01, -2.83 );
 		scene.position.set(0, -0.3, -1.6)
 	}
+
+	// const titleFolder = gui.addFolder('Container')
+    // titleFolder.add(camera.position, 'x', -30, 30)
+    // titleFolder.add(camera.position, 'y', -30, 30)
+    // titleFolder.add(camera.position, 'z', -30, 30)
+    // titleFolder.add(camera.rotation, 'x', -30, 30)
+    // titleFolder.add(camera.rotation, 'y', -30, 30)
+    // titleFolder.add(camera.rotation, 'z', -30, 30)
+
+
 
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -195,14 +236,19 @@ function init(nameRoom) {
 	// Orbit controls for no-vr
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
+
 	controls.enableDamping = true
-	controls.minDistance = 1; 
-	controls.maxDistance = 9;
+	document.addEventListener("DOMContentLoaded", () => {
+		setTimeout(() => {
+			controls.minDistance = 1; 
+			controls.maxDistance = 8;	
+		}, 7000);
+	});
 
     // controls.maxAzimuthAngle = Math.PI / 6;
     // controls.minAzimuthAngle = - Math.PI / 6; 
-	controls.maxPolarAngle = 1.5;
-	controls.minPolarAngle = Math.PI / 5;
+	controls.maxPolarAngle = 1.6;
+	controls.minPolarAngle = Math.PI / 6;
 
 	/////////
 	// Room
@@ -269,6 +315,11 @@ function init(nameRoom) {
 				}, 400);
 			}, 600)
 
+			const tween = new TWEEN.Tween(camera.position)
+			.to({ x: -5.8, y: 1.45, z: -4.1 }, 7000) 
+			.easing(TWEEN.Easing.Cubic.InOut)
+			.start();
+		  
 		},
 
 		// Progress
@@ -440,6 +491,7 @@ function init(nameRoom) {
 
 	meshContainer = new THREE.Group();
 	meshContainer.position.set( 0, 1, -1.9 );
+
 	scene.add( meshContainer );
 
     gltfLoader.load(
@@ -556,6 +608,7 @@ function makePanel() {
 
 	container.position.set( -3, 0.79, -1.6 );
 	container.rotation.y = -1.87;
+
 	scene.add( container );
 
 	// BUTTONS
@@ -589,20 +642,6 @@ function makePanel() {
 		margin: 0.005,
 		borderRadius: [0.015, 0.075, 0.075, 0.015]
     }
-
-	// Options for component.setupState().
-	// It must contain a 'state' parameter, which you will refer to with component.setState( 'name-of-the-state' ).
-
-	// const hoveredStateAttributes = {
-	// 	state: 'hovered',
-	// 	attributes: {
-	// 		offset: 0.035,
-	// 		backgroundColor: new THREE.Color( 0x999999 ),
-	// 		backgroundOpacity: 1,
-	// 		fontColor: new THREE.Color( 0xffffff )
-	// 	},
-	// };
-
 
 	const hoveredStateAttributes = {
 		state: 'hovered',
@@ -780,14 +819,6 @@ function makePanel() {
 
 	container.add( buttonNext, show3D, buttonPrevious );
 	objsToTest.push( buttonNext, show3D, buttonPrevious );
-
-	// const titleFolder = gui.addFolder('Container')
-    // titleFolder.add(container.position, 'x', -30, 30)
-    // titleFolder.add(container.position, 'y', -30, 30)
-    // titleFolder.add(container.position, 'z', -30, 30)
-    // titleFolder.add(container.rotation, 'x', -30, 30)
-    // titleFolder.add(container.rotation, 'y', -30, 30)
-    // titleFolder.add(container.rotation, 'z', -30, 30)
 
 }
 
@@ -986,21 +1017,16 @@ composer.addPass(bloomPass);
 composer.addPass(outputPass);
 
 function updateFog(time) {
-    // Exemple de variation de couleur basée sur le temps pour un dégradé de blanc à noir
-    let gradient = Math.sin(time * 0.05); // Ralentissement de la variation de couleur
-    let colorValue = Math.abs(gradient); // Valeur absolue pour obtenir une variation entre 0 et 1
-    let color = new THREE.Color(colorValue, colorValue, colorValue); // Utilisation de la même valeur pour RGB pour obtenir une couleur grise
+    let gradient = Math.sin(time * 0.05); 
+    let colorValue = Math.abs(gradient); 
+    let color = new THREE.Color(colorValue, colorValue, colorValue); 
 
-    // Définir une densité minimale
     let minDensity = 0.01;
 
-    // Exemple de variation de densité basée sur le temps (peut être remplacé par une fonction plus complexe)
-    let density = 0.04 + Math.sin(time * 0.025) * 0.02; // Ralentissement de la variation de densité
+    let density = 0.04 + Math.sin(time * 0.025) * 0.02; 
 
-    // Assurer une densité minimale
     density = Math.max(density, minDensity);
 
-    // Mettre à jour la couleur et la densité du brouillard
     scene.fog.color.copy(color);
     scene.fog.density = density;
 }
@@ -1016,6 +1042,8 @@ function loop() {
 	let time = performance.now() * 0.001;
 	
 	updateFog(time);
+
+	TWEEN.update();
 
 	for(let i = 0; i < scene.children.length; i++){
 		if(scene.children[i].name === "roomName"){

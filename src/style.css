@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* cursor: none!important; */
+    cursor: none!important;
 }
 
 h1, h2, h3, a{
@@ -601,7 +601,7 @@ ul{
 
 .iconeBurgerMenu{
     display: none;
-    visibility: hidden;
+    /* visibility: hidden; */
     text-align: center;
     margin-left: 1em;
     position: fixed;
@@ -864,12 +864,12 @@ ul{
     transition: transform 350ms ease;
     transform: translate(-50%, -50%) scale(0.3);
     z-index: 1000;
-    /* cursor: none!important; */
+    cursor: none!important;
 }
   
 .custom-cursor--link {
     transform: translate(-50%, -50%) scale(1);
-    /* cursor: none!important; */
+    cursor: none!important;
 }
 
 #VRButton{
@@ -1051,7 +1051,7 @@ ul{
     grid-template-rows: repeat(3, 1fr);
     margin: 3rem 1rem 1rem 1rem; 
     overflow-y: revert; 
-    /* cursor: none;  */
+    cursor: none; 
 }
 
 .parent_lost_page{
