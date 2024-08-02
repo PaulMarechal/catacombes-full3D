@@ -21,7 +21,6 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     if(idElem === "buttonAR"){
         elemCreated.setAttribute("title", "Augmented Reality for phones");
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-            // elemCreated.style.backgroundColor = "#FFF"
             elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
         } else {
             elemCreated.style.background = "#00000050"
@@ -33,36 +32,26 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     } else if(idElem === "buttonVR"){
         elemCreated.setAttribute("title", "Virtual Reality for VR headset");
         if ('xr' in navigator) {
-
-            // If VR is supported
             navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
-        
-            if (supported) {
-                // VR is supported
-                elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
-            } else {
-                // VR isn't supported 
-                elemCreated.setAttribute('href', '#');
-                elemCreated.style.backgroundColor = "#00000050" 
-                elemCreated.style.cursor = "not-allowed"
-                elemCreated.style.opacity = "0.2"
-                elemCreated.classList.add("webXRDontWork")
-
-
-                elemCreated.addEventListener('click', (event) => {
-                    event.preventDefault();
-                });
-            }
+                if (supported) {
+                    elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
+                } else {
+                    elemCreated.setAttribute('href', '#');
+                    elemCreated.style.backgroundColor = "#00000050" 
+                    elemCreated.style.cursor = "not-allowed"
+                    elemCreated.style.opacity = "0.2"
+                    elemCreated.classList.add("webXRDontWork")
+                    elemCreated.addEventListener('click', (event) => {
+                        event.preventDefault();
+                    });
+                }
             });
         } else {
-            // Navigator dont work with WebXR
             elemCreated.setAttribute('href', '#');
             elemCreated.style.backgroundColor = "#00000050" 
             elemCreated.style.cursor = "not-allowed!important"
             elemCreated.style.opacity = "0.2"
             elemCreated.classList.add("webXRDontWork")
-
-
             elemCreated.addEventListener('click', (event) => {
                 event.preventDefault();
             });
@@ -110,37 +99,94 @@ function addElement(roomNumber, language) {
     var currentDiv = document.querySelector('.displayRooms');
     currentDiv.appendChild(newDiv);
 }
+function create_search_bar() {
+    var searchContainer = document.createElement("div");
+    searchContainer.classList.add("searchContainer");
 
-for (let i = 0; i < NameRooms.roomInfos.length; i++) {
-    addElement(i, 2)
-    roomNumber++
+    var search_bar = document.createElement("input");
+    search_bar.setAttribute("type", "text");
+    search_bar.setAttribute("placeholder", "Rechercher une salle");
+    search_bar.classList.add("search_bar");
+    search_bar.addEventListener("input", filterRooms);
+
+    var searchIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    searchIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    searchIcon.setAttribute("width", "24");
+    searchIcon.setAttribute("height", "24");
+    searchIcon.setAttribute("viewBox", "0 0 24 24");
+    searchIcon.setAttribute("fill", "none");
+    searchIcon.setAttribute("stroke", "currentColor");
+    searchIcon.setAttribute("stroke-width", "2");
+    searchIcon.setAttribute("stroke-linecap", "round");
+    searchIcon.setAttribute("stroke-linejoin", "round");
+    searchIcon.classList.add("icon", "icon-tabler", "icons-tabler-outline", "icon-tabler-search");
+
+    var path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute("stroke", "none");
+    path1.setAttribute("d", "M0 0h24v24H0z");
+    path1.setAttribute("fill", "none");
+
+    var path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute("d", "M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0");
+
+    var path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path3.setAttribute("d", "M21 21l-6 -6");
+
+    searchIcon.appendChild(path1);
+    searchIcon.appendChild(path2);
+    searchIcon.appendChild(path3);
+
+    searchContainer.appendChild(search_bar);
+    searchContainer.appendChild(searchIcon);
+
+    var displayRooms = document.querySelector(".displayRooms");
+    displayRooms.insertAdjacentElement("beforebegin", searchContainer);
 }
 
-language_site.addEventListener("click", function() {
-    const textRoom = document.querySelectorAll(".textRoom")
-    for(let i = 0; i < textRoom.length; i++) {
-        if(language_site.innerText === "FR"){
-            textRoom[i].textContent = `${NameRooms.roomInfos[i][9]}`
+
+function filterRooms() {
+    var query = document.querySelector(".search_bar").value.toLowerCase();
+    var rooms = document.querySelectorAll(".parentDivRoomInfo");
+
+    rooms.forEach(room => {
+        var title = room.querySelector(".titleRoom").textContent.toLowerCase();
+        if (title.includes(query)) {
+            room.style.display = "inline-grid"; 
+            requestAnimationFrame(() => { 
+                room.style.opacity = "1"; 
+            });
         } else {
-            textRoom[i].textContent = `${NameRooms.roomInfos[i][2]}`
+            room.style.opacity = "0"; 
+            setTimeout(() => {
+                room.style.display = "none"; 
+            }, 500);
         }
-    }
-    language_site.innerText = (language_site.innerText === "FR") ? "EN" : "FR";
-}); 
-
-
-
-
-
-
-function testElemWebXR(classDiv){
-    const classElem = document.querySelector(classDiv);
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-        classElem.style.backgroundColor = ""
-    } else {
-        classElem.style.background = "#00000050"
-    }
+    });
 }
+
+function initializeRooms() {
+    for (let i = 0; i < NameRooms.roomInfos.length; i++) {
+        addElement(i, 2);
+        roomNumber++;
+    }
+
+    const language_site = document.querySelector("#language_site");
+    language_site.addEventListener("click", function() {
+        const textRoom = document.querySelectorAll(".textRoom");
+        for(let i = 0; i < textRoom.length; i++) {
+            if(language_site.innerText === "FR"){
+                textRoom[i].textContent = `${NameRooms.roomInfos[i][9]}`;
+            } else {
+                textRoom[i].textContent = `${NameRooms.roomInfos[i][2]}`;
+            }
+        }
+        language_site.innerText = (language_site.innerText === "FR") ? "EN" : "FR";
+    });
+    
+    create_search_bar();
+}
+
+initializeRooms();
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     window.addEventListener("resize", function() {
@@ -148,6 +194,4 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     });
 }
 
-console.log("Developed by 🍔 by Paul Maréchal")
-
-
+console.log("Developed by 🍔 by Paul Maréchal");

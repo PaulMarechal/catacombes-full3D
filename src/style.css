@@ -11,7 +11,7 @@ h1, h2, h3, a{
     font-weight: 300!important; 
 }
 
-p, figcaption{
+p, figcaption, input{
     font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
 
@@ -174,10 +174,37 @@ body input:checked ~ nav > ul > li {
 
 .displayRooms{
     margin-top: 0em;
-    padding-top: 3rem;
+    padding-top: 11vh;
     overflow-y: scroll; 
     /* height: 42rem;  */
     text-align: center; 
+}
+
+.search_bar{
+    font-size: 3vh;
+    position: relative; 
+    height: 4vh;
+    width: 40vh;
+    border-radius: 10px; 
+    border: none; 
+    padding-left: 7px;
+    z-index: 1;
+}
+
+.searchContainer {
+    position: absolute;
+    width: fit-content; 
+    margin-top: 6vh;
+    left: 40%;
+}
+
+.icon-tabler-search {
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .parentDivRoomInfo{
@@ -192,7 +219,7 @@ body input:checked ~ nav > ul > li {
     background: rgba( 255, 255, 255, 0.5 );
     border-radius: 10px;
     border: 0.3px solid #d2caca;
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out, opacity 0.4s ease-out;
 }
 
 .parentDivRoomInfo:hover, .parentDivPrezSecond:hover{
