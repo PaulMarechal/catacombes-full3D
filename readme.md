@@ -6,7 +6,7 @@ You can visit the GRS (Grand Réseau du Sud) as well as the 13th arrondissement 
 Many important rooms have been scanned using LiDAR and photogrammetry to preserve a model of what the real catacombs are like. You can visit several important places beneath Paris at different times and see architectural treasures, not just bone-filled corridors. You can also keep track of the state of the rooms at any given time, in case they are lost or altered, as is often the case in the underground. 
 
 Enjoy your visit and we look forward to hearing from you: 
-contactme@paulmarechal.xyz
+contact@paulmarechal.xyz
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
