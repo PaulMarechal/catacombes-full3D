@@ -1,11 +1,14 @@
 const div_display_card_main = document.querySelector(".div_display_card_main")
 const text_explication_card = document.querySelector(".text_explication_card")
 const display_all_tracts_div = document.querySelector(".display_all_tracts_div")
+const display_card_v1 = document.querySelector("#display_card_v1")
+const display_card_v2 = document.querySelector("#display_card_v2")
 const show_image_verso_main_div = document.querySelector(".show_image_verso_main_div")
 const close_card_viewer = document.querySelector(".close_card_viewer")
 const explication_video = document.querySelector(".explication_video")
 const many_cards_display = document.querySelector(".many_cards_display")
 const cards = document.querySelectorAll(".small_cards_displayed_round");
+
 
 div_display_card_main.addEventListener("click", () => {
     

@@ -1015,6 +1015,8 @@ ul{
     transition: opacity 1s ease-out;
 }
 
+.display_all_tracts_div{display: inline-flex;}
+
 .display_all_tracts_div, .text_explication_card, 
 .explication_video, .many_cards_display, .show_image_verso_main_div
 {
