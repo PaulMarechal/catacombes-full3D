@@ -1,4 +1,5 @@
-const div_display_card_main = document.querySelector(".div_display_card_main")
+const div_display_card_main_v1 = document.querySelector("#display_card_v1")
+const div_display_card_main_v2 = document.querySelector("#display_card_v2")
 const text_explication_card = document.querySelector(".text_explication_card")
 const display_all_tracts_div = document.querySelector(".display_all_tracts_div")
 const display_card_v1 = document.querySelector("#display_card_v1")
@@ -10,8 +11,8 @@ const many_cards_display = document.querySelector(".many_cards_display")
 const cards = document.querySelectorAll(".small_cards_displayed_round");
 
 
-div_display_card_main.addEventListener("click", () => {
-    
+div_display_card_main_v1.addEventListener("click", () => {
+
     text_explication_card.style.opacity = 0;
     display_all_tracts_div.style.opacity = 0;
     explication_video.style.opacity = 0;
@@ -51,7 +52,7 @@ close_card_viewer.addEventListener("click", () => {
         many_cards_display.style.display = "none";
 
         text_explication_card.style.display = "block"; 
-        display_all_tracts_div.style.display = "block";
+        display_all_tracts_div.style.display = "inline-flex";
         explication_video.style.display = "block";
 
     }, 500);
