@@ -394,7 +394,7 @@ ul{
     display: none;
 }
 
-.small_cards_displayed_round{
+.card_v1, .card_v2{
     width: 25%;
     transform-origin: center 150%;
     transform: rotate(0deg);
@@ -1018,7 +1018,8 @@ ul{
 .display_all_tracts_div{display: inline-flex;}
 
 .display_all_tracts_div, .text_explication_card, 
-.explication_video, .many_cards_display, .show_image_verso_main_div
+.explication_video, .many_cards_display,.many_cards_display_v2, 
+.show_image_verso_main_div_v1, .show_image_verso_main_div_v2
 {
     transition: opacity 1s ease-out;
 }
@@ -1037,7 +1038,7 @@ ul{
     position: absolute;
 }
 
-.show_image_verso_main_div{
+.show_image_verso_main_div_v1, .show_image_verso_main_div_v2{
     display:none;
     opacity: 0;
     text-align: center;
@@ -1069,6 +1070,8 @@ ul{
     cursor: pointer;
     transition: box-shadow 1s ease-out;
 }
+
+#display_card_v2{margin: 0 20px;}
 
 .div_display_card_main:hover{
     box-shadow: 0 3px 14px #b4b4b4;
@@ -1161,15 +1164,17 @@ ul{
     transition: 0.5s;
 }
 
-.card:hover .card-front {
+.card:hover .card-front_v1, 
+.card:hover .card-front_v2 {
     transform: rotateY(-180deg);
 }
 
-.card:hover .card-back {
+.card:hover .card-back_v1, 
+.card:hover .card-back_v2 {
     transform: rotateY(0deg);
 }
 
-.many_cards_display{
+.many_cards_display, .many_cards_display_v2{
     height: 40rem;
     width: 40rem;
     background-position: 50% 50%;
@@ -1179,12 +1184,12 @@ ul{
     transition: opacity 1s ease-out;
     margin-right: -20rem;
     margin-top: -2rem;
+    position: relative;
 }
   
-.card-front {
+.card-front_v1, .card-front_v2 {
     height: 100%;
     width: 100%;
-    background-image: url(https://catacombes.xyz/assets/images/recto_tracts_v1.png);
     background-position: 50% 50%;
     background-size: cover;
     position: absolute;
@@ -1195,11 +1200,18 @@ ul{
     transform: rotateX(0deg);
     transition: 0.5s;
 }
+
+.card-front_v1{
+    background-image: url(https://catacombes.xyz/assets/images/recto_tracts_v1.png);
+}
+
+.card-front_v2{
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
+}
   
-.card-back {
+.card-back_v1, .card-back_v2 {
     height: 100%;
     width: 100%;
-    background-image: url(https://catacombes.xyz/assets/images/verso_tracts_v1.png);
     background-position: 50% 50%;
     background-size: cover;
     position: absolute;
@@ -1210,8 +1222,15 @@ ul{
     transform: rotateY(180deg);
     transition: 0.5s;
 }
+.card-back_v1 {
+    background-image: url(https://catacombes.xyz/assets/images/verso_tracts_v1.png);
+}
 
-.close_card_viewer{
+.card-back_v2{
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
+}
+
+.close_card_viewer_v1, .close_card_viewer_v2{
     position: absolute;
     z-index: 3; 
     top: 0; 
@@ -1647,14 +1666,14 @@ ul{
         grid-area: 3 / 1 / 8 / 11; 
     }
 
-    .card-front{
+    .card-front_v1, .card-front_v2{
         height: 80%; 
         width: 80%;
         margin-top: 2rem;
         margin-left: 10px;
     }
 
-    .close_card_viewer{
+    .close_card_viewer_v1, .close_card_viewer_v2{
         right: 30px;
     }
 
