@@ -1206,7 +1206,22 @@ ul{
 }
 
 .card-front_v2{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
+}
+
+#video_card_v1, .display_v2_video{
+    position: absolute;
+    opacity: 0;
+}
+
+.display_v2_video{
+    display: none;
+}
+
+#video_card_v2{
+    border-radius: 6vh;
+    position: relative;
+    width: 100%;
 }
   
 .card-back_v1, .card-back_v2 {
@@ -1227,7 +1242,21 @@ ul{
 }
 
 .card-back_v2{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
+}
+
+.display_video_card{
+    grid-area: 1 / 7 / 2 / 10;
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.display_video_card h3{
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 8vh 2vh 2vh 2vh;
+    height: fit-content;
+    padding: 5px 20px;
 }
 
 .close_card_viewer_v1, .close_card_viewer_v2{

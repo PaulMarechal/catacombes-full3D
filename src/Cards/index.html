@@ -208,8 +208,11 @@
         </div>
         <div class="explication_cards_video_div">
             <div class="explication_card_video_second" >
-                <video class="explication_video" loop muted autoplay title="Video montrant comment afficher la salle en AR avec un telephone">
-                    <source src="https://catacombes.xyz/assets/video/how_to_scan_the_card.mp4" type="video/webm" />
+                <video id="video_card_v1" class="explication_video" loop muted autoplay title="Video montrant comment afficher la salle en AR avec un telephone">
+                    <source id="change_source_video" src="https://catacombes.xyz/assets/video/how_to_scan_the_card.mp4" type="video/webm" />
+                </video>
+                <video id="video_card_v2" class="explication_video" loop muted autoplay title="Video montrant comment afficher la salle en AR avec un telephone">
+                    <source id="change_source_video" src="https://devxr.fr/assets/video/demo_telephone_realite_augmentee.mp4" type="video/webm" />
                 </video>
                 <div class="many_cards_display many_cards_display_v1">
                     <div style="position: relative" title="Quelques cartes qui permettent de faire apparaitre les salles des catacombes en AR">
@@ -237,9 +240,9 @@
                 <div class="many_cards_display many_cards_display_v2">
                     <div style="position: relative" title="Quelques cartes qui permettent de faire apparaitre les salles des catacombes en AR">
                         <img class="card_v2 card_0" src="https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
-                        <img class="card_v2 card_1" src="https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png" alt="QR code permettant de faire apparaitre la salle Cabi en AR ainsi que des informations"/>
+                        <img class="card_v2 card_1" src="https://catacombes.xyz/assets/images/many_cards_displayed/anubis_2.png" alt="QR code permettant de faire apparaitre la salle Bocal en AR ainsi que des informations" />
                         <img class="card_v2 card_2" src="https://catacombes.xyz/assets/images/many_cards_displayed/oss.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
-                        <img class="card_v2 card_3" src="https://catacombes.xyz/assets/images/many_cards_displayed/anubis_2.png" alt="QR code permettant de faire apparaitre la salle Bocal en AR ainsi que des informations" />
+                        <img class="card_v2 card_3" src="https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png" alt="QR code permettant de faire apparaitre la salle Cabi en AR ainsi que des informations"/>
                         <img class="card_v2 card_4" src="https://catacombes.xyz/assets/images/many_cards_displayed/devos.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
                         <img class="card_v2 card_5" src="https://catacombes.xyz/assets/images/many_cards_displayed/anubis.png" alt="QR code permettant de faire apparaitre la salle Byzance en AR ainsi que des informations" />
                         <img class="card_v2 card_6" src="https://catacombes.xyz/assets/images/many_cards_displayed/musset.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR" />
@@ -257,6 +260,11 @@
                     </div>
                 </div> 
             </div>
+        </div>
+
+        <div class="display_video_card">
+            <h3 class="display_v1_video">Voir la V1</h3>
+            <h3 class="display_v2_video">Voir la V2</h3>
         </div>
 
         <p class="text_explication_card textRoom connect_computer">

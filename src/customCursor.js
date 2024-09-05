@@ -23,6 +23,8 @@ export function customCursor(){
         const div_display_card_main = document.getElementsByClassName("div_display_card_main")
         const close_card_viewer = document.getElementsByClassName("close_card_viewer_v1");
         const close_card_viewer_v2 = document.getElementsByClassName("close_card_viewer_v2");
+        const display_v1_video = document.getElementsByClassName("display_v1_video")
+        const display_v2_video = document.getElementsByClassName("display_v2_video")
         const display_infos_button = document.getElementsByClassName("display_infos_button");
         const display_all_rooms_button = document.getElementsByClassName("display_all_rooms_button");
         const button_return_site = document.getElementsByClassName("button_return_site");
@@ -30,7 +32,15 @@ export function customCursor(){
         var body = document.getElementById("body");
         var initCursor = false;
 
-        const linksHover = [ links, labelElem, arrowLeft, arrowRight, closeButton, div_display_card_main, close_card_viewer, close_card_viewer_v2, display_infos_button, display_all_rooms_button, button_return_site ]
+        const linksHover = [ 
+            links, labelElem, 
+            arrowLeft, arrowRight, 
+            closeButton, div_display_card_main, 
+            close_card_viewer, close_card_viewer_v2, 
+            display_v2_video, display_v1_video, 
+            display_infos_button, display_all_rooms_button, 
+            button_return_site 
+        ]
 
         for (var i = 0; i < linksHover.length; i++) {
             var list = linksHover[i];

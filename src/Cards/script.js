@@ -1,6 +1,11 @@
 const text_explication_card = document.querySelector(".text_explication_card")
 const display_all_tracts_div = document.querySelector(".display_all_tracts_div")
 const explication_video = document.querySelector(".explication_video")
+const display_v1_video = document.querySelector(".display_v1_video")
+const display_v2_video = document.querySelector(".display_v2_video")
+const video_card_v1 = document.querySelector("#video_card_v1")
+const video_card_v2 = document.querySelector("#video_card_v2")
+const change_source_video = document.querySelector("#change_source_video")
 
 function setupCardClickHandlers(version) {
     const div_display_card_main = document.querySelector(`#display_card_${version}`);
@@ -12,7 +17,15 @@ function setupCardClickHandlers(version) {
     div_display_card_main.addEventListener("click", () => {
         text_explication_card.style.opacity = 0;
         display_all_tracts_div.style.opacity = 0;
-        explication_video.style.opacity = 0;
+
+        display_v1_video.style.opacity = 0;
+        display_v2_video.style.opacity = 0;
+
+        video_card_v1.style.opacity = 0;
+        video_card_v2.style.opacity = 0;
+
+        video_card_v1.style.display = "none";
+        video_card_v2.style.display = "none";
 
         setTimeout(() => {
             text_explication_card.style.display = "none";
@@ -49,6 +62,12 @@ function setupCardClickHandlers(version) {
             text_explication_card.style.display = "block";
             display_all_tracts_div.style.display = "inline-flex";
             explication_video.style.display = "block";
+            video_card_v2.style.position = "relative";
+            video_card_v1.style.position = "absolute";
+            display_v2_video.style.opacity = 0;
+            video_card_v1.style.opacity = 0;
+
+            video_card_v2.style.display = "block";
         }, 500);
 
         setTimeout(() => {
@@ -58,10 +77,34 @@ function setupCardClickHandlers(version) {
 
             text_explication_card.style.opacity = 1;
             display_all_tracts_div.style.opacity = 1;
-            explication_video.style.opacity = 1;
+            display_v1_video.style.opacity = 1;
+            video_card_v2.style.opacity = 1;
         }, 1000);
     });
 }
+
+function toggleVideos(showCard, hideCard, showButton, hideButton) {
+    hideCard.style.opacity = 0;
+    showCard.style.opacity = 1;
+
+    hideButton.style.display = "none";
+    hideButton.style.opacity = "0";
+
+    showButton.style.display = "block";
+    showButton.style.position = "relative";
+    showButton.style.opacity = "1";
+}
+
+display_v1_video.addEventListener('click', () => {
+    toggleVideos(video_card_v1, video_card_v2, display_v2_video, display_v1_video);
+});
+
+display_v2_video.addEventListener('click', () => {
+    toggleVideos(video_card_v2, video_card_v1, display_v1_video, display_v2_video);
+});
+
+
+
 
 setupCardClickHandlers('v1');
 setupCardClickHandlers('v2');
