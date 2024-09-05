@@ -1221,7 +1221,8 @@ ul{
 #video_card_v2{
     border-radius: 6vh;
     position: relative;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
 }
   
 .card-back_v1, .card-back_v2 {
@@ -1248,7 +1249,7 @@ ul{
 .display_video_card{
     grid-area: 1 / 7 / 2 / 10;
     display: inline-flex;
-    margin: 0 auto;
+    margin: -6vh auto;
 }
 
 .display_video_card h3{
