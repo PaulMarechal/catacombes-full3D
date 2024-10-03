@@ -222,9 +222,6 @@ function init(nameRoom) {
     // titleFolder.add(camera.rotation, 'y', -30, 30)
     // titleFolder.add(camera.rotation, 'z', -30, 30)
 
-
-
-
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -546,12 +543,12 @@ function init(nameRoom) {
 	////////////////
 	// Controllers
 	////////////////
-	vrControl = VRControl( renderer, camera, scene );
+	vrControl = VRControl( renderer, scene );
 
 	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
 
 	vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
-
+		
 		selectState = true;
 
 	} );
@@ -1016,6 +1013,18 @@ composer.addPass(renderScene);
 composer.addPass(bloomPass);
 composer.addPass(outputPass);
 
+
+let isInVR = false; 
+function toggleNeonEffect(inVR) {
+    if (inVR) {
+        composer.passes = [];
+    } else {
+        composer.addPass(renderScene);
+        composer.addPass(bloomPass);
+        composer.addPass(outputPass);
+    }
+}
+
 function updateFog(time) {
     let gradient = Math.sin(time * 0.05); 
     let colorValue = Math.abs(gradient); 
@@ -1058,6 +1067,26 @@ function loop() {
 		torus.rotation.z -= 0.030;
 		torus2.rotation.z -= 0.033;
 		torus3.rotation.z -= 0.036;
+	}
+
+
+	if ('xr' in navigator) { 
+
+        navigator.xr.isSessionSupported('immersive-vr').then(function (supported) {
+            if (supported) {
+                if (!isInVR) {
+                    isInVR = true;
+                    toggleNeonEffect(true); 
+                }
+            } else {
+                if (isInVR) {
+                    isInVR = false;
+                    toggleNeonEffect(false); 
+                }
+            }
+        }).catch(function (error) {
+            console.error("Erreur WebXR : ", error);
+        });
 	}
     
 	renderer.render( scene, camera );
