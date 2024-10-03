@@ -1123,23 +1123,21 @@ function updateButtons() {
 }
 
 function raycast() {
+    return objsToTest.reduce((closestIntersection, obj) => {
+        const intersections = raycaster.intersectObject(obj, true);
 
-	return objsToTest.reduce( ( closestIntersection, obj ) => {
+        if (intersections.length === 0) return closestIntersection;
 
-		const intersection = raycaster.intersectObject( obj, true );
+        const intersection = intersections[0]; 
 
-		if ( !intersection[ 0 ] ) return closestIntersection;
+        if (!closestIntersection || intersection.distance < closestIntersection.distance) {
+            return intersection; 
+        }
 
-		if ( !closestIntersection || intersection[ 0 ].distance < closestIntersection.distance ) {
-			intersection[ 0 ].object = obj;
-			return intersection[ 0 ];
-		}
-
-		return closestIntersection;
-
-	}, null );
-
+        return closestIntersection;
+    }, null);
 }
+
 
 function removeVRButton(){
 	const vrButton = document.getElementById("VRButton")
