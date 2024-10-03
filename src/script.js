@@ -1062,6 +1062,7 @@ function loop() {
 			scene.children[i].rotation.y -= 0.005;
 		}
 	}
+	
 
 	if ( torus ){
 		torus.rotation.z -= 0.030;
