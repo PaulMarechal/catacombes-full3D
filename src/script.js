@@ -7,6 +7,7 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'; 
 import { gsap } from 'gsap'
+import TeleportVR from 'teleportvr'
 
 import TWEEN from '@tweenjs/tween.js'
 import ThreeMeshUI from 'three-mesh-ui';
@@ -562,6 +563,36 @@ function init(nameRoom) {
 
 	} );
 
+
+const leftHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/left_hand.gltf";
+const rightHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/right_hand.gltf";
+
+// Créer le téléporteur VR
+const teleportVR = new TeleportVR(scene, camera);
+
+// Charger et ajouter la main gauche
+gltfLoader.load(leftHandModelUrl, (gltf) => {
+    const leftHandModel = gltf.scene;
+    leftHandModel.scale.set(1, 1, 1); 
+
+    const controllerGrip0 = renderer.xr.getControllerGrip(0);
+    controllerGrip0.addEventListener('connected', (e) => {
+        controllerGrip0.add(leftHandModel); 
+        teleportVR.add(0, controllerGrip0, e.data.gamepad);
+    });
+});
+
+// Charger et ajouter la main droite
+gltfLoader.load(rightHandModelUrl, (gltf) => {
+    const rightHandModel = gltf.scene;
+    rightHandModel.scale.set(1, 1, 1);
+
+    const controllerGrip1 = renderer.xr.getControllerGrip(1);
+    controllerGrip1.addEventListener('connected', (e) => {
+        controllerGrip1.add(rightHandModel);  // Ajouter le modèle de la main droite
+        teleportVR.add(1, controllerGrip1, e.data.gamepad);
+    });
+});
 
 	//////////
 	// Panel
