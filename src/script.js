@@ -203,7 +203,6 @@ function init(nameRoom) {
 			} else if (orientation === 90 || orientation === -90) {
 				// L'appareil est en mode paysage
 				document.querySelector(".displayMobile").style.display = "none";
-
 			}
 		});
 
@@ -543,7 +542,12 @@ function init(nameRoom) {
 	////////////////
 	// Controllers
 	////////////////
+	renderer.xr.addEventListener('sessionstart', () => {
+        camera.position.set(-4.41, 1.46, -3.54);
+        camera.rotation.set(0, 0, 0);
+    });
 	vrControl = VRControl( renderer, scene );
+	updateMovement();
 
 	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
 
@@ -1040,6 +1044,21 @@ function updateFog(time) {
     scene.fog.density = density;
 }
 
+// Movement with joystick ( oculus )
+function updateMovement() {
+	const controllers = [];
+    controllers.forEach((controller) => {
+        const gamepad = controller.inputSource.gamepad;
+        if (gamepad && gamepad.axes.length > 2) {
+            const xAxis = gamepad.axes[2]; // Joystick horizontal
+            const yAxis = gamepad.axes[3]; // Joystick vertical
+
+            const speed = 0.1;
+            camera.position.x -= xAxis * speed;
+            camera.position.z -= yAxis * speed;
+        }
+    });
+}
 
 function loop() {
 
@@ -1062,7 +1081,7 @@ function loop() {
 			scene.children[i].rotation.y -= 0.005;
 		}
 	}
-	
+
 
 	if ( torus ){
 		torus.rotation.z -= 0.030;
