@@ -1172,19 +1172,19 @@ function updateButtons() {
 }
 
 function raycast() {
-    return objsToTest.reduce((closestIntersection, obj) => {
-        const intersections = raycaster.intersectObject(obj, true);
 
-        if (intersections.length === 0) return closestIntersection;
+	return objsToTest.reduce( ( closestIntersection, obj ) => {
 
-        const intersection = intersections[0]; 
+		const intersection = raycaster.intersectObject( obj, true );
 
-        if (!closestIntersection || intersection.distance < closestIntersection.distance) {
-            return intersection; 
-        }
+		if ( !intersection[ 0 ] ) return closestIntersection;
+		if ( !closestIntersection || intersection[ 0 ].distance < closestIntersection.distance ) {
+			intersection[ 0 ].object = obj;
+			return intersection[ 0 ];
+		}
+		return closestIntersection;
+	}, null );
 
-        return closestIntersection;
-    }, null);
 }
 
 
