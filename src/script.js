@@ -563,36 +563,35 @@ function init(nameRoom) {
 
 	} );
 
+	//////////////////////////
+	// New VR Hand controller
+	//////////////////////////
+	const leftHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/left_hand.gltf";
+	const rightHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/right_hand.gltf";
 
-const leftHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/left_hand.gltf";
-const rightHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/right_hand.gltf";
+	const teleportVR = new TeleportVR(scene, camera);
 
-// Créer le téléporteur VR
-const teleportVR = new TeleportVR(scene, camera);
+	gltfLoader.load(leftHandModelUrl, (gltf) => {
+		const leftHandModel = gltf.scene;
+		leftHandModel.scale.set(1, 1, 1); 
 
-// Charger et ajouter la main gauche
-gltfLoader.load(leftHandModelUrl, (gltf) => {
-    const leftHandModel = gltf.scene;
-    leftHandModel.scale.set(1, 1, 1); 
+		const controllerGrip0 = renderer.xr.getControllerGrip(0);
+		controllerGrip0.addEventListener('connected', (e) => {
+			controllerGrip0.add(leftHandModel); 
+			teleportVR.add(0, controllerGrip0, e.data.gamepad);
+		});
+	});
 
-    const controllerGrip0 = renderer.xr.getControllerGrip(0);
-    controllerGrip0.addEventListener('connected', (e) => {
-        controllerGrip0.add(leftHandModel); 
-        teleportVR.add(0, controllerGrip0, e.data.gamepad);
-    });
-});
+	gltfLoader.load(rightHandModelUrl, (gltf) => {
+		const rightHandModel = gltf.scene;
+		rightHandModel.scale.set(1, 1, 1);
 
-// Charger et ajouter la main droite
-gltfLoader.load(rightHandModelUrl, (gltf) => {
-    const rightHandModel = gltf.scene;
-    rightHandModel.scale.set(1, 1, 1);
-
-    const controllerGrip1 = renderer.xr.getControllerGrip(1);
-    controllerGrip1.addEventListener('connected', (e) => {
-        controllerGrip1.add(rightHandModel);  // Ajouter le modèle de la main droite
-        teleportVR.add(1, controllerGrip1, e.data.gamepad);
-    });
-});
+		const controllerGrip1 = renderer.xr.getControllerGrip(1);
+		controllerGrip1.addEventListener('connected', (e) => {
+			controllerGrip1.add(rightHandModel);  // Ajouter le modèle de la main droite
+			teleportVR.add(1, controllerGrip1, e.data.gamepad);
+		});
+	});
 
 	//////////
 	// Panel
