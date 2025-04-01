@@ -588,7 +588,7 @@ function init(nameRoom) {
 
 		const controllerGrip1 = renderer.xr.getControllerGrip(1);
 		controllerGrip1.addEventListener('connected', (e) => {
-			controllerGrip1.add(rightHandModel);  // Ajouter le modèle de la main droite
+			controllerGrip1.add(rightHandModel);  
 			teleportVR.add(1, controllerGrip1, e.data.gamepad);
 		});
 	});
