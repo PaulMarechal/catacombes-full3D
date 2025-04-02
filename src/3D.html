@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Salle 3D</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css">
+    <script type="module">
+      import { roomInfos } from '/roomInfo.js';
+      const params = new URLSearchParams(window.location.search);
+      const roomKey = params.get("room");
+      const room = roomInfos.find(info => info[0] === roomKey);
+      const title_rooms = document.querySelector('.title_rooms')
+    
+      if (!room) {
+        document.body.innerHTML = "<h1>Salle introuvable</h1>";
+      } else {
+
+        title_rooms.innerHTML = "Test";
+
+        // Inject canvas
+        const canvas = document.createElement("canvas");
+        canvas.className = "webgl";
+        document.body.appendChild(canvas);
+    
+        // Définir l’URL dans une variable globale
+        window.MODEL_URL = `https://catacombes.xyz/${room[0]}/${room[0]}.glb`;
+        
+        // Injecter le script
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "./assets/webgl.js";
+        document.body.appendChild(script);
+
+      }
+    </script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div class="loading-bar"></div>
+    <div>
+      <h2 class="title_rooms"></h2>
+    </div>
+</body>
+</html>

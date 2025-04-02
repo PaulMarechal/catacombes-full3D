@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Bebas+Neue&display=swap');
+
+.retourButton{
+    background: #ececec;
+    border-radius: 5px;
+    position: absolute; 
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    margin-top: 20px; 
+    margin-left: 40px;
+    color: #000; 
+    text-decoration: none;
+}
+
+.loadingPercent, .title_rooms{
+    z-index: 99999; 
+    color: #ffffff; 
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    margin:0;
+    position: fixed; 
+    font-size: 10rem;
+    right: 3%;
+    bottom: 0%!important;
+    transition: transform 3s;
+}
+
+.title_rooms{
+    opacity: 0; 
+    transition: opacity 1s ease-out;
+}
