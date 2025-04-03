@@ -12,9 +12,11 @@
       const room = roomInfos.find(info => info[0] === roomKey);
       const infos_rooms = document.querySelector('.title_rooms')
       const title_rooms = document.querySelector('.title_rooms h2')
-      const text_rooms = document.querySelector('.title_rooms p')
+      const text_info_room = document.getElementById('text_info_room')
       const close_infos_div = document.getElementById('close_infos_div')
       const informations_small = document.querySelector('.informations_small')
+      const deepth_room = document.getElementById('deepth_room')
+      const location_room = document.getElementById('location_room')
     
       if (!room) {
         document.body.innerHTML = "<h1>Salle introuvable</h1>";
@@ -32,11 +34,10 @@
           }, 550)
         })
 
-
         title_rooms.innerHTML = `${room[1]}`;
-        text_rooms.innerHTML = `${room[2]}`
-
-        console.log()
+        text_info_room.innerHTML = `${room[2]}`;
+        deepth_room.innerHTML = `${room[4]}`;
+        location_room.innerHTML = `${room[3]}`;
 
         // Inject canvas
         const canvas = document.createElement("canvas");
@@ -61,9 +62,22 @@
 <body style="margin: 0; overflow: hidden; position: relative;">
     <div class="loading-bar"></div>
     <div class="title_rooms">
+      <h2 class="background_filter"></h2>
       <svg id="close_infos_div" title="Fermer" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="red"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-      <h2></h2>
-      <p></p>
+      <div class="deepth_div background_filter">
+        
+        <p>
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down-bar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3v18" /><path d="M9 18l3 3l3 -3" /><path d="M9 3h6" /></svg>
+          Profondeur :
+          <span id='deepth_room'></span>
+        </p>
+        <p>
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-route"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /><path d="M9 12v.01" /><path d="M6 13v.01" /><path d="M17 15l-4 -4" /><path d="M13 15l4 -4" /></svg>
+          Emplacement : 
+          <span id="location_room"></span>
+        </p>
+      </div>
+      <p id="text_info_room" class="background_filter"></p>
     </div>
     <div class="informations_small">
       <p>Infos</p>

@@ -17,7 +17,7 @@ export const roomInfos = [
     [
         "Guerinet", 
         "Guerinet",
-        "Le cabinet de M. Guérinet a été injecté de béton il y a quelques années (6 octobre 2010). Grace au travail acharné de certains cataphiles elle est de nouveau accessible. Merci de préserver ce lieu et de le laisser en état.",
+        "Le cabinet minéralogique de M. Guérinet est l'un des sept cabinets de curiosités souterrains aménagés au XIXe siècle dans les carrières de Paris, sous l'impulsion de Louis-Étienne Héricart de Thury, alors inspecteur général des carrières. Ces cabinets étaient conçus pour exposer des collections de minéraux et d'ossements, reflétant l'engouement de l'époque pour les cabinets de curiosités. \n​Situé sous le quartier des Gobelins dans le 13e arrondissement, le cabinet Guérinet se distinguait par ses deux escaliers droits parallèles servant à l'exposition d'échantillons géologiques. Au fil du temps, il a subi des transformations significatives : d'abord presque entièrement remblayé, puis partiellement déblayé par des cataphiles. En 2010, le site a été injecté de béton, rendant son accès difficile. ​\nCes cabinets minéralogiques, bien que dépourvus d'utilité pratique pour l'exploitation des carrières, symbolisaient l'intérêt pour les sciences et le savoir au XIXe siècle, offrant une mise en scène théâtrale et néoclassique des collections qu'ils abritaient. ",
         " -- ? -- ", 
         " 20m",
         "https://catacombes.xyz/Guerinet/3D", 

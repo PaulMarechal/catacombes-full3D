@@ -28,31 +28,47 @@
     opacity: 1;
     border-radius: 15px;
     padding: 1vh;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    /* background: rgba(255, 255, 255, 0.25); */
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     opacity: 0; 
-    top: 10vw;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    top: 6vw;
     user-select: none;
     transition: opacity 1s ease-out, right .9s ease-out;
 }
 
+.deepth_div svg{margin-bottom: -6px;}
+
+.deepth_div p{
+    margin: 0;
+    padding: 2px 0;
+}
+
+#text_info_room{
+    height: 16vw;
+    max-height: 16vw;
+    overflow-y: scroll;
+    scrollbar-color: #000 transparent;
+    margin: 0;
+}
+
 #close_infos_div{
     position: absolute;
-    right: 4px;
-    top: 4px;
+    right: -12px;
+    top: -12px;
     border: 2px solid rgba(255, 0, 0, 0);
-    background: transparent;
+    background: rgb(255 255 255 / 22%);
     border-radius: 50%;
+    border: 1px solid rgb(179 179 179 / 70%);
     transition: background .5s ease-out, border .5s ease-out;
 }
 
 #close_infos_div:hover{
     background: #fb534c;
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
 .informations_small{
@@ -82,7 +98,7 @@
 
 
 .title_rooms h2{
-    margin: 0 0 0 1vh;
+    margin: 0vh;
     font-size: 2vw;
 }
 
@@ -91,4 +107,15 @@
     font-family: 'Alumni Sans Pinstripe', sans-serif;
     font-size: 1.1vw;
     text-align: justify;
+    text-transform: math-auto;
+}
+
+.background_filter{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 4px 10px;
+    margin-bottom: 0.2vw!important;
 }

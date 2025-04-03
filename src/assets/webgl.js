@@ -48,19 +48,15 @@ const loadingManager = new THREE.LoadingManager(() => {
 });
 
 // Lights
-// const light = new THREE.AmbientLight( 0x404040 ); 
-// scene.add( light );
 function lightingSetup(scene) {
     const ambientLight = new THREE.AmbientLight(0x404040, 1); 
     scene.add(ambientLight);
 
-    // Lumière directionnelle (simule le soleil)
     const directionalLight = new THREE.DirectionalLight(0x404040, 1);
     directionalLight.position.set(5, 10, 7.5);
     directionalLight.castShadow = true;
     scene.add(directionalLight);
 
-    // Hemisphere light (ciel + sol, très naturel pour les scènes)
     const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
     hemiLight.position.set(0, 20, 0);
     scene.add(hemiLight);
