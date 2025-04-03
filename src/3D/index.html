@@ -12,7 +12,23 @@
     <script type="module">
       import { roomInfos } from '../roomInfo.js';
       const params = new URLSearchParams(window.location.search);
+      console.log(params[2])
       const roomKey = params.get("room");
+
+      let roomKeyTest = params.get("room");
+
+
+      const pathParts = window.location.pathname.split('/');
+      if (pathParts[2]) {
+        roomKeyTest = pathParts[2];
+      } else {
+        // 2. Fallback : check dans les query params (si URL = /3D/?room=Guerinet)
+        const params = new URLSearchParams(window.location.search);
+        roomKeyTest = params.get('room');
+      }
+      
+      console.log("Nom de la salle :", roomKeyTest);
+      
       const room = roomInfos.find(info => info[0] === roomKey);
       const infos_rooms = document.querySelector('.title_rooms')
       const title_rooms = document.querySelector('.title_rooms h2')

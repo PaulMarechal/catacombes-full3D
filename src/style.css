@@ -126,6 +126,7 @@ body input ~ nav {
     transition: 0.5s;
     transition-delay: 0.5s;
     overflow: hidden;
+    user-select: none;
 }
 
 body input ~ nav > ul {

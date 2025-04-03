@@ -93,7 +93,7 @@ function addElement(roomNumber, language) {
     newDiv.appendChild(location);
 
     addButtonDiv("a", "buttonVR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "VR", newDiv)
-    addButtonDiv("a", "button3D", `/3D/3D.html?room=${NameRooms.roomInfos[roomNumber][0]}`, "3D", newDiv)
+    addButtonDiv("a", "button3D", `/3D/?room=${NameRooms.roomInfos[roomNumber][0]}`, "3D", newDiv)
     addButtonDiv("a", "buttonAR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`, "AR", newDiv)
     
 
