@@ -1,4 +1,6 @@
 const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env
+import { defineConfig } from 'vite'
+import path from 'path'
 
 export default {
     root: 'src/',

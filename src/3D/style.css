@@ -67,10 +67,10 @@
 
 #close_infos_div{
     position: absolute;
-    right: -12px;
-    top: -12px;
+    right: -16px;
+    top: -16px;
     border: 2px solid rgba(255, 0, 0, 0);
-    background: rgb(255 255 255 / 22%);
+    background: rgb(0 0 0 / 83%);
     border-radius: 50%;
     border: 1px solid rgb(179 179 179 / 70%);
     transition: background .5s ease-out, border .5s ease-out;

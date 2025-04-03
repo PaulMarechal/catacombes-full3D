@@ -8,7 +8,7 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     elemCreated.classList.add(idElem); 
     elemCreated.classList.add("buttonRedirect3D");
     elemCreated.setAttribute("href", link);
-    elemCreated.setAttribute("target", "_blank");
+    // elemCreated.setAttribute("target", "_blank");
     elemCreated.textContent = textButton;
     newDiv.appendChild(elemCreated);
 
@@ -93,8 +93,9 @@ function addElement(roomNumber, language) {
     newDiv.appendChild(location);
 
     addButtonDiv("a", "buttonVR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "VR", newDiv)
-    addButtonDiv("a", "button3D", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "3D", newDiv)
+    addButtonDiv("a", "button3D", `/3D/3D.html?room=${NameRooms.roomInfos[roomNumber][0]}`, "3D", newDiv)
     addButtonDiv("a", "buttonAR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`, "AR", newDiv)
+    
 
     var currentDiv = document.querySelector('.displayRooms');
     currentDiv.appendChild(newDiv);
