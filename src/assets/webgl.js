@@ -9,7 +9,9 @@ import { gsap } from 'gsap';
 
 // Get model URL from script tag
 const modelUrl = window.MODEL_URL;
-const title_rooms = document.querySelector('.title_rooms')
+const title_rooms_div = document.querySelector('.title_rooms')
+const title_rooms = document.querySelector('.title_rooms h2')
+const text_rooms = document.querySelector('.title_rooms p')
 
 // Scene, Overlay, Loading
 const scene = new THREE.Scene(); 
@@ -20,7 +22,7 @@ const overlayMaterial = new THREE.ShaderMaterial({
     vertexShader: `void main(){ gl_Position = vec4(position, 1.0); }`,
     fragmentShader: `uniform float uAlpha; void main(){ gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha); }`
 });
-scene.add(new THREE.Mesh(overlayGeometry, overlayMaterial));
+// scene.add(new THREE.Mesh(overlayGeometry, overlayMaterial));
 
 const loadingBarElement = document.querySelector('.loading-bar');
 const loadingPercent = document.createElement("h2");
@@ -35,8 +37,9 @@ const loadingManager = new THREE.LoadingManager(() => {
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 4, value: 0 });
         loadingBarElement.classList.add('ended');
         loadingPercent.remove();
-        console.log(title_rooms)
-        title_rooms.style.opacity = "1"
+        title_rooms_div.style.opacity = "1"
+        title_rooms
+        text_rooms
     });
 }, (itemUrl, itemsLoaded, itemsTotal) => {
     const progressRatio = itemsLoaded / itemsTotal;
@@ -45,12 +48,40 @@ const loadingManager = new THREE.LoadingManager(() => {
 });
 
 // Lights
-scene.add(new THREE.AmbientLight(0x404040, 4));
+// const light = new THREE.AmbientLight( 0x404040 ); 
+// scene.add( light );
+function lightingSetup(scene) {
+    const ambientLight = new THREE.AmbientLight(0x404040, 1); 
+    scene.add(ambientLight);
+
+    // Lumière directionnelle (simule le soleil)
+    const directionalLight = new THREE.DirectionalLight(0x404040, 1);
+    directionalLight.position.set(5, 10, 7.5);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+
+    // Hemisphere light (ciel + sol, très naturel pour les scènes)
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    hemiLight.position.set(0, 20, 0);
+    scene.add(hemiLight);
+}
+
+lightingSetup(scene);
 
 // Load model
 const loader = new GLTFLoader(loadingManager);
 loader.load(modelUrl, gltf => {
-    scene.add(gltf.scene);
+    const model = gltf.scene;
+
+    model.traverse((child) => {
+        if (child.isMesh) {
+            child.geometry.computeVertexNormals(); 
+            child.material.flatShading = false;     
+            child.material.needsUpdate = true;
+        }
+    });
+
+    scene.add(model);
 }, undefined, error => {
     console.error(error);
 });
@@ -74,7 +105,10 @@ scene.add(camera);
 const canvas = document.querySelector(".webgl");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.outputEncoding = THREE.sRGBEncoding;         // oui
+renderer.toneMapping = THREE.NoToneMapping;  
+// renderer.toneMapping = THREE.ACESFilmicToneMapping;
+// renderer.toneMappingExposure = 1.0;
 
 // VR Setup
 document.body.appendChild(VRButton.createButton(renderer));

@@ -20,7 +20,7 @@
     margin:0;
     position: fixed; 
     right: 3%;
-    transition: transform 3s;
+    transition: transform 3s ease-out;
 }
 
 .title_rooms{
@@ -34,6 +34,45 @@
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    opacity: 0; 
+    top: 10vw;
+    user-select: none;
+    transition: opacity 1s ease-out, right .9s ease-out;
+}
+
+#close_infos_div{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    border: 2px solid rgba(255, 0, 0, 0);
+    background: transparent;
+    border-radius: 50%;
+    transition: background .5s ease-out, border .5s ease-out;
+}
+
+#close_infos_div:hover{
+    background: #fb534c;
+    border: 2px solid red;
+}
+
+.informations_small{
+    right: -70px;
+    position: absolute;
+    background: #fff;
+    rotate: -90deg;
+    padding: 5px 20px;
+    top: 10vw;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2vw;
+    border-radius: 10px 10px 0 0;
+    user-select: none;
+    cursor: pointer;
+    transition: right .5s ease-out;
+}
+
+.informations_small p{
+    margin: 0; 
 }
 
 .loadingPercent{
@@ -41,18 +80,15 @@
     bottom: 0%!important;
 }
 
-.title_rooms{
-    opacity: 0; 
-    top: 10vw;
-    transition: opacity 1s ease-out;
-}
-
 
 .title_rooms h2{
     margin: 0 0 0 1vh;
-    font-size: 3.2vw;
+    font-size: 2vw;
 }
 
 .title_rooms p{
     color: #fff;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 1.1vw;
+    text-align: justify;
 }

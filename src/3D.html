@@ -10,16 +10,33 @@
       const params = new URLSearchParams(window.location.search);
       const roomKey = params.get("room");
       const room = roomInfos.find(info => info[0] === roomKey);
+      const infos_rooms = document.querySelector('.title_rooms')
       const title_rooms = document.querySelector('.title_rooms h2')
       const text_rooms = document.querySelector('.title_rooms p')
+      const close_infos_div = document.getElementById('close_infos_div')
+      const informations_small = document.querySelector('.informations_small')
     
       if (!room) {
         document.body.innerHTML = "<h1>Salle introuvable</h1>";
       } else {
 
-        title_rooms.innerHTML = "Test";
-        text_rooms.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, maiores. Impedit incidunt quis voluptate perferendis doloremque itaque accusantium modi, rerum suscipit, qui quae reprehenderit expedita ad quas quos facere inventore."
+        close_infos_div.addEventListener('click', ()=>{
+          infos_rooms.style.right = '-20vw'
+          informations_small.style.right = "-22px"
 
+          setTimeout(()=>{
+            informations_small.addEventListener('click', ()=>{
+              informations_small.style.right = '-70px'; 
+              infos_rooms.style.right = '3%'
+            })
+          }, 550)
+        })
+
+
+        title_rooms.innerHTML = `${room[1]}`;
+        text_rooms.innerHTML = `${room[2]}`
+
+        console.log()
 
         // Inject canvas
         const canvas = document.createElement("canvas");
@@ -29,20 +46,27 @@
         // Définir l’URL dans une variable globale
         window.MODEL_URL = `https://catacombes.xyz/${room[0]}/${room[0]}.glb`;
         
+        console.log(room)
+
+        //  https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR
+        
         // Injecter le script
         const script = document.createElement("script");
         script.type = "module";
         script.src = "./assets/webgl.js";
         document.body.appendChild(script);
-
       }
     </script>
 </head>
-<body style="margin: 0; overflow: hidden;">
+<body style="margin: 0; overflow: hidden; position: relative;">
     <div class="loading-bar"></div>
     <div class="title_rooms">
+      <svg id="close_infos_div" title="Fermer" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="red"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
       <h2></h2>
       <p></p>
+    </div>
+    <div class="informations_small">
+      <p>Infos</p>
     </div>
 </body>
 </html>
