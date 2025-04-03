@@ -297,10 +297,12 @@ body input:checked ~ nav > ul > li {
 }
 
 .textRoom { 
-    grid-area: 2 / 1 / 5 / 4; 
-    text-align: -webkit-left; 
-    padding: 0px 5px; 
+    grid-area: 2 / 1 / 5 / 4;
+    text-align: -webkit-left;
+    padding: 0px 5px;
     font-size: 1.3rem;
+    overflow-y: scroll;
+    scrollbar-color: #d1cece transparent;
 }
 
 .adressRoom{ 
