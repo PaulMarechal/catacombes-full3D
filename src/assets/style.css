@@ -19,13 +19,40 @@
     text-transform: uppercase;
     margin:0;
     position: fixed; 
-    font-size: 10rem;
     right: 3%;
-    bottom: 0%!important;
     transition: transform 3s;
 }
 
 .title_rooms{
+    width: 17vw;
+    opacity: 1;
+    border-radius: 15px;
+    padding: 1vh;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.loadingPercent{
+    font-size: 10rem;
+    bottom: 0%!important;
+}
+
+.title_rooms{
     opacity: 0; 
+    top: 10vw;
     transition: opacity 1s ease-out;
+}
+
+
+.title_rooms h2{
+    margin: 0 0 0 1vh;
+    font-size: 3.2vw;
+}
+
+.title_rooms p{
+    color: #fff;
 }

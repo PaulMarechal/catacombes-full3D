@@ -10,13 +10,16 @@
       const params = new URLSearchParams(window.location.search);
       const roomKey = params.get("room");
       const room = roomInfos.find(info => info[0] === roomKey);
-      const title_rooms = document.querySelector('.title_rooms')
+      const title_rooms = document.querySelector('.title_rooms h2')
+      const text_rooms = document.querySelector('.title_rooms p')
     
       if (!room) {
         document.body.innerHTML = "<h1>Salle introuvable</h1>";
       } else {
 
         title_rooms.innerHTML = "Test";
+        text_rooms.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, maiores. Impedit incidunt quis voluptate perferendis doloremque itaque accusantium modi, rerum suscipit, qui quae reprehenderit expedita ad quas quos facere inventore."
+
 
         // Inject canvas
         const canvas = document.createElement("canvas");
@@ -37,8 +40,9 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <div class="loading-bar"></div>
-    <div>
-      <h2 class="title_rooms"></h2>
+    <div class="title_rooms">
+      <h2></h2>
+      <p></p>
     </div>
 </body>
 </html>
