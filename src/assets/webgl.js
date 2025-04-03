@@ -69,7 +69,7 @@ const loader = new GLTFLoader(loadingManager);
 loader.load(modelUrl, gltf => {
     const model = gltf.scene;
 
-    model.position.y = -1.5;
+    model.position.y = -1;
     model.traverse((child) => {
         if (child.isMesh) {
             child.geometry.computeVertexNormals(); 
@@ -99,7 +99,7 @@ const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height);
 camera.position.set(-3.67, 2.41, 7.28);
 scene.add(camera);
 
-const canvas = document.querySelector(".webgl");
+const canvas = document.querySelector(".canvas_rooms");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputEncoding = THREE.sRGBEncoding;         // oui

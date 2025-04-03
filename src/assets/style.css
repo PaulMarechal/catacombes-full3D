@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Bebas+Neue&display=swap');
 
+*{
+    cursor: none!important;
+}
+.canvas_rooms{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 .retourButton{
     background: #ececec;
     border-radius: 5px;
@@ -30,8 +40,8 @@
     padding: 1vh;
     /* background: rgba(255, 255, 255, 0.25); */
     /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     opacity: 0; 
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -96,7 +106,6 @@
     bottom: 0%!important;
 }
 
-
 .title_rooms h2{
     margin: 0vh;
     font-size: 2vw;
@@ -118,4 +127,28 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 4px 10px;
     margin-bottom: 0.2vw!important;
+}
+
+#location_room a {
+    color: #ffffff !important;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    right: -1.5vw;
+}
+
+#all_room_buttons{
+    border-radius: 5px;
+    position: absolute;
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-left: 40px;
+    left: 1vw;
+    color: #000;
+    text-decoration: none;
+    font-size: 1vw;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
 }
