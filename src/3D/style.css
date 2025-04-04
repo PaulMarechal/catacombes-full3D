@@ -95,6 +95,7 @@
     user-select: none;
     cursor: pointer;
     transition: right .5s ease-out;
+    z-index: 9;
 }
 
 .informations_small p{
@@ -155,4 +156,21 @@
 
 #VRButton{
     position: fixed;
+}
+
+.return_button_3D_page{
+    position: fixed;
+    background: #fff;
+    padding: 3px 17px;
+    top: 4vw;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2vw;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    transition: right .5s ease-out;
+    z-index: 9;
+    left: 1.5vw;
+    border: none;
 }

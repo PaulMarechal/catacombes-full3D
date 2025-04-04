@@ -793,7 +793,7 @@ function makePanel() {
 				  }
 			} else {
 				// console.log(scene.children)
-				window.open(`./3D/?room=${seeRoomIn3d(roomNumber)}`, '_blank')
+				window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
 			}
         }
     });
