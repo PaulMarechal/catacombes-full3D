@@ -83,7 +83,7 @@
 
 .informations_small{
     right: -70px;
-    position: absolute;
+    position: fixed;
     background: #fff;
     rotate: -90deg;
     padding: 5px 20px;
@@ -151,4 +151,8 @@
     border: none;
     padding: 4px 8px;
     cursor: pointer;
+}
+
+#VRButton{
+    position: fixed;
 }

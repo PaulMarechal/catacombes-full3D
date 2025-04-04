@@ -1,14 +1,14 @@
 /**
- * RoomInfos 
- * - Name file
- * - Room Name
- * - Description room ( history )
- * - Location in Paris 
- * - Depth 
- * - Redirection link ( to 3D model)
- * - Location in Paris
- * - Location in grid ( paris)
- * - Location in the grid-area ( more precise )
+    * RoomInfos 
+    * - Name file
+    * - Room Name
+    * - Description room ( history )
+    * - Location in Paris 
+    * - Depth 
+    * - Redirection link ( to 3D model)
+    * - Location in Paris
+    * - Location in grid ( paris)
+    * - Location in the grid-area ( more precise )
 */
 export const roomInfos = [
 
@@ -17,7 +17,7 @@ export const roomInfos = [
     [
         "Guerinet", 
         "Guerinet",
-        "Le cabinet mineralogique de M. Guerinet est l'un des sept cabinets de curiosites souterrains amenages au XIXe siecle dans les carrieres de Paris, sous l'impulsion de Louis-etienne Hericart de Thury, alors inspecteur general des carrieres. Ces cabinets etaient conçus pour exposer des collections de mineraux et d'ossements, refletant l'engouement de l'epoque pour les cabinets de curiosites. \nSitue sous le quartier des Gobelins dans le 13e arrondissement, le cabinet Guerinet se distinguait par ses deux escaliers droits paralleles servant a l'exposition d'echantillons geologiques. Au fil du temps, il a subi des transformations significatives : d'abord presque entierement remblaye, puis partiellement deblaye par des cataphiles. En 2010, le site a ete injecte de beton, rendant son acces difficile.\nCes cabinets mineralogiques, bien que depourvus d'utilite pratique pour l'exploitation des carrieres, symbolisaient l'interet pour les sciences et le savoir au XIXe siecle, offrant une mise en scene theâtrale et neoclassique des collections qu'ils abritaient. ",
+        "Le cabinet mineralogique de M. Guerinet est l'un des sept cabinets de curiosites souterrains amenages au XIXe siecle dans les carrieres de Paris, sous l'impulsion de Louis-etienne Hericart de Thury, alors inspecteur general des carrieres. Ces cabinets etaient conçus pour exposer des collections de mineraux et d'ossements, refletant l'engouement de l'epoque pour les cabinets de curiosites. \nSitue sous le quartier des Gobelins dans le 13e arrondissement, le cabinet Guerinet se distinguait par ses deux escaliers droits paralleles servant a l'exposition d'echantillons geologiques. Au fil du temps, il a subi des transformations significatives : d'abord presque entierement remblaye, puis partiellement deblaye par des cataphiles. En 2010, le site a ete injecte de beton, rendant son acces difficile.\nCes cabinets mineralogiques, bien que depourvus d'utilite pratique pour l'exploitation des carrieres, symbolisaient l'interet pour les sciences et le savoir au XIXe siecle, offrant une mise en scene theatrale et neoclassique des collections qu'ils abritaient. ",
         " -- ? -- ", 
         " 20m",
         "https://catacombes.xyz/Guerinet/3D", 
@@ -59,7 +59,7 @@ export const roomInfos = [
     [
         "Zebulon", 
         "Zebulon",
-        "Elle est situee sous la rue Nationale, aussi appelee salle Zebulon.",
+        "La salle Zebulon, egalement connue sous le nom de salle Z prime, est situee sous la rue Nationale dans le 13ᵉ arrondissement de Paris. Elle se distingue par son plafond eleve, soutenu par des piliers tournes consolides, et par ses vastes dimensions.",
         "131 bis Rue Nationale \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Zebulon/3D", 
@@ -73,7 +73,7 @@ export const roomInfos = [
     [
         "Toudouze", 
         "Toudouze",
-        "Ancien cabinet mineralogique de M. Toudouze. Partiellement detruit lors de la consolidation du sous-sol lors de la construction de la ligne 6 du metro.",
+        "Le cabinet Toudouze est l'un des sept cabinets mineralogiques amenages au debut du XIXᵉ siecle dans les carrieres souterraines de Paris. Ces cabinets etaient des sortes de 'cabinets de curiosites' souterrains, destines à exposer des collections de mineraux, d'ossements ou d'echantillons geologiques, refletant l'interet scientifique et esthetique de l'epoque. \nSitue sous l'avenue d'Italie (anciennement avenue de Fontainebleau) dans le 13ᵉ arrondissement, le cabinet Toudouze se distinguait par un escalier central, quatre niches taillees dans la roche, et deux petits escaliers annexes illustrant les differentes couches geologiques du Lutetien. Cependant, au debut du XXᵉ siecle, lors de la construction des lignes de metro à proximite de la place d'Italie, une grande partie de ce cabinet a ete remblayee. Aujourd'hui, seuls subsistent les deux petits escaliers annexes et deux des quatre niches originales, l'escalier central ayant disparu.",
         "- ? -", 
         " 20m",
         "https://catacombes.xyz/Toudouze/3D", 
@@ -103,7 +103,7 @@ export const roomInfos = [
     [
         "Cabinet", 
         "Cabinet mineralogique ( 1811 )",
-        "Cabinet Gambier-Major. Variante souterraine des cabinets de curiosites en vogue au XIXe siecle. Construit sous le mandat d'Ericart de Thury. Un escalier droit permet d'exposer des morceaux de roches representant les couches geologiques du Lutecien",
+        "Le cabinet Gambier-Major, egalement connu sous le nom de cabinet Saint-Jacques, est l'un des rares cabinets mineralogiques subsistant dans les carrieres souterraines de Paris. Construit en 1810 par Gambier-Major sous l'autorite d'Hericart de Thury, alors inspecteur general des carrieres, il est situe sous la rue Saint-Jacques, approximativement au niveau du 81 rue du Faubourg Saint-Jacques, dans le 14ᵉ arrondissement de Paris, à une profondeur d'environ 15 metres. \nCe cabinet se distingue par sa structure particuliere : une salle cubique dotee d'un escalier central droit, entoure de deux bancs lateraux et d'un petit banc pres de l'entree. L'escalier servait à exposer des echantillons de roches representant les differentes couches geologiques du Lutetien, chaque marche correspondant à une strate specifique. \nMalheureusement, en raison de sa frequentation au fil des decennies, le cabinet Gambier-Major a subi des degradations significatives. Les inscriptions originales ont presque toutes disparu, et le plafond est aujourd'hui noirci par la presence de champignons. ",
         "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
         " 15m", 
         "https://catacombes.xyz/Cabinet/3D", 
@@ -117,7 +117,7 @@ export const roomInfos = [
     [
         "Soleil", 
         "Salle Soleil / Cinema",
-        "Elle doit son nom au soleil qui se trouve a l'entree de la salle. Des projections de films y ont lieu, d'où le deuxieme nom de la salle. Les murs sont recouverts de fresques representant des personnages de films.", 
+        "Cette salle se distingue par la presence de bancs en pierre disposes en rangees, rappelant l'agencement d'une salle de cinema traditionnelle. Les murs sont ornes de graffitis representant des icônes du cinema.", 
         "114 Rue de la Tombe Issoire \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Soleil/3D", 
@@ -132,7 +132,7 @@ export const roomInfos = [
     [
         "Anubis", 
         "Anubis ( ex Chaumiere ) ",
-        "Elle doit son nom aux fresques hieroglyphiques. Salle apportee par Bishop, Cockroach, Capsule et Kenny du groupe K-tabourets.",
+        "Son nom fait reference au dieu egyptien Anubis, divinite associee à la momification et au monde souterrain. Cette salle est ornee de sculptures et de fresques representant des motifs egyptiens, notamment des representations d'Anubis, creant une atmosphere rappelant l'egypte antique. Salle restauree par Bishop, Cockroach, Capsule et Kenny du groupe K-tabourets.",
         "29 Rue d'Alesia \n   75014 Paris", 
         " 30m",
         "https://catacombes.xyz/Anubis/3D",
@@ -146,7 +146,8 @@ export const roomInfos = [
     [
         "Sarko", 
         "Sarko ( sarcophage ) ", 
-        "Elle doit son nom a la table en forme de sarcophage dans son ancienne version. La salle a ete renovee par Pascaloup pendant 5 ans (decede depuis)",        "9 Rue du Lunain \n   75014 Paris", 
+        "Egalement connue sous le nom de salle des Banquets. Elle doit son nom a la table en forme de sarcophage dans son ancienne version. La salle a ete renovee par Pascaloup pendant 5 ans (decede depuis)",        
+        "9 Rue du Lunain \n   75014 Paris", 
         " 21m", 
         "https://catacombes.xyz/Sarko/3D", 
         "Petit Montrouge", 
@@ -188,7 +189,8 @@ export const roomInfos = [
     [
         "Ossa", 
         "Ossa Arida",
-        "En 1982, ces plaques se trouvaient dans une galerie qui devait etre injectee pour isoler l'ossuaire officiel de la GRS. Des cataphiles les ont transportees de l'eglise Sainte-Anne, qui etait cachee dans le GRS. Quelques annees plus tard, ils ont propose de les restituer mais la mairie a refuse",        "Allee Samuel Beckett \n   75014 Paris", 
+        "L'expression 'Ossa Arida' se traduit du latin par 'Ossements desseches'. En 1982, ces plaques se trouvaient dans une galerie qui devait etre injectee pour isoler l'ossuaire officiel de la GRS. Des cataphiles les ont transportees de l'eglise Sainte-Anne, qui etait cachee dans le GRS. Quelques annees plus tard, ils ont propose de les restituer mais la mairie a refuse",        
+        "Allee Samuel Beckett \n   75014 Paris", 
         " 22m", 
         "https://catacombes.xyz/Ossa/3D", 
         "Petit Montrouge", 
@@ -201,7 +203,7 @@ export const roomInfos = [
     [
         "Philibert", 
         "Tombe de Philibert Aspairt",
-        "Tombeau de Philiber Aspairt, homme connu pour etre mort dans les catacombes de Paris le 3 novembre 1793 et dont le tombeau a ete construit a l'endroit où il a ete retrouve. On dit qu'il s'est perdu en cherchant le tresor des Chartreux. La Chartreuse",
+        "Philibert Aspairt etait portier à l'hôpital du Val-de-Grace pendant la Revolution française. Le 3 novembre 1793, il aurait emprunte un escalier situe dans la cour de l'hôpital, s'aventurant ainsi dans les carrieres souterraines de Paris. Les raisons precises de cette incursion demeurent incertaines, mais certaines hypotheses suggerent qu'il cherchait les caves du couvent des Chartreux, reputees pour abriter des reserves de liqueur. \nMalheureusement, Philibert Aspairt se perdit dans ce labyrinthe souterrain et ne reparut jamais. Ce n'est qu'en avril 1804, soit plus de dix ans plus tard, que son corps fut decouvert par une equipe chargee de cartographier les carrieres. Son identification fut rendue possible grace au trousseau de cles de l'hôpital retrouve à ses côtes. Il fut alors inhume sur place, et une stele commemorative fut erigee en sa memoire. \nCette stele, toujours visible aujourd'hui, porte l'inscription suivante :'À la memoire de Philibert Aspairt, perdu dans cette carriere le 3 novembre 1793, retrouve onze ans apres et inhume en la meme place le 30 avril 1804.' \nSituee dans une section des catacombes non accessible au public, sous la rue Henri Barbusse dans le 5e arrondissement de Paris, la tombe de Philibert Aspairt est devenue une figure emblematique parmi les cataphiles, qui le considerent comme leur saint patron et commemorent sa memoire chaque 3 novembre, date de sa disparition.",
         "1 Place Louis Marin \n   75005 Paris", 
         " 20m",
         "https://catacombes.xyz/Philibert/3D", 
@@ -215,7 +217,7 @@ export const roomInfos = [
     [
         "Brocolis", 
         "Galerie des Pornos",
-        "Petit couloir avec de belles fresques en mosaiques",
+        "Petit couloir avec de belles fresques en mosaiques realisee en partie par Zykos.",
         " -- ? -- ",
         " 20m", 
         "https://catacombes.xyz/Brocolis/3D", 
@@ -229,7 +231,7 @@ export const roomInfos = [
     [
         "Cabanis", 
         "Cabanis",
-        "Petite salle de repos avec de nombreuses fresques",
+        "La salle Cabanis est une salle situee dans les parties interdites des catacombes de Paris, sous la rue Cabanis dans le 14ᵉ arrondissement. Ce nom provient de sa localisation geographique. Au fil du temps, cette salle est devenue un lieu d'expression artistique pour les cataphiles, notamment les graffeurs.\n Au debut des annees 2000, l'artiste de street art Psyckoze Nolimit, accompagne d'autres graffeurs, a entrepris de restaurer la salle Cabanis. Ils ont nettoye l'espace, qui etait devenu une decharge, et ont realise une fresque murale. Cependant, cette œuvre a ete vandalisee peu apres, avec l'inscription 'Laissez vivre la pierre' gravee à la brosse metallique, refletant les tensions entre les partisans de la preservation des lieux dans leur etat naturel et ceux favorables à leur transformation artistique. \n",
         "11 Rue Cabanis \n   75014 Paris", 
         " 10m", 
         "https://catacombes.xyz/Cabanis/3D",
@@ -243,7 +245,7 @@ export const roomInfos = [
     [
         "Dragon", 
         "Dragon",
-        "Cette salle est situee non loin du sous-sol de la prison de la sante. Derniere renovation en 2013 qui a revele un bassin de chaux",
+        "La salle du Dragon est l'une des nombreuses salles amenagees par des cataphiles dans les parties interdites des catacombes de Paris. Elle tire son nom d'une sculpture murale representant un dragon chinois, situee à l'entree de cette petite salle. Cette salle est situee non loin du sous-sol de la prison de la sante. Derniere renovation en 2013 qui a revele un bassin de chaux",
         "3 Boulevard Saint-Jacques\n   75014 Paris", 
         " 8m", 
         "https://catacombes.xyz/Dragon/3D", 
@@ -271,7 +273,7 @@ export const roomInfos = [
     [
         "Chateau", 
         "Salle du Chateau",
-        "Petite salle (presque impossible de se tenir debout), salle amenagee durant l'ete 2000. Vous trouverez dans cette salle quatre gargouilles taillees dans la roche, des bancs circulaires en pierre autour d'une table en pierre. Ainsi qu'un château sculpte au fond de la salle",
+        "Petite salle (presque impossible de se tenir debout).La salle du Chateau est une petite salle situee dans les parties interdites des catacombes de Paris, sous la rue Sarrette, dans le quartier Sarrette du 14e arrondissement. Amenagee durant l'ete 2000 par un cataphile surnomme 'Gege', elle est devenue l'une des salles les plus prisees des cataphiles. Vous trouverez dans cette salle quatre gargouilles taillees dans la roche, des bancs circulaires en pierre autour d'une table en pierre. Ainsi qu'un chateau  medieval, au fond de la salle",
         "3 Rue Alphonse Daudet \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Chateau/3D", 
@@ -285,7 +287,7 @@ export const roomInfos = [
     [
         "Plage", 
         "La Plage",
-        "L'une des salles les plus celebres et les plus frequentees de la GRS. Il s'agit d'une ancienne cavite de carriere transformee en brasserie a la fin du 19eme siecle (Dumesnil / Louxor / l'Esperance). On peut y voir une grande fresque imitant la Grande Vague du peintre Hokusai",
+        "L'une des salles les plus celebres et les plus frequentees de la GRS. Elle doit son nom au sable qui recouvre son sol, vestige des tentatives de remblaiement effectuees par le passe. Historiquement, cette salle faisait partie de la brasserie de l'Esperance à la fin du XIXᵉ siecle. Elle a ete consolidee à deux reprises : une premiere fois par l'Inspection des Carrieres, puis par les brasseurs eux-memes, qui ont erige des murs maçonnes epais ainsi que des piliers de soutenement à chapeaux trapezoïdaux. La Plage est egalement reputee pour sa fresque murale representant 'La Grande Vague' du peintre japonais Hokusai, realisee par le collectif des Rats dans les annees 1980 et regulierement restauree depuis. Cette œuvre a contribue à la renommee de la salle, attirant l'attention de medias internationaux, notamment des televisions japonaises. ",
         "1 Rue du Douanier Rousseau \n   75014 Paris", 
         " 22m",
         "https://catacombes.xyz/Plage/3D",
@@ -327,7 +329,7 @@ export const roomInfos = [
     [
         "Cellier", 
         "Cellier",
-        "Salle utilisee comme sellerie au 19eme siecle. Elle a egalement servi de cave et de brasserie pour la marque de biere Gallia. D'abord separee du reseau, la connexion avec la GRS a ete realisee a la fin des annees 1980. En partie refaite depuis ce scan par 'Marathonien' en 2023.",
+        "Historiquement, cette salle a servi de cave et de brasserie pour la marque de biere Gallia au XIXᵉ siecle. Les brasseurs ont eux-memes renforce la structure en construisant des arches en beton et des piliers de soutenement similaires à ceux de la salle voisine, la Plage. D'abord separee du reseau, la connexion avec la GRS a ete realisee a la fin des annees 1980. En partie refaite depuis ce scan par 'Marathonien' en 2023. On peut y trouver des fresques colorees, dont certaines reproduisent des œuvres celebres telles que 'La Source' d'Ingres ou des peintures metaphysiques de Giorgio de Chirico.",
         "22 Rue du Pere Corentin \n   75014 Paris", 
         " 23m", 
         "https://catacombes.xyz/Cellier/3D", 
@@ -341,7 +343,7 @@ export const roomInfos = [
     [
         "Manoir", 
         "Manoir",
-        "Petite salle de repos avec des fresques fluorescentes",
+        "Petite salle de repos avec des fresques phosphorescentes.",
         "6 Rue Jean Dolent \n   75014 Paris", 
         " 16m", 
         "https://catacombes.xyz/Manoir/3D", 
@@ -355,7 +357,7 @@ export const roomInfos = [
     [
         "Atlas", 
         "Atlas", 
-        "Petite salle dans la partie inferieure du bâtiment. On peut y voir des sculptures et des rosettes, sculptees en 1993 et partiellement vendues en 1996",
+        "Petite salle dans la partie inferieure du batiment. On peut y voir des sculptures et des rosettes, sculptees en 1993 et partiellement vendues en 1996",
         "25 Rue Jean Dolent \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Atlas/3D", 
@@ -369,7 +371,7 @@ export const roomInfos = [
     [
         "Cube", 
         "Cube", 
-        "Cette salle s'enroule autour d'un puits dont la margelle a ete construite a la meme epoque. De tres gros blocs de pierre extraits de la carriere y sont restes, leur forme a donne le nom a la piece. On accede a la 'fontaine' par un escalier menant a un puisard surmonte d'une echelle. Celui-ci permettait de mesurer les fluctuations du niveau de la nappe phreatique",
+        "Cette salle s'enroule autour d'un puits dont la margelle a ete construite a la meme epoque. De tres gros blocs de pierre extraits de la carriere y sont restes, leur forme a donne le nom a la piece. On accede a la 'fontaine' par un escalier menant a un puisard surmonte d'une echelle. Celui-ci permettait de mesurer les fluctuations du niveau de la nappe phreatique grace à une echelle d'etiage. ",
         "20 Avenue de l'Observatoire \n   75006 Paris", 
         " 20m", 
         "https://catacombes.xyz/Cube/3D", 
@@ -383,7 +385,7 @@ export const roomInfos = [
     [
         "Cochon", 
         "Cochon - Salle des Fetes", 
-        "Salle rarement utilisee de la GRS, pres du carrefour des morts. Elle dispose d'une table en pierre et de bancs ainsi que de bars et d'une scene",
+        "La salle du Cochon, egalement connue sous le nom de 'Salle des Fetes', elle est situee sous le cimetiere du Montparnasse. Ce surnom provient d'un graffiti representant un cochon sur l'un des murs de la salle. Elle dispose d'une table en pierre et de bancs ainsi que de bars et d'une scene",
         "45–47 Rue Froidevaux \n   75014 Paris",
         " 20m", 
         "https://catacombes.xyz/Cochon/3D", 
@@ -411,7 +413,7 @@ export const roomInfos = [
     [
         "Faco", 
         "Faco",
-        "Ancien abri aerien datant de la seconde guerre mondiale destine aux civils. Plus haut de plafond que l'abri Montparnasse, il est peu frequente",
+        "L'abri Faco est un ancien abri anti-aerien. Son nom provient de l'ecole FACO (Faculte libre de droit, d'economie et de gestion) situee à la surface. Construit pendant la Seconde Guerre mondiale, cet abri etait destine à proteger la population civile des bombardements. Il pouvait accueillir jusqu'à 100 personnes et etait equipe de quatre toilettes. En cas de panne d'electricite, un generateur de secours pouvait etre actionne par des velos à pedales. ",
         "117 Rue de Notre-Dame des Champs \n   75006 Paris", 
         " 21m", 
         "https://catacombes.xyz/Faco/3D", 
@@ -425,7 +427,7 @@ export const roomInfos = [
     [
         "Rats", 
         "Bar des rats", 
-        "Cette salle etait reliee a la surface par un escalier en colimaçon dont la hauteur est indiquee comme etant de 17,525 metres (mesuree en pieds puis convertie en metres). Il y a une echelle graduee accessible par un escalier droit ainsi que de nombreuses fresques",
+        "Cette salle etait reliee a la surface par un escalier en colimaçon dont la hauteur est indiquee comme etant de 17,525 metres (mesuree en pieds puis convertie en metres). Il y a une echelle graduee accessible par un escalier droit. La salle est ornee de diverses œuvres de street art et de graffitis, refletant l'expression artistique des visiteurs clandestins. Parmi ces œuvres, on retrouve une reproduction de 'La Grande Vague' d'Hokusai, similaire à celle presente dans une autre salle des catacombes appelee 'La Plage'.",
         "69 Rue de Notre-Dame des Champs \n   75006 Paris",
         " 20m", 
         "https://catacombes.xyz/Rats/3D", 
@@ -453,7 +455,7 @@ export const roomInfos = [
     [
         "Fontaine", 
         "Fontaine des Chartreux", 
-        "Fontaine des Chartreux où l'on trouve une fontaine naturelle et un puits permettant de voir le niveau de la nappe phreatique. Une plaque rend hommage a Parsek depuis 2021. Fontaine realisee par l'inspecteur Hericart de Thury au debut du XIXe siecle, sous l'ancien domaine des Chartreux",
+        "La Fontaine des Chartreux est une installation souterraine remarquable situee dans les carrieres sous le jardin du Luxembourg à Paris. Conçue au debut du XIXᵉ siecle par Louis-etienne Hericart de Thury, alors inspecteur general des carrieres, elle avait pour fonction de drainer les eaux souterraines et de surveiller le niveau de la nappe phreatique.\n Cette fontaine se compose d'un petit bassin recueillant une source naturelle, dont l'eau, enrichie de mineraux, presente une teinte bleu-vert caracteristique. Un escalier maçonne permet d'acceder au bassin, et une cunette dirige l'eau vers un puits equipe d'une echelle d'etiage pour mesurer le niveau de l'eau. \nHistoriquement, le terrain sous lequel se trouve la fontaine appartenait aux moines chartreux, qui y avaient etabli leur couvent, la Chartreuse de Vauvert, au XIIIᵉ siecle. Bien que la fontaine ait ete construite bien apres le depart des moines, elle conserve le nom de 'Fontaine des Chartreux' en reference à eux. Une plaque rend hommage a Parsek depuis 2021.",
         "13 Rue Michelet \n   75006 Paris",
         " 21m", 
         "https://catacombes.xyz/Fontaine/3D",
@@ -495,7 +497,7 @@ export const roomInfos = [
     [
         "Promos", 
         "Galerie des Promos",
-        "Cette galerie ornee de fresque d'etudiant de l'Ecole des Mines est un des us et coutumes de leur bâpteme de promotion. Chaque annee (depuis 1992) des fresqueurs sont volontaires dans les promo et prepare un bout de mur en l'honneur de leur classe. Elle est en general terminee avant la St Barbe (4 decembre).",
+        "La Galerie des Promos est une section particuliere des catacombes de Paris, situee sous la rue de la Tombe-Issoire. Cette galerie est renommee pour les fresques murales realisees par les promotions successives des etudiants de l'ecole des Mines de Paris, une tradition qui perdure depuis plus de 30 ans ( 1992 ).\nHistoriquement, une entree discrete au sein de l'ecole des Mines, connue sous le nom d''escalier des Mines', permettait aux etudiants d'acceder directement aux carrieres souterraines. Bien que cet acces prive ne soit plus en usage pour des raisons de securite, l'Inspection generale des carrieres (IGC) autorise encore les etudiants à perpetuer cette tradition artistique. \nChaque annee, à l'occasion de la Sainte-Barbe, celebree le 4 decembre en l'honneur de la patronne des mineurs, les etudiants de premiere annee realisent une fresque representant leur promotion. Les premieres inscriptions remontent à plus d'un siecle, tandis que la premiere peinture murale date de 1988. Cette pratique temoigne de l'attachement des eleves à leur ecole et de leur volonte de laisser une empreinte durable dans ce lieu charge d'histoire. En plus de la realisation des fresques, les etudiants participent à la 'ceremonie du bapteme' dans les carrieres, marquant leur integration au sein de l'ecole. Cette ceremonie, qui se deroule egalement lors de la Sainte-Barbe, est presidee par une marraine de promotion, une personnalite choisie pour l'occasion. Parmi les marraines celebres figurent Juliette Greco, Segolene Royal, Anne Lauvergeon et Marion Cotillard.",
         "Rue de la Tombe Issoire \n   75014 Paris", 
         " 20m",
         "https://catacombes.xyz/Promos/3D", 

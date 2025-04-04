@@ -10,38 +10,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
     <script type="module">
-      import { roomInfos } from '../roomInfo.js';
-      const params = new URLSearchParams(window.location.search);
-      console.log(params[2])
-      const roomKey = params.get("room");
-
-      let roomKeyTest = params.get("room");
-
-
-      const pathParts = window.location.pathname.split('/');
-      if (pathParts[2]) {
-        roomKeyTest = pathParts[2];
-      } else {
-        // 2. Fallback : check dans les query params (si URL = /3D/?room=Guerinet)
+        import { roomInfos } from '../roomInfo.js';
         const params = new URLSearchParams(window.location.search);
-        roomKeyTest = params.get('room');
-      }
-      
-      console.log("Nom de la salle :", roomKeyTest);
-      
-      const room = roomInfos.find(info => info[0] === roomKey);
-      const infos_rooms = document.querySelector('.title_rooms')
-      const title_rooms = document.querySelector('.title_rooms h2')
-      const text_info_room = document.getElementById('text_info_room')
-      const close_infos_div = document.getElementById('close_infos_div')
-      const informations_small = document.querySelector('.informations_small')
-      const deepth_room = document.getElementById('deepth_room')
-      const location_room = document.getElementById('location_room')
-      const title_head = document.querySelector('head title')
-    
-      if (!room) {
-        document.body.innerHTML = "<h1>Salle introuvable</h1>";
-      } else {
+        console.log(params[2])
+        const roomKey = params.get("room");
+        const room = roomInfos.find(info => info[0] === roomKey);
+        const infos_rooms = document.querySelector('.title_rooms')
+        const title_rooms = document.querySelector('.title_rooms h2')
+        const text_info_room = document.getElementById('text_info_room')
+        const close_infos_div = document.getElementById('close_infos_div')
+        const informations_small = document.querySelector('.informations_small')
+        const deepth_room = document.getElementById('deepth_room')
+        const location_room = document.getElementById('location_room')
+        const title_head = document.querySelector('head title')
+        
+        if (!room) {
+            window.location.href = "/Lost/";
+        } else {
 
         close_infos_div.addEventListener('click', ()=>{
           infos_rooms.style.right = '-20vw'
@@ -57,7 +42,8 @@
 
         title_rooms.innerHTML = `${room[1]}`;
         title_head.innerHTML = `${room[1]} - Catacombes Interdites de Paris`
-        text_info_room.innerHTML = `${room[2]}`;
+        const text_rooms = room[2].replace(/\n/g, "<br>");
+        text_info_room.innerHTML = `${text_rooms}`;
         deepth_room.innerHTML = `${room[4]}`;
         // location_room.innerHTML = `${room[3]}`;
         const address = room[3].replace(/\n/g, "<br>");
@@ -165,10 +151,6 @@
     </nav>
 
     <div class="loading-bar"></div>
-
-    <button id="all_room_buttons" onclick="window.location.href='/displayRooms'">
-        ← Retour à la carte
-    </button>
 
     <div class="title_rooms">
         <h2 class="background_filter"></h2>

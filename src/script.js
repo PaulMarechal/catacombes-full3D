@@ -787,13 +787,13 @@ function makePanel() {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 				// window.location(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank')
 				if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
-					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`
+					window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
 				} else {
 					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
 				  }
 			} else {
 				// console.log(scene.children)
-				window.open(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/3D`, '_blank')
+				window.open(`./3D/?room=${seeRoomIn3d(roomNumber)}`, '_blank')
 			}
         }
     });
