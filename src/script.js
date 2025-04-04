@@ -10,7 +10,7 @@ import { gsap } from 'gsap'
 import TeleportVR from 'teleportvr'
 
 import TWEEN from '@tweenjs/tween.js'
-import ThreeMeshUI from 'three-mesh-ui';
+import * as ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
 import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
 
@@ -547,21 +547,27 @@ function init(nameRoom) {
         camera.position.set(-4.41, 1.46, -3.54);
         camera.rotation.set(0, 0, 0);
     });
-	vrControl = VRControl( renderer, scene );
-	updateMovement();
 
-	scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
+	document.addEventListener("DOMContentLoaded", (event) => {
+		console.log('ThreeMeshUI:', ThreeMeshUI);
+	
+		vrControl = VRControl( renderer, scene );
+		updateMovement();
+	
+		scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
+	
+		vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
+			
+			selectState = true;
+	
+		} );
+		vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
+	
+			selectState = false;
+	
+		} );
+	});
 
-	vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
-		
-		selectState = true;
-
-	} );
-	vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
-
-		selectState = false;
-
-	} );
 
 	//////////////////////////
 	// New VR Hand controller
@@ -975,7 +981,7 @@ function display_all_room_div(){
 			if(language_site.innerText === "FR"){
 				document.querySelector(".text_fr").style.display = "block"
 			} else if(language_site.innerText === "EN") {
-				alert("yo")
+				// alert("yo")
 				document.querySelector(".text_en").style.display = "block"
 			}
 		}, 150);

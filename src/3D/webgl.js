@@ -69,7 +69,7 @@ const loader = new GLTFLoader(loadingManager);
 loader.load(modelUrl, gltf => {
     const model = gltf.scene;
 
-    model.position.y = -1;
+    model.position.y = -1.5;
     model.traverse((child) => {
         if (child.isMesh) {
             child.geometry.computeVertexNormals(); 

@@ -50,6 +50,7 @@ body h1 {
     font-size: 2rem;
     font-weight: 900;
     text-transform: uppercase;
+    user-select: none;
 }
 
 body h1 > span {
@@ -1161,12 +1162,22 @@ ul{
     margin-top: 20px;
 }
 
+.link_nfc{
+    color: #3D3D3D;
+    text-decoration: none;
+}
+
 .card {
-    height: 557px;
-    width: 400px;
+    height: 32vw;
+    width: 23vw;
     transform-style: preserve-3d;
     perspective: 600px;
     transition: 0.5s;
+}
+
+.card_size_v3{
+    height: 29vw;
+    width: 20vw;
 }
 
 .card:hover .card-front_v1, 
@@ -1219,7 +1230,7 @@ ul{
 }
 
 .card-front_v3{
-    background-image: url(https://catacombes.xyz/tracts/assets/Cards/final/Guerinet/Face_1.png);
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/nfc/face_1.png);
 }
 
 #video_card_v1, #display_v2_video, 
@@ -1261,7 +1272,7 @@ ul{
 }
 
 .card-back_v3{
-    background-image: url(https://catacombes.xyz/tracts/assets/Cards/final/Guerinet/Face_2.png);
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/nfc/face_2.png);
 }
 
 .display_video_card{
