@@ -161,7 +161,7 @@
 .return_button_3D_page{
     position: fixed;
     background: #fff;
-    padding: 3px 17px;
+    padding: 3px 17px 3px 5px;
     top: 4vw;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
@@ -173,4 +173,8 @@
     z-index: 9;
     left: 1.5vw;
     border: none;
+}
+
+.return_button_3D_page{
+    margin-bottom: -4px;
 }
