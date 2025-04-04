@@ -397,7 +397,7 @@ ul{
     display: none;
 }
 
-.card_v1, .card_v2{
+.card_v1, .card_v2, .card_v3{
     width: 25%;
     transform-origin: center 150%;
     transform: rotate(0deg);
@@ -1022,7 +1022,8 @@ ul{
 
 .display_all_tracts_div, .text_explication_card, 
 .explication_video, .many_cards_display,.many_cards_display_v2, 
-.show_image_verso_main_div_v1, .show_image_verso_main_div_v2
+.show_image_verso_main_div_v1, .show_image_verso_main_div_v2, 
+.show_image_verso_main_div_v3
 {
     transition: opacity 1s ease-out;
 }
@@ -1041,7 +1042,8 @@ ul{
     position: absolute;
 }
 
-.show_image_verso_main_div_v1, .show_image_verso_main_div_v2{
+.show_image_verso_main_div_v1, .show_image_verso_main_div_v2, 
+.show_image_verso_main_div_v3{
     display:none;
     opacity: 0;
     text-align: center;
@@ -1168,16 +1170,19 @@ ul{
 }
 
 .card:hover .card-front_v1, 
-.card:hover .card-front_v2 {
+.card:hover .card-front_v2, 
+.card:hover .card-front_v3 {
     transform: rotateY(-180deg);
 }
 
 .card:hover .card-back_v1, 
-.card:hover .card-back_v2 {
+.card:hover .card-back_v2,
+.card:hover .card-back_v3 {
     transform: rotateY(0deg);
 }
 
-.many_cards_display, .many_cards_display_v2{
+.many_cards_display, .many_cards_display_v2, 
+.many_cards_display_v3{
     height: 40rem;
     width: 40rem;
     background-position: 50% 50%;
@@ -1190,7 +1195,8 @@ ul{
     position: relative;
 }
   
-.card-front_v1, .card-front_v2 {
+.card-front_v1, .card-front_v2, 
+.card-front_v3 {
     height: 100%;
     width: 100%;
     background-position: 50% 50%;
@@ -1212,12 +1218,17 @@ ul{
     background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
 }
 
-#video_card_v1, .display_v2_video{
+.card-front_v3{
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
+}
+
+#video_card_v1, #display_v2_video, 
+#video_card_v3{
     position: absolute;
     opacity: 0;
 }
 
-.display_v2_video{
+.display_v2_video, .display_v3_video{
     display: none;
 }
 
@@ -1228,7 +1239,7 @@ ul{
     margin-left: 5%;
 }
   
-.card-back_v1, .card-back_v2 {
+.card-back_v1, .card-back_v2, .card-back_v3 {
     height: 100%;
     width: 100%;
     background-position: 50% 50%;
@@ -1249,6 +1260,10 @@ ul{
     background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
 }
 
+.card-back_v3{
+    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
+}
+
 .display_video_card{
     grid-area: 1 / 7 / 2 / 10;
     display: inline-flex;
@@ -1263,7 +1278,8 @@ ul{
     padding: 5px 20px;
 }
 
-.close_card_viewer_v1, .close_card_viewer_v2{
+.close_card_viewer_v1, .close_card_viewer_v2, 
+.close_card_viewer_v3{
     position: absolute;
     z-index: 3; 
     top: 0; 
@@ -1699,14 +1715,16 @@ ul{
         grid-area: 3 / 1 / 8 / 11; 
     }
 
-    .card-front_v1, .card-front_v2{
+    .card-front_v1, .card-front_v2, 
+    .card-front_v3{
         height: 80%; 
         width: 80%;
         margin-top: 2rem;
         margin-left: 10px;
     }
 
-    .close_card_viewer_v1, .close_card_viewer_v2{
+    .close_card_viewer_v1, .close_card_viewer_v2, 
+    .close_card_viewer_v3{
         right: 30px;
     }
 

@@ -3,8 +3,10 @@ const display_all_tracts_div = document.querySelector(".display_all_tracts_div")
 const explication_video = document.querySelector(".explication_video")
 const display_v1_video = document.querySelector(".display_v1_video")
 const display_v2_video = document.querySelector(".display_v2_video")
+const display_v3_video = document.querySelector(".display_v3_video")
 const video_card_v1 = document.querySelector("#video_card_v1")
 const video_card_v2 = document.querySelector("#video_card_v2")
+const video_card_v3 = document.querySelector("#video_card_v3")
 const change_source_video = document.querySelector("#change_source_video")
 
 function setupCardClickHandlers(version) {
@@ -20,12 +22,17 @@ function setupCardClickHandlers(version) {
 
         display_v1_video.style.opacity = 0;
         display_v2_video.style.opacity = 0;
+        display_v3_video.style.opacity = 0;
 
         video_card_v1.style.opacity = 0;
         video_card_v2.style.opacity = 0;
+        video_card_v3.style.opacity = 0;
 
         video_card_v1.style.display = "none";
         video_card_v2.style.display = "none";
+        video_card_v3.style.display = "none";
+
+        close_card_viewer.style.display = "block"
 
         setTimeout(() => {
             text_explication_card.style.display = "none";
@@ -36,6 +43,7 @@ function setupCardClickHandlers(version) {
             show_image_verso_main_div.style.display = "block";
 
             many_cards_display.style.display = "block";
+            
 
             setTimeout(() => {
                 many_cards_display.style.opacity = 1;
@@ -103,11 +111,13 @@ display_v2_video.addEventListener('click', () => {
     toggleVideos(video_card_v2, video_card_v1, display_v1_video, display_v2_video);
 });
 
+display_v3_video.addEventListener('click', () => {
+    toggleVideos(video_card_v3, video_card_v2, display_v2_video, display_v3_video);
+});
+
+['v1', 'v2', 'v3'].forEach(version => setupCardClickHandlers(version));
 
 
-
-setupCardClickHandlers('v1');
-setupCardClickHandlers('v2');
 
 console.log("Make with 🍔 by Paul Maréchal")
 console.log("Cards designed by Paloma & Paul, coded in Paris by DevXR")
