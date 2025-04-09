@@ -353,7 +353,6 @@ function init(nameRoom) {
 		function ( gltf ) {
 			gltf.scene.scale.set(1, 1, 1)
 			gltf.scene.position.set(-2, 0, -1.3)
-			
 			gltf.scene.rotation.set(0, -0.31, 0)
 
 			scene.add( gltf.scene );
