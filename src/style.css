@@ -1013,10 +1013,31 @@ ul{
 
 .text_explication_card{
     text-align: start;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     padding-bottom: 0.7rem;
-    padding-bottom: 1.5rem; 
+    padding-bottom: 1rem; 
     transition: opacity 1s ease-out;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+ul.text_explication_card {
+    list-style-type: disc;       
+    list-style-position: outside; 
+    padding-left: 1.5em;         
+    overflow-y: none;
+}
+
+ul.text_explication_card li{
+    overflow-y: none;
+    list-style: auto;
+    padding-bottom: 0;
+}
+
+.textCard{
+    text-align: -webkit-left;
+    padding: 8px;;
+    font-size: 1.3rem;
+    scrollbar-color: #d1cece transparent;
 }
 
 .display_all_tracts_div{display: inline-flex;}
