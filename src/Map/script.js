@@ -227,8 +227,7 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
             mouse.classList.add("custom-cursor--link")
         
             const point = document.getElementById(`${classe[1]}`)
-            point.innerHTML = "🔴"
-
+            if(point){point.innerHTML = "🔴"}
         });
     
         parentDivPrez.addEventListener('mouseout', function() {
@@ -237,14 +236,14 @@ function createParentDivPrez(roomNumber, numberToDisplayGrid) {
             mouse.classList.remove("custom-cursor--link")
 
             const point = document.getElementById(`${classe[1]}`)
-            point.innerHTML = "📌"
+            if(point){point.innerHTML = "📌"}
+            
         });
 
         parentDivPrez.addEventListener('click', function(event) {
-            var classe = this.classList;
-        
-            const point = document.getElementById(`${classe[1]}`)
-            window.open(`https://catacombes.xyz/${classe[1]}/3D`, '_blank')
+            var classe = this.classList[1];
+            // const point = document.getElementById(`${classe}`)
+            window.location.href = `../3D/?room=${classe}`
         });
     }
 
