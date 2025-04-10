@@ -3,6 +3,7 @@
 *{
     cursor: none!important;
 }
+
 .canvas_rooms{
     width: 100%;
     height: 100vh;
@@ -25,12 +26,17 @@
 .loadingPercent, .title_rooms{
     z-index: 99999; 
     color: #ffffff; 
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', cursive!important;
     text-transform: uppercase;
     margin:0;
     position: fixed; 
     right: 3%;
     transition: transform 3s ease-out;
+}
+
+.loadingPercent{
+    font-weight: 600 !important;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .title_rooms{

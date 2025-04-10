@@ -30,6 +30,7 @@ loadingPercent.className = "loadingPercent";
 loadingPercent.innerHTML = "1%";
 loadingPercent.style.color = "#fff";
 loadingPercent.style.textAlign = "center";
+loadingPercent.style.textAlign = "center";
 document.body.appendChild(loadingPercent);
 
 const loadingManager = new THREE.LoadingManager(() => {
