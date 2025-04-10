@@ -17,7 +17,11 @@ video_card_v3.addEventListener("loadeddata", (event) => {
     }, 900);
 
     setTimeout(() => {
-        exemple_nfc_tag_card.style.top = '-60vh'
+        exemple_nfc_tag_card.style.top = '-70vh'
+        setTimeout(() => {
+            exemple_nfc_tag_card.style.display = 'none'
+            
+        }, 600);
     }, 5000);
 });
 

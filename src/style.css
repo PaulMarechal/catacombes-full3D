@@ -191,6 +191,12 @@ body input:checked ~ nav > ul > li {
     border: none; 
     padding-left: 7px;
     z-index: 1;
+    background: rgb(255 255 255 / 49%);
+    box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .searchContainer {
@@ -984,9 +990,9 @@ ul{
 .explication_cards_video_div{
     grid-area: 1 / 6 / 4 / 11;
     position: relative;
-    margin: auto;
+    margin: 3% auto;
     height: 61vh;
-    width: 36%;
+    width: 50%;
 }
 
 .explication_text_card_second{
@@ -1039,8 +1045,13 @@ ul.text_explication_card li{
 .textCard{
     text-align: -webkit-left;
     padding: 8px;
-    font-size: 1.6vw;
+    font-size: 1.55vw;
     scrollbar-color: #d1cece transparent;
+    list-style: auto;
+}
+
+ul.textCard{
+    padding-left: 3vh;
 }
 
 .display_all_tracts_div{display: inline-flex; margin: 2vh 0;}
@@ -1307,7 +1318,7 @@ ul.text_explication_card li{
 .display_video_card{
     grid-area: 1 / 7 / 2 / 10;
     position: relative;
-    margin: 5vh auto 0 auto;
+    margin: -2vh auto 0 auto;
     display: inline-flex;
     height: fit-content;
 }
