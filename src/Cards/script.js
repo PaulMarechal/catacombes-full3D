@@ -8,9 +8,20 @@ const video_card_v1 = document.querySelector("#video_card_v1")
 const video_card_v2 = document.querySelector("#video_card_v2")
 const video_card_v3 = document.querySelector("#video_card_v3")
 const change_source_video = document.querySelector("#change_source_video")
+const exemple_nfc_tag_card = document.querySelector('.exemple_nfc_tag_card')
+
+video_card_v3.addEventListener("loadeddata", (event) => {
+    exemple_nfc_tag_card.style.display = 'block'
+    setTimeout(() => {
+        exemple_nfc_tag_card.style.top = '-30vh'
+    }, 900);
+
+    setTimeout(() => {
+        exemple_nfc_tag_card.style.top = '-60vh'
+    }, 5000);
+});
 
 
-// video_card_v3 top: 0 left: 0
 function displayVideoTract(version){
     const explication_video = document.getElementsByClassName('explication_video')
     const video_version_id = document.getElementById(`video_card_${version}`)
@@ -23,6 +34,19 @@ function displayVideoTract(version){
     });
 
     setTimeout(() => {   
+        if(version === 'v3'){
+            video_card_v3.addEventListener("loadeddata", (event) => {
+                exemple_nfc_tag_card.style.display = 'block'
+                setTimeout(() => {
+                    exemple_nfc_tag_card.style.top = '-30vh'
+                }, 900);
+            
+                setTimeout(() => {
+                    exemple_nfc_tag_card.style.top = '-60vh'
+                }, 5000);
+            });
+        }
+        
         video_version_id.style.display = 'block'
         video_version_id.style.opacity = '1'
     }, 560);
@@ -98,12 +122,15 @@ function setupCardClickHandlers(version) {
             text_explication_card.style.display = "block";
             display_all_tracts_div.style.display = "inline-flex";
             explication_video.style.display = "block";
-            video_card_v2.style.position = "relative";
+            video_card_v2.style.position = "absolute";
             video_card_v1.style.position = "absolute";
             display_v2_video.style.opacity = 0;
             video_card_v1.style.opacity = 0;
+            video_card_v2.style.opacity = 0;
+            video_card_v3.style.opacity = 1;
 
-            video_card_v2.style.display = "block";
+
+            video_card_v3.style.display = "block";
         }, 500);
 
         setTimeout(() => {
@@ -114,6 +141,8 @@ function setupCardClickHandlers(version) {
             text_explication_card.style.opacity = 1;
             display_all_tracts_div.style.opacity = 1;
             display_v1_video.style.opacity = 1;
+            display_v2_video.style.opacity = 1;
+            display_v3_video.style.opacity = 1;
             video_card_v2.style.opacity = 1;
         }, 1000);
     });
@@ -143,7 +172,7 @@ function toggleVideos(showCard, hideCard, showButton, hideButton) {
 //     toggleVideos(video_card_v3, video_card_v2, display_v2_video, display_v3_video);
 // });
 
-// ['v1', 'v2', 'v3'].forEach(version => setupCardClickHandlers(version));
+['v1', 'v2', 'v3'].forEach(version => setupCardClickHandlers(version));
 
 
 

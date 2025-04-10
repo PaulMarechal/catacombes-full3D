@@ -977,25 +977,26 @@ ul{
 .explication_cards_text_div{
     grid-area: 1 / 1 / 4 / 5;
     margin: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 2%;
+    margin-bottom: 0%;
 }
 
 .explication_cards_video_div{
     grid-area: 1 / 6 / 4 / 11;
     position: relative;
     margin: auto;
-    height: 80vh;
-    width: 30%;
+    height: 61vh;
+    width: 36%;
 }
 
 .explication_text_card_second{
     background: #fff;
-    width: 85%;
+    width: 100%;
     height: 95%;
     border-radius: 25px;
     padding: 20px 30px;
-    margin-left: 13%;
+    margin-left: 5%;
+    margin-top: 2%;
     transition: width 1s ease-out, height 1s ease-out;
 }
 
@@ -1038,7 +1039,7 @@ ul.text_explication_card li{
 .textCard{
     text-align: -webkit-left;
     padding: 8px;
-    font-size: 1.8rem;
+    font-size: 1.6vw;
     scrollbar-color: #d1cece transparent;
 }
 
@@ -1109,7 +1110,7 @@ ul.text_explication_card li{
 .parent_text_explications_cards, .parent_lost_page {
     display: grid;
     grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     margin: 3rem 1rem 1rem 1rem; 
     overflow-y: revert; 
     cursor: none; 
@@ -1196,11 +1197,23 @@ ul.text_explication_card li{
     transform-style: preserve-3d;
     perspective: 600px;
     transition: 0.5s;
+    margin: 7%;
 }
 
 .card_size_v3{
     height: 29vw;
     width: 20vw;
+    margin: 7%;
+}
+
+.exemple_nfc_tag_card{
+    display: none;
+    position: absolute;
+    top: -70vh;
+    left: 0;
+    width: 30vh;
+    margin: 0 3.5vh;
+    transition: top 1s ease-out;
 }
 
 .card:hover .card-front_v1, 
@@ -1256,22 +1269,14 @@ ul.text_explication_card li{
     background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/nfc/face_1.png);
 }
 
-#video_card_v1, #display_v2_video, 
-#video_card_v3{
+#video_card_v1, #video_card_v2{
     position: absolute;
     opacity: 0;
 }
 
 #video_card_v3{
     top: 0;
-    left: 0; 
-}
-
-#video_card_v2{
-    border-radius: 6vh;
-    position: relative;
-    width: 90%;
-    margin-left: 5%;
+    margin: 3vh 2vh;
 }
   
 .card-back_v1, .card-back_v2, .card-back_v3 {
@@ -1320,7 +1325,7 @@ ul.text_explication_card li{
 .close_card_viewer_v3{
     position: absolute;
     z-index: 3; 
-    top: 0; 
+    top: -3vh; 
     right: 0; 
     transform: translate(120%, -81%);
 }
@@ -1715,6 +1720,7 @@ ul.text_explication_card li{
         grid-area: 1 / 1 / 4 / 11;
         margin: unset;
         padding: 10px;
+
     }
 
     .explication_text_card_second{
