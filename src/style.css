@@ -985,6 +985,8 @@ ul{
     grid-area: 1 / 6 / 4 / 11;
     position: relative;
     margin: auto;
+    height: 80vh;
+    width: 30%;
 }
 
 .explication_text_card_second{
@@ -1035,12 +1037,12 @@ ul.text_explication_card li{
 
 .textCard{
     text-align: -webkit-left;
-    padding: 8px;;
-    font-size: 1.3rem;
+    padding: 8px;
+    font-size: 1.8rem;
     scrollbar-color: #d1cece transparent;
 }
 
-.display_all_tracts_div{display: inline-flex;}
+.display_all_tracts_div{display: inline-flex; margin: 2vh 0;}
 
 .display_all_tracts_div, .text_explication_card, 
 .explication_video, .many_cards_display,.many_cards_display_v2, 
@@ -1260,8 +1262,9 @@ ul.text_explication_card li{
     opacity: 0;
 }
 
-.display_v2_video, .display_v3_video{
-    display: none;
+#video_card_v3{
+    top: 0;
+    left: 0; 
 }
 
 #video_card_v2{
@@ -1298,16 +1301,19 @@ ul.text_explication_card li{
 
 .display_video_card{
     grid-area: 1 / 7 / 2 / 10;
+    position: relative;
+    margin: 5vh auto 0 auto;
     display: inline-flex;
-    margin: -6vh auto;
+    height: fit-content;
 }
 
 .display_video_card h3{
     background-color: #fff;
     border-radius: 10px;
-    margin: 8vh 2vh 2vh 2vh;
     height: fit-content;
     padding: 5px 20px;
+    width: fit-content;
+    margin: 1vh;
 }
 
 .close_card_viewer_v1, .close_card_viewer_v2, 

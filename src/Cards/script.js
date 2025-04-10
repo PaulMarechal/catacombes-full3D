@@ -9,6 +9,34 @@ const video_card_v2 = document.querySelector("#video_card_v2")
 const video_card_v3 = document.querySelector("#video_card_v3")
 const change_source_video = document.querySelector("#change_source_video")
 
+
+// video_card_v3 top: 0 left: 0
+function displayVideoTract(version){
+    const explication_video = document.getElementsByClassName('explication_video')
+    const video_version_id = document.getElementById(`video_card_${version}`)
+    
+    Array.from(explication_video).forEach(video => {
+        video.style.opacity = 0
+        setTimeout(() => {
+            video.style.display = 'none'
+        }, 510);
+    });
+
+    setTimeout(() => {   
+        video_version_id.style.display = 'block'
+        video_version_id.style.opacity = '1'
+    }, 560);
+}
+
+function eventListenerVideo(version){
+    document.querySelector(`.display_${version}_video`).addEventListener('click', () => {
+        displayVideoTract(version);
+    });
+}
+
+['v1', 'v2', 'v3'].forEach(version => {eventListenerVideo(version)});
+
+
 function setupCardClickHandlers(version) {
     const div_display_card_main = document.querySelector(`#display_card_${version}`);
     const show_image_verso_main_div = document.querySelector(`.show_image_verso_main_div_${version}`);
@@ -103,19 +131,19 @@ function toggleVideos(showCard, hideCard, showButton, hideButton) {
     showButton.style.opacity = "1";
 }
 
-display_v1_video.addEventListener('click', () => {
-    toggleVideos(video_card_v1, video_card_v2, display_v2_video, display_v1_video);
-});
+// display_v1_video.addEventListener('click', () => {
+//     toggleVideos(video_card_v1, video_card_v2, display_v2_video, display_v1_video);
+// });
 
-display_v2_video.addEventListener('click', () => {
-    toggleVideos(video_card_v2, video_card_v1, display_v1_video, display_v2_video);
-});
+// display_v2_video.addEventListener('click', () => {
+//     toggleVideos(video_card_v2, video_card_v1, display_v1_video, display_v2_video);
+// });
 
-display_v3_video.addEventListener('click', () => {
-    toggleVideos(video_card_v3, video_card_v2, display_v2_video, display_v3_video);
-});
+// display_v3_video.addEventListener('click', () => {
+//     toggleVideos(video_card_v3, video_card_v2, display_v2_video, display_v3_video);
+// });
 
-['v1', 'v2', 'v3'].forEach(version => setupCardClickHandlers(version));
+// ['v1', 'v2', 'v3'].forEach(version => setupCardClickHandlers(version));
 
 
 
