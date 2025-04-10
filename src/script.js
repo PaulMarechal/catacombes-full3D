@@ -313,7 +313,7 @@ function init(nameRoom) {
 			}, 600)
 
 			const tween = new TWEEN.Tween(camera.position)
-			.to({ x: -5.8, y: 1.45, z: -4.1 }, 7000) 
+			.to({ x: -5.8, y: 1.45, z: -2.3 }, 7000) 
 			.easing(TWEEN.Easing.Cubic.InOut)
 			.start();
 		  
