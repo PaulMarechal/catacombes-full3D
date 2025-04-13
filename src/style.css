@@ -1737,25 +1737,33 @@ ul.textCard{
     .explication_text_card_second{
         width: 100%;
         padding: 20px 0; 
-        height: 87%;
+        height: 68vh;
         margin-left: unset;
     }
 
-    .text_explication_card{
-        font-size: 6vw; 
+    .text_explication_card, .textCard{
+        font-size: 4.5vw;
         /* padding-bottom: -4rem; */
     }
 
     .div_display_card_main{
-        height: fit-content;
-        display: inline-flex;
+        /* height: fit-content;
         margin-left: 1rem;
         margin-top: 0.6rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.8rem; */
+        height: fit-content;
+        /* display: inline-flex; */
+        min-height: 5vh;
+        margin: auto;
+    }
+
+    .div_display_card_main h3{
+        font-size: 5vw;
     }
 
     .display_all_tracts_div{
-        margin-top: -0.5rem;
+        display: inline-flex;
+        margin: -2vh 5vh 0 5vh;
     }
 
     .tract_card_V1{
@@ -1772,8 +1780,8 @@ ul.textCard{
 
     .card-front_v1, .card-front_v2, 
     .card-front_v3{
-        height: 80%; 
-        width: 80%;
+        height: 50vh; 
+        width: 300%;
         margin-top: 2rem;
         margin-left: 10px;
     }

@@ -548,7 +548,7 @@ function init(nameRoom) {
     });
 
 	document.addEventListener("DOMContentLoaded", (event) => {
-		console.log('ThreeMeshUI:', ThreeMeshUI);
+		// console.log('ThreeMeshUI:', ThreeMeshUI);
 	
 		vrControl = VRControl( renderer, scene );
 		updateMovement();
