@@ -794,7 +794,7 @@ function makePanel() {
 				if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
 					window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
 				} else {
-					window.location.href = `https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`
+					window.location.href = `https://catacombes.xyz/AR/?room=${seeRoomIn3d(roomNumber)}`
 				  }
 			} else {
 				// console.log(scene.children)

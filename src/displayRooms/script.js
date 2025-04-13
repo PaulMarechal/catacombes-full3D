@@ -92,9 +92,9 @@ function addElement(roomNumber, language) {
     location.textContent = `Location : \n ${NameRooms.roomInfos[roomNumber][3]}\n\n Depth: ${NameRooms.roomInfos[roomNumber][4]}`
     newDiv.appendChild(location);
 
-    addButtonDiv("a", "buttonVR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/3D`, "VR", newDiv)
+    addButtonDiv("a", "buttonVR", `https://catacombes.xyz/3D/?room=${NameRooms.roomInfos[roomNumber][0]}`, "VR", newDiv)
     addButtonDiv("a", "button3D", `/3D/?room=${NameRooms.roomInfos[roomNumber][0]}`, "3D", newDiv)
-    addButtonDiv("a", "buttonAR", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`, "AR", newDiv)
+    addButtonDiv("a", "buttonAR", `https://catacombes.xyz/AR/?room=${NameRooms.roomInfos[roomNumber][0]}`, "AR", newDiv)
     
 
     var currentDiv = document.querySelector('.displayRooms');

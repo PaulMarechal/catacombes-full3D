@@ -18,3 +18,5 @@ if (!room) {
         }, 500);
     });
 }
+
+console.log("Developed with 🍔 by Paul Maréchal")

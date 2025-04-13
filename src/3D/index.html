@@ -29,7 +29,6 @@
     <script type="module">
         import { roomInfos } from '../roomInfo.js';
         const params = new URLSearchParams(window.location.search);
-        console.log(params[2])
         const roomKey = params.get("room");
         const room = roomInfos.find(info => info[0] === roomKey);
         const infos_rooms = document.querySelector('.title_rooms')
@@ -75,7 +74,7 @@
         // Définir l’URL dans une variable globale
         window.MODEL_URL = `https://catacombes.xyz/${room[0]}/${room[0]}.glb`;
         
-        console.log(room)
+        // console.log(room)
 
         //  https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR
         
