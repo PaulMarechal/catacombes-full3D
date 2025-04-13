@@ -21,7 +21,7 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
     if(idElem === "buttonAR"){
         elemCreated.setAttribute("title", "Augmented Reality for phones");
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-            elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
+            elemCreated.setAttribute("href", `/AR/?room=${NameRooms.roomInfos[roomNumber][0]}`)
         } else {
             elemCreated.style.background = "#00000050"
             elemCreated.setAttribute("href", "#");
@@ -34,7 +34,7 @@ function addButtonDiv(elem, idElem, link, textButton, newDiv){
         if ('xr' in navigator) {
             navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
                 if (supported) {
-                    elemCreated.setAttribute("href", `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/AR`)
+                    elemCreated.setAttribute("href", `/AR/?room=${NameRooms.roomInfos[roomNumber][0]}`)
                 } else {
                     elemCreated.setAttribute('href', '#');
                     elemCreated.style.backgroundColor = "#00000050" 

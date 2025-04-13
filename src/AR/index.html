@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+            <meta charset="UTF-8" />
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTC7BHQP50"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JTC7BHQP50');
+            </script>
+            <!-- End Google Tag (gtag.js) -->
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WDSHGJL');</script>
+            <!-- End Google Tag Manager -->
+            <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+            <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle, anschluss, cochon, salle des fetes, bureau du centre, fontaine des chartreux, faco, bar des rats, bocal, cabi-bis, la plage, soleil, cinema, tracts catacombes, track catas">    
+            <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
+            <meta itemprop="name" content="Découverte des Catacombes Interdites sous Paris">
+            <meta itemprop="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
+            <meta property="og:url" content="https://catacombes.xyz">
+            <meta property="og:title" content="Découverte des Catacombes interdites en 3D | VR | AR ">
+            <meta property="og:description" content="Découvrir les catacombes interdites sous Paris en realité augmenté et virtuelle">
+            <meta property="og:image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+            <meta itemprop="image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+            <meta name="apple-mobile-web-app-title" content="Catacombes interdites">
+            <meta name="application-name" content="Visitez les catacombes interdites en 3D | VR | AR">
+            <meta name="author" content="Paul Marechal">
+            <link rel="alternate" hreflang="fr" href="https://catacombes.xyz">
+            <link rel="apple-touch-icon" sizes="180x180" href="https://paulmarechal.xyz/test/assets/images/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="https://paulmarechal.xyz/test/assets/images/catacombes-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="https://paulmarechal.xyz/test/assets/images/catacombes-16x16.png">
+            <link rel="manifest" href="https://catacombes.xyz/site.webmanifest">
+            <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+            <meta name="msapplication-TileColor" content="#da532c">
+            <meta name="theme-color" content="#000000">
+            <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+            <link rel="stylesheet" href="../style.css">
+            <link rel="stylesheet" href="./style.css">
+            <script type="module" src="./script.js"></script>
+    </head>
+    <body>
+        <!--
+        Site made by DevXR - devxr.fr
+        © 2025 DevXR. All rights reserved. 
+        Unauthorized duplication or distribution is prohibited.
+        -->
+        <model-viewer
+            id="arViewer"
+            shadow-intensity="1" 
+            ar
+            ar-modes="scene-viewer webxr quick-look"
+            disable-tap
+            disable-pan
+            environment-image="neutral"
+            tone-mapping="neutral"
+            touch-action="pan-y" 
+            exposure="1"
+            alt=""
+            scale="1 1 1"
+            camera-controls
+            interaction-prompt="none"
+            interaction-policy="allow-when-focused"
+            ar-scale="auto"
+            touch-action="pan-y"
+            camera-orbit="-56.62deg 71.91deg 1m"
+            camera-target="0.05m 1.706m -0.09032m"
+            min-camera-orbit="auto auto 0.5m"
+            max-camera-orbit="auto auto 5m"
+        >
+            <div class="loading-spinner-container" id="loaderContainer">
+                <div class="loading-spinner"></div>
+            </div>
+          
+            <button slot="ar-button" class="ar_button">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cube-3d-sphere"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 17.6l-2 -1.1v-2.5" /><path d="M4 10v-2.5l2 -1.1" /><path d="M10 4.1l2 -1.1l2 1.1" /><path d="M18 6.4l2 1.1v2.5" /><path d="M20 14v2.5l-2 1.12" /><path d="M14 19.9l-2 1.1l-2 -1.1" /><path d="M12 12l2 -1.1" /><path d="M18 8.6l2 -1.1" /><path d="M12 12l0 2.5" /><path d="M12 18.5l0 2.5" /><path d="M12 12l-2 -1.12" /><path d="M6 8.6l-2 -1.1" /></svg>
+                Voir en AR
+            </button>
+
+            <button slot="ar-failure">AR non supporté</button>
+        </model-viewer>
+    </body>
+</html>
