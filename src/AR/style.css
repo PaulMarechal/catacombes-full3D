@@ -87,7 +87,7 @@ model-viewer {
     position: fixed;
     background: #fff;
     padding: 3px 17px 3px 5px;
-    top: 1vw;
+    top: 2vw;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
     font-size: 5vw;
@@ -96,8 +96,9 @@ model-viewer {
     cursor: pointer;
     transition: right .5s ease-out;
     z-index: 9;
-    left: 1.5vw;
+    left: 2.5vw;
     border: none;
+    color: #333333!important;
 }
 
 .return_button_3D_page svg{
