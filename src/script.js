@@ -915,7 +915,7 @@ function click_on_others_rooms() {
 						gltf.scale = 0.2
 						gltf.scene.name = "roomName"
 						gltf.scene.scale.set(0.1, 0.1, 0.1)
-						gltf.scene.position.set(-0.5, 1, -2)
+						gltf.scene.position.set(-1.99, 1.05, -1.29)
 						gltf.scene.rotation.y = 0.005
 						scene.add(gltf.scene)
 						TextPanel.TextPanel(scene, room_number)
@@ -980,7 +980,6 @@ function display_all_room_div(){
 			if(language_site.innerText === "FR"){
 				document.querySelector(".text_fr").style.display = "block"
 			} else if(language_site.innerText === "EN") {
-				// alert("yo")
 				document.querySelector(".text_en").style.display = "block"
 			}
 		}, 150);
