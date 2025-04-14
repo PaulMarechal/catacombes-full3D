@@ -82,6 +82,27 @@ model-viewer {
     pointer-events: none;
 }
 
+/* Button back */
+.return_button_3D_page{
+    position: fixed;
+    background: #fff;
+    padding: 3px 17px 3px 5px;
+    top: 1vw;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5vw;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+    transition: right .5s ease-out;
+    z-index: 9;
+    left: 1.5vw;
+    border: none;
+}
+
+.return_button_3D_page svg{
+    margin-bottom: -5px;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

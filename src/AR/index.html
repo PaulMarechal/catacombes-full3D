@@ -42,8 +42,8 @@
             <meta name="msapplication-TileColor" content="#da532c">
             <meta name="theme-color" content="#000000">
             <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-            <link rel="stylesheet" href="../style.css">
-            <link rel="stylesheet" href="./style.css">
+            <link rel="stylesheet" href="../style.css?v=1.2">
+            <link rel="stylesheet" href="./style.css?v=1.2">
             <script type="module" src="./script.js"></script>
     </head>
     <body>
@@ -52,6 +52,11 @@
         © 2025 DevXR. All rights reserved. 
         Unauthorized duplication or distribution is prohibited.
         -->
+        <button class="return_button_3D_page" onclick="history.back()">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-compact-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+            Retour
+        </button>
+
         <model-viewer
             id="arViewer"
             shadow-intensity="1" 
@@ -59,7 +64,7 @@
             ar-modes="scene-viewer webxr quick-look"
             disable-tap
             disable-pan
-            environment-image="neutral"
+            environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
             tone-mapping="neutral"
             touch-action="pan-y" 
             exposure="1"
@@ -70,7 +75,7 @@
             interaction-policy="allow-when-focused"
             ar-scale="auto"
             touch-action="pan-y"
-            camera-orbit="-56.62deg 71.91deg 1m"
+            camera-orbit="92.28deg 85.83deg 19.49m"
             camera-target="0.05m 1.706m -0.09032m"
             min-camera-orbit="auto auto 0.5m"
             max-camera-orbit="auto auto 5m"
