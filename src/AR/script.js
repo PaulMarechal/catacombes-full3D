@@ -14,7 +14,7 @@ if (!room) {
             loader.classList.add("fade-out");
 
             const arButton = viewer.querySelector(".ar_button");
-            // if (arButton) arButton.click();
+            if (arButton) arButton.click();
         }, 500);
     });
 }
