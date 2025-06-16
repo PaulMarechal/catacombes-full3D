@@ -106,6 +106,7 @@
         
     </nav>  
 
+    <!--
     <a class="main_title_link" href="https://catacombes.xyz">
         <div class="liquidGlass-wrapper button">
             <div class="liquidGlass-effect"></div>
@@ -116,7 +117,6 @@
             </div>
         </div>
     </a>
-    
     <div class="liquidGlass-wrapper menu main_menu_header" style="z-index: 999;">
         <div class="liquidGlass-effect"></div>
         <div class="liquidGlass-tint"></div>
@@ -129,23 +129,69 @@
             <div><a href="../Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a></div>
         </div>
     </div>
+    
+-->
+    <div class="parent_header_menu">
+        <div class="logo_div_header_menu">
+            <h1 title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
+        </div>
+        <div class="salles_div_header_menu">
+            <a href="../displayRooms/" class="link_style_header_menu" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
+        </div>
+        <div class="histoire_div_header_menu">
+            <a href="../Histoire/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Histoire</a>
+        </div>
+        <div class="images_div_header_menu">
+            <a href="../Images/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Images</a>
+        </div>
+        <div class="plan_div_header_menu">
+            <a href="../Map/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">Plan</a>
+        </div>
+        <div class="tracts_div_header_menu">
+            <a href="../Cards/" class="link_style_header_menu" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+        </div>
+        <div class="language_button_header_menu_div">
+        </div>
+    </div>
 
-    <div class="glassContainer">
-  <button type="button" class="glassBtn">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14"/>
-      <path d="M12 5v14"/>
-    </svg>
-  </button>
-</div>
+    <div class="display_infos_menu">
+        <div>
+            <p>Découvrez les salles des catacombes avec leur histoire, un plan de niveau et la salle visible en 3D.</p>
+        </div>
+        <div>
+            Image de la page 
+        </div>
+    </div>
 
+    <script>
+        const salles_div_header_menu = document.querySelector(".salles_div_header_menu")
+        const display_infos_menu = document.querySelector(".display_infos_menu")
+        salles_div_header_menu.addEventListener("mouseover", ()=>{
+            display_infos_menu.style.top = "60px";
+            display_infos_menu.style.opacity = "1";
 
+            display_infos_menu.addEventListener("mouseleave", ()=>{
+            display_infos_menu.style.opacity = "0";
+                display_infos_menu.style.top = "-405px";
+            })
+        })
 
+    </script>
+    <!--
+    <div class="display_menu_test" style="z-index:999;">
+        <div id="title_main_page">
+            <h1 title="Catacombes Interdites">Catacombes <br/><span>  UNOFFICIAL</span></h1>
+        </div>
 
-
-
-
-
+        <div id="links_header_menu">
+            <a href="../Images/" title="Aller vers la page Photos des catacombes">Images</a>
+            <a href="../Images/" title="Aller vers la page Photos des catacombes">Histoire</a>
+            <a href="../Map/" title="Affiche les salles des catacombes sur une carte">Plan</a>
+            <a href="../displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
+            <a href="../Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+        </div>
+    </div>
+    -->
 
     <!-- Git -->
     <!--
