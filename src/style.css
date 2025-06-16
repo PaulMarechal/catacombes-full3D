@@ -187,7 +187,7 @@ div.display_menu a{
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     position: fixed;
-    top: 0px;
+    top: -1px;
     padding: 6px 10px;
     width: 100%;
 
@@ -196,7 +196,7 @@ div.display_menu a{
     -webkit-backdrop-filter: blur(8px);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
     user-select: none;
 }
 
@@ -234,7 +234,7 @@ div.display_menu a{
     top: -405px;
     z-index: 99;
     opacity: 0; 
-    transition: top .8s ease-out, opacity 0.8s ease-out;
+    transition: top .8s ease-out, opacity 1s ease-out;
 
 }
 /* fin header menu */
