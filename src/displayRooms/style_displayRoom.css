@@ -1,0 +1,103 @@
+.parentDivRoomInfo_new{
+    width: 385px;
+    height: 550px;
+    border-radius: 20px;
+    background-image: url(https://catacombes.xyz/Guerinet/Guerinet.webp);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    user-select: none;
+    box-shadow: 0px 0px 0px 0px #a0a0a0;
+    transition: box-shadow .5s ease-out;
+}
+
+.parentDivRoomInfo_new:hover{
+    box-shadow: 0px 0px 26px 0px #a0a0a0
+}
+
+.titleRoom_new{
+    font-size: 45px;
+    color: #fff;
+    text-transform: lowercase;
+    top: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.display_buttons{
+    position: absolute;
+    bottom: 15px;
+    align-items: center;
+    width: 100%;
+} 
+
+.display_buttons a{
+    margin: 0 4px;
+}
+
+.display_text_div_infos{
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(168, 244, 252, 0) 0%, var(--color-bg, #ffffff) 100%);
+    border-radius: 0 0 18px 18px;
+    color: #000000;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 50px 0 50px 0;
+}
+
+.textRoom_new{
+    height: 150px;
+    width: 349px;
+    text-align: justify;
+    overflow-y: scroll;
+    scrollbar-color: #333 transparent;
+    scrollbar-width: none;
+    margin-left: 16px;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 91%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 91%);
+}
+
+.buttonRedirect3D {
+    border-radius: 6px;
+    text-decoration: none;
+    border: #978e8e 1px solid;
+    color: #000;
+    font-size: 18px;
+    padding: 3px 12px;
+    backdrop-filter: blur(0px);
+    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
+    text-align: center !important;
+    align-items: center;
+    transition: padding .5s ease-out, background .5s ease-out;
+}
+
+.buttonRedirect3D:hover{
+    padding: 3px 20px;
+    background-color: #fff;
+}
+
+.location_room, .deepth_room{
+    color: #fff;
+    position: absolute;
+}
+
+.deepth_room{
+    top: 70px;
+    right: 135px;
+    text-align: center;
+    display: grid;
+}
+
+.location_room{
+    top: 70px;
+    left: 106px;
+    display: grid;
+}
+
+.location_room svg{
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}

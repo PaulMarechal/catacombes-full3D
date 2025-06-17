@@ -426,21 +426,6 @@ a {
     z-index: 2;
 }
 
-.parentDivRoomInfo{
-    display: inline-grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 0.5fr repeat(2, 1fr) repeat(2, 0.7fr);
-    width: 40%; 
-    /* height: 43%; */
-    height: 23rem;
-    margin: 1em 2em;
-    padding: 5px 10px; 
-    background: rgba( 255, 255, 255, 0.5 );
-    border-radius: 10px;
-    /* border: 0.3px solid #d2caca; */
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out, opacity 0.4s ease-out;
-}
-
 .parentDivRoomInfo:hover, .parentDivPrezSecond:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.5 );
     backdrop-filter: blur( 3px );
@@ -505,48 +490,6 @@ a {
     transition: opacity 0.5s ease-in-out; 
 }
 
-.titleRoom { 
-    grid-area: 1 / 1 / 2 / 7; 
-    padding-left: 5px; 
-    padding-top: 8px; 
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 1.9rem;
-}
-
-.textRoom { 
-    grid-area: 2 / 1 / 5 / 4;
-    text-align: -webkit-left;
-    padding: 0px 5px;
-    font-size: 1.3rem;
-    overflow-y: scroll;
-    scrollbar-color: #d1cece transparent;
-}
-
-.adressRoom{ 
-    grid-area: 5 / 1 / 6 / 4; 
-    text-align: left; 
-    white-space: pre-line; 
-    padding-top: 5px; 
-    padding-left: 6px;
-}
-
-.buttonVR { grid-area: 5 / 4 / 6 / 5; margin-right: 0em!important}
-.button3D { grid-area: 5 / 5 / 6 / 6; }
-.buttonAR { grid-area: 5 / 6 / 6 / 7; margin-left: 0em!important}
-
-.buttonRedirect3D{
-    margin: auto; 
-    padding: 10px; 
-    border-radius: 10px;
-    text-decoration: none;
-    border: #978e8e 1px solid; 
-    color: #000;
-    font-size: 1.3rem; 
-    padding: 8px 12px;
-    backdrop-filter: blur( 0px );
-    transition: box-shadow 0.5s ease-out, backdrop-filter 0.5s ease-out;
-}
 
 .buttonRedirect3D:hover{
     box-shadow: 0 8px 32px 0 rgba( 153, 157, 196, 0.37 );
