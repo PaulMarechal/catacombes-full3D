@@ -155,26 +155,85 @@
     </div>
 
     <div class="display_infos_menu">
-        <div>
-            <p>Découvrez les salles des catacombes avec leur histoire, un plan de niveau et la salle visible en 3D.</p>
+        <div class="infos_to_display_div" id="salles_infos_div">
+            <div>
+                <p>Découvrez les salles des catacombes avec leur histoire, un plan de niveau et la salle visible en 3D.</p>
+            </div>
+            <div>
+                Image de la page 
+            </div>
         </div>
-        <div>
-            Image de la page 
+        <div class="infos_to_display_div" id="histoire_infos_div">
+            <div>
+                <p>Découvrez l'histoire des carrières de Paris a travers leurs histoire d'hier et d'aujourd'hui.</p>
+            </div>
+            <div>
+                Image de la page 
+            </div>
+        </div>
+        <div class="infos_to_display_div" id="images_infos_div">
+            <div>
+                <p>Découvrez des images des catacombes interdites de Paris mais aussi d'anciennes carrières en France ou ailleurs. </p>
+            </div>
+            <div>
+                Images des carrieres 
+            </div>
+        </div>
+        <div class="infos_to_display_div" id="plan_infos_div">
+            <div>
+                <p>Découvrez les l'emplacement des salles emblématiques des catacombes interdites dans Paris</p>
+            </div>
+            <div>
+                Image du plan de paris
+            </div>
+        </div>
+        <div class="infos_to_display_div" id="cartes_infos_div">
+            <div>
+                <p>Découvrez les tracts des catacombes de la V1 à la V3 avec leurs puces NFC a collectionner</p>
+            </div>
+            <div>
+                Image des tracts
+            </div>
         </div>
     </div>
 
     <script>
-        const salles_div_header_menu = document.querySelector(".salles_div_header_menu")
-        const display_infos_menu = document.querySelector(".display_infos_menu")
-        salles_div_header_menu.addEventListener("mouseover", ()=>{
-            display_infos_menu.style.top = "60px";
-            display_infos_menu.style.opacity = "1";
+        function display_infos_div_header(link_header, id_div_info_to_display){
+            const link_div_header_menu = document.querySelector(link_header);
+            const display_infos_menu = document.querySelector(".display_infos_menu");
+            const infos_to_display_div = document.querySelectorAll(".infos_to_display_div");
+            const id_div_info = document.querySelector(id_div_info_to_display);
 
-            display_infos_menu.addEventListener("mouseleave", ()=>{
-            display_infos_menu.style.opacity = "0";
-                display_infos_menu.style.top = "-405px";
+            link_div_header_menu.addEventListener("mouseover", ()=>{
+                infos_to_display_div.forEach(infos_div =>{
+                    infos_div.style.opacity = "0"
+                    setTimeout(()=>{
+                        infos_div.style.display = "none"
+                    }, 510)
+                })
+
+                display_infos_menu.style.top = "60px";
+                display_infos_menu.style.opacity = "1";
+                setTimeout(()=>{
+                    id_div_info.style.display = "inline-flex";
+                    setTimeout(()=>{
+                        id_div_info.style.opacity = "1"
+                    }, 20)
+                }, 520)
+    
+                display_infos_menu.addEventListener("mouseleave", ()=>{
+                display_infos_menu.style.opacity = "0";
+                    display_infos_menu.style.top = "-405px";
+                    id_div_info.style.display = "none";
+                })
             })
-        })
+        }
+
+        display_infos_div_header(".salles_div_header_menu", "#salles_infos_div")
+        display_infos_div_header(".histoire_div_header_menu", "#histoire_infos_div")
+        display_infos_div_header(".images_div_header_menu", "#images_infos_div")
+        display_infos_div_header(".plan_div_header_menu", "#plan_infos_div")
+        display_infos_div_header(".tracts_div_header_menu", "#cartes_infos_div")
 
     </script>
     <!--
