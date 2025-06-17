@@ -64,6 +64,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
     <script type="module" src="./customCursor.js"></script>
     <script type="module" src="./script.js"></script>
+    <script type="module" src="/header-menu.js"></script>
+
 </head>
 <body>
     <!--
@@ -98,144 +100,9 @@
 
     
     <label id="language_site" title="Changer la langue du site Catacombes Interdites en Anglais">FR</label>
-
-    <nav class="display_menu glass-card">    
-        
-        
-        
-        
-    </nav>  
-
-    <!--
-    <a class="main_title_link" href="https://catacombes.xyz">
-        <div class="liquidGlass-wrapper button">
-            <div class="liquidGlass-effect"></div>
-            <div class="liquidGlass-tint"></div>
-            <div class="liquidGlass-shine"></div>
-            <div class="liquidGlass-text">
-                <h1 title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
-            </div>
-        </div>
-    </a>
-    <div class="liquidGlass-wrapper menu main_menu_header" style="z-index: 999;">
-        <div class="liquidGlass-effect"></div>
-        <div class="liquidGlass-tint"></div>
-        <div class="liquidGlass-shine"></div>
-        <div class="liquidGlass-text">
-            <div><a href="../Images/" title="Aller vers la page Photos des catacombes">Images</a></div>
-            <div><a href="../Images/" title="Aller vers la page Photos des catacombes">Histoire</a></div>
-            <div><a href="../Map/" title="Affiche les salles des catacombes sur une carte">Plan</a></div>
-            <div><a href="../displayRooms/" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a></div>
-            <div><a href="../Cards/" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a></div>
-        </div>
-    </div>
+   
+    <header-menu></header-menu>
     
--->
-    <div class="parent_header_menu">
-        <div class="logo_div_header_menu">
-            <h1 title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
-        </div>
-        <div class="salles_div_header_menu">
-            <a href="../displayRooms/" class="link_style_header_menu" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
-        </div>
-        <div class="histoire_div_header_menu">
-            <a href="../Histoire/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Histoire</a>
-        </div>
-        <div class="images_div_header_menu">
-            <a href="../Images/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Images</a>
-        </div>
-        <div class="plan_div_header_menu">
-            <a href="../Map/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">Plan</a>
-        </div>
-        <div class="tracts_div_header_menu">
-            <a href="../Cards/" class="link_style_header_menu" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
-        </div>
-        <div class="language_button_header_menu_div">
-        </div>
-    </div>
-
-    <div class="display_infos_menu">
-        <div class="infos_to_display_div" id="salles_infos_div">
-            <div>
-                <p>Découvrez les salles des catacombes avec leur histoire, un plan de niveau et la salle visible en 3D.</p>
-            </div>
-            <div>
-                Image de la page 
-            </div>
-        </div>
-        <div class="infos_to_display_div" id="histoire_infos_div">
-            <div>
-                <p>Découvrez l'histoire des carrières de Paris a travers leurs histoire d'hier et d'aujourd'hui.</p>
-            </div>
-            <div>
-                Image de la page 
-            </div>
-        </div>
-        <div class="infos_to_display_div" id="images_infos_div">
-            <div>
-                <p>Découvrez des images des catacombes interdites de Paris mais aussi d'anciennes carrières en France ou ailleurs. </p>
-            </div>
-            <div>
-                Images des carrieres 
-            </div>
-        </div>
-        <div class="infos_to_display_div" id="plan_infos_div">
-            <div>
-                <p>Découvrez les l'emplacement des salles emblématiques des catacombes interdites dans Paris</p>
-            </div>
-            <div>
-                Image du plan de paris
-            </div>
-        </div>
-        <div class="infos_to_display_div" id="cartes_infos_div">
-            <div>
-                <p>Découvrez les tracts des catacombes de la V1 à la V3 avec leurs puces NFC a collectionner</p>
-            </div>
-            <div>
-                Image des tracts
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function display_infos_div_header(link_header, id_div_info_to_display){
-            const link_div_header_menu = document.querySelector(link_header);
-            const display_infos_menu = document.querySelector(".display_infos_menu");
-            const infos_to_display_div = document.querySelectorAll(".infos_to_display_div");
-            const id_div_info = document.querySelector(id_div_info_to_display);
-
-            link_div_header_menu.addEventListener("mouseover", ()=>{
-                infos_to_display_div.forEach(infos_div =>{
-                    infos_div.style.opacity = "0"
-                    setTimeout(()=>{
-                        infos_div.style.display = "none"
-                    }, 510)
-                })
-
-                display_infos_menu.style.top = "60px";
-                display_infos_menu.style.opacity = "1";
-                setTimeout(()=>{
-                    id_div_info.style.display = "inline-flex";
-                    setTimeout(()=>{
-                        id_div_info.style.opacity = "1"
-                    }, 20)
-                }, 520)
-    
-                display_infos_menu.addEventListener("mouseleave", ()=>{
-                display_infos_menu.style.opacity = "0";
-                    display_infos_menu.style.top = "-405px";
-                    id_div_info.style.display = "none";
-                })
-            })
-        }
-
-        display_infos_div_header(".salles_div_header_menu", "#salles_infos_div")
-        display_infos_div_header(".histoire_div_header_menu", "#histoire_infos_div")
-        display_infos_div_header(".images_div_header_menu", "#images_infos_div")
-        display_infos_div_header(".plan_div_header_menu", "#plan_infos_div")
-        display_infos_div_header(".tracts_div_header_menu", "#cartes_infos_div")
-
-    </script>
     <!--
     <div class="display_menu_test" style="z-index:999;">
         <div id="title_main_page">
