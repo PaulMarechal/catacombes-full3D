@@ -16,7 +16,9 @@
     "@tweenjs/tween.js": "^23.1.2",
     "dat.gui": "^0.7.9",
     "gsap": "^3.12.5",
+    "imagesloaded": "^5.0.0",
     "lil-gui": "^0.17.0",
+    "masonry-layout": "^4.2.2",
     "teleportvr": "^3.0.7",
     "three": "^0.164.1",
     "three-mesh-ui": "^6.5.4"

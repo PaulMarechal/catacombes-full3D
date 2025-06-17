@@ -1,4 +1,5 @@
 import * as NameRooms from "../roomInfo.js";
+import Masonry from 'masonry-layout';
 
 const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
@@ -42,6 +43,9 @@ function createRoomCard(room, langIndex) {
     const [roomId, titleText, descEN, locationText, depthValue] = room;
     const newDiv = document.createElement("div");
     newDiv.classList.add("parentDivRoomInfo_new");
+
+    // Background 
+    newDiv.style.backgroundImage = `url(https://catacombes.xyz/${roomId}/${roomId}.webp)`;
 
     // Title
     const h2 = document.createElement("h2");
@@ -145,6 +149,8 @@ function initializeRooms() {
     NameRooms.roomInfos.forEach((room, idx) => {
         container.appendChild(createRoomCard(room, 2));
     });
+    
+
 
     const langBtn = document.querySelector("#language_site");
     langBtn.addEventListener("click", () => {
@@ -153,6 +159,14 @@ function initializeRooms() {
         });
         langBtn.innerText = langBtn.innerText === "FR" ? "EN" : "FR";
     });
+
+    const msnry = new Masonry('.displayRooms', {
+        itemSelector: '.parentDivRoomInfo_new',
+        columnWidth: '.parentDivRoomInfo_new',  
+        gutter: 20,
+        fitWidth: true,
+    });
+    
 
     createSearchBar();
 }
