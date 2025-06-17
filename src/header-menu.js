@@ -1,159 +1,154 @@
 const template = document.createElement('template');
 template.innerHTML = `
-  <style>
-  #main_title_catacombes {
-    /* position: fixed; */
-    /* top: 8px; */
-    /* left: 50px; */
-    z-index: 6;
-    font-size: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    user-select: none;
-    color: #fff;
-}
-    a {
-    text-decoration: none;
-}
-    h1, h2, h3, a {
-    font-family: 'Bebas Neue', cursive;
-    font-weight: 300 !important;
-}
-    #main_title_catacombes span {
-    text-transform: none;
-    opacity: .8;
-    font-weight: 300;
-    color: #ffffff;
-    font-size: 1.75rem;
-    letter-spacing: 0.65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #020304;
-}
-#title_main_page{
-    margin: 0;
-    line-height: 24px;
-    top: 20px;
-    position: fixed;
-    left: 20px;
-}
+    <style>
+        #main_title_catacombes {
+            /* position: fixed; */
+            /* top: 8px; */
+            /* left: 50px; */
+            z-index: 6;
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            user-select: none;
+            color: #fff;
+        }
+        a {
+            text-decoration: none;
+        }
+        h1, h2, h3, a {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 300 !important;
+        }
+        #main_title_catacombes span {
+            text-transform: none;
+            opacity: .8;
+            font-weight: 300;
+            color: #ffffff;
+            font-size: 1.75rem;
+            letter-spacing: 0.65px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #020304;
+        }
+        #title_main_page{
+            margin: 0;
+            line-height: 24px;
+            top: 20px;
+            position: fixed;
+            left: 20px;
+        }
 
-#links_header_menu{
-    position: fixed; 
-    top: 15px;
-    width: 40%;
-    left: 30%;
+        #links_header_menu{
+            position: fixed; 
+            top: 15px;
+            width: 40%;
+            left: 30%;
 
-    padding: 10px 14px;
-    border-radius: 20px;
+            padding: 10px 14px;
+            border-radius: 20px;
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: linear-gradient(180deg, rgb(255 255 255 / 50%) 0%, rgb(199 199 199 / 0%) 100%);
-}
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            background: linear-gradient(180deg, rgb(255 255 255 / 50%) 0%, rgb(199 199 199 / 0%) 100%);
+        }
 
-#links_header_menu a{
-    color: #fff;
-    font-size: 1.2vw;
-    user-select: none;
-    transition: font-size .5s ease-out;
-}
+        #links_header_menu a{
+            color: #fff;
+            font-size: 1.2vw;
+            user-select: none;
+            transition: font-size .5s ease-out;
+        }
+        #links_header_menu a:hover{
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            background: linear-gradient(180deg, rgb(191 191 191 / 50%) 0%, rgb(255 255 255 / 0%) 100%);
+            font-size: 1.35vw;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            cursor: none !important;
+        }
+        .parent_header_menu {
+            display: grid;
+            z-index:999;
+            grid-template-columns: repeat(11, 1fr) 0.5fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            position: fixed;
+            top: -1px;
+            padding: 6px 10px;
+            width: 100%;
 
-#links_header_menu a:hover{
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: linear-gradient(180deg, rgb(191 191 191 / 50%) 0%, rgb(255 255 255 / 0%) 100%);
-    font-size: 1.35vw;
-}
-    * {
-    margin: 0;
-    padding: 0;
-    cursor: none !important;
-}
+            background: rgba( 255, 255, 255, 0);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 0px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 0.5px solid rgba(255, 255, 255, 0.3);
+            user-select: none;
+            left: 0; 
+        }
+        .logo_div_header_menu { 
+            grid-area: 1 / 1 / 2 / 3;
+            padding: 4px 10px 0 10px;
+        }
+        .salles_div_header_menu { grid-area: 1 / 5 / 2 / 6;  margin: auto;}
+        .histoire_div_header_menu { grid-area: 1 / 6 / 2 / 7;margin: auto;}
+        .images_div_header_menu { grid-area: 1 / 7 / 2 / 8; margin: auto;}
+        .plan_div_header_menu { grid-area: 1 / 8 / 2 / 9; margin: auto;}
+        .tracts_div_header_menu {grid-area: 1 / 9 / 2 / 10; margin: auto;}
 
-.parent_header_menu {
-    display: grid;
-    z-index:999;
-    grid-template-columns: repeat(11, 1fr) 0.5fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    position: fixed;
-    top: -1px;
-    padding: 6px 10px;
-    width: 100%;
+        .language_button_header_menu_div { grid-area: 1 / 12 / 2 / 13; }
 
-    background: rgba( 255, 255, 255, 0);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 0px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
-    user-select: none;
-    left: 0; 
-}
+        .link_style_header_menu{
+            font-size: 25px;
+            color: #fff;
+            margin: auto;
+            transition: font-size .5s ease-out, color .5s ease-out;
+        }
 
-.logo_div_header_menu { 
-    grid-area: 1 / 1 / 2 / 3;
-    padding: 4px 10px 0 10px;
+        .display_infos_menu{
+            width: 600px;
+            height: 400px;
+            position: fixed;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            user-select: none;
+            top: -405px;
+            z-index: 99;
+            opacity: 0; 
+            transition: top .8s ease-out, opacity 1s ease-out;
+        }
 
-}
-.salles_div_header_menu { grid-area: 1 / 5 / 2 / 6;  margin: auto;}
-.histoire_div_header_menu { grid-area: 1 / 6 / 2 / 7;margin: auto;}
-.images_div_header_menu { grid-area: 1 / 7 / 2 / 8; margin: auto;}
-.plan_div_header_menu { grid-area: 1 / 8 / 2 / 9; margin: auto;}
-.tracts_div_header_menu {grid-area: 1 / 9 / 2 / 10; margin: auto;}
+        #salles_infos_div, #histoire_infos_div, 
+        #images_infos_div, #plan_infos_div, 
+        #cartes_infos_div{
+            display: none;
+            opacity: 0; 
+            width: 100%;
+            transition: opacity .5s ease-out;
+        }
 
-.language_button_header_menu_div { grid-area: 1 / 12 / 2 / 13; }
-
-.link_style_header_menu{
-    font-size: 25px;
-    color: #fff;
-    margin: auto;
-    transition: font-size .5s ease-out, color .5s ease-out;
-}
-
-.display_infos_menu{
-    width: 600px;
-    height: 400px;
-    position: fixed;
-    background: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    user-select: none;
-    top: -405px;
-    z-index: 99;
-    opacity: 0; 
-    transition: top .8s ease-out, opacity 1s ease-out;
-}
-
-#salles_infos_div, #histoire_infos_div, 
-#images_infos_div, #plan_infos_div, 
-#cartes_infos_div{
-    display: none;
-    opacity: 0; 
-    width: 100%;
-    transition: opacity .5s ease-out;
-}
-
-#salles_infos_div div, #histoire_infos_div div, 
-#images_infos_div div, #plan_infos_div div,
-#cartes_infos_div div {
-    flex: 1; 
-    width: 290px;
-    height: 380px;
-    margin: 5px;
-    border-radius: 10px;
-    background: rgb(171 171 171 / 33%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 5px 8px;
-
-}
-  </style>
-  <div class="parent_header_menu">
+        #salles_infos_div div, #histoire_infos_div div, 
+        #images_infos_div div, #plan_infos_div div,
+        #cartes_infos_div div {
+            flex: 1; 
+            width: 290px;
+            height: 380px;
+            margin: 5px;
+            border-radius: 10px;
+            background: rgb(171 171 171 / 33%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 5px 8px;
+        }
+    </style>
+    <div class="parent_header_menu">
         <div class="logo_div_header_menu">
             <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
         </div>
@@ -218,52 +213,49 @@ template.innerHTML = `
             </div>
         </div>
     </div>
-
 `;
 
 class HeaderMenu extends HTMLElement {
-  constructor() {
-    super();
-    // Shadow DOM pour isoler le style et le markup
-    this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
-  }
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
+    }
 
-  connectedCallback() {
-    const shadow = this.shadowRoot;
-    // même logique que votre fonction display_infos_div_header, 
-    // mais adaptée au shadow DOM :
-    const show = (selectorLink, selectorInfo) => {
-      const link = shadow.querySelector(selectorLink);
-      const infos = shadow.querySelectorAll('.infos_to_display_div');
-      const menu  = shadow.querySelector('.display_infos_menu');
-      const target = shadow.querySelector(selectorInfo);
+    connectedCallback() {
+        const shadow = this.shadowRoot;
 
-      link.addEventListener('mouseover', () => {
-        infos.forEach(div => {
-          div.style.opacity = '0';
-          setTimeout(() => div.style.display = 'none', 510);
-        });
-        menu.style.top = '60px';
-        menu.style.opacity = '1';
-        setTimeout(() => {
-          target.style.display = 'inline-flex';
-          setTimeout(() => target.style.opacity = '1', 20);
-        }, 520);
-      });
+        const show = (selectorLink, selectorInfo) => {
+            const link = shadow.querySelector(selectorLink);
+            const infos = shadow.querySelectorAll('.infos_to_display_div');
+            const menu  = shadow.querySelector('.display_infos_menu');
+            const target = shadow.querySelector(selectorInfo);
 
-      menu.addEventListener('mouseleave', () => {
-        menu.style.opacity = '0';
-        menu.style.top     = '-405px';
-        target.style.display = 'none';
-      });
-    };
+            link.addEventListener('mouseover', () => {
+                infos.forEach(div => {
+                div.style.opacity = '0';
+                setTimeout(() => div.style.display = 'none', 510);
+                });
+                menu.style.top = '60px';
+                menu.style.opacity = '1';
+                setTimeout(() => {
+                target.style.display = 'inline-flex';
+                setTimeout(() => target.style.opacity = '1', 20);
+                }, 520);
+            });
 
-    show('.salles_div_header_menu',  '#salles_infos_div');
-    show('.histoire_div_header_menu','#histoire_infos_div');
-    show('.images_div_header_menu', '#images_infos_div');
-    show('.plan_div_header_menu',   '#plan_infos_div');
-    show('.tracts_div_header_menu', '#cartes_infos_div');
-  }
+            menu.addEventListener('mouseleave', () => {
+                menu.style.opacity = '0';
+                menu.style.top     = '-405px';
+                target.style.display = 'none';
+            });
+        };
+
+        show('.salles_div_header_menu',  '#salles_infos_div');
+        show('.histoire_div_header_menu','#histoire_infos_div');
+        show('.images_div_header_menu', '#images_infos_div');
+        show('.plan_div_header_menu',   '#plan_infos_div');
+        show('.tracts_div_header_menu', '#cartes_infos_div');
+    }
 }
 
 customElements.define('header-menu', HeaderMenu);
