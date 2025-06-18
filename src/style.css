@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Bebas+Neue&family=Lexend:wght@100..900&display=swap');
 
 * {
     margin: 0;
@@ -12,7 +12,10 @@ h1, h2, h3, a{
 }
 
 p, figcaption, input{
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    /* font-family: 'Alumni Sans Pinstripe', sans-serif; */
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
 }
 
 figcaption{
@@ -382,18 +385,15 @@ a {
   }
 }
 
-
-
 .displayRooms{
     margin-top: 0em;
     padding-top: 11vh;
     overflow-y: scroll; 
-    /* height: 42rem;  */
     text-align: center; 
 }
 
 .search_bar{
-    font-size: 3vh;
+    font-size: 20px;
     position: relative; 
     height: 4vh;
     width: 40vh;

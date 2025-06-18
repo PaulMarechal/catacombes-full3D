@@ -102,7 +102,7 @@ export const roomInfos = [
     // Cabinet mineralogique 
     [
         "Cabinet", 
-        "Cabinet mineralogique ( 1811 )",
+        "Cabinet mineralogique",
         "Le cabinet Gambier-Major, egalement connu sous le nom de cabinet Saint-Jacques, est l'un des rares cabinets mineralogiques subsistant dans les carrieres souterraines de Paris. Construit en 1810 par Gambier-Major sous l'autorite d'Hericart de Thury, alors inspecteur general des carrieres, il est situe sous la rue Saint-Jacques, approximativement au niveau du 81 rue du Faubourg Saint-Jacques, dans le 14e arrondissement de Paris, à une profondeur d'environ 15 metres. \nCe cabinet se distingue par sa structure particuliere : une salle cubique dotee d'un escalier central droit, entoure de deux bancs lateraux et d'un petit banc pres de l'entree. L'escalier servait à exposer des echantillons de roches representant les differentes couches geologiques du Lutetien, chaque marche correspondant à une strate specifique. \nMalheureusement, en raison de sa frequentation au fil des decennies, le cabinet Gambier-Major a subi des degradations significatives. Les inscriptions originales ont presque toutes disparu, et le plafond est aujourd'hui noirci par la presence de champignons. ",
         "81 Rue du Faubourg Saint-Jacques \n   75014 Paris", 
         " 15m", 
@@ -202,7 +202,7 @@ export const roomInfos = [
     // Philibert
     [
         "Philibert", 
-        "Tombe de Philibert Aspairt",
+        "Philibert Aspairt",
         "Philibert Aspairt etait portier à l'hôpital du Val-de-Grace pendant la Revolution française. Le 3 novembre 1793, il aurait emprunte un escalier situe dans la cour de l'hôpital, s'aventurant ainsi dans les carrieres souterraines de Paris. Les raisons precises de cette incursion demeurent incertaines, mais certaines hypotheses suggerent qu'il cherchait les caves du couvent des Chartreux, reputees pour abriter des reserves de liqueur. \nMalheureusement, Philibert Aspairt se perdit dans ce labyrinthe souterrain et ne reparut jamais. Ce n'est qu'en avril 1804, soit plus de dix ans plus tard, que son corps fut decouvert par une equipe chargee de cartographier les carrieres. Son identification fut rendue possible grace au trousseau de cles de l'hôpital retrouve à ses côtes. Il fut alors inhume sur place, et une stele commemorative fut erigee en sa memoire. \nCette stele, toujours visible aujourd'hui, porte l'inscription suivante :'À la memoire de Philibert Aspairt, perdu dans cette carriere le 3 novembre 1793, retrouve onze ans apres et inhume en la meme place le 30 avril 1804.' \nSituee dans une section des catacombes non accessible au public, sous la rue Henri Barbusse dans le 5e arrondissement de Paris, la tombe de Philibert Aspairt est devenue une figure emblematique parmi les cataphiles, qui le considerent comme leur saint patron et commemorent sa memoire chaque 3 novembre, date de sa disparition.",
         "1 Place Louis Marin \n   75005 Paris", 
         " 20m",
