@@ -132,17 +132,44 @@ function createSearchBar() {
 
 function filterRooms() {
     const query = document.querySelector(".search_bar").value.toLowerCase();
+    const container = document.querySelector(".displayRooms");
+    const div_infos_page = document.querySelector(".div_infos_page")
+
+    container.classList.toggle("search-active", !!query);
+
+    const input = document.querySelector(".search_bar");
+    input.addEventListener("keydown", function(e) {
+    if ((e.key === "Backspace" || e.key === "Delete") && this.value.length > 0) {
+        e.preventDefault();      
+        this.value = "";        
+        filterRooms();          
+    }
+    });
+
+    if (query) {
+        container.classList.add("grid-active");
+    } else {
+        container.classList.remove("grid-active");
+    }
+
     document.querySelectorAll(".parentDivRoomInfo_new").forEach(room => {
         const title = room.querySelector(".titleRoom_new").textContent.toLowerCase();
-        if (title.includes(query)) {
+
+        if (!query || title.includes(query)) {
             room.style.display = "inline-grid";
-            requestAnimationFrame(() => room.style.opacity = "1");
+            room.style.opacity = "1";
+            div_infos_page.style.opacity = "1"
+            div_infos_page.style.top = "27vh"
         } else {
             room.style.opacity = "0";
+            div_infos_page.style.top = "0"
+            div_infos_page.style.opacity = "0"
             setTimeout(() => room.style.display = "none", 500);
         }
     });
 }
+
+
 
 function initializeRooms() {
     const container = document.querySelector(".displayRooms");
