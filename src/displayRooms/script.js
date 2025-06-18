@@ -123,7 +123,7 @@ function createSearchBar() {
     const path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path3.setAttribute("d", "M21 21l-6 -6");
 
-    svg.append(path1, path2, path3);
+    svg.append(path2, path3);
     container.append(input, svg);
 
     const roomsContainer = document.querySelector(".displayRooms");
@@ -149,9 +149,6 @@ function initializeRooms() {
     NameRooms.roomInfos.forEach((room, idx) => {
         container.appendChild(createRoomCard(room, 2));
     });
-    
-    
-    
     
     createSearchBar();
 }
