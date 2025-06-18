@@ -84,8 +84,8 @@ template.innerHTML = `
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 0px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 0.5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 12px 4px rgb(0 0 0 / 21%);
+            // border: 0.5px solid rgba(255, 255, 255, 0.3);
             user-select: none;
             left: 0; 
         }
@@ -122,6 +122,11 @@ template.innerHTML = `
             top: -405px;
             z-index: 99;
             opacity: 0; 
+            opacity: 0;
+            left: 50%;
+            top: -405px;
+            transform: translate(-50%, -50%);
+            z-index: 999;
             transition: top .8s ease-out, opacity 1s ease-out;
         }
 
@@ -150,7 +155,9 @@ template.innerHTML = `
     </style>
     <div class="parent_header_menu">
         <div class="logo_div_header_menu">
-            <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
+            <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
+                <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
+            </a>
         </div>
         <div class="salles_div_header_menu">
             <a href="../displayRooms/" class="link_style_header_menu" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
@@ -235,7 +242,7 @@ class HeaderMenu extends HTMLElement {
                 div.style.opacity = '0';
                 setTimeout(() => div.style.display = 'none', 510);
                 });
-                menu.style.top = '60px';
+                menu.style.top = '260px';
                 menu.style.opacity = '1';
                 setTimeout(() => {
                 target.style.display = 'inline-flex';
