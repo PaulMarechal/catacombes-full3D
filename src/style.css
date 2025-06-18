@@ -392,23 +392,6 @@ a {
     text-align: center; 
 }
 
-.search_bar{
-    font-size: 20px;
-    position: relative; 
-    height: 4vh;
-    width: 40vh;
-    border-radius: 10px; 
-    border: none; 
-    padding-left: 7px;
-    z-index: 1;
-    background: rgb(255 255 255 / 49%);
-    box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
 .icon-tabler-search {
     position: absolute;
     right: 5px; 
