@@ -409,14 +409,6 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.searchContainer {
-    position: absolute;
-    width: fit-content; 
-    margin-top: 6vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .icon-tabler-search {
     position: absolute;
     right: 5px; 

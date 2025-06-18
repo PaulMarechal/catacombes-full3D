@@ -1,7 +1,30 @@
+
+
 .displayRooms{
     width: 90%;
     position: absolute;
     scrollbar-color: transparent transparent;
+}
+
+.displayRooms:after {
+    content: '';
+    clear: both;
+}
+
+.displayRooms .parentDivRoomInfo_new:nth-child(3n+3) {
+    position: relative;
+    top: 275px;
+}
+
+.div_infos_page{
+    width: 387px;
+    position: absolute;
+    top: 27vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    height: 238px;
+    border-radius: 20px;
 }
 
 .parentDivRoomInfo_new{
@@ -52,7 +75,7 @@
     color: #000000;
     font-size: 19px;
     font-weight: 500;
-    padding: 50px 0 50px 0;
+    padding: 200px 0 50px 0;
 }
 
 .textRoom_new{
@@ -108,4 +131,13 @@
     text-align: center;
     align-items: center;
     margin: auto;
+}
+
+.searchContainer {
+    position: fixed;
+    width: fit-content;
+    top: 8vh;
+    left: 49.5%;
+    transform: translateX(-50%);
+    z-index: 99;
 }

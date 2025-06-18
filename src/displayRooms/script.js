@@ -150,25 +150,18 @@ function initializeRooms() {
         container.appendChild(createRoomCard(room, 2));
     });
     
-
-
-    const langBtn = document.querySelector("#language_site");
-    langBtn.addEventListener("click", () => {
-        document.querySelectorAll(".textRoom_new").forEach((p, idx) => {
-            p.textContent = langBtn.innerText === "FR" ? NameRooms.roomInfos[idx][9] : NameRooms.roomInfos[idx][2];
-        });
-        langBtn.innerText = langBtn.innerText === "FR" ? "EN" : "FR";
-    });
-
-    const msnry = new Masonry('.displayRooms', {
-        itemSelector: '.parentDivRoomInfo_new',
-        columnWidth: '.parentDivRoomInfo_new',  
-        gutter: 20,
-        fitWidth: true,
-    });
     
-
+    
+    
     createSearchBar();
 }
 
 document.addEventListener("DOMContentLoaded", initializeRooms);
+
+const langBtn = document.querySelector("#language_site");
+langBtn.addEventListener("click", () => {
+    document.querySelectorAll(".textRoom_new").forEach((p, idx) => {
+        p.textContent = langBtn.innerText === "FR" ? NameRooms.roomInfos[idx][9] : NameRooms.roomInfos[idx][2];
+    });
+    langBtn.innerText = langBtn.innerText === "FR" ? "EN" : "FR";
+});
