@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTC7BHQP50"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JTC7BHQP50');
+    </script>
+    <!-- End Google Tag (gtag.js) -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WDSHGJL');</script>
+    <!-- End Google Tag Manager -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css?v=1.2">
+    <script type="module" src="./script.js"></script>
+    <meta name="googlebot" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
+    <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
+    <meta name="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
+    <meta itemprop="name" content="Découverte des Catacombes Interdites sous Paris">
+    <meta itemprop="description" content="Découvre les Catacombes interdites en 3D|VR|AR depuis ton salon. Explore les salles méconnues 20 mètres sous terre en réalité augmentée ou virtuelle.">
+    <meta property="og:url" content="https://catacombes.xyz">
+    <meta property="og:title" content="Découverte des Catacombes interdites en 3D | VR | AR ">
+    <meta property="og:description" content="Découvrir les catacombes interdites sous Paris en realité augmenté et virtuelle">
+    <meta property="og:image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+    <meta itemprop="image" content="https://paulmarechal.xyz/test/assets/images/1200x630_catacombes">
+    <meta name="apple-mobile-web-app-title" content="Catacombes interdites">
+    <meta name="application-name" content="Visitez les catacombes interdites en 3D | VR | AR">
+    <meta name="author" content="Paul Marechal">
+    <link rel="alternate" hreflang="fr" href="https://catacombes.xyz">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://paulmarechal.xyz/test/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://paulmarechal.xyz/test/assets/images/catacombes-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://paulmarechal.xyz/test/assets/images/catacombes-16x16.png">
+    <link rel="manifest" href="https://catacombes.xyz/site.webmanifest">
+    <link rel="mask-icon" href="https://paulmarechal.xyz/test/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous"></script>
+    <script type="module" src="../customCursor.js"></script>
+    <script type="module" src="../header-menu.js"></script>
+</head>
+<body style="background: rgb(231, 231, 231)">
+    
+    <header-menu></header-menu>
+
+    <div>
+        <!-- Side menu -->
+        <div>
+            <div>
+                <h2>La formation géologique du sous-sol parisien</h2>
+            </div>
+            <div>
+                <h2>Deux millénaires d’exploitation des carrières de Paris</h2>
+            </div>
+            <div>
+                <h2>Techniques de creusement et dangers du Paris souterrain</h2>
+            </div>
+            <div>
+                <h2></h2>
+            </div>
+            <div>
+                <h2></h2>
+            </div>
+            <div>
+                <h2></h2>
+            </div>
+            <div>
+                <h2></h2>
+            </div>
+        </div>
+
+        <!-- Main infos div -->
+        <!-- http://troglos.free.fr/dossiers_paris_ile_de_france/dossier_carrieres_paris/extraction_calcaire_grossier/dossier.html -->
+        <div>
+            <div id="formation_geologique_div">
+                <p>
+                    Il y a plus de 100 millions d’années, à l’ère secondaire (Crétacé), l’emplacement de Paris était recouvert
+                    par une mer tropicale. Dans ses eaux vivaient de microscopiques algues à carapace calcaire (les
+                    coccolithes, littéralement « graines de pierre »). En mourant, ces algues se déposèrent sur le fond marin
+                    et formèrent progressivement une épaisse couche de <b>craie</b> (calcaire crayeux). On estime que cette
+                    couche atteint <b>400 m d’épaisseur</b> sous l’emplacement de Paris.
+                    . Par la suite, des dépôts d’argile
+                    (provenant d’alluvions) s’accumulèrent sur une dizaine de mètres, puis la mer revint et laissa durant l’ère
+                    tertiaire de nouvelles couches sédimentaires. Il y a environ 45 millions d’années (époque Éocène), la
+                    mer forma une couche d’environ <b>20m de calcaire</b> compacté par les coquilles et squelettes des
+                    mollusques marins : c’est le <b>calcaire lutétien</b>, la fameuse « <b>pierre de Paris</b> ». Par-dessus, une
+                    couche de <b>marnes et caillasses</b> (mélange argileux et pierreux d’environ 20 m) s’est déposée,
+                    recouvrant le calcaire.
+                </p>
+                <p>
+                    Plus tard, la mer s’est transformée en lagunes stagnantes où l’évaporation a laissé une immense couche
+                    de <b>gypse</b> (sulfate de calcium) épaisse de <b>50 à 60 m</b> au nord de Paris. À la fin de cette période, les dépôts se sont succédé (marnes, sables, etc.), complétant une véritable « stratification » géologique. 
+                    Au total, sous Paris, on trouve près de <b>500 m d’épaisseur de roches sédimentaires</b> superposées :
+                    craie profonde, argile, calcaire lutétien, marnes, gypse… Chacune de ces couches a joué un rôle dans
+                    l’édification de la ville
+                </p>
+                <p>
+                    Avec le temps, l’eau et l’érosion ont sculpté le relief. La Seine et ses affluents ont entaillé ces dépôts
+                    sédimentaires, ne laissant subsister que quelques hauteurs (buttes Montmartre, Belleville, etc.) et
+                    plateaux de part et d’autre du fleuve, le reste ayant été emporté vers la mer. 
+                    Ainsi, la géologie du sous-sol n’est pas uniforme : au <b>nord de Paris</b>, les couches de calcaire sont restées enfouies sous le
+                    gypse, alors qu’au <b>sud-ouest</b> (dans la vallée de la Seine) elles affleurent ou ont été dégagées par
+                    l’érosion. Le site parisien était « prêt » pour que l’homme, homo faber, vienne exploiter ces richesses géologiques.
+                </p>
+            </div>
+
+            <div id="exploitation_carrieres">
+                <p>
+                    Dès l’Antiquité, les habitants ont tiré parti des matériaux du sous-sol pour bâtir la cité. Les Gaulois
+                    Parisii construisaient surtout en bois, torchis et terre crue, mais l’arrivée des <b>Romains</b> amena l’usage de
+                    la pierre. À partir du Ier siècle ap. J.-C., Lutèce se dote de monuments en pierre (arènes, thermes…) qui
+                    inaugureront une longue tradition de construction « en dur ». Durant le Moyen Âge, la pierre de
+                    taille est d’abord réservée aux églises et édifices importants, puis peu à peu se généralise à toutes les
+                    constructions. Au fil des siècles, trois types de roches principales seront extraites dans la région
+                    parisienne : le <b>calcaire lutétien</b> (pierre à bâtir), le <b>gypse</b> (pierre à plâtre) et <b>l’argile</b> 
+                    (pour les poteries et briques).
+                </p>
+                
+                <h3>La « pierre de Paris » : extraction du calcaire lutétien</h3>
+                <p>
+                    Le <b>calcaire grossier</b> lutétien est la pierre blonde typique de Paris, utilisée pour bâtir monuments et
+                    immeubles. La meilleure strate de ce calcaire était surnommée le <b>banc royal</b>, car elle servait notamment aux constructions de prestige pour le roi. 
+                    Les Romains l’exploitèrent pour donner un cœur monumental à la ville gallo-romaine de Lutèce. 
+                    Au Moyen Âge, on l’emploie pour les cathédrales (Notre-Dame au XIIᵉ siècle, par exemple) et bâtiments religieux, puis son usage s’étend aux
+                    ouvrages civils. À partir du XIIIᵉ siècle, Paris croissant rapidement, les carrières locales ne suffisent plus :
+                    on commence alors à importer de la pierre à bâtir par la Seine, depuis d’autres régions calcaires.
+                </p>
+
+                <p>
+                    Au départ, l’extraction se faisait à ciel ouvert, là où la pierre affleurait sur les pentes (<b>colline Sainte-
+                    Geneviève</b>, <b>monts de Chaillot</b> et de <b>Montmartre</b>, etc.). On ouvrait de vastes fosses dans le sol pour y
+                    prélever la roche. Mais dès que l’épaisseur de terrain au-dessus du banc de calcaire devint trop
+                    importante, les tailleurs de pierre s’enfoncèrent sous terre en creusant des <b>galeries horizontales</b> dans
+                    la masse de calcaire. Ainsi naquirent les <b>carrières souterraines</b>. Pour extraire les blocs et les
+                    évacuer, des <b>puits verticaux</b> étaient forés vers la surface, servant à la fois de chemin pour les ouvriers,
+                    de conduit d’aération et de sortie pour les pierres. Des treuils actionnés par des hommes ou des
+                    chevaux permettaient de remonter les blocs à la surface. Ces puits de service, souvent
+                    dissimulés dans des cabanons de carriers à l’époque, sont pour certains restés accessibles et servent de nos jours d’entrées 
+                    clandestines aux <b>cataphiles</b>.
+                </p>
+
+                <p>
+                    Les carrières de calcaire étaient ouvertes <b>hors des limites de la ville</b> sur des terrains périphériques
+                    (faubourgs) on ne creusait pas directement sous les habitations existantes. Cependant, à mesure
+                    que Paris s’étendait, elle finissait par englober ces zones exploitées : c’est ainsi que de nouveaux
+                    quartiers ont été bâtis au-dessus de <b>vides de carrières</b>, sans que les habitants en aient toujours
+                    conscience. En quelques siècles, les couches de calcaire sous le sol parisien se sont retrouvées rongées
+                    par l’exploitation, « <b>comme une dent cariée</b> » écrivent les auteurs. De ces carrières ont surgi les pierres qui 
+                    ont servi à édifier <b>Notre-Dame</b>, <b>le Louvre</b>, <b>le Pont-Neuf</b>, <b>les remparts</b>, <b>le Panthéon</b> et tant
+                    d’autres bâtiments historiques.
+                </p>
+
+                <p>
+                    Extraire le calcaire était un métier exigeant, qui requérait un vrai savoir-faire. Les carriers formaient
+                    une corporation organisée, avec son jargon technique très pointu et ses traditions. Ils se considéraient
+                    comme une force ouvrière à part, indispensable à la ville. Par exemple, ils donnaient des noms
+                    spécifiques aux différentes couches de pierre exploitées : outre le « <b>banc royal</b> », on distinguait à Paris
+                    des couches appelées <b>la lambourde</b>, <b>le liais franc</b>, <b>le banc de laine</b>, <b>le grignard</b>, <b>le cliquart</b>, etc. –
+                    autant de termes ésotériques pour le profane, reflétant une riche culture de métier.
+                </p>
+
+                <p>
+                    La méthode traditionnelle pour abattre un bloc de calcaire consistait à dégager d’abord les minces
+                    <b>couches de marne</b> intercalées (surnommées souchet ou bousin), puis à pratiquer de chaque côté du
+                    bloc de profondes entailles verticales. Enfin, on enfonçait des coins de fer dans la strate supérieure
+                    pour faire tomber le bloc. Le bloc de pierre était ensuite débité en moellons ou en pierres de taille
+                    selon les besoins de la construction.
+                </p>
+
+                <p>
+                    Jusqu’au XVe siècle environ, les carriers ne retiraient pas toute la masse de calcaire : ils laissaient dans la
+                    carrière, à intervalles réguliers, de gros <b>piliers</b> de roche non extraite pour soutenir le plafond. On
+                    appelait ce mode d’exploitation la carrière « <b>à piliers tournés</b> » (les piliers semblaient « tournés » dans la masse 
+                    comme des colonnes). Cette méthode ménageait des supports robustes, mais une partie de la
+                    pierre restait donc en place inutilisée. À partir du XVIᵉ siècle, face à la demande croissante en matériaux
+                    et aux craintes d’effondrement liées aux vides, une nouvelle technique est adoptée à Paris :
+                    l’exploitation par « <b>hagues et bourrages</b> ». Désormais, toute la couche de calcaire utile était
+                    extraite, puis les déchets de taille (gravats, pierres de faible qualité) étaient entassés sur place. Les
+                    carriers construisaient de petits murets en pierre sèche appelés hagues derrière lesquels ils bourraient
+                    les débris, comblant progressivement la galerie au fur et à mesure de l’avancée. Par endroits, on
+                    érigeait aussi des <b>piliers à bras</b> (empilement de moellons) entre le sol et le toit de la carrière. Ce
+                    remblayage structuré avait l’avantage de <b>soutenir le terrain</b> tout en permettant un tassement en
+                    douceur du sol. Il s’agit d’une technique particulière à la région parisienne, développée pour limiter
+                    les affaissements brutaux
+                </p>
+
+                <h3>Le gypse : la colline aux carrières de plâtre</h3>
+
+                <p>
+                    Le <b>gypse</b>, roche blanche et tendre, affleure principalement sur les <b>buttes de Montmartre</b> et de
+                    <b>Belleville</b> au nord de Paris. Ces collines ont été exploitées dès le Haut Moyen Âge pour fournir du
+                    <b>plâtre</b> à la capitale. Le plâtre de Paris, obtenu en cuisant le gypse, fut longtemps un matériau
+                    de construction essentiel (enduits, moulures, etc.). L’exploitation a atteint son apogée au XIXᵉ siècle,
+                    mobilisant une véritable armée de prolétaires dans les « buttes à plâtre ». À titre d’anecdote, une
+                    carrière de gypse des Buttes-Chaumont avait été surnommée <b>carrière d’Amérique</b>, car son plâtre était
+                    exporté jusqu’aux États-Unis. L’ultime carrière de gypse parisienne a fermé en <b>1873</b> , marquant
+                    la fin d’une époque.
+                </p>
+
+                <p>
+                    Les méthodes d’extraction du gypse différaient sensiblement de celles du calcaire. Le gypse se présente
+                    en <b>masses épaisses</b> réparties en plusieurs couches superposées. Les carriers commençaient par
+                    creuser dans la colline de petites <b>galeries trapézoïdales</b> qu’ils renforçaient soigneusement avec du
+                    bois. Ils multipliaient ces galeries parallèles puis en perçaient perpendiculairement, créant un
+                    <b>quadrillage souterrain</b>. Ensuite, ils élargissaient et approfondissaient ces galeries vers le bas, de sorte
+                    qu’à la fin, les portions de roche laissées intactes formaient de <b>grandes pyramides inversées</b> : pointues
+                    en bas et larges en haut, maintenant la voûte de la cavité un peu à la manière de piliers naturels. À
+                    Montmartre, certaines de ces galeries faisaient <b>18m de hauteur</b>, évoquant de véritables nefs de cathédrale souterraine
+                </p>
+
+                <p>
+                    Le gypse n’étant pas homogène sur toute sa hauteur, les ouvriers avaient développé un vocabulaire
+                    imagé pour distinguer les niveaux de qualité ou de difficulté. Par exemple, ils parlaient des couches des
+                    <b>fusils</b>, <b>des crottes d’âne</b>, <b>des pots à beurre</b>, <b>des bataillons</b>, <b>du gros cul</b> ou <b>des brioches</b> 
+                    pour décrire telle ou telle partie du banc de gypse. Certains noms évoquaient la texture ou la couleur de la pierre
+                    (le bienvenant, plus tendre ; les foies de cochon, d’un brun marbré ; le gros blanc d’un blanc pur), d’autres
+                    traduisaient les peines du métier (la corvée, le mal de dos, les bossus pour les passages voûtés bas). 
+                    On trouve même des termes pittoresques comme le savon du soldat ou les hautes et basses urines,
+                    dont la signification prête à sourire aujourd’hui. Ce jargon de carrier illustre le caractère éprouvant
+                    mais aussi la camaraderie et l’inventivité de ces travailleurs de la pierre.
+                </p>
+
+                <p>
+                    Contrairement au calcaire qui était employé tel quel en blocs, le <b>gypse</b> devait être <b>cuit puis moulu</b> pour
+                    produire le <b>plâtre</b>. Les carrières de gypse étaient donc systématiquement accompagnées de fours à
+                    plâtre. Initialement, le gypse était cuit « à la demande » chez les plâtriers en ville (avec un prix du plâtre
+                    variable selon la saison, car la cuisson consommait beaucoup de bois, surtout l’hiver). Avec l’ère
+                    industrielle, des fours furent installés près des carrières, diffusant une intense chaleur appréciée des
+                    miséreux parisiens qui venaient s’y réchauffer l’hiver. Les abords des collines à plâtre avaient mauvaise réputation, 
+                    mêlant misère sociale et danger minier.
+                </p>
+
+                <p>
+                    Enfin, notons que la <b>couche de craie</b> (sous le calcaire lutétien) n’a pratiquement pas été exploitée dans
+                    Paris intra-muros, car elle est trop profonde. On a extrait de la craie pour divers usages (notamment
+                    fabriquer de la <b>chaux</b> et du <b>blanc de Meudon</b>) en banlieue sud, à Meudon, Issy, Clamart, etc., aux XVIIIᵉ
+                    et XIXᵉ siècles, mais pas dans les carrières mêmes de Paris.
+                </p>
+
+                <h3>L’argile et les « glacières » d’argile</h3>
+                <p>
+                    L’argile plastique a été une ressource précieuse dès l’Antiquité : mélangée à de la paille et séchée au
+                    soleil, elle servait à fabriquer torchis et briques, et cuite au four, elle permettait de produire des
+                    poteries, tuiles, amphores, etc... Autour de Paris, on trouve des terrains argileux, et l’argile a donc
+                    été exploitée très tôt, bien avant le gypse ou le calcaire. Tant qu’il y en avait à fleur de sol, on la prélevait
+                    en creusant de simples fosses ouvertes. Les <b>Gallo-Romains</b> pratiquaient par exemple des excavations
+                    <b>circulaires à ciel ouvert</b> , élargies en forme d’entonnoir. Ces fosses étaient appelées <b>glacières</b> (par
+                    analogie avec les puits à glace) ou <b>argilières</b>.
+                </p>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=xhdcpv"
+                        style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                        allowfullscreen
+                        title="Dailymotion Video Player"
+                        allow="web-share">
+                    </iframe>
+                </div>
+
+                <p>
+                    Mais pour trouver de l’<b>argile de bonne qualité</b>, il a souvent fallu s’enfoncer <b>sous terre</b>, notamment 
+                    aller la chercher sous la couche de <b>calcaire lutétien</b>. On creusait alors de véritables puits verticaux 
+                    de 10, 20 m, voire plus, traversant la roche pour atteindre le dépôt d’argile. Au fond du puits, les
+                    ouvriers extrayaient l’argile en découpant des blocs qu’ils remontaient dans des seaux ou paniers. La
+                    technique est simple en théorie, mais le labeur était exténuant : les galeries d’argile étaient <b>étroites,
+                    mal aérées</b> (l’argile imperméable ne laisse pas passer l’air), très humides et glissantes. Les mineurs
+                    de l’argile travaillaient presque sans ventilation, dans la moiteur et l’obscurité.
+                </p>
+
+                <p>
+                    De plus, creuser sous une couche aquifère présentait un <b>risque permanent</b> : s’ils perçaient
+                    accidentellement la nappe d’eau au-dessus, c’était le déluge assuré. Une rupture de terrain pouvait
+                    provoquer l’inondation soudaine de la galerie, emportant les ouvriers. Le récit d’époque rapporte la
+                    peur de se « <b>noyer dans un raz-de-marée imprévisible</b> » en perçant le plafond d’argile saturé d’eau.
+                </p>
+
+                <p>
+                    Enfin, l’argile étant un matériau meuble, les cavités se refermaient d’elles-mêmes assez rapidement. Dès
+                    qu’on cessait l’exploitation, la voûte d’argile et le sol au-dessus <b>s’affaissaient progressivement</b> pour
+                    combler le vide. Les piliers et étayages en bois placés par les carriers étaient lentement écrasés par la
+                    pression du sol, si bien qu’au bout d’un temps les galeries d’argile disparaissaient, remplies par leur
+                    propre effondrement. Ainsi, les <b>vides</b> créés par l’extraction de l’argile se résorbaient « d’eux-mêmes
+                    sans bruit ». Contrairement aux <b>carrières de pierre</b>, les anciennes argilières n’ont laissé presque
+                    <b>aucune cavité durable sous Paris</b>, elles pouvaient provoquer des affaissements ponctuels, mais pas de
+                    vastes labyrinthes vides. Cependant, cette argile de qualité a permis à des générations d’artisans de
+                    fournir tuiles, briques et poteries à la ville grandissante.
+                </p>
+
+                <p>
+                    Notons que le métier d’ouvrier d’argilière était sans doute l’un des plus pénibles. Il fallait descendre au
+                    fond de puits obscurs, creuser à la pioche dans la boue stagnante, respirer un air vicié. Peu de lumière,
+                    peu d’air : « il faut appartenir au dernier carré des misérables pour y travailler », ironise le texte original. 
+                    En comparaison, l’exploitation du calcaire était considérée comme plus noble et valorisante, car elle produisait la 
+                    « pierre à bâtir » des monuments.
+                </p>
+            </div>
+
+            <div id="techniques_creusement"></div>
+        </div>
+    </div>
+</body>
+</html>
+
