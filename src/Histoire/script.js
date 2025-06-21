@@ -28,3 +28,8 @@ function display_text_histoire(title_div, text_div){
 display_text_histoire("formation_geologique_title", "formation_geologique_div")
 display_text_histoire("exploitation_carriere_title", "exploitation_carrieres")
 display_text_histoire("techniques_creusement_title", "techniques_creusement")
+display_text_histoire("inspection_general_carrieres_title", "inspection_general_carrieres_div")
+display_text_histoire("carrieres_en_catacombes_title", "carrieres_en_catacombes_div")
+display_text_histoire("geographie_souterraine_titre", "geographie_souterraine_div")
+display_text_histoire("cataphile_title", "cataphile_div")
+
