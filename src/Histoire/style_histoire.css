@@ -1,0 +1,21 @@
+.main_div_histoire_page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    top: 80px;
+    position: absolute;
+}
+
+#side_menu_histoire_div{
+    flex: 2;
+}
+
+#main_text_infos_div{
+    flex: 6;
+}
+
+#formation_geologique_div, #exploitation_carrieres, 
+#techniques_creusement {
+    display: none;
+    opacity: 0;
+}
