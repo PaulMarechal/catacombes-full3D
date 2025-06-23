@@ -257,11 +257,12 @@ class HeaderMenu extends HTMLElement {
             });
         };
 
-        show('.salles_div_header_menu',  '#salles_infos_div');
-        show('.histoire_div_header_menu','#histoire_infos_div');
-        show('.images_div_header_menu', '#images_infos_div');
-        show('.plan_div_header_menu',   '#plan_infos_div');
-        show('.tracts_div_header_menu', '#cartes_infos_div');
+        // show('.salles_div_header_menu',  '#salles_infos_div');
+        // show('.histoire_div_header_menu','#histoire_infos_div');
+        // show('.images_div_header_menu', '#images_infos_div');
+        // show('.plan_div_header_menu',   '#plan_infos_div');
+        // show('.tracts_div_header_menu', '#cartes_infos_div');
+
     }
 }
 

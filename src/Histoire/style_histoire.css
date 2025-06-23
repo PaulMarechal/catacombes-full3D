@@ -42,3 +42,24 @@
     display: none;
     opacity: 0;
 }
+
+/* Display img on side text */
+.display_img_side{
+    display: flex;
+}
+
+.text_img_side{
+    flex: 6
+}
+
+.img_side{
+    flex: 1
+}
+
+.text_video_side{
+    flex: 4;
+}
+
+.video_side{
+    flex: 2
+}
