@@ -8,14 +8,37 @@
 
 #side_menu_histoire_div{
     flex: 2;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-around;
+}
+
+#side_menu_histoire_div div{
+    height: 6vh;
+    margin: auto;
+    width: 42vh;
+    padding: 10px;
+    border-radius: 15px;
+    background: #fff;
+    cursor: pointer;
+    transition: box-shadow .5s ease-out;
+}
+
+#side_menu_histoire_div .selected{
+    box-shadow: 0 0 10px 2px #a7a7a7;
 }
 
 #main_text_infos_div{
     flex: 6;
+    overflow-y: scroll;
+    scrollbar-color: #333 transparent;
 }
 
 #formation_geologique_div, #exploitation_carrieres, 
-#techniques_creusement {
+#techniques_creusement, #inspection_general_carrieres_div, 
+#geographie_souterraine_div, #carrieres_en_catacombes_div,
+ #cataphile_div {
     display: none;
     opacity: 0;
 }

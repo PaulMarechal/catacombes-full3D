@@ -6,9 +6,17 @@ function display_text_histoire(title_div, text_div){
 
     const main_text_infos_div = document.querySelectorAll("#main_text_infos_div div")
 
-    title.addEventListener("mouseover", ()=>{
+    title.addEventListener("click", ()=>{
+
+        const prev = document.querySelector("#side_menu_histoire_div .selected");
+        if(prev){
+            prev.classList.remove("selected");
+        }
+
+        title.classList.add("selected");
 
         main_text_infos_div.forEach((main_text) => {
+
             main_text.style.opacity = "0"
             setTimeout(() => {
                 main_text.style.display = "none"
