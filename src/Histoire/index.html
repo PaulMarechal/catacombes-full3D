@@ -21,6 +21,7 @@
     <!-- End Google Tag Manager -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./style_histoire.css">
     <script type="module" src="./script.js"></script>
@@ -86,7 +87,7 @@
         <!-- Main infos div -->
         <!-- http://troglos.free.fr/dossiers_paris_ile_de_france/dossier_carrieres_paris/extraction_calcaire_grossier/dossier.html -->
         <div id="main_text_infos_div">
-            <div id="intro_page">
+            <div class="history_infos_div" id="intro_page">
                 <p>
                     Paris est bâtie sur un véritable labyrinthe. Sous les pavés et le bitume s’étendent des galeries creusées
                     au fil des siècles dans la pierre, vestiges des <b>anciennes carrières</b> qui ont fourni les matériaux de
@@ -96,7 +97,7 @@
                     <b>explorations clandestines des cataphiles</b> d’aujourd’hui, voici une plongée dans le <b>Paris souterrain</b>.
                 </p>
             </div>
-            <div id="formation_geologique_div">
+            <div class="history_infos_div" id="formation_geologique_div">
                 <span class="display_img_side">
                     <span class="text_img_side">
                         <p>
@@ -142,48 +143,97 @@
                 </p>
             </div>
 
-            <div id="exploitation_carrieres">
-                <span> 
-                    <h2>Exploitation du calcaire grossier</h2> 
-                    <p>Le principal matériau de construction de Paris est le <strong>calcaire lutécien</strong>, une pierre calcaire dure et résistante 
-                        affleurant notamment sur la rive gauche. L’exploitation de cette pierre débute à l’époque gallo-romaine : dès le <em>I<sup>er</sup> siècle</em>, 
-                        les Romains exploitent des carrières à ciel ouvert le long des cours d’eau (Seine, Bièvre) afin de fournir des blocs pour bâtir la ville 
-                        de <a href="https://fr.wikipedia.org/wiki/Lutèce" target="_blank">Lutèce</a>:contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}. 
-                        Ces premières carrières se situent en bordure de la cité antique, par exemple dans l’actuel Jardin des Plantes ou près des arènes de Lutèce, 
-                        où l’on extrayait la roche directement des coteaux riverains:contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3}. 
-                        Durant tout le Haut Moyen Âge, on continue d’exploiter le calcaire grossier en surface dans les environs de Paris, profitant des affleurements 
-                        naturels.
-                    </p> 
+            <div class="history_infos_div" id="exploitation_carrieres">
+                <div> 
+                    <h2 id="typed-title">
+                        <span class="">Exploitation du calcaire grossier</span>
+                    </h2>
+                    <div class="display_img_side" >
+                        <span class="text_video_side" >
+                            <p>Le principal matériau de construction de Paris est le <strong>calcaire lutécien</strong>, une pierre calcaire dure et résistante 
+                                affleurant notamment sur la rive gauche. L’exploitation de cette pierre débute à l’époque gallo-romaine : dès le <em>I<sup>er</sup> siècle</em>, 
+                                les Romains exploitent des carrières à ciel ouvert le long des cours d’eau (Seine, Bièvre) afin de fournir des blocs pour bâtir la ville 
+                                de <a href="https://fr.wikipedia.org/wiki/Lutèce" target="_blank">Lutèce</a>.
+                            </p>
+                            <p>
+                                <!-- Ajouter plan de Parisii--> 
+                                <!-- Ajouter plan de Lutece -->
+                                Ces premières carrières se situent en bordure de la cité antique, par exemple dans l’actuel Jardin des Plantes ou près des arènes de Lutèce, 
+                                où l’on extrayait la roche directement des coteaux riverains. 
+                                Durant tout le Haut Moyen Âge, on continue d’exploiter le calcaire grossier en surface dans les environs de Paris, profitant des affleurements 
+                                naturels.
+                            </p> 
+                        </span>
+
+                        <div class="parent_grid_video_img">
+                            <div class="video_div_grid">
+                                <span style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden; display: block;width: 90%;margin: auto;">
+                                    <iframe src="https://geo.dailymotion.com/player.html?video=xhdcpv"
+                                        style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                                        allowfullscreen
+                                        title="Dailymotion Video Player"
+                                        allow="web-share">
+                                    </iframe>
+                                </span>
+                            </div>
+                            <div class="main_img_grid"></div>
+                            <div class="second_small_img_grid"> </div>
+                            <div class="third_small_img_grid"> </div>
+                        </div>
+
+                        
+                        
+                    </div>
                     <br/>
-                    <p>
-                        À partir de la fin du <strong>XII<sup>e</sup> siècle</strong>, alors que Paris s’agrandit, les gisements de surface s’épuisent 
-                        et l’on passe progressivement à une <strong>exploitation souterraine</strong> du calcaire:contentReference[oaicite:4]{index=4}. Les premières 
-                        galeries sont creusées en prolongement des carrières à ciel ouvert, horizontalement dans le flanc des collines:contentReference[oaicite:5]{index=5}. 
-                        Très vite, ces réseaux souterrains s’étendent sous les faubourgs de la rive gauche (Montagne Sainte-Geneviève, Montsouris, Montrouge…) 
-                        pour répondre aux besoins grandissants en pierre de construction – par exemple pour élever les remparts de Philippe-Auguste, la cathédrale 
-                        Notre-Dame ou le Louvre:contentReference[oaicite:6]{index=6}. La méthode d’extraction médiévale, dite des <em>« piliers tournés »</em>, 
-                        consiste à ménager dans la masse des piliers de roche non extraits, dispersés dans les galeries, afin de soutenir le ciel (plafond) de 
-                        la carrière:contentReference[oaicite:7]{index=7}:contentReference[oaicite:8]{index=8}. En théorie, environ la moitié du volume devait 
-                        être laissé en place en piliers, mais la convoitise poussait souvent les carriers à rogner ces soutiens pour extraire davantage de blocs, 
-                        affaiblissant d’autant la stabilité des cavités:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}. 
-                        Il n’était pas rare que des effondrements locaux, appelés <em>« fontis »</em>, surviennent lorsque le toit d’une galerie se 
-                        disloquait et s’effondrait sur un pilier trop mince.
-                    </p> 
+
+                    <span class="display_text_double">
+                        <span>
+                            <p>
+                                À partir de la fin du <strong>XII<sup>e</sup> siècle</strong>, alors que Paris s’agrandit, les gisements de surface s’épuisent 
+                                et l’on passe progressivement à une <strong>exploitation souterraine</strong> du calcaire. 
+                                Les premières galeries sont creusées en prolongement des carrières à ciel ouvert, horizontalement dans le flanc des collines. 
+                                <!-- Image gallerie souterraine et ciel ouvert -->
+                                Très vite, ces réseaux souterrains s’étendent sous les faubourgs de la rive gauche (Montagne Sainte-Geneviève, Montsouris, Montrouge…) 
+                                pour répondre aux besoins grandissants en pierre de construction, par exemple pour élever les remparts de Philippe-Auguste, la cathédrale 
+                                Notre-Dame ou le Louvre. La méthode d’extraction médiévale, dite des <em>« piliers tournés »</em>, 
+                                <!-- Ajouter image pilliers tounés -->
+                                consiste à ménager dans la masse des piliers de roche non extraits, dispersés dans les galeries, afin de soutenir le ciel (plafond) de 
+                                la carrière. En théorie, environ la moitié du volume devait être laissé en place en piliers, mais la convoitise poussait souvent les carriers 
+                                à rogner ces soutiens pour extraire davantage de blocs, affaiblissant d’autant la stabilité des cavités. 
+                                Il n’était pas rare que des effondrements locaux, appelés <em>« fontis »</em>, surviennent lorsque le toit d’une galerie se 
+                                disloquait et s’effondrait sur un pilier trop mince.
+                                <!-- Image d'explication de fontis -->
+                            </p> 
+                        </span>
+                        <span>
+                            <img src="https://catacombes.xyz/Histoire/assets/Images/exploitation/carrieres_souterraines_pilliers_tournées.webp" alt="">
+                        </span>
+                    </span>
+
+                    <span class="display_text_double">
+                        <span>
+                            <p>
+                                Au <strong>XVe siècle</strong>, les techniques évoluent avec le creusement de <strong>puits d’extraction verticaux</strong> permettant 
+                                d’atteindre directement des bancs plus profonds de calcaire. On descend alors dans la carrière 
+                                par un puits et on remonte les blocs à l’aide d’un grand treuil à roues actionné par des hommes ou des chevaux. 
+                                Cette méthode offre l’avantage d’exploiter des gisements situés sous des terrains plats, sans nécessiter d’ouverture en surface sur un flanc de 
+                                coteau. Par ailleurs, vers le <strong>XVI<sup>e</sup> siècle</strong>, pour limiter les éboulements fréquents et améliorer la rentabilité, 
+                                les tailleurs de pierre du faubourg Saint-Jacques mettent au point l’extraction par <em>« <b>hagues et bourrage</b> »</em>. 
+                                Cette technique de confortement consiste à remplacer les piliers de masse par des piliers maçonnés : après avoir extrait la pierre, on érige à intervalles 
+                                réguliers de gros piliers de moellons posés manuellement (<em>piliers à bras</em>), puis on construit entre eux des murs de refend en pierre sèche (<em>hagues</em>) et 
+                                on remplit l’espace intermédiaire avec les déblais compactés. Il en résulte de véritables cloisons épaisses soutenant 
+                                le plafond de la carrière sur une large surface, améliorant grandement la sécurité tout en permettant de remblayer les déchets sur place. 
+                                Désormais, les galeries s’organisent souvent en étoile autour du puits principal, avec des couloirs de circulation ménagés pour évacuer les matériaux. 
+                                <!-- image : schéma carrière souterraine -->
+                            </p> 
+                        </span>
+                        <span>
+                            <img src="https://catacombes.xyz/Histoire/assets/Images/exploitation/hague_et_bourrage.webp" alt="">
+                        </span>
+                    </span>
+                    
                     <br/>
-                    <p>
-                        Au <strong>XVe siècle</strong>, les techniques évoluent avec le creusement de <strong>puits d’extraction verticaux</strong> permettant 
-                        d’atteindre directement des bancs plus profonds de calcaire:contentReference[oaicite:11]{index=11}. On descend alors dans la carrière 
-                        par un puits et on remonte les blocs à l’aide d’un grand treuil à roues actionné par des hommes ou des chevaux:contentReference[oaicite:12]{index=12}. 
-                        Cette méthode offre l’avantage d’exploiter des gisements situés sous des terrains plats, sans nécessiter d’ouverture en surface sur un flanc de 
-                        coteau. Par ailleurs, vers le <strong>XVI<sup>e</sup> siècle</strong>, pour limiter les éboulements fréquents et améliorer la rentabilité, 
-                        les tailleurs de pierre du faubourg Saint-Jacques mettent au point l’extraction par <em>« hagues et bourrage »</em>:contentReference[oaicite:13]{index=13}. 
-                        Cette technique de confortement consiste à remplacer les piliers de masse par des piliers maçonnés : après avoir extrait la pierre, on érige à intervalles 
-                        réguliers de gros piliers de moellons posés manuellement (<em>piliers à bras</em>), puis on construit entre eux des murs de refend en pierre sèche (<em>hagues</em>) et 
-                        on remplit l’espace intermédiaire avec les déblais compactés:contentReference[oaicite:14]{index=14}. Il en résulte de véritables cloisons épaisses soutenant 
-                        le plafond de la carrière sur une large surface, améliorant grandement la sécurité tout en permettant de remblayer les déchets sur place:contentReference[oaicite:15]{index=15}. 
-                        Désormais, les galeries s’organisent souvent en étoile autour du puits principal, avec des couloirs de circulation ménagés pour évacuer les matériaux. 
-                        <!-- image : schéma carrière souterraine -->
-                    </p> 
+                    
                     <br/>
                     <p>
                         Malgré ces progrès techniques, l’exploitation intensive affaiblit le sous-sol parisien. À partir du <strong>XVII<sup>e</sup> siècle</strong>, 
@@ -222,7 +272,7 @@
                         creusé dans le calcaire grossier – principalement sous les 5<sup>e</sup>, 6<sup>e</sup>, 14<sup>e</sup> et 15<sup>e</sup> arrondissements – subsiste comme une mémoire 
                         souterraine de la pierre de Paris, patiemment consolidé par des générations d’inspecteurs des carrières.
                     </p> 
-                </span> 
+                </div> 
                 <br/>
                 <br/>
                 <span> 
@@ -288,7 +338,7 @@
                 </span>
             </div>
 
-            <div id="techniques_creusement">
+            <div class="history_infos_div" id="techniques_creusement">
                 <h3>Techniques de creusement et dangers du Paris souterrain</h3>
 ”
                 <p>
@@ -419,7 +469,7 @@
                 </p>
             </div>
 
-            <div id="carrieres_en_catacombes_div">
+            <div class="history_infos_div" id="carrieres_en_catacombes_div">
                 <h3>Des carrières aux catacombes : ossuaires et refuges souterrains</h3>
             
                 <p>
@@ -523,7 +573,7 @@
                 </p>
             </div>
 
-            <div id="geographie_souterraine_div">
+            <div class="history_infos_div" id="geographie_souterraine_div">
                 <h3>La géographie souterraine de Paris aujourd’hui</h3>
                 <p>
                     Malgré ces multiples utilisations et les nombreux travaux de comblement, Paris possède toujours un
@@ -584,7 +634,7 @@
                 </p>
             </div>
 
-            <div id="cataphile_div">
+            <div class="history_infos_div" id="cataphile_div">
                 <h3>Les cataphiles: explorateur urbain du Paris souterrain</h3>
             
                 <p>
@@ -737,6 +787,9 @@
             </div>
         </div>
     </div>
+
+
+
 </body>
 </html>
 

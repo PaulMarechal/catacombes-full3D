@@ -265,18 +265,19 @@ div.display_menu a{
 }
 /* fin header menu */
 body {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: url("https://catacombes.xyz/assets/images/tombePhilibertAspairt_catacombes.jpg")
-    center center;
-  background-size: 500px;
-  font-family: sans-serif;
-  font-weight: 300;
-  animation: moveBackground 60s linear infinite;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url("https://catacombes.xyz/assets/images/tombePhilibertAspairt_catacombes.jpg")
+        center center;
+    background-size: contain;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    font-weight: 300;
+    animation: moveBackground 60s linear infinite;
 }
 
 a {

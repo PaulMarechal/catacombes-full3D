@@ -44,22 +44,72 @@
 }
 
 /* Display img on side text */
-.display_img_side{
-    display: flex;
+.display_img_side{display: flex;}
+
+.text_img_side{flex: 6}
+
+.img_side{flex: 1}
+
+.text_video_side{flex: 4;}
+
+.video_side{flex: 2}
+
+.display_text_double{display: flex;}
+
+.display_text_double span{flex:1; text-align: justify;margin: 0 3vh;}
+.display_img_side { margin-bottom: 2rem; }
+
+.display_img_side,
+.text_video_side,
+.video_side {
+  display: block;
 }
 
-.text_img_side{
-    flex: 6
+.display_multiple_img{
+    display: flex; 
+}
+.display_video{flex: 5}
+.display_img{flex: 2; display: inline;}
+.display_img img{
+    width: 96%;
+    /* height: 50%; */
 }
 
-.img_side{
-    flex: 1
+.history_infos_div{
+    transition: opacity .5s ease-out;
 }
 
-.text_video_side{
-    flex: 4;
+/* grid avec video et images */
+.parent_grid_video_img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.7fr 0.7fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 9vh;
 }
 
-.video_side{
-    flex: 2
+
+
+.video_div_grid { grid-area: 1 / 1 / 6 / 4; }
+.main_img_grid { 
+    grid-area: 1 / 4 / 4 / 6; 
+    background: url("https://catacombes.xyz/Histoire/assets/Images/exploitation/Plan_de_Lutece_dresse_par_Albert_Lenoir.webp")
+    center center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.second_small_img_grid { 
+    grid-area: 4 / 4 / 6 / 5; 
+    background: url("https://catacombes.xyz/Histoire/assets/Images/exploitation/Geologie_d_une_carriere_parisienne.webp")
+    center center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.third_small_img_grid { 
+    grid-area: 4 / 5 / 6 / 6; 
+    background: url("https://catacombes.xyz/Histoire/assets/Images/exploitation/font_de_taille_ciel_ouvert_gallo_romaine.png")
+    center center;
+    background-size: cover;
+    border-radius: 10px;
 }

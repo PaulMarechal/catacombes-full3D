@@ -4,7 +4,7 @@ function display_text_histoire(title_div, text_div){
     const title = document.getElementById(title_div)
     const text = document.getElementById(text_div)
 
-    const main_text_infos_div = document.querySelectorAll("#main_text_infos_div div")
+    const main_text_infos_div = document.querySelectorAll(".history_infos_div")
 
     title.addEventListener("click", ()=>{
 
