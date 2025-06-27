@@ -118,3 +118,7 @@
     width: 50%;
     margin: 5vh 25%;
 }
+
+.display_two_img{display: inline-flex;}
+.display_two_img div {flex:1;}
+.display_two_img div img{width: 94%;margin: 4vh 2%;}
