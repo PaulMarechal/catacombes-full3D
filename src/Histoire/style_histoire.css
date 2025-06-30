@@ -76,6 +76,7 @@
 }
 
 .history_infos_div{
+    margin-bottom: 150px;
     transition: opacity .5s ease-out;
 }
 
