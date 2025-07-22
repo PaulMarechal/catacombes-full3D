@@ -233,6 +233,14 @@ function init(nameRoom) {
 	// Orbit controls for no-vr
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
+				// setInterval(() => {
+				// 	controls.enableZoom=false 
+				// 	controls.enablePan=false        
+				// 	controls.minPolarAngle=Math.PI / 3
+				// 	controls.maxPolarAngle=Math.PI / 2
+				// 	controls.minAzimuthAngle=-Math.PI / 4
+				// 	controls.maxAzimuthAngle=Math.PI / 4
+				// }, 300);
 
 	controls.enableDamping = true
 	document.addEventListener("DOMContentLoaded", () => {
@@ -315,6 +323,14 @@ function init(nameRoom) {
 			const tween = new TWEEN.Tween(camera.position)
 			.to({ x: -5.8, y: 1.45, z: -2.3 }, 7000) 
 			.easing(TWEEN.Easing.Cubic.InOut)
+			.onComplete(() => {
+				controls.minPolarAngle = Math.PI / 3;
+				controls.maxPolarAngle = Math.PI / 2;
+				controls.minAzimuthAngle = -Math.PI / 1.4;
+				controls.maxAzimuthAngle = Math.PI / 0.6;
+				controls.enableZoom = false;
+				controls.enablePan = false;
+			})
 			.start();
 		  
 		},
