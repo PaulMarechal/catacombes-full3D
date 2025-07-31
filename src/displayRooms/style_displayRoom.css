@@ -124,6 +124,7 @@
 .location_room, .deepth_room{
     color: #fff;
     position: absolute;
+    mix-blend-mode: plus-lighter;
 }
 
 .deepth_room{
