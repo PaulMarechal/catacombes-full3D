@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
 <div class="top_menu">
   <div>
-    <h1 title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
+    <h1 title="Catacombes Interdites">Catacombes <span>  INTERDITES</span></h1>
   </div>
 
   <div>

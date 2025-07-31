@@ -156,7 +156,7 @@ template.innerHTML = `
     <div class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  UNOFFICIAL</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  INTERDITES</span></h1>
             </a>
         </div>
         <div class="salles_div_header_menu">
