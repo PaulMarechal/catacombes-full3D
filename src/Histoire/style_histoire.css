@@ -44,7 +44,8 @@
 }
 
 /* Display img on side text */
-.display_img_side{display: flex;}
+.display_img_side{display: flex!important;}
+.block{display: block!important;}
 
 .text_img_side{flex: 6}
 
@@ -54,7 +55,8 @@
 
 .video_side{flex: 2}
 
-.display_text_double{display: flex;}
+.maxW460{max-width: 460px;}
+.display_text_double{display: flex; margin: 2vh 0;}
 
 .display_text_double span{flex:1; text-align: justify;margin: 0 3vh;}
 .display_img_side { margin-bottom: 2rem; }
@@ -122,4 +124,4 @@
 
 .display_two_img{display: inline-flex;}
 .display_two_img div {flex:1;}
-.display_two_img div img{width: 94%;margin: 4vh 2%;}
+.display_two_img div img{width: 94%; height: 51vh;margin: 4vh 2%;}
