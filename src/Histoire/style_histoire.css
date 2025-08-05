@@ -10,29 +10,147 @@
     flex: 2;
     display: flex;
     flex-direction: column;
-    height: 90vh;
-    justify-content: space-around;
+    height: 86vh;
+    justify-content: space-between;
+    margin-left: 2vh;
 }
 
-#side_menu_histoire_div div{
-    height: 6vh;
-    margin: auto;
-    width: 42vh;
+#side_menu_histoire_div div {
+    height: 9.5vh;
+    width: auto;
     padding: 10px;
-    border-radius: 15px;
     background: #fff;
     cursor: pointer;
-    transition: box-shadow .5s ease-out;
+    transition: box-shadow 0.5s ease-out;
 }
+
+/* Style de base pour tous les SVG */
+.menu_item svg {
+    padding: 7px 10px 10px 7px;
+    border-radius: 10px 8px 20px 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.9px);
+    -webkit-backdrop-filter: blur(10.9px);
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    transition: padding 0.5s ease-out, border-radius 0.5s ease-out, background-color 0.3s ease-out;
+}
+
+/* Hover sur l'icône */
+.menu_item:hover svg {
+    padding: 7px 345px 95px 7px;
+    border-radius: 10px 20px 50px 20px;
+}
+
+/* Style des titres */
+.menu_item h2 {
+    color: #333;
+    transition: color 0.5s ease-out;
+    padding-left: 40px;
+}
+
+/* Changement de couleur du titre au hover */
+#formation_geologique_title svg {
+    background-color: rgba(249, 197, 209, 1); 
+}
+
+/* #formation_geologique_title:hover h2{
+    color: rgb(252 44 92);
+} */
+
+#exploitation_carriere_title svg {
+    background-color: rgba(252, 213, 206, 1); 
+}
+
+/* #exploitation_carriere_title:hover h2{
+    color: rgb(255 97 69);
+} */
+
+#techniques_creusement_title svg {
+    background-color: rgba(255, 243, 176, 1); 
+}
+
+/* #techniques_creusement_title:hover h2{
+    color: rgb(255 223 43);
+} */
+
+#inspection_general_carrieres_title svg {
+    background-color: rgba(193, 244, 210, 1); 
+}
+
+/* #inspection_general_carrieres_title:hover h2{
+    color: rgb(46 255 116);
+} */
+
+#carrieres_en_catacombes_title svg {
+    background-color: rgba(229, 213, 249, 1);
+}
+
+/* #carrieres_en_catacombes_title:hover h2{
+    color: rgb(138 46 254);
+} */
+
+#geographie_souterraine_titre svg {
+    background-color: rgba(205, 221, 253, 1); 
+}
+
+/* #geographie_souterraine_titre:hover h2{
+    color: rgb(36 109 255);
+} */
+
+#cataphile_title svg {
+    background-color: rgba(255, 209, 220, 1);
+}
+
+/* #cataphile_title:hover h2{
+    color: rgb(255 50 99);
+} */
+
+
+
+#side_menu_histoire_div div{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0px;
+}
+
+#side_menu_histoire_div div h2{
+    padding-left: 36px;
+    z-index: 2;
+}
+
+#side_menu_histoire_div div:first-child {
+    border-radius: 14px 4px 4px 4px;
+}
+
+#side_menu_histoire_div div:last-child {
+    border-radius: 4px 4px 4px 14px;
+}
+
+#side_menu_histoire_div div:not(:first-child):not(:last-child) {
+    border-radius: 4px;
+}
+
 
 #side_menu_histoire_div .selected{
     box-shadow: 0 0 10px 2px #a7a7a7;
 }
 
 #main_text_infos_div{
-    flex: 6;
+    flex: 8;
     overflow-y: scroll;
     scrollbar-color: #333 transparent;
+
+    background: #fff;
+    padding: 1vw 2vw;
+    margin: 0 1vw 0 4px;
+    border-radius: 4px 14px 14px 4px;
+    height: 82vh;
 }
 
 #formation_geologique_div, #exploitation_carrieres, 
