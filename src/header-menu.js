@@ -77,7 +77,7 @@ template.innerHTML = `
             // padding: 6px 10px;
             width: 100%;
 
-            background: rgba( 255, 255, 255, 0);
+            background: rgb(71 71 71 / 10%);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 0px;
@@ -166,9 +166,9 @@ template.innerHTML = `
         }
 
         .parent_header_menu > div {
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(-1px);
+            -webkit-backdrop-filter: blur(-1px);
+            background: rgb(71 71 71 / 0%);
             transition: backdrop-filter 0.5s ease-out, background 0.5s ease-out, border .5s ease-out;
             padding: 8px 12px;
             border-right: 1px solid #ffffff00;
