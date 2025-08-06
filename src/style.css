@@ -417,15 +417,25 @@ a {
     cursor : pointer;
 }
 
-.loading-bar{
+.loading-bar {
     position: absolute;
-    top: 190px;
-    left: 45.8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: fit-content;
     background: transparent;
     z-index: 2;
     opacity: 1;
     transition: opacity 2s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loading-bar svg{
+    position: absolute;
 }
 
 .loading-bar.ended{
@@ -436,6 +446,13 @@ a {
     color: #fff; 
     text-align:center;
     margin-top: -18px;
+    display: none;
+}
+
+#loading_bar_percent{
+    position: absolute;
+    width: 12vh;
+    margin-top: -6vh;
 }
 
 .grass_loading_elem{
