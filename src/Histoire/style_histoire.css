@@ -27,23 +27,66 @@
 
 /* Style de base pour tous les SVG */
 .menu_item svg {
-    padding: 7px 10px 10px 7px;
-    border-radius: 10px 8px 20px 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10.9px);
-    -webkit-backdrop-filter: blur(10.9px);
-    border: 1px solid rgba(255, 255, 255, 0.48);
+    padding: 8px 7px 80px 12px;
+    border-radius: 0px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.48); */
     position: absolute;
     top: -2px;
-    left: -3px;
-    transition: padding 0.5s ease-out, border-radius 0.5s ease-out, background-color 0.3s ease-out;
+    left: -6px;
+    overflow: visible;
+    border-right: 1px solid #333;
 }
 
 /* Hover sur l'icône */
-.menu_item:hover svg {
+/* .menu_item:hover svg {
     padding: 7px 345px 95px 7px;
     border-radius: 10px 20px 50px 20px;
+} */
+
+
+.menu_item {
+    position: relative; 
+    overflow: hidden;
 }
+
+/* Triangle décoratif en haut à gauche */
+.menu_item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    border-top: 0px solid rgba(193, 193, 193, 0.6);
+    border-right: 0px solid transparent;
+
+    z-index: 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: none;
+
+    transition: border-top-width 1s ease, border-right-width 1s ease;
+}
+
+.menu_item:hover::before {
+    border-top-width: 500px;
+    border-right-width: 500px;
+}
+
+
+.menu_item svg {
+    position: absolute;
+    z-index: 1;
+}
+
+/* .menu_item:hover svg{
+    padding: 7px 355px 86px 7px;
+} */
+
 
 /* Style des titres */
 .menu_item h2 {
@@ -53,57 +96,57 @@
 }
 
 /* Changement de couleur du titre au hover */
-#formation_geologique_title svg {
+/* #formation_geologique_title svg {
     background-color: rgba(249, 197, 209, 1); 
-}
+} */
 
 /* #formation_geologique_title:hover h2{
     color: rgb(252 44 92);
 } */
 
-#exploitation_carriere_title svg {
+/* #exploitation_carriere_title svg {
     background-color: rgba(252, 213, 206, 1); 
-}
+} */
 
 /* #exploitation_carriere_title:hover h2{
     color: rgb(255 97 69);
 } */
 
-#techniques_creusement_title svg {
+/* #techniques_creusement_title svg {
     background-color: rgba(255, 243, 176, 1); 
-}
+} */
 
 /* #techniques_creusement_title:hover h2{
     color: rgb(255 223 43);
 } */
 
-#inspection_general_carrieres_title svg {
+/* #inspection_general_carrieres_title svg {
     background-color: rgba(193, 244, 210, 1); 
-}
+} */
 
 /* #inspection_general_carrieres_title:hover h2{
     color: rgb(46 255 116);
 } */
 
-#carrieres_en_catacombes_title svg {
+/* #carrieres_en_catacombes_title svg {
     background-color: rgba(229, 213, 249, 1);
-}
+} */
 
 /* #carrieres_en_catacombes_title:hover h2{
     color: rgb(138 46 254);
 } */
 
-#geographie_souterraine_titre svg {
+/* #geographie_souterraine_titre svg {
     background-color: rgba(205, 221, 253, 1); 
-}
+} */
 
 /* #geographie_souterraine_titre:hover h2{
     color: rgb(36 109 255);
 } */
 
-#cataphile_title svg {
+/* #cataphile_title svg {
     background-color: rgba(255, 209, 220, 1);
-}
+} */
 
 /* #cataphile_title:hover h2{
     color: rgb(255 50 99);
@@ -148,7 +191,12 @@
 } */
 
 #side_menu_histoire_div .selected{
-    box-shadow: 0 0 10px 2px #a7a7a7;
+    /* box-shadow: 0 0 10px 2px #a7a7a7; */
+    background-color: rgba(193, 193, 193, 0.6);;
+}
+
+#main_text_infos_div p{
+    text-align: justify;
 }
 
 #main_text_infos_div{

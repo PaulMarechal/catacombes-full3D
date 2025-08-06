@@ -77,7 +77,7 @@ template.innerHTML = `
             // padding: 6px 10px;
             width: 100%;
 
-            background: rgb(71 71 71 / 10%);
+            background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 0px;
@@ -166,21 +166,24 @@ template.innerHTML = `
         }
 
         .parent_header_menu > div {
-            backdrop-filter: blur(-1px);
-            -webkit-backdrop-filter: blur(-1px);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
             background: rgb(71 71 71 / 0%);
-            transition: backdrop-filter 0.5s ease-out, background 0.5s ease-out, border .5s ease-out;
+            transition: background 0.5s ease-out, border .5s ease-out;
             padding: 8px 12px;
-            border-right: 1px solid #ffffff00;
-            border-left: 1px solid #ffffff00;
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent;
+
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
 
+
         .parent_header_menu > div:hover {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.5);
-            border-right: 1px solid #ffffff;
-            border-left: 1px solid #ffffff;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-right: 1px solid  #ffffff;
+            border-left: 1px solid  #ffffff;
         }
 
 
