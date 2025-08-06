@@ -1,8 +1,8 @@
 .parentTextExplications{
-    height: 844px;
     width: 100%;
-    margin-top: 85px;
+    padding-top: 76px;
     scrollbar-color: grey transparent;
+    margin-top: -35px;
 }
 
 .parentTextExplications {

@@ -587,7 +587,8 @@ ul{
 .marginPageimages{
     background-size: cover; 
     background-position: center; 
-    margin: 10px; 
+    margin: 4px; 
+    border-radius: 4px;
 }
 
 .iconeBurgerMenu{
