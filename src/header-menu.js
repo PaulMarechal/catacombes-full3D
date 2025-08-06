@@ -15,10 +15,7 @@ template.innerHTML = `
         a {
             text-decoration: none;
         }
-        h1, h2, h3, a {
-            font-family: 'Bebas Neue', cursive;
-            font-weight: 300 !important;
-        }
+
         #main_title_catacombes span {
             text-transform: none;
             opacity: .8;
@@ -27,7 +24,7 @@ template.innerHTML = `
             font-size: 1.75rem;
             letter-spacing: 0.65px;
             -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #020304;
+            -webkit-text-stroke-color: #dbdbdb;
         }
         #title_main_page{
             margin: 0;
@@ -71,37 +68,52 @@ template.innerHTML = `
         .parent_header_menu {
             display: grid;
             z-index:999;
-            grid-template-columns: repeat(11, 1fr) 0.5fr;
+            grid-template-columns: repeat(2, 0.9fr) repeat(5, 0.7fr ) repeat(5, 1fr) 0.5fr;
             grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
             position: fixed;
             top: -1px;
-            padding: 6px 10px;
+            // padding: 6px 10px;
             width: 100%;
 
             background: rgba( 255, 255, 255, 0);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 0px;
-            box-shadow: 0 0 12px 4px rgb(0 0 0 / 21%);
+            box-shadow: 0 0 12px -1px rgb(0 0 0 / 21%);
             // border: 0.5px solid rgba(255, 255, 255, 0.3);
             user-select: none;
             left: 0; 
+            border: 1px solid #ffffff;
+        }
+
+        .div_logo_box{
+            grid-area:1 / 1 / 2 / 3;
+            border-right: 1px solid #fff!important;
         }
         .logo_div_header_menu { 
             grid-area: 1 / 1 / 2 / 3;
-            padding: 4px 10px 0 10px;
+            // padding: 4px 10px 0 10px;
+            padding: 6px 10px;
+            z-index:2;
         }
-        .salles_div_header_menu { grid-area: 1 / 5 / 2 / 6;  margin: auto;}
-        .histoire_div_header_menu { grid-area: 1 / 6 / 2 / 7;margin: auto;}
-        .images_div_header_menu { grid-area: 1 / 7 / 2 / 8; margin: auto;}
-        .plan_div_header_menu { grid-area: 1 / 8 / 2 / 9; margin: auto;}
-        .tracts_div_header_menu {grid-area: 1 / 9 / 2 / 10; margin: auto;}
+        .salles_div_header_menu { grid-area: 1 / 3 / 2 / 4;  }
+        .histoire_div_header_menu { grid-area: 1 / 4 / 2 / 5;}
+        .images_div_header_menu { grid-area: 1 / 5 / 2 / 6; }
+        .plan_div_header_menu { grid-area: 1 / 6 / 2 / 7; }
+        .tracts_div_header_menu {grid-area: 1 / 7 / 2 / 8; }
+
+        .display_center{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
 
         .language_button_header_menu_div { grid-area: 1 / 12 / 2 / 13; }
 
         .link_style_header_menu{
+            font-family: 'Alumni Sans Pinstripe', sans-serif;
             font-size: 25px;
             color: #fff;
             margin: auto;
@@ -152,26 +164,47 @@ template.innerHTML = `
             -webkit-backdrop-filter: blur(8px);
             padding: 5px 8px;
         }
+
+        .parent_header_menu > div {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0);
+            transition: backdrop-filter 0.5s ease-out, background 0.5s ease-out, border .5s ease-out;
+            padding: 8px 12px;
+            border-right: 1px solid #ffffff00;
+            border-left: 1px solid #ffffff00;
+        }
+
+        .parent_header_menu > div:hover {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.5);
+            border-right: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+        }
+
+
     </style>
     <div class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes Interdites">Catacombes <span>  INTERDITES</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes Interdites"><b>Catacombes</b> <span>  INTERDITES</span></h1>
             </a>
         </div>
-        <div class="salles_div_header_menu">
+        <div class="div_logo_box"></div>
+        <div class="salles_div_header_menu display_center">
             <a href="../displayRooms/" class="link_style_header_menu" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
         </div>
-        <div class="histoire_div_header_menu">
+        <div class="histoire_div_header_menu display_center">
             <a href="../Histoire/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Histoire</a>
         </div>
-        <div class="images_div_header_menu">
+        <div class="images_div_header_menu display_center">
             <a href="../Images/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Images</a>
         </div>
-        <div class="plan_div_header_menu">
+        <div class="plan_div_header_menu display_center">
             <a href="../Map/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">Plan</a>
         </div>
-        <div class="tracts_div_header_menu">
+        <div class="tracts_div_header_menu display_center">
             <a href="../Cards/" class="link_style_header_menu" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
         </div>
         <div class="language_button_header_menu_div">
@@ -256,6 +289,10 @@ class HeaderMenu extends HTMLElement {
                 target.style.display = 'none';
             });
         };
+
+
+
+
 
         // show('.salles_div_header_menu',  '#salles_infos_div');
         // show('.histoire_div_header_menu','#histoire_infos_div');
