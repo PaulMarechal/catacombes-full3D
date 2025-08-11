@@ -294,9 +294,6 @@ class HeaderMenu extends HTMLElement {
         };
 
 
-
-
-
         // show('.salles_div_header_menu',  '#salles_infos_div');
         // show('.histoire_div_header_menu','#histoire_infos_div');
         // show('.images_div_header_menu', '#images_infos_div');

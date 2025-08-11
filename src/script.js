@@ -302,26 +302,57 @@ function init(nameRoom) {
 	const overlay = new THREE.Mesh(overlayGeometryMain, overlayMaterialMain)
 	scene.add(overlay)
 
-	const loadingBarElement = document.querySelector('.loading-bar')
-	const loading_bar_percent = document.querySelector('#loading_bar_percent')
-	const icon_tabler_skull = document.querySelector('.icon-tabler-skull')
+	const loadingBarElement = document.querySelector('.loading-bar');
+	const loading_bar_percent = document.querySelector('#loading_bar_percent');
+	const loader_inside_white = document.getElementById('loader_inside_white');
+
+	let displayed = 0;        // pourcentage affiché (0-100)
+	let lastRatio = 0;        // ratio de scale (0-1) déjà appliqué
+	let rafId = null;
+
+	function updateUI(percent, ratio) {
+	// ne jamais reculer
+	const safePercent = Math.max(displayed, percent);
+	const safeRatio = Math.max(lastRatio, ratio);
+
+	loading_bar_percent.textContent = `${safePercent} %`;
+	loader_inside_white.style.width = `${safePercent}%`;
+	// loadingBarElement.style.transform = `scaleX(${safeRatio})`;
+
+	displayed = safePercent;
+	lastRatio = safeRatio;
+	}
+
+	function animateTo(targetPercent, ratio) {
+	cancelAnimationFrame(rafId);
+	const step = () => {
+		if (displayed < targetPercent) {
+		// easing simple vers la cible
+		const delta = Math.max(1, Math.ceil((targetPercent - displayed) * 0.2));
+		updateUI(displayed + delta, ratio);
+		rafId = requestAnimationFrame(step);
+		} else {
+		updateUI(targetPercent, ratio);
+		}
+	};
+	step();
+	}
 
 	const loadingManagerMain = new THREE.LoadingManager(
 		// Loaded
 		() => {
-			window.setTimeout(() => {
-				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 2 })
+			animateTo(100, 1);
 
-				loadingBarElement.classList.add('ended')
-				loadingBarElement.style.transform = ''
-
+			setTimeout(() => {
+				gsap.to(overlayMaterialMain.uniforms.uAlpha, { duration: 3, value: 0, delay: 2 });
+				loadingBarElement.classList.add('ended');
 				setTimeout(() => {
-					scene.remove(overlay)
+					scene.remove(overlay);
 				}, 400);
-			}, 600)
+			}, 600);
 
 			const tween = new TWEEN.Tween(camera.position)
-			.to({ x: -5.8, y: 1.45, z: -2.3 }, 7000) 
+			.to({ x: -5.8, y: 1.45, z: -2.3 }, 7000)
 			.easing(TWEEN.Easing.Cubic.InOut)
 			.onComplete(() => {
 				controls.minPolarAngle = Math.PI / 3;
@@ -332,30 +363,17 @@ function init(nameRoom) {
 				controls.enablePan = false;
 			})
 			.start();
-		  
 		},
 
 		// Progress
 		(itemUrl, itemsLoaded, itemsTotal) => {
-			const progressRatio = itemsLoaded / itemsTotal;
-			const remainingRatio = 1 - progressRatio;
-		
-			loadingBarElement.style.transform = `scaleX(${progressRatio})`;
-		
-			const targetPercentage = Math.floor(progressRatio * 100);
-			let currentPercentage = 0;
-		
-			const animationInterval = setInterval(() => {
-			if (currentPercentage < targetPercentage) {
-				currentPercentage = currentPercentage + 2;
-			} else {
-				clearInterval(animationInterval); 
-			}
-		
-			loading_bar_percent.innerHTML = `${currentPercentage} %`;
-			}, 10); 
+			const ratio = itemsTotal ? (itemsLoaded / itemsTotal) : 0;
+
+			const targetPercent = Math.floor(Math.min(ratio, 0.95) * 100);
+
+			animateTo(targetPercent, ratio);
 		}
-	)
+	);
 
 	const gltfLoaderMain = new GLTFLoader(loadingManagerMain)
 	gltfLoaderMain.setDRACOLoader(dracoLoader)
