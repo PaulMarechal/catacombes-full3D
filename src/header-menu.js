@@ -219,11 +219,13 @@ template.innerHTML = `
         <div class="contact_div_header_menu display_center">
             <p class="link_style_header_menu" title="N'hésitez pas à me contacter">Contact</p>
         </div>
+        <!--
         <div class="language_div_header_menu display_center">
             <label id="language_site" title="Changer la langue du site Catacombes Interdites en Anglais">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-language"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7" /><path d="M9 3v2c0 4.418 -2.239 8 -5 8" /><path d="M5 9c0 2.144 2.952 3.908 6.7 4" /><path d="M12 20l4 -9l4 9" /><path d="M19.1 18h-6.2" /></svg>
             </label>
         </div>
+        -->
     </div>
 
     <div class="display_infos_menu">
