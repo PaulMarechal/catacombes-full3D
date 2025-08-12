@@ -93,25 +93,25 @@ export function customCursor(){
     });
 }
 
-window.addEventListener("click", () => {
-    setTimeout(() => {
-        if( nav.offsetHeight > 50){
-            if(nav_menu_display){
-                nav_menu_display.style.display = "block";
-            }
-            iconeBurgerMenu.style.display = "inline-flex";
-        } 
-    }, 200);
+// window.addEventListener("click", () => {
+//     setTimeout(() => {
+//         if( nav.offsetHeight > 50){
+//             if(nav_menu_display){
+//                 nav_menu_display.style.display = "block";
+//             }
+//             iconeBurgerMenu.style.display = "inline-flex";
+//         } 
+//     }, 200);
 
-    setTimeout(() => {  
-        if( nav.offsetHeight < 51){
-            if(nav_menu_display){
-                nav_menu_display.style.display = "none";
-            }
-            iconeBurgerMenu.style.display = "none";
-        } 
-    }, 1250);
-});
+//     setTimeout(() => {  
+//         if( nav.offsetHeight < 51){
+//             if(nav_menu_display){
+//                 nav_menu_display.style.display = "none";
+//             }
+//             iconeBurgerMenu.style.display = "none";
+//         } 
+//     }, 1250);
+// });
 
 
 

@@ -67,7 +67,7 @@ body h1 > span {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #020304;
 }
-  
+/*   
 body input + label {
     position: fixed;
     top: 16px;
@@ -118,10 +118,10 @@ body input:checked + label span:first-child {
 body input:checked + label span:last-child {
     opacity: 1;
     transform: rotate(-405deg);
-}
+} */
 
 /* Nav menu */
-div.display_menu{
+/* div.display_menu{
     position: fixed;
     height: 52px;
     width: 100%;
@@ -142,11 +142,11 @@ div.display_menu a{
     margin: auto;
     text-decoration: none;
     color: #ffffff;
-}
+} */
 /* fin nav menu */
 
 /* test header menu */
-#title_main_page{
+/* #title_main_page{
     margin: 0;
     line-height: 24px;
     top: 20px;
@@ -267,7 +267,7 @@ div.display_menu a{
     -webkit-backdrop-filter: blur(8px);
     padding: 5px 8px;
 
-}
+} */
 /* fin header menu */
 body {
     padding: 0;
@@ -278,11 +278,10 @@ body {
     height: 100vh;
     background: url("https://catacombes.xyz/assets/images/tombePhilibertAspairt_catacombes.jpg")
         center center;
-    background-size: contain;
+    background-size: cover;
     font-family: sans-serif;
     background-repeat: no-repeat;
     font-weight: 300;
-    animation: moveBackground 60s linear infinite;
 }
 
 a {
@@ -424,11 +423,11 @@ a {
     will-change: transform;
     width: 100%!important;
     height: 100vh!important;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .loading-bar.ended{
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
 #loader_inside_white{
@@ -1108,30 +1107,10 @@ ul{
     background: #f350e8;
 }
 
-.text_infos_catacombes{
-    margin-top: 20px;
-    padding: 0px 30px 0px 30px;
-    /* max-height: -webkit-fill-available;  */
-    font-size: 26px;
-    /* overflow-y: scroll; */
-    user-select: none;
-}
-
-.text_infos_catacombes::-webkit-scrollbar {
-    width: 6px;
-    height: 8px;
-    background-color: #ffffff00; 
-}
-
 .text_en, .text_fr{
     max-height: -webkit-fill-available;
     overflow-y: scroll;
     display: none;
-}
-
-.text_infos_catacombes::-webkit-scrollbar-thumb {
-    background: #b1b1b1;
-    border-radius: 10px;
 }
 
 /* Mode paysage */

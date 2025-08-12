@@ -40,6 +40,12 @@ let meshContainer, currentMesh;
 const objsToTest = [];
 let meshes = []
 
+// if (document.readyState === 'loading') {
+//   window.addEventListener('DOMContentLoaded', () => Language.initLanguage(), { once: true });
+// } else {
+//   Language.initLanguage();
+// }
+
 
 // Loader 3D 
 const TORUS_SEGMENTS = 22;
@@ -349,6 +355,9 @@ function init(nameRoom) {
 				setTimeout(() => {
 					scene.remove(overlay);
 				}, 400);
+				setTimeout(() => {
+					loadingBarElement.style.display = "none"
+				}, 520);
 			}, 600);
 
 			const tween = new TWEEN.Tween(camera.position)
@@ -524,6 +533,10 @@ function init(nameRoom) {
 
 	scene.add( meshContainer );
 
+	function initTextPanel() {
+		TextPanel.TextPanel(scene, roomNumber);
+	}
+
     gltfLoader.load(
         nameRoom, 
         (gltf) => {
@@ -534,7 +547,11 @@ function init(nameRoom) {
             gltf.scene.position.set(-1.99, 1.05, -1.29)
             gltf.scene.rotation.y = 0.005
             scene.add(gltf.scene)
-			TextPanel.TextPanel(scene, roomNumber) 
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initTextPanel, { once: true });
+			} else {
+				initTextPanel();
+			}
         }
     )
 
@@ -967,8 +984,6 @@ function display_all_room_div(){
 	const display_all_rooms_button = document.querySelector(".display_all_rooms_button");
 	const display_infos_button = document.querySelector(".display_infos_button");
 	const div_infos_catacombes = document.querySelector(".div_infos_catacombes");
-	const close_icon_infos = document.querySelector(".close_icon_infos");
-	const language_site = document.querySelector("#language_site");
 	const div_share_link = document.querySelector(".div_share_link");
 	const display_links_page = document.querySelector(".display_links_page");
 	const text_fr = document.querySelector(".text_fr");
@@ -980,9 +995,6 @@ function display_all_room_div(){
 		display_all_rooms_small.style.right = "10px"; 
 		display_all_rooms_small.style.opacity = "1";
 
-		display_infos_button.style.right = "-40px"; 
-		display_infos_button.style.opacity = "0";
-
 		display_all_rooms_button.style.right = "-40px";
 		display_all_rooms_button.style.opacity = "0";
 
@@ -993,9 +1005,6 @@ function display_all_room_div(){
 			timeoutId = setTimeout(() => {
 				display_all_rooms_small.style.right = "-180px";
 				display_all_rooms_small.style.opacity = "0";
-
-				display_infos_button.style.right = "0px"; 
-				display_infos_button.style.opacity = "1"
 	
 				display_all_rooms_button.style.right = "0px";
 				display_all_rooms_button.style.opacity = "1";
@@ -1005,31 +1014,6 @@ function display_all_room_div(){
 			}, 4000);
 		});
 	})
-
-	display_infos_button.addEventListener("click", () => {
-		div_infos_catacombes.style.display = "block";
-
-		setTimeout(() => {
-			div_infos_catacombes.style.opacity = "1";
-			if(language_site.innerText === "FR"){
-				document.querySelector(".text_fr").style.display = "block"
-			} else if(language_site.innerText === "EN") {
-				document.querySelector(".text_en").style.display = "block"
-			}
-		}, 150);
-	});
-
-	close_icon_infos.addEventListener("click", () => {
-		div_infos_catacombes.style.opacity = "0";
-		setTimeout(() => {
-			div_infos_catacombes.style.display = "none";
-			if(language_site.innerText === "FR"){
-				document.querySelector(".text_fr").style.display = "none"
-			} else if(language_site.innerText === "EN") {
-				document.querySelector(".text_en").style.display = "none"
-			}
-		}, 200);
-	});
 
 	div_share_link.addEventListener("click", () => {
 		display_links_page.style.right = "0px"
@@ -1041,22 +1025,6 @@ function display_all_room_div(){
 				div_share_link.style.right = "0px"
 			}, 2500);
 		});
-	});
-
-	window.addEventListener("click", () => {
-		if(language_site.innerText === "FR"){
-			if(text_en.style.display === "block"){
-
-				text_en.style.display = "none"
-			}
-			text_fr.style.display = "block"
-
-		} else if(language_site.innerText === "EN") {
-			if(text_fr.style.display === "block"){
-				text_fr.style.display = "none"
-			}
-			text_en.style.display = "block"
-		}
 	});
 }
 
@@ -1130,9 +1098,6 @@ function updateMovement() {
 
 function loop() {
 
-	// Update manually ThreeeMeshUI.update() -> better performance
-	ThreeMeshUI.update();
-
 	controls.update();
 
 	let time = performance.now() * 0.001;
@@ -1180,6 +1145,9 @@ function loop() {
 	renderer.render( scene, camera );
 	
 	updateButtons();
+
+	// Update manually ThreeeMeshUI.update() -> better performance
+	ThreeMeshUI.update();
 	
 	composer.render();
     

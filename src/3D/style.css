@@ -184,3 +184,7 @@
 .return_button_3D_page svg{
     margin-bottom: -4px;
 }
+
+.loading-bar.ended{
+    display: none;
+}
