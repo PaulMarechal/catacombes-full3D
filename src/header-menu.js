@@ -125,7 +125,7 @@ template.innerHTML = `
 
         .display_infos_menu{
             width: 600px;
-            height: 225px;
+            height: 215px;
             position: fixed;
             background: rgba(255, 255, 255, 0);
             backdrop-filter: blur(8px);
@@ -193,28 +193,36 @@ template.innerHTML = `
             position: fixed;
             text-orientation: mixed;
             z-index: 1;
-            padding: 10px 4.5px;
+            padding: 0px 4.5px;
             border-radius: 10px 0 0 10px;
             text-transform: uppercase;
-            display: inline-flex;
             opacity: 1;
             -moz-user-select: none; 
             -webkit-user-select: none;
             -ms-user-select: none; 
             user-select: none; 
             width: fit-content;;
-            width: 100%;
-            margin: auto;
-            height: 10vh;
+            width: 590px;
+            height: 185px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 6px;
+            grid-row-gap: 6px;
             transition: 0.8s right ease-out, 0.7s opacity ease-out;
         }
+
+        .div_facebook_share_links { grid-area: 1 / 1 / 2 / 2; }
+        .div_twitter_share_links { grid-area: 1 / 2 / 2 / 3; }
+        .div_sms_ios_share_link { grid-area: 2 / 1 / 3 / 2; }
+        .div_whatsapp_share_link { grid-area: 2 / 2 / 3 / 3; }
 
         .display_links_page div a {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 60px;
-            height: 60px;
+            width: 100%;
+            height: 70px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -222,7 +230,26 @@ template.innerHTML = `
             border: 1px solid #fff; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             margin: auto; 
+            position: relative;
+            overflow: hidden;
+            color: #fff; 
             transition: transform 0.2s ease, box-shadow 0.2s ease, background .5s ease-out;
+        }
+
+        .display_links_page div a svg{
+            position: absolute;
+            top: -5px;
+            left: -7px;
+            background: #ffffff50;
+            padding: 10px;
+            border-radius: 0 25px 30px 25px;
+            border: 1px solid #fff; 
+            transition: padding .5s ease-out, border .5s ease-out;
+        }
+
+        .display_links_page div a svg:hover{
+            padding: 5px; 
+            border: 1px solid #000; 
         }
 
         .div_facebook_share_links, .div_twitter_share_links, 
@@ -237,12 +264,13 @@ template.innerHTML = `
         .display_links_page > div {
             border-radius: 12px;
             padding: 8px;
+            width: 94%;
             transition: background-color 0.3s ease;
         }
 
         /* Facebook */
         .icon-tabler-brand-facebook:hover{
-            border-radius: 5px;
+            border-radius: 0 20px 30px 20px;
             stroke: #000;
             fill: #000;
             background: #b09c69; 
@@ -250,23 +278,23 @@ template.innerHTML = `
         }
 
         .div_facebook_share_links:has(a:hover) a {
-            background-color: #3b599830;
+            background-color: #3b599850;
         }
 
         /* Twitter / X */
         .icon-tabler-brand-x:hover{
-            border-radius: 5px;
+            border-radius: 0 20px 30px 20px;
             stroke: #fff; 
             background: #000;
         }
 
         .div_twitter_share_links:has(a:hover) a {
-            background-color: #00000030;
+            background-color: #00000050;
         }
 
         /* SMS iMessage */
         .icon-tabler-message-circle-2:hover{
-            border-radius: 5px; 
+            border-radius: 0 20px 30px 20px; 
             background: #a30d8d; 
             stroke: #000; 
             stroke-width: 0.2px;
@@ -274,17 +302,17 @@ template.innerHTML = `
         }
 
         .div_sms_ios_share_link:has(a:hover) a {
-            background-color: #00c80030; 
+            background-color: #00c80050; 
         }
 
         /* WhatsApp */
         .icon-tabler-brand-whatsapp:hover{
-            border-radius: 5px; 
+            border-radius: 0 20px 30px 20px; 
             background: #f350e8!important;
         }
 
         .div_whatsapp_share_link:has(a:hover) a {
-            background-color: #25d36630; 
+            background-color: #25d36650; 
         }
 
     </style>
@@ -372,6 +400,7 @@ template.innerHTML = `
                     <!-- Bouton de partage Facebook -->
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://catacombes.xyz/Soleil/3D" class="link_facebook" target="_blank" rel="noopener noreferrer" data-action="share/facebook/share" title="Partager sur Facebook">
                         <svg class="icon icon-tabler icon-tabler-brand-facebook" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                        <p>Facebook</p>
                     </a>
                 </div>
 
@@ -379,13 +408,15 @@ template.innerHTML = `
                     <!-- Bouton de partage Twitter / X -->
                     <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share" title="Partager sur Twitter | X">
                         <svg class="icon icon-tabler icon-tabler-brand-x" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
-                    </a>
+                        <p>X</p>
+                        </a>
                 </div>
 
                 <div class="div_sms_ios_share_link" title="Partager par SMS">
                     <!-- Bouton de partage via SMS IOS-->
                     <a href="sms:&body=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%0Ahttps://catacombes.xyz" class="link_message_ios" target="_blank" rel="noopener noreferrer" data-action="share/sms/share" title="Partager par SMS">
                         <svg class="icon icon-tabler icon-tabler-message-circle-2" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" /></svg>
+                        <p>SMS</p>
                     </a>
                 </div>
 
@@ -397,6 +428,7 @@ template.innerHTML = `
                             <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                             <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
                         </svg>
+                        <p>WhatsApp</p>
                     </a>
                 </div>
 

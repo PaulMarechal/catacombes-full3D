@@ -1,9 +1,8 @@
 /* Cards page */
 .explication_cards_text_div{
     grid-area: 1 / 1 / 5 / 5;
-    margin: auto;
-    margin-top: 0%;
-    margin-bottom: 0%;
+    background: #f3f3f3;
+    border: 1px solid #000;
 }
 
 .explication_cards_video_div{
@@ -15,13 +14,9 @@
 }
 
 .explication_text_card_second{
-    background: #fff;
-    width: 100%;
-    height: 82%;
     border-radius: 25px;
-    padding: 10px 30px;
-    margin-left: 5%;
-    margin-top: 10%;
+    /* padding: 10px 30px; */
+    margin: 5% 0 0 0%;
     transition: width 1s ease-out, height 1s ease-out;
 }
 
@@ -44,8 +39,8 @@
     font-size: 1.5vw;
     padding-bottom: 0.7rem;
     padding-bottom: 1rem; 
+    margin: 5%;
     transition: opacity 1s ease-out;
-    font-family: 'Alumni Sans Pinstripe', sans-serif!important;
 }
 
 ul.text_explication_card {
@@ -64,16 +59,20 @@ ul.text_explication_card li{
 .textCard{
     text-align: -webkit-left;
     padding: 8px;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     scrollbar-color: #d1cece transparent;
     list-style: auto;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    text-align: justify;
 }
 
 ul.textCard{
-    padding-left: 3vh;
+    padding-left: 6vh;
 }
 
-.display_all_tracts_div{display: inline-flex; margin: 2vh 0;}
+.display_all_tracts_div{display: inline-flex; margin: 0 5%;}
 
 .display_all_tracts_div, .text_explication_card, 
 .explication_video, .many_cards_display,.many_cards_display_v2, 
@@ -122,11 +121,11 @@ ul.textCard{
 }
 
 .div_display_card_main{
-    background-color: whitesmoke;
+    background-color: #fff;
     padding: 5px 10px; 
     border-radius: 14px; 
     width: max-content;
-    height: 6rem;
+    height: 6.4rem;
     cursor: pointer;
     transition: box-shadow 1s ease-out;
 }
@@ -141,7 +140,7 @@ ul.textCard{
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(4, 1fr);
-    margin: 3rem 1rem 1rem 1rem;
+    margin: 75px 1rem 1rem 1rem;
     overflow-y: revert;
     cursor: none;
     max-height: fit-content;
@@ -160,13 +159,15 @@ ul.textCard{
     transform-style: preserve-3d;
     perspective: 600px;
     transition: 0.5s;
-    margin: 7%;
+    margin: auto;
+    margin-bottom: 2vw;
 }
 
 .card_size_v3{
     height: 29vw;
     width: 20vw;
-    margin: 7%;
+    margin: auto;
+    margin-bottom: 2vw;
 }
 
 .exemple_nfc_tag_card{
@@ -286,9 +287,30 @@ ul.textCard{
 
 .close_card_viewer_v1, .close_card_viewer_v2, 
 .close_card_viewer_v3{
+    display: block;
     position: absolute;
-    z-index: 3; 
-    top: -2vh; 
-    right: 0; 
-    transform: translate(120%, -81%);
+    top: -38px;
+    right: 0;
+    background-color: #fff;
+    padding: 2px 4px;
+    border: 1px solid #000;
+    border-top: none;
+    border-right: none;
+    transition: background-color .5s ease-out;
+}
+
+.close_card_viewer_v1:hover, .close_card_viewer_v2:hover, 
+.close_card_viewer_v3:hover{
+    background-color: #000; 
+}
+
+.close_card_viewer_v1 svg, .close_card_viewer_v2 svg, 
+.close_card_viewer_v3 svg{
+    stroke: #000; 
+    transition: stroke .5s ease-out;
+}
+
+.close_card_viewer_v1:hover svg, .close_card_viewer_v2:hover svg, 
+.close_card_viewer_v3:hover svg{
+    stroke: #fff; 
 }

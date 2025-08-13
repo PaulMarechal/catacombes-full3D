@@ -125,6 +125,7 @@ function setupCardClickHandlers(version) {
 
             text_explication_card.style.display = "block";
             display_all_tracts_div.style.display = "inline-flex";
+            display_all_tracts_div.style.margin = "0 5%";
             explication_video.style.display = "block";
             video_card_v2.style.position = "absolute";
             video_card_v1.style.position = "absolute";
