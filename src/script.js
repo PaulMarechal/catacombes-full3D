@@ -979,57 +979,6 @@ function click_on_others_rooms() {
 
 click_on_others_rooms()
 
-function display_all_room_div(){
-	const display_all_rooms_small = document.querySelector(".display_all_rooms_small"); 
-	const display_all_rooms_button = document.querySelector(".display_all_rooms_button");
-	const display_infos_button = document.querySelector(".display_infos_button");
-	const div_infos_catacombes = document.querySelector(".div_infos_catacombes");
-	const div_share_link = document.querySelector(".div_share_link");
-	const display_links_page = document.querySelector(".display_links_page");
-	const text_fr = document.querySelector(".text_fr");
-	const text_en = document.querySelector(".text_en");
-
-	let timeoutId;
-
-	display_all_rooms_button.addEventListener("click", () => {
-		display_all_rooms_small.style.right = "10px"; 
-		display_all_rooms_small.style.opacity = "1";
-
-		display_all_rooms_button.style.right = "-40px";
-		display_all_rooms_button.style.opacity = "0";
-
-		div_share_link.style.right = "-40px";
-		div_share_link.style.opacity = "0";
-
-		display_all_rooms_small.addEventListener("mouseleave", () => {
-			timeoutId = setTimeout(() => {
-				display_all_rooms_small.style.right = "-180px";
-				display_all_rooms_small.style.opacity = "0";
-	
-				display_all_rooms_button.style.right = "0px";
-				display_all_rooms_button.style.opacity = "1";
-
-				div_share_link.style.right = "0px";
-				div_share_link.style.opacity = "1";
-			}, 4000);
-		});
-	})
-
-	div_share_link.addEventListener("click", () => {
-		display_links_page.style.right = "0px"
-		div_share_link.style.right = "-50px"
-
-		display_links_page.addEventListener("mouseleave", () => {
-			setTimeout(() => {
-				display_links_page.style.right = "-50px"
-				div_share_link.style.right = "0px"
-			}, 2500);
-		});
-	});
-}
-
-display_all_room_div() 
-
 // Handle resizing the viewport
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;

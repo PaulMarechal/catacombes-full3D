@@ -867,8 +867,8 @@ ul{
     opacity: 0;
     pointer-events: none;
     mix-blend-mode: difference;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: white;
     transition: transform 350ms ease;
@@ -1026,85 +1026,10 @@ ul{
     border-radius: 10px 0 0 5px;
 }
 
-.display_links_page{
-    position: fixed;
-    right: -50px;
-    top: 75%;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    z-index: 1;
-    background: #FFF;
-    padding: 10px 4.5px;
-    border-radius: 10px 0 0 10px;
-    text-transform: uppercase;
-    display: inline-flex;
-    opacity: 1;
-    -moz-user-select: none; 
-    -webkit-user-select: none;
-    -ms-user-select: none; 
-    user-select: none; 
-    transition: 0.8s right ease-out, 0.7s opacity ease-out;
-    width: fit-content;
-}
-
-.div_facebook_share_links, .div_twitter_share_links, 
-.div_sms_ios_share_link, .div_whatsapp_share_link{
-    padding: 6px 0;
-    color: #000000!important;
-}
-
 .link_twitter:visited, .link_facebook:visited, 
 .link_twitter:link, .link_facebook:link
 .div_sms_ios_share_link:link, .div_sms_ios_share_link:link{
     color: #FFF;
-}
-
-.icon-tabler-brand-facebook:hover{
-    border-radius: 5px;
-    stroke: #000;
-    fill: #000;
-    background: #b09c69; 
-    stroke-width: 0.2px;
-}
-
-.div_share_link{
-    position: fixed;
-    right: 0px;
-    top: 83%;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    z-index: 1;
-    background: #FFF;
-    padding: 10px 4.5px;
-    border-radius: 10px 0 0 10px;
-    text-transform: uppercase;
-    display: inline-flex;
-    opacity: 1;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    transition: 0.8s right ease-out, 0.7s opacity ease-out;
-    width: fit-content;
-}
-
-.icon-tabler-brand-x:hover{
-    border-radius: 5px;
-    stroke: #fff; 
-    background: #000;
-}
-
-.icon-tabler-message-circle-2:hover{
-    border-radius: 5px; 
-    background: #a30d8d; 
-    stroke: #000; 
-    stroke-width: 0.2px;
-    fill: #000;
-}
-
-.icon-tabler-brand-whatsapp:hover{
-    border-radius: 5px; 
-    background: #f350e8;
 }
 
 .text_en, .text_fr{

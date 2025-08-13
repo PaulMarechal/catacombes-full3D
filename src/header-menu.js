@@ -125,14 +125,14 @@ template.innerHTML = `
 
         .display_infos_menu{
             width: 600px;
-            height: 400px;
+            height: 225px;
             position: fixed;
             background: rgba(255, 255, 255, 0);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid #fff;
             user-select: none;
             top: -405px;
             z-index: 99;
@@ -189,6 +189,103 @@ template.innerHTML = `
             border-left: 1px solid  #ffffff;
         }
 
+        .display_links_page{
+            position: fixed;
+            text-orientation: mixed;
+            z-index: 1;
+            padding: 10px 4.5px;
+            border-radius: 10px 0 0 10px;
+            text-transform: uppercase;
+            display: inline-flex;
+            opacity: 1;
+            -moz-user-select: none; 
+            -webkit-user-select: none;
+            -ms-user-select: none; 
+            user-select: none; 
+            width: fit-content;;
+            width: 100%;
+            margin: auto;
+            height: 10vh;
+            transition: 0.8s right ease-out, 0.7s opacity ease-out;
+        }
+
+        .display_links_page div a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgb(142 142 142 / 30%);
+            border: 1px solid #fff; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: auto; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background .5s ease-out;
+        }
+
+        .div_facebook_share_links, .div_twitter_share_links, 
+        .div_sms_ios_share_link, .div_whatsapp_share_link{
+            padding: 6px 0;
+            color: #000000!important;
+            flex: 1;
+            margin: auto;
+            text-align: center;
+        }
+
+        .display_links_page > div {
+            border-radius: 12px;
+            padding: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Facebook */
+        .icon-tabler-brand-facebook:hover{
+            border-radius: 5px;
+            stroke: #000;
+            fill: #000;
+            background: #b09c69; 
+            stroke-width: 0.2px;
+        }
+
+        .div_facebook_share_links:has(a:hover) a {
+            background-color: #3b599830;
+        }
+
+        /* Twitter / X */
+        .icon-tabler-brand-x:hover{
+            border-radius: 5px;
+            stroke: #fff; 
+            background: #000;
+        }
+
+        .div_twitter_share_links:has(a:hover) a {
+            background-color: #00000030;
+        }
+
+        /* SMS iMessage */
+        .icon-tabler-message-circle-2:hover{
+            border-radius: 5px; 
+            background: #a30d8d; 
+            stroke: #000; 
+            stroke-width: 0.2px;
+            fill: #000;
+        }
+
+        .div_sms_ios_share_link:has(a:hover) a {
+            background-color: #00c80030; 
+        }
+
+        /* WhatsApp */
+        .icon-tabler-brand-whatsapp:hover{
+            border-radius: 5px; 
+            background: #f350e8!important;
+        }
+
+        .div_whatsapp_share_link:has(a:hover) a {
+            background-color: #25d36630; 
+        }
 
     </style>
     <div class="parent_header_menu">
@@ -269,6 +366,43 @@ template.innerHTML = `
                 Image des tracts
             </div>
         </div>
+        <div class="infos_to_display_div" id="partager_infos_div">
+            <div class="display_links_page">
+                <div class="div_facebook_share_links" title="Partager sur FaceBook">
+                    <!-- Bouton de partage Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://catacombes.xyz/Soleil/3D" class="link_facebook" target="_blank" rel="noopener noreferrer" data-action="share/facebook/share" title="Partager sur Facebook">
+                        <svg class="icon icon-tabler icon-tabler-brand-facebook" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                    </a>
+                </div>
+
+                <div class="div_twitter_share_links" title="Partager sur Twitter | X">
+                    <!-- Bouton de partage Twitter / X -->
+                    <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share" title="Partager sur Twitter | X">
+                        <svg class="icon icon-tabler icon-tabler-brand-x" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+                    </a>
+                </div>
+
+                <div class="div_sms_ios_share_link" title="Partager par SMS">
+                    <!-- Bouton de partage via SMS IOS-->
+                    <a href="sms:&body=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%0Ahttps://catacombes.xyz" class="link_message_ios" target="_blank" rel="noopener noreferrer" data-action="share/sms/share" title="Partager par SMS">
+                        <svg class="icon icon-tabler icon-tabler-message-circle-2" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" /></svg>
+                    </a>
+                </div>
+
+                <div class="div_whatsapp_share_link" title="Partager sur WhatsApp">
+                    <!-- Bouton de partage via WhatsApp-->
+                    <a href="https://api.whatsapp.com/send?text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%20https://catacombes.xyz" target="_blank" rel="noopener noreferrer" title="Partager avec WhatsApp">
+                        <svg class="icon icon-tabler icon-tabler-brand-whatsapp" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- AJouter copy link  -->
+            </div>
+        </div>
     </div>
 `;
 
@@ -287,16 +421,16 @@ class HeaderMenu extends HTMLElement {
             const menu  = shadow.querySelector('.display_infos_menu');
             const target = shadow.querySelector(selectorInfo);
 
-            link.addEventListener('mouseover', () => {
+            link.addEventListener('click', () => {
                 infos.forEach(div => {
-                div.style.opacity = '0';
-                setTimeout(() => div.style.display = 'none', 510);
+                    div.style.opacity = '0';
+                    setTimeout(() => div.style.display = 'none', 510);
                 });
-                menu.style.top = '260px';
+                menu.style.top = '175px';
                 menu.style.opacity = '1';
                 setTimeout(() => {
-                target.style.display = 'inline-flex';
-                setTimeout(() => target.style.opacity = '1', 20);
+                    target.style.display = 'inline-flex';
+                    setTimeout(() => target.style.opacity = '1', 20);
                 }, 520);
             });
 
@@ -307,14 +441,74 @@ class HeaderMenu extends HTMLElement {
             });
         };
 
-
         // show('.salles_div_header_menu',  '#salles_infos_div');
         // show('.histoire_div_header_menu','#histoire_infos_div');
         // show('.images_div_header_menu', '#images_infos_div');
         // show('.plan_div_header_menu',   '#plan_infos_div');
         // show('.tracts_div_header_menu', '#cartes_infos_div');
+        show('.partager_div_header_menu', '#partager_infos_div');
+
+        function display_all_room_div(shadow){
+            const partager_div_header_menu = shadow.querySelector(".partager_div_header_menu");
+            const display_infos_menu       = shadow.querySelector(".display_infos_menu");
+
+            // Éléments dans le DOCUMENT (light DOM, hors composant)
+            const display_all_rooms_small   = document.querySelector(".display_all_rooms_small"); 
+            const display_all_rooms_button  = document.querySelector(".display_all_rooms_button");
+            const display_infos_button      = document.querySelector(".display_infos_button");
+            const div_infos_catacombes      = document.querySelector(".div_infos_catacombes");
+            const display_links_page        = document.querySelector(".display_links_page");
+            // const text_fr                   = document.querySelector(".text_fr");
+            // const text_en                   = document.querySelector(".text_en");
+
+            if (!partager_div_header_menu) {
+                console.warn('[header-menu] .partager_div_header_menu introuvable dans le shadow');
+            }
+            if (!display_links_page) {
+                console.warn('[header-menu] .display_links_page introuvable dans le document');
+            }
+
+            let timeoutId;
+
+            if (display_all_rooms_button && display_all_rooms_small) {
+                display_all_rooms_button.addEventListener("click", () => {
+                    display_all_rooms_small.style.right = "10px"; 
+                    display_all_rooms_small.style.opacity = "1";
+
+                    display_all_rooms_button.style.right = "-40px";
+                    display_all_rooms_button.style.opacity = "0";
+
+                    display_all_rooms_small.addEventListener("mouseleave", () => {
+                        timeoutId = setTimeout(() => {
+                            display_all_rooms_small.style.right = "-180px";
+                            display_all_rooms_small.style.opacity = "0";
+                            display_all_rooms_button.style.right = "0px";
+                            display_all_rooms_button.style.opacity = "1";
+                        }, 4000);
+                    }, { once: true });
+                });
+            }
+
+            if (partager_div_header_menu && display_links_page) {
+                partager_div_header_menu.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    display_links_page.style.right = "0px";
+
+                    display_links_page.addEventListener("mouseleave", () => {
+                        setTimeout(() => {
+                            display_links_page.style.right = "-50px";
+                        }, 2500);
+                    }, { once: true });
+                });
+            }
+        }
+
+        display_all_room_div(shadow);
 
     }
+
+    
 }
 
 customElements.define('header-menu', HeaderMenu);
