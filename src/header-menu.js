@@ -1,6 +1,11 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
+        // Desktop
+        #mobile_menu, #desktop_menu{
+            display: none; 
+        }
+
         #main_title_catacombes {
             /* position: fixed; */
             /* top: 8px; */
@@ -315,8 +320,24 @@ template.innerHTML = `
             background-color: #25d36650; 
         }
 
+        // Mobile
+        #mobile_menu{
+            position: relative;
+        }
+
+        #logo_div_header_menu_mobile{
+            position: absolute; 
+            top: 4px; 
+            left: 4px;
+        }
+
+        #burger_menu_mobile{
+            position: absolute; 
+            top: 4px; 
+            right: 10px; 
+        }
     </style>
-    <div class="parent_header_menu">
+    <div id="desktop_menu" class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
                 <h1 id="main_title_catacombes" title="Catacombes Interdites"><b>Catacombes</b> <span>  INTERDITES</span></h1>
@@ -351,6 +372,17 @@ template.innerHTML = `
             </label>
         </div>
         -->
+    </div>
+
+    <div id="mobile_menu">
+        <div class="logo_div_header_menu_mobile">
+            <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
+                <h1 id="main_title_catacombes" title="Catacombes Interdites"><b>Catacombes</b> <span>  INTERDITES</span></h1>
+            </a>
+        </div>
+        <div id="burger_menu_mobile">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+        </div>
     </div>
 
     <div class="display_infos_menu">
@@ -535,12 +567,22 @@ class HeaderMenu extends HTMLElement {
                 });
             }
         }
-
         display_all_room_div(shadow);
 
-    }
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
 
-    
+        document.addEventListener("DOMContentLoaded", ()=>{
+            if (isMobile()) {
+                console.log("L'utilisateur est sur mobile");
+                document.getElementById("mobile_menu").style.display = "block"
+            } else {
+                console.log("L'utilisateur est sur desktop");
+                document.getElementById("desktop_menu").style.display = "block"
+            }
+        })
+    } 
 }
 
 customElements.define('header-menu', HeaderMenu);
