@@ -1,7 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
-        // Desktop
         #mobile_menu, #desktop_menu{
             display: none; 
         }
@@ -31,6 +30,7 @@ template.innerHTML = `
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: #dbdbdb;
         }
+
         #title_main_page{
             margin: 0;
             line-height: 24px;
@@ -59,17 +59,20 @@ template.innerHTML = `
             user-select: none;
             transition: font-size .5s ease-out;
         }
+
         #links_header_menu a:hover{
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             background: linear-gradient(180deg, rgb(191 191 191 / 50%) 0%, rgb(255 255 255 / 0%) 100%);
             font-size: 1.35vw;
         }
+
         * {
             margin: 0;
             padding: 0;
             cursor: none !important;
         }
+
         .parent_header_menu {
             display: grid;
             z-index:999;
@@ -320,9 +323,25 @@ template.innerHTML = `
             background-color: #25d36650; 
         }
 
-        // Mobile
         #mobile_menu{
             position: relative;
+            z-index: 2; 
+            display: block;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            width: 94%;
+            left: 0;
+            background: rgb(37 37 37 / 50%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 0px;
+            box-shadow: 0 0 12px -1px rgb(0 0 0 / 21%);
+            // border: 0.5px solid rgba(255, 255, 255, 0.3);
+            user-select: none;
+            left: 0; 
+            padding: 10px 15px;
+            // border: 1px solid #ffffff;
         }
 
         #logo_div_header_menu_mobile{
@@ -332,9 +351,23 @@ template.innerHTML = `
         }
 
         #burger_menu_mobile{
-            position: absolute; 
-            top: 4px; 
-            right: 10px; 
+            position: absolute;
+            top: 19px;
+            right: 30px;
+        }
+
+        #display_div_menu_mobile{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 58px;
+            left: 0;
+            display: none;
+            background: rgb(86 86 86 / 50%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000; 
+            padding: 15px 20px; 
         }
     </style>
     <div id="desktop_menu" class="parent_header_menu">
@@ -381,8 +414,12 @@ template.innerHTML = `
             </a>
         </div>
         <div id="burger_menu_mobile">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
         </div>
+    </div>
+
+    <div id="display_div_menu_mobile">
+        test
     </div>
 
     <div class="display_infos_menu">
@@ -474,6 +511,7 @@ class HeaderMenu extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
+        this._onResize = null;
     }
 
     connectedCallback() {
@@ -525,12 +563,12 @@ class HeaderMenu extends HTMLElement {
             // const text_fr                   = document.querySelector(".text_fr");
             // const text_en                   = document.querySelector(".text_en");
 
-            if (!partager_div_header_menu) {
-                console.warn('[header-menu] .partager_div_header_menu introuvable dans le shadow');
-            }
-            if (!display_links_page) {
-                console.warn('[header-menu] .display_links_page introuvable dans le document');
-            }
+            // if (!partager_div_header_menu) {
+            //     console.warn('[header-menu] .partager_div_header_menu introuvable dans le shadow');
+            // }
+            // if (!display_links_page) {
+            //     console.warn('[header-menu] .display_links_page introuvable dans le document');
+            // }
 
             let timeoutId;
 
@@ -567,22 +605,47 @@ class HeaderMenu extends HTMLElement {
                 });
             }
         }
+        
         display_all_room_div(shadow);
 
-        function isMobile() {
-            return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        }
+        const isMobileUA = () => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        document.addEventListener("DOMContentLoaded", ()=>{
-            if (isMobile()) {
-                console.log("L'utilisateur est sur mobile");
-                document.getElementById("mobile_menu").style.display = "block"
+        const menuMobile  = shadow.querySelector('#mobile_menu');
+        const menuDesktop = shadow.querySelector('#desktop_menu');
+        const display_div_menu_mobile = shadow.getElementById('display_div_menu_mobile');
+        const burger_menu_mobile = shadow.getElementById('burger_menu_mobile');
+
+        const setMenu = () => {
+            const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+            const mobile = isSmallScreen || isMobileUA();
+
+            if (mobile) {
+                if (menuMobile)  menuMobile.style.display  = 'block';
+                if (menuDesktop) menuDesktop.style.display = 'none';
             } else {
-                console.log("L'utilisateur est sur desktop");
-                document.getElementById("desktop_menu").style.display = "block"
+                if (menuMobile)  menuMobile.style.display  = 'none';
+                if (menuDesktop) menuDesktop.style.display = 'grid'; 
             }
+        };
+
+        burger_menu_mobile.addEventListener("click", ()=>{
+            display_div_menu_mobile.style.display = "block";
         })
+
+        // première exécution
+        setMenu();
+
+        // réagir aux changements de taille
+        this._onResize = setMenu;
+        window.addEventListener('resize', this._onResize);
+
     } 
+    disconnectedCallback() {
+        if (this._onResize) {
+            window.removeEventListener('resize', this._onResize);
+            this._onResize = null;
+        }
+    }
 }
 
 customElements.define('header-menu', HeaderMenu);
