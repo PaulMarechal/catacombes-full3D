@@ -330,7 +330,7 @@ template.innerHTML = `
             z-index: 2;
             position: absolute;
             top: 0;
-            width: 94%;
+            width: -webkit-fill-available;
             left: 0;
             background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
@@ -352,8 +352,8 @@ template.innerHTML = `
 
         #burger_menu_mobile{
             position: absolute;
-            top: 19px;
-            right: 30px;
+            top: 10px;
+            right: 14px;
         }
 
         #display_div_menu_mobile{
@@ -363,13 +363,24 @@ template.innerHTML = `
             top: 58px;
             left: 0;
             display: none;
-            background: rgb(86 86 86 / 50%);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            // background: rgb(86 86 86 / 50%);
+            // backdrop-filter: blur(8px);
+            // -webkit-backdrop-filter: blur(8px);
+            background: #fff; 
             z-index: 1000; 
             padding: 15px 20px; 
         }
+
+        #close_mobile_menu{
+            position: absolute;
+            top: 0;
+            right: 40px;
+            border-bottom: 1px solid #000;
+            border-left: 1px solid #000;
+            padding: 7px;
+        }
     </style>
+    <!-- Desktop menu -->
     <div id="desktop_menu" class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
@@ -414,11 +425,13 @@ template.innerHTML = `
             </a>
         </div>
         <div id="burger_menu_mobile">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
         </div>
     </div>
 
+    <!-- Mobile menu -->
     <div id="display_div_menu_mobile">
+        <svg id="close_mobile_menu" xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
         test
     </div>
 
@@ -614,6 +627,7 @@ class HeaderMenu extends HTMLElement {
         const menuDesktop = shadow.querySelector('#desktop_menu');
         const display_div_menu_mobile = shadow.getElementById('display_div_menu_mobile');
         const burger_menu_mobile = shadow.getElementById('burger_menu_mobile');
+        const close_mobile_menu = shadow.getElementById('close_mobile_menu')
 
         const setMenu = () => {
             const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
@@ -630,6 +644,10 @@ class HeaderMenu extends HTMLElement {
 
         burger_menu_mobile.addEventListener("click", ()=>{
             display_div_menu_mobile.style.display = "block";
+
+            close_mobile_menu.addEventListener("click", ()=>{
+                display_div_menu_mobile.style.display = "none";
+            })
         })
 
         // première exécution

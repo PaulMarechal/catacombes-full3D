@@ -115,23 +115,47 @@ export function TextPanel(scene, roomNumber) {
     rightSubBlock.add(subSubBlock2);
   }
 
-  // --- assemblage ---
-  rightSubBlock.add(subSubBlock2, subSubBlock1);
 
-  // positions (pas besoin de DOMContentLoaded ici)
+  // --- détecter mobile ---
+const isMobileUA = () => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const isSmallScreen = () => window.matchMedia('(max-width: 768px)').matches;
+const isMobile = () => isMobileUA() || isSmallScreen();
+
+// --- conteneur pour colonnes ---
+const contentContainer = new ThreeMeshUI.Block({
+  contentDirection: 'row',
+  padding: 0.02,
+  margin: 0.05,
+  backgroundOpacity: 0,
+});
+
+// --- fonction d’assemblage responsive ---
+function applyLayout() {
+  container.remove(contentContainer);
+
   title.position.set(-0.3, 0.57, 0.3);
-  rightSubBlock.position.set(1, 0, 0.5);
 
-  const contentContainer = new ThreeMeshUI.Block({
-    contentDirection: 'row',
-    padding: 0.02,
-    margin: 0.05,
-    backgroundOpacity: 0,
-  });
+  // Desktop
+  if (!isMobile()) {
+    rightSubBlock.clear();
+    rightSubBlock.add(subSubBlock2, subSubBlock1);
+    rightSubBlock.position.set(1, 0, 0.5);
 
-  contentContainer.add(leftSubBlock, rightSubBlock);
-  container.name = 'boxContainer';
-  container.add(contentContainer);
+    contentContainer.clear();
+    contentContainer.add(leftSubBlock, rightSubBlock);
+
+    container.add(contentContainer);
+  } else {
+    // Mobile
+    container.set({ width: 1.8, height: 0.85 }); 
+  }
+}
+
+// --- initialisation + écoute
+applyLayout();
+window.addEventListener('resize', applyLayout);
+window.addEventListener('orientationchange', applyLayout);
+
 
   // --- synchronisation langue ---
   // 1) init

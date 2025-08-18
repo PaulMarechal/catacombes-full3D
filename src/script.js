@@ -188,11 +188,19 @@ function init(nameRoom) {
 
 		if (window.matchMedia("(orientation: portrait)").matches) {
 			// L'appareil est en mode portrait
-			document.querySelector(".displayMobile").style.display = "block";
-			document.querySelector(".displayMobile").style.position = "absolute";
-			document.querySelector(".displayMobile").style.zIndex = "10";
-			document.querySelector(".displayMobile").style.background = "#ffffff";
-			document.querySelector(".displayMobile").style.borderRadius = "15px";
+			const displayMobile = document.querySelector('.displayMobile')
+			displayMobile.style.display = "block";
+			displayMobile.style.position = "absolute";
+			displayMobile.style.zIndex = "10";
+			displayMobile.style.background = "#ffffff";
+			displayMobile.style.padding = "40px 20px";
+			displayMobile.style.width = "80%";
+			displayMobile.style.fontSize = "6vw";
+			displayMobile.style.textAlign = "center";
+			displayMobile.style.top = "50%";
+			displayMobile.style.left = "50%";
+			displayMobile.style.transform = "translate(-50%, -50%)";
+
 		} else {
 			// L'appareil est en mode paysage
 			document.querySelector(".displayMobile").style.display = "none";
@@ -600,7 +608,8 @@ function init(nameRoom) {
 
 	document.addEventListener("DOMContentLoaded", (event) => {
 		// console.log('ThreeMeshUI:', ThreeMeshUI);
-	
+		
+		// Ajouter validateurs avant de le charger 
 		vrControl = VRControl( renderer, scene );
 		updateMovement();
 	
@@ -969,6 +978,7 @@ function click_on_others_rooms() {
 						gltf.scene.position.set(-1.99, 1.05, -1.29)
 						gltf.scene.rotation.y = 0.005
 						scene.add(gltf.scene)
+						
 						TextPanel.TextPanel(scene, room_number)
 					}
 				)
