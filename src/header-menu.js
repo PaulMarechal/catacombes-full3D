@@ -135,7 +135,7 @@ template.innerHTML = `
             width: 600px;
             height: 215px;
             position: fixed;
-            background: rgba(255, 255, 255, 0);
+            background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
@@ -412,6 +412,47 @@ template.innerHTML = `
         .map_mobile_menu { grid-area: 3 / 1 / 4 / 2; }
         .cards_mobile_menu { grid-area: 3 / 2 / 4 / 3; }
         .share_mobile_menu { grid-area: 4 / 1 / 5 / 3; }
+
+        #contact_infos_div{
+            width: 96%;
+            height: -webkit-fill-available;
+            padding: 12px;
+        }
+
+        #contact_div_main {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 10px;
+            width: 100%;
+            height: -webkit-fill-available;
+        }
+
+        #contact_div_main label input, #contact_div_main label textarea{
+            width: 94%;
+            height: 30px;
+            border-radius: 6px;
+            margin: auto;
+            border: none;
+            padding: 8px;
+        }
+
+        #contact_div_main label textarea{
+            height: -webkit-fill-available;
+            width: 97%;
+            
+        }
+
+        #email_label_contact_div { grid-area: 1 / 1 / 2 / 4;  }
+        #name_label_contact_div { grid-area: 1 / 4 / 2 / 7; }
+        #message_label_contact_div { grid-area: 2 / 1 / 4 / 7; }
+        #submit_button_contact_div { grid-area: 4 / 3 / 5 / 5; }
+
+        .width_elem{
+            margin: auto; 
+            width: 100%!important; 
+            height: -webkit-fill-available;
+        }
     </style>
 
     <!-- Desktop menu -->
@@ -573,6 +614,24 @@ template.innerHTML = `
                 <!-- AJouter copy link  -->
             </div>
         </div>
+        <div class="infos_to_display_div" id="contact_infos_div">
+            <form
+                action="https://formspree.io/f/mrblwgwb"
+                method="POST"
+                id="contact_div_main"
+            >
+                <label class="width_elem" id="email_label_contact_div">
+                    <input type="email" name="email" placeholder="Email">
+                </label>
+                <label class="width_elem" id="name_label_contact_div">
+                    <input type="text"  name="cataphile_name" placeholder="Nom">       
+                </label>
+                <label class="width_elem" id="message_label_contact_div">
+                    <textarea name="message" placeholder="Message"></textarea>
+                </label>
+                <button class="width_elem" id="submit_button_contact_div" type="submit">Send</button>
+            </form>
+        </div>
     </div>
 `;
 
@@ -618,6 +677,7 @@ class HeaderMenu extends HTMLElement {
         // show('.plan_div_header_menu',   '#plan_infos_div');
         // show('.tracts_div_header_menu', '#cartes_infos_div');
         show('.partager_div_header_menu', '#partager_infos_div');
+        show('.contact_div_header_menu', '#contact_infos_div');
 
         function display_all_room_div(shadow){
             const partager_div_header_menu = shadow.querySelector(".partager_div_header_menu");
