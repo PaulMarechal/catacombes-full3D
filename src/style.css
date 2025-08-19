@@ -390,13 +390,6 @@ a {
   }
 }
 
-.displayRooms{
-    margin-top: 0em;
-    padding-top: 11vh;
-    overflow-y: scroll; 
-    text-align: center; 
-}
-
 .icon-tabler-search {
     position: absolute;
     right: 5px; 

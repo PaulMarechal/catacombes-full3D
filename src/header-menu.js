@@ -360,15 +360,15 @@ template.innerHTML = `
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 58px;
+            top: 0px;
             left: 0;
             display: none;
-            // background: rgb(86 86 86 / 50%);
-            // backdrop-filter: blur(8px);
-            // -webkit-backdrop-filter: blur(8px);
-            background: #fff; 
+            background: rgb(86 86 86 / 50%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            // background: #fff; 
             z-index: 1000; 
-            padding: 15px 20px; 
+            padding: 70px 20px; 
         }
 
         #close_mobile_menu{
@@ -378,8 +378,42 @@ template.innerHTML = `
             border-bottom: 1px solid #000;
             border-left: 1px solid #000;
             padding: 7px;
+            background: #fff; 
         }
+
+        #div_link_mobile_menu {
+            height: 70%;
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 1vw;
+            margin: auto; 
+        }
+
+        #div_link_mobile_menu a, #div_link_mobile_menu p{
+            color: #333; 
+            font-size: 3vw;
+            background: #fff; 
+        }
+
+        .elem_menu_mobile {
+            display: flex;               
+            justify-content: center;    
+            align-items: center;         
+            border: 1px solid #000;
+            text-align: center;           
+        }
+
+        .homepage_mobile_menu { grid-area: 1 / 1 / 2 / 2; }
+        .display_rooms_mobile_menu { grid-area: 1 / 2 / 2 / 3; }
+        .histoire_mobile_menu { grid-area: 2 / 1 / 3 / 2; }
+        .image_mobile_menu { grid-area: 2 / 2 / 3 / 3; }
+        .map_mobile_menu { grid-area: 3 / 1 / 4 / 2; }
+        .cards_mobile_menu { grid-area: 3 / 2 / 4 / 3; }
+        .share_mobile_menu { grid-area: 4 / 1 / 5 / 3; }
     </style>
+
     <!-- Desktop menu -->
     <div id="desktop_menu" class="parent_header_menu">
         <div class="logo_div_header_menu">
@@ -432,7 +466,29 @@ template.innerHTML = `
     <!-- Mobile menu -->
     <div id="display_div_menu_mobile">
         <svg id="close_mobile_menu" xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-        test
+        
+        <div id="div_link_mobile_menu">
+            <a href="/" class="homepage_mobile_menu elem_menu_mobile" title="Retourner sur la homepage">Home</a>
+
+            <a href="../displayRooms/" class="display_rooms_mobile_menu elem_menu_mobile" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
+
+            <a href="../Histoire/" class="histoire_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">Histoire</a>
+
+            <a href="../Images/" class="image_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">Images</a>
+
+            <a href="../Map/" class="map_mobile_menu elem_menu_mobile" title="Affiche les salles des catacombes sur une carte">Plan</a>
+
+            <a href="../Cards/" class="cards_mobile_menu elem_menu_mobile" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+
+            <p class="share_mobile_menu elem_menu_mobile" title="Partager cette page sur differentes plateformes">Partager</p>
+
+            <!--
+            <p class="" title="N'hésitez pas à me contacter">Contact</p>
+            -->
+        </div>
+
+
+
     </div>
 
     <div class="display_infos_menu">
