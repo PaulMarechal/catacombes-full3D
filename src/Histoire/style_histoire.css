@@ -226,9 +226,11 @@
 
 .text_img_side{flex: 6}
 
-.img_side{flex: 1}
-
+.img_side{flex: 1; padding-left: 2vw; margin: auto; border-radius: 4px;}
+.img_side img{border-radius: 4px; }
 .text_video_side{flex: 4;}
+
+#img_piliers_tournees{width: 72%}
 
 .video_side{flex: 2}
 
