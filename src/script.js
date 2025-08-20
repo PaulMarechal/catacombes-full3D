@@ -120,6 +120,10 @@ function room3dRoad(roomNumber){
     return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.glb`
 }
 
+function room3dRoad_opt(roomNumber){
+    return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}_opt.glb`
+}
+
 function seeRoomIn3d(roomNumber){
     return `${NameRooms.roomInfos[roomNumber][0]}`
 }
@@ -131,7 +135,7 @@ function seeRoomIn3d(roomNumber){
 
 
 
-window.addEventListener( 'load', init(room3dRoad(0)) );
+window.addEventListener( 'load', init(room3dRoad(0), room3dRoad_opt(0)) );
 window.addEventListener( 'resize', onWindowResize );
 
 // compute mouse position i( normalized device coordinates / raytracing)
@@ -171,7 +175,7 @@ window.addEventListener( 'touchend', () => {
 
 //
 
-function init(nameRoom) {
+function init(nameRoom, nameRoom_opt) {
 
 	////////////////////////
 	//  Basic Three Setup
@@ -341,12 +345,12 @@ function init(nameRoom) {
 	cancelAnimationFrame(rafId);
 	const step = () => {
 		if (displayed < targetPercent) {
-		// easing simple vers la cible
-		const delta = Math.max(1, Math.ceil((targetPercent - displayed) * 0.2));
-		updateUI(displayed + delta, ratio);
-		rafId = requestAnimationFrame(step);
+			// easing simple vers la cible
+			const delta = Math.max(1, Math.ceil((targetPercent - displayed) * 0.2));
+			updateUI(displayed + delta, ratio);
+			rafId = requestAnimationFrame(step);
 		} else {
-		updateUI(targetPercent, ratio);
+			updateUI(targetPercent, ratio);
 		}
 	};
 	step();
@@ -399,7 +403,7 @@ function init(nameRoom) {
 	/* test new background scene */
 	gltfLoaderMain.load(
 		// resource URL
-		'https://catacombes.xyz/assets/background_homepage/modern_vr_art_gallery_pyramid_2.glb',
+		'https://catacombes.xyz/assets/background_homepage/background_scene_catacombes_opt.glb',
 		// called when the resource is loaded
 		function ( gltf ) {
 			gltf.scene.scale.set(1, 1, 1)
@@ -801,6 +805,7 @@ function makePanel() {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
+			// console.log(scene.children)
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
 
@@ -825,9 +830,10 @@ function makePanel() {
 
 			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
             const roomName = room3dRoad(roomNumber)
+			const roomName_opt = room3dRoad_opt(roomNumber)
 
             gltfLoader.load(
-                roomName, 
+                roomName_opt, 
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
                     gltf.scale = 0.2
@@ -894,9 +900,10 @@ function makePanel() {
 
 
 			const roomName = room3dRoad(roomNumber)
+			const roomName_opt = room3dRoad_opt(roomNumber)
 			
 			gltfLoader.load(
-                roomName, 
+                roomName_opt, 
                 (gltf) => {
                     const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
                     gltf.scale = 0.2
@@ -967,9 +974,10 @@ function click_on_others_rooms() {
 				}
 
 				const roomName = room3dRoad(room_number)
+				const roomName_opt = room3dRoad_opt(room_number)
 
 				gltfLoader.load(
-					roomName, 
+					room3dRoad_opt, 
 					(gltf) => {
 						const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
 						gltf.scale = 0.2

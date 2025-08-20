@@ -130,6 +130,30 @@ const popupImageNames = [
     "salleSolcarlus_catacombes.jpg"
 ];
 
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyBackgrounds = document.querySelectorAll(".lazy");
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let bg = entry.target;
+
+                let img = new Image();
+                img.src = bg.getAttribute("data-bg");
+                img.onload = () => {
+                    bg.style.backgroundImage = `url(${img.src})`;
+                    bg.classList.add("loaded"); 
+                };
+
+                observer.unobserve(bg);
+            }
+        });
+    });
+
+    lazyBackgrounds.forEach(bg => {
+        observer.observe(bg);
+    });
+});
+
 displayImageOnClick();
 
 console.log("Developed by 🍔 by Paul Maréchal");

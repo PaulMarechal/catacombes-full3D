@@ -577,7 +577,7 @@ template.innerHTML = `
             <div class="display_links_page">
                 <div class="div_facebook_share_links" title="Partager sur FaceBook">
                     <!-- Bouton de partage Facebook -->
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://catacombes.xyz/Soleil/3D" class="link_facebook" target="_blank" rel="noopener noreferrer" data-action="share/facebook/share" title="Partager sur Facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://catacombes.xyz/" class="link_facebook" target="_blank" rel="noopener noreferrer" data-action="share/facebook/share" title="Partager sur Facebook">
                         <svg class="icon icon-tabler icon-tabler-brand-facebook" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
                         <p>Facebook</p>
                     </a>
@@ -665,6 +665,7 @@ class HeaderMenu extends HTMLElement {
             });
 
             menu.addEventListener('mouseleave', () => {
+                console.log(menu)
                 menu.style.opacity = '0';
                 menu.style.top     = '-405px';
                 target.style.display = 'none';
