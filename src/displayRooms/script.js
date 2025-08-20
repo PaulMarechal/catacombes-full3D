@@ -41,7 +41,8 @@ function createButton(id, templateHref, text, title, roomId) {
 
 function createRoomCard(room, langIndex) {
     const [roomId, titleText, descEN, locationText, depthValue] = room;
-    const newDiv = document.createElement("div");
+    const newDiv = document.createElement("a");
+    newDiv.setAttribute("href", `/3D/?room=${roomId}`)
     newDiv.classList.add("parentDivRoomInfo_new");
 
     // Background 

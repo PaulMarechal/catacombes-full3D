@@ -709,8 +709,10 @@ ul{
 .parent_lost_page{
     /* background-image: url("https://catacombes.xyz/assets/images/plan_catacombes_ancien.webp"); */
     /* background-size: contain; */
+    display: grid;
     grid-template-rows: repeat(13, 1fr); 
     border-radius: 20px;
+    margin: 5vw;
 }
 
 .background_image_lost{
