@@ -1,6 +1,6 @@
 .displayRooms{
     width: 100%;
-    height: 100vh!important;
+    height: 100svh!important;
     position: absolute;
     scrollbar-color: transparent transparent;
     margin-top: 0em;
@@ -17,10 +17,6 @@
 .displayRooms .parentDivRoomInfo_new:nth-child(3n+3) {
     position: relative;
     top: 275px;
-}
-
-.displayRooms.search-active .parentDivRoomInfo_new:nth-child(3n+3) {
-  top: 0 !important;
 }
 
 .div_infos_page{
@@ -181,4 +177,33 @@
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     background: #fff;
+}
+
+/* Portrait (mobiles) */
+@media (max-width: 428px) and (orientation: portrait) {
+    .parentDivRoomInfo_new { height: 350px; }
+
+    .div_infos_page{display: none; }
+    .displayRooms{margin-top: 1em;}
+
+    .parentDivRoomInfo_new{
+        width: 41vh;
+        margin: 2vh 3vh;
+    }
+
+    .textRoom_new{
+        width: 37vh;
+    }
+
+    .displayRooms .parentDivRoomInfo_new:nth-child(3n+3) {
+        position: relative;
+        top: 0px!important;
+    }
+}
+
+/* Paysage (mobiles) */
+@media (max-width: 896px) and (orientation: landscape) {
+    .displayRooms .parentDivRoomInfo_new:nth-child(3n+3){
+        top: 0;
+    }
 }
