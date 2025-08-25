@@ -179,8 +179,8 @@
     background: #fff;
 }
 
-/* Portrait (mobiles) */
-@media (max-width: 428px) and (orientation: portrait) {
+/* Portrait - jusqu'au 14 Pro Max inclus (430px) */
+@media (max-width: 432px) and (orientation: portrait) {
     .parentDivRoomInfo_new { height: 350px; }
 
     .div_infos_page{display: none; }
@@ -201,8 +201,8 @@
     }
 }
 
-/* Paysage (mobiles) */
-@media (max-width: 896px) and (orientation: landscape) {
+/* Paysage - jusqu'au 14 Pro Max (932px) */
+@media (max-width: 940px) and (orientation: landscape) {
     .displayRooms .parentDivRoomInfo_new:nth-child(3n+3){
         top: 0;
     }

@@ -3,6 +3,7 @@ template.innerHTML = `
     <style>
         #mobile_menu, #desktop_menu{
             display: none; 
+            opacity: 1; 
         }
 
         #main_title_catacombes {
@@ -368,7 +369,9 @@ template.innerHTML = `
             -webkit-backdrop-filter: blur(8px);
             // background: #fff; 
             z-index: 1000; 
-            padding: 70px 20px; 
+            justify-content: center;
+            align-items: center;
+            transition: opacity .5s ease-out;
         }
 
         #close_mobile_menu{
@@ -382,19 +385,38 @@ template.innerHTML = `
         }
 
         #div_link_mobile_menu {
-            height: 70%;
+            height: 50%;
             width: 70%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            grid-gap: 1vw;
-            margin: auto; 
+            grid-template-rows: repeat(5, 1fr);
+            grid-gap: 1.5vw;
+            margin: auto;
         }
 
         #div_link_mobile_menu a, #div_link_mobile_menu p{
             color: #333; 
             font-size: 3vw;
             background: #fff; 
+            position: relative;
+            overflow: hidden;
+            border: none; 
+            border-radius: 2px; 
+        }
+
+        #div_link_mobile_menu a span, #div_link_mobile_menu p span{
+            font-size: 2vh;
+            margin-top: 3vh;
+        }
+
+        #div_link_mobile_menu a svg, #div_link_mobile_menu p svg{
+            position: absolute;
+            top: -9px;
+            left: -10px;
+            padding: 10px;
+            border: none;
+            border-radius: 0 40% 50%;
+            box-shadow: 0px 0px 7px 0px #bfbfbf;
         }
 
         .elem_menu_mobile {
@@ -411,7 +433,7 @@ template.innerHTML = `
         .image_mobile_menu { grid-area: 2 / 2 / 3 / 3; }
         .map_mobile_menu { grid-area: 3 / 1 / 4 / 2; }
         .cards_mobile_menu { grid-area: 3 / 2 / 4 / 3; }
-        .share_mobile_menu { grid-area: 4 / 1 / 5 / 3; }
+        .share_mobile_menu { grid-area: 5 / 1 / 6 / 3; }
 
         #contact_infos_div{
             width: 96%;
@@ -452,6 +474,21 @@ template.innerHTML = `
             margin: auto; 
             width: 100%!important; 
             height: -webkit-fill-available;
+        }
+
+        /* Portrait - jusqu'au 14 Pro Max inclus (430px) */
+        @media (max-width: 432px) and (orientation: portrait) {
+            .display_div_menu_mobile{
+                padding: 70px 0px;
+            }
+            #close_mobile_menu{
+                right: 0
+            }
+        }
+
+        /* Paysage - jusqu'au 14 Pro Max (932px) */
+        @media (max-width: 940px) and (orientation: landscape) {
+
         }
     </style>
 
@@ -509,19 +546,40 @@ template.innerHTML = `
         <svg id="close_mobile_menu" xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
         
         <div id="div_link_mobile_menu">
-            <a href="/" class="homepage_mobile_menu elem_menu_mobile" title="Retourner sur la homepage">Home</a>
+            <a href="/" class="homepage_mobile_menu elem_menu_mobile" title="Retourner sur la homepage">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                <span>Home</span>
+            </a>
 
-            <a href="../displayRooms/" class="display_rooms_mobile_menu elem_menu_mobile" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
+            <a href="../displayRooms/" class="display_rooms_mobile_menu elem_menu_mobile" title="Affiche l'ensemble des salles des catacombes et leurs infos">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-building-arch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l18 0" /><path d="M4 21v-15a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v15" /><path d="M9 21v-8a3 3 0 0 1 6 0v8" /></svg>
+                <span>Salles</span>
+            </a>
 
-            <a href="../Histoire/" class="histoire_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">Histoire</a>
+            <a href="../Histoire/" class="histoire_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></svg>
+                <span>Histoire</span>
+            </a>
 
-            <a href="../Images/" class="image_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">Images</a>
+            <a href="../Images/" class="image_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-photo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01" /><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /><path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
+                <span>Photos</span>
+            </a>
 
-            <a href="../Map/" class="map_mobile_menu elem_menu_mobile" title="Affiche les salles des catacombes sur une carte">Plan</a>
+            <a href="../Map/" class="map_mobile_menu elem_menu_mobile" title="Affiche les salles des catacombes sur une carte">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /><path d="M9 4v13" /><path d="M15 7v13" /></svg>
+                <span>Plan</span>
+            </a>
 
-            <a href="../Cards/" class="cards_mobile_menu elem_menu_mobile" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+            <a href="../Cards/" class="cards_mobile_menu elem_menu_mobile" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cards"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /><path d="M15 4h1a1 1 0 0 1 1 1v3.5" /><path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
+                <span>Tracts</span>
+            </a>
 
-            <p class="share_mobile_menu elem_menu_mobile" title="Partager cette page sur differentes plateformes">Partager</p>
+            <p class="share_mobile_menu elem_menu_mobile" title="Partager cette page sur differentes plateformes">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-share"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M8.7 10.7l6.6 -3.4" /><path d="M8.7 13.3l6.6 3.4" /></svg>
+                <span>Partager</span>
+            </p>
 
             <!--
             <p class="" title="N'hésitez pas à me contacter">Contact</p>
@@ -751,7 +809,7 @@ class HeaderMenu extends HTMLElement {
             const mobile = isSmallScreen || isMobileUA();
 
             if (mobile) {
-                if (menuMobile)  menuMobile.style.display  = 'block';
+                if (menuMobile) menuMobile.style.display  = 'block';
                 if (menuDesktop) menuDesktop.style.display = 'none';
             } else {
                 if (menuMobile)  menuMobile.style.display  = 'none';
@@ -760,10 +818,17 @@ class HeaderMenu extends HTMLElement {
         };
 
         burger_menu_mobile.addEventListener("click", ()=>{
-            display_div_menu_mobile.style.display = "block";
+
+            display_div_menu_mobile.style.display = "flex";
+            setTimeout(() => {
+                display_div_menu_mobile.style.opacity = "1";
+            }, 40);
 
             close_mobile_menu.addEventListener("click", ()=>{
-                display_div_menu_mobile.style.display = "none";
+                display_div_menu_mobile.style.opacity = "0";
+                setTimeout(() => {
+                    display_div_menu_mobile.style.display = "none";
+                }, 460);
             })
         })
 
