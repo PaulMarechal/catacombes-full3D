@@ -567,37 +567,10 @@ function init(nameRoom, nameRoom_opt) {
         }
     )
 
-	function display_all_rooms(nameRoom, imageRoom){
-		const display_all_rooms_small = document.querySelector(".display_all_rooms_small")
-		const main_div = document.createElement("div"); 
-		main_div.setAttribute("title", `${nameRoom} - Catacombes interdites`);
-		main_div.setAttribute("id", `${nameRoom}`);
-		main_div.classList.add("display_all_rooms_main_div"); 
-		const name_room = document.createElement("h3");
-		const image_room = document.createElement("img");
-
-		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.webp`);
-		image_room.setAttribute("alt", `${imageRoom}`);
-		image_room.setAttribute("width", `56px`);
-		image_room.setAttribute("height", `56px`);
-		image_room.setAttribute("title", `${imageRoom} - Catacombes interdites`);
-		image_room.classList.add('small_image_room_homepage');
-		image_room.classList.add(`${imageRoom}_small`)
-
-		name_room.classList.add('small_name_room_homepage');
-		name_room.innerHTML = nameRoom;
-
-		main_div.appendChild(image_room);
-		main_div.appendChild(name_room);
-		display_all_rooms_small.appendChild(main_div);
-
-	}
-
 	//
 	for(let i = 0; i < NameRooms.roomInfos.length; i++){
 		// meshContainer.add(NameRooms.roomInfos[i][0])
 		meshes.push(NameRooms.roomInfos[i][0])
-		display_all_rooms(NameRooms.roomInfos[i][0], NameRooms.roomInfos[i][0])
 	}
 
 	currentMesh = 0;
@@ -809,7 +782,7 @@ function makePanel() {
 		onSet: () => {
 			// console.log(scene.children)
             scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
-			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
 
 			scene.add(torus);
 			scene.add(torus2);
@@ -830,7 +803,7 @@ function makePanel() {
 				roomNumber = 0;
 			}
 
-			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
+			// document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
             const roomName = room3dRoad(roomNumber)
 			const roomName_opt = room3dRoad_opt(roomNumber)
 
@@ -878,7 +851,7 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
 			scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
-			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
 
 			scene.add(torus);
 			scene.add(torus2);
@@ -898,7 +871,7 @@ function makePanel() {
 			}
 
             roomNumber -= 1; 
-			document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
+			// document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
 
 
 			const roomName = room3dRoad(roomNumber)
@@ -939,7 +912,7 @@ function find_room_number(liste, nomRecherche) {
 
 function click_on_others_rooms() {
     const display_all_rooms_main_div = document.querySelectorAll(".display_all_rooms_main_div");
-	display_all_rooms_main_div[0].classList.add("selected_room_on_list")
+	// display_all_rooms_main_div[0].classList.add("selected_room_on_list")
 
     display_all_rooms_main_div.forEach((display) => {
 
@@ -997,7 +970,7 @@ function click_on_others_rooms() {
     });
 }
 
-click_on_others_rooms()
+// click_on_others_rooms()
 
 // Handle resizing the viewport
 function onWindowResize() {

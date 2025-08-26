@@ -318,6 +318,7 @@ ul{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 100%;
 }
 
 .display_all_rooms_main_div:hover{
