@@ -578,6 +578,8 @@ function init(nameRoom, nameRoom_opt) {
 
 		image_room.setAttribute("src", `https://catacombes.xyz/${imageRoom}/${imageRoom}.webp`);
 		image_room.setAttribute("alt", `${imageRoom}`);
+		image_room.setAttribute("width", `56px`);
+		image_room.setAttribute("height", `56px`);
 		image_room.setAttribute("title", `${imageRoom} - Catacombes interdites`);
 		image_room.classList.add('small_image_room_homepage');
 		image_room.classList.add(`${imageRoom}_small`)

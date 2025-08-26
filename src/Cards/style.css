@@ -314,3 +314,32 @@ ul.textCard{
 .close_card_viewer_v3:hover svg{
     stroke: #fff; 
 }
+
+/* Portrait - jusqu'au 14 Pro Max inclus (430px) */
+@media (max-width: 432px) and (orientation: portrait) {
+    .card_page{overflow-y: scroll;}
+
+    .parent_text_explications_cards{
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    .parent_text_explications_cards{
+        width: 94%;
+        overflow-y : scroll;
+    }
+
+    .explication_cards_text_div{
+        grid-area: 1 / 1 / 1 / 11;
+    }
+
+    .explication_cards_video_div{
+        grid-area: 2 / 2 / 4 / 10;
+        position: relative; 
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+    }
+}
+/* Paysage - jusqu'au 14 Pro Max (932px) */
+@media (max-width: 940px) and (orientation: landscape) {
+}

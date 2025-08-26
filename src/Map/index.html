@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css?v=1.2">
+    <link rel="stylesheet" href="./style_map.css">
     <meta name="googlebot" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visite les Catacombes Interdites en AR | VR | 3D</title>
@@ -52,8 +53,14 @@
     <script type="module" src="./script.js"></script>
     <script type="module" src="../customCursor.js"></script>
     <script type="module" src="../header-menu.js"></script>
+
+      <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script type="module" src="./script.js"></script>
 </head>
-<body style="background: #fff; display: grid; grid-template-rows: 50px;">
+<body>
     <!--
 	Site made by DevXR - devxr.fr
     © 2024 DevXR. All rights reserved. 
@@ -61,40 +68,26 @@
     -->
     <header-menu></header-menu>
 
-    <div class="parentMap" id="parentDiv">
+    <main class="app">
+        <section class="sidebar">
+            <div class="controls">
+                <input id="search" placeholder="Rechercher une salle ou une adresse…" />
+                <select id="district">
+                <option value="">Quartiers</option>
+                <option>Montparnasse</option>
+                <option>Notre Dame des Champs</option>
+                <option>Val de Grace</option>
+                <option>Salpetriere</option>
+                <option>Gare</option>
+                <option>Petit Montrouge</option>
+                <option>Maison Blanche</option>
+                </select>
+            </div>
+            <div class="list" id="list"></div>
+        </section>
 
-        <div class="petitMontrouge textCenter">
-            <h2 class="districtName">Petit Montrouge</h2>
-        </div>
-        <div class="montparnasse textCenter">
-            <h2 class="districtName">Montparnasse</h2>
-        </div>
-        <div class="notreDameDesChamps textCenter">
-            <h2 class="districtName">Notre Dame des champs</h2>
-        </div>
-        <div class="valDeGrace textCenter">
-            <h2 class="districtName">Val de Grâce</h2>
-        </div>
-        <div class="salpetriere textCenter">
-            <h2 class="districtName">Salpetriere</h2>
-        </div>
-        <div class="gare textCenter">
-            <h2 class="districtName">Gare</h2>
-        </div>
-        <div class="maisonBlanche textCenter">
-            <h2 class="districtName">Maison Blanche</h2>
-        </div>
-    </div>
-
-    <div class="montrougeDiv" id="petitMontrouge">
-        <a href="../Map/" class="retourButton">
-            <p style="margin: 0; padding: 4px 5px 4px 0px;">
-                <i class="ti ti-chevron-left"></i>
-                retour
-            </p>
-        </a>
-        <div class="imageMapMontrouge"></div>
-    </div>
+        <div id="map" aria-label="Carte de Paris"></div>
+    </main>
 
     <div class="displayMobile" style="display: none; font-size: 1.5rem; padding: 10px 20px; margin-top: 11rem">
         <h2>Please turn your screen to landscape mode or connect from a computer to enjoy the experience 🙌</h2>

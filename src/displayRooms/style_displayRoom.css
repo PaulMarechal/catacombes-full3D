@@ -1,5 +1,6 @@
 .displayRooms{
-    width: 100%;
+    width: 88%;
+    margin: 0 6%;
     height: 100svh!important;
     position: absolute;
     scrollbar-color: transparent transparent;
