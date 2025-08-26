@@ -41,13 +41,6 @@ let meshContainer, currentMesh;
 const objsToTest = [];
 let meshes = []
 
-// if (document.readyState === 'loading') {
-//   window.addEventListener('DOMContentLoaded', () => Language.initLanguage(), { once: true });
-// } else {
-//   Language.initLanguage();
-// }
-
-
 // Loader 3D 
 const TORUS_SEGMENTS = 22;
 const TORUS_SIDES = 86;
@@ -86,20 +79,16 @@ const loadingManager = new THREE.LoadingManager(
         
     // Loaded
     () => {
-        // console.log("loaded")
 		scene.remove(torus)
 		scene.remove(torus2)
 		scene.remove(torus3)
-		// TextPanel.TextPanel(scene, roomNumber)
         scene.children[scene.children.length - 1 ].rotation.y -= 0.005;
 
     }, 
 
     // Progress
     (itemUrl, itemsLoaded, itemsTotal) => {
-		// console.log("progress")
         const progressRatio = itemsLoaded / itemsTotal
-        // console.log(`${Math.round(progressRatio*100)} %`)
     }
 )
 
@@ -128,20 +117,12 @@ function room3dRoad_opt(roomNumber){
 function seeRoomIn3d(roomNumber){
     return `${NameRooms.roomInfos[roomNumber][0]}`
 }
-// console.log(room3dRoad(0));
-
-
-
-// const room3dRoad = `https://catacombes.xyz/${nameRoom[0]}/${nameRoom[0]}.glb`
-
-
 
 window.addEventListener( 'load', init(room3dRoad(0), room3dRoad_opt(0)) );
 window.addEventListener( 'resize', onWindowResize );
 
 // compute mouse position i( normalized device coordinates / raytracing)
 // (-1 to +1) for both directions.
-
 const raycaster = new THREE.Raycaster();
 
 const mouse = new THREE.Vector2();
@@ -177,17 +158,14 @@ window.addEventListener( 'touchend', () => {
 //
 
 function init(nameRoom, nameRoom_opt) {
-
 	////////////////////////
 	//  Basic Three Setup
 	////////////////////////
-
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x505050 );
 
 	camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		// camera.position.set(0, 1.6, 0);
 		camera.position.set( -0.9, 11, 0 );
 		scene.position.set(0, -0.3, -1.6)
 
@@ -227,7 +205,6 @@ function init(nameRoom, nameRoom_opt) {
 		});
 
 	} else {
-		// camera.position.set( 0, 1, -0.3 );
 		camera.position.set( -4.9, 11, -3.9 );
 		camera.rotation.set( -2.78, -1.01, -2.83 );
 		scene.position.set(0, -0.3, -1.6)
@@ -252,14 +229,14 @@ function init(nameRoom, nameRoom_opt) {
 	// Orbit controls for no-vr
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
-				// setInterval(() => {
-				// 	controls.enableZoom=false 
-				// 	controls.enablePan=false        
-				// 	controls.minPolarAngle=Math.PI / 3
-				// 	controls.maxPolarAngle=Math.PI / 2
-				// 	controls.minAzimuthAngle=-Math.PI / 4
-				// 	controls.maxAzimuthAngle=Math.PI / 4
-				// }, 300);
+	// setInterval(() => {
+	// 		controls.enableZoom=false 
+	// 		controls.enablePan=false        
+	// 		controls.minPolarAngle=Math.PI / 3
+	// 		controls.maxPolarAngle=Math.PI / 2
+	// 		controls.minAzimuthAngle=-Math.PI / 4
+	// 		controls.maxAzimuthAngle=Math.PI / 4
+	// }, 300);
 
 	controls.enableDamping = true
 	document.addEventListener("DOMContentLoaded", () => {
@@ -336,7 +313,6 @@ function init(nameRoom, nameRoom_opt) {
 
 	loading_bar_percent.textContent = `${safePercent} %`;
 	loader_inside_white.style.width = `${safePercent}%`;
-	// loadingBarElement.style.transform = `scaleX(${safeRatio})`;
 
 	displayed = safePercent;
 	lastRatio = safeRatio;
@@ -401,11 +377,9 @@ function init(nameRoom, nameRoom_opt) {
 	gltfLoaderMain.setDRACOLoader(dracoLoader)
 
 
-	/* test new background scene */
+	/* Background scene */
 	gltfLoaderMain.load(
-		// resource URL
 		'https://catacombes.xyz/assets/background_homepage/background_scene_catacombes_opt.glb',
-		// called when the resource is loaded
 		function ( gltf ) {
 			gltf.scene.scale.set(1, 1, 1)
 			gltf.scene.position.set(-2, 0, -1.3)
@@ -419,7 +393,7 @@ function init(nameRoom, nameRoom_opt) {
 		},
 
 		function ( error ) {
-			console.log( 'An error happened' );
+			console.log( 'An error happened' + error);
 		}
 	);
 
@@ -449,40 +423,6 @@ function init(nameRoom, nameRoom_opt) {
 	torus_l.add(point_light_purple);
 	point_light_purple.position.set(0, 0, 0.5); 
 
-	// Point Light Helper
-	// const sphereSize = 1;
-	// const pointLightHelper = new THREE.PointLightHelper( point_light_purple, sphereSize );
-	// scene.add( pointLightHelper );
-
-	// const colorController = cameraFolder.addColor(material_t, 'color');
-	// colorController.onChange(() => {
-	// renderer.render(scene, camera); 
-	// });
-
-	// cameraFolder.addColor(material_t, 'emissive');
-	// cameraFolder.add(material_t, 'emissiveIntensity', 0, 10);
-	
-
-	// const pointLight_folder = gui.addFolder('Point light')
-	// pointLight_folder.add(point_light_purple.position, 'x', -30, 30)
-	// pointLight_folder.add(point_light_purple.position, 'y', -30, 30)
-	// pointLight_folder.add(point_light_purple.position, 'z', -30, 30)
-
-	// pointLight_folder.addColor(point_light_purple, 'color') 
-	// .name('color')
-	// .listen()
-	// .onChange(function() {
-	//   renderer.render(scene, camera); 
-	// });
-
-	// pointLight_folder.add(point_light_purple, 'intensity') 
-	// .name('intensity')
-	// .listen()
-	// .onChange(function() {
-	//   renderer.render(scene, camera); 
-	// });
-	
-
 	/////////////////
 	// RectAreaLight ( behind user )
 	/////////////////
@@ -490,27 +430,11 @@ function init(nameRoom, nameRoom_opt) {
 	rectAreaLight.rotation.y = -1.85
 	rectAreaLight.position.set(-3.5, 1.4, -1.7)
 	scene.add(rectAreaLight)
-
-
-	// ReactArea Light Helper
-	// const rectLightHelper = new RectAreaLightHelper( rectAreaLight );
-	// rectAreaLight.add( rectLightHelper );
 	
 	///////
 	// Fog
 	///////
-	// scene.fog = new THREE.Fog( 0x313131, 4.98, 14.88 );
 	scene.fog = new THREE.FogExp2( 0x232323, 0.08 );
-
-	// gui
-    // .addColor(scene.fog, 'color')
-    // .onChange(() => {
-    //     scene.fog.color.set(scene.fog.color);
-    // });
-
-	// const fogFolder = gui.addFolder('Brouillard');
-	// fogFolder.add(scene.fog, 'near', -30, 30)
-	// fogFolder.add(scene.fog, 'far', -30, 30)
 
 	////////////////
 	// Loading torus
@@ -518,23 +442,6 @@ function init(nameRoom, nameRoom_opt) {
 	scene.add(torus)
 	scene.add(torus2)
 	scene.add(torus3)
-
-	// scene.add( room );
-	// objsToTest.push( roomMesh );
-
-	//////////
-	// Light
-	//////////
-
-	// const light = ShadowedLight( {
-	// 	z: 10,
-	// 	width: 6,
-	// 	bias: -0.0001
-	// } );
-
-	// const hemLight = new THREE.HemisphereLight( 0x808080, 0x606060 );
-
-	// scene.add( light, hemLight );
 	
 
 	////////////////////
@@ -586,10 +493,7 @@ function init(nameRoom, nameRoom_opt) {
         camera.rotation.set(0, 0, 0);
     });
 
-	document.addEventListener("DOMContentLoaded", (event) => {
-		// console.log('ThreeMeshUI:', ThreeMeshUI);
-		
-		// Ajouter validateurs avant de le charger 
+	document.addEventListener("DOMContentLoaded", (event) => {		
 		updateMovement();
 		
 		if(vrControl){
@@ -605,7 +509,6 @@ function init(nameRoom, nameRoom_opt) {
 				selectState = false;
 			});
 		}
-	
 	});
 
 
@@ -649,19 +552,6 @@ function init(nameRoom, nameRoom_opt) {
 
 }
 
-// Shows the primitive mesh with the passed ID and hide the others
-
-function showMesh( id ) {
-
-	meshes.forEach( ( mesh, i ) => {
-
-		// mesh.visible = i === id ? true : false;
-        // mesh.visible = false;
-        // init(`https://catacombes.xyz/${nameRoom[id]}/${nameRoom[id]}.glb`)
-	} );
-
-}
-
 ///////////////////
 // UI contruction
 ///////////////////
@@ -689,10 +579,8 @@ function makePanel() {
 	scene.add( container );
 
 	// BUTTONS
-
 	// We start by creating objects containing options that we will use with the two buttons,
 	// in order to write less code.
-
 	const buttonOptionsLeft = {
 		width: 0.4,
 		height: 0.15,
@@ -791,7 +679,6 @@ function makePanel() {
 				roomNumber = 0;
 			}
 
-			// document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
             const roomName = room3dRoad(roomNumber)
 			const roomName_opt = room3dRoad_opt(roomNumber)
 
@@ -819,14 +706,12 @@ function makePanel() {
         attributes: selectedAttributes,
         onSet: () => {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-				// window.location(`https://catacombes.xyz/${seeRoomIn3d(roomNumber)}/AR`, '_blank')
 				if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
 					window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
 				} else {
 					window.location.href = `https://catacombes.xyz/AR/?room=${seeRoomIn3d(roomNumber)}`
 				  }
 			} else {
-				// console.log(scene.children)
 				window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
 			}
         }
@@ -838,8 +723,6 @@ function makePanel() {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
-			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
-
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
@@ -858,8 +741,6 @@ function makePanel() {
 			}
 
             roomNumber -= 1; 
-			// document.querySelector(`#${seeRoomIn3d(roomNumber)}`).classList.add("selected_room_on_list")
-
 
 			const roomName = room3dRoad(roomNumber)
 			const roomName_opt = room3dRoad_opt(roomNumber)
@@ -899,7 +780,6 @@ function find_room_number(liste, nomRecherche) {
 
 function click_on_others_rooms() {
     const display_all_rooms_main_div = document.querySelectorAll(".display_all_rooms_main_div");
-	// display_all_rooms_main_div[0].classList.add("selected_room_on_list")
 
     display_all_rooms_main_div.forEach((display) => {
 
@@ -1091,50 +971,33 @@ function updateButtons() {
 	let intersect;
 
 	if ( renderer.xr.isPresenting ) {
-
 		vrControl.setFromController( 0, raycaster.ray );
-
 		intersect = raycast();
-
 		// Position the little white dot at the end of the controller pointing ray
 		if ( intersect ) vrControl.setPointerAt( 0, intersect.point );
-
 	} else if ( mouse.x !== null && mouse.y !== null ) {
-
 		raycaster.setFromCamera( mouse, camera );
-
 		intersect = raycast();
-
 	}
 
 	// Update targeted button state (if any)
 	if ( intersect && intersect.object.isUI ) {
-
 		if ( selectState ) {
-
 			// Component.setState internally call component.set with the options you defined in component.setupState
 			intersect.object.setState( 'selected' );
-
 		} else {
-
 			// Component.setState internally call component.set with the options you defined in component.setupState
 			intersect.object.setState( 'hovered' );
-
 		}
-
 	}
 
 	// Update non-targeted buttons state
 	objsToTest.forEach( ( obj ) => {
-
 		if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
-
 			// Component.setState internally call component.set with the options you defined in component.setupState
 			obj.setState( 'idle' );
-
 		}
-
-	} );
+	});
 
 }
 
