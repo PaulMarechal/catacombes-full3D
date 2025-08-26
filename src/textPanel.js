@@ -36,8 +36,16 @@ export function TextPanel(scene, roomNumber) {
     backgroundOpacity: 0,
     width: 3,
   });
+  container.name = 'boxContainer';
   container.position.set(-2.4, 1.6, -1.26);
   container.rotation.y = -1.86;
+  // remove previously added text panels
+  for (let i = scene.children.length - 1; i >= 0; i--) {
+    const c = scene.children[i];
+    if (c && c.name === 'boxContainer') {
+      scene.remove(c);
+    }
+  }
   scene.add(container);
 
   // --- titre ---
@@ -153,8 +161,11 @@ function applyLayout() {
 
 // --- initialisation + écoute
 applyLayout();
-window.addEventListener('resize', applyLayout);
-window.addEventListener('orientationchange', applyLayout);
+if (!window.__textPanelLayoutListenersAdded) {
+  window.addEventListener('resize', applyLayout);
+  window.addEventListener('orientationchange', applyLayout);
+  window.__textPanelLayoutListenersAdded = true;
+}
 
 
   // --- synchronisation langue ---
@@ -162,10 +173,13 @@ window.addEventListener('orientationchange', applyLayout);
   updateContentAndLanguage(langIndex(getLang()));
 
   // 2) écoute l’évènement global émis par ton script principal
-  window.addEventListener('languagechange', (e) => {
-    const newLang = (e.detail?.lang || getLang()).toUpperCase();
-    updateContentAndLanguage(langIndex(newLang));
-  });
+  if (!window.__textPanelLangListenerAdded) {
+    window.addEventListener('languagechange', (e) => {
+      const newLang = (e.detail?.lang || getLang()).toUpperCase();
+      updateContentAndLanguage(langIndex(newLang));
+    });
+    window.__textPanelLangListenerAdded = true;
+  }
 
   // (optionnel) retourner le container pour manipulations ultérieures
   return container;
