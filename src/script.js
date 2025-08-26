@@ -409,7 +409,7 @@ function init(nameRoom, nameRoom_opt) {
 			gltf.scene.scale.set(1, 1, 1)
 			gltf.scene.position.set(-2, 0, -1.3)
 			gltf.scene.rotation.set(0, -0.31, 0)
-
+			gltf.scene.name = "backgroundScene"
 			scene.add( gltf.scene );
 	
 		},
@@ -781,7 +781,6 @@ function makePanel() {
 		attributes: selectedAttributes,
 		onSet: () => {
 			// console.log(scene.children)
-            scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
 
 			scene.add(torus);
@@ -850,7 +849,6 @@ function makePanel() {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
-			scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
 
 			scene.add(torus);
@@ -935,7 +933,6 @@ function click_on_others_rooms() {
 				
 				roomNumber = room_number;
 
-				scene.remove( scene.remove(scene.children[scene.children.length - 1 ]) );
 				scene.add(torus);
 				scene.add(torus2);
 				scene.add(torus3);
