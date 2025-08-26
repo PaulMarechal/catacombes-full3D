@@ -475,16 +475,6 @@ function init(nameRoom, nameRoom_opt) {
         }
     )
 
-	//
-	for(let i = 0; i < NameRooms.roomInfos.length; i++){
-		// meshContainer.add(NameRooms.roomInfos[i][0])
-		meshes.push(NameRooms.roomInfos[i][0])
-	}
-
-	currentMesh = 0;
-
-	showMesh( currentMesh );
-
 	////////////////
 	// Controllers
 	////////////////
@@ -672,7 +662,6 @@ function makePanel() {
 				}
 			}
 
-			showMesh( currentMesh );
 			roomNumber += 1; 
 
 			if(roomNumber >= NameRooms.roomInfos.length){
@@ -733,8 +722,6 @@ function makePanel() {
 					scene.remove(scene.children[i])
 				}
 			}
-
-			showMesh( currentMesh );
 
 			if(roomNumber < 1){
 				roomNumber = NameRooms.roomInfos.length;
