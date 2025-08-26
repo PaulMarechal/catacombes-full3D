@@ -550,7 +550,7 @@ function init(nameRoom, nameRoom_opt) {
 	}
 
     gltfLoader.load(
-        nameRoom, 
+        nameRoom_opt, 
         (gltf) => {
             const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
             gltf.scale = 0.2
