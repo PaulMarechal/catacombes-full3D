@@ -10,7 +10,7 @@ import { gsap } from 'gsap'
 import TeleportVR from 'teleportvr'
 
 import TWEEN from '@tweenjs/tween.js'
-import * as ThreeMeshUI from 'three-mesh-ui';
+import ThreeMeshUI from 'three-mesh-ui';
 import VRControl from 'three-mesh-ui/examples/utils/VRControl.js';
 import ShadowedLight from 'three-mesh-ui/examples/utils/ShadowedLight.js';
 
@@ -21,6 +21,7 @@ import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 
 import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
+
 
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
@@ -589,21 +590,22 @@ function init(nameRoom, nameRoom_opt) {
 		// console.log('ThreeMeshUI:', ThreeMeshUI);
 		
 		// Ajouter validateurs avant de le charger 
-		vrControl = VRControl( renderer, scene );
 		updateMovement();
-	
-		scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
-	
-		vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
+		
+		if(vrControl){
+			vrControl = VRControl( renderer, scene );
 			
-			selectState = true;
+			scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
+
+			vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
+				selectState = true;
+			});
+
+			vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
+				selectState = false;
+			});
+		}
 	
-		} );
-		vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
-	
-			selectState = false;
-	
-		} );
 	});
 
 
@@ -740,21 +742,11 @@ function makePanel() {
 
 	const idleStateCursorAttributes = document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
 
-
-	// function removeHoveredClass(){
-	// 	if (document.querySelector(".custom-cursor").classList.contains("custom-cursor--link")) {
-	// 		document.querySelector(".custom-cursor").classList.remove("custom-cursor--link");
-	// 	}
-	// }
-
-	// Buttons creation, with the options objects passed in parameters.
-
 	const buttonPrevious = new ThreeMeshUI.Block( buttonOptionsLeft );
     const show3D = new ThreeMeshUI.Block( buttonOptionMiddle );
 	const buttonNext = new ThreeMeshUI.Block( buttonOptionsRight );
 
 	// Add text to buttons
-
 	buttonNext.add(
 		new ThreeMeshUI.Text( { content: 'suivant' } )
 	);
@@ -780,9 +772,6 @@ function makePanel() {
 		state: 'selected',
 		attributes: selectedAttributes,
 		onSet: () => {
-			// console.log(scene.children)
-			// document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
-
 			scene.add(torus);
 			scene.add(torus2);
 			scene.add(torus3);
@@ -916,7 +905,10 @@ function click_on_others_rooms() {
 
         display.addEventListener("click", (event) => {
 
-			document.querySelector(".selected_room_on_list").classList.remove("selected_room_on_list")
+            const previouslySelected = document.querySelector(".selected_room_on_list");
+            if (previouslySelected) {
+                previouslySelected.classList.remove("selected_room_on_list");
+            }
 
             const image = event.currentTarget.querySelector(".small_image_room_homepage");
 
@@ -949,7 +941,7 @@ function click_on_others_rooms() {
 				const roomName_opt = room3dRoad_opt(room_number)
 
 				gltfLoader.load(
-					room3dRoad_opt, 
+					roomName_opt, 
 					(gltf) => {
 						const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
 						gltf.scale = 0.2
