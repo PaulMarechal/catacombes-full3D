@@ -18,6 +18,7 @@
 
 #explication_video_cards{
     flex: 1;
+    position: relative;
 }
 
 #video_card_v3{
@@ -28,6 +29,7 @@
     left: 50%;
     width: 42vh;
     clip-path: inset(0px 0px 2px 0px);
+    z-index: 1;
 }
 
 #display_all_cards_v3 p{
@@ -132,333 +134,19 @@ ul.textCard{
     margin-top: 25px;
     transform: translate(-50%, -50%);
 }
-/* Cards page
-.explication_cards_text_div{
-    grid-area: 1 / 1 / 5 / 11;
-    background: #f3f3f3;
-    border: 1px solid #000;
-    width: 40%;
-    transition: width .5s ease-out;
-}
-
-.explication_cards_video_div{
-    grid-area: 1 / 6 / 4 / 11;
-    position: relative;
-    margin: 3% auto;
-    height: 61vh;
-    width: 50%;
-}
-
-.card_v1, .card_v2, .card_v3{
-    width: 21vh;
-    transform-origin: center 150%;
-    transform: rotate(0deg);
-    transition: transform 0.5s ease-in-out;
-}
-
-.explication_text_card_second{
-    border-radius: 25px;
-    height: 100%;
-    transition: width 1s ease-out, height 1s ease-out;
-}
-
-.explication_card_video_second{
-    border-radius: 25px;
-
-}
-
-.explication_video{
-    width: 19rem;
-    border-radius: 54px;
-}
-
-.text_explication_card{
-    text-align: start;
-    font-size: 1.5vw;
-    padding-bottom: 0.7rem;
-    padding-bottom: 1rem; 
-    margin: 5%;
-    transition: opacity 1s ease-out;
-}
-
-ul.text_explication_card {
-    list-style-type: disc;       
-    list-style-position: outside; 
-    padding-left: 1.5em;         
-    overflow-y: none;
-}
-
-ul.text_explication_card li{
-    overflow-y: none;
-    list-style: auto;
-    padding-bottom: 0;
-}
-
-.display_all_tracts_div{display: inline-flex; margin: 0 5%;}
-
-.display_all_tracts_div, .text_explication_card, 
-.explication_video, .many_cards_display,.many_cards_display_v2, 
-.show_image_verso_main_div_v1, .show_image_verso_main_div_v2, 
-.show_image_verso_main_div_v3
-{
-    transition: opacity 1s ease-out;
-}
-
-.background_filter{
-    grid-area: 1 / 1 / 4 / 6;
-    z-index: -1;
-}
-
-.see_card_bigger_image{
-    width: 100%;
-}
-
-.see_card_bigger_image_verso{
-    opacity: 0;
+.exemple_scan_card{
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42vh;        
+    height: auto;
+    z-index: 2;        
+    top: -300px;
+    pointer-events: none; 
+    transition: top .4s ease-out;
 }
 
-.show_image_verso_main_div_v1, .show_image_verso_main_div_v2, 
-.show_image_verso_main_div_v3{
-    display:none;
-    opacity: 0;
-    text-align: center;
-    position: relative;
-}
-
-.show_all_tracts_image_div{
-    grid-area: 1 / 3 / 4 / 6;
-    display:none; 
-    opacity: 0;
-}
-
-.tract_card_V1{
-    width: 5.5rem;
-}
-
-.text_card_v1{
-    color: #000;
-    width: fit-content; 
-    font-size: xx-large; 
-}
-
-.div_display_card_main{
-    background-color: #fff;
-    padding: 5px 10px; 
-    border-radius: 14px; 
-    width: max-content;
-    height: 6.4rem;
-    cursor: pointer;
-    transition: box-shadow 1s ease-out;
-}
-
-#display_card_v2{margin: 0 20px;}
-
-.div_display_card_main:hover{
-    box-shadow: 0 3px 14px #b4b4b4;
-}
-
-.parent_text_explications_cards, .parent_lost_page {
-    display: grid;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(4, 1fr);
-    overflow-y: revert;
-    cursor: none;
-    max-height: fit-content;
-    width: 98%;
-    height: 790px;
-    margin: 70px 1%;
-}
-
-
-.link_nfc{
-    color: #3D3D3D;
-    text-decoration: none;
-}
-
-.card {
-    height: 32vw;
-    width: 23vw;
-    transform-style: preserve-3d;
-    perspective: 600px;
-    transition: 0.5s;
-    margin: auto;
-    margin-bottom: 2vw;
-}
-
-.card_size_v3{
-    height: 29vw;
-    width: 20vw;
-    margin: auto;
-    margin-bottom: 2vw;
-}
-
-.exemple_nfc_tag_card{
-    display: none;
-    position: absolute;
-    top: -70vh;
-    left: 0;
-    width: 30vh;
-    margin: 0 3.5vh;
-    transition: top 1s ease-out;
-}
-
-.card:hover .card-front_v1, 
-.card:hover .card-front_v2, 
-.card:hover .card-front_v3 {
-    transform: rotateY(-180deg);
-}
-
-.card:hover .card-back_v1, 
-.card:hover .card-back_v2,
-.card:hover .card-back_v3 {
-    transform: rotateY(0deg);
-}
-
-.many_cards_display, .many_cards_display_v2, 
-.many_cards_display_v3{
-    opacity: 0; 
-    display: none;
-    height: inherit;
-    width: 100%;
-    transition: opacity 0.5s ease-out; 
-}
-  
-.card-front_v1, .card-front_v2, 
-.card-front_v3 {
-    height: 100%;
-    width: 100%;
-    background-position: 50% 50%;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #00000000;
-    backface-visibility: hidden;
-    transform: rotateX(0deg);
-    transition: 0.5s;
-}
-
-.card-front_v1{
-    background-image: url(https://catacombes.xyz/assets/images/recto_tracts_v1.png);
-}
-
-.card-front_v2{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/guerinet.png);
-}
-
-.card-front_v3{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/nfc/face_1.png);
-}
-
-#video_card_v1, #video_card_v2{
-    position: absolute;
-    opacity: 0;
-}
-
-#video_card_v3{
-    top: 0;
-    margin: 3vh 2vh;
-}
-  
-.card-back_v1, .card-back_v2, .card-back_v3 {
-    height: 100%;
-    width: 100%;
-    background-position: 50% 50%;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #00000000;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    transition: 0.5s;
-}
-.card-back_v1 {
-    background-image: url(https://catacombes.xyz/assets/images/verso_tracts_v1.png);
-}
-
-.card-back_v2{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/wilde.png);
-}
-
-.card-back_v3{
-    background-image: url(https://catacombes.xyz/assets/images/many_cards_displayed/nfc/face_2.png);
-}
-
-.display_video_card{
-    grid-area: 1 / 7 / 2 / 10;
-    position: relative;
-    margin: -2vh auto 0 auto;
-    display: inline-flex;
-    height: fit-content;
-}
-
-.display_video_card h3{
-    background-color: #fff;
-    border-radius: 10px;
-    height: fit-content;
-    padding: 5px 20px;
-    width: fit-content;
-    margin: 1vh;
-}
-
-.close_card_viewer_v1, .close_card_viewer_v2, 
-.close_card_viewer_v3{
-    display: block;
-    position: absolute;
-    top: 0px;
-    right: 0;
-    background-color: #fff;
-    padding: 2px 4px;
-    border: 1px solid #000;
-    border-top: none;
-    border-right: none;
-    transition: background-color .5s ease-out;
-}
-
-.close_card_viewer_v1:hover, .close_card_viewer_v2:hover, 
-.close_card_viewer_v3:hover{
-    background-color: #000; 
-}
-
-.close_card_viewer_v1 svg, .close_card_viewer_v2 svg, 
-.close_card_viewer_v3 svg{
-    stroke: #000; 
-    transition: stroke .5s ease-out;
-}
-
-.close_card_viewer_v1:hover svg, .close_card_viewer_v2:hover svg, 
-.close_card_viewer_v3:hover svg{
-    stroke: #fff; 
-}
-
-@media (max-width: 432px) and (orientation: portrait) {
-    .card_page{overflow-y: scroll;}
-
-    .parent_text_explications_cards{
-        grid-template-rows: repeat(3, 1fr);
-    }
-    
-    .parent_text_explications_cards{
-        width: 94%;
-        overflow-y : scroll;
-    }
-
-    .explication_cards_text_div{
-        grid-area: 1 / 1 / 1 / 11;
-    }
-
-    .explication_cards_video_div{
-        grid-area: 2 / 2 / 4 / 10;
-        position: relative; 
-        margin: 0;
-        height: 100vh;
-        width: 100%;
-    }
-}
-@media (max-width: 940px) and (orientation: landscape) {
-} */
 @media (max-width: 1400px){
   #tracts_v3{ grid-template-columns: repeat(8, 1fr); }
 }
