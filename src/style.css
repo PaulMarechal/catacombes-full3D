@@ -350,14 +350,6 @@ ul{
     display: none;
 }
 
-.card_v1, .card_v2, .card_v3{
-    width: 25%;
-    transform-origin: center 150%;
-    transform: rotate(0deg);
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-}
-
 .small_cards_rotation{
     -moz-transform: rotate(30deg);
     -webkit-transform: rotate(30deg);
@@ -652,6 +644,17 @@ ul{
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
+}
+
+.parent_lost_page {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(4, 1fr);
+    overflow-y: revert;
+    cursor: none;
+    max-height: fit-content;
+    width: 98%;
+    margin: 70px 1%;
 }
 
 /* Custom cursor */

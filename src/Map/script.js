@@ -28,7 +28,7 @@ window.addEventListener('load', () => map.invalidateSize());
 // 3) si ta colonne / wrapper change de taille (grille responsive, sidebar, etc.)
 const wrapper = document.getElementById('map').parentElement;
 if (window.ResizeObserver && wrapper) {
-  new ResizeObserver(() => map.invalidateSize()).observe(wrapper);
+    new ResizeObserver(() => map.invalidateSize()).observe(wrapper);
 }
 
 // 4) au resize de la fenêtre
@@ -82,6 +82,7 @@ function render() {
         right.appendChild(meta);
         card.appendChild(img);
         card.appendChild(right);
+        card.setAttribute("title", `Voir l'emplacement de ${r[1]} sur la carte`)
 
         // Interaction liste → carte
         card.addEventListener("click", () => focusRoom(r));

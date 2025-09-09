@@ -1,8 +1,144 @@
-/* Cards page */
+#main_div_cards{
+    display: inline-flex; 
+    width: 98%;
+    height: 90%;
+    margin: 70px 1% 10px;
+}
+
+#explication_text_cards, #explication_video_cards{
+    margin: 10px;
+    user-select: none;
+    transition: opacity .5s ease-out;
+}
+
+#explication_text_cards{
+    flex: 0.7;
+    margin: auto 10vh;
+}
+
+#explication_video_cards{
+    flex: 1;
+}
+
+#video_card_v3{
+    text-align: center;
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 42vh;
+    clip-path: inset(0px 0px 2px 0px);
+}
+
+#display_all_cards_v3 p{
+    margin: auto;
+    width: max-content;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    transition: background-color .5s ease-out, color .5s ease-out, border .5s ease-out;
+}
+
+#display_all_cards_v3 p:hover{
+    color: #fff;
+    background: rgb(37 37 37 / 50%); 
+    border: 1px solid #fff;
+}
+
+.textCard{
+    text-align: -webkit-left;
+    padding: 8px;
+    font-size: 1.2vw;
+    scrollbar-color: #d1cece transparent;
+    list-style: auto;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    text-align: justify;
+}
+
+ul.textCard{
+    padding-left: 6vh;
+}
+
+#display_all_tracts{
+    display: none;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+
+#tracts_v3{
+    padding: 0 4vh;
+    opacity: 0;
+    user-select: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 10px;
+    justify-content: stretch;  
+    align-content: flex-start;
+    overflow: visible;        
+    width: 90%;
+    margin: 1vh auto;
+}
+
+#display_all_tracts #tracts_v3 img{
+    width: 80%;
+    height: auto;
+    margin: 0;
+    display: block;
+    transform-origin: center center;
+    transition: transform .25s ease, filter .25s ease;
+    text-align: center;
+    margin: 1vh auto;
+}
+#display_all_tracts #tracts_v3 img:hover{
+    transform: scale(1.7);
+    z-index: 101;
+    position: relative;  
+}
+
+.hover_dimmer{
+    position: fixed;
+    inset: 0;                
+    background: rgba(0,0,0,.45);
+    opacity: 0;
+    pointer-events: none;     
+    transition: opacity .5s ease, backdrop-filter .5s ease-out;
+    z-index: 100;         
+    backdrop-filter: blur(0px);   
+}
+
+#close_display_cards{
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+
+.hover_dimmer.active{ opacity: 1; backdrop-filter: blur(4px);}
+
+.link_nfc{
+    color: #3D3D3D;
+    text-decoration: none;
+    position: absolute;
+    font-size: 3vh;
+    padding-top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#display_all_tracts figcaption{
+    font-size: 1.7vh;
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+/* Cards page
 .explication_cards_text_div{
-    grid-area: 1 / 1 / 5 / 5;
+    grid-area: 1 / 1 / 5 / 11;
     background: #f3f3f3;
     border: 1px solid #000;
+    width: 40%;
+    transition: width .5s ease-out;
 }
 
 .explication_cards_video_div{
@@ -13,20 +149,22 @@
     width: 50%;
 }
 
+.card_v1, .card_v2, .card_v3{
+    width: 21vh;
+    transform-origin: center 150%;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
 .explication_text_card_second{
     border-radius: 25px;
-    /* padding: 10px 30px; */
-    margin: 5% 0 0 0%;
+    height: 100%;
     transition: width 1s ease-out, height 1s ease-out;
 }
 
 .explication_card_video_second{
-    /* position: absolute; */
     border-radius: 25px;
-    /* text-align: center;
-    top: 0; 
-    right: 0; 
-    transform: translate(-70%, 11.5%); */
+
 }
 
 .explication_video{
@@ -54,22 +192,6 @@ ul.text_explication_card li{
     overflow-y: none;
     list-style: auto;
     padding-bottom: 0;
-}
-
-.textCard{
-    text-align: -webkit-left;
-    padding: 8px;
-    font-size: 1.2vw;
-    scrollbar-color: #d1cece transparent;
-    list-style: auto;
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    text-align: justify;
-}
-
-ul.textCard{
-    padding-left: 6vh;
 }
 
 .display_all_tracts_div{display: inline-flex; margin: 0 5%;}
@@ -140,11 +262,12 @@ ul.textCard{
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(4, 1fr);
-    margin: 75px 1rem 1rem 1rem;
     overflow-y: revert;
     cursor: none;
     max-height: fit-content;
-    width: 100%;
+    width: 98%;
+    height: 790px;
+    margin: 70px 1%;
 }
 
 
@@ -194,16 +317,11 @@ ul.textCard{
 
 .many_cards_display, .many_cards_display_v2, 
 .many_cards_display_v3{
-    height: 40rem;
-    width: 40rem;
-    background-position: 50% 50%;
-    background-size: cover;
     opacity: 0; 
     display: none;
-    transition: opacity 1s ease-out;
-    margin-right: -20rem;
-    margin-top: -2rem;
-    position: relative;
+    height: inherit;
+    width: 100%;
+    transition: opacity 0.5s ease-out; 
 }
   
 .card-front_v1, .card-front_v2, 
@@ -289,7 +407,7 @@ ul.textCard{
 .close_card_viewer_v3{
     display: block;
     position: absolute;
-    top: -38px;
+    top: 0px;
     right: 0;
     background-color: #fff;
     padding: 2px 4px;
@@ -315,7 +433,6 @@ ul.textCard{
     stroke: #fff; 
 }
 
-/* Portrait - jusqu'au 14 Pro Max inclus (430px) */
 @media (max-width: 432px) and (orientation: portrait) {
     .card_page{overflow-y: scroll;}
 
@@ -340,6 +457,26 @@ ul.textCard{
         width: 100%;
     }
 }
-/* Paysage - jusqu'au 14 Pro Max (932px) */
 @media (max-width: 940px) and (orientation: landscape) {
+} */
+@media (max-width: 1400px){
+  #tracts_v3{ grid-template-columns: repeat(8, 1fr); }
+}
+@media (max-width: 1200px){
+  #tracts_v3{ grid-template-columns: repeat(6, 1fr); }
+}
+@media (max-width: 992px){
+  #tracts_v3{ grid-template-columns: repeat(5, 1fr); }
+}
+@media (max-width: 860px){
+  #tracts_v3{ grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 680px){
+  #tracts_v3{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 520px){
+  #tracts_v3{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 360px){
+  #tracts_v3{ grid-template-columns: repeat(1, 1fr); }
 }
