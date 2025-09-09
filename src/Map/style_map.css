@@ -135,3 +135,18 @@ header .muted { opacity:.6; font-weight:500; }
   .sidebar { order: 1; }
   .list { grid-template-columns: 1fr; } 
 }
+
+@media (max-width: 432px) and (orientation: portrait) {
+  .controls{
+    width: 95%;
+    grid-template-columns: 0.9fr 0.5fr;
+  }
+
+  .controls input{
+    width: 88%;
+  }
+
+  .controls #district{
+    width: 100%;
+  }
+}

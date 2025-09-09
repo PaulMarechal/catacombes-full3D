@@ -168,3 +168,40 @@ ul.textCard{
 @media (max-width: 360px){
   #tracts_v3{ grid-template-columns: repeat(1, 1fr); }
 }
+
+@media (max-width: 432px) and (orientation: portrait) {
+    #main_div_cards{
+        display: block;
+        width: 98%;
+        height: 90%;
+        margin: 70px 1% 10px;
+        overflow: scroll;
+    }
+
+    #explication_text_cards{
+        margin-top: 49vh;
+        position: absolute;
+    }
+
+    #explication_video_cards{
+        position: relative;
+        overflow: scroll;
+        margin-bottom: 50vh;
+    }
+
+    #video_card_v3{
+        margin-top: 44vh;
+    }
+
+    #explication_text_cards{
+        margin: 6vh 2vh 0 2vh;
+    }
+
+    #explication_text_cards .textCard{
+        font-size: 4vw;
+    }
+
+    #tracts_v3{
+        padding: 5vh 0vh 2vh 0;
+    }
+}

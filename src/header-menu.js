@@ -364,7 +364,8 @@ template.innerHTML = `
             top: 0px;
             left: 0;
             display: none;
-            background: rgb(86 86 86 / 50%);
+            // background: rgb(86 86 86 / 50%);
+            background: rgb(255 255 255); 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             // background: #fff; 
@@ -385,13 +386,14 @@ template.innerHTML = `
         }
 
         #div_link_mobile_menu {
-            height: 50%;
-            width: 70%;
+            height: 70%;
+            width: 96%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(7, 1fr);
             grid-gap: 1.5vw;
             margin: auto;
+            transition: opacity .5s ease-out; 
         }
 
         #div_link_mobile_menu a, #div_link_mobile_menu p{
@@ -401,21 +403,23 @@ template.innerHTML = `
             position: relative;
             overflow: hidden;
             border: none; 
-            border-radius: 2px; 
+            border-radius: 4px; 
+            user-select: none; 
         }
 
         #div_link_mobile_menu a span, #div_link_mobile_menu p span{
-            font-size: 2vh;
-            margin-top: 3vh;
+            font-size: 3.5vh;
+            text-align: left;
+            width: 48%;
         }
 
         #div_link_mobile_menu a svg, #div_link_mobile_menu p svg{
             position: absolute;
             top: -9px;
             left: -10px;
-            padding: 10px;
+            padding: 32px 10px 32px 20px;
             border: none;
-            border-radius: 0 40% 50%;
+            /* border-radius: 0 40% 61%; */
             box-shadow: 0px 0px 7px 0px #bfbfbf;
         }
 
@@ -427,13 +431,13 @@ template.innerHTML = `
             text-align: center;           
         }
 
-        .homepage_mobile_menu { grid-area: 1 / 1 / 2 / 2; }
-        .display_rooms_mobile_menu { grid-area: 1 / 2 / 2 / 3; }
-        .histoire_mobile_menu { grid-area: 2 / 1 / 3 / 2; }
-        .image_mobile_menu { grid-area: 2 / 2 / 3 / 3; }
-        .map_mobile_menu { grid-area: 3 / 1 / 4 / 2; }
-        .cards_mobile_menu { grid-area: 3 / 2 / 4 / 3; }
-        .share_mobile_menu { grid-area: 5 / 1 / 6 / 3; }
+        .homepage_mobile_menu { grid-area: 1 / 1 / 2 / 3; }
+        .display_rooms_mobile_menu { grid-area: 2 / 1 / 2 / 3; }
+        .histoire_mobile_menu { grid-area: 3 / 1 / 3 / 2; }
+        .image_mobile_menu { grid-area: 4 / 1 / 5 / 3; }
+        .map_mobile_menu { grid-area: 3 / 1 / 4 / 3; }
+        .cards_mobile_menu { grid-area: 5 / 1 / 6 / 3; }
+        .share_mobile_menu { grid-area: 7 / 1 / 8 / 3; }
 
         #contact_infos_div{
             width: 96%;
@@ -468,12 +472,28 @@ template.innerHTML = `
         #email_label_contact_div { grid-area: 1 / 1 / 2 / 4;  }
         #name_label_contact_div { grid-area: 1 / 4 / 2 / 7; }
         #message_label_contact_div { grid-area: 2 / 1 / 4 / 7; }
-        #submit_button_contact_div { grid-area: 4 / 3 / 5 / 5; }
+        #submit_button_contact_div { 
+            grid-area: 4 / 3 / 5 / 5; 
+            box-shadow: 0px 0px 13px 0px #686868; 
+            background: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: box-shadow .4s ease-out;
+        }
 
+        #submit_button_contact_div:hover{
+            box-shadow: 0px 0px 24px 1px #686868;
+        }
         .width_elem{
             margin: auto; 
             width: 100%!important; 
             height: -webkit-fill-available;
+        }
+
+        #display_share_mobile_menu{
+            position: absolute; 
+            opacity: 0; 
+            display: none; 
         }
 
         /* Portrait - jusqu'au 14 Pro Max inclus (430px) */
@@ -585,8 +605,9 @@ template.innerHTML = `
             <p class="" title="N'hésitez pas à me contacter">Contact</p>
             -->
         </div>
-
-
+            
+        <div id="display_share_mobile_menu">test</div>
+        
 
     </div>
 
@@ -672,6 +693,7 @@ template.innerHTML = `
                 <!-- AJouter copy link  -->
             </div>
         </div>
+
         <div class="infos_to_display_div" id="contact_infos_div">
             <form
                 action="https://formspree.io/f/mrblwgwb"
@@ -737,6 +759,24 @@ class HeaderMenu extends HTMLElement {
         // show('.tracts_div_header_menu', '#cartes_infos_div');
         show('.partager_div_header_menu', '#partager_infos_div');
         show('.contact_div_header_menu', '#contact_infos_div');
+        
+        function display_share_menu(shadow){
+            const share_mobile_menu = shadow.querySelector('.share_mobile_menu')
+            const display_share_mobile_menu = shadow.getElementById("display_share_mobile_menu")
+            const div_link_mobile_menu = shadow.getElementById('div_link_mobile_menu')
+
+            share_mobile_menu.addEventListener('click', ()=>{
+                div_link_mobile_menu.style.display = 'none'
+                display_share_mobile_menu.style.display = 'block' 
+
+                setTimeout(() => {
+                    div_link_mobile_menu.style.opacity = '0' 
+                    display_share_mobile_menu.style.opacity = '1' 
+                }, 500);
+            })
+        }
+
+        display_share_menu(shadow)
 
         function display_all_room_div(shadow){
             const partager_div_header_menu = shadow.querySelector(".partager_div_header_menu");
@@ -803,6 +843,9 @@ class HeaderMenu extends HTMLElement {
         const display_div_menu_mobile = shadow.getElementById('display_div_menu_mobile');
         const burger_menu_mobile = shadow.getElementById('burger_menu_mobile');
         const close_mobile_menu = shadow.getElementById('close_mobile_menu')
+        const div_link_mobile_menu = shadow.getElementById('div_link_mobile_menu')
+        const display_share_mobile_menu = shadow.getElementById("display_share_mobile_menu")
+
 
         const setMenu = () => {
             const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
@@ -825,7 +868,12 @@ class HeaderMenu extends HTMLElement {
             }, 40);
 
             close_mobile_menu.addEventListener("click", ()=>{
+
                 display_div_menu_mobile.style.opacity = "0";
+                div_link_mobile_menu.style.opacity = "1"; 
+                div_link_mobile_menu.style.display = "grid"; 
+                display_share_mobile_menu.style.opacity = "0"
+                display_share_mobile_menu.style.display = "grid"
                 setTimeout(() => {
                     display_div_menu_mobile.style.display = "none";
                 }, 460);

@@ -185,11 +185,11 @@
     .parentDivRoomInfo_new { height: 350px; }
 
     .div_infos_page{display: none; }
-    .displayRooms{margin-top: 1em;}
+    .displayRooms{margin-top: 1em; width: 90%;}
 
     .parentDivRoomInfo_new{
         width: 41vh;
-        margin: 2vh 3vh;
+        margin: 2vh 0vh;
     }
 
     .textRoom_new{
