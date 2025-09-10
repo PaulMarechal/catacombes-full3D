@@ -1,5 +1,4 @@
 import * as NameRooms from "../roomInfo.js";
-import Masonry from 'masonry-layout';
 
 const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 

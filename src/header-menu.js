@@ -369,7 +369,7 @@ template.innerHTML = `
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             // background: #fff; 
-            z-index: 1000; 
+            z-index: 1001; 
             justify-content: center;
             align-items: center;
             transition: opacity .5s ease-out;
@@ -561,7 +561,6 @@ template.innerHTML = `
             .div_twitter_share_links a{background-color: #00000096!important;}
             .div_sms_ios_share_link a{background-color: #00c80096!important;}
             .div_whatsapp_share_link a{background-color: #25d366a6!important;}
-
         }
     </style>
 
@@ -802,7 +801,7 @@ template.innerHTML = `
                 <label class="width_elem" id="message_label_contact_div">
                     <textarea name="message" placeholder="Message"></textarea>
                 </label>
-                <button class="width_elem" id="submit_button_contact_div" type="submit">Send</button>
+                <button class="width_elem" id="submit_button_contact_div" type="submit">Envoyer</button>
             </form>
         </div>
     </div>
@@ -938,6 +937,7 @@ class HeaderMenu extends HTMLElement {
         const close_mobile_menu = shadow.getElementById('close_mobile_menu')
         const div_link_mobile_menu = shadow.getElementById('div_link_mobile_menu')
         const display_share_mobile_menu = shadow.getElementById("display_share_mobile_menu")
+        const VRButton = document.getElementById("VRButton")
 
 
         const setMenu = () => {
@@ -947,6 +947,7 @@ class HeaderMenu extends HTMLElement {
             if (mobile) {
                 if (menuMobile) menuMobile.style.display  = 'block';
                 if (menuDesktop) menuDesktop.style.display = 'none';
+                if (VRButton) VRButton.style.display = 'none';
             } else {
                 if (menuMobile)  menuMobile.style.display  = 'none';
                 if (menuDesktop) menuDesktop.style.display = 'grid'; 

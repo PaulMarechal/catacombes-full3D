@@ -1210,5 +1210,13 @@ ul{
     .div_share_link{
         display: none;
     }
+
+    #close_message_turn_mobile{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+    }
 }
   

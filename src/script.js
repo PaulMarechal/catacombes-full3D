@@ -172,17 +172,26 @@ function init(nameRoom, nameRoom_opt) {
 		if (window.matchMedia("(orientation: portrait)").matches) {
 			// L'appareil est en mode portrait
 			const displayMobile = document.querySelector('.displayMobile')
+			const close_message_turn_mobile = document.getElementById('close_message_turn_mobile')
 			displayMobile.style.display = "block";
 			displayMobile.style.position = "absolute";
 			displayMobile.style.zIndex = "10";
 			displayMobile.style.background = "#ffffff";
-			displayMobile.style.padding = "40px 20px";
+			displayMobile.style.padding = "50px 20px";
 			displayMobile.style.width = "80%";
 			displayMobile.style.fontSize = "6vw";
 			displayMobile.style.textAlign = "center";
 			displayMobile.style.top = "50%";
 			displayMobile.style.left = "50%";
+			displayMobile.style.transition = "opacity .3s ease-out";
 			displayMobile.style.transform = "translate(-50%, -50%)";
+
+			close_message_turn_mobile.addEventListener('click', ()=>{
+				displayMobile.style.opacity = '0'
+				setTimeout(() => {
+					displayMobile.style.display = 'none'
+				}, 3000);
+			})
 
 		} else {
 			// L'appareil est en mode paysage

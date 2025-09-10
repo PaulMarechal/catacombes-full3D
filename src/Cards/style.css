@@ -205,3 +205,12 @@ ul.textCard{
         padding: 5vh 0vh 2vh 0;
     }
 }
+
+@media (max-width: 940px) and (orientation: landscape) {
+    #display_all_tracts{overflow: scroll;}
+    .textCard{font-size: 1.2vw;}
+    #display_all_cards_v3{margin-top: -30px;}
+    #explication_text_cards{margin:0px 0vh auto 10vh;}
+    #main_div_cards{margin:59px 1% 10px;}
+    #video_card_v3{top: 48%;}
+}

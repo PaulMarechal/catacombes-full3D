@@ -162,9 +162,8 @@
 
 
 #bigThanks{
-    width: 26em; 
     text-align: center;
-    grid-area: 6 / 3 / 7 / 4;
+    grid-area: 6 / 2 / 7 / 5;
 }
 
 #iconLinkDuval{
@@ -258,4 +257,5 @@
 }
 /* Paysage - jusqu'au 14 Pro Max (932px) */
 @media (max-width: 940px) and (orientation: landscape) {
+    #bigThanks{ grid-area: 6 / 2 / 7 / 5; width: 100%;margin-top: 5px;}
 }
