@@ -133,10 +133,8 @@ template.innerHTML = `
         }
 
         .display_infos_menu{
-            width: min(94vw, 600px);
-            height: auto;
-            max-height: 80dvh;
-            overflow: auto;
+            width: 600px;
+            height: 215px;
             position: fixed;
             background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
@@ -442,24 +440,18 @@ template.innerHTML = `
         .share_mobile_menu { grid-area: 7 / 1 / 8 / 3; }
 
         #contact_infos_div{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
+            width: 96%;
+            height: -webkit-fill-available;
             padding: 12px;
-            max-height: inherit;
-            overflow: auto;
         }
 
         #contact_div_main {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: auto auto 1fr auto;
+            grid-template-rows: repeat(4, 1fr);
             grid-gap: 10px;
             width: 100%;
-            height: 100%;
-            max-height: inherit;
-            min-height: 0;
+            height: -webkit-fill-available;
         }
 
         #contact_div_main label input, #contact_div_main label textarea{
@@ -472,11 +464,9 @@ template.innerHTML = `
         }
 
         #contact_div_main label textarea{
-            height: 100%;
-            min-height: 140px;
-            width: 100%;
-            resize: vertical;
-            box-sizing: border-box;
+            height: -webkit-fill-available;
+            width: 97%;
+            
         }
 
         #email_label_contact_div { grid-area: 1 / 1 / 2 / 4;  }
@@ -488,7 +478,6 @@ template.innerHTML = `
             background: #fff;
             border: none;
             border-radius: 5px;
-            height: 30px; 
             transition: box-shadow .4s ease-out;
         }
 
@@ -498,7 +487,7 @@ template.innerHTML = `
         .width_elem{
             margin: auto; 
             width: 100%!important; 
-            height: auto;
+            height: 100%;
         }
 
         #display_share_mobile_menu{
@@ -839,7 +828,7 @@ class HeaderMenu extends HTMLElement {
                     div.style.opacity = '0';
                     setTimeout(() => div.style.display = 'none', 510);
                 });
-                menu.style.top = '200px';
+                menu.style.top = '175px';
                 menu.style.opacity = '1';
                 setTimeout(() => {
                     target.style.display = 'inline-flex';
