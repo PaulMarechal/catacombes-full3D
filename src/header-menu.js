@@ -504,6 +504,25 @@ template.innerHTML = `
             #close_mobile_menu{
                 right: 0
             }
+
+            .display_links_page{
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                width: 384px;
+                height: 380px;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .div_facebook_share_links {grid-area: 1 / 1 / 2 / 3;}
+            .div_twitter_share_links {grid-area: 2 / 1 / 3 / 3;}
+            .div_sms_ios_share_link {grid-area: 3 / 1 / 3 / 3;}
+            .div_whatsapp_share_link {grid-area: 4 / 1 / 5 / 3;}
+
+            .div_facebook_share_links a{background-color: #3b5998b0!important;}
+            .div_twitter_share_links a{background-color: #00000096!important;}
+            .div_sms_ios_share_link a{background-color: #00c80096!important;}
+            .div_whatsapp_share_link a{background-color: #25d366a6!important;}
         }
 
         /* Paysage - jusqu'au 14 Pro Max (932px) */
@@ -531,6 +550,18 @@ template.innerHTML = `
                 margin-top: -10px;
                 font-size: 5.5vh;
             }
+
+            .display_links_page{
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+
+            .div_facebook_share_links a{background-color: #3b5998b0!important;}
+            .div_twitter_share_links a{background-color: #00000096!important;}
+            .div_sms_ios_share_link a{background-color: #00c80096!important;}
+            .div_whatsapp_share_link a{background-color: #25d366a6!important;}
+
         }
     </style>
 
@@ -628,7 +659,47 @@ template.innerHTML = `
             -->
         </div>
             
-        <div id="display_share_mobile_menu">test</div>
+        <div id="display_share_mobile_menu">
+            <div class="display_links_page">
+                <div class="div_facebook_share_links" title="Partager sur FaceBook">
+                    <!-- Bouton de partage Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://catacombes.xyz/" class="link_facebook" target="_blank" rel="noopener noreferrer" data-action="share/facebook/share" title="Partager sur Facebook">
+                        <svg class="icon icon-tabler icon-tabler-brand-facebook" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                        <p>Facebook</p>
+                    </a>
+                </div>
+
+                <div class="div_twitter_share_links" title="Partager sur Twitter | X">
+                    <!-- Bouton de partage Twitter / X -->
+                    <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share" title="Partager sur Twitter | X">
+                        <svg class="icon icon-tabler icon-tabler-brand-x" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+                        <p>X</p>
+                        </a>
+                </div>
+
+                <div class="div_sms_ios_share_link" title="Partager par SMS">
+                    <!-- Bouton de partage via SMS IOS-->
+                    <a href="sms:&body=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%0Ahttps://catacombes.xyz" class="link_message_ios" target="_blank" rel="noopener noreferrer" data-action="share/sms/share" title="Partager par SMS">
+                        <svg class="icon icon-tabler icon-tabler-message-circle-2" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" /></svg>
+                        <p>SMS</p>
+                    </a>
+                </div>
+
+                <div class="div_whatsapp_share_link" title="Partager sur WhatsApp">
+                    <!-- Bouton de partage via WhatsApp-->
+                    <a href="https://api.whatsapp.com/send?text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%20https://catacombes.xyz" target="_blank" rel="noopener noreferrer" title="Partager avec WhatsApp">
+                        <svg class="icon icon-tabler icon-tabler-brand-whatsapp" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                        </svg>
+                        <p>WhatsApp</p>
+                    </a>
+                </div>
+
+                <!-- AJouter copy link  -->
+            </div>
+        </div>
         
 
     </div>
