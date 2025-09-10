@@ -508,7 +508,29 @@ template.innerHTML = `
 
         /* Paysage - jusqu'au 14 Pro Max (932px) */
         @media (max-width: 940px) and (orientation: landscape) {
+            #close_mobile_menu{
+                right: 0; 
+            }
 
+            #div_link_mobile_menu{
+                height: 73%;
+                width: 36%;
+                margin: auto 0;
+                grid-gap: 0; 
+                position: absolute;
+                left: 13vh; 
+            }
+
+            #div_link_mobile_menu a svg, #div_link_mobile_menu p svg{
+                border-radius: none; 
+                box-shadow: none; 
+                padding: 6px 10px 6px 20px; 
+            }
+
+            #div_link_mobile_menu a span, #div_link_mobile_menu p span{
+                margin-top: -10px;
+                font-size: 5.5vh;
+            }
         }
     </style>
 
