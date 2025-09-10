@@ -77,7 +77,7 @@ template.innerHTML = `
         .parent_header_menu {
             display: grid;
             z-index:999;
-            grid-template-columns: repeat(2, 0.9fr) repeat(5, 0.7fr ) repeat(4, 1fr) repeat(2, 0.6fr) 0.1fr;
+            grid-template-columns: repeat(2, 1fr) repeat(5, 0.7fr ) repeat(4, 1fr) repeat(2, 0.6fr) 0.1fr;
             grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
