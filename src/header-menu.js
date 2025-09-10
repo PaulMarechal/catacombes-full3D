@@ -133,8 +133,10 @@ template.innerHTML = `
         }
 
         .display_infos_menu{
-            width: 600px;
-            height: 215px;
+            width: min(94vw, 600px);
+            height: auto;
+            max-height: 80dvh;
+            overflow: auto;
             position: fixed;
             background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
@@ -440,18 +442,24 @@ template.innerHTML = `
         .share_mobile_menu { grid-area: 7 / 1 / 8 / 3; }
 
         #contact_infos_div{
-            width: 96%;
-            height: -webkit-fill-available;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
             padding: 12px;
+            max-height: inherit;
+            overflow: auto;
         }
 
         #contact_div_main {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: auto auto 1fr auto;
             grid-gap: 10px;
             width: 100%;
-            height: -webkit-fill-available;
+            height: 100%;
+            max-height: inherit;
+            min-height: 0;
         }
 
         #contact_div_main label input, #contact_div_main label textarea{
@@ -464,9 +472,11 @@ template.innerHTML = `
         }
 
         #contact_div_main label textarea{
-            height: -webkit-fill-available;
-            width: 97%;
-            
+            height: 100%;
+            min-height: 140px;
+            width: 100%;
+            resize: vertical;
+            box-sizing: border-box;
         }
 
         #email_label_contact_div { grid-area: 1 / 1 / 2 / 4;  }
@@ -478,6 +488,7 @@ template.innerHTML = `
             background: #fff;
             border: none;
             border-radius: 5px;
+            height: 30px; 
             transition: box-shadow .4s ease-out;
         }
 
@@ -487,7 +498,7 @@ template.innerHTML = `
         .width_elem{
             margin: auto; 
             width: 100%!important; 
-            height: -webkit-fill-available;
+            height: auto;
         }
 
         #display_share_mobile_menu{
@@ -828,7 +839,7 @@ class HeaderMenu extends HTMLElement {
                     div.style.opacity = '0';
                     setTimeout(() => div.style.display = 'none', 510);
                 });
-                menu.style.top = '175px';
+                menu.style.top = '200px';
                 menu.style.opacity = '1';
                 setTimeout(() => {
                     target.style.display = 'inline-flex';
@@ -967,7 +978,7 @@ class HeaderMenu extends HTMLElement {
                 div_link_mobile_menu.style.opacity = "1"; 
                 div_link_mobile_menu.style.display = "grid"; 
                 display_share_mobile_menu.style.opacity = "0"
-                display_share_mobile_menu.style.display = "grid"
+                display_share_mobile_menu.style.display = "none"
                 setTimeout(() => {
                     display_div_menu_mobile.style.display = "none";
                 }, 460);
