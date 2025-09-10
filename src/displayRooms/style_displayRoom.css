@@ -205,6 +205,27 @@
 /* Paysage - jusqu'au 14 Pro Max (932px) */
 @media (max-width: 940px) and (orientation: landscape) {
     .displayRooms .parentDivRoomInfo_new:nth-child(3n+3){
-        top: 0;
+        top: 240px;
+    }
+
+    .displayRooms .parentDivRoomInfo_new{
+        top: 240px;
+    }
+
+    .parentDivRoomInfo_new{
+        width: 354px;
+        height: 380px;
+    }
+
+    .textRoom_new{
+        height: 150px;
+        width: 322px;
+    }
+
+    .div_infos_page p{padding: 77px 10px 10px 10px;}
+    .searchContainer{top: 2.5vh;}
+    .search_bar{
+        height: 8vh;
+        width: 63vh;
     }
 }
