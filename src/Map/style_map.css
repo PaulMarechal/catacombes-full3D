@@ -150,3 +150,16 @@ header .muted { opacity:.6; font-weight:500; }
     width: 100%;
   }
 }
+
+@media (max-width: 940px) and (orientation: landscape) {
+    .app{
+        width: 204vh;
+        display: inline-flex;
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    #district{width: 101%;}
+}
