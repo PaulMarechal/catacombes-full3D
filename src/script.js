@@ -28,7 +28,7 @@ import * as NameRooms from "./roomInfo.js";
 import * as Language from "./language.js";
 import * as XRHand from "./XR_hand.js";
 
-import GUI from 'lil-gui';
+// import GUI from 'lil-gui';
 
 /**
  * Debug
@@ -40,6 +40,7 @@ let meshContainer, currentMesh;
 
 const objsToTest = [];
 let meshes = []
+let tweenFinished = false;
 
 // Loader 3D 
 const TORUS_SEGMENTS = 22;
@@ -158,16 +159,51 @@ window.addEventListener( 'touchend', () => {
 //
 
 function init(nameRoom, nameRoom_opt) {
+	function getEndCameraPosition() {
+		const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+		if (isMobile && isPortrait) {
+			return { x: -7.2, y: 1.55, z: -2.5 }; // portrait mobile
+
+		}
+		if (isMobile) {
+			return { x: -6.2, y: 1.5, z: -2.6 }; // mobile paysage
+		}
+		return { x: -5.8, y: 1.45, z: -2.3 }; // desktop 
+	}
+
 	////////////////////////
 	//  Basic Three Setup
 	////////////////////////
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x505050 );
 
+	// S'assurer que le meta viewport inclut viewport-fit=cover (utile pour les safe-area iOS)
+	(function ensureViewportFitCover(){
+		const meta = document.querySelector('meta[name="viewport"]');
+		const desired = 'width=device-width, initial-scale=1, viewport-fit=cover';
+		if (!meta) {
+			const m = document.createElement('meta');
+			m.name = 'viewport';
+			m.content = desired;
+			document.head.appendChild(m);
+		} else if (!/viewport-fit=cover/.test(meta.content)) {
+			meta.content = meta.content.replace(/\s*$/, '');
+			// ajouter si absent
+			meta.content += (meta.content ? ', ' : '') + 'viewport-fit=cover';
+		}
+	})();
+
 	camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 100 );
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		camera.position.set( -0.9, 11, 0 );
-		scene.position.set(0, -0.3, -1.6)
+		// Position de la scène selon l'orientation (portrait = plus proche)
+		if (window.matchMedia("(orientation: portrait)").matches) {
+			scene.position.set(0, -0.3, -0.9);
+		} else {
+			scene.position.set(0, -0.3, -1.6);
+		}
 
 		if (window.matchMedia("(orientation: portrait)").matches) {
 			// L'appareil est en mode portrait
@@ -207,9 +243,23 @@ function init(nameRoom, nameRoom_opt) {
 				document.querySelector(".displayMobile").style.zIndex = "10";
 				document.querySelector(".displayMobile").style.background = "#ffffff";
 				document.querySelector(".displayMobile").style.borderRadius = "15px";
+				// Après le tween, reculer la caméra en portrait mobile
+				if (tweenFinished) {
+					const p = getEndCameraPosition();
+					camera.position.set(p.x, p.y, p.z);
+					// Adapter la position de la scène en portrait
+					scene.position.set(0, -0.3, -0.9);
+				}
 			} else if (orientation === 90 || orientation === -90) {
 				// L'appareil est en mode paysage
 				document.querySelector(".displayMobile").style.display = "none";
+				// Après le tween, adapter la distance en paysage mobile
+				if (tweenFinished) {
+					const p = getEndCameraPosition();
+					camera.position.set(p.x, p.y, p.z);
+					// Adapter la position de la scène en paysage
+					scene.position.set(0, -0.3, -1.6);
+				}
 			}
 		});
 
@@ -239,6 +289,13 @@ function init(nameRoom, nameRoom_opt) {
 	// Orbit controls for no-vr
 	controls = new OrbitControls( camera, renderer.domElement );
 	controls.target = new THREE.Vector3( 0, 1, -1.8 );
+	// Prevent rotation/zoom/pan on mobile during intro tween
+	if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		// While the intro tween runs, disable user rotation on mobile
+		controls.enableRotate = false;
+		controls.enableZoom = false;
+		controls.enablePan = false;
+	}
 	// setInterval(() => {
 	// 		controls.enableZoom=false 
 	// 		controls.enablePan=false        
@@ -360,15 +417,29 @@ function init(nameRoom, nameRoom_opt) {
 			}, 600);
 
 			const tween = new TWEEN.Tween(camera.position)
-			.to({ x: -5.8, y: 1.45, z: -2.3 }, 7000)
+			.to(getEndCameraPosition(), 7000)
 			.easing(TWEEN.Easing.Cubic.InOut)
 			.onComplete(() => {
-				controls.minPolarAngle = Math.PI / 3;
-				controls.maxPolarAngle = Math.PI / 2;
-				controls.minAzimuthAngle = -Math.PI / 1.4;
-				controls.maxAzimuthAngle = Math.PI / 0.6;
-				controls.enableZoom = false;
-				controls.enablePan = false;
+				tweenFinished = true;
+				// After the tween finishes, face the model and lock the camera on mobile
+				const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+				// const modelTarget = new THREE.Vector3(-1.99, 1.05, -1.29); // position of the loaded room
+				// camera.lookAt(modelTarget);
+				// controls.target.copy(modelTarget);
+
+				if (isMobile) {
+					// Completely freeze OrbitControls on mobile
+					controls.enabled = false;
+				} else {
+					// Desktop: keep limited navigation if desired
+					controls.minPolarAngle = Math.PI / 3;
+					controls.maxPolarAngle = Math.PI / 2;
+					controls.minAzimuthAngle = -Math.PI / 1.4;
+					controls.maxAzimuthAngle = Math.PI / 0.6;
+					controls.enableZoom = false;
+					controls.enablePan = false;
+					controls.enableRotate = true;
+				}
 			})
 			.start();
 		},
@@ -573,11 +644,217 @@ function init(nameRoom, nameRoom_opt) {
 
 }
 
+function goToNextRoom() {
+	scene.add(torus);
+	scene.add(torus2);
+	scene.add(torus3);
+
+	for(let i = 0; i < scene.children.length; i++){
+		if(scene.children[i].name === "roomName"){
+			scene.remove(scene.children[i]);
+		} else if(scene.children[i].name === "boxContainer"){
+			scene.remove(scene.children[i])
+		}
+	}
+
+	roomNumber += 1; 
+	if(roomNumber >= NameRooms.roomInfos.length){
+		roomNumber = 0;
+	}
+
+	const roomName = room3dRoad(roomNumber)
+	const roomName_opt = room3dRoad_opt(roomNumber)
+
+	gltfLoader.load(
+		roomName_opt, 
+		(gltf) => {
+			const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
+			gltf.scale = 0.2
+			gltf.scene.name = "roomName"
+			gltf.scene.scale.set(0.1, 0.1, 0.1)
+			gltf.scene.position.set(-1.99, 1.05, -1.29)
+			gltf.scene.rotation.y = 0.005
+			scene.add(gltf.scene)
+			TextPanel.TextPanel(scene, roomNumber)
+		}
+	)
+}
+
+function goToPrevRoom() {
+	scene.add(torus);
+	scene.add(torus2);
+	scene.add(torus3);
+
+	for(let i = 0; i < scene.children.length; i++){
+		if(scene.children[i].name === "roomName"){
+			scene.remove(scene.children[i]);
+		} else if(scene.children[i].name === "boxContainer"){
+			scene.remove(scene.children[i])
+		}
+	}
+
+	if(roomNumber < 1){
+		roomNumber = NameRooms.roomInfos.length;
+	}
+	roomNumber -= 1; 
+
+	const roomName = room3dRoad(roomNumber)
+	const roomName_opt = room3dRoad_opt(roomNumber)
+			
+	gltfLoader.load(
+		roomName_opt, 
+		(gltf) => {
+			const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
+			gltf.scale = 0.2
+			gltf.scene.name = "roomName"
+			gltf.scene.scale.set(0.1, 0.1, 0.1)
+			gltf.scene.position.set(-1.99, 1.05, -1.29)
+			gltf.scene.rotation.y = 0.005
+			scene.add(gltf.scene)
+			TextPanel.TextPanel(scene, roomNumber)
+		}
+	)
+}
+
+function handleVisit3D() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		if (navigator.xr && navigator.xr.isSessionSupported && navigator.xr.isSessionSupported('immersive-vr')) {
+			window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
+		} else {
+			window.location.href = `https://catacombes.xyz/AR/?room=${seeRoomIn3d(roomNumber)}`
+		}
+	} else {
+		window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
+	}
+}
+
 ///////////////////
 // UI contruction
 ///////////////////
 
 function makePanel() {
+
+	// UI HTML sur mobile (fixed en bas) + masquer les boutons 3D
+	const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	if (isMobile) {
+		if (!document.getElementById('mobileNavBar')) {
+			const bar = document.createElement('div');
+			bar.id = 'mobileNavBar';
+			bar.style.position = 'fixed';
+			bar.style.left = '0';
+			bar.style.right = '0';
+			bar.style.bottom = '0';
+			bar.style.display = 'flex';
+			bar.style.justifyContent = 'space-between';
+			// bar.style.gap = '5px';
+			// bar.style.padding = '12px 16px';
+			bar.style.background = 'linear-gradient(to top, rgb(0 0 0 / 39%), rgb(0 0 0 / 0%))';
+			bar.style.zIndex = '9999';
+			bar.style.padding = '12px 16px';
+			bar.style.paddingBottom = 'calc(env(safe-area-inset-bottom, 0px) + 12px)';
+
+			function makeBtn(label) {
+				const b = document.createElement('button');
+				if (label instanceof HTMLElement || label instanceof SVGElement) {
+					b.appendChild(label);
+				} else if (typeof label === 'string' && label.trim().startsWith('<')) {
+					b.innerHTML = label;
+				} else {
+					b.textContent = label;
+				}
+				b.style.display = 'flex';
+				b.style.alignItems = 'center';
+				b.style.justifyContent = 'center';
+				const svg = b.querySelector('svg');
+				if (svg) {
+					svg.setAttribute('width', '1.9em');
+					svg.setAttribute('height', '1.9em');
+					if (!svg.getAttribute('fill')) svg.setAttribute('fill', 'currentColor');
+				}
+				b.style.flex = '1';
+				b.style.padding = '6px 14Px';
+				const isPortraitNow = window.matchMedia("(orientation: portrait)").matches;
+				b.style.fontSize = isPortraitNow ? '3.5vh' : '6.5vh';
+				b.style.fontFamily = 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+				// b.style.borderRadius = '10px';
+				b.style.border = 'none';
+				b.style.cursor = 'pointer';
+				b.style.zIndex = '2';
+				b.style.background = '#ffffff00';
+				b.style.color = '#111';
+				// b.style.margin = '8px 0';
+				// b.style.border = '1px solid #000'
+				// b.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+				return b;
+			}
+
+			const prevBtn = makeBtn('<svg  xmlns="http://www.w3.org/2000/svg"  width="60"  height="60"  viewBox="0 0 24 24"  fill="#FFF"  class="icon icon-tabler icons-tabler-filled icon-tabler-caret-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13.883 5.007l.058 -.005h.118l.058 .005l.06 .009l.052 .01l.108 .032l.067 .027l.132 .07l.09 .065l.081 .073l.083 .094l.054 .077l.054 .096l.017 .036l.027 .067l.032 .108l.01 .053l.01 .06l.004 .057l.002 .059v12c0 .852 -.986 1.297 -1.623 .783l-.084 -.076l-6 -6a1 1 0 0 1 -.083 -1.32l.083 -.094l6 -6l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01z" /></svg>');
+			const visitBtn = makeBtn('<svg  xmlns="http://www.w3.org/2000/svg"  width="60"  height="60"  viewBox="0 0 24 24"  fill="none"  stroke="#fff"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cube-3d-sphere"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 17.6l-2 -1.1v-2.5" /><path d="M4 10v-2.5l2 -1.1" /><path d="M10 4.1l2 -1.1l2 1.1" /><path d="M18 6.4l2 1.1v2.5" /><path d="M20 14v2.5l-2 1.12" /><path d="M14 19.9l-2 1.1l-2 -1.1" /><path d="M12 12l2 -1.1" /><path d="M18 8.6l2 -1.1" /><path d="M12 12l0 2.5" /><path d="M12 18.5l0 2.5" /><path d="M12 12l-2 -1.12" /><path d="M6 8.6l-2 -1.1" /></svg>');
+			const nextBtn = makeBtn('<svg  xmlns="http://www.w3.org/2000/svg"  width="60"  height="60"  viewBox="0 0 24 24"  fill="#FFF"  class="icon icon-tabler icons-tabler-filled icon-tabler-caret-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6c0 -.852 .986 -1.297 1.623 -.783l.084 .076l6 6a1 1 0 0 1 .083 1.32l-.083 .094l-6 6l-.094 .083l-.077 .054l-.096 .054l-.036 .017l-.067 .027l-.108 .032l-.053 .01l-.06 .01l-.057 .004l-.059 .002l-.059 -.002l-.058 -.005l-.06 -.009l-.052 -.01l-.108 -.032l-.067 -.027l-.132 -.07l-.09 -.065l-.081 -.073l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057l-.002 -12.059z" /></svg>');
+
+			prevBtn.setAttribute('aria-label', 'précédent');
+			visitBtn.setAttribute('aria-label', 'visiter');
+			nextBtn.setAttribute('aria-label', 'suivant');
+
+			prevBtn.id = 'mobilePrevBtn';
+			visitBtn.id = 'mobileVisitBtn';
+			nextBtn.id = 'mobileNextBtn';
+
+			function updateMobileBarTypography() {
+				const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+				const size = isPortrait ? '3.5vh' : '6.5vh';
+				const btns = [prevBtn, visitBtn, nextBtn];
+				btns.forEach(b => { if (b) b.style.fontSize = size; });
+			}
+
+			updateMobileBarTypography();
+			window.addEventListener('orientationchange', updateMobileBarTypography);
+
+			// prevBtn.style.borderRadius = '10px 4px 4px 10px';
+			// visitBtn.style.borderRadius = '4px';
+			// nextBtn.style.borderRadius = '4px 10px 10px 4px';
+
+			prevBtn.addEventListener('click', goToPrevRoom);
+			visitBtn.addEventListener('click', handleVisit3D);
+			nextBtn.addEventListener('click', goToNextRoom);
+
+			bar.appendChild(prevBtn);
+			bar.appendChild(visitBtn);
+			bar.appendChild(nextBtn);
+			document.body.appendChild(bar);
+
+			function updateBarBottomOffset() {
+				const vv = window.visualViewport;
+				let extra = 0;
+				if (vv) {
+					const occupiedBottom = (window.innerHeight - (vv.height + vv.offsetTop));
+					extra = Math.max(0, Math.round(occupiedBottom));
+				}
+				bar.style.bottom = (extra > 0 ? extra + 'px' : '0');
+			}
+			updateBarBottomOffset();
+
+			if (window.visualViewport) {
+				window.visualViewport.addEventListener('resize', updateBarBottomOffset);
+				window.visualViewport.addEventListener('scroll', updateBarBottomOffset);
+			}
+			window.addEventListener('orientationchange', updateBarBottomOffset);
+			window.addEventListener('resize', updateBarBottomOffset);
+
+			const blurOverlay = document.createElement('div');
+			blurOverlay.id = 'mobileNavBarBlur';
+			blurOverlay.style.position = 'absolute';
+			blurOverlay.style.inset = '0';
+			blurOverlay.style.pointerEvents = 'none';
+			blurOverlay.style.backdropFilter = 'blur(10px)';
+			blurOverlay.style.webkitBackdropFilter = 'blur(10px)';
+			blurOverlay.style.maskImage = 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,1) 100%)';
+			blurOverlay.style.webkitMaskImage = 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,1) 100%)';
+			blurOverlay.style.background = 'linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0))';
+			bar.appendChild(blurOverlay);
+		}
+		return;
+	}
 
 	// Container block, in which we put the two buttons.
 	// We don't define width and height, it will be set automatically from the children's dimensions
@@ -680,42 +957,7 @@ function makePanel() {
 	buttonNext.setupState( {
 		state: 'selected',
 		attributes: selectedAttributes,
-		onSet: () => {
-			scene.add(torus);
-			scene.add(torus2);
-			scene.add(torus3);
-
-			for(let i = 0; i < scene.children.length; i++){
-				if(scene.children[i].name === "roomName"){
-					scene.remove(scene.children[i]);
-				} else if(scene.children[i].name === "boxContainer"){
-					scene.remove(scene.children[i])
-				}
-			}
-
-			roomNumber += 1; 
-
-			if(roomNumber >= NameRooms.roomInfos.length){
-				roomNumber = 0;
-			}
-
-            const roomName = room3dRoad(roomNumber)
-			const roomName_opt = room3dRoad_opt(roomNumber)
-
-            gltfLoader.load(
-                roomName_opt, 
-                (gltf) => {
-                    const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
-                    gltf.scale = 0.2
-                    gltf.scene.name = "roomName"
-                    gltf.scene.scale.set(0.1, 0.1, 0.1)
-					gltf.scene.position.set(-1.99, 1.05, -1.29)
-					gltf.scene.rotation.y = 0.005
-                    scene.add(gltf.scene)
-					TextPanel.TextPanel(scene, roomNumber)
-                }
-            )
-		}
+		onSet: () => { goToNextRoom(); }
 	});
 
 	buttonNext.setupState( hoveredStateAttributes);
@@ -724,17 +966,7 @@ function makePanel() {
     show3D.setupState({
         state: 'selected',
         attributes: selectedAttributes,
-        onSet: () => {
-			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-				if (navigator.xr && navigator.xr.isSessionSupported('immersive-vr')) {
-					window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
-				} else {
-					window.location.href = `https://catacombes.xyz/AR/?room=${seeRoomIn3d(roomNumber)}`
-				  }
-			} else {
-				window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
-			}
-        }
+        onSet: () => { handleVisit3D(); }
     });
     show3D.setupState( hoveredStateAttributes );
 	show3D.setupState( idleStateAttributes );
@@ -742,41 +974,7 @@ function makePanel() {
 	buttonPrevious.setupState( {
 		state: 'selected',
 		attributes: selectedAttributes,
-		onSet: () => {
-			scene.add(torus);
-			scene.add(torus2);
-			scene.add(torus3);
-			for(let i = 0; i < scene.children.length; i++){
-				if(scene.children[i].name === "roomName"){
-					scene.remove(scene.children[i]);
-				} else if(scene.children[i].name === "boxContainer"){
-					scene.remove(scene.children[i])
-				}
-			}
-
-			if(roomNumber < 1){
-				roomNumber = NameRooms.roomInfos.length;
-			}
-
-            roomNumber -= 1; 
-
-			const roomName = room3dRoad(roomNumber)
-			const roomName_opt = room3dRoad_opt(roomNumber)
-			
-			gltfLoader.load(
-                roomName_opt, 
-                (gltf) => {
-                    const bakedMesh = gltf.scene.children.find(child => child.name === 'baked')
-                    gltf.scale = 0.2
-                    gltf.scene.name = "roomName"
-                    gltf.scene.scale.set(0.1, 0.1, 0.1)
-					gltf.scene.position.set(-1.99, 1.05, -1.29)
-					gltf.scene.rotation.y = 0.005
-                    scene.add(gltf.scene)
-					TextPanel.TextPanel(scene, roomNumber)
-                }
-            )
-		}
+		onSet: () => { goToPrevRoom(); }
 	});
 	buttonPrevious.setupState( hoveredStateAttributes );
 	buttonPrevious.setupState( idleStateAttributes );
