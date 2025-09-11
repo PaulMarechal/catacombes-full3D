@@ -259,3 +259,51 @@
 @media (max-width: 940px) and (orientation: landscape) {
     #bigThanks{ grid-area: 6 / 2 / 7 / 5; width: 100%;margin-top: 5px;}
 }
+
+
+/* ===== Mobile portrait fixes (e.g., iPhone 12) ===== */
+@media (max-width: 432px) and (orientation: portrait) {
+    .parentTextExplications {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-rows: repeat(5, 8.5em);
+        grid-auto-rows: auto;
+        gap: 8px;
+        padding: 12px;
+        box-sizing: border-box;
+        width: 100%;
+        overflow-x: hidden; 
+        padding-top: 8vh;
+        height: 100vh!important;
+        padding-bottom: 10vh!important;
+    }
+
+    .parentTextExplications > * {
+        grid-area: auto !important;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .parentTextExplications img {
+        display: block;
+        width: 100%;
+        height: auto; 
+        border-radius: 8px;
+    }
+
+    .parentTextExplications .lazy {
+        aspect-ratio: 4 / 3; 
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    .icon-tabler-chevron-left { left: 0; }
+    .icon-tabler-chevron-right { right: 0; }
+
+    #bigThanks{
+        left: 46%;
+    }
+}

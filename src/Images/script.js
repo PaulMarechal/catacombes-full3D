@@ -60,27 +60,70 @@ function displayImageOnClick() {
         });
     });
 
-    arrowLeft.addEventListener('click', () => {
+    // Helpers used by arrows and swipe
+    function goPrev() {
         currentIndex = currentIndex === 1 ? popupImageNames.length : currentIndex - 1;
-
         popupImage.style.transform = "translateX(-10%)";
-
         setTimeout(() => {
             updateImage(currentIndex);
             popupImage.style.transform = "translateX(0)";
         }, 400);
+    }
+
+    function goNext() {
+        currentIndex = currentIndex === popupImageNames.length ? 1 : currentIndex + 1;
+        popupImage.style.transform = "translateX(10%)";
+        setTimeout(() => {
+            updateImage(currentIndex);
+            popupImage.style.transform = "translateX(0)";
+        }, 400);
+    }
+
+    arrowLeft.addEventListener('click', () => {
+        goPrev();
     });
 
     arrowRight.addEventListener('click', () => {
-        currentIndex = currentIndex === popupImageNames.length ? 1 : currentIndex + 1;
-
-        popupImage.style.transform = "translateX(10%)";
-
-        setTimeout(() => {
-            updateImage(currentIndex);
-            popupImage.style.transform = "translateX(0)";
-        }, 400);
+        goNext();
     });
+
+    // --- Swipe support (mobile) ---
+    let startX = 0, startY = 0, endX = 0, endY = 0;
+    const SWIPE_THRESHOLD = 40; // px
+
+    function onTouchStart(e) {
+        const t = e.changedTouches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        endX = startX;
+        endY = startY;
+    }
+
+    function onTouchMove(e) {
+        const t = e.changedTouches[0];
+        endX = t.clientX;
+        endY = t.clientY;
+    }
+
+    function onTouchEnd() {
+        const dx = endX - startX;
+        const dy = endY - startY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+            if (dx < 0) {
+                // swipe left -> next
+                goNext();
+            } else {
+                // swipe right -> previous
+                goPrev();
+            }
+        }
+        startX = startY = endX = endY = 0;
+    }
+
+    // Bind on the overlay container so the whole image area reacts
+    imageOnClick.addEventListener('touchstart', onTouchStart, { passive: true });
+    imageOnClick.addEventListener('touchmove', onTouchMove, { passive: true });
+    imageOnClick.addEventListener('touchend', onTouchEnd, { passive: true });
 
 
     closeButton.addEventListener("click", () => {

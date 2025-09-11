@@ -35,7 +35,7 @@ import GUI from 'lil-gui';
  */
 // const gui = new GUI()
 
-let scene, camera, renderer, controls, vrControl;
+let scene, camera, renderer, controls, vrControl, xrRig;
 let meshContainer, currentMesh;
 
 const objsToTest = [];
@@ -232,6 +232,7 @@ function init(nameRoom, nameRoom_opt) {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.outputEncoding = THREE.sRGBEncoding;
 	renderer.xr.enabled = true;
+	renderer.xr.setReferenceSpaceType('local-floor');
 	document.body.appendChild( VRButton.createButton( renderer ) );
 	document.body.appendChild( renderer.domElement );
 
@@ -488,26 +489,47 @@ function init(nameRoom, nameRoom_opt) {
 	// Controllers
 	////////////////
 	renderer.xr.addEventListener('sessionstart', () => {
-        camera.position.set(-4.41, 1.46, -3.54);
-        camera.rotation.set(0, 0, 0);
-    });
+	    // Create XR rig if needed and add to scene
+	    if (!xrRig) {
+	        xrRig = new THREE.Group();
+	        xrRig.name = 'xrRig';
+	        scene.add(xrRig);
+	    }
 
-	document.addEventListener("DOMContentLoaded", (event) => {		
-		updateMovement();
-		
-		if(vrControl){
-			vrControl = VRControl( renderer, scene );
-			
-			scene.add( vrControl.controllerGrips[ 0 ], vrControl.controllers[ 0 ] );
+	    // Place rig at the camera's current world transform
+	    xrRig.position.copy(camera.position);
+	    xrRig.quaternion.copy(camera.quaternion);
+	    // Rotate 180° on Y so the user faces the scene in VR
+	    xrRig.rotateY(Math.PI * 2);
 
-			vrControl.controllers[ 0 ].addEventListener( 'selectstart', () => {
-				selectState = true;
-			});
+	    // Parent camera to rig and reset local transform so HMD tracking is relative to this point
+	    xrRig.add(camera);
+	    camera.position.set(0, 0, 0);
+	    camera.quaternion.set(0, -0.5, 0, 1);
+	});
 
-			vrControl.controllers[ 0 ].addEventListener( 'selectend', () => {
-				selectState = false;
-			});
-		}
+	renderer.xr.addEventListener('sessionend', () => {
+	    if (xrRig) {
+	        // Re-attach camera back to the scene root preserving world transform
+	        scene.attach(camera);
+	    }
+	});
+
+	document.addEventListener("DOMContentLoaded", (event) => {        
+	    updateMovement();
+
+	    // Initialize VRControl once DOM is ready
+	    vrControl = VRControl(renderer, scene);
+
+	    // Safely add controller grips/controllers if available
+	    if (vrControl && vrControl.controllerGrips && vrControl.controllers) {
+	        if (vrControl.controllerGrips[0]) scene.add(vrControl.controllerGrips[0]);
+	        if (vrControl.controllers[0]) {
+	            scene.add(vrControl.controllers[0]);
+	            vrControl.controllers[0].addEventListener('selectstart', () => { selectState = true; });
+	            vrControl.controllers[0].addEventListener('selectend', () => { selectState = false; });
+	        }
+	    }
 	});
 
 
@@ -966,14 +988,15 @@ function updateButtons() {
 	// Find closest intersecting object
 	let intersect;
 
-	if ( renderer.xr.isPresenting ) {
-		vrControl.setFromController( 0, raycaster.ray );
-		intersect = raycast();
-		// Position the little white dot at the end of the controller pointing ray
-		if ( intersect ) vrControl.setPointerAt( 0, intersect.point );
+	if ( renderer.xr.isPresenting && vrControl && typeof vrControl.setFromController === 'function' ) {
+	    vrControl.setFromController(0, raycaster.ray);
+	    intersect = raycast();
+	    if (intersect && typeof vrControl.setPointerAt === 'function') {
+	        vrControl.setPointerAt(0, intersect.point);
+	    }
 	} else if ( mouse.x !== null && mouse.y !== null ) {
-		raycaster.setFromCamera( mouse, camera );
-		intersect = raycast();
+	    raycaster.setFromCamera(mouse, camera);
+	    intersect = raycast();
 	}
 
 	// Update targeted button state (if any)
