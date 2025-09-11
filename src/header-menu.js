@@ -979,7 +979,6 @@ class HeaderMenu extends HTMLElement {
         const display_share_mobile_menu = shadow.getElementById("display_share_mobile_menu")
         const VRButton = document.getElementById("VRButton")
 
-        // Evite que le header dépasse en hauteur sur mobile (surtout avec dpr élevés)
         const clampMobileHeader = () => {
             const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
             if (!isSmallScreen) return;
@@ -1028,7 +1027,6 @@ class HeaderMenu extends HTMLElement {
             })
         })
 
-        // première exécution
         setMenu();
 
         // réagir aux changements de taille
