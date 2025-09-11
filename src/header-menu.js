@@ -1,6 +1,21 @@
 const template = document.createElement('template');
 template.innerHTML = `
     <style>
+        :host {
+            /* Eviter les auto-agrandissements de texte sur mobile */
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
         #mobile_menu, #desktop_menu{
             display: none; 
             opacity: 1; 
@@ -11,7 +26,7 @@ template.innerHTML = `
             /* top: 8px; */
             /* left: 50px; */
             z-index: 6;
-            font-size: 2rem;
+            font-size: clamp(18px, 6vw, 28px);
             font-weight: 900;
             text-transform: uppercase;
             user-select: none;
@@ -26,7 +41,7 @@ template.innerHTML = `
             opacity: .8;
             font-weight: 300;
             color: #ffffff;
-            font-size: 1.75rem;
+            font-size: clamp(14px, 4.5vw, 22px);
             letter-spacing: 0.65px;
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: #dbdbdb;
@@ -84,7 +99,8 @@ template.innerHTML = `
             position: fixed;
             top: -1px;
             // padding: 6px 10px;
-            width: 100%;
+            width: 100vw;
+            box-sizing: border-box; /* inclure les bordures dans la largeur pour éviter tout dépassement */
 
             background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
@@ -126,7 +142,7 @@ template.innerHTML = `
 
         .link_style_header_menu{
             font-family: 'Alumni Sans Pinstripe', sans-serif;
-            font-size: 25px;
+            font-size: clamp(14px, 4.2vw, 25px);
             color: #fff;
             margin: auto;
             transition: font-size .5s ease-out, color .5s ease-out;
@@ -325,13 +341,17 @@ template.innerHTML = `
         }
 
         #mobile_menu{
-            position: relative;
+            position: fixed;
             z-index: 2; 
             display: block;
             z-index: 2;
-            position: absolute;
-            top: 0;
-            width: -webkit-fill-available;
+            inset: 0 auto auto 0; /* top:0; left:0; */
+            width: 100vw;
+            box-sizing: border-box;
+            padding: 10px 15px calc(env(safe-area-inset-bottom, 0px) + 10px);
+            /* cap la hauteur pour éviter le dépassement */
+            max-height: 18vh;
+            overflow: hidden;
             left: 0;
             background: rgb(37 37 37 / 50%);
             backdrop-filter: blur(8px);
@@ -340,9 +360,6 @@ template.innerHTML = `
             box-shadow: 0 0 12px -1px rgb(0 0 0 / 21%);
             // border: 0.5px solid rgba(255, 255, 255, 0.3);
             user-select: none;
-            left: 0; 
-            padding: 10px 15px;
-            // border: 1px solid #ffffff;
         }
 
         #logo_div_header_menu_mobile{
@@ -369,7 +386,7 @@ template.innerHTML = `
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             // background: #fff; 
-            z-index: 1001; 
+            z-index: 99999; 
             justify-content: center;
             align-items: center;
             transition: opacity .5s ease-out;
@@ -421,14 +438,16 @@ template.innerHTML = `
             border: none;
             /* border-radius: 0 40% 61%; */
             box-shadow: 0px 0px 7px 0px #bfbfbf;
+            display: none; 
         }
 
         .elem_menu_mobile {
-            display: flex;               
-            justify-content: center;    
-            align-items: center;         
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             border: 1px solid #000;
-            text-align: center;           
+            text-align: center;
+            padding-left: 25px;        
         }
 
         .homepage_mobile_menu { grid-area: 1 / 1 / 2 / 3; }
@@ -561,6 +580,27 @@ template.innerHTML = `
             .div_twitter_share_links a{background-color: #00000096!important;}
             .div_sms_ios_share_link a{background-color: #00c80096!important;}
             .div_whatsapp_share_link a{background-color: #25d366a6!important;}
+        }
+
+        /* Mobile – tailles adaptatives et anti-overflow */
+        @media (max-width: 768px) {
+            #mobile_menu #main_title_catacombes {
+                font-size: clamp(16px, 5.5vw, 24px);
+            }
+            #mobile_menu #main_title_catacombes span {
+                font-size: clamp(12px, 4.5vw, 18px);
+            }
+            #burger_menu_mobile svg {
+                width: clamp(28px, 7vw, 40px);
+                height: clamp(28px, 7vw, 40px);
+            }
+        }
+        /* Paysage mobile : header plus compact */
+        @media (max-width: 940px) and (orientation: landscape) {
+            #mobile_menu {
+                max-height: 14vh;
+                padding: 8px 12px calc(env(safe-area-inset-bottom, 0px) + 8px);
+            }
         }
     </style>
 
@@ -939,6 +979,20 @@ class HeaderMenu extends HTMLElement {
         const display_share_mobile_menu = shadow.getElementById("display_share_mobile_menu")
         const VRButton = document.getElementById("VRButton")
 
+        // Evite que le header dépasse en hauteur sur mobile (surtout avec dpr élevés)
+        const clampMobileHeader = () => {
+            const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+            if (!isSmallScreen) return;
+            const mm = shadow.getElementById('mobile_menu');
+            if (!mm) return;
+            const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            const maxH = Math.floor(vh * (window.matchMedia('(orientation: landscape)').matches ? 0.14 : 0.18));
+            mm.style.maxHeight = maxH + 'px';
+        };
+        clampMobileHeader();
+        window.addEventListener('resize', clampMobileHeader);
+        window.addEventListener('orientationchange', clampMobileHeader);
+
 
         const setMenu = () => {
             const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
@@ -983,6 +1037,9 @@ class HeaderMenu extends HTMLElement {
 
     } 
     disconnectedCallback() {
+        // Remove clampMobileHeader listeners
+        window.removeEventListener('resize', clampMobileHeader);
+        window.removeEventListener('orientationchange', clampMobileHeader);
         if (this._onResize) {
             window.removeEventListener('resize', this._onResize);
             this._onResize = null;
