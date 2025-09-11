@@ -717,15 +717,7 @@ function goToPrevRoom() {
 }
 
 function handleVisit3D() {
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		if (navigator.xr && navigator.xr.isSessionSupported && navigator.xr.isSessionSupported('immersive-vr')) {
-			window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
-		} else {
-			window.location.href = `https://catacombes.xyz/AR/?room=${seeRoomIn3d(roomNumber)}`
-		}
-	} else {
-		window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`
-	}
+	window.location.href = `./3D/?room=${seeRoomIn3d(roomNumber)}`;
 }
 
 ///////////////////
