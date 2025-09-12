@@ -47,7 +47,7 @@ let uiContainer = null;
 
 const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-const XR_HEIGHT_OFFSET = 2.3; // lower the rig ~40cm in VR
+const XR_HEIGHT_OFFSET = 0.4; // lower the rig ~40cm in VR
 
 const xrControllers = [null, null];
 const xrControllerModelFactory = new XRControllerModelFactory();
@@ -676,7 +676,7 @@ function placeRigInFrontOfPanel(distance = 0.85) {
 
   // Initial placement (approx)
   xrRig.position.copy(target);
-  xrRig.position.y += XR_HEIGHT_OFFSET; // keep the slightly-lower eye level you wanted
+  xrRig.position.y -= XR_HEIGHT_OFFSET; // keep the slightly-lower eye level you wanted
   xrRig.rotation.set(0, yaw, 0);
 
   // Refine after WebXR applies the first HMD pose
@@ -688,6 +688,33 @@ function placeRigInFrontOfPanel(distance = 0.85) {
     xrRig.rotation.set(0, yaw, 0);
   };
   requestAnimationFrame(() => requestAnimationFrame(refine));
+}
+
+// --- VR: afficher le panneau de texte ("boxContainer") et l'orienter vers l'utilisateur
+const _tmpPanelPos = new THREE.Vector3();
+const _tmpCamPos = new THREE.Vector3();
+function orientOnlyYawTowardsCamera(obj) {
+  if (!obj) return;
+  obj.getWorldPosition(_tmpPanelPos);
+  camera.getWorldPosition(_tmpCamPos);
+  const toCam = _tmpCamPos.clone().sub(_tmpPanelPos);
+  const yaw = Math.atan2(toCam.x, toCam.z);
+  obj.rotation.set(0, yaw, 0); // on garde le panneau droit (pas d'inclinaison)
+}
+function showTextPanelInVR() {
+  let tries = 0;
+  const maxTries = 20; // ~2s
+  const tick = () => {
+    const panel = scene.getObjectByName('boxContainer');
+    if (panel) {
+      panel.visible = true;
+      orientOnlyYawTowardsCamera(panel);
+    } else if (tries < maxTries) {
+      tries++;
+      setTimeout(tick, 100);
+    }
+  };
+  tick();
 }
 
 renderer.xr.addEventListener('sessionstart', () => {
@@ -728,7 +755,9 @@ renderer.xr.addEventListener('sessionstart', () => {
 	if (uiContainer) uiContainer.visible = true;
 
 	// Start the user right in front of the UI panel, facing it
-	placeRigInFrontOfPanel(0.001);
+	placeRigInFrontOfPanel(0.0001);
+	// Afficher le panneau de texte de la salle et l'orienter vers l'utilisateur
+	showTextPanelInVR();
 });
 
 renderer.xr.addEventListener('sessionend', () => {
