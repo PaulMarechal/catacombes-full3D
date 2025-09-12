@@ -25,4 +25,4 @@ npm run build
 
 ⚠️ WARNING : This work was carried out as part of a pedagogical project and for pedagogical purposes. The exploitation rights have not been audited or acquired.
 
-© Copyright Paul_Maréchal 2024
+© Copyright Paul_Maréchal 2025

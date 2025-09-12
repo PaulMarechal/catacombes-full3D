@@ -5,6 +5,7 @@ import { BoxLineGeometry } from 'three/examples/jsm/geometries/BoxLineGeometry.j
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { XRControllerModelFactory } from 'three/examples/jsm/webxr/XRControllerModelFactory.js';
 import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'; 
 import { gsap } from 'gsap'
 import TeleportVR from 'teleportvr'
@@ -26,7 +27,7 @@ import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 import * as TextPanel from "./textPanel.js";
 import * as NameRooms from "./roomInfo.js";
 import * as Language from "./language.js";
-import * as XRHand from "./XR_hand.js";
+// import * as XRHand from "./XR_hand.js";
 
 // import GUI from 'lil-gui';
 
@@ -41,6 +42,34 @@ let meshContainer, currentMesh;
 const objsToTest = [];
 let meshes = []
 let tweenFinished = false;
+
+let uiContainer = null;
+
+const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+const XR_HEIGHT_OFFSET = 2.3; // lower the rig ~40cm in VR
+
+const xrControllers = [null, null];
+const xrControllerModelFactory = new XRControllerModelFactory();
+const xrGrips = [null, null];
+
+// Global XR ray helper (used by updateButtons)
+const _tmpQuat = new THREE.Quaternion();
+const _fwd = new THREE.Vector3(0, 0, -1);
+function setRayFromController(controller, ray) {
+  if (!controller) return false;
+  // origin
+  controller.getWorldPosition(ray.origin);
+  // direction: controller -Z transformed by world rotation
+  _tmpQuat.setFromRotationMatrix(controller.matrixWorld);
+  ray.direction.copy(_fwd).applyQuaternion(_tmpQuat).normalize();
+  return true;
+}
+
+// Store desktop (non‑VR) camera transform for restore after VR
+const desktopCamPos = new THREE.Vector3();
+const desktopCamQuat = new THREE.Quaternion();
+const desktopControlsTarget = new THREE.Vector3();
 
 // Loader 3D 
 const TORUS_SEGMENTS = 22;
@@ -164,13 +193,13 @@ function init(nameRoom, nameRoom_opt) {
 		const isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
 		if (isMobile && isPortrait) {
-			return { x: -7.2, y: 1.55, z: -2.5 }; // portrait mobile
+			return { x: -7.2, y: 1.55, z: -3.95 }; // portrait mobile
 
 		}
 		if (isMobile) {
-			return { x: -6.2, y: 1.5, z: -2.6 }; // mobile paysage
+			return { x: -6.2, y: 1.5, z: -3.95 }; // mobile paysage
 		}
-		return { x: -5.8, y: 1.45, z: -2.3 }; // desktop 
+		return { x: -5.8, y: 1.45, z: -3.95 }; // desktop 
 	}
 
 	////////////////////////
@@ -274,7 +303,7 @@ function init(nameRoom, nameRoom_opt) {
     // titleFolder.add(camera.position, 'y', -30, 30)
     // titleFolder.add(camera.position, 'z', -30, 30)
     // titleFolder.add(camera.rotation, 'x', -30, 30)
-    // titleFolder.add(camera.rotation, 'y', -30, 30)
+    // titleFolder.add(camera.rotation, 'y', -30, 30)c
     // titleFolder.add(camera.rotation, 'z', -30, 30)
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -481,6 +510,14 @@ function init(nameRoom, nameRoom_opt) {
 			gltf.scene.rotation.set(0, -0.31, 0)
 			gltf.scene.name = "backgroundScene"
 			scene.add( gltf.scene );
+
+			// const titleFolder = gui.addFolder('Container')
+			// titleFolder.add(scene.position, 'x', -30, 30)
+			// titleFolder.add(scene.position, 'y', -30, 30)
+			// titleFolder.add(scene.position, 'z', -30, 30)
+			// titleFolder.add(scene.rotation, 'x', -30, 30)
+			// titleFolder.add(scene.rotation, 'y', -30, 30)
+			// titleFolder.add(scene.rotation, 'z', -30, 30)
 	
 		},
 		function ( xhr ) {
@@ -573,80 +610,185 @@ function init(nameRoom, nameRoom_opt) {
 	////////////////
 	// Controllers
 	////////////////
-	renderer.xr.addEventListener('sessionstart', () => {
-	    // Create XR rig if needed and add to scene
-	    if (!xrRig) {
-	        xrRig = new THREE.Group();
-	        xrRig.name = 'xrRig';
-	        scene.add(xrRig);
-	    }
 
-	    // Place rig at the camera's current world transform
-	    xrRig.position.copy(camera.position);
-	    xrRig.quaternion.copy(camera.quaternion);
-	    // Rotate 180° on Y so the user faces the scene in VR
-	    xrRig.rotateY(Math.PI * 2);
 
-	    // Parent camera to rig and reset local transform so HMD tracking is relative to this point
-	    xrRig.add(camera);
-	    camera.position.set(0, 0, 0);
-	    camera.quaternion.set(0, -0.5, 0, 1);
-	});
+function setupXRControllers() {
+  for (let i = 0; i < 2; i++) {
+    // Raw target-ray controller (button events originate here)
+    const c = renderer.xr.getController(i);
+    if (c && xrControllers[i] !== c) {
+      xrControllers[i] = c;
 
-	renderer.xr.addEventListener('sessionend', () => {
-	    if (xrRig) {
-	        // Re-attach camera back to the scene root preserving world transform
-	        scene.attach(camera);
-	    }
-	});
+      // Visible laser pointer
+      let laser = c.getObjectByName('xrLaser');
+      if (!laser) {
+        const geom = new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(0, 0, 0),
+          new THREE.Vector3(0, 0, -1)
+        ]);
+        const mat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.9 });
+        laser = new THREE.Line(geom, mat);
+        laser.name = 'xrLaser';
+        laser.frustumCulled = false;
+        laser.scale.z = 3; // default length
+        c.add(laser);
+      }
+
+      // Selection events from trigger
+      c.addEventListener('selectstart', () => { selectState = true; });
+      c.addEventListener('selectend', () => { selectState = false; });
+
+      // Parent to rig if possible
+      if (xrRig) xrRig.add(c); else scene.add(c);
+    }
+
+    // Controller grip with a model (visual controller in VR)
+    const grip = renderer.xr.getControllerGrip(i);
+    if (grip && xrGrips[i] !== grip) {
+      xrGrips[i] = grip;
+      const model = xrControllerModelFactory.createControllerModel(grip);
+      grip.add(model);
+      if (xrRig) xrRig.add(grip); else scene.add(grip);
+    }
+  }
+}
+
+// Place the user right in front of the ThreeMeshUI panel when entering VR
+const _panelPos = new THREE.Vector3();
+const _panelQuat = new THREE.Quaternion();
+const _panelFwd = new THREE.Vector3(0, 0, -1);
+function placeRigInFrontOfPanel(distance = 0.85) {
+  if (!uiContainer || !xrRig) return;
+
+  // Panel world position/orientation
+  uiContainer.getWorldPosition(_panelPos);
+  uiContainer.getWorldQuaternion(_panelQuat);
+
+  // Panel forward in world space (its +Z)
+  const forward = _panelFwd.clone().applyQuaternion(_panelQuat).normalize();
+
+  // Target eye position is a bit in front of the panel, centered
+  const target = _panelPos.clone().add(forward.multiplyScalar(distance));
+
+  // Compute yaw so the rig faces the panel
+  const toPanel = _panelPos.clone().sub(target);
+  const yaw = Math.atan2(toPanel.x, toPanel.z);
+
+  // Initial placement (approx)
+  xrRig.position.copy(target);
+  xrRig.position.y += XR_HEIGHT_OFFSET; // keep the slightly-lower eye level you wanted
+  xrRig.rotation.set(0, yaw, 0);
+
+  // Refine after WebXR applies the first HMD pose
+  const refine = () => {
+    const wp = new THREE.Vector3();
+    camera.getWorldPosition(wp);
+    const delta = target.clone().sub(wp);
+    xrRig.position.add(delta);
+    xrRig.rotation.set(0, yaw, 0);
+  };
+  requestAnimationFrame(() => requestAnimationFrame(refine));
+}
+
+renderer.xr.addEventListener('sessionstart', () => {
+	// Snapshot current desktop camera transform to restore on session end
+	desktopCamPos.copy(camera.position);
+	desktopCamQuat.copy(camera.quaternion);
+	if (controls) desktopControlsTarget.copy(controls.target);
+
+	// Create XR rig if needed and add to scene
+	if (!xrRig) {
+		xrRig = new THREE.Group();
+		xrRig.name = 'xrRig';
+		scene.add(xrRig);
+	}
+
+	// Use the current desktop camera transform as the XR rig anchor (old behavior)
+	xrRig.position.set(0, 0, 0);
+	xrRig.rotation.set(0, 0, 0);
+
+	xrRig.add(camera);
+	camera.position.set(0, 0, 0);
+	camera.quaternion.identity?.();
+
+
+	// Ensure controller grips/controllers are parented consistently so rays line up
+	const grip0 = renderer.xr.getControllerGrip(0);
+	const grip1 = renderer.xr.getControllerGrip(1);
+	if (grip0 && grip0.parent !== xrRig) xrRig.add(grip0);
+	if (grip1 && grip1.parent !== xrRig) xrRig.add(grip1);
+	if (vrControl && vrControl.controllers) {
+		vrControl.controllers.forEach((c) => { if (c && c.parent !== xrRig) xrRig.add(c); });
+	}
+
+	xrRig.position.y -= XR_HEIGHT_OFFSET; // lower the whole rig slightly
+	setupXRControllers(); // ensure visible lasers & events
+
+	// Show the 3D UI in VR
+	if (uiContainer) uiContainer.visible = true;
+
+	// Start the user right in front of the UI panel, facing it
+	placeRigInFrontOfPanel(0.001);
+});
+
+renderer.xr.addEventListener('sessionend', () => {
+  if (xrRig) {
+    scene.attach(camera);
+    if (vrControl && vrControl.controllers) vrControl.controllers.forEach((c) => { if (c) scene.attach(c); });
+    if (vrControl && vrControl.controllerGrips) vrControl.controllerGrips.forEach((g) => { if (g) scene.attach(g); });
+  }
+  // Restore desktop camera pose & controls target
+  camera.position.copy(desktopCamPos);
+  camera.quaternion.copy(desktopCamQuat);
+  camera.updateMatrixWorld(true);
+  if (controls) {
+    controls.target.copy(desktopControlsTarget);
+    controls.update();
+  }
+  // Hide the 3D UI when leaving VR
+  if (uiContainer) uiContainer.visible = !IS_MOBILE;
+  for (let i = 0; i < 2; i++) {
+    const c = xrControllers[i];
+    if (c) {
+      const laser = c.getObjectByName('xrLaser');
+      if (laser) laser.scale.z = 0; // hide
+    }
+  }
+  for (let i = 0; i < 2; i++) {
+    if (xrGrips[i]) scene.attach(xrGrips[i]);
+  }
+});
 
 	document.addEventListener("DOMContentLoaded", (event) => {        
-	    updateMovement();
+	  	updateMovement();
 
-	    // Initialize VRControl once DOM is ready
-	    vrControl = VRControl(renderer, scene);
+	  	// Initialize VRControl once DOM is ready
+	  	vrControl = VRControl(renderer, scene);
 
-	    // Safely add controller grips/controllers if available
-	    if (vrControl && vrControl.controllerGrips && vrControl.controllers) {
-	        if (vrControl.controllerGrips[0]) scene.add(vrControl.controllerGrips[0]);
-	        if (vrControl.controllers[0]) {
-	            scene.add(vrControl.controllers[0]);
-	            vrControl.controllers[0].addEventListener('selectstart', () => { selectState = true; });
-	            vrControl.controllers[0].addEventListener('selectend', () => { selectState = false; });
-	        }
-	    }
+	  	// Add controllers/grips to scene or xrRig if available, both hands
+	  	const addToRigOrScene = (obj) => {
+			if (!obj) return;
+			if (xrRig) xrRig.add(obj); else scene.add(obj);
+		};
+
+		if (vrControl && vrControl.controllerGrips && vrControl.controllers) {
+			if (vrControl.controllerGrips[0]) addToRigOrScene(vrControl.controllerGrips[0]);
+			if (vrControl.controllerGrips[1]) addToRigOrScene(vrControl.controllerGrips[1]);
+
+			if (vrControl.controllers[0]) {
+				addToRigOrScene(vrControl.controllers[0]);
+				vrControl.controllers[0].addEventListener('selectstart', () => { selectState = true; });
+				vrControl.controllers[0].addEventListener('selectend', () => { selectState = false; });
+			}
+			if (vrControl.controllers[1]) {
+				addToRigOrScene(vrControl.controllers[1]);
+				vrControl.controllers[1].addEventListener('selectstart', () => { selectState = true; });
+				vrControl.controllers[1].addEventListener('selectend', () => { selectState = false; });
+			}
+		}
+		setupXRControllers(); // also set up pointers outside session to be ready
 	});
 
-
-	//////////////////////////
-	// New VR Hand controller
-	//////////////////////////
-	const leftHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/left_hand.gltf";
-	const rightHandModelUrl = "https://catacombes.xyz/assets/vr_hand_model/right_hand.gltf";
-
-	const teleportVR = new TeleportVR(scene, camera);
-
-	gltfLoader.load(leftHandModelUrl, (gltf) => {
-		const leftHandModel = gltf.scene;
-		leftHandModel.scale.set(1, 1, 1); 
-
-		const controllerGrip0 = renderer.xr.getControllerGrip(0);
-		controllerGrip0.addEventListener('connected', (e) => {
-			controllerGrip0.add(leftHandModel); 
-			teleportVR.add(0, controllerGrip0, e.data.gamepad);
-		});
-	});
-
-	gltfLoader.load(rightHandModelUrl, (gltf) => {
-		const rightHandModel = gltf.scene;
-		rightHandModel.scale.set(1, 1, 1);
-
-		const controllerGrip1 = renderer.xr.getControllerGrip(1);
-		controllerGrip1.addEventListener('connected', (e) => {
-			controllerGrip1.add(rightHandModel);  
-			teleportVR.add(1, controllerGrip1, e.data.gamepad);
-		});
-	});
 
 	//////////
 	// Panel
@@ -859,7 +1001,7 @@ function makePanel() {
 			blurOverlay.style.background = 'linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0))';
 			bar.appendChild(blurOverlay);
 		}
-		return;
+		// (Removed early return so 3D UI is always created)
 	}
 
 	// Container block, in which we put the two buttons.
@@ -876,6 +1018,10 @@ function makePanel() {
 		borderRadius: 0.09, 
 		width: 1.37,
 	} );
+
+	// Keep a global reference and hide by default (shown when VR session starts)
+	uiContainer = container;
+	uiContainer.visible = !IS_MOBILE;
 
 	container.position.set( -3, 0.79, -1.6 );
 	container.rotation.y = -1.87;
@@ -1189,38 +1335,70 @@ function loop() {
 // Called in the loop, get intersection with either the mouse or the VR controllers,
 function updateButtons() {
 
-	// Find closest intersecting object
-	let intersect;
+  // Find closest intersecting object
+  let intersect;
 
-	if ( renderer.xr.isPresenting && vrControl && typeof vrControl.setFromController === 'function' ) {
-	    vrControl.setFromController(0, raycaster.ray);
-	    intersect = raycast();
-	    if (intersect && typeof vrControl.setPointerAt === 'function') {
-	        vrControl.setPointerAt(0, intersect.point);
-	    }
-	} else if ( mouse.x !== null && mouse.y !== null ) {
-	    raycaster.setFromCamera(mouse, camera);
-	    intersect = raycast();
-	}
+  if ( renderer.xr.isPresenting ) {
+    let hit = null;
 
-	// Update targeted button state (if any)
-	if ( intersect && intersect.object.isUI ) {
-		if ( selectState ) {
-			// Component.setState internally call component.set with the options you defined in component.setupState
-			intersect.object.setState( 'selected' );
-		} else {
-			// Component.setState internally call component.set with the options you defined in component.setupState
-			intersect.object.setState( 'hovered' );
-		}
-	}
+    // Try ThreeMeshUI VRControl (if available)
+    if (vrControl && typeof vrControl.setFromController === 'function') {
+      vrControl.setFromController(0, raycaster.ray);
+      hit = raycast();
+      if (!hit) {
+        vrControl.setFromController(1, raycaster.ray);
+        hit = raycast();
+        if (hit && typeof vrControl.setPointerAt === 'function') vrControl.setPointerAt(1, hit.point);
+      } else if (typeof vrControl.setPointerAt === 'function') {
+        vrControl.setPointerAt(0, hit.point);
+      }
+    }
 
-	objsToTest.forEach( ( obj ) => {
-		if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
-			// Component.setState internally call component.set with the options you defined in component.setupState
-			obj.setState( 'idle' );
-		}
-	});
+    // Fallback: derive rays directly from WebXR controllers (matrixWorld)
+    if (!hit) {
+      for (let i = 0; i < 2; i++) {
+        const c = xrControllers[i];
+        if (!c) continue;
+        if (!setRayFromController(c, raycaster.ray)) continue;
+        const maybe = raycast();
+        const laser = c.getObjectByName('xrLaser');
+        if (laser) laser.scale.z = maybe ? maybe.distance : 3;
+        if (maybe) { hit = maybe; break; }
+      }
+    }
 
+    intersect = hit;
+  } else if ( mouse.x !== null && mouse.y !== null ) {
+    raycaster.setFromCamera(mouse, camera);
+    intersect = raycast();
+  }
+
+  // Update targeted button state (if any)
+  if ( intersect && intersect.object.isUI ) {
+    if ( selectState ) {
+      // Component.setState internally call component.set with the options you defined in component.setupState
+      intersect.object.setState( 'selected' );
+    } else {
+      // Component.setState internally call component.set with the options you defined in component.setupState
+      intersect.object.setState( 'hovered' );
+    }
+  }
+
+  objsToTest.forEach( ( obj ) => {
+    if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
+      // Component.setState internally call component.set with the options you defined in component.setupState
+      obj.setState( 'idle' );
+    }
+  });
+
+  if (!intersect && renderer.xr.isPresenting) {
+    for (let i = 0; i < 2; i++) {
+      const c = xrControllers[i];
+      if (!c) continue;
+      const laser = c.getObjectByName('xrLaser');
+      if (laser) laser.scale.z = 3;
+    }
+  }
 }
 
 function raycast() {

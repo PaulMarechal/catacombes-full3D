@@ -875,7 +875,7 @@ class HeaderMenu extends HTMLElement {
             });
 
             menu.addEventListener('mouseleave', () => {
-                console.log(menu)
+                // console.log(menu)
                 menu.style.opacity = '0';
                 menu.style.top     = '-405px';
                 target.style.display = 'none';
