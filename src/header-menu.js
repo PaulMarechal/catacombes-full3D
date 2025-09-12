@@ -396,8 +396,6 @@ template.innerHTML = `
             position: absolute;
             top: 0;
             right: 40px;
-            border-bottom: 1px solid #000;
-            border-left: 1px solid #000;
             padding: 7px;
             background: #fff; 
         }
@@ -459,7 +457,7 @@ template.innerHTML = `
         .share_mobile_menu { grid-area: 7 / 1 / 8 / 3; }
 
         #contact_infos_div{
-            width: 96%;
+            width: 100%;
             height: -webkit-fill-available;
             padding: 12px;
         }
@@ -474,7 +472,7 @@ template.innerHTML = `
         }
 
         #contact_div_main label input, #contact_div_main label textarea{
-            width: 94%;
+            width: 100%;
             height: 30px;
             border-radius: 6px;
             margin: auto;
@@ -484,7 +482,7 @@ template.innerHTML = `
 
         #contact_div_main label textarea{
             height: -webkit-fill-available;
-            width: 97%;
+            width: 100%;
             
         }
 
@@ -655,7 +653,7 @@ template.innerHTML = `
 
     <!-- Mobile menu -->
     <div id="display_div_menu_mobile">
-        <svg id="close_mobile_menu" xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        <svg id="close_mobile_menu" xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
         
         <div id="div_link_mobile_menu">
             <a href="/" class="homepage_mobile_menu elem_menu_mobile" title="Retourner sur la homepage">

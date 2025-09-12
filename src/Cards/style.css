@@ -174,7 +174,7 @@ ul.textCard{
         display: block;
         width: 98%;
         height: 90%;
-        margin: 70px 1% 10px;
+        margin: 45px 1% 10px;
         overflow: scroll;
     }
 
@@ -190,11 +190,14 @@ ul.textCard{
     }
 
     #video_card_v3{
-        margin-top: 44vh;
+        margin-top: 42vh;
+        width: 85%;
+
     }
 
     #explication_text_cards{
-        margin: 6vh 2vh 0 2vh;
+        margin: 2vh 4vh 0 4vh;
+        overflow: scroll;
     }
 
     #explication_text_cards .textCard{
@@ -203,6 +206,10 @@ ul.textCard{
 
     #tracts_v3{
         padding: 5vh 0vh 2vh 0;
+    }
+
+    #display_all_cards_v3{
+        margin-top: -4vh;
     }
 }
 

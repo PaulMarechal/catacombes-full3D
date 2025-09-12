@@ -283,7 +283,21 @@ function init(nameRoom, nameRoom_opt) {
 	renderer.outputEncoding = THREE.sRGBEncoding;
 	renderer.xr.enabled = true;
 	renderer.xr.setReferenceSpaceType('local-floor');
-	document.body.appendChild( VRButton.createButton( renderer ) );
+	// Append VR button only if immersive-vr is actually supported and we're in a secure context
+	(async () => {
+		if (!('xr' in navigator)) return;              // No WebXR API = don't show anything
+		if (window.isSecureContext === false) return;  // Needs HTTPS = otherwise bail silently
+		try {
+			const supported = await navigator.xr.isSessionSupported('immersive-vr');
+			if (!supported) return;
+			const vrBtn = VRButton.createButton(renderer);
+			vrBtn.style.bottom = '75px';
+			document.body.appendChild(vrBtn);
+		} catch (e) {
+			// If the capability check fails, do nothing (no fallback banner)
+			console.warn('WebXR capability check failed:', e);
+		}
+	})();
 	document.body.appendChild( renderer.domElement );
 
 	// Orbit controls for no-vr
@@ -1200,7 +1214,6 @@ function updateButtons() {
 		}
 	}
 
-	// Update non-targeted buttons state
 	objsToTest.forEach( ( obj ) => {
 		if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
 			// Component.setState internally call component.set with the options you defined in component.setupState
@@ -1228,37 +1241,23 @@ function raycast() {
 
 
 function removeVRButton(){
-	const vrButton = document.getElementById("VRButton")
+  const vrButton = document.getElementById('VRButton');
+  if (!vrButton) return;
 
-	if ('xr' in navigator) {
-		// If VR is supported
-		navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
-			if (!supported) {
-				setTimeout(() => {
-				  	vrButton.animate(
-						{opacity: 0},
-						{duration: 3500, fill: 'forwards'}
-				  	).onfinish = () => {
-						vrButton.style.display = "none";
-				  	}
-				}, 9000);
-			}			
-		});
-	} else {
-		// If webXR is not supported  
-		let webxrButton = document.getElementById("WEBXRButton")
-
-		if(webxrButton){
-			setTimeout(() => {
-				webxrButton.animate(
-					{opacity: 0},
-					{duration: 1000, fill: 'forwards'}
-				).onfinish = () => {
-					webxrButton.style.display = "none";
-				}
-		  	}, 9000);
-		}	
-	}
+  if ('xr' in navigator) {
+    navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+      if (!supported) {
+        setTimeout(() => {
+          vrButton.animate(
+            { opacity: 0 },
+            { duration: 3500, fill: 'forwards' }
+          ).onfinish = () => {
+            vrButton.style.display = 'none';
+          };
+        }, 9000);
+      }
+    }).catch(() => {/* ignore */});
+  }
 }
 
 console.log("Developed with 🍔 by Paul Maréchal")
