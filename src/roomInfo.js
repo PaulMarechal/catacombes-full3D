@@ -210,6 +210,10 @@ export const roomInfos = [
         "2 / 2 / 3 / 3", 
         "In 1982 these plaques were in a gallery that was to be injected to isolate the official ossuary of the GRS. Cataphiles transported them from Saint Anne's, which was hidden in the GRS. A few years later they offered to return them but the town hall refused.", 
         48.827993928928066,2.334641873959007, 
+        [
+            { x: 2, y: 3, z: 4, label: "test" },
+            { x: 1, y: 2, z: 3, label: "test" }
+        ]
     ], 
 
     // Philibert
@@ -556,7 +560,78 @@ export const roomInfos = [
         "Small room with a starry moon and lots of musical instruments.", 
         48.828411823947484,2.334492922140887, 
     ], 
-]
+];
+
+// --- Helpers to use legacy positional arrays without rewriting them ---
+export const ROOM_IDX = {
+    title: 0,
+    subtitle: 1,
+    text_fr: 2,
+    address: 3,
+    depth: 4,
+    link: 5,
+    quartier: 6,
+    scoresA: 7,
+    scoresB: 8,
+    text_en: 9,
+    lat: 10,
+    lon: 11,
+    points3D: 12 
+};
+
+function parseDepth(str) {
+    if (!str) return 0;
+    const m = String(str).match(/-?\d+(\.\d+)?/);
+    return m ? parseFloat(m[0]) : 0;
+}
+
+function toPointObj(p) {
+    if (Array.isArray(p)) {
+        const [x, y, z, label] = p;
+        return { x: +x || 0, y: +y || 0, z: +z || 0, label: String(label ?? "") };
+    }
+    return {
+        x: +p.x || 0,
+        y: +p.y || 0,
+        z: +p.z || 0,
+        label: String(p.label ?? "")
+    };
+}
+
+/**
+ * Convert a legacy room array entry to a structured object.
+ * Does not modify the original data.
+ */
+export function parseRoom(entry) {
+    const idx = ROOM_IDX;
+    const obj = {
+        id: String(entry[idx.title] || "").toLowerCase().replace(/\s+/g, "-"),
+        title: entry[idx.title] ?? "",
+        subtitle: entry[idx.subtitle] ?? "",
+        text_fr: entry[idx.text_fr] ?? "",
+        text_en: entry[idx.text_en] ?? "",
+        address: entry[idx.address] ?? "",
+        depth: entry[idx.depth] ?? "",
+        depthMeters: parseDepth(entry[idx.depth]),
+        link: entry[idx.link] ?? "",
+        quartier: entry[idx.quartier] ?? "",
+        scoresA: entry[idx.scoresA] ?? "",
+        scoresB: entry[idx.scoresB] ?? "",
+        lat: entry[idx.lat] === "" || entry[idx.lat] === undefined ? null : +entry[idx.lat],
+        lon: entry[idx.lon] === "" || entry[idx.lon] === undefined ? null : +entry[idx.lon],
+        points3D: []
+    };
+
+    const pts = entry[idx.points3D];
+    if (Array.isArray(pts)) obj.points3D = pts.map(toPointObj);
+
+    return obj;
+}
+
+/**
+ * Convenience export: parsed rooms ready to use in the app
+ */
+export const roomsParsed = roomInfos.map(parseRoom);
 
 
 

@@ -1,4 +1,7 @@
-import * as NameRooms from "../roomInfo.js";
+import { roomsParsed } from "../roomInfo.js";
+
+let CURRENT_LANG = "FR"; 
+const getRoomText = (room) => (CURRENT_LANG === "FR" ? (room.text_fr || "") : (room.text_en || ""));
 
 const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
@@ -38,13 +41,18 @@ function createButton(id, templateHref, text, title, roomId) {
     return a;
 }
 
-function createRoomCard(room, langIndex) {
-    const [roomId, titleText, descEN, locationText, depthValue] = room;
-    const newDiv = document.createElement("a");
-    newDiv.setAttribute("href", `/3D/?room=${roomId}`)
-    newDiv.classList.add("parentDivRoomInfo_new");
+function createRoomCard(room, idx) {
+    const roomId = room.title; 
+    const titleText = room.subtitle || room.title;
+    const locationText = room.address || "";
+    const depthValue = room.depth || "";
 
-    // Background 
+    const newDiv = document.createElement("a");
+    newDiv.setAttribute("href", `/3D/?room=${encodeURIComponent(roomId)}`);
+    newDiv.classList.add("parentDivRoomInfo_new");
+    newDiv.dataset.roomIndex = String(idx);
+
+    // Background
     newDiv.style.backgroundImage = `url(https://catacombes.xyz/${roomId}/${roomId}.webp)`;
 
     // Title
@@ -79,7 +87,8 @@ function createRoomCard(room, langIndex) {
 
     const pText = document.createElement("p");
     pText.classList.add("textRoom_new");
-    pText.textContent = room[langIndex];
+    pText.dataset.roomIndex = String(idx);
+    pText.textContent = getRoomText(room);
     infoDiv.appendChild(pText);
 
     const btnContainer = document.createElement("div");
@@ -173,10 +182,9 @@ function filterRooms() {
 
 function initializeRooms() {
     const container = document.querySelector(".displayRooms");
-    NameRooms.roomInfos.forEach((room, idx) => {
-        container.appendChild(createRoomCard(room, 2));
+    roomsParsed.forEach((room, idx) => {
+        container.appendChild(createRoomCard(room, idx));
     });
-    
     createSearchBar();
 }
 
@@ -184,8 +192,14 @@ document.addEventListener("DOMContentLoaded", initializeRooms);
 
 const langBtn = document.querySelector("#language_site");
 langBtn.addEventListener("click", () => {
-    document.querySelectorAll(".textRoom_new").forEach((p, idx) => {
-        p.textContent = langBtn.innerText === "FR" ? NameRooms.roomInfos[idx][9] : NameRooms.roomInfos[idx][2];
+    // Toggle target language label first
+    CURRENT_LANG = (langBtn.innerText === "FR") ? "EN" : "FR";
+    langBtn.innerText = CURRENT_LANG;
+
+    // Update all room texts
+    document.querySelectorAll(".textRoom_new").forEach((p) => {
+        const idx = Number(p.dataset.roomIndex);
+        const room = roomsParsed[idx];
+        if (room) p.textContent = getRoomText(room);
     });
-    langBtn.innerText = langBtn.innerText === "FR" ? "EN" : "FR";
 });

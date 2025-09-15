@@ -23,9 +23,8 @@ import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import FontJSON from 'three-mesh-ui/examples/assets/Roboto-msdf.json';
 import FontImage from 'three-mesh-ui/examples/assets/Roboto-msdf.png';
 
-
 import * as TextPanel from "./textPanel.js";
-import * as NameRooms from "./roomInfo.js";
+import { roomsParsed } from "./roomInfo.js";
 import * as Language from "./language.js";
 // import * as XRHand from "./XR_hand.js";
 
@@ -137,15 +136,17 @@ var roomNumber = 0
 
 
 function room3dRoad(roomNumber){
-    return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}.glb`
+    const title = roomsParsed[roomNumber]?.title || "";
+    return `https://catacombes.xyz/${title}/${title}.glb`;
 }
 
 function room3dRoad_opt(roomNumber){
-    return `https://catacombes.xyz/${NameRooms.roomInfos[roomNumber][0]}/${NameRooms.roomInfos[roomNumber][0]}_opt.glb`
+    const title = roomsParsed[roomNumber]?.title || "";
+    return `https://catacombes.xyz/${title}/${title}_opt.glb`;
 }
 
 function seeRoomIn3d(roomNumber){
-    return `${NameRooms.roomInfos[roomNumber][0]}`
+    return `${roomsParsed[roomNumber]?.title || ""}`;
 }
 
 window.addEventListener( 'load', init(room3dRoad(0), room3dRoad_opt(0)) );
@@ -843,7 +844,7 @@ function goToNextRoom() {
 	}
 
 	roomNumber += 1; 
-	if(roomNumber >= NameRooms.roomInfos.length){
+	if(roomNumber >= roomsParsed.length){
 		roomNumber = 0;
 	}
 
@@ -879,7 +880,7 @@ function goToPrevRoom() {
 	}
 
 	if(roomNumber < 1){
-		roomNumber = NameRooms.roomInfos.length;
+		roomNumber = roomsParsed.length;
 	}
 	roomNumber -= 1; 
 
@@ -1168,11 +1169,11 @@ function makePanel() {
 function find_room_number(liste, nomRecherche) {
     for (let i = 0; i < liste.length; i++) {
         const salle = liste[i];
-        if (salle[0] === nomRecherche) {
+        if ((salle && (salle.title || salle[0])) === nomRecherche) {
             return i;
         }
     }
-    return -1; 
+    return -1;
 }
 
 function click_on_others_rooms() {
@@ -1198,7 +1199,7 @@ function click_on_others_rooms() {
 				// console.log(class_name_elem)
 				document.querySelector(class_name_elem).parentNode.classList.add("selected_room_on_list")
 
-				const room_number = find_room_number(NameRooms.roomInfos, alt_value);
+				const room_number = find_room_number(roomsParsed, alt_value);
 				
 				roomNumber = room_number;
 

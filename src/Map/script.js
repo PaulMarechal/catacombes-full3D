@@ -1,4 +1,3 @@
-// script.js
 import { roomInfos } from "../roomInfo.js";
 
 const hasLatLng = r => {
