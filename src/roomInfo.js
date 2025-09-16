@@ -211,8 +211,9 @@ export const roomInfos = [
         "In 1982 these plaques were in a gallery that was to be injected to isolate the official ossuary of the GRS. Cataphiles transported them from Saint Anne's, which was hidden in the GRS. A few years later they offered to return them but the town hall refused.", 
         48.827993928928066,2.334641873959007, 
         [
-            { x: 2, y: 3, z: 4, label: "test" },
-            { x: 1, y: 2, z: 3, label: "test" }
+            { x: -0.6, y: -0.5, z: -2.1, label: "Ossements Désséchés,\n Ecoutez la Parole de l'Eternel. \nJe vais faire entrer dans Vos Esprits la Vie: \n Je Vous donnerai des Nerfs,\n Je ferai croitre sur Vous la Chair, \n Je Vous couvrirai de Peau, \n Je mettrai en Vous un Esprit, \n Et Vous vivrez, Ossements Désséchés. \n\nEzech Chap. 37" },
+            { x: 0.49, y: 0, z: -1.3, label: "Repere de nivellement. \n - 19.83m de hauteur de recouvrement \n - 11.82m de distance par rapport au zero de l'echelle du pont de la Tournelle à Paris (correspondant au niveau des basses eaux de la Seine en 1719, soit 26.25m au dessus du niveau de la mer)" }, 
+            { x: 1.2, y: 0.2, z: -1.2, label: "AVENUE DU PARC MONTSOURIS \n Plaque refaite, en remplacement d'une plaque disparue 'Avenue de montsouris cote nord'" }
         ]
     ], 
 
