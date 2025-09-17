@@ -29,7 +29,7 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -49,7 +49,7 @@ export const roomInfos = [
         48.83803860669381,2.357414410143055,
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -69,7 +69,7 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
 
@@ -90,7 +90,7 @@ export const roomInfos = [
         48.830753723678114,2.3641714716648465, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -110,7 +110,7 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -131,7 +131,7 @@ export const roomInfos = [
         48.82832609747453,2.333002129805828, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -171,7 +171,7 @@ export const roomInfos = [
         48.82660141590225,2.330296772920315, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -191,7 +191,7 @@ export const roomInfos = [
         48.82767777323895,2.3330687940276906, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -211,7 +211,7 @@ export const roomInfos = [
         48.82721911888489,2.329343486894677, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
 
@@ -232,7 +232,7 @@ export const roomInfos = [
         48.82653075539447,2.32962129709704, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -252,7 +252,7 @@ export const roomInfos = [
         48.82801072038578,2.3344451758380558, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -292,7 +292,7 @@ export const roomInfos = [
         48.843876169264966,2.3392696263934276, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -312,7 +312,7 @@ export const roomInfos = [
         "",
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -332,7 +332,7 @@ export const roomInfos = [
         48.8304104546942,2.3368083955384256, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -352,7 +352,7 @@ export const roomInfos = [
         48.831993659895325,2.341124607453944, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -372,7 +372,7 @@ export const roomInfos = [
         48.833246513209616,2.3361312457276417, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -392,7 +392,7 @@ export const roomInfos = [
         48.826132974631214,2.328524039950177, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -412,7 +412,7 @@ export const roomInfos = [
         48.82601504020344,2.3312869393653113, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -432,7 +432,7 @@ export const roomInfos = [
         48.821534217963645,2.321413672192638, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -452,7 +452,7 @@ export const roomInfos = [
         48.821788077546856,2.3218771704832664, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -472,7 +472,7 @@ export const roomInfos = [
         48.8266455787018,2.33076472851395, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -492,7 +492,7 @@ export const roomInfos = [
         48.83379835685104,2.3379009097813386, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -512,7 +512,7 @@ export const roomInfos = [
         48.83397087029693,2.3371781592256147, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -532,7 +532,7 @@ export const roomInfos = [
         48.8403684367242,2.33694313326676, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -552,7 +552,7 @@ export const roomInfos = [
         48.83643938442287,2.3267695721016945, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -572,7 +572,7 @@ export const roomInfos = [
         48.83893422057103,2.3290317035734365, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -592,7 +592,7 @@ export const roomInfos = [
         48.840891572885404,2.3342090494626033, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -612,7 +612,7 @@ export const roomInfos = [
         48.84308518753105,2.3317100223529152, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -632,7 +632,7 @@ export const roomInfos = [
         48.842624861698575,2.331867664996814, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -652,7 +652,7 @@ export const roomInfos = [
         48.842567670617655,2.3350554913657717, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -672,7 +672,7 @@ export const roomInfos = [
         48.843338854889964,2.3359327716820832, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -692,7 +692,7 @@ export const roomInfos = [
         48.842752565378426,2.3349867691353854, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ],
@@ -712,7 +712,7 @@ export const roomInfos = [
         48.83221461553951,2.335474354130085, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
@@ -732,7 +732,7 @@ export const roomInfos = [
         48.828411823947484,2.334492922140887, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
+            { x: 0, y:0, z: 0, label: "Test 2" }, 
             { x:0, y:0, z: 0, label: "Test 3" }
         ]
     ], 
