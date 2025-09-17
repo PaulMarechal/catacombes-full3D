@@ -29,9 +29,8 @@ export const roomInfos = [
         "", 
         "", 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: -0.96, y: 0.48, z: 0.9, label: "Sur les marches etaient exposes des echantillons de roche, sur les contre-marches etaient indiques la couche geologique et la hauteur reelle de celle-ci." },
+            { x: 1.35, y: 1.9, z: 0.38, label: "Au plafond, une orse des vents peinte au noir animal indique les quatre points cardinaux." }, 
         ]
     ], 
 
@@ -50,9 +49,7 @@ export const roomInfos = [
         48.83803860669381,
         2.357414410143055,
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: -0.96, y: 0.1, z: 2.85, label: "RUE SOLCARLUS COTE DU MIDI \nFausse plaque ajoutee lors de la creation de la salle" },
         ]
     ], 
 
@@ -71,9 +68,9 @@ export const roomInfos = [
         "", 
         "", 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: 3.7, y: 0, z: 0.8, label: "RUE JEANNE D'ARC PROLONGEE" },
+            { x: -0.96, y: -0.1, z: -1.5, label: "Nom des cataphiles ayant refait la salle." }, 
+            // { x:1.3, y: -0.1, z: 2.2, label: "3HT " } retourner voir 
         ]
 
     ], 
@@ -93,9 +90,8 @@ export const roomInfos = [
         48.830753723678114,
         2.3641714716648465, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            // { x:0, y: 0, z: 0, label: "" } 
+           
         ]
     ], 
 
@@ -103,7 +99,7 @@ export const roomInfos = [
     [
         "Toudouze", 
         "Toudouze",
-        "Le cabinet Toudouze est l'un des sept cabinets mineralogiques amenages au debut du XIXe siecle dans les carrieres souterraines de Paris. Ces cabinets etaient des sortes de 'cabinets de curiosites' souterrains, destines a exposer des collections de mineraux, d'ossements ou d'echantillons geologiques, refletant l'interet scientifique et esthetique de l'epoque. \nSitue sous l'avenue d'Italie (anciennement avenue de Fontainebleau) dans le 13e arrondissement, le cabinet Toudouze se distinguait par un escalier central, quatre niches taillees dans la roche, et deux petits escaliers annexes illustrant les differentes couches geologiques du Lutetien. Cependant, au debut du XXe siecle, lors de la construction des lignes de metro a proximite de la place d'Italie, une grande partie de ce cabinet a ete remblayee. Aujourd'hui, seuls subsistent les deux petits escaliers annexes et deux des quatre niches originales, l'escalier central ayant disparu.",
+        "Le cabinet Toudouze est l'un des sept cabinets mineralogiques amenages au debut du XIXe siecle dans les carrieres souterraines de Paris. Ces cabinets etaient des sortes de 'cabinets de curiosites' souterrains, destines a exposer des collections de mineraux, d'ossements ou d'echantillons geologiques, refletant l'interet scientifique et esthetique de l'epoque. \nSitue sous l'avenue d'Italie (anciennement avenue de Fontainebleau) dans le 13e arrondissement, le cabinet Toudouze se distinguait par un escalier central (demonte et les pierres reutilisees dans des consolidations), quatre niches taillees dans la roche, et deux petits escaliers annexes illustrant les differentes couches geologiques du Lutetien. Cependant, au debut du XXe siecle, lors de la construction des lignes de metro a proximite de la place d'Italie, une grande partie de ce cabinet a ete remblayee (vers 1914-1920). Aujourd'hui, seuls subsistent les deux petits escaliers annexes et deux des quatre niches originales, l'escalier central ayant disparu.",
         " -- ? -- \n  -- ? -- ",
         " 20m",
         "https://catacombes.xyz/Toudouze/3D", 
@@ -114,9 +110,11 @@ export const roomInfos = [
         "", 
         "", 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: 1.7, y: 0.7, z: 2, label: "Au plafond, une orse des vents peinte au noir animal indique les quatre points cardinaux." }, 
+            { x: -1.74, y: 0, z: 1.26, label: "ECHANTILLONS DES BANCS DE TERRE DE PUIS LA SURFACE DU SOL JUSQUES AU BANC DE ROCHE " }, 
+            { x:-2, y: 0.2, z: 0.8, label: "- TERRE VEGETALE\n- ARGILE SABLEUSE\n- SABLE QUARTZEUZ\n- SABLE QUARTZEUX\n- GRAVIER QUARTZEUX\n- M DURE COMPACTE" }, 
+            { x:-2.1, y: -0.2, z: 0.5, label: "HAUTEUR 14 METRES 37 CENTIMETRES (OU 44 PIEDS 3 POUCES)" }, 
+            { x:5, y: 0, z: 4.5, label: "'I C 9 R' Est une date selon le calendrier revolutionnaire (ou republicain - 1793/1805 puis brievement en 1871). \n- IC : 1er complementaire (1er jour complementaires, appeles 'sans-culottides')\n- 9R : An 9 de la Republique (soit septembre 1801 dans le calendrier gregorien). \nDonc '1C9R' = 1er jour complementaire de l'an IX de la Republique, c'est a dire 17 septembre 1801 dans le calendrier actuel." }
         ]
     ], 
 
@@ -136,9 +134,8 @@ export const roomInfos = [
         48.82832609747453,
         2.333002129805828, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: 4.3, y: 0.4, z: -3.6, label: "'IO HT 1812' Signifie Travaux de chantier numero 10, realises sous Hericart de Thury en 1812. " },
+            { x: 1, y: 0.2, z: 1.2, label: "COURS DE L'AQUEDUC" }, 
         ]
     ],
 
@@ -157,9 +154,8 @@ export const roomInfos = [
         48.833789464235615,
         2.3365656121874823, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y: 0, z: 0, label: "Test 2" }, 
-            { x:0, y: 0, z: 0, label: "Test 3" }
+            { x: 0.25, y: 0.7, z: 1.5, label: "'BANCS DE PIERRE DE CETTE CARRIERE\n --------- \nDe la surface de la Terre au Banc de Roche 13m (40 pieds)'" },
+            { x: 0.25, y: 0, z: 1, label: "Sur les marches etaient exposes des echantillons de roche, sur les contre-marches etaient indiques la couche geologique et la hauteur reelle de celle-ci." }, 
         ]
     ], 
 
@@ -178,9 +174,7 @@ export const roomInfos = [
         48.82660141590225,
         2.330296772920315, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0.48, y: 0.3, z: -6.9, label: "Membres du goupe 'Les Rats' qui ont ouvert la salle " },
         ]
     ],
 
@@ -199,9 +193,7 @@ export const roomInfos = [
         48.82767777323895,
         2.3330687940276906, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x:0, y: 0, z: 0, label: "" } 
         ]
     ],
 
@@ -220,9 +212,7 @@ export const roomInfos = [
         48.82721911888489,
         2.329343486894677, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 2, y: 0, z: -3.3, label: "Exemple d'extraction des blocs de pierre par les carriers." },
         ]
 
     ],
@@ -242,9 +232,7 @@ export const roomInfos = [
         48.82653075539447,
         2.32962129709704, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 1.1, y: .1, z: 0.7, label: "'8.K' veut dire Pillier numero 8 de la galerie (ou section) K, marque lors des grands travaux de consolidation au debut du XIXe siecle." },
         ]
     ],
 
@@ -263,9 +251,8 @@ export const roomInfos = [
         48.82801072038578,
         2.3344451758380558, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 3.5, y: -0.1, z: -2.46, label: "'33.T' veut dire Pilier numero 33 de la galerie T" },
+            { x: 0.8, y:0, z: -0.5, label: "Ancienne fresque de Psychose (realise en 2012 - https://streep.fr/2020/01/09/video-une-journee-avec-psy/#jp-carousel-11797 )" }, 
         ]
     ],
 
@@ -305,9 +292,11 @@ export const roomInfos = [
         48.843876169264966,
         2.3392696263934276, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 2, label: "'I HT 1812' Signifie Travaux de chantier numero 1, realises sous Hericart de Thury en 1810. " },
+            { x: 1.5, y: 0.4, z: -2.7, label: "'6 G 1871' 1781 est l'annee de creation de l'inspection des carrieres de Paris (par decret royal après l'effondrement de la rue d'Enfer en 1774). Date de consolidation initiale et 6G designe du repere de pilier ou galerie et non pas une date du calendrier revolutionnaire car instaure en 1793 (puis oboli en 1806)." }, 
+            { x:1.9, y: 0.1, z: 0.9, label: "A LA MEMOIRE DE PHILIBERT ASPAIRT PERDU DANS CETTE CARRIERE LE III NOVREMBRE MDCCXCIII (1793), RETROUVE ONZE AND APRES ET INHUME EN LA MEME PLACE LE XXX AVRIL MDCCCIV (30 avril 1804)." }, 
+            { x: -0.6, y: 0.4, z: -2.7, label: "RUE D'ENFER SOUS LE MUR DES CHARTREUX" },
+            { x: 0.25, y: 0.2, z: -3.05, label: "CHEMIN ALLANT A LA RUE NOTRE DAME DES CHAMPS" },
         ]
     ], 
 
@@ -326,9 +315,8 @@ export const roomInfos = [
         "",
         "", 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -1.4, y: 0, z: 3.42, label: "'17.T' veut dire consolidation numero 17 de la galerie T" },
+            { x: 0, y:0, z: 0, label: "'22.T' veut dire consolidation numero 22 de la galerie T" }, 
         ]
     ], 
 
@@ -347,9 +335,9 @@ export const roomInfos = [
         48.8304104546942,
         2.3368083955384256, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0.4, y: 0, z: -0.4, label: "RUE CABANIS" },
+            { x: 2.5, y:0, z: -1, label: "RUE BROUSSAIS" }, 
+            { x:2.7, y:-0.8, z: -1, label: "Repere de nivellement. \n - 12.89m de hauteur de recouvrement \n - 14.0m de distance par rapport au zero de l'echelle du pont de la Tournelle à Paris (correspondant au niveau des basses eaux de la Seine en 1719, soit 26.25m au dessus du niveau de la mer)" }, 
         ]
     ], 
 
@@ -357,7 +345,7 @@ export const roomInfos = [
     [
         "Dragon", 
         "Dragon",
-        "La salle du Dragon est l'une des nombreuses salles amenagees par des cataphiles dans les parties interdites des catacombes de Paris. Elle tire son nom d'une sculpture murale representant un dragon chinois, situee a l'entree de cette petite salle. Cette salle est situee non loin du sous-sol de la prison de la sante. Derniere renovation en 2013 qui a revele un bassin de chaux",
+        "La salle du Dragon est l'une des nombreuses salles amenagees par des cataphiles dans les parties interdites des catacombes de Paris. Elle tire son nom d'une sculpture murale representant un dragon chinois, situee a l'entree de cette petite salle. Cette salle est situee non loin du sous-sol de la prison de la sante. Derniere renovation en 2013 qui a revele un bassin de chaux!",
         "3 Boulevard Saint-Jacques,\n   75014 Paris", 
         " 8m", 
         "https://catacombes.xyz/Dragon/3D", 
@@ -368,9 +356,9 @@ export const roomInfos = [
         48.831993659895325,
         2.341124607453944, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -1.5, y: 0, z: -3.5, label: "Ancien bassin à chaux, découvert en 2013. La chaux etait realise en chauffant du calcaire ( carbonate de calcium) a tres haute temperature, on obtient alors de la chaux vive (Ca0), puis en ajoutant de l'eau, de la chaux eteinte. Qui donne une pate utilise comme liant dans les mortiers et la consolidation." },
+            { x: -4, y:0, z: -0.5, label: "Ancien puits a eau permettant d'alimenter le bassin a chaux." }, 
+            { x: 2, y: 2, z: 3, label: "Fresque de Dragon" }
         ]
     ],
 
@@ -389,9 +377,10 @@ export const roomInfos = [
         48.833246513209616,
         2.3361312457276417, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -1.5, y: 0, z: 1.3, label: "RUE JACQUES COTE DU LEVANT" },
+            { x: -1.5, y: 0.1, z: 0.8, label: "'2 HT 1810' : Travaux de chantier numero 2 realises sous Hericart de Thury en 1810" }, 
+            { x:-2.3, y: -0.3, z: -1.8, label: "'1 HT 1810' : Travaux de chantier numero 1 realises sous Hericart de Thury en 1810" }, 
+            { x:-2.7, y: 0.1, z: 1.1, label: "BOULEVARD SAINT JACQUES" }
         ]
     ], 
 
@@ -410,9 +399,7 @@ export const roomInfos = [
         48.826132974631214,
         2.328524039950177, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" },
         ]
     ],
 
@@ -431,9 +418,9 @@ export const roomInfos = [
         48.82601504020344,
         2.3312869393653113, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -7, y: 0, z: -2.4, label: "Golem" },
+            { x: 10, y:0, z: 10, label: "La vague d'Okusai" }, 
+            { x: 7.86, y: 0, z: -11.28, label: "Le chat x Psychose" }
         ]
     ], 
 
@@ -452,9 +439,7 @@ export const roomInfos = [
         48.821534217963645,
         2.321413672192638, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" }
         ]
     ],
 
@@ -473,9 +458,7 @@ export const roomInfos = [
         48.821788077546856,
         2.3218771704832664, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" }
         ]
     ],
 
@@ -494,9 +477,7 @@ export const roomInfos = [
         48.8266455787018,
         2.33076472851395, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" },
         ]
     ],
 
@@ -515,9 +496,7 @@ export const roomInfos = [
         48.83379835685104,
         2.3379009097813386, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -2.3, y: 0.2, z: -1.5, label: "RUE DE BIRON COTE DU MIDI" },
         ]
     ], 
 
@@ -536,9 +515,7 @@ export const roomInfos = [
         48.83397087029693,
         2.3371781592256147, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" },
         ]
     ], 
 
@@ -557,9 +534,9 @@ export const roomInfos = [
         48.8403684367242,
         2.33694313326676, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 2, y: 0, z: 2, label: "Ancien bassin à chaux. La chaux etait realise en chauffant du calcaire ( carbonate de calcium) a tres haute temperature, on obtient alors de la chaux vive (Ca0), puis en ajoutant de l'eau, de la chaux eteinte. Qui donne une pate utilise comme liant dans les mortiers et la consolidation." },
+            { x: -1.6, y: -1, z: -0.75, label: "Echelle d'etiage : repere graduee pour mesurer le niveau de la nappe phreatique" }, 
+            { x: -2.5, y: -1.3, z: -0.24, label: "Ancien puits a eau permettant d'alimenter le bassin a chaux." }
         ]
     ], 
 
@@ -578,9 +555,12 @@ export const roomInfos = [
         48.83643938442287,
         2.3267695721016945, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -4.7, y: 0.2, z: 3.3, label: "'103 H 1865' : Travaux de chantier numero 103 realises sous Charles-Louis de Hennezel en 1865" },
+            { x: 3.4, y: 0.1, z: -6.1, label: "CHEMIN CONDUISANT A L'ALLEE DES DEUX CARREFOURS" }, 
+            { x: 4.4, y: -0.1, z: -6.5, label: "'XX H 1863' : Travaux de chantier numero XX realises sous Charles-Louis de Hennezel en 1863" }, 
+            { x: 5.6, y: 0.1, z: -10.5, label: "'99 H 1863' : Travaux de chantier numero 99 realises sous Charles-Louis de Hennezel en 1863" },
+            { x: 5, y: 0.2, z: -13, label: "CHEMIN CONDUISANT A LA PETITE AVENUE DE L'EST" },
+            { x: 7.3, y: 0.27, z: -11.9, label: "AVENUE DE L'EST" },
         ]
     ],
 
@@ -599,9 +579,12 @@ export const roomInfos = [
         48.83893422057103,
         2.3290317035734365, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -0.1, y: 0.35, z: -0.9, label: "BUREAU DU CENTRE" },
+            { x: 0.2, y:0.2, z: 0.8, label: "'1 L 1852' : Travaux de chantier numero 1 realises sous Théodore Lorieux en 1852" }, 
+            { x: 0.2, y:0.2, z: 2.1, label: "'2 L 1852' : Travaux de chantier numero 2 realises sous Théodore Lorieux en 1852" }, 
+            { x: -1.2, y: 0.2, z: -0.9, label: "TRANSVERSALE" }, 
+            { x: -1.9, y: -0.4, z: -0.7, label: "'18 L 1852' : Travaux de chantier numero 18 realises sous Théodore Lorieux en 1852" },
+            { x: -0.1, y: -0.1, z: -2.3, label: "'17 L 1852' : Travaux de chantier numero 17 realises sous Théodore Lorieux en 1852" },
         ]
     ],
 
@@ -620,9 +603,7 @@ export const roomInfos = [
         48.840891572885404,
         2.3342090494626033, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" },
         ]
     ], 
 
@@ -641,9 +622,17 @@ export const roomInfos = [
         48.84308518753105,
         2.3317100223529152, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0.8, y: 2, z: -1, label: "'Homme en blanc' de Jerome Mesnager" },
+            { x: -1.6, y: 1.8, z: 1.6, label: "Guillaumot 1785 - Tout début de la cartographie et de la consolidation lancée par le premier inspecteur général." }, 
+            { x:0.8, y:1.8, z: 0, label: "HAUTEUR 54 PIEDS 17.5356 METRES" }, 
+            { x:0.8, y:1.8, z: 0, label: "'4 G 1785' : Travaux de chantier numero 4 realises sous Charles-Axel Guillaumot en 1785" }, 
+            { x:7.3, y:1.4, z: -2.6, label: "RUE NOTRE DAME DES CHAMPS COTE DU NORD" }, 
+            { x:-7, y:1.1, z: 7.4, label: "'16.5 - 6.38' :  Repere de nivellement. \n - 16.5m de hauteur de recouvrement \n - 6.38m de distance par rapport au zero de l'echelle du pont de la Tournelle à Paris (correspondant au niveau des basses eaux de la Seine en 1719, soit 26.25m au dessus du niveau de la mer)" }, 
+            { x:-9.3, y:2, z: 7.4, label: "RUE NOTRE DAME DES CHAMPS COTE DU LEVANT" }, 
+            { x: -7.3, y: -0.5, z: 4, label: "Echelle d'etiage : repere graduee pour mesurer le niveau de la nappe phreatique" }, 
+            { x: -7.68, y: -1, z: 4.92, label: "Ancien puits a eau" }
+
+            
         ]
     ],
 
@@ -662,9 +651,12 @@ export const roomInfos = [
         48.842624861698575,
         2.331867664996814, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0.7, y: 1.1, z: -0.7, label: "'1 J 1844' Travaux de chantier numero 1 realises sous Juncker en 1844" },
+            { x: 4.2, y: 1.3, z: -1.32, label: "CHEMIN CONDUISANT A L'ESCALIER DE NOTRE DAME DES CHAMPS" }, 
+            { x: 5.1, y: 1.2, z: -2.2, label: "RUE NOTRE DAME DES CHAMPS COTE DU LEVANT" }, 
+            { x:3.35, y: 1.1, z: 0.2, label: "TRANSVERSALE" }, 
+            { x:-0.24, y:1.2, z: 1.7, label: "'17 - 6.67' :  Repere de nivellement. \n - 17m de hauteur de recouvrement \n - 6.67m de distance par rapport au zero de l'echelle du pont de la Tournelle à Paris (correspondant au niveau des basses eaux de la Seine en 1719, soit 26.25m au dessus du niveau de la mer)" }
+
         ]
     ],
 
@@ -683,9 +675,13 @@ export const roomInfos = [
         48.842567670617655,
         2.3350554913657717, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -0.3, y: -0.6, z: 5.6, label: "Echelle d'etiage : repere graduee pour mesurer le niveau de la nappe phreatique" }, 
+            { x: -1.2, y: -1.8, z: 5.3, label: "Ancien puits a eau." }, 
+            { x: -4.1, y: -1, z: 4.92, label: "Fontaine naturelle" },
+            { x: 2.1, y: 1.38, z: 2.7, label: "1892 : Consolidation avec des pierres de meulieres en 1892." }, 
+            { x: 2.5, y: 1.5, z: 1.6, label: "En hommage a Parsek 1999 - 2021" }, 
+            { x: -2.9, y: 0.9, z: 0, label: "'8 F 1868' Travaux de chantier numero 8 realises sous De Fourcy en 1844" }, 
+            { x: -1.4, y: 0.9, z: -0.4, label: "'7 F 1868' Travaux de chantier numero 7 realises sous De Fourcy en 1844" }, 
         ]
     ],
 
@@ -704,9 +700,7 @@ export const roomInfos = [
         48.843338854889964,
         2.3359327716820832, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" }
         ]
     ],
 
@@ -725,9 +719,7 @@ export const roomInfos = [
         48.842752565378426,
         2.3349867691353854, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" },
         ]
     ],
 
@@ -746,9 +738,9 @@ export const roomInfos = [
         48.83221461553951,
         2.335474354130085, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: -4.1, y: 0.2, z: 7.2, label: "'29 T 1877' Travaux de chantier numero 29 realises sous Louis Marcelin Tournaire en 1877" },
+            { x: 12.3, y: 0.25, z: -18.5, label: "'35 T 1877' Travaux de chantier numero 35 realises sous Louis Marcelin Tournaire en 1877" },
+            { x: -5.1, y: 0.2, z: 11, label: "'28 T 1877' Travaux de chantier numero 28 realises sous Louis Marcelin Tournaire en 1877" },
         ]
     ], 
 
@@ -767,9 +759,7 @@ export const roomInfos = [
         48.828411823947484,
         2.334492922140887, 
         [
-            { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            // { x: 0, y: 0, z: 0, label: "" }
         ]
     ], 
 ];
