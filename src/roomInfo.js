@@ -27,6 +27,7 @@ export const roomInfos = [
         "",
         "M. Guerinet's cabinet was injected with concrete a few years ago (October 6, 2010). Thanks to the hard work of some cataphiles, it is once again accessible. Thank you for preserving this place and leaving it in good condition.", 
         "", 
+        "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -46,7 +47,8 @@ export const roomInfos = [
         "4 / 5 / 5 / 6", 
         "2 / 5 / 3 / 6",
         "Among the many advertising 'madeleines', this 1983 spot, directed by Dino Risi, provides an opportunity to revisit actor and humorist Jean-Marie Proslier, who died in 1997: he played the recurring, mischievous character of Solcarlus, working for Cesar on behalf of the Terra brand.", 
-        48.83803860669381,2.357414410143055,
+        48.83803860669381,
+        2.357414410143055,
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -65,6 +67,7 @@ export const roomInfos = [
         "Salpetriere", 
         "", 
         "",
+        "", 
         "", 
         "", 
         [
@@ -87,7 +90,8 @@ export const roomInfos = [
         "5 / 5 / 6 / 6", 
         "1 / 4 / 2 / 5",
         "It is located under Rue Nationale, also known as the Zebulon room.", 
-        48.830753723678114,2.3641714716648465, 
+        48.830753723678114,
+        2.3641714716648465, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -107,6 +111,7 @@ export const roomInfos = [
         "", 
         "",
         "Former mineralogical cabinet of Mr Toudouze. Partly destroyed during the consolidation of the underground during the construction of line 6 of the metro.", 
+        "", 
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
@@ -128,7 +133,8 @@ export const roomInfos = [
         "6 / 5 / 7 / 6", 
         "2 / 8 / 3 / 9", 
         "Room redone in 2018 with the help of Nexus. Central room and well maintained large table with stone bench all around the room. Named after a Kraken fresco.", 
-        48.82832609747453,2.333002129805828, 
+        48.82832609747453,
+        2.333002129805828, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -148,7 +154,8 @@ export const roomInfos = [
         "9 / 5 / 10 / 6", 
         "1 / 8 / 2 / 9",
         "Cabinet Gambier-Major. Underground variant of the cabinets of curiosities in fashion in the 19th century. Built under the mandate of Ericart de Thury. There is a straight staircase used to expose pieces of rocks representing the geological layers of the Lutecian.", 
-        48.833789464235615,2.3365656121874823, 
+        48.833789464235615,
+        2.3365656121874823, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, 0, z: 0, label: "Test 2" }, 
@@ -168,7 +175,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "3 / 7 / 4 / 8", 
         "It owes its name to the sun at the entrance of the room. Projections of films take place, hence the second name of the room. The walls are covered with frescoes representing characters of films.", 
-        48.82660141590225,2.330296772920315, 
+        48.82660141590225,
+        2.330296772920315, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -188,7 +196,8 @@ export const roomInfos = [
         "6 / 6 / 7 / 7", 
         "4 / 1 / 5 / 2", 
         "It owes its name to the hieroglyphic frescoes. Room brought by Bishop, Cockroach, Capsule and Kenny of the K-tabourets group.", 
-        48.82767777323895,2.3330687940276906, 
+        48.82767777323895,
+        2.3330687940276906, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -208,7 +217,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "1 / 4 / 2 / 5",
         "It owes its name to the sarcophagus-shaped table in its old version. The room was renovated by Pascaloup during 5 years (deceased since).", 
-        48.82721911888489,2.329343486894677, 
+        48.82721911888489,
+        2.329343486894677, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -229,7 +239,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "2 / 4 / 3 / 5", 
         "Small room with bench and table in stone", 
-        48.82653075539447,2.32962129709704, 
+        48.82653075539447,
+        2.32962129709704, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -249,7 +260,8 @@ export const roomInfos = [
         "6 / 6 / 7 / 7", 
         "2 / 1 / 3 / 2", 
         "Several names for this room ( Boutique / Psychose / Bite ). A big mural made by Psy in homage to Foxy who died in the catacombs has unfortunately been degraded over the years.", 
-        48.82801072038578,2.3344451758380558, 
+        48.82801072038578,
+        2.3344451758380558, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -269,7 +281,8 @@ export const roomInfos = [
         "6 / 6 / 7 / 7", 
         "2 / 2 / 3 / 3", 
         "In 1982 these plaques were in a gallery that was to be injected to isolate the official ossuary of the GRS. Cataphiles transported them from Saint Anne's, which was hidden in the GRS. A few years later they offered to return them but the town hall refused.", 
-        48.827993928928066,2.334641873959007, 
+        48.827993928928066,
+        2.334641873959007, 
         [
             { x: -0.6, y: -0.5, z: -2.1, label: "Ossements Désséchés,\n Ecoutez la Parole de l'Eternel. \nJe vais faire entrer dans Vos Esprits la Vie: \n Je Vous donnerai des Nerfs,\n Je ferai croitre sur Vous la Chair, \n Je Vous couvrirai de Peau, \n Je mettrai en Vous un Esprit, \n Et Vous vivrez, Ossements Désséchés. \n\nEzech Chap. 37" },
             { x: 0.49, y: 0, z: -1.3, label: "Repere de nivellement. \n - 19.83m de hauteur de recouvrement \n - 11.82m de distance par rapport au zero de l'echelle du pont de la Tournelle à Paris (correspondant au niveau des basses eaux de la Seine en 1719, soit 26.25m au dessus du niveau de la mer)" }, 
@@ -289,7 +302,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "1 / 3 / 2 / 4",
         "Tomb of Philiber Aspairt, a man known to have died in the catacombs of Paris on November 3, 1793 and whose tomb was built on the spot where he was found. He is said to have been lost while searching for the treasure of the Carthusian monks. The Charterhouse", 
-        48.843876169264966,2.3392696263934276, 
+        48.843876169264966,
+        2.3392696263934276, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -310,6 +324,7 @@ export const roomInfos = [
         "",
         "Small corridor with beautiful mosaic frescoes", 
         "",
+        "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -329,7 +344,8 @@ export const roomInfos = [
         "5 / 6 / 6 / 7", 
         "3 / 5 / 4 / 6",
         "Small rest room with many frescoes.", 
-        48.8304104546942,2.3368083955384256, 
+        48.8304104546942,
+        2.3368083955384256, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -349,7 +365,8 @@ export const roomInfos = [
         "4 / 6 / 5 / 7", 
         "4 / 8 / 5 / 9",
         "This room is located not far from the basement of the prison of health. Last renovation in 2013 which revealed a lime basin.", 
-        48.831993659895325,2.341124607453944, 
+        48.831993659895325,
+        2.341124607453944, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -369,7 +386,8 @@ export const roomInfos = [
         "4 / 6 / 5 / 7", 
         "2 / 3 / 3 / 4",
         "Quarrymen's rest room. Long filled in and inaccessible, this room was cleared from 1996 to 2003.", 
-        48.833246513209616,2.3361312457276417, 
+        48.833246513209616,
+        2.3361312457276417, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -389,7 +407,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "3 / 3 / 4 / 4", 
         "Small room (almost impossible to stand up), room fitted out during summer 2000. You will find in this room four gargoyles cut in the rock, circular stone benches around a stone table. As well as a carved castle in the back of the room.", 
-        48.826132974631214,2.328524039950177, 
+        48.826132974631214,
+        2.328524039950177, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -409,7 +428,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "3 / 6 / 4 / 7",
         "One of the most famous and frequented rooms of the GRS. It is a former quarry cavity converted into a brewery in the late 19th century (Dumesnil / Luxor / l'Esperance). We can also see a big fresco imitating the Great Wave of the painter Hokusai.", 
-        48.82601504020344,2.3312869393653113, 
+        48.82601504020344,
+        2.3312869393653113, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -429,7 +449,8 @@ export const roomInfos = [
         "9 / 4 / 10 / 5", 
         "4 / 4 / 5 / 5",
         "Room with turned pillar representing a head of Belier from where the name of the room. This room being close to the ossuary of Montrouge one can find bones there. A stone throne and mosaics are present in the room.", 
-        48.821534217963645,2.321413672192638, 
+        48.821534217963645,
+        2.321413672192638, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -449,7 +470,8 @@ export const roomInfos = [
         "9 / 4 / 10 / 5", 
         "3 / 5 / 4 / 6",
         "Concution formed with runoff water from the quarry head.", 
-        48.821788077546856,2.3218771704832664, 
+        48.821788077546856,
+        2.3218771704832664, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -469,7 +491,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "2 / 6 / 3 / 7",
         "Room used as a saddlery in the 19th century. It also served as a cellar and brewery for the Gallia beer brand. First separated from the network, the connection with the GRS was made at the end of the 1980s.", 
-        48.8266455787018,2.33076472851395, 
+        48.8266455787018,
+        2.33076472851395, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -489,7 +512,8 @@ export const roomInfos = [
         "8 / 6 / 9 / 7", 
         "4 / 2 / 5 / 3",
         "Small rest room with fluorescent frescoes.", 
-        48.83379835685104,2.3379009097813386, 
+        48.83379835685104,
+        2.3379009097813386, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -509,7 +533,8 @@ export const roomInfos = [
         "9 / 6 / 10 / 7", 
         "1 / 2 / 2 / 3",
         "Small room in the lower part of the building. Here you can see sculptures and rosettes, sculpted in 1993 and partially sold in 1996.", 
-        48.83397087029693,2.3371781592256147, 
+        48.83397087029693,
+        2.3371781592256147, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -529,7 +554,8 @@ export const roomInfos = [
         "4 / 5 / 5 / 6", 
         "3 / 7 / 4 / 8",
         "This room is wrapped around a well with a coping built at the same time. Very large blocks of stone extracted from the quarry remained there, their shape gave the name to the room. The 'fountain' is accessed by a staircase leading to a sump surmounted by a ladder. This one allowed to measure the fluctuations of the water level of the water table.",
-        48.8403684367242,2.33694313326676, 
+        48.8403684367242,
+        2.33694313326676, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -549,7 +575,8 @@ export const roomInfos = [
         "7 / 4 / 8 / 5", 
         "2 / 3 / 3 / 4",
         "Rarely used room of the GRS, near the crossroads of the dead. It has a stone table and benches as well as bars and a stage.", 
-        48.83643938442287,2.3267695721016945, 
+        48.83643938442287,
+        2.3267695721016945, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -569,7 +596,8 @@ export const roomInfos = [
         "5 / 4 / 6 / 5", 
         "3 / 7 / 4 / 8",
         "Former rest room of the cariers. Presents stacked bones and frescoes.",
-        48.83893422057103,2.3290317035734365, 
+        48.83893422057103,
+        2.3290317035734365, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -589,7 +617,8 @@ export const roomInfos = [
         "9 / 5 / 10 / 6", 
         "2 / 6 / 3 / 7",
         "Former air shelter dating from the second world war was intended for civilians. Higher ceiling than the Montparnasse shelter, it is not very frequented.", 
-        48.840891572885404,2.3342090494626033, 
+        48.840891572885404,
+        2.3342090494626033, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -609,7 +638,8 @@ export const roomInfos = [
         "7 / 5 / 8 / 6", 
         "3 / 3 / 4 / 4",
         "This room was connected to the surface by a spiral staircase whose height is indicated as 17.525 meters (measured in feet and then converted into meters). There is a graduated ladder accessible by a straight staircase as well as many frescoes",
-        48.84308518753105,2.3317100223529152, 
+        48.84308518753105,
+        2.3317100223529152, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -629,7 +659,8 @@ export const roomInfos = [
         "8 / 5 / 9 / 6",
         "2 / 4 / 3 / 5",
         "Room of rest arranged in height close to an old staircase of exit street notre dame des champs",
-        48.842624861698575,2.331867664996814, 
+        48.842624861698575,
+        2.331867664996814, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -649,7 +680,8 @@ export const roomInfos = [
         "8 / 5 / 9 / 6", 
         "2 / 8 / 3 / 9",
         "Fountain of the Carthusian monks where you can find a natural fountain and a well allowing to see the level of the water table. A plaque pays tribute to Parsek since 2021. Fountain made by the inspector Hericart de Thury at the beginning of the XIXth century, under the old domain of the Carthusian monks.", 
-        48.842567670617655,2.3350554913657717, 
+        48.842567670617655,
+        2.3350554913657717, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -669,7 +701,8 @@ export const roomInfos = [
         "8 / 6 / 9 / 7", 
         "2 / 1 / 3 / 2",
         "Small chapel with benches, candlesticks and altar. Close to the Anschluss Hall", 
-        48.843338854889964,2.3359327716820832, 
+        48.843338854889964,
+        2.3359327716820832, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -689,7 +722,8 @@ export const roomInfos = [
         "8 / 5 / 9 / 6", 
         "2 / 7 / 3 / 8",
         "The old Dibim room was rebuilt in the 2000s by motivated cataphiles. It took them almost a year to build the new room, which is distinguished by the unique rounded masonry in the network and a central step shaft.", 
-        48.842752565378426,2.3349867691353854, 
+        48.842752565378426,
+        2.3349867691353854, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -709,7 +743,8 @@ export const roomInfos = [
         "4 / 6 / 5 / 7", 
         "3 / 2 / 4 / 3",
         "This gallery, adorned with frescoes by Ecole des Mines students, is one of the habits and customs of their graduating classes. Every year (since 1992), fresco artists volunteer to prepare a piece of wall in honor of their class. It's usually finished before St Barbe's Day (December 4)", 
-        48.83221461553951,2.335474354130085, 
+        48.83221461553951,
+        2.335474354130085, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
@@ -729,7 +764,8 @@ export const roomInfos = [
         "", 
         "",
         "Small room with a starry moon and lots of musical instruments.", 
-        48.828411823947484,2.334492922140887, 
+        48.828411823947484,
+        2.334492922140887, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
             { x: 0, y:0, z: 0, label: "Test 2" }, 
