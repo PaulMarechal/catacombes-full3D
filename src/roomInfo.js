@@ -30,8 +30,8 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ], 
 
@@ -51,8 +51,8 @@ export const roomInfos = [
         2.357414410143055,
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ], 
 
@@ -72,8 +72,8 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
 
     ], 
@@ -94,8 +94,8 @@ export const roomInfos = [
         2.3641714716648465, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ], 
 
@@ -115,8 +115,8 @@ export const roomInfos = [
         "", 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ], 
 
@@ -137,8 +137,8 @@ export const roomInfos = [
         2.333002129805828, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, y:0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ],
 
@@ -158,8 +158,8 @@ export const roomInfos = [
         2.3365656121874823, 
         [
             { x: 0, y: 0, z: 0, label: "Test 1" },
-            { x: 0, 0, z: 0, label: "Test 2" }, 
-            { x:0, y:0, z: 0, label: "Test 3" }
+            { x: 0, y: 0, z: 0, label: "Test 2" }, 
+            { x:0, y: 0, z: 0, label: "Test 3" }
         ]
     ], 
 
