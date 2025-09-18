@@ -513,6 +513,13 @@ template.innerHTML = `
             display: none; 
         }
 
+        #signature_menu{    
+            position: absolute !important;
+            bottom: 4px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
         /* Portrait - jusqu'au 14 Pro Max inclus (430px) */
         @media (max-width: 432px) and (orientation: portrait) {
             .display_div_menu_mobile{
@@ -599,6 +606,8 @@ template.innerHTML = `
                 max-height: 14vh;
                 padding: 8px 12px calc(env(safe-area-inset-bottom, 0px) + 8px);
             }
+
+            #signature_menu{display: none;}
         }
     </style>
 
@@ -694,6 +703,9 @@ template.innerHTML = `
             <!--
             <p class="" title="N'hésitez pas à me contacter">Contact</p>
             -->
+            <p id="signature_menu">
+                Réalisé par <a href="https://devxr.fr" target="_blank" rel="noopener noreferrer">DevXR</a> ©
+            </p>
         </div>
             
         <div id="display_share_mobile_menu">

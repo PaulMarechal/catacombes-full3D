@@ -30,7 +30,7 @@ export const roomInfos = [
         "", 
         [
             { x: -0.96, y: 0.48, z: 0.9, label: "Sur les marches etaient exposes des echantillons de roche, sur les contre-marches etaient indiques la couche geologique et la hauteur reelle de celle-ci." },
-            { x: 1.35, y: 1.9, z: 0.38, label: "Au plafond, une orse des vents peinte au noir animal indique les quatre points cardinaux." }, 
+            { x: 1.35, y: 1.9, z: 0.38, label: "Au plafond, une rose des vents peinte au noir animal indique les quatre points cardinaux." }, 
         ]
     ], 
 
@@ -110,7 +110,7 @@ export const roomInfos = [
         "", 
         "", 
         [
-            { x: 1.7, y: 0.7, z: 2, label: "Au plafond, une orse des vents peinte au noir animal indique les quatre points cardinaux." }, 
+            { x: 1.7, y: 0.7, z: 2, label: "Au plafond, une rose des vents peinte au noir animal indique les quatre points cardinaux." }, 
             { x: -1.74, y: 0, z: 1.26, label: "ECHANTILLONS DES BANCS DE TERRE DE PUIS LA SURFACE DU SOL JUSQUES AU BANC DE ROCHE " }, 
             { x:-2, y: 0.2, z: 0.8, label: "- TERRE VEGETALE\n- ARGILE SABLEUSE\n- SABLE QUARTZEUZ\n- SABLE QUARTZEUX\n- GRAVIER QUARTZEUX\n- M DURE COMPACTE" }, 
             { x:-2.1, y: -0.2, z: 0.5, label: "HAUTEUR 14 METRES 37 CENTIMETRES (OU 44 PIEDS 3 POUCES)" }, 

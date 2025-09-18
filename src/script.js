@@ -230,9 +230,9 @@ function init(nameRoom, nameRoom_opt) {
 		camera.position.set( -0.9, 11, 0 );
 		// Position de la scène selon l'orientation (portrait = plus proche)
 		if (window.matchMedia("(orientation: portrait)").matches) {
-			scene.position.set(0, -0.3, -0.9);
+			scene.position.set(0.6, -0.3, -1.05);
 		} else {
-			scene.position.set(0, -0.3, -1.6);
+			scene.position.set(0, -0.3, -1.2);
 		}
 
 		if (window.matchMedia("(orientation: portrait)").matches) {
@@ -273,12 +273,13 @@ function init(nameRoom, nameRoom_opt) {
 				document.querySelector(".displayMobile").style.zIndex = "10";
 				document.querySelector(".displayMobile").style.background = "#ffffff";
 				document.querySelector(".displayMobile").style.borderRadius = "15px";
+
 				// Après le tween, reculer la caméra en portrait mobile
 				if (tweenFinished) {
 					const p = getEndCameraPosition();
 					camera.position.set(p.x, p.y, p.z);
 					// Adapter la position de la scène en portrait
-					scene.position.set(0, -0.3, -0.9);
+					scene.position.set(0.6, -0.3, -1.05);
 				}
 			} else if (orientation === 90 || orientation === -90) {
 				// L'appareil est en mode paysage
@@ -300,12 +301,12 @@ function init(nameRoom, nameRoom_opt) {
 	}
 
 	// const titleFolder = gui.addFolder('Container')
-    // titleFolder.add(camera.position, 'x', -30, 30)
-    // titleFolder.add(camera.position, 'y', -30, 30)
-    // titleFolder.add(camera.position, 'z', -30, 30)
-    // titleFolder.add(camera.rotation, 'x', -30, 30)
-    // titleFolder.add(camera.rotation, 'y', -30, 30)c
-    // titleFolder.add(camera.rotation, 'z', -30, 30)
+    // titleFolder.add(scene.position, 'x', -30, 30)
+    // titleFolder.add(scene.position, 'y', -30, 30)
+    // titleFolder.add(scene.position, 'z', -30, 30)
+    // titleFolder.add(scene.rotation, 'x', -30, 30)
+    // titleFolder.add(scene.rotation, 'y', -30, 30)
+    // titleFolder.add(scene.rotation, 'z', -30, 30)
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
