@@ -46,7 +46,7 @@ let uiContainer = null;
 
 const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-const XR_HEIGHT_OFFSET = 0.4; // lower the rig ~40cm in VR
+const XR_HEIGHT_OFFSET = 0.4; 
 
 const xrControllers = [null, null];
 const xrControllerModelFactory = new XRControllerModelFactory();
@@ -615,44 +615,44 @@ function init(nameRoom, nameRoom_opt) {
 
 
 function setupXRControllers() {
-  for (let i = 0; i < 2; i++) {
-    // Raw target-ray controller (button events originate here)
-    const c = renderer.xr.getController(i);
-    if (c && xrControllers[i] !== c) {
-      xrControllers[i] = c;
+	for (let i = 0; i < 2; i++) {
+		// Raw target-ray controller (button events originate here)
+		const c = renderer.xr.getController(i);
+		if (c && xrControllers[i] !== c) {
+			xrControllers[i] = c;
 
-      // Visible laser pointer
-      let laser = c.getObjectByName('xrLaser');
-      if (!laser) {
-        const geom = new THREE.BufferGeometry().setFromPoints([
-          new THREE.Vector3(0, 0, 0),
-          new THREE.Vector3(0, 0, -1)
-        ]);
-        const mat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.9 });
-        laser = new THREE.Line(geom, mat);
-        laser.name = 'xrLaser';
-        laser.frustumCulled = false;
-        laser.scale.z = 3; // default length
-        c.add(laser);
-      }
+			// Visible laser pointer
+			let laser = c.getObjectByName('xrLaser');
+			if (!laser) {
+				const geom = new THREE.BufferGeometry().setFromPoints([
+				new THREE.Vector3(0, 0, 0),
+				new THREE.Vector3(0, 0, -1)
+				]);
+				const mat = new THREE.LineBasicMaterial({ transparent: true, opacity: 0.9 });
+				laser = new THREE.Line(geom, mat);
+				laser.name = 'xrLaser';
+				laser.frustumCulled = false;
+				laser.scale.z = 3; // default length
+				c.add(laser);
+			}
 
-      // Selection events from trigger
-      c.addEventListener('selectstart', () => { selectState = true; });
-      c.addEventListener('selectend', () => { selectState = false; });
+			// Selection events from trigger
+			c.addEventListener('selectstart', () => { selectState = true; });
+			c.addEventListener('selectend', () => { selectState = false; });
 
-      // Parent to rig if possible
-      if (xrRig) xrRig.add(c); else scene.add(c);
-    }
+			// Parent to rig if possible
+			if (xrRig) xrRig.add(c); else scene.add(c);
+    	}
 
-    // Controller grip with a model (visual controller in VR)
-    const grip = renderer.xr.getControllerGrip(i);
-    if (grip && xrGrips[i] !== grip) {
-      xrGrips[i] = grip;
-      const model = xrControllerModelFactory.createControllerModel(grip);
-      grip.add(model);
-      if (xrRig) xrRig.add(grip); else scene.add(grip);
-    }
-  }
+		// Controller grip with a model (visual controller in VR)
+		const grip = renderer.xr.getControllerGrip(i);
+		if (grip && xrGrips[i] !== grip) {
+			xrGrips[i] = grip;
+			const model = xrControllerModelFactory.createControllerModel(grip);
+			grip.add(model);
+			if (xrRig) xrRig.add(grip); else scene.add(grip);
+		}
+	}
 }
 
 // Place the user right in front of the ThreeMeshUI panel when entering VR
@@ -678,7 +678,6 @@ function placeRigInFrontOfPanel(distance = 0.85) {
 
   // Initial placement (approx)
   xrRig.position.copy(target);
-  xrRig.position.y -= XR_HEIGHT_OFFSET; // keep the slightly-lower eye level you wanted
   xrRig.rotation.set(0, yaw, 0);
 
   // Refine after WebXR applies the first HMD pose
@@ -750,8 +749,19 @@ renderer.xr.addEventListener('sessionstart', () => {
 		vrControl.controllers.forEach((c) => { if (c && c.parent !== xrRig) xrRig.add(c); });
 	}
 
-	xrRig.position.y -= XR_HEIGHT_OFFSET; // lower the whole rig slightly
 	setupXRControllers(); // ensure visible lasers & events
+
+  // Some runtimes populate controllers shortly after sessionstart; try again
+  setTimeout(() => {
+    setupXRControllers();
+    ensureXRControllerConnections();
+    for (let i = 0; i < 2; i++) {
+      const c = renderer.xr.getController(i);
+      if (!c) continue;
+      const laser = c.getObjectByName('xrLaser');
+      if (laser) laser.scale.z = 3;
+    }
+  }, 100);
 
 	// Show the 3D UI in VR
 	if (uiContainer) uiContainer.visible = true;
@@ -818,6 +828,7 @@ renderer.xr.addEventListener('sessionend', () => {
 			}
 		}
 		setupXRControllers(); // also set up pointers outside session to be ready
+    ensureXRControllerConnections();
 	});
 
 
@@ -1467,6 +1478,23 @@ function removeVRButton(){
       }
     }).catch(() => {/* ignore */});
   }
+}
+
+function ensureXRControllerConnections() {
+	for (let i = 0; i < 2; i++) {
+		const c = renderer.xr.getController(i);
+		if (!c) continue;
+		// (Re)setup when controllers connect to avoid timing issues
+		c.addEventListener('connected', () => {
+			setupXRControllers();
+			const laser = c.getObjectByName('xrLaser');
+			if (laser) laser.scale.z = 3; 
+		});
+		c.addEventListener('disconnected', () => {
+			const laser = c.getObjectByName('xrLaser');
+			if (laser) laser.scale.z = 0; 
+		});
+	}
 }
 
 console.log("Developed with 🍔 by Paul Maréchal")
