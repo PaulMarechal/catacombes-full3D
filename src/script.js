@@ -675,7 +675,8 @@ function placeRigInFrontOfPanel(distance = 0.85) {
   // Keep current eye height (don't inherit panel Y)
   const _eye = new THREE.Vector3();
   camera.getWorldPosition(_eye);
-  target.y = (Number.isFinite(_eye.y * 2) ? _eye.y : 1.6);
+  console.log(_eye)
+  target.y = (Number.isFinite(_eye.y * 2) ? _eye.y : 1.6*2);
 
   // Compute yaw so the rig faces the panel
   const toPanel = _panelPos.clone().sub(target);
@@ -683,6 +684,7 @@ function placeRigInFrontOfPanel(distance = 0.85) {
 
   // Initial placement (approx)
   console.log(target.y)
+  target.y = 1.1
 
   xrRig.position.copy(target);
   xrRig.rotation.set(0, yaw, 0);
@@ -702,27 +704,27 @@ function placeRigInFrontOfPanel(distance = 0.85) {
 const _tmpPanelPos = new THREE.Vector3();
 const _tmpCamPos = new THREE.Vector3();
 function orientOnlyYawTowardsCamera(obj) {
-  if (!obj) return;
-  obj.getWorldPosition(_tmpPanelPos);
-  camera.getWorldPosition(_tmpCamPos);
-  const toCam = _tmpCamPos.clone().sub(_tmpPanelPos);
-  const yaw = Math.atan2(toCam.x, toCam.z);
-  obj.rotation.set(0, yaw, 0); // on garde le panneau droit (pas d'inclinaison)
+	if (!obj) return;
+	obj.getWorldPosition(_tmpPanelPos);
+	camera.getWorldPosition(_tmpCamPos);
+	const toCam = _tmpCamPos.clone().sub(_tmpPanelPos);
+	const yaw = -1.9
+	obj.rotation.set(0, yaw, 0); // on garde le panneau droit (pas d'inclinaison)
 }
 function showTextPanelInVR() {
-  let tries = 0;
-  const maxTries = 20; // ~2s
-  const tick = () => {
-    const panel = scene.getObjectByName('boxContainer');
-    if (panel) {
-      panel.visible = true;
-      orientOnlyYawTowardsCamera(panel);
-    } else if (tries < maxTries) {
-      tries++;
-      setTimeout(tick, 100);
-    }
-  };
-  tick();
+	let tries = 0;
+	const maxTries = 20; // ~2s
+	const tick = () => {
+		const panel = scene.getObjectByName('boxContainer');
+		if (panel) {
+			panel.visible = true;
+			orientOnlyYawTowardsCamera(panel);
+		} else if (tries < maxTries) {
+			tries++;
+			setTimeout(tick, 100);
+		}
+	};
+	tick();
 }
 
 renderer.xr.addEventListener('sessionstart', () => {
