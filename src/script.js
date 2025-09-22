@@ -669,14 +669,21 @@ function placeRigInFrontOfPanel(distance = 0.85) {
   // Panel forward in world space (its +Z)
   const forward = _panelFwd.clone().applyQuaternion(_panelQuat).normalize();
 
+  console.log(forward)
   // Target eye position is a bit in front of the panel, centered
   const target = _panelPos.clone().add(forward.multiplyScalar(distance));
+  // Keep current eye height (don't inherit panel Y)
+  const _eye = new THREE.Vector3();
+  camera.getWorldPosition(_eye);
+  target.y = (Number.isFinite(_eye.y * 2) ? _eye.y : 1.6);
 
   // Compute yaw so the rig faces the panel
   const toPanel = _panelPos.clone().sub(target);
   const yaw = Math.atan2(toPanel.x, toPanel.z);
 
   // Initial placement (approx)
+  console.log(target.y)
+
   xrRig.position.copy(target);
   xrRig.rotation.set(0, yaw, 0);
 
