@@ -232,7 +232,7 @@ export const roomInfos = [
         48.82653075539447,
         2.32962129709704, 
         [
-            { x: 1.1, y: .1, z: 0.7, label: "'8.K' veut dire Pillier numero 8 de la galerie (ou section) K, marque lors des grands travaux de consolidation au debut du XIXe siecle." },
+            { x: 1.1, y: .1, z: 0.7, label: "'8.K' veut dire consolidation numero 8 de la galerie par l'inspecteur François Octave Keller, cela marque lors des grands travaux de consolidation au debut du XIXe siecle." },
         ]
     ],
 
@@ -251,7 +251,7 @@ export const roomInfos = [
         48.82801072038578,
         2.3344451758380558, 
         [
-            { x: 3.5, y: -0.1, z: -2.46, label: "'33.T' veut dire Pilier numero 33 de la galerie T" },
+            { x: 3.5, y: -0.1, z: -2.46, label: "'33.T' veut dire Pilier numero 33 inspecte par Jean Tremery (1831-1842)" },
             { x: 0.8, y:0, z: -0.5, label: "Ancienne fresque de Psychose (realise en 2012 - https://streep.fr/2020/01/09/video-une-journee-avec-psy/#jp-carousel-11797 )" }, 
         ]
     ],
@@ -292,7 +292,7 @@ export const roomInfos = [
         48.843876169264966,
         2.3392696263934276, 
         [
-            { x: 0, y: 0, z: 2, label: "'I HT 1812' Signifie Travaux de chantier numero 1, realises sous Hericart de Thury en 1810. " },
+            { x: 0, y: 0, z: 2, label: "'I HT 1812' Signifie Travaux de chantier numero 1, realises sous Louis-Etienne Hericart de Thury en 1810. " },
             { x: 1.5, y: 0.4, z: -2.7, label: "'6 G 1871' 1781 est l'annee de creation de l'inspection des carrieres de Paris (par decret royal après l'effondrement de la rue d'Enfer en 1774). Date de consolidation initiale et 6G designe du repere de pilier ou galerie et non pas une date du calendrier revolutionnaire car instaure en 1793 (puis oboli en 1806)." }, 
             { x:1.9, y: 0.1, z: 0.9, label: "A LA MEMOIRE DE PHILIBERT ASPAIRT PERDU DANS CETTE CARRIERE LE III NOVREMBRE MDCCXCIII (1793), RETROUVE ONZE AND APRES ET INHUME EN LA MEME PLACE LE XXX AVRIL MDCCCIV (30 avril 1804)." }, 
             { x: -0.6, y: 0.4, z: -2.7, label: "RUE D'ENFER SOUS LE MUR DES CHARTREUX" },
@@ -315,8 +315,8 @@ export const roomInfos = [
         "",
         "", 
         [
-            { x: -1.4, y: 0, z: 3.42, label: "'17.T' veut dire consolidation numero 17 de la galerie T" },
-            { x: 0, y:0, z: 0, label: "'22.T' veut dire consolidation numero 22 de la galerie T" }, 
+            { x: -1.4, y: 0, z: 3.42, label: "'17.T' veut dire consolidation numero 17 de la galerie par l'inspecteur Jean Tremery (1831-1842)" },
+            { x: 0, y:0, z: 0, label: "'22.T' veut dire consolidation numero 22 de la galerie par l'inspecteur Jean Tremery (1831-1842)" }, 
         ]
     ], 
 
