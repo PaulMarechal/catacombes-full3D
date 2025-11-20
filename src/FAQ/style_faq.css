@@ -156,10 +156,21 @@ details[open] .faq-toggle-icon {
 }
 
 .faq-answer {
-    padding: 0 18px 16px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
     font-size: 0.95rem;
     line-height: 1.7;
     color: #d4d4d4;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+details[open] .faq-answer {
+    max-height: 520px; /* suffisamment grand pour le contenu typique */
+    padding-top: 0;
+    padding-bottom: 16px;
+    opacity: 1;
 }
 
 .faq-answer p {
@@ -299,9 +310,11 @@ details[open] .faq-toggle-icon {
     summary.faq-question {
         padding: 14px 14px;
     }
+
     .faq-answer {
-        padding: 0 14px 14px;
+        padding: 0 14px;
     }
+
     .faq-bento-card .faq-section-title {
         padding: 0 14px;
     }
