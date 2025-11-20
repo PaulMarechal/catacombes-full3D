@@ -92,7 +92,7 @@ template.innerHTML = `
         .parent_header_menu {
             display: grid;
             z-index:999;
-            grid-template-columns: repeat(2, 1fr) repeat(5, 0.7fr ) repeat(4, 1fr) repeat(2, 0.6fr) 0.1fr;
+            grid-template-columns: repeat(2, 1fr) repeat(6, 0.7fr ) repeat(3, 1fr) repeat(2, 0.6fr) 0.1fr;
             grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
@@ -127,6 +127,7 @@ template.innerHTML = `
         .histoire_div_header_menu { grid-area: 1 / 4 / 2 / 5;}
         .images_div_header_menu { grid-area: 1 / 5 / 2 / 6; }
         .plan_div_header_menu { grid-area: 1 / 6 / 2 / 7; }
+        .faq_div_header_menu { grid-area: 1 / 8 / 2 / 9; }
         .tracts_div_header_menu {grid-area: 1 / 7 / 2 / 8; }
         .partager_div_header_menu {grid-area: 1 / 12 / 2 / 13; }
         .contact_div_header_menu {grid-area: 1 / 13 / 2 / 14; }
@@ -633,6 +634,9 @@ template.innerHTML = `
         </div>
         <div class="tracts_div_header_menu display_center">
             <a href="../Cards/" class="link_style_header_menu" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+        </div>
+        <div class="faq_div_header_menu display_center">
+            <a href="../FAQ/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">FAQ</a>
         </div>
         <div class="partager_div_header_menu display_center">
             <p class="link_style_header_menu" title="Partager cette page sur differentes plateformes">Partager</p>
