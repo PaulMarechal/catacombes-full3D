@@ -118,6 +118,46 @@ export const roomInfos = [
         ]
     ], 
 
+    // PTT
+    [
+        "PTT", 
+        "PTT",
+        "La salle PTT est l’une des plus grandes salles du 13e. Elle est a l’origine un abri anti-atomique pour les Postes Telegraphes et Telephones. Son architecture massive et son grand escalier renforcent son cote militaire. Il reste encore les portes blindees a volant, intactes, qui permettent d’acceder aux sous-sols de l’ancienne Poste de place d’Italie. La salle, longtemps scellee, a ete rouverte en aout 1998 grace a Vax et son groupe.",
+        "21 Avenue d'Italie, \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/PTT/3D", 
+        "Maison Blanche", 
+        "0 / 0 / 0 / 0", 
+        "0 / 0 / 0 / 0",
+        "The PTT room is one of the largest rooms in the 13th arrondissement. It was originally a nuclear shelter for the Post Office. Its massive architecture and grand staircase reinforce its military character. The reinforced doors with handles are still intact, providing access to the basements of the former Post Office on Place d'Italie. The hall, which had been sealed for a long time, was reopened in August 1998 thanks to Vax and his group.", 
+        48.8250617980957,
+        2.3576183319091797, 
+        [
+            // { x:0, y: 0, z: 0, label: "" } 
+           
+        ]
+    ], 
+
+    // Sauna
+    [
+        "Sauna", 
+        "Sauna",
+        "Cette salle a ete baptisee ainsi dans les annees 1990 en raison d’une importante fuite de chauffage urbain (CPCU). L’air y etait tres chaud et charge d’humidite, ce qui lui donnait une atmosphere de sauna.",
+        "173 Boulevard Vincent Auriol, \n   75013 Paris", 
+        " 20m",
+        "https://catacombes.xyz/Sauna/3D", 
+        "Gare", 
+        "0 / 0 / 0 / 0", 
+        "0 / 0 / 0 / 0",
+        "This room was named in the 1990s due to a major district heating leak (CPCU). The air was very hot and humid, giving it the atmosphere of a sauna.", 
+        48.83332824707031,
+        2.36362361907959, 
+        [
+            // { x:0, y: 0, z: 0, label: "" } 
+           
+        ]
+    ], 
+
     // XIV arrondissement
     // Kraken
     [
