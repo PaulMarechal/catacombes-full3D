@@ -143,15 +143,15 @@ export const roomInfos = [
         "Sauna", 
         "Sauna",
         "Cette salle a ete baptisee ainsi dans les annees 1990 en raison d’une importante fuite de chauffage urbain (CPCU). L’air y etait tres chaud et charge d’humidite, ce qui lui donnait une atmosphere de sauna.",
-        "173 Boulevard Vincent Auriol, \n   75013 Paris", 
+        "201 rue du Chateau des Rentiers, \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Sauna/3D", 
         "Gare", 
         "0 / 0 / 0 / 0", 
         "0 / 0 / 0 / 0",
         "This room was named in the 1990s due to a major district heating leak (CPCU). The air was very hot and humid, giving it the atmosphere of a sauna.", 
-        48.83332824707031,
-        2.36362361907959, 
+        48.831835406535966,
+        2.360030900279848, 
         [
             // { x:0, y: 0, z: 0, label: "" } 
            
