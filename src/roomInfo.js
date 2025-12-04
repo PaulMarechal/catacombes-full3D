@@ -123,15 +123,15 @@ export const roomInfos = [
         "PTT", 
         "PTT",
         "La salle PTT est l’une des plus grandes salles du 13e. Elle est a l’origine un abri anti-atomique pour les Postes Telegraphes et Telephones. Son architecture massive et son grand escalier renforcent son cote militaire. Il reste encore les portes blindees a volant, intactes, qui permettent d’acceder aux sous-sols de l’ancienne Poste de place d’Italie. La salle, longtemps scellee, a ete rouverte en aout 1998 grace a Vax et son groupe.",
-        "21 Avenue d'Italie, \n   75013 Paris", 
+        "179 Avenue de Choisy, \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/PTT/3D", 
         "Maison Blanche", 
         "0 / 0 / 0 / 0", 
         "0 / 0 / 0 / 0",
         "The PTT room is one of the largest rooms in the 13th arrondissement. It was originally a nuclear shelter for the Post Office. Its massive architecture and grand staircase reinforce its military character. The reinforced doors with handles are still intact, providing access to the basements of the former Post Office on Place d'Italie. The hall, which had been sealed for a long time, was reopened in August 1998 thanks to Vax and his group.", 
-        48.8250617980957,
-        2.3576183319091797, 
+        48.82877677506224,
+        2.357285945244616, 
         [
             // { x:0, y: 0, z: 0, label: "" } 
            
