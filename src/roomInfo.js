@@ -122,7 +122,7 @@ export const roomInfos = [
     [
         "PTT", 
         "PTT",
-        "La salle PTT est l’une des plus grandes salles du 13e. Elle est a l’origine un abri anti-atomique pour les Postes Telegraphes et Telephones. Son architecture massive et son grand escalier renforcent son cote militaire. Il reste encore les portes blindees a volant, intactes, qui permettent d’acceder aux sous-sols de l’ancienne Poste de place d’Italie. La salle, longtemps scellee, a ete rouverte en aout 1998 grace a Vax et son groupe.",
+        "La salle PTT est l'une des plus grandes salles du 13e. Elle est a l'origine un abri anti-atomique pour les Postes Telegraphes et Telephones. Son architecture massive et son grand escalier renforcent son cote militaire. Il reste encore les portes blindees a volant, intactes, qui permettent d'acceder aux sous-sols de l'ancienne Poste de place d'Italie. La salle, longtemps scellee, a ete rouverte en aout 1998 grace a Vax et son groupe.",
         "179 Avenue de Choisy, \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/PTT/3D", 
@@ -142,7 +142,7 @@ export const roomInfos = [
     [
         "Sauna", 
         "Sauna",
-        "Cette salle a ete baptisee ainsi dans les annees 1990 en raison d’une importante fuite de chauffage urbain (CPCU). L’air y etait tres chaud et charge d’humidite, ce qui lui donnait une atmosphere de sauna.",
+        "Cette salle a ete baptisee ainsi dans les annees 1990 en raison d'une importante fuite de chauffage urbain (CPCU). L'air y etait tres chaud et charge d'humidite, ce qui lui donnait une atmosphere de sauna.",
         "201 rue du Chateau des Rentiers, \n   75013 Paris", 
         " 20m",
         "https://catacombes.xyz/Sauna/3D", 
