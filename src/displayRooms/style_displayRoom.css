@@ -2,13 +2,15 @@
     width: 90%;
     max-width: 1750px;
     margin: 0 5%;
-    height: 100svh!important;
+    height: 93svh!important;
     position: absolute;
     scrollbar-color: transparent transparent;
     margin-top: 0em;
     padding-top: 11vh;
     overflow-y: scroll; 
     text-align: center; 
+    margin-top: 0svh;
+    padding-top: 5vh;
 }
 
 .displayRooms:after {

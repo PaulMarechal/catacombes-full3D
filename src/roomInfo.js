@@ -802,6 +802,25 @@ export const roomInfos = [
             // { x: 0, y: 0, z: 0, label: "" }
         ]
     ], 
+
+    // Soon
+    [
+        "Bientot", 
+        "Bientot",
+        "",
+        "", 
+        "",
+        "", 
+        "", 
+        "", 
+        "",
+        "", 
+        ,
+        , 
+        [
+            // { x: 0, y: 0, z: 0, label: "" }
+        ]
+    ], 
 ];
 
 // --- Helpers to use legacy positional arrays without rewriting them ---
