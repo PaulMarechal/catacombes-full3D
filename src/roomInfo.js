@@ -499,7 +499,8 @@ export const roomInfos = [
         2.3218771704832664, 
         [
             // { x: 0, y: 0, z: 0, label: "" }
-        ]
+        ], 
+
     ],
 
     // Cellier
@@ -518,7 +519,24 @@ export const roomInfos = [
         2.33076472851395, 
         [
             // { x: 0, y: 0, z: 0, label: "" },
-        ]
+        ], 
+        {
+            "active": "scan_2026", 
+            "versions": [
+                {
+                    "id": "scan_2023", 
+                    "label": "Scan original", 
+                    "date": "2023", 
+                    "glb": "https://catacombes.xyz/Cellier/Cellier.glb"
+                }, 
+                {
+                    "id": "scan_2026", 
+                    "label": "Nouveau scan", 
+                    "date": "2026", 
+                    "glb": "https://catacombes.xyz/Cellier/Cellier_v2.glb"
+                }
+            ]
+        }
     ],
 
     // Manoir
