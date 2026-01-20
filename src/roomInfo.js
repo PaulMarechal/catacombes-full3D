@@ -558,6 +558,25 @@ export const roomInfos = [
         ]
     ], 
 
+    // Arenes
+    [
+        "Arenes", 
+        "Arenes", 
+        "",
+        "36 Rue Rémy Dumoncel, \n   75014 Paris", 
+        " 20m", 
+        "https://catacombes.xyz/Arenes/3D", 
+        "Petit Montrouge", 
+        "", 
+        "",
+        "", 
+        48.8297762,
+        2.3306567, 
+        [
+            // { x: 0, y: 0, z: 0, label: "" },
+        ]
+    ], 
+
     // Atlas
     [
         "Atlas", 
