@@ -183,7 +183,7 @@
 <url>
   <loc>https://catacombes.xyz/3D/?room=Cellier</loc>
   <changefreq>monthly</changefreq>
-  <lastmod>2025-12-05</lastmod>
+  <lastmod>2026-01-21</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -268,15 +268,24 @@
 <url>
   <loc>https://catacombes.xyz/3D/?room=PTT</loc>
   <changefreq>monthly</changefreq>
-  <lastmod>2025-12-05</lastmod>
+  <lastmod>2026-01-21</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
   <loc>https://catacombes.xyz/3D/?room=Sauna</loc>
   <changefreq>monthly</changefreq>
-  <lastmod>2025-12-05</lastmod>
+  <lastmod>2026-01-21</lastmod>
   <priority>0.80</priority>
 </url>
+
+<url>
+  <loc>https://catacombes.xyz/3D/?room=Arenes</loc>
+  <changefreq>monthly</changefreq>
+  <lastmod>2026-01-21</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 
 </urlset>
