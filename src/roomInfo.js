@@ -563,7 +563,7 @@ export const roomInfos = [
         "Arenes", 
         "Arenes", 
         "",
-        "36 Rue Rémy Dumoncel, \n   75014 Paris", 
+        "36 Rue Remy Dumoncel, \n   75014 Paris", 
         " 20m", 
         "https://catacombes.xyz/Arenes/3D", 
         "Petit Montrouge", 
