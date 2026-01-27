@@ -616,7 +616,7 @@ template.innerHTML = `
     <div id="desktop_menu" class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span>  DE PARIS</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span> PARIS</span></h1>
             </a>
         </div>
         <div class="div_logo_box"></div>
@@ -656,7 +656,7 @@ template.innerHTML = `
     <div id="mobile_menu">
         <div class="logo_div_header_menu_mobile">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span>  DE PARIS</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span> PARIS</span></h1>
             </a>
         </div>
         <div id="burger_menu_mobile">

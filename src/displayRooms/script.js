@@ -190,16 +190,16 @@ function initializeRooms() {
 
 document.addEventListener("DOMContentLoaded", initializeRooms);
 
-const langBtn = document.querySelector("#language_site");
-langBtn.addEventListener("click", () => {
-    // Toggle target language label first
-    CURRENT_LANG = (langBtn.innerText === "FR") ? "EN" : "FR";
-    langBtn.innerText = CURRENT_LANG;
+// const langBtn = document.querySelector("#language_site");
+// langBtn.addEventListener("click", () => {
+//     // Toggle target language label first
+//     CURRENT_LANG = (langBtn.innerText === "FR") ? "EN" : "FR";
+//     langBtn.innerText = CURRENT_LANG;
 
-    // Update all room texts
-    document.querySelectorAll(".textRoom_new").forEach((p) => {
-        const idx = Number(p.dataset.roomIndex);
-        const room = roomsParsed[idx];
-        if (room) p.textContent = getRoomText(room);
-    });
-});
+//     // Update all room texts
+//     document.querySelectorAll(".textRoom_new").forEach((p) => {
+//         const idx = Number(p.dataset.roomIndex);
+//         const room = roomsParsed[idx];
+//         if (room) p.textContent = getRoomText(room);
+//     });
+// });
