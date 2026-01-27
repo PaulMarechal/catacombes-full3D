@@ -616,24 +616,24 @@ template.innerHTML = `
     <div id="desktop_menu" class="parent_header_menu">
         <div class="logo_div_header_menu">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes Interdites"><b>Catacombes</b> <span>  INTERDITES</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span>  DE PARIS</span></h1>
             </a>
         </div>
         <div class="div_logo_box"></div>
         <div class="salles_div_header_menu display_center">
-            <a href="../displayRooms/" class="link_style_header_menu" title="Affiche l'ensemble des salles des catacombes et leurs infos">Salles</a>
+            <a href="../displayRooms/" class="link_style_header_menu" title="Salles des Catacombes de Paris en 3D : liste et recherche">Salles</a>
         </div>
         <div class="histoire_div_header_menu display_center">
-            <a href="../Histoire/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Histoire</a>
+            <a href="../Histoire/" class="link_style_header_menu" title="Histoire des Catacombes de Paris et du réseau souterrain">Histoire</a>
         </div>
         <div class="images_div_header_menu display_center">
-            <a href="../Images/" class="link_style_header_menu" title="Aller vers la page Photos des catacombes">Images</a>
+            <a href="../Images/" class="link_style_header_menu" title="Photos des Catacombes de Paris : galerie d’images du réseau souterrain">Images</a>
         </div>
         <div class="plan_div_header_menu display_center">
-            <a href="../Map/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">Plan</a>
+            <a href="../Map/" class="link_style_header_menu" title="Carte 3D des Catacombes de Paris : plan interactif du réseau souterrain">Plan</a>
         </div>
         <div class="tracts_div_header_menu display_center">
-            <a href="../Cards/" class="link_style_header_menu" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">Cartes</a>
+            <a href="../Cards/" class="link_style_header_menu" title="Cartes NFC & tracts en réalité augmentée (AR)">Cartes</a>
         </div>
         <div class="faq_div_header_menu display_center">
             <a href="../FAQ/" class="link_style_header_menu" title="Affiche les salles des catacombes sur une carte">FAQ</a>
@@ -656,7 +656,7 @@ template.innerHTML = `
     <div id="mobile_menu">
         <div class="logo_div_header_menu_mobile">
             <a href="/" class="link_style_header_menu" title="Retourner sur la homepage">
-                <h1 id="main_title_catacombes" title="Catacombes Interdites"><b>Catacombes</b> <span>  INTERDITES</span></h1>
+                <h1 id="main_title_catacombes" title="Catacombes de Paris"><b>Catacombes</b> <span>  DE PARIS</span></h1>
             </a>
         </div>
         <div id="burger_menu_mobile">
@@ -674,27 +674,27 @@ template.innerHTML = `
                 <span>Home</span>
             </a>
 
-            <a href="../displayRooms/" class="display_rooms_mobile_menu elem_menu_mobile" title="Affiche l'ensemble des salles des catacombes et leurs infos">
+            <a href="../displayRooms/" class="display_rooms_mobile_menu elem_menu_mobile" title="Salles des Catacombes de Paris en 3D : liste et recherche">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-building-arch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l18 0" /><path d="M4 21v-15a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v15" /><path d="M9 21v-8a3 3 0 0 1 6 0v8" /></svg>
                 <span>Salles</span>
             </a>
 
-            <a href="../Histoire/" class="histoire_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">
+            <a href="../Histoire/" class="histoire_mobile_menu elem_menu_mobile" title="Histoire des Catacombes de Paris et du réseau souterrain">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></svg>
                 <span>Histoire</span>
             </a>
 
-            <a href="../Images/" class="image_mobile_menu elem_menu_mobile" title="Aller vers la page Photos des catacombes">
+            <a href="../Images/" class="image_mobile_menu elem_menu_mobile" title="Photos des Catacombes de Paris : galerie d’images du réseau souterrain">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-photo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01" /><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /><path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
                 <span>Photos</span>
             </a>
 
-            <a href="../Map/" class="map_mobile_menu elem_menu_mobile" title="Affiche les salles des catacombes sur une carte">
+            <a href="../Map/" class="map_mobile_menu elem_menu_mobile" title="Carte 3D des Catacombes de Paris : plan interactif du réseau souterrain">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /><path d="M9 4v13" /><path d="M15 7v13" /></svg>
                 <span>Plan</span>
             </a>
 
-            <a href="../Cards/" class="cards_mobile_menu elem_menu_mobile" title="Aller vers la page qui affiche les tracts en realite virtuelle des catacombes interdites">
+            <a href="../Cards/" class="cards_mobile_menu elem_menu_mobile" title="Cartes NFC & tracts en réalité augmentée (AR)">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cards"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /><path d="M15 4h1a1 1 0 0 1 1 1v3.5" /><path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
                 <span>Tracts</span>
             </a>
@@ -724,7 +724,7 @@ template.innerHTML = `
 
                 <div class="div_twitter_share_links" title="Partager sur Twitter | X">
                     <!-- Bouton de partage Twitter / X -->
-                    <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share" title="Partager sur Twitter | X">
+                    <a href="https://twitter.com/intent/tweet?url=https://catacombes.xyz&text=Découvre%20le%20réseau%20souterrain%20de%20Paris%20en%203D%20:%20" class="link_twitter" target="_blank" rel="noopener noreferrer" data-action="share/twitter-x/share" title="Partager sur Twitter | X">
                         <svg class="icon icon-tabler icon-tabler-brand-x" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
                         <p>X</p>
                         </a>
@@ -732,7 +732,7 @@ template.innerHTML = `
 
                 <div class="div_sms_ios_share_link" title="Partager par SMS">
                     <!-- Bouton de partage via SMS IOS-->
-                    <a href="sms:&body=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%0Ahttps://catacombes.xyz" class="link_message_ios" target="_blank" rel="noopener noreferrer" data-action="share/sms/share" title="Partager par SMS">
+                    <a href="sms:&body=Découvre%20le%20réseau%20souterrain%20de%20Paris%20en%203D%20:%0Ahttps://catacombes.xyz" class="link_message_ios" target="_blank" rel="noopener noreferrer" data-action="share/sms/share" title="Partager par SMS">
                         <svg class="icon icon-tabler icon-tabler-message-circle-2" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" /></svg>
                         <p>SMS</p>
                     </a>
@@ -740,7 +740,7 @@ template.innerHTML = `
 
                 <div class="div_whatsapp_share_link" title="Partager sur WhatsApp">
                     <!-- Bouton de partage via WhatsApp-->
-                    <a href="https://api.whatsapp.com/send?text=Visite%20les%20catacombes%20interdites%20depuis%20ton%20salon%20en%203D%20/%20AR%20/%20VR%20:%20https://catacombes.xyz" target="_blank" rel="noopener noreferrer" title="Partager avec WhatsApp">
+                    <a href="https://api.whatsapp.com/send?text=Découvre%20le%20réseau%20souterrain%20de%20Paris%20en%203D%20:%20https://catacombes.xyz" target="_blank" rel="noopener noreferrer" title="Partager avec WhatsApp">
                         <svg class="icon icon-tabler icon-tabler-brand-whatsapp" width="35" height="35" viewBox="0 0 24 24" stroke-width=".5" stroke="#FFF" fill="#c5c5c5" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
@@ -776,7 +776,7 @@ template.innerHTML = `
         </div>
         <div class="infos_to_display_div" id="images_infos_div">
             <div>
-                <p>Découvrez des images des catacombes interdites de Paris mais aussi d'anciennes carrières en France ou ailleurs. </p>
+                <p>Découvrez des images du réseau souterrain de Paris et d'anciennes carrières en France ou ailleurs.</p>
             </div>
             <div>
                 Images des carrieres 
@@ -784,7 +784,7 @@ template.innerHTML = `
         </div>
         <div class="infos_to_display_div" id="plan_infos_div">
             <div>
-                <p>Découvrez les l'emplacement des salles emblématiques des catacombes interdites dans Paris</p>
+                <p>Découvrez l'emplacement de salles modélisées sur la carte 3D du réseau souterrain de Paris</p>
             </div>
             <div>
                 Image du plan de paris
