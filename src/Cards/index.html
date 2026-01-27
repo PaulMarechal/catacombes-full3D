@@ -28,26 +28,25 @@
     <script type="module" src="./script.js"></script>
     <meta name="googlebot" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Cartes NFC des Catacombes interdites | Tracts AR & QR | Catacombes.xyz</title>
-    <meta name="keywords" content="carte catacombes, Paris catacombes, plans Ktas images, images katas, plans catas images, catacombes illegales plan images, catacombes interdites carte images, catacombes paris carte, plan carrieres images, plan grs, carte GRS, explo, three.js, developper, web, carte catacombes, VR, Three.js, Three, JS, HTML, CSS, AR, Javascript, XR, Oculus quest 2, realite virtuelle, anschluss, cochon, salle des fetes, bureau du centre, fontaine des chartreux, faco, bar des rats, bocal, cabi-bis, la plage, soleil, cinema, tracts catacombes, track catas">    
-    <meta name="description" content="Découvrez les cartes NFC et tracts des Catacombes interdites : scannez une carte pour faire apparaître une salle en réalité augmentée. Explications, exemples et visuels des cartes AR et QR de Catacombes.xyz.">
-    <meta itemprop="name" content="Cartes NFC et tracts AR des Catacombes interdites">
-    <meta itemprop="description" content="Cartes NFC et tracts des Catacombes interdites de Paris : support physique permettant d'afficher des salles en réalité augmentée directement sur la carte.">
+    <title>Cartes NFC & tracts AR | Catacombes de Paris en 3D | Catacombes.xyz</title>
+    <meta name="keywords" content="cartes NFC, tracts AR, réalité augmentée, catacombes paris, catacombes paris 3D, réseau souterrain paris, patrimoine souterrain, carte catacombes paris">
+    <meta name="description" content="Découvrez les cartes NFC et tracts en réalité augmentée (AR) de Catacombes.xyz : scannez une carte pour visualiser une salle modélisée en 3D. Explications, exemples et visuels.">
+    <meta itemprop="name" content="Cartes NFC & tracts AR | Catacombes de Paris en 3D">
+    <meta itemprop="description" content="Cartes NFC et tracts AR : supports physiques permettant d'afficher des salles modélisées en réalité augmentée, dans une démarche de documentation patrimoniale.">
     <meta property="og:url" content="https://catacombes.xyz/Cards/">
-    <meta property="og:title" content="Cartes NFC des Catacombes interdites en réalité augmentée">
-    <meta property="og:description" content="Découvrez comment les cartes NFC et tracts des Catacombes interdites permettent de faire apparaître des salles en réalité augmentée sur la carte grâce à votre téléphone.">
+    <meta property="og:title" content="Cartes NFC & tracts AR | Catacombes de Paris en 3D">
+    <meta property="og:description" content="Cartes NFC et tracts AR : scannez une carte pour visualiser une salle modélisée en 3D en réalité augmentée. Explications et exemples sur Catacombes.xyz.">
     <meta property="og:image" content="https://catacombes.xyz/assets/images/1200x630_catacombes.jpg">
     <meta itemprop="image" content="https://catacombes.xyz/assets/images/1200x630_catacombes.jpg">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Catacombes.xyz">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cartes NFC des Catacombes interdites | Tracts AR & QR | Catacombes.xyz">
-    <meta name="twitter:description" content="Découvrez les cartes NFC et tracts des Catacombes interdites : scannez une carte pour afficher une salle en réalité augmentée directement sur son verso.">
+    <meta name="twitter:title" content="Cartes NFC & tracts AR | Catacombes de Paris en 3D | Catacombes.xyz">
+    <meta name="twitter:description" content="Cartes NFC et tracts AR : scannez une carte pour visualiser une salle 3D en réalité augmentée. Explications et exemples sur Catacombes.xyz.">
     <meta name="twitter:image" content="https://catacombes.xyz/assets/images/1200x630_catacombes.jpg">
-    <meta name="apple-mobile-web-app-title" content="Catacombes interdites">
-    <meta name="application-name" content="Visitez les catacombes interdites en 3D | VR | AR">
-    <meta name="author" content="Paul Marechal">
+    <meta name="apple-mobile-web-app-title" content="Catacombes de Paris">
+    <meta name="application-name" content="Catacombes de Paris en 3D | Catacombes.xyz">
     <link rel="alternate" hreflang="fr" href="https://catacombes.xyz/Cards/">
     <link rel="apple-touch-icon" sizes="180x180" href="https://catacombes.xyz/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://catacombes.xyz/assets/images/catacombes-32x32.png">
@@ -70,17 +69,27 @@
 
     <header-menu></header-menu>
 
+    <section style="max-width:900px;margin:32px auto 0;padding:0 20px;">
+        <h1 style="font-size:2rem;margin:0 0 10px;">Cartes NFC & tracts en réalité augmentée</h1>
+        <p style="margin:0 0 10px;line-height:1.6;">
+            Cette page présente les <strong>cartes NFC</strong> et <strong>tracts AR</strong> liés à Catacombes.xyz : scannez une carte pour afficher une <strong>salle modélisée en 3D</strong> en réalité augmentée.
+            Ces supports complètent la <a href="/Map/" title="Carte 3D des Catacombes de Paris">carte 3D</a> et la <a href="/displayRooms/" title="Salles des Catacombes de Paris en 3D">liste des salles</a>.
+        </p>
+        <p style="margin:0;line-height:1.6;">
+            Le projet s’inscrit dans une démarche de <strong>documentation patrimoniale</strong> et ne constitue pas un guide d’accès.
+        </p>
+    </section>
 
     <div id="main_div_cards">
 
         <div id="explication_text_cards">
-            <p class="textCard" title="Explication pour faire apparaitre la salle des catacombes interdites en AR">Les deux premières cartes utilisaient des <b>QR codes</b> . <br/> Aujourd’hui, place à une nouvelle génération : <b>les puces NFC</b> .</p>
+            <p class="textCard" title="Explication pour afficher une salle en réalité augmentée">Les deux premières cartes utilisaient des <b>QR codes</b> . <br/> Aujourd’hui, place à une nouvelle génération : <b>les puces NFC</b> .</p>
             <ul class="textCard" >
                 <li class="textCard">Approchez votre téléphone de la zone marquée NFC sur la carte pour ouvrir automatiquement le lien. Sur l’iPhone, la zone se situe vers le haut de l’appareil; sur les téléphones Android, elle se trouve souvent au centre, au dos de l’appareil.</li>
                 <li class="textCard" >Autorisez l’accès à la caméra, puis alignez le verso de la carte dans le cadre à l’écran.</li>
-                <li class="textCard" >Une salle secrète des catacombes apparait en réalité augmentée, projetée directement sur la carte.</li>
+                <li class="textCard" >Une salle modélisée apparait en réalité augmentée, projetée directement sur la carte.</li>
             </ul>
-            <p class="textCard" >Trouvez les autres cartes cachées dans les catacombes de Paris. Chacune révélant une salle des carrières interdites en realité augmentée.</p>
+            <p class="textCard" >Retrouvez d’autres cartes de la collection : chacune permet de visualiser une salle en réalité augmentée.</p>
             <p class="textCard" >Explorez. Scannez. Collectionnez. </p>
             <br/>
             <br/>
@@ -89,7 +98,7 @@
             </div>
         </div>
         <div id="explication_video_cards">
-            <img class="exemple_scan_card" src="https://catacombes.xyz/tracts/assets/Cards/NFC/Guerinet_verso.png" alt="Affiche le verso de la carte AR des catacombes interdites qui permet de faire apparaitre une salle en AR">
+            <img class="exemple_scan_card" src="https://catacombes.xyz/tracts/assets/Cards/NFC/Guerinet_verso.png" alt="Verso d’une carte NFC/AR permettant d’afficher une salle modélisée en réalité augmentée">
             
             <video id="video_card_v3" class="explication_video" playsinline muted autoplay loop title="Video montrant comment afficher la salle en AR avec un telephone">
                 <source id="change_source_video" src="https://catacombes.xyz/tracts/assets/Cards/video/tracts_catacombes_interdites_v3.mp4" type="video/mp4" />
@@ -141,32 +150,35 @@
             <svg id="close_display_cards"  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-back-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg>
         </div>
     </div>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://catacombes.xyz/Cards/#webpage",
+        "url": "https://catacombes.xyz/Cards/",
+        "name": "Cartes NFC & tracts AR | Catacombes de Paris en 3D",
+        "description": "Page dédiée aux cartes NFC et tracts en réalité augmentée (AR) : scannez une carte pour visualiser une salle modélisée en 3D. Explications, exemples visuels et lien de test sur Catacombes.xyz.",
+        "inLanguage": "fr-FR",
+        "isPartOf": {
+            "@id": "https://catacombes.xyz/#website"
+        },
+        "about": [
+            "Cartes NFC",
+            "Tracts AR",
+            "Réalité augmentée",
+            "Modélisation 3D",
+            "Catacombes de Paris",
+            "Réseau souterrain de Paris",
+            "Patrimoine souterrain"
+        ],
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://catacombes.xyz/assets/images/1200x630_catacombes.jpg",
+            "width": 1200,
+            "height": 630
+        }
+    }
+    </script>
 </body>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://catacombes.xyz/Cards/#webpage",
-  "url": "https://catacombes.xyz/Cards/",
-  "name": "Cartes NFC des Catacombes interdites | Tracts AR & QR",
-  "description": "Page dédiée aux cartes NFC et tracts des Catacombes interdites : explications, exemples visuels et liens pour tester l'affichage des salles en réalité augmentée.",
-  "inLanguage": "fr-FR",
-  "isPartOf": {
-    "@id": "https://catacombes.xyz/#website"
-  },
-  "about": [
-    "Cartes NFC Catacombes",
-    "Tracts des Catacombes interdites",
-    "Réalité augmentée",
-    "AR sur carte",
-    "Patrimoine souterrain"
-  ],
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "url": "https://catacombes.xyz/assets/images/1200x630_catacombes.jpg",
-    "width": 1200,
-    "height": 630
-  }
-}
-</script>
 </html>
