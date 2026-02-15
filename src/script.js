@@ -195,7 +195,6 @@ function init(nameRoom, nameRoom_opt) {
 
 		if (isMobile && isPortrait) {
 			return { x: -7.2, y: 1.55, z: -3.95 }; // portrait mobile
-
 		}
 		if (isMobile) {
 			return { x: -6.2, y: 1.5, z: -3.95 }; // mobile paysage
@@ -366,10 +365,10 @@ function init(nameRoom, nameRoom_opt) {
 	/////////
 	// Room
 	/////////
-	const room = new THREE.LineSegments(
-		new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
-		new THREE.LineBasicMaterial( { color: 0x808080, transparent: true } )
-	);
+	// const room = new THREE.LineSegments(
+	// 	new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
+	// 	new THREE.LineBasicMaterial( { color: 0x808080, transparent: true } )
+	// );
 
 	const roomMesh = new THREE.Mesh(
 		new THREE.BoxGeometry( 6, 6, 6, 10, 10, 10 ).translate( 0, 3, 0 ),
@@ -419,30 +418,30 @@ function init(nameRoom, nameRoom_opt) {
 	let rafId = null;
 
 	function updateUI(percent, ratio) {
-	// ne jamais reculer
-	const safePercent = Math.max(displayed, percent);
-	const safeRatio = Math.max(lastRatio, ratio);
+		// ne jamais reculer
+		const safePercent = Math.max(displayed, percent);
+		const safeRatio = Math.max(lastRatio, ratio);
 
-	loading_bar_percent.textContent = `${safePercent} %`;
-	loader_inside_white.style.width = `${safePercent}%`;
+		loading_bar_percent.textContent = `${safePercent} %`;
+		loader_inside_white.style.width = `${safePercent}%`;
 
-	displayed = safePercent;
-	lastRatio = safeRatio;
+		displayed = safePercent;
+		lastRatio = safeRatio;
 	}
 
 	function animateTo(targetPercent, ratio) {
-	cancelAnimationFrame(rafId);
-	const step = () => {
-		if (displayed < targetPercent) {
-			// easing simple vers la cible
-			const delta = Math.max(1, Math.ceil((targetPercent - displayed) * 0.2));
-			updateUI(displayed + delta, ratio);
-			rafId = requestAnimationFrame(step);
-		} else {
-			updateUI(targetPercent, ratio);
-		}
-	};
-	step();
+		cancelAnimationFrame(rafId);
+		const step = () => {
+			if (displayed < targetPercent) {
+				// easing simple vers la cible
+				const delta = Math.max(1, Math.ceil((targetPercent - displayed) * 0.2));
+				updateUI(displayed + delta, ratio);
+				rafId = requestAnimationFrame(step);
+			} else {
+				updateUI(targetPercent, ratio);
+			}
+		};
+		step();
 	}
 
 	const loadingManagerMain = new THREE.LoadingManager(
@@ -581,7 +580,6 @@ function init(nameRoom, nameRoom_opt) {
 	////////////////////
 	// Primitive Meshes
 	////////////////////
-
 	meshContainer = new THREE.Group();
 	meshContainer.position.set( 0, 1, -1.9 );
 
@@ -660,44 +658,44 @@ const _panelPos = new THREE.Vector3();
 const _panelQuat = new THREE.Quaternion();
 const _panelFwd = new THREE.Vector3(0, 0, -1);
 function placeRigInFrontOfPanel(distance = 0.85) {
-  if (!uiContainer || !xrRig) return;
+	if (!uiContainer || !xrRig) return;
 
-  // Panel world position/orientation
-  uiContainer.getWorldPosition(_panelPos);
-  uiContainer.getWorldQuaternion(_panelQuat);
+	// Panel world position/orientation
+	uiContainer.getWorldPosition(_panelPos);
+	uiContainer.getWorldQuaternion(_panelQuat);
 
-  // Panel forward in world space (its +Z)
-  const forward = _panelFwd.clone().applyQuaternion(_panelQuat).normalize();
+	// Panel forward in world space (its +Z)
+	const forward = _panelFwd.clone().applyQuaternion(_panelQuat).normalize();
 
-  console.log(forward)
-  // Target eye position is a bit in front of the panel, centered
-  const target = _panelPos.clone().add(forward.multiplyScalar(distance));
-  // Keep current eye height (don't inherit panel Y)
-  const _eye = new THREE.Vector3();
-  camera.getWorldPosition(_eye);
-  console.log(_eye)
-  target.y = (Number.isFinite(_eye.y * 2) ? _eye.y : 1.6*2);
+	console.log(forward)
+	// Target eye position is a bit in front of the panel, centered
+	const target = _panelPos.clone().add(forward.multiplyScalar(distance));
+	// Keep current eye height (don't inherit panel Y)
+	const _eye = new THREE.Vector3();
+	camera.getWorldPosition(_eye);
+	console.log(_eye)
+	target.y = (Number.isFinite(_eye.y * 2) ? _eye.y : 1.6*2);
 
-  // Compute yaw so the rig faces the panel
-  const toPanel = _panelPos.clone().sub(target);
-  const yaw = Math.atan2(toPanel.x, toPanel.z);
+	// Compute yaw so the rig faces the panel
+	const toPanel = _panelPos.clone().sub(target);
+	const yaw = Math.atan2(toPanel.x, toPanel.z);
 
-  // Initial placement (approx)
-  console.log(target.y)
-  target.y = 1.1
+	// Initial placement (approx)
+	console.log(target.y)
+	target.y = 1.1
 
-  xrRig.position.copy(target);
-  xrRig.rotation.set(0, yaw, 0);
+	xrRig.position.copy(target);
+	xrRig.rotation.set(0, yaw, 0);
 
-  // Refine after WebXR applies the first HMD pose
-  const refine = () => {
-    const wp = new THREE.Vector3();
-    camera.getWorldPosition(wp);
-    const delta = target.clone().sub(wp);
-    xrRig.position.add(delta);
-    xrRig.rotation.set(0, yaw, 0);
-  };
-  requestAnimationFrame(() => requestAnimationFrame(refine));
+	// Refine after WebXR applies the first HMD pose
+	const refine = () => {
+		const wp = new THREE.Vector3();
+		camera.getWorldPosition(wp);
+		const delta = target.clone().sub(wp);
+		xrRig.position.add(delta);
+		xrRig.rotation.set(0, yaw, 0);
+	};
+	requestAnimationFrame(() => requestAnimationFrame(refine));
 }
 
 // --- VR: afficher le panneau de texte ("boxContainer") et l'orienter vers l'utilisateur
@@ -782,31 +780,31 @@ renderer.xr.addEventListener('sessionstart', () => {
 });
 
 renderer.xr.addEventListener('sessionend', () => {
-  if (xrRig) {
-    scene.attach(camera);
-    if (vrControl && vrControl.controllers) vrControl.controllers.forEach((c) => { if (c) scene.attach(c); });
-    if (vrControl && vrControl.controllerGrips) vrControl.controllerGrips.forEach((g) => { if (g) scene.attach(g); });
-  }
-  // Restore desktop camera pose & controls target
-  camera.position.copy(desktopCamPos);
-  camera.quaternion.copy(desktopCamQuat);
-  camera.updateMatrixWorld(true);
-  if (controls) {
-    controls.target.copy(desktopControlsTarget);
-    controls.update();
-  }
-  // Hide the 3D UI when leaving VR
-  if (uiContainer) uiContainer.visible = !IS_MOBILE;
-  for (let i = 0; i < 2; i++) {
-    const c = xrControllers[i];
-    if (c) {
-      const laser = c.getObjectByName('xrLaser');
-      if (laser) laser.scale.z = 0; // hide
-    }
-  }
-  for (let i = 0; i < 2; i++) {
-    if (xrGrips[i]) scene.attach(xrGrips[i]);
-  }
+	if (xrRig) {
+		scene.attach(camera);
+		if (vrControl && vrControl.controllers) vrControl.controllers.forEach((c) => { if (c) scene.attach(c); });
+		if (vrControl && vrControl.controllerGrips) vrControl.controllerGrips.forEach((g) => { if (g) scene.attach(g); });
+	}
+	// Restore desktop camera pose & controls target
+	camera.position.copy(desktopCamPos);
+	camera.quaternion.copy(desktopCamQuat);
+	camera.updateMatrixWorld(true);
+	if (controls) {
+		controls.target.copy(desktopControlsTarget);
+		controls.update();
+	}
+	// Hide the 3D UI when leaving VR
+	if (uiContainer) uiContainer.visible = !IS_MOBILE;
+	for (let i = 0; i < 2; i++) {
+		const c = xrControllers[i];
+		if (c) {
+		const laser = c.getObjectByName('xrLaser');
+		if (laser) laser.scale.z = 0; // hide
+		}
+	}
+	for (let i = 0; i < 2; i++) {
+		if (xrGrips[i]) scene.attach(xrGrips[i]);
+	}
 });
 
 	document.addEventListener("DOMContentLoaded", (event) => {        
@@ -1394,62 +1392,59 @@ function updateButtons() {
 
     // Try ThreeMeshUI VRControl (if available)
     if (vrControl && typeof vrControl.setFromController === 'function') {
-      vrControl.setFromController(0, raycaster.ray);
-      hit = raycast();
-      if (!hit) {
-        vrControl.setFromController(1, raycaster.ray);
-        hit = raycast();
-        if (hit && typeof vrControl.setPointerAt === 'function') vrControl.setPointerAt(1, hit.point);
-      } else if (typeof vrControl.setPointerAt === 'function') {
-        vrControl.setPointerAt(0, hit.point);
-      }
+		vrControl.setFromController(0, raycaster.ray);
+		hit = raycast();
+		if (!hit) {
+			vrControl.setFromController(1, raycaster.ray);
+			hit = raycast();
+			if (hit && typeof vrControl.setPointerAt === 'function') vrControl.setPointerAt(1, hit.point);
+		} else if (typeof vrControl.setPointerAt === 'function') {
+			vrControl.setPointerAt(0, hit.point);
+		}
     }
 
     // Fallback: derive rays directly from WebXR controllers (matrixWorld)
     if (!hit) {
-      for (let i = 0; i < 2; i++) {
-        const c = xrControllers[i];
-        if (!c) continue;
-        if (!setRayFromController(c, raycaster.ray)) continue;
-        const maybe = raycast();
-        const laser = c.getObjectByName('xrLaser');
-        if (laser) laser.scale.z = maybe ? maybe.distance : 3;
-        if (maybe) { hit = maybe; break; }
-      }
+		for (let i = 0; i < 2; i++) {
+			const c = xrControllers[i];
+			if (!c) continue;
+			if (!setRayFromController(c, raycaster.ray)) continue;
+			const maybe = raycast();
+			const laser = c.getObjectByName('xrLaser');
+			if (laser) laser.scale.z = maybe ? maybe.distance : 3;
+			if (maybe) { hit = maybe; break; }
+		}
     }
 
     intersect = hit;
-  } else if ( mouse.x !== null && mouse.y !== null ) {
-    raycaster.setFromCamera(mouse, camera);
-    intersect = raycast();
-  }
+	} else if ( mouse.x !== null && mouse.y !== null ) {
+		raycaster.setFromCamera(mouse, camera);
+		intersect = raycast();
+	}
 
-  // Update targeted button state (if any)
-  if ( intersect && intersect.object.isUI ) {
-    if ( selectState ) {
-      // Component.setState internally call component.set with the options you defined in component.setupState
-      intersect.object.setState( 'selected' );
-    } else {
-      // Component.setState internally call component.set with the options you defined in component.setupState
-      intersect.object.setState( 'hovered' );
-    }
-  }
+	// Update targeted button state (if any)
+	if ( intersect && intersect.object.isUI ) {
+		if ( selectState ) {
+			intersect.object.setState( 'selected' );
+		} else {
+			intersect.object.setState( 'hovered' );
+		}
+	}
 
-  objsToTest.forEach( ( obj ) => {
-    if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
-      // Component.setState internally call component.set with the options you defined in component.setupState
-      obj.setState( 'idle' );
-    }
-  });
+	objsToTest.forEach( ( obj ) => {
+		if ( ( !intersect || obj !== intersect.object ) && obj.isUI ) {
+			obj.setState( 'idle' );
+		}
+  	});
 
-  if (!intersect && renderer.xr.isPresenting) {
-    for (let i = 0; i < 2; i++) {
-      const c = xrControllers[i];
-      if (!c) continue;
-      const laser = c.getObjectByName('xrLaser');
-      if (laser) laser.scale.z = 3;
-    }
-  }
+	if (!intersect && renderer.xr.isPresenting) {
+		for (let i = 0; i < 2; i++) {
+			const c = xrControllers[i];
+			if (!c) continue;
+			const laser = c.getObjectByName('xrLaser');
+			if (laser) laser.scale.z = 3;
+		}
+	}
 }
 
 function raycast() {
@@ -1465,28 +1460,27 @@ function raycast() {
 		}
 		return closestIntersection;
 	}, null );
-
 }
 
 
 function removeVRButton(){
-  const vrButton = document.getElementById('VRButton');
-  if (!vrButton) return;
+	const vrButton = document.getElementById('VRButton');
+	if (!vrButton) return;
 
-  if ('xr' in navigator) {
-    navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
-      if (!supported) {
-        setTimeout(() => {
-          vrButton.animate(
-            { opacity: 0 },
-            { duration: 3500, fill: 'forwards' }
-          ).onfinish = () => {
-            vrButton.style.display = 'none';
-          };
-        }, 9000);
-      }
-    }).catch(() => {/* ignore */});
-  }
+	if ('xr' in navigator) {
+		navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+		if (!supported) {
+			setTimeout(() => {
+				vrButton.animate(
+					{ opacity: 0 },
+					{ duration: 3500, fill: 'forwards' }
+				).onfinish = () => {
+					vrButton.style.display = 'none';
+				};
+			}, 9000);
+		}
+		}).catch(() => {/* ignore */});
+	}
 }
 
 function ensureXRControllerConnections() {
